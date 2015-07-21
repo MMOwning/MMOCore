@@ -78,6 +78,9 @@ void AddSC_ticket_commandscript();
 void AddSC_titles_commandscript();
 void AddSC_wp_commandscript();
 
+//Load MMO Commands
+void AddSC_mmowning_commandscript();
+
 #ifdef SCRIPTS
 //world
 void AddSC_areatrigger_scripts();
@@ -770,6 +773,9 @@ void AddCommandScripts()
     AddSC_ticket_commandscript();
     AddSC_titles_commandscript();
     AddSC_wp_commandscript();
+	
+	//Load MMO Commands
+	AddSC_mmowning_commandscript();	
 }
 
 void AddWorldScripts()
