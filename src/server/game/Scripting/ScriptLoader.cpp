@@ -84,7 +84,9 @@ void AddSC_mmowning_commandscript();
 void AddSC_vip_commandscript();
 //VIP NPC
 void AddSC_npc_vip();		
-	
+//TeleNPC2
+void AddSC_npc_teleport();
+
 #ifdef SCRIPTS
 //world
 void AddSC_areatrigger_scripts();
@@ -784,6 +786,8 @@ void AddCommandScripts()
 	AddSC_vip_commandscript();	
 	//VIP NPC
 	AddSC_npc_vip();
+    // TeleNPC2
+    AddSC_npc_teleport();		
 }
 
 void AddWorldScripts()
