@@ -18082,5 +18082,7 @@ REPLACE INTO `creature_queststarter` (`id`, `quest`) VALUES
 REPLACE INTO `creature_questender` (`id`, `quest`) VALUES
 (800026, 805022);
 
+UPDATE `creature_template` SET `unit_flags`='0' WHERE `entry`='800033';
+
 
 
