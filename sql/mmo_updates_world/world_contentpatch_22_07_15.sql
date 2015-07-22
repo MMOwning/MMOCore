@@ -1247,7 +1247,7 @@ REPLACE INTO `creature` (`guid`,`id`,`map`,`spawnMask`,`phaseMask`,`modelid`,`eq
 REPLACE INTO `creature` (`guid`,`id`,`map`,`spawnMask`,`phaseMask`,`modelid`,`equipment_id`,`position_x`,`position_y`,`position_z`,`orientation`,`spawntimesecs`,`spawndist`,`currentwaypoint`,`curhealth`,`curmana`,`MovementType`) VALUES 
 ('800012','800011','0','1','1','17822','0','-8822.93','650.009155','94.896767','5.184981','25','0','0','1000000','250000','0');
 REPLACE INTO `creature` (`guid`,`id`,`map`,`spawnMask`,`phaseMask`,`modelid`,`equipment_id`,`position_x`,`position_y`,`position_z`,`orientation`,`spawntimesecs`,`spawndist`,`currentwaypoint`,`curhealth`,`curmana`,`MovementType`) VALUES 
-('800012','800011','0','1','1','17822','0','-9739.48','2166.33','7.047659','5.092','25','0','0','1000000','250000','0');
+('795000','800011','0','1','1','17822','0','-9739.48','2166.33','7.047659','5.092','25','0','0','1000000','250000','0');
 
 DELETE FROM `creature_template` WHERE `Entry` = 800011;
 
