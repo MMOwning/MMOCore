@@ -62,6 +62,9 @@ class AccountMgr
         }
 
         AccountOpResult CreateAccount(std::string username, std::string password, std::string email);
+		//MMO Custom start
+		static uint32 VipDaysLeft(uint32 accountId);
+		//MMO Custom end			
         static AccountOpResult DeleteAccount(uint32 accountId);
         static AccountOpResult ChangeUsername(uint32 accountId, std::string newUsername, std::string newPassword);
         static AccountOpResult ChangePassword(uint32 accountId, std::string newPassword);

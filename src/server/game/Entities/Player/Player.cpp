@@ -6741,7 +6741,10 @@ void Player::CheckAreaExploreAndOutdoor()
                 {
                     XP = uint32(sObjectMgr->GetBaseXP(areaEntry->area_level)*sWorld->getRate(RATE_XP_EXPLORE));
                 }
-
+				//MMO Custom start
+                if(GetSession()->IsPremium())
+                XP *= sWorld->getRate(RATE_XP_EXPLORE_PREMIUM);				
+				//MMO Custom end
                 GiveXP(XP, NULL);
                 SendExplorationExperience(area, XP);
             }
@@ -15214,6 +15217,11 @@ void Player::RewardQuest(Quest const* quest, uint32 reward, Object* questGiver, 
     for (Unit::AuraEffectList::const_iterator i = ModXPPctAuras.begin(); i != ModXPPctAuras.end(); ++i)
         AddPct(XP, (*i)->GetAmount());
 
+	//MMO Custom start
+    if (GetSession()->IsPremium())
+       XP *= sWorld->getRate(RATE_XP_QUEST_PREMIUM);	
+	//MMO Custom end		
+	
     int32 moneyRew = 0;
     if (getLevel() < sWorld->getIntConfig(CONFIG_MAX_PLAYER_LEVEL))
         GiveXP(XP, NULL);

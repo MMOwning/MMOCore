@@ -23,6 +23,7 @@
 #include "SharedDefines.h"
 #include "ScriptMgr.h"
 #include "Player.h"
+#include "WorldSession.h"
 
 namespace Trinity
 {
@@ -189,7 +190,9 @@ namespace Trinity
             }
 
             sScriptMgr->OnGainCalculation(gain, player, u);
-            return gain;
+            //return gain;
+			float premium_rate = player->GetSession()->IsPremium() ? sWorld->getRate(RATE_XP_KILL_PREMIUM) : 1.0f;
+			return uint32(gain*sWorld->getRate(RATE_XP_KILL)*premium_rate);			
         }
 
         inline float xp_in_group_rate(uint32 count, bool isRaid)

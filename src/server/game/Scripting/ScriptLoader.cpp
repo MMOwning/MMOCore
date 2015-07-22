@@ -80,7 +80,11 @@ void AddSC_wp_commandscript();
 
 //Load MMO Commands
 void AddSC_mmowning_commandscript();
-
+//Load MMO Elite Commands
+void AddSC_vip_commandscript();
+//VIP NPC
+void AddSC_npc_vip();		
+	
 #ifdef SCRIPTS
 //world
 void AddSC_areatrigger_scripts();
@@ -776,6 +780,10 @@ void AddCommandScripts()
 	
 	//Load MMO Commands
 	AddSC_mmowning_commandscript();	
+	//Load MMO Elite Commands
+	AddSC_vip_commandscript();	
+	//VIP NPC
+	AddSC_npc_vip();
 }
 
 void AddWorldScripts()

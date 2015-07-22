@@ -11,6 +11,7 @@
 # file(GLOB_RECURSE sources_Custom Custom/*.cpp Custom/*.h)
 
 set(scripts_STAT_SRCS
+  Custom/npc_vip.cpp 
   ${scripts_STAT_SRCS}
 #  ${sources_Custom}
 )

@@ -269,7 +269,10 @@ void WorldSocket::HandleAuthSession(WorldPacket& recvPacket)
     WorldPacket packet, SendAddonPacked;
     BigNumber k;
     bool wardenActive = sWorld->getBoolConfig(CONFIG_WARDEN_ENABLED);
-
+	//MMO Custom start
+	bool isPremium = false;	
+	//MMO Custom end		
+	
     // Read the content of the packet
     recvPacket >> clientBuild;
     recvPacket >> serverId;                 // Used for GRUNT only
@@ -446,6 +449,19 @@ void WorldSocket::HandleAuthSession(WorldPacket& recvPacket)
         DelayedCloseSocket();
         return;
     }
+	
+	//MMO Custom start
+    QueryResult premresult =
+       LoginDatabase.PQuery ("SELECT 1 "
+                               "FROM account_premium "
+                               "WHERE id = '%u' "
+                               "AND active = 1",
+                               id);
+   if (premresult) // if account premium
+   {
+       isPremium = true;
+   }
+	//MMO Custom end		
 
     // Check locked state for server
     AccountTypes allowedAccountType = sWorld->GetPlayerSecurityLimit();
@@ -486,7 +502,7 @@ void WorldSocket::HandleAuthSession(WorldPacket& recvPacket)
     sScriptMgr->OnAccountLogin(id);
 
     _authed = true;
-    _worldSession = new WorldSession(id, shared_from_this(), AccountTypes(security), expansion, mutetime, locale, recruiter, isRecruiter);
+    _worldSession = new WorldSession(id, shared_from_this(), AccountTypes(security), isPremium, expansion, mutetime, locale, recruiter, isRecruiter);
     _worldSession->LoadGlobalAccountData();
     _worldSession->LoadTutorialsData();
     _worldSession->ReadAddonsInfo(recvPacket);
