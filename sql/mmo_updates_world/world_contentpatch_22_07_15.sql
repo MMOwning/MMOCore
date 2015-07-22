@@ -1556,7 +1556,7 @@ VALUES ( /*  ID */ 800010,
   /* Racial Leader  */0,
  /* movement id  */ 0, 
   /*  RegenHealth`` */1, 
-  /*  mechanic_immune_mask` */2147483647, 
+  /*  mechanic_immune_mask` */2145370111, 
   /*  flags_extra` */0, 
   /* Scriptname  */'');
 UPDATE `creature_template` SET `HealthModifier`='200', `ArmorModifier`='5', `DamageModifier`='160' WHERE `entry`='800010';
@@ -2727,9 +2727,9 @@ VALUES ( /*  ID */ 800025,
   /*  rank  Normal, Elite?*/3,
   /*  dmgschool Normal Holy Fire? */0,
   /* BaseAttackTime`  */1000,
-  /* RangeAttackTime`  */2000,
+  /* RangeAttackTime`  */1000,
   /*  Welche Klasse? Krieger Pala, also Mana oder kein MAna? */0,
-  /*  unit flag */4104,
+  /*  unit flag */0,
   /*  unit flags2  */0,
   /*  dynamicflag */0,
   /* Family  */0,
@@ -2767,10 +2767,10 @@ VALUES ( /*  ID */ 800025,
   /* Racial Leader  */0,
  /* movement id  */ 0, 
   /*  RegenHealth`` */1, 
-  /*  mechanic_immune_mask` */2147483647, 
+  /*  mechanic_immune_mask` */2145370111, 
   /*  flags_extra` */0, 
   /* Scriptname  */'');
-UPDATE `creature_template` SET `HealthModifier`='1100', `ArmorModifier`='2', `DamageModifier`='100' WHERE `entry`='800025';
+UPDATE `creature_template` SET `HealthModifier`='1500', `ArmorModifier`='10', `DamageModifier`='140' WHERE `entry`='800025';
 
   
   
@@ -2842,9 +2842,11 @@ REPLACE INTO `smart_scripts` (`entryorguid`,`source_type`,`id`,`link`,`event_typ
 (@ENTRY,@SOURCETYPE,24,0,2,0,100,1,55,100,0,0,1,5,1,0,0,0,0,2,0,0,0,0.0,0.0,0.0,0.0,"Emote 5"),
 (@ENTRY,@SOURCETYPE,25,0,2,0,100,1,1,50,0,0,1,6,1,0,0,0,0,2,0,0,0,0.0,0.0,0.0,0.0,"Emote 6"),
 (@ENTRY,@SOURCETYPE,27,0,2,0,100,0,25,35,8000,9000,11,68989,0,0,0,0,0,5,0,0,0,0.0,0.0,0.0,0.0,"Knochenstachel"),
+(@ENTRY,@SOURCETYPE,32,0,2,0,100,0,20,80,8000,9000,11,56909,0,0,0,0,0,5,0,0,0,0.0,0.0,0.0,0.0,"Cleave"),
 (@ENTRY,@SOURCETYPE,28,0,2,0,100,0,20,30,8000,9000,11,56431,0,0,0,0,0,5,0,0,0,0.0,0.0,0.0,0.0,"Arcane Bomb"),
 (@ENTRY,@SOURCETYPE,30,0,2,0,100,1,1,0,0,0,1,7,0,0,0,0,0,2,0,0,0,0.0,0.0,0.0,0.0,"Yell 5"),
-(@ENTRY,@SOURCETYPE,31,0,2,0,100,0,5,10,8000,9000,11,56909,0,0,0,0,0,5,0,0,0,0.0,0.0,0.0,0.0,"Sartahrion");
+(@ENTRY,@SOURCETYPE,33,0,2,0,100,0,1,10,9000,10000,11,74806,0,0,0,0,0,5,0,0,0,0.0,0.0,0.0,0.0,"Dark Breath"),
+(@ENTRY,@SOURCETYPE,31,0,2,0,100,0,5,10,8000,9000,11,56910,0,0,0,0,0,5,0,0,0,0.0,0.0,0.0,0.0,"Sartahrion");
 
 
 
@@ -3259,8 +3261,8 @@ VALUES ( /*  ID */ 800030,
   /*  scale */0.1,
   /*  rank  Normal, Elite?*/3,
   /*  dmgschool Normal Holy Fire? */0,
-  /* BaseAttackTime`  */1000,
-  /* RangeAttackTime`  */2000,
+  /* BaseAttackTime`  */5000,
+  /* RangeAttackTime`  */4000,
   /*  Welche Klasse? Krieger Pala, also Mana oder kein MAna? */0,
   /*  unit flag */4104,
   /*  unit flags2  */0,
@@ -3300,7 +3302,7 @@ VALUES ( /*  ID */ 800030,
   /* Racial Leader  */0,
  /* movement id  */ 0, 
   /*  RegenHealth`` */1, 
-  /*  mechanic_immune_mask` */2147483647, 
+  /*  mechanic_immune_mask` */2145370111, 
   /*  flags_extra` */0, 
   /* Scriptname  */'');
 UPDATE `creature_template` SET `HealthModifier`='1100', `ArmorModifier`='2', `DamageModifier`='160' WHERE `entry`='800030';
@@ -3377,7 +3379,7 @@ REPLACE INTO `smart_scripts` (`entryorguid`,`source_type`,`id`,`link`,`event_typ
 (@ENTRY,@SOURCETYPE,27,0,2,0,100,0,25,35,8000,9000,11,72080,0,0,0,0,0,5,0,0,0,0.0,0.0,0.0,0.0,"Knochenstachel"),
 (@ENTRY,@SOURCETYPE,28,0,2,0,100,0,20,30,8000,9000,11,70953,0,0,0,0,0,5,0,0,0,0.0,0.0,0.0,0.0,"Arcane Bomb"),
 (@ENTRY,@SOURCETYPE,30,0,2,0,100,1,1,0,0,0,1,7,0,0,0,0,0,2,0,0,0,0.0,0.0,0.0,0.0,"Yell 5"),
-(@ENTRY,@SOURCETYPE,31,0,2,0,100,0,5,10,8000,9000,11,70672,0,0,0,0,0,5,0,0,0,0.0,0.0,0.0,0.0,"Sartahrion");
+(@ENTRY,@SOURCETYPE,31,0,2,0,100,0,5,10,8000,9000,11,31306,0,0,0,0,0,5,0,0,0,0.0,0.0,0.0,0.0,"Sartahrion");
 
 
 
