@@ -88,6 +88,10 @@ void AddSC_npc_vip();
 void AddSC_npc_teleport();
 // Fake Players
 void AddSC_fake_commandscript();
+// WorldChat
+void AddSC_cs_world_chat();
+// Congrats on Level
+void AddSC_custom_CongratsOnLevel();
 
 #ifdef SCRIPTS
 //world
@@ -792,6 +796,10 @@ void AddCommandScripts()
     AddSC_npc_teleport();
     // Fake Players
     AddSC_fake_commandscript();		
+	//WorldChat
+	AddSC_cs_world_chat();	
+    // Congrats on Level
+    AddSC_custom_CongratsOnLevel();	
 }
 
 void AddWorldScripts()
