@@ -12,6 +12,4 @@ UPDATE `creature_loot_template` SET `Chance`='7' WHERE `Entry`='29312' and`Item`
 UPDATE `creature_loot_template` SET `Chance`='7' WHERE `Entry`='29313' and`Item`='700498';
 UPDATE `creature_loot_template` SET `Chance`='7' WHERE `Entry`='31134' and`Item`='700498';
 UPDATE `creature_loot_template` SET `Chance`='7' WHERE `Entry`='15990' and`Item`='700498';
-
-
 UPDATE `creature_loot_template` SET `Chance`='14' WHERE `Entry`='36502' and`Item`='700499';
