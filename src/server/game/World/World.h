@@ -174,10 +174,10 @@ enum WorldBoolConfigs
     CONFIG_PREVENT_PLAYERS_ACCESS_TO_GMISLAND,	
     CONFIG_CHANNEL_ON_CITY_ONLY_FLAG,
 	CONFIG_ARENA_SPECTATORS_ENABLE,
-	CONFIG_EXTERNAL_MAIL,	
 	//MMO Custom end		
     CONFIG_CALCULATE_CREATURE_ZONE_AREA_DATA,
     CONFIG_CALCULATE_GAMEOBJECT_ZONE_AREA_DATA,
+	CONFIG_EXTERNAL_MAIL,		
     BOOL_CONFIG_VALUE_COUNT
 };
 
@@ -356,6 +356,7 @@ enum WorldIntConfigs
     CONFIG_BG_REWARD_LOSER_HONOR_FIRST,
     CONFIG_BG_REWARD_LOSER_HONOR_LAST,
     CONFIG_BIRTHDAY_TIME,
+	CONFIG_EXTERNAL_MAIL_INTERVAL,		
     CONFIG_CREATURE_PICKPOCKET_REFILL,
     CONFIG_AHBOT_UPDATE_INTERVAL,
     CONFIG_CHARTER_COST_GUILD,
@@ -814,6 +815,7 @@ class World
         time_t m_startTime;
         time_t m_gameTime;
         IntervalTimer m_timers[WUPDATE_COUNT];
+		IntervalTimer extmail_timer;		
         time_t mail_timer;
         time_t mail_timer_expires;
         uint32 m_updateTime, m_updateTimeSum;

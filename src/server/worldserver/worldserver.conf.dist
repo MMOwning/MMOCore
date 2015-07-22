@@ -3375,3 +3375,20 @@ PacketSpoof.BanDuration = 86400
 Rate.XP.Kill.Premium    = 2
 Rate.XP.Quest.Premium   = 2
 Rate.XP.Explore.Premium = 2
+
+###################################################################################################
+# Updated external mail!
+#
+# ExternalMail
+#       Enable external mail delivery from mail_external table.
+#       Default: 0 (disabled)
+#                1 (enabled)
+#
+# ExternalMailInterval
+#       Mail delivery delay time for item sending from mail_external table, in minutes.
+#       Default: 1 minute
+#
+###################################################################################################
+
+ExternalMail = 1
+ExternalMailInterval = 1

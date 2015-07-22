@@ -889,6 +889,9 @@ void World::LoadConfigSettings(bool reload)
     m_int_configs[CONFIG_GROUP_VISIBILITY] = sConfigMgr->GetIntDefault("Visibility.GroupMode", 1);
 
     m_int_configs[CONFIG_MAIL_DELIVERY_DELAY] = sConfigMgr->GetIntDefault("MailDeliveryDelay", HOUR);
+	
+    m_bool_configs[CONFIG_EXTERNAL_MAIL] = sConfigMgr->GetBoolDefault("ExternalMail", false);
+    m_int_configs[CONFIG_EXTERNAL_MAIL_INTERVAL] = sConfigMgr->GetIntDefault("ExternalMailInterval", 1);		
 
     m_int_configs[CONFIG_UPTIME_UPDATE] = sConfigMgr->GetIntDefault("UpdateUptimeInterval", 10);
     if (int32(m_int_configs[CONFIG_UPTIME_UPDATE]) <= 0)
@@ -1819,6 +1822,7 @@ void World::SetInitialWorldSettings()
     tm localTm;
     localtime_r(&m_gameTime, &localTm);
     mail_timer = ((((localTm.tm_hour + 20) % 24)* HOUR * IN_MILLISECONDS) / m_timers[WUPDATE_AUCTIONS].GetInterval());
+	extmail_timer.SetInterval(m_int_configs[CONFIG_EXTERNAL_MAIL_INTERVAL] * MINUTE * IN_MILLISECONDS);	
                                                             //1440
     mail_timer_expires = ((DAY * IN_MILLISECONDS) / (m_timers[WUPDATE_AUCTIONS].GetInterval()));
     TC_LOG_INFO("server.loading", "Mail timer set to: " UI64FMTD ", mail return is called every " UI64FMTD " minutes", uint64(mail_timer), uint64(mail_timer_expires));
@@ -2047,6 +2051,17 @@ void World::Update(uint32 diff)
 
     if (m_gameTime > m_NextRandomBGReset)
         ResetRandomBG();
+	
+    // Handle external mail
+    if (sWorld->getBoolConfig(CONFIG_EXTERNAL_MAIL))
+    {
+        extmail_timer.Update(diff);
+        if (extmail_timer.Passed())
+        {
+            WorldSession::SendExternalMails();
+            extmail_timer.Reset();
+        }
+    }				
 
     if (m_gameTime > m_NextGuildReset)
         ResetGuildCap();
