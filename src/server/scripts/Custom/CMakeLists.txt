@@ -12,6 +12,7 @@
 
 set(scripts_STAT_SRCS
   Custom/npc_vip.cpp 
+  Custom/cs_fake.cpp  
   ${scripts_STAT_SRCS}
 #  ${sources_Custom}
 )

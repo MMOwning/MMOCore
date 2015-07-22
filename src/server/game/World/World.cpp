@@ -892,7 +892,9 @@ void World::LoadConfigSettings(bool reload)
 	
     m_bool_configs[CONFIG_EXTERNAL_MAIL] = sConfigMgr->GetBoolDefault("ExternalMail", false);
     m_int_configs[CONFIG_EXTERNAL_MAIL_INTERVAL] = sConfigMgr->GetIntDefault("ExternalMailInterval", 1);		
-
+    m_bool_configs[CONFIG_FAKE_WHO_LIST] = sConfigMgr->GetBoolDefault("Fake.WHO.List", false);	
+	m_bool_configs[CONFIG_FAKE_WHO_LIST_LEVELUP] = sConfigMgr->GetBoolDefault("Fake.WHO.List.Levelup", false);	
+	
     m_int_configs[CONFIG_UPTIME_UPDATE] = sConfigMgr->GetIntDefault("UpdateUptimeInterval", 10);
     if (int32(m_int_configs[CONFIG_UPTIME_UPDATE]) <= 0)
     {

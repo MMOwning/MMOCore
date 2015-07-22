@@ -86,6 +86,8 @@ void AddSC_vip_commandscript();
 void AddSC_npc_vip();		
 //TeleNPC2
 void AddSC_npc_teleport();
+// Fake Players
+void AddSC_fake_commandscript();
 
 #ifdef SCRIPTS
 //world
@@ -787,7 +789,9 @@ void AddCommandScripts()
 	//VIP NPC
 	AddSC_npc_vip();
     // TeleNPC2
-    AddSC_npc_teleport();		
+    AddSC_npc_teleport();
+    // Fake Players
+    AddSC_fake_commandscript();		
 }
 
 void AddWorldScripts()
