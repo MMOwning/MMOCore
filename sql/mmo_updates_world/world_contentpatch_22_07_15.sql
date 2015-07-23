@@ -3218,7 +3218,7 @@ VALUES (800030, 51955, 0, 0.1, 0, 1, 1, 1, 1);
 REPLACE INTO `creature_loot_template` (`Entry`,`Item`,`Reference`, `Chance`, `QuestRequired`, `LootMode`, `GroupId`, `MinCount`, `MaxCount`)
 VALUES (800030, 45234, 0, 50, 0, 1, 1, 1, 1); 
 REPLACE INTO `creature_loot_template` (`Entry`,`Item`,`Reference`, `Chance`, `QuestRequired`, `LootMode`, `GroupId`, `MinCount`, `MaxCount`)
-VALUES (800030, 17203, 0, 50, 0, 1, 1, 1, 1); 
+VALUES (800030, 17203, 0, 0.01, 0, 1, 1, 1, 1); 
 
 REPLACE INTO `creature_loot_template` (`Entry`,`Item`,`Reference`, `Chance`, `QuestRequired`, `LootMode`, `GroupId`, `MinCount`, `MaxCount`)
 VALUES (800030, 45167, 0, 50, 0, 1, 2, 1, 1); 
