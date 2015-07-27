@@ -1169,7 +1169,7 @@ DELETE FROM `creature_loot_template` WHERE `entry` = 800010;
 REPLACE INTO `creature_loot_template` (`Entry`,`Item`,`Reference`, `Chance`, `QuestRequired`, `LootMode`, `GroupId`, `MinCount`, `MaxCount`)
 VALUES (800010, 52006, 0, 1, 0, 1, 0, 1, 1); 
 REPLACE INTO `creature_loot_template` (`Entry`,`Item`,`Reference`, `Chance`, `QuestRequired`, `LootMode`, `GroupId`, `MinCount`, `MaxCount`)
-VALUES (800010, 38186, 0, 0.1, 0, 1, 0, 5, 20); 
+VALUES (800010, 38186, 0, 1, 0, 1, 0, 5, 20); 
 
 REPLACE INTO `creature_loot_template` (`Entry`,`Item`,`Reference`, `Chance`, `QuestRequired`, `LootMode`, `GroupId`, `MinCount`, `MaxCount`)
 VALUES (800010, 49802, 0, 12, 0, 1, 1, 1, 1); 
@@ -1270,7 +1270,7 @@ VALUES ( /*  ID */ 800010,
   /* Racial Leader  */0,
  /* movement id  */ 0, 
   /*  RegenHealth`` */1, 
-  /*  mechanic_immune_mask` */2145370111, 
+  /*  mechanic_immune_mask` */650854271, 
   /*  flags_extra` */0, 
   /* Scriptname  */'');
 UPDATE `creature_template` SET `HealthModifier`='200', `ArmorModifier`='10', `DamageModifier`='160' WHERE `entry`='800010';
@@ -2385,7 +2385,7 @@ DELETE FROM `creature_loot_template` WHERE `Entry` = 800025;
 REPLACE INTO `creature_loot_template` (`Entry`,`Item`,`Reference`, `Chance`, `QuestRequired`, `LootMode`, `GroupId`, `MinCount`, `MaxCount`)
 VALUES (800025, 52006, 0, 1, 0, 1, 0, 1, 1); 
 REPLACE INTO `creature_loot_template` (`Entry`,`Item`,`Reference`, `Chance`, `QuestRequired`, `LootMode`, `GroupId`, `MinCount`, `MaxCount`)
-VALUES (800030, 38186, 0, 0.1, 0, 1, 0, 5, 20);
+VALUES (800030, 38186, 0, 1, 0, 1, 0, 5, 20);
 
 
 REPLACE INTO `creature_loot_template` (`Entry`,`Item`,`Reference`, `Chance`, `QuestRequired`, `LootMode`, `GroupId`, `MinCount`, `MaxCount`)
@@ -2393,23 +2393,18 @@ VALUES (800025, 32458, 0, 0.1, 0, 1, 1, 1, 1);
 REPLACE INTO `creature_loot_template` (`Entry`,`Item`,`Reference`, `Chance`, `QuestRequired`, `LootMode`, `GroupId`, `MinCount`, `MaxCount`)
 VALUES (800025, 51955, 0, 0.1, 0, 1, 1, 1, 1); 
 REPLACE INTO `creature_loot_template` (`Entry`,`Item`,`Reference`, `Chance`, `QuestRequired`, `LootMode`, `GroupId`, `MinCount`, `MaxCount`)
-VALUES (800025, 45234, 0, 50, 0, 1, 1, 1, 1); 
+VALUES (800025, 45234, 0, 98.98, 0, 1, 1, 1, 1); 
 REPLACE INTO `creature_loot_template` (`Entry`,`Item`,`Reference`, `Chance`, `QuestRequired`, `LootMode`, `GroupId`, `MinCount`, `MaxCount`)
-VALUES (800025, 17203, 0, 50, 0, 1, 1, 1, 1); 
+VALUES (800025, 17203, 0, 1, 0, 1, 1, 1, 1); 
 
 REPLACE INTO `creature_loot_template` (`Entry`,`Item`,`Reference`, `Chance`, `QuestRequired`, `LootMode`, `GroupId`, `MinCount`, `MaxCount`)
-VALUES (800025, 45167, 0, 50, 0, 1, 2, 1, 1); 
+VALUES (800025, 45167, 0, 25, 0, 1, 2, 1, 1); 
 REPLACE INTO `creature_loot_template` (`Entry`,`Item`,`Reference`, `Chance`, `QuestRequired`, `LootMode`, `GroupId`, `MinCount`, `MaxCount`)
-VALUES (800025, 45165, 0, 50, 0, 1, 2, 1, 1); 
+VALUES (800025, 45165, 0, 25, 0, 1, 2, 1, 1); 
 REPLACE INTO `creature_loot_template` (`Entry`,`Item`,`Reference`, `Chance`, `QuestRequired`, `LootMode`, `GroupId`, `MinCount`, `MaxCount`)
-VALUES (800025, 45250, 0, 50, 0, 1, 2, 1, 1); 
+VALUES (800025, 45250, 0, 25, 0, 1, 2, 1, 1); 
 REPLACE INTO `creature_loot_template` (`Entry`,`Item`,`Reference`, `Chance`, `QuestRequired`, `LootMode`, `GroupId`, `MinCount`, `MaxCount`)
-VALUES (800025, 49827, 0, 50, 0, 1, 2, 1, 1); 
-
-
-
-
-
+VALUES (800025, 49827, 0, 25, 0, 1, 2, 1, 1); 
 
 
 REPLACE INTO `creature`(`guid`,`id`,`map`,`spawnMask`,`phaseMask`,`modelid`,`equipment_id`,`position_x`,`position_y`,`position_z`,`orientation`,`spawntimesecs`,`spawndist`,`currentwaypoint`,`curhealth`,`curmana`,`MovementType`) VALUES 
@@ -2481,10 +2476,10 @@ VALUES ( /*  ID */ 800025,
   /* Racial Leader  */0,
  /* movement id  */ 0, 
   /*  RegenHealth`` */1, 
-  /*  mechanic_immune_mask` */2145370111, 
+  /*  mechanic_immune_mask` */650854271, 
   /*  flags_extra` */0, 
   /* Scriptname  */'');
-UPDATE `creature_template` SET `HealthModifier`='1500', `ArmorModifier`='10', `DamageModifier`='140' WHERE `entry`='800025';
+UPDATE `creature_template` SET `HealthModifier`='1750', `ArmorModifier`='10', `DamageModifier`='120' WHERE `entry`='800025';
 
   
   
@@ -2537,17 +2532,17 @@ REPLACE INTO `smart_scripts` (`entryorguid`,`source_type`,`id`,`link`,`event_typ
 (@ENTRY,@SOURCETYPE,2,0,2,0,100,0,75,80,10000,13000,11,69278,0,0,0,0,0,5,0,0,0,0.0,0.0,0.0,0.0,"FEAR"),
 (@ENTRY,@SOURCETYPE,3,0,2,0,100,1,60,70,0,0,11,74525,0,0,0,0,0,5,0,0,0,0.0,0.0,0.0,0.0,"FRENZY"),
 (@ENTRY,@SOURCETYPE,4,0,2,0,100,0,50,60,7000,8000,11,56908,0,0,0,0,0,5,0,0,0,0.0,0.0,0.0,0.0,"CHAIN_LIGHTNING"),
-(@ENTRY,@SOURCETYPE,5,0,2,0,100,1,40,60,0,0,11,69024,0,0,0,0,0,5,0,0,0,0.0,0.0,0.0,0.0,"SPELL_TOXIC_WASTE"),
+(@ENTRY,@SOURCETYPE,5,0,0,0,100,1,40,60,7500,15000,11,69024,0,0,0,0,0,5,0,0,0,0.0,0.0,0.0,0.0,"SPELL_TOXIC_WASTE"),
 (@ENTRY,@SOURCETYPE,8,0,2,0,100,0,10,20,10000,12000,11,68989,0,0,0,0,0,5,0,0,0,0.0,0.0,0.0,0.0,"Poison Nova"),
 (@ENTRY,@SOURCETYPE,10,0,2,0,100,1,1,10,0,0,11,68335,2,0,0,0,0,1,0,0,0,0.0,0.0,0.0,0.0,"Enrage at 10%"),
 (@ENTRY,@SOURCETYPE,11,0,2,0,100,0,80,90,10000,70326,11,5649,0,0,0,0,0,5,0,0,0,0.0,0.0,0.0,0.0,"Stunning Blast "),
 (@ENTRY,@SOURCETYPE,12,0,2,0,100,1,30,40,0,0,11,66046,2,0,0,0,0,5,0,0,0,0.0,0.0,0.0,0.0,"Shield Block"),
 (@ENTRY,@SOURCETYPE,13,0,2,0,100,0,1,10,9000,13000,11,34784,0,0,0,0,0,5,0,0,0,0.0,0.0,0.0,0.0,"BLIZZARD"),
-(@ENTRY,@SOURCETYPE,14,0,2,0,100,1,60,95,0,0,1,/*ActionType 1*/1,0,0,0,0,0,2,0,0,0,0.0,0.0,0.0,0.0,"Yell 1"),
+(@ENTRY,@SOURCETYPE,14,0,2,0,100,1,60,95,0,0,1,1,0,0,0,0,0,2,0,0,0,0.0,0.0,0.0,0.0,"Yell 1"),
 (@ENTRY,@SOURCETYPE,15,0,2,0,100,1,75,80,0,0,1,2,0,0,0,0,0,2,0,0,0,0.0,0.0,0.0,0.0,"Yell 2"),
 (@ENTRY,@SOURCETYPE,16,0,2,0,100,1,20,30,0,0,1,3,0,0,0,0,0,2,0,0,0,0.0,0.0,0.0,0.0,"Yell 3"),
 (@ENTRY,@SOURCETYPE,17,0,2,0,100,1,1,5,0,0,1,4,0,0,0,0,0,2,0,0,0,0.0,0.0,0.0,0.0,"Yell 4"),
-(@ENTRY,@SOURCETYPE,35,0,2,0,100,1,70,85,0,0,11,69024,0,0,0,0,0,5,0,0,0,0.0,0.0,0.0,0.0,"SPELL_TOXIC_WASTE"),
+(@ENTRY,@SOURCETYPE,35,0,2,0,100,1,70,85,5000,15000,11,69024,0,0,0,0,0,5,0,0,0,0.0,0.0,0.0,0.0,"SPELL_TOXIC_WASTE"),
 (@ENTRY,@SOURCETYPE,18,0,2,0,100,1,90,100,0,0,11,54237,0,0,0,0,0,5,0,0,0,0.0,0.0,0.0,0.0,"Dark Barrage"),
 (@ENTRY,@SOURCETYPE,19,0,2,0,100,0,80,87,12000,13000,11,68989,0,0,0,0,0,5,0,0,0,0.0,0.0,0.0,0.0,"Poison Nova"),
 (@ENTRY,@SOURCETYPE,20,0,2,0,100,1,70,80,0,0,11,59971,0,0,0,0,0,5,0,0,0,0.0,0.0,0.0,0.0,"Rain of Fire"),
@@ -2558,10 +2553,37 @@ REPLACE INTO `smart_scripts` (`entryorguid`,`source_type`,`id`,`link`,`event_typ
 (@ENTRY,@SOURCETYPE,25,0,2,0,100,1,1,50,0,0,1,6,1,0,0,0,0,2,0,0,0,0.0,0.0,0.0,0.0,"Emote 6"),
 (@ENTRY,@SOURCETYPE,27,0,2,0,100,0,20,35,8000,9000,11,68989,0,0,0,0,0,5,0,0,0,0.0,0.0,0.0,0.0,"Poison Nova"),
 (@ENTRY,@SOURCETYPE,32,0,2,0,100,0,20,80,8000,9000,11,69015,0,0,0,0,0,5,0,0,0,0.0,0.0,0.0,0.0,"Cleave"),
-(@ENTRY,@SOURCETYPE,34,0,2,0,100,1,20,30,0,0,11,69024,0,0,0,0,0,5,0,0,0,0.0,0.0,0.0,0.0,"SPELL_TOXIC_WASTE"),
+(@ENTRY,@SOURCETYPE,34,0,0,0,100,1,20,30,10000,15000,11,69024,0,0,0,0,0,5,0,0,0,0.0,0.0,0.0,0.0,"SPELL_TOXIC_WASTE"),
 (@ENTRY,@SOURCETYPE,28,0,2,0,100,0,20,30,8000,9000,11,56431,0,0,0,0,0,5,0,0,0,0.0,0.0,0.0,0.0,"Arcane Bomb"),
 (@ENTRY,@SOURCETYPE,30,0,2,0,100,1,1,0,0,0,1,7,0,0,0,0,0,2,0,0,0,0.0,0.0,0.0,0.0,"Yell 5"),
 (@ENTRY,@SOURCETYPE,33,0,2,0,100,0,1,10,9000,15000,11,74806,0,0,0,0,0,5,0,0,0,0.0,0.0,0.0,0.0,"Dark Breath"),
+(@ENTRY,@SOURCETYPE,
+/*  id */  40,
+/* link  */0,
+/* event_type*/5,
+/* event_phase_mask */0,
+/* event_chance  */100,
+/* event_flags  */0,
+/* event_param1 */1,
+/* event_param2  */10,
+/* event_param3   */1,
+/* event_param4 */0,
+/* action_type  */11,
+/* action_param1 */74398,
+/* action_param2 */2,
+/* action_param3  */0,
+/* action_param4  */0,
+/* action_param5  */0,
+/* action_param6 */0,
+/* target_type  */5,
+/* target_param1 */0,
+/* target_param2*/0,
+/* target_param3  */0,
+/* target_x  */0.0,
+/* target_y   */0.0,
+/* target_z  */0.0,
+/* target_o */0.0,
+/* comment  */"Summon"),
 (@ENTRY,@SOURCETYPE,31,0,2,0,100,0,5,10,8000,9000,11,56910,0,0,0,0,0,5,0,0,0,0.0,0.0,0.0,0.0,"Sartahrion");
 
 
@@ -2922,7 +2944,7 @@ DELETE FROM `creature_loot_template` WHERE `Entry` = 800030;
 REPLACE INTO `creature_loot_template` (`Entry`,`Item`,`Reference`, `Chance`, `QuestRequired`, `LootMode`, `GroupId`, `MinCount`, `MaxCount`)
 VALUES (800030, 52006, 0, 1, 0, 1, 0, 1, 1); 
 REPLACE INTO `creature_loot_template` (`Entry`,`Item`,`Reference`, `Chance`, `QuestRequired`, `LootMode`, `GroupId`, `MinCount`, `MaxCount`)
-VALUES (800030, 38186, 0, 0.1, 0, 1, 0, 5, 20);
+VALUES (800030, 38186, 0, 1, 0, 1, 0, 5, 20);
 
 
 REPLACE INTO `creature_loot_template` (`Entry`,`Item`,`Reference`, `Chance`, `QuestRequired`, `LootMode`, `GroupId`, `MinCount`, `MaxCount`)
@@ -3018,10 +3040,10 @@ VALUES ( /*  ID */ 800030,
   /* Racial Leader  */0,
  /* movement id  */ 0, 
   /*  RegenHealth`` */1, 
-  /*  mechanic_immune_mask` */2145370111, 
+  /*  mechanic_immune_mask` */650854271, 
   /*  flags_extra` */0, 
   /* Scriptname  */'');
-UPDATE `creature_template` SET `HealthModifier`='1100', `ArmorModifier`='2', `DamageModifier`='160' WHERE `entry`='800030';
+UPDATE `creature_template` SET `HealthModifier`='1100', `ArmorModifier`='10', `DamageModifier`='160' WHERE `entry`='800030';
 
   
   
