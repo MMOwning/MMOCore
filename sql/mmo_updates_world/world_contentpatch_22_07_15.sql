@@ -1270,7 +1270,7 @@ VALUES ( /*  ID */ 800010,
   /* Racial Leader  */0,
  /* movement id  */ 0, 
   /*  RegenHealth`` */1, 
-  /*  mechanic_immune_mask` */650854271, 
+  /*  mechanic_immune_mask` */617299839, 
   /*  flags_extra` */0, 
   /* Scriptname  */'');
 UPDATE `creature_template` SET `HealthModifier`='400', `ArmorModifier`='10', `DamageModifier`='160' WHERE `entry`='800010';
@@ -2476,7 +2476,7 @@ VALUES ( /*  ID */ 800025,
   /* Racial Leader  */0,
  /* movement id  */ 0, 
   /*  RegenHealth`` */1, 
-  /*  mechanic_immune_mask` */650854271, 
+  /*  mechanic_immune_mask` */617299839, 
   /*  flags_extra` */0, 
   /* Scriptname  */'');
 UPDATE `creature_template` SET `HealthModifier`='1750', `ArmorModifier`='10', `DamageModifier`='120' WHERE `entry`='800025';
@@ -3040,7 +3040,7 @@ VALUES ( /*  ID */ 800030,
   /* Racial Leader  */0,
  /* movement id  */ 0, 
   /*  RegenHealth`` */1, 
-  /*  mechanic_immune_mask` */650854271, 
+  /*  mechanic_immune_mask` */617299839, 
   /*  flags_extra` */0, 
   /* Scriptname  */'');
 UPDATE `creature_template` SET `HealthModifier`='1100', `ArmorModifier`='10', `DamageModifier`='160' WHERE `entry`='800030';
