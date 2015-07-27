@@ -1273,7 +1273,7 @@ VALUES ( /*  ID */ 800010,
   /*  mechanic_immune_mask` */650854271, 
   /*  flags_extra` */0, 
   /* Scriptname  */'');
-UPDATE `creature_template` SET `HealthModifier`='300', `ArmorModifier`='10', `DamageModifier`='160' WHERE `entry`='800010';
+UPDATE `creature_template` SET `HealthModifier`='400', `ArmorModifier`='10', `DamageModifier`='160' WHERE `entry`='800010';
 
   
   
@@ -2986,7 +2986,7 @@ VALUES ( /*  ID */ 800030,
   /* Modelid3   */0,
   /* Model4  */ 0,
  /* Name  */'Die gequälte Seele',
-  /*  Subname */'',
+  /*  Subname */'Pihaar',
   /*  Iconname */'',
   /* gossip_menu_id`  */0,
   /*  Min Level */80,
