@@ -1180,24 +1180,24 @@ VALUES (800010, 50194, 0, 12, 0, 1, 1, 1, 1);
 
 
 REPLACE INTO `creature_loot_template` (`Entry`,`Item`,`Reference`, `Chance`, `QuestRequired`, `LootMode`, `GroupId`, `MinCount`, `MaxCount`)
-VALUES (800010, 49822, 0, 12, 0, 1, 2, 1, 1);
+VALUES (800010, 49822, 0, 25, 0, 1, 2, 1, 1);
 REPLACE INTO `creature_loot_template` (`Entry`,`Item`,`Reference`, `Chance`, `QuestRequired`, `LootMode`, `GroupId`, `MinCount`, `MaxCount`)
-VALUES (800010, 49825, 0, 12, 0, 1, 2, 1, 1); 
+VALUES (800010, 49825, 0, 25, 0, 1, 2, 1, 1); 
 REPLACE INTO `creature_loot_template` (`Entry`,`Item`,`Reference`, `Chance`, `QuestRequired`, `LootMode`, `GroupId`, `MinCount`, `MaxCount`)
-VALUES (800010, 49788, 0, 12, 0, 1, 2, 1, 1); 
+VALUES (800010, 49788, 0, 25, 0, 1, 2, 1, 1); 
 REPLACE INTO `creature_loot_template` (`Entry`,`Item`,`Reference`, `Chance`, `QuestRequired`, `LootMode`, `GroupId`, `MinCount`, `MaxCount`)
-VALUES (800010, 45144, 0, 12, 0, 1, 2, 1, 1); 
+VALUES (800010, 45144, 0, 25, 0, 1, 2, 1, 1); 
 
 REPLACE INTO `creature_loot_template` (`Entry`,`Item`,`Reference`, `Chance`, `QuestRequired`, `LootMode`, `GroupId`, `MinCount`, `MaxCount`)
-VALUES (800010, 49798, 0, 12, 0, 1, 3, 1, 1); 
+VALUES (800010, 49798, 0, 25, 0, 1, 3, 1, 1); 
 REPLACE INTO `creature_loot_template` (`Entry`,`Item`,`Reference`, `Chance`, `QuestRequired`, `LootMode`, `GroupId`, `MinCount`, `MaxCount`)
-VALUES (800010, 49789, 0, 12, 0, 1, 3, 1, 1); 
+VALUES (800010, 49789, 0, 25, 0, 1, 3, 1, 1); 
 REPLACE INTO `creature_loot_template` (`Entry`,`Item`,`Reference`, `Chance`, `QuestRequired`, `LootMode`, `GroupId`, `MinCount`, `MaxCount`)
-VALUES (800010, 50380, 0, 12, 0, 1, 3, 1, 1); 
+VALUES (800010, 50380, 0, 25, 0, 1, 3, 1, 1); 
 REPLACE INTO `creature_loot_template` (`Entry`,`Item`,`Reference`, `Chance`, `QuestRequired`, `LootMode`, `GroupId`, `MinCount`, `MaxCount`)
-VALUES (800010, 50379, 0, 12, 0, 1, 3, 1, 1); 
+VALUES (800010, 50379, 0, 12.5, 0, 1, 3, 1, 1); 
 REPLACE INTO `creature_loot_template` (`Entry`,`Item`,`Reference`, `Chance`, `QuestRequired`, `LootMode`, `GroupId`, `MinCount`, `MaxCount`)
-VALUES (800010, 45142, 0, 12, 0, 1, 3, 1, 1); 
+VALUES (800010, 45142, 0, 12.5, 0, 1, 3, 1, 1); 
 
 
 
@@ -1273,7 +1273,7 @@ VALUES ( /*  ID */ 800010,
   /*  mechanic_immune_mask` */650854271, 
   /*  flags_extra` */0, 
   /* Scriptname  */'');
-UPDATE `creature_template` SET `HealthModifier`='200', `ArmorModifier`='10', `DamageModifier`='160' WHERE `entry`='800010';
+UPDATE `creature_template` SET `HealthModifier`='300', `ArmorModifier`='10', `DamageModifier`='160' WHERE `entry`='800010';
 
   
   
