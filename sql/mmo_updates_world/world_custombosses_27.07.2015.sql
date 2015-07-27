@@ -1044,7 +1044,7 @@ DELETE FROM `creature_loot_template` WHERE `Entry` = 800039;
 REPLACE INTO `creature_loot_template` (`Entry`,`Item`,`Reference`, `Chance`, `QuestRequired`, `LootMode`, `GroupId`, `MinCount`, `MaxCount`)
 VALUES (800039, 52006, 0, 1, 0, 1, 0, 1, 1); 
 REPLACE INTO `creature_loot_template` (`Entry`,`Item`,`Reference`, `Chance`, `QuestRequired`, `LootMode`, `GroupId`, `MinCount`, `MaxCount`)
-VALUES (800039, 38186, 0, 1, 0, 1, 0, 15, 50);
+VALUES (800039, 38186, 0, 1, 0, 1, 0, 5, 25);
 
 
 REPLACE INTO `creature_loot_template` (`Entry`,`Item`,`Reference`, `Chance`, `QuestRequired`, `LootMode`, `GroupId`, `MinCount`, `MaxCount`)
