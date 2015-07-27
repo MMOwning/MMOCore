@@ -491,10 +491,10 @@ REPLACE INTO `smart_scripts` (`entryorguid`,`source_type`,`id`,`link`,`event_typ
 /* target_param1 */0,
 /* target_param2*/0,
 /* target_param3  */0,
-/* target_x  */-11785.34,
-/* target_y   */-3528.90,
-/* target_z  */87.46,
-/* target_o */5.58,
+/* target_x  */-11764.75,
+/* target_y   */-3560.32,
+/* target_z  */86.50,
+/* target_o */5.31,
 /* comment  */"Teleport_Marltyriun");
 
 UPDATE creature_template SET AIName="SmartAI" WHERE entry=@ENTRY LIMIT 1;
