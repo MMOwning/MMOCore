@@ -70,43 +70,43 @@ VALUES ( /*  ID */ 60001,
   
   
 REPLACE INTO `creature` (`guid`,`id`,`map`,`spawnMask`,`phaseMask`,`modelid`,`equipment_id`,`position_x`,`position_y`,`position_z`,`orientation`,`spawntimesecs`,`spawndist`,`currentwaypoint`,`curhealth`,`curmana`,`MovementType`) VALUES 
-('60001','60001','0','1','1','18718','0','-9790.45','2133.42','10.70','5.005','25','0','0','1000000','250000','0');
+('600001','60001','0','1','1','18718','0','-9790.45','2133.42','10.70','5.005','25','0','0','1000000','250000','0');
 
 REPLACE INTO `creature` (`guid`,`id`,`map`,`spawnMask`,`phaseMask`,`modelid`,`equipment_id`,`position_x`,`position_y`,`position_z`,`orientation`,`spawntimesecs`,`spawndist`,`currentwaypoint`,`curhealth`,`curmana`,`MovementType`) VALUES 
-('60002','60001','0','1','1','18718','0','-820.17','1534.69','19.08','1.11','25','0','0','1000000','250000','0');
+('600002','60001','0','1','1','18718','0','-820.17','1534.69','19.08','1.11','25','0','0','1000000','250000','0');
 
 REPLACE INTO `creature` (`guid`,`id`,`map`,`spawnMask`,`phaseMask`,`modelid`,`equipment_id`,`position_x`,`position_y`,`position_z`,`orientation`,`spawntimesecs`,`spawndist`,`currentwaypoint`,`curhealth`,`curmana`,`MovementType`) VALUES 
-('60003','60001','571','1','1','18718','0','5742.28','607.95','617.99','5.521','25','0','0','1000000','250000','0');
+('600003','60001','571','1','1','18718','0','5742.28','607.95','617.99','5.521','25','0','0','1000000','250000','0');
 
 REPLACE INTO `creature` (`guid`,`id`,`map`,`spawnMask`,`phaseMask`,`modelid`,`equipment_id`,`position_x`,`position_y`,`position_z`,`orientation`,`spawntimesecs`,`spawndist`,`currentwaypoint`,`curhealth`,`curmana`,`MovementType`) VALUES 
-('60004','60001','0','1','1','18718','0','-12560.83','-1335.13','48.15','4.63','25','0','0','1000000','250000','0');
+('600004','60001','0','1','1','18718','0','-12560.83','-1335.13','48.15','4.63','25','0','0','1000000','250000','0');
 
 REPLACE INTO `creature` (`guid`,`id`,`map`,`spawnMask`,`phaseMask`,`modelid`,`equipment_id`,`position_x`,`position_y`,`position_z`,`orientation`,`spawntimesecs`,`spawndist`,`currentwaypoint`,`curhealth`,`curmana`,`MovementType`) VALUES 
-('60005','60001','0','1','1','18718','0','-7430.47','-2003.74','313.34','4.57','25','0','0','1000000','250000','0');
+('600005','60001','0','1','1','18718','0','-7430.47','-2003.74','313.34','4.57','25','0','0','1000000','250000','0');
 
 REPLACE INTO `creature` (`guid`,`id`,`map`,`spawnMask`,`phaseMask`,`modelid`,`equipment_id`,`position_x`,`position_y`,`position_z`,`orientation`,`spawntimesecs`,`spawndist`,`currentwaypoint`,`curhealth`,`curmana`,`MovementType`) VALUES 
-('60006','60001','0','1','1','18718','0','-12957.91','-1777.30','136.65','3.27','25','0','0','1000000','250000','0');
+('600006','60001','0','1','1','18718','0','-12957.91','-1777.30','136.65','3.27','25','0','0','1000000','250000','0');
 /* Bei 60008 weitermachen */
 REPLACE INTO `creature` (`guid`,`id`,`map`,`spawnMask`,`phaseMask`,`modelid`,`equipment_id`,`position_x`,`position_y`,`position_z`,`orientation`,`spawntimesecs`,`spawndist`,`currentwaypoint`,`curhealth`,`curmana`,`MovementType`) VALUES 
-('60008','60001','530','1','1','18718','0','-2791.75','487.38','-24.59','0.48','25','0','0','1000000','250000','0');
+('600008','60001','530','1','1','18718','0','-2791.75','487.38','-24.59','0.48','25','0','0','1000000','250000','0');
 
 REPLACE INTO `creature` (`guid`,`id`,`map`,`spawnMask`,`phaseMask`,`modelid`,`equipment_id`,`position_x`,`position_y`,`position_z`,`orientation`,`spawntimesecs`,`spawndist`,`currentwaypoint`,`curhealth`,`curmana`,`MovementType`) VALUES 
-('60009','60001','1','1','1','18718','0','-8030.87','1619.41','18.02','4.31','25','0','0','1000000','250000','0');
+('600009','60001','1','1','1','18718','0','-8030.87','1619.41','18.02','4.31','25','0','0','1000000','250000','0');
 
 REPLACE INTO `creature` (`guid`,`id`,`map`,`spawnMask`,`phaseMask`,`modelid`,`equipment_id`,`position_x`,`position_y`,`position_z`,`orientation`,`spawntimesecs`,`spawndist`,`currentwaypoint`,`curhealth`,`curmana`,`MovementType`) VALUES 
-('60010','60001','571','1','1','18718','0','2973.88','-5825.55','262.96','1.6','25','0','0','1000000','250000','0');
+('600010','60001','571','1','1','18718','0','2973.88','-5825.55','262.96','1.6','25','0','0','1000000','250000','0');
 
 REPLACE INTO `creature` (`guid`,`id`,`map`,`spawnMask`,`phaseMask`,`modelid`,`equipment_id`,`position_x`,`position_y`,`position_z`,`orientation`,`spawntimesecs`,`spawndist`,`currentwaypoint`,`curhealth`,`curmana`,`MovementType`) VALUES 
-('60011','60001','37','1','1','18718','0','-77.33','-50.54','270.42','2.06','25','0','0','1000000','250000','0');
+('600011','60001','37','1','1','18718','0','-77.33','-50.54','270.42','2.06','25','0','0','1000000','250000','0');
 
 REPLACE INTO `creature` (`guid`,`id`,`map`,`spawnMask`,`phaseMask`,`modelid`,`equipment_id`,`position_x`,`position_y`,`position_z`,`orientation`,`spawntimesecs`,`spawndist`,`currentwaypoint`,`curhealth`,`curmana`,`MovementType`) VALUES 
-('60012','60001','0','1','1','18718','0','-12473.71','-2676.62','89.98','3.16','25','0','0','1000000','250000','0');
+('600012','60001','0','1','1','18718','0','-12473.71','-2676.62','89.98','3.16','25','0','0','1000000','250000','0');
 
 REPLACE INTO `creature` (`guid`,`id`,`map`,`spawnMask`,`phaseMask`,`modelid`,`equipment_id`,`position_x`,`position_y`,`position_z`,`orientation`,`spawntimesecs`,`spawndist`,`currentwaypoint`,`curhealth`,`curmana`,`MovementType`) VALUES 
-('60013','60001','0','1','1','18718','0','-11767.65','-3514.68','86.74','4.74','25','0','0','1000000','250000','0');
+('600013','60001','0','1','1','18718','0','-11767.65','-3514.68','86.74','4.74','25','0','0','1000000','250000','0');
 
 REPLACE INTO `creature` (`guid`,`id`,`map`,`spawnMask`,`phaseMask`,`modelid`,`equipment_id`,`position_x`,`position_y`,`position_z`,`orientation`,`spawntimesecs`,`spawndist`,`currentwaypoint`,`curhealth`,`curmana`,`MovementType`) VALUES 
-('60014','60001','0','1','1','18718','0','-6363.82','-2312.34','390.93','6.25','25','0','0','1000000','250000','0');
+('600014','60001','0','1','1','18718','0','-6363.82','-2312.34','390.93','6.25','25','0','0','1000000','250000','0');
 
 
 
