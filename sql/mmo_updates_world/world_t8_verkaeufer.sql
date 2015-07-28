@@ -69,6 +69,11 @@ VALUES ( /*  ID */ 800043,
   /*  mechanic_immune_mask` */0, 
   /*  flags_extra` */0, 
   /* Scriptname  */'');
+  
+
+DELETE FROM `creature` WHERE `id` = 800043;
+REPLACE INTO `creature` (`guid`,`id`,`map`,`spawnMask`,`phaseMask`,`modelid`,`equipment_id`,`position_x`,`position_y`,`position_z`,`orientation`,`spawntimesecs`,`spawndist`,`currentwaypoint`,`curhealth`,`curmana`,`MovementType`) VALUES 
+('800043','800043','0','1','1','17072','0','-4817.62','1798.74','130.93','0.11','25','0','0','1000000','250000','0');
  
 
 DELETE FROM `npc_vendor` WHERE `entry` =800043;  
