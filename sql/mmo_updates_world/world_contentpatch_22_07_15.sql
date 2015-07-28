@@ -534,7 +534,7 @@ REPLACE INTO `item_template` (`entry`, `class`, `subclass`, `name`, `displayid`,
 
 
 
-REPLACE INTO `item_template` (`entry`, `class`, `subclass`, `name`, `displayid`, `Quality`, `Flags`, `FlagsExtra`, `BuyCount`, `BuyPrice`, `SellPrice`, `InventoryType`, `AllowableClass`, `AllowableRace`, `ItemLevel`, `RequiredLevel`, `RequiredSkill`, `RequiredSkillRank`, `requiredspell`, `requiredhonorrank`, `RequiredCityRank`, `RequiredReputationFaction`, `RequiredReputationRank`, `maxcount`, `stackable`, `ContainerSlots`, `StatsCount`, `stat_type1`, `stat_value1`, `stat_type2`, `stat_value2`, `stat_type3`, `stat_value3`, `stat_type4`, `stat_value4`, `stat_type5`, `stat_value5`, `stat_type6`, `stat_value6`, `stat_type7`, `stat_value7`, `stat_type8`, `stat_value8`, `stat_type9`, `stat_value9`, `stat_type10`, `stat_value10`, `ScalingStatDistribution`, `ScalingStatValue`, `dmg_min1`, `dmg_max1`, `dmg_type1`, `dmg_min2`, `dmg_max2`, `dmg_type2`, `armor`, `holy_res`, `fire_res`, `nature_res`, `frost_res`, `shadow_res`, `arcane_res`, `delay`, `ammo_type`, `RangedModRange`, `spellid_1`, `spelltrigger_1`, `spellcharges_1`, `spellppmRate_1`, `spellcooldown_1`, `spellcategory_1`, `spellcategorycooldown_1`, `spellid_2`, `spelltrigger_2`, `spellcharges_2`, `spellppmRate_2`, `spellcooldown_2`, `spellcategory_2`, `spellcategorycooldown_2`, `spellid_3`, `spelltrigger_3`, `spellcharges_3`, `spellppmRate_3`, `spellcooldown_3`, `spellcategory_3`, `spellcategorycooldown_3`, `spellid_4`, `spelltrigger_4`, `spellcharges_4`, `spellppmRate_4`, `spellcooldown_4`, `spellcategory_4`, `spellcategorycooldown_4`, `spellid_5`, `spelltrigger_5`, `spellcharges_5`, `spellppmRate_5`, `spellcooldown_5`, `spellcategory_5`, `spellcategorycooldown_5`, `bonding`, `description`, `PageText`, `LanguageID`, `PageMaterial`, `startquest`, `lockid`, `Material`, `sheath`, `RandomProperty`, `RandomSuffix`, `block`, `itemset`, `MaxDurability`, `area`, `Map`, `BagFamily`, `TotemCategory`, `socketColor_1`, `socketContent_1`, `socketColor_2`, `socketContent_2`, `socketColor_3`, `socketContent_3`, `socketBonus`, `GemProperties`, `RequiredDisenchantSkill`, `ArmorDamageModifier`, `duration`, `ItemLimitCategory`, `HolidayId`, `ScriptName`, `DisenchantID`, `FoodType`, `minMoneyLoot`, `maxMoneyLoot`, `flagsCustom`) VALUES (700504, 12, 0, 'Kristaline Essenz von Smariss', 64092, 5, 8, 0, 0, 0, 0, 0, 2047, 1791, 1, 80, 0, 0, 0, 0, 0, 1770, 0, 1, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, '', 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 4);
+REPLACE INTO `item_template` (`entry`, `class`, `subclass`, `name`, `displayid`, `Quality`, `Flags`, `FlagsExtra`, `BuyCount`, `BuyPrice`, `SellPrice`, `InventoryType`, `AllowableClass`, `AllowableRace`, `ItemLevel`, `RequiredLevel`, `RequiredSkill`, `RequiredSkillRank`, `requiredspell`, `requiredhonorrank`, `RequiredCityRank`, `RequiredReputationFaction`, `RequiredReputationRank`, `maxcount`, `stackable`, `ContainerSlots`, `StatsCount`, `stat_type1`, `stat_value1`, `stat_type2`, `stat_value2`, `stat_type3`, `stat_value3`, `stat_type4`, `stat_value4`, `stat_type5`, `stat_value5`, `stat_type6`, `stat_value6`, `stat_type7`, `stat_value7`, `stat_type8`, `stat_value8`, `stat_type9`, `stat_value9`, `stat_type10`, `stat_value10`, `ScalingStatDistribution`, `ScalingStatValue`, `dmg_min1`, `dmg_max1`, `dmg_type1`, `dmg_min2`, `dmg_max2`, `dmg_type2`, `armor`, `holy_res`, `fire_res`, `nature_res`, `frost_res`, `shadow_res`, `arcane_res`, `delay`, `ammo_type`, `RangedModRange`, `spellid_1`, `spelltrigger_1`, `spellcharges_1`, `spellppmRate_1`, `spellcooldown_1`, `spellcategory_1`, `spellcategorycooldown_1`, `spellid_2`, `spelltrigger_2`, `spellcharges_2`, `spellppmRate_2`, `spellcooldown_2`, `spellcategory_2`, `spellcategorycooldown_2`, `spellid_3`, `spelltrigger_3`, `spellcharges_3`, `spellppmRate_3`, `spellcooldown_3`, `spellcategory_3`, `spellcategorycooldown_3`, `spellid_4`, `spelltrigger_4`, `spellcharges_4`, `spellppmRate_4`, `spellcooldown_4`, `spellcategory_4`, `spellcategorycooldown_4`, `spellid_5`, `spelltrigger_5`, `spellcharges_5`, `spellppmRate_5`, `spellcooldown_5`, `spellcategory_5`, `spellcategorycooldown_5`, `bonding`, `description`, `PageText`, `LanguageID`, `PageMaterial`, `startquest`, `lockid`, `Material`, `sheath`, `RandomProperty`, `RandomSuffix`, `block`, `itemset`, `MaxDurability`, `area`, `Map`, `BagFamily`, `TotemCategory`, `socketColor_1`, `socketContent_1`, `socketColor_2`, `socketContent_2`, `socketColor_3`, `socketContent_3`, `socketBonus`, `GemProperties`, `RequiredDisenchantSkill`, `ArmorDamageModifier`, `duration`, `ItemLimitCategory`, `HolidayId`, `ScriptName`, `DisenchantID`, `FoodType`, `minMoneyLoot`, `maxMoneyLoot`, `flagsCustom`) VALUES (700504, 12, 0, 'Kristaline Essenz von Smariss', 64092, 5, 8, 0, 0, 0, 0, 0, 2047, 1791, 80, 80, 0, 0, 0, 0, 0, 1770, 0, 1, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, '', 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 4);
 
 
 REPLACE INTO `item_template` (`entry`, `class`, `subclass`, `name`, `displayid`, `Quality`, `Flags`, `FlagsExtra`, `BuyCount`, `BuyPrice`, `SellPrice`, `InventoryType`, `AllowableClass`, `AllowableRace`, `ItemLevel`, `RequiredLevel`, `RequiredSkill`, `RequiredSkillRank`, `requiredspell`, `requiredhonorrank`, `RequiredCityRank`, `RequiredReputationFaction`, `RequiredReputationRank`, `maxcount`, `stackable`, `ContainerSlots`, `StatsCount`, `stat_type1`, `stat_value1`, `stat_type2`, `stat_value2`, `stat_type3`, `stat_value3`, `stat_type4`, `stat_value4`, `stat_type5`, `stat_value5`, `stat_type6`, `stat_value6`, `stat_type7`, `stat_value7`, `stat_type8`, `stat_value8`, `stat_type9`, `stat_value9`, `stat_type10`, `stat_value10`, `ScalingStatDistribution`, `ScalingStatValue`, `dmg_min1`, `dmg_max1`, `dmg_type1`, `dmg_min2`, `dmg_max2`, `dmg_type2`, `armor`, `holy_res`, `fire_res`, `nature_res`, `frost_res`, `shadow_res`, `arcane_res`, `delay`, `ammo_type`, `RangedModRange`, `spellid_1`, `spelltrigger_1`, `spellcharges_1`, `spellppmRate_1`, `spellcooldown_1`, `spellcategory_1`, `spellcategorycooldown_1`, `spellid_2`, `spelltrigger_2`, `spellcharges_2`, `spellppmRate_2`, `spellcooldown_2`, `spellcategory_2`, `spellcategorycooldown_2`, `spellid_3`, `spelltrigger_3`, `spellcharges_3`, `spellppmRate_3`, `spellcooldown_3`, `spellcategory_3`, `spellcategorycooldown_3`, `spellid_4`, `spelltrigger_4`, `spellcharges_4`, `spellppmRate_4`, `spellcooldown_4`, `spellcategory_4`, `spellcategorycooldown_4`, `spellid_5`, `spelltrigger_5`, `spellcharges_5`, `spellppmRate_5`, `spellcooldown_5`, `spellcategory_5`, `spellcategorycooldown_5`, `bonding`, `description`, `PageText`, `LanguageID`, `PageMaterial`, `startquest`, `lockid`, `Material`, `sheath`, `RandomProperty`, `RandomSuffix`, `block`, `itemset`, `MaxDurability`, `area`, `Map`, `BagFamily`, `TotemCategory`, `socketColor_1`, `socketContent_1`, `socketColor_2`, `socketContent_2`, `socketColor_3`, `socketContent_3`, `socketBonus`, `GemProperties`, `RequiredDisenchantSkill`, `ArmorDamageModifier`, `duration`, `ItemLimitCategory`, `HolidayId`, `ScriptName`, `DisenchantID`, `FoodType`, `minMoneyLoot`, `maxMoneyLoot`, `flagsCustom`) VALUES (700505, 12, 0, 'Kristaline Essenz von Lethon', 64092, 5, 8, 0, 1, 0, 0, 0, 2047, 1791, 80, 0, 0, 0, 0, 0, 0, 0, 0, 0, 20, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, -1, 0, -1, 0, 0, 0, 0, -1, 0, -1, 0, 0, 0, 0, -1, 0, -1, 0, 0, 0, 0, -1, 0, -1, 0, 0, 0, 0, -1, 0, -1, 4, '', 0, 0, 0, 0, 0, -1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, -1, 0, 0, 0, 0, '', 0, 0, 0, 0, 0);
@@ -793,293 +793,7 @@ REPLACE INTO `gameobject` (`guid`, `id`, `map`, `zoneId`, `areaId`, `spawnMask`,
 
 REPLACE INTO `gameobject` (`guid`, `id`, `map`, `zoneId`, `areaId`, `spawnMask`, `phaseMask`, `position_x`, `position_y`, `position_z`, `orientation`, `rotation2`, `rotation3`, `spawntimesecs`, `animprogress`, `state`, `VerifiedBuild`) VALUES ('800075', '192493', '0', '40', '2', '1', '1', '-9795.65', '2089.67', '10.35', '1.1200', '-0.38', '0.92388', '300', '0', '1', '1');
 
-REPLACE INTO `gameobject` (`guid`, `id`, `map`, `zoneId`, `areaId`, `spawnMask`, `phaseMask`, `position_x`, `position_y`, `position_z`, `orientation`, `rotation2`, `rotation3`, `spawntimesecs`, `animprogress`, `state`, `VerifiedBuild`) VALUES ('800076', '192493', '0', '40', '2', '1', '1', '-9804.27', '2098.83', '10.05', '1.1200', '-0.38', '0.92388', '300', '0', '1', '1');REPLACE INTO `creature_template` (`entry`, `difficulty_entry_1`, `difficulty_entry_2`, `difficulty_entry_3`, `KillCredit1`, `KillCredit2`, `modelid1`, `modelid2`, `modelid3`, `modelid4`, `name`, `subname`, `IconName`, `gossip_menu_id`, `minlevel`, `maxlevel`, `exp`,`faction` ,`npcflag`, `speed_walk`, `speed_run`, `scale`, `rank`, `dmgschool`, `BaseAttackTime`, `RangeAttackTime`, `unit_class`, `unit_flags`, `unit_flags2`, `dynamicflags`, `family`, `trainer_type`, `trainer_spell`, `trainer_class`, `trainer_race`, `type`, `type_flags`, `lootid`, `pickpocketloot`, `skinloot`, `resistance1`, `resistance2`, `resistance3`, `resistance4`, `resistance5`, `resistance6`, `spell1`, `spell2`, `spell3`, `spell4`, `spell5`, `spell6`, `spell7`, `spell8`, `PetSpellDataId`, `VehicleId`, `mingold`, `maxgold`, `AIName`, `MovementType`, `InhabitType`, `HoverHeight`, `RacialLeader`, `movementId`, `RegenHealth`, `mechanic_immune_mask`, `flags_extra`, `ScriptName`) 
-VALUES ( /*  ID */ 60001,
-  /*  Dificculty 1 */0,
- /* Dif2  */ 0,
-  /*  Dif3 */0,
-  /* KillCredit1  */0,
-  /*  KillCredit2  */0,
-  /* Modelid  */18718,
-  /* Modelid2  */0,
-  /* Modelid3   */0,
-  /* Model4  */ 0,
- /* Name  */'Seruc von Lantus',
-  /*  Subname */'Der Porter',
-  /*  Iconname */'',
-  /* gossip_menu_id`  */60001,
-  /*  Min Level */80,
-  /* Max Level  */80,
-  /*  Exp */0,
-  35,
-  /*  npcflag Was ist er Questgeber oder weiteres? */3,
-  /*  Speedwalk */0,
- /*  speedrun */ 1.14286,
-  /*  scale */1,
-  /*  rank  Normal, Elite?*/1,
-  /*  dmgschool Normal Holy Fire? */1,
-  /* BaseAttackTime`  */1,
-  /* RangeAttackTime`  */1,
-  /*  Welche Klasse? Krieger Pala, also Mana oder kein MAna? */0,
-  /*  unit flkag */2,
-  /*  unit flags2  */0,
-  /*  dynamicflag */0,
-  /* Family  */0,
-  /*  Trainer type */0,
-  /*  trainer spell */0,
-  /*  trainer class */0,
-  /* trainer race  */0,
-  /* type  */0,
-  /* type flag  */ 0,
-  /*  lootid */0,
-  /*  pickpocketloot` */0,
-/*Skinloot*/ 0,  
-  /* Restistance1  */100,
-  /*   */100,
-  /*   */100,
-  /*   */100,
-  /*   */100,
-  /*  Resi 6*/100,
-  /* spell1  */0, 
-  /*   */0,
-  /*   */0,
-  /*   */0, 
-  /*   */0, 
-  /*   */0, 
-  /*   */0, 
-  /*  Spell8 */0, 
-  /*  Petspelldataid */0, 
- /*   VehicleId` */ 0, 
-  /* mingold`  */0, 
-  /* MaxGold  */0, 
-  /*  AiName */'',
-  /*  Movement Type */1, 
-  /*Inahbit Type   */1, 
-  /*  Hoverheight */0, 
-  /* Racial Leader  */0,
- /* movement id  */ 0, 
-  /*  RegenHealth`` */1, 
-  /*  mechanic_immune_mask` */0, 
-  /*  flags_extra` */0, 
-  /* Scriptname  */'SmartAI');
-  
-  
-REPLACE INTO `creature` (`guid`,`id`,`map`,`spawnMask`,`phaseMask`,`modelid`,`equipment_id`,`position_x`,`position_y`,`position_z`,`orientation`,`spawntimesecs`,`spawndist`,`currentwaypoint`,`curhealth`,`curmana`,`MovementType`) VALUES 
-('60001','60001','0','1','1','18718','0','-9790.45','2133.42','10.70','5.005','25','0','0','1000000','250000','0');
-
-REPLACE INTO `creature` (`guid`,`id`,`map`,`spawnMask`,`phaseMask`,`modelid`,`equipment_id`,`position_x`,`position_y`,`position_z`,`orientation`,`spawntimesecs`,`spawndist`,`currentwaypoint`,`curhealth`,`curmana`,`MovementType`) VALUES 
-('60002','60001','0','1','1','18718','0','-820.17','1534.69','19.08','1.11','25','0','0','1000000','250000','0');
-
-REPLACE INTO `creature` (`guid`,`id`,`map`,`spawnMask`,`phaseMask`,`modelid`,`equipment_id`,`position_x`,`position_y`,`position_z`,`orientation`,`spawntimesecs`,`spawndist`,`currentwaypoint`,`curhealth`,`curmana`,`MovementType`) VALUES 
-('60003','60001','571','1','1','18718','0','5742.28','607.95','617.99','5.521','25','0','0','1000000','250000','0');
-
-REPLACE INTO `creature` (`guid`,`id`,`map`,`spawnMask`,`phaseMask`,`modelid`,`equipment_id`,`position_x`,`position_y`,`position_z`,`orientation`,`spawntimesecs`,`spawndist`,`currentwaypoint`,`curhealth`,`curmana`,`MovementType`) VALUES 
-('60004','60001','0','1','1','18718','0','-12560.83','-1335.13','48.15','4.63','25','0','0','1000000','250000','0');
-
-REPLACE INTO `creature` (`guid`,`id`,`map`,`spawnMask`,`phaseMask`,`modelid`,`equipment_id`,`position_x`,`position_y`,`position_z`,`orientation`,`spawntimesecs`,`spawndist`,`currentwaypoint`,`curhealth`,`curmana`,`MovementType`) VALUES 
-('60005','60001','0','1','1','18718','0','-7430.47','-2003.74','313.34','4.57','25','0','0','1000000','250000','0');
-
-REPLACE INTO `creature` (`guid`,`id`,`map`,`spawnMask`,`phaseMask`,`modelid`,`equipment_id`,`position_x`,`position_y`,`position_z`,`orientation`,`spawntimesecs`,`spawndist`,`currentwaypoint`,`curhealth`,`curmana`,`MovementType`) VALUES 
-('60006','60001','0','1','1','18718','0','-12957.91','-1777.30','136.65','3.27','25','0','0','1000000','250000','0');
-/* Bei 60008 weitermachen */
-
-
-REPLACE INTO `npc_text` (ID, text0_0, text0_1, BroadcastTextID0, lang0, Probability0, em0_0, em0_1, em0_2, em0_3, em0_4, em0_5, text1_0, text1_1, BroadcastTextID1, lang1, Probability1, em1_0, em1_1, em1_2, em1_3, em1_4, em1_5, text2_0, text2_1, BroadcastTextID2, lang2, Probability2, em2_0, em2_1, em2_2, em2_3, em2_4, em2_5, text3_0, text3_1, BroadcastTextID3, lang3, Probability3, em3_0, em3_1, em3_2, em3_3, em3_4, em3_5, text4_0, text4_1, BroadcastTextID4, lang4, Probability4, em4_0, em4_1, em4_2, em4_3, em4_4, em4_5, text5_0, text5_1, BroadcastTextID5, lang5, Probability5, em5_0, em5_1, em5_2, em5_3, em5_4, em5_5, text6_0, text6_1, BroadcastTextID6, lang6, Probability6, em6_0, em6_1, em6_2, em6_3, em6_4, em6_5, text7_0, text7_1, BroadcastTextID7, lang7, Probability7, em7_0, em7_1, em7_2, em7_3, em7_4, em7_5, VerifiedBuild) VALUES
-('60001', 'Teleport zum PVP Areal', 'Teleport zum PVP Areal', '26965', '0', '100', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0');
-
-REPLACE INTO `gossip_menu_option` (`menu_id`, `id`, `option_icon`, `option_text`, `OptionBroadcastTextID`, `option_id`, `npc_option_npcflag`, `box_text`) VALUES ('60001', '1', '0', 'Teleport zum PVP Areal', '0', '1', '1', 'Soll geportet werden?');
-REPLACE INTO `gossip_menu_option` (`menu_id`, `id`, `option_icon`, `option_text`, `OptionBroadcastTextID`, `option_id`, `npc_option_npcflag`, `box_text`) VALUES ('60001', '2', '0', 'Teleport zur "Insel"', '0', '1', '1', 'Soll geportet werden?');
-REPLACE INTO `gossip_menu_option` (`menu_id`, `id`, `option_icon`, `option_text`, `OptionBroadcastTextID`, `option_id`, `npc_option_npcflag`, `box_text`) VALUES ('60001', '3', '0', 'Teleport zur Yasio', '0', '1', '1', 'Soll geportet werden?');
-REPLACE INTO `gossip_menu_option` (`menu_id`, `id`, `option_icon`, `option_text`, `OptionBroadcastTextID`, `option_id`, `npc_option_npcflag`, `box_text`) VALUES ('60001', '4', '0', 'Boss: Teleport zu Orrig', '0', '1', '1', 'Soll geportet werden?');
-REPLACE INTO `gossip_menu_option` (`menu_id`, `id`, `option_icon`, `option_text`, `OptionBroadcastTextID`, `option_id`, `npc_option_npcflag`, `box_text`) VALUES ('60001', '5', '0', 'Boss: Teleport Exitares Schatten', '0', '1', '1', 'Soll geportet werden?');
-REPLACE INTO `gossip_menu_option` (`menu_id`, `id`, `option_icon`, `option_text`, `OptionBroadcastTextID`, `option_id`, `npc_option_npcflag`, `box_text`) VALUES ('60001', '6', '0', 'Boss: Teleport Gequälte Seele', '0', '1', '1', 'Soll geportet werden?');
-
-
-SET @ENTRY := 60001;
-SET @SOURCETYPE := 0;
-
-UPDATE creature_template SET AIName="SmartAI" WHERE entry=@ENTRY LIMIT 1;
-REPLACE INTO `smart_scripts` (`entryorguid`,`source_type`,`id`,`link`,`event_type`,`event_phase_mask`,`event_chance`,`event_flags`,`event_param1`,`event_param2`,`event_param3`,`event_param4`,`action_type`,`action_param1`,`action_param2`,`action_param3`,`action_param4`,`action_param5`,`action_param6`,`target_type`,`target_param1`,`target_param2`,`target_param3`,`target_x`,`target_y`,`target_z`,`target_o`,`comment`) VALUES 
-(@ENTRY,@SOURCETYPE,
-/*  id */  1,
-/* link  */0,
-/* event_type*/62,
-/* event_phase_mask */0,
-/* event_chance  */100,
-/* event_flags  */0,
-/* event_param1 */60001,
-/* event_param2  */1,
-/* event_param3   */0,
-/* event_param4 */0,
-/* action_type  */62,
-/* action_param1 */0,
-/* action_param2 */0,
-/* action_param3  */0,
-/* action_param4  */0,
-/* action_param5  */0,
-/* action_param6 */0,
-/* target_type  */7,
-/* target_param1 */0,
-/* target_param2*/0,
-/* target_param3  */0,
-/* target_x  */-793.67,
-/* target_y   */1565.25,
-/* target_z  */19.88,
-/* target_o */3.25,
-/* comment  */"Teleport PvP");
-
-UPDATE creature_template SET AIName="SmartAI" WHERE entry=@ENTRY LIMIT 1;
-REPLACE INTO `smart_scripts` (`entryorguid`,`source_type`,`id`,`link`,`event_type`,`event_phase_mask`,`event_chance`,`event_flags`,`event_param1`,`event_param2`,`event_param3`,`event_param4`,`action_type`,`action_param1`,`action_param2`,`action_param3`,`action_param4`,`action_param5`,`action_param6`,`target_type`,`target_param1`,`target_param2`,`target_param3`,`target_x`,`target_y`,`target_z`,`target_o`,`comment`) VALUES 
-(@ENTRY,@SOURCETYPE,
-/*  id */  2,
-/* link  */0,
-/* event_type*/62,
-/* event_phase_mask */0,
-/* event_chance  */100,
-/* event_flags  */0,
-/* event_param1 */60001,
-/* event_param2  */2,
-/* event_param3   */0,
-/* event_param4 */0,
-/* action_type  */62,
-/* action_param1 */0,
-/* action_param2 */0,
-/* action_param3  */0,
-/* action_param4  */0,
-/* action_param5  */0,
-/* action_param6 */0,
-/* target_type  */7,
-/* target_param1 */0,
-/* target_param2*/0,
-/* target_param3  */0,
-/* target_x  */-9773.09,
-/* target_y   */2126.72,
-/* target_z  */15.40,
-/* target_o */3.88,
-/* comment  */"Teleport Insel");
-
-
-UPDATE creature_template SET AIName="SmartAI" WHERE entry=@ENTRY LIMIT 1;
-REPLACE INTO `smart_scripts` (`entryorguid`,`source_type`,`id`,`link`,`event_type`,`event_phase_mask`,`event_chance`,`event_flags`,`event_param1`,`event_param2`,`event_param3`,`event_param4`,`action_type`,`action_param1`,`action_param2`,`action_param3`,`action_param4`,`action_param5`,`action_param6`,`target_type`,`target_param1`,`target_param2`,`target_param3`,`target_x`,`target_y`,`target_z`,`target_o`,`comment`) VALUES 
-(@ENTRY,@SOURCETYPE,
-/*  id */  3,
-/* link  */0,
-/* event_type*/62,
-/* event_phase_mask */0,
-/* event_chance  */100,
-/* event_flags  */0,
-/* event_param1 */60001,
-/* event_param2  */3,
-/* event_param3   */0,
-/* event_param4 */0,
-/* action_type  */62,
-/* action_param1 */571,
-/* action_param2 */0,
-/* action_param3  */0,
-/* action_param4  */0,
-/* action_param5  */0,
-/* action_param6 */0,
-/* target_type  */7,
-/* target_param1 */0,
-/* target_param2*/0,
-/* target_param3  */0,
-/* target_x  */5728.79,
-/* target_y   */608.62,
-/* target_z  */618.59,
-/* target_o */5.60,
-/* comment  */"Teleport Yasio");
-
-UPDATE creature_template SET AIName="SmartAI" WHERE entry=@ENTRY LIMIT 1;
-REPLACE INTO `smart_scripts` (`entryorguid`,`source_type`,`id`,`link`,`event_type`,`event_phase_mask`,`event_chance`,`event_flags`,`event_param1`,`event_param2`,`event_param3`,`event_param4`,`action_type`,`action_param1`,`action_param2`,`action_param3`,`action_param4`,`action_param5`,`action_param6`,`target_type`,`target_param1`,`target_param2`,`target_param3`,`target_x`,`target_y`,`target_z`,`target_o`,`comment`) VALUES 
-(@ENTRY,@SOURCETYPE,
-/*  id */  4,
-/* link  */0,
-/* event_type*/62,
-/* event_phase_mask */0,
-/* event_chance  */100,
-/* event_flags  */0,
-/* event_param1 */60001,
-/* event_param2  */4,
-/* event_param3   */0,
-/* event_param4 */0,
-/* action_type  */62,
-/* action_param1 */0,
-/* action_param2 */0,
-/* action_param3  */0,
-/* action_param4  */0,
-/* action_param5  */0,
-/* action_param6 */0,
-/* target_type  */7,
-/* target_param1 */0,
-/* target_param2*/0,
-/* target_param3  */0,
-/* target_x  */-12556.57,
-/* target_y   */-1366.97,
-/* target_z  */41.56,
-/* target_o */1.024,
-/* comment  */"Teleport Orrig");
-
-
-UPDATE creature_template SET AIName="SmartAI" WHERE entry=@ENTRY LIMIT 1;
-REPLACE INTO `smart_scripts` (`entryorguid`,`source_type`,`id`,`link`,`event_type`,`event_phase_mask`,`event_chance`,`event_flags`,`event_param1`,`event_param2`,`event_param3`,`event_param4`,`action_type`,`action_param1`,`action_param2`,`action_param3`,`action_param4`,`action_param5`,`action_param6`,`target_type`,`target_param1`,`target_param2`,`target_param3`,`target_x`,`target_y`,`target_z`,`target_o`,`comment`) VALUES 
-(@ENTRY,@SOURCETYPE,
-/*  id */  5,
-/* link  */0,
-/* event_type*/62,
-/* event_phase_mask */0,
-/* event_chance  */100,
-/* event_flags  */0,
-/* event_param1 */60001,
-/* event_param2  */5,
-/* event_param3   */0,
-/* event_param4 */0,
-/* action_type  */62,
-/* action_param1 */0,
-/* action_param2 */0,
-/* action_param3  */0,
-/* action_param4  */0,
-/* action_param5  */0,
-/* action_param6 */0,
-/* target_type  */7,
-/* target_param1 */0,
-/* target_param2*/0,
-/* target_param3  */0,
-/* target_x  */-7440.66,
-/* target_y   */-2029.63,
-/* target_z  */313.72,
-/* target_o */6.28,
-/* comment  */"Teleport Exitare");
-
-
-UPDATE creature_template SET AIName="SmartAI" WHERE entry=@ENTRY LIMIT 1;
-REPLACE INTO `smart_scripts` (`entryorguid`,`source_type`,`id`,`link`,`event_type`,`event_phase_mask`,`event_chance`,`event_flags`,`event_param1`,`event_param2`,`event_param3`,`event_param4`,`action_type`,`action_param1`,`action_param2`,`action_param3`,`action_param4`,`action_param5`,`action_param6`,`target_type`,`target_param1`,`target_param2`,`target_param3`,`target_x`,`target_y`,`target_z`,`target_o`,`comment`) VALUES 
-(@ENTRY,@SOURCETYPE,
-/*  id */  6,
-/* link  */0,
-/* event_type*/62,
-/* event_phase_mask */0,
-/* event_chance  */100,
-/* event_flags  */0,
-/* event_param1 */60001,
-/* event_param2  */6,
-/* event_param3   */0,
-/* event_param4 */0,
-/* action_type  */62,
-/* action_param1 */0,
-/* action_param2 */0,
-/* action_param3  */0,
-/* action_param4  */0,
-/* action_param5  */0,
-/* action_param6 */0,
-/* target_type  */7,
-/* target_param1 */0,
-/* target_param2*/0,
-/* target_param3  */0,
-/* target_x  */-12978.69,
-/* target_y   */-1774.43,
-/* target_z  */137.11,
-/* target_o */3.5,
-/* comment  */"Teleport Geqälte Seele");
+REPLACE INTO `gameobject` (`guid`, `id`, `map`, `zoneId`, `areaId`, `spawnMask`, `phaseMask`, `position_x`, `position_y`, `position_z`, `orientation`, `rotation2`, `rotation3`, `spawntimesecs`, `animprogress`, `state`, `VerifiedBuild`) VALUES ('800076', '192493', '0', '40', '2', '1', '1', '-9804.27', '2098.83', '10.05', '1.1200', '-0.38', '0.92388', '300', '0', '1', '1');
 
 
 
@@ -1455,7 +1169,7 @@ DELETE FROM `creature_loot_template` WHERE `entry` = 800010;
 REPLACE INTO `creature_loot_template` (`Entry`,`Item`,`Reference`, `Chance`, `QuestRequired`, `LootMode`, `GroupId`, `MinCount`, `MaxCount`)
 VALUES (800010, 52006, 0, 1, 0, 1, 0, 1, 1); 
 REPLACE INTO `creature_loot_template` (`Entry`,`Item`,`Reference`, `Chance`, `QuestRequired`, `LootMode`, `GroupId`, `MinCount`, `MaxCount`)
-VALUES (800010, 38186, 0, 0.1, 0, 1, 0, 5, 20); 
+VALUES (800010, 38186, 0, 1, 0, 1, 0, 5, 20); 
 
 REPLACE INTO `creature_loot_template` (`Entry`,`Item`,`Reference`, `Chance`, `QuestRequired`, `LootMode`, `GroupId`, `MinCount`, `MaxCount`)
 VALUES (800010, 49802, 0, 12, 0, 1, 1, 1, 1); 
@@ -1466,29 +1180,29 @@ VALUES (800010, 50194, 0, 12, 0, 1, 1, 1, 1);
 
 
 REPLACE INTO `creature_loot_template` (`Entry`,`Item`,`Reference`, `Chance`, `QuestRequired`, `LootMode`, `GroupId`, `MinCount`, `MaxCount`)
-VALUES (800010, 49822, 0, 12, 0, 1, 2, 1, 1);
+VALUES (800010, 49822, 0, 25, 0, 1, 2, 1, 1);
 REPLACE INTO `creature_loot_template` (`Entry`,`Item`,`Reference`, `Chance`, `QuestRequired`, `LootMode`, `GroupId`, `MinCount`, `MaxCount`)
-VALUES (800010, 49825, 0, 12, 0, 1, 2, 1, 1); 
+VALUES (800010, 49825, 0, 25, 0, 1, 2, 1, 1); 
 REPLACE INTO `creature_loot_template` (`Entry`,`Item`,`Reference`, `Chance`, `QuestRequired`, `LootMode`, `GroupId`, `MinCount`, `MaxCount`)
-VALUES (800010, 49788, 0, 12, 0, 1, 2, 1, 1); 
+VALUES (800010, 49788, 0, 25, 0, 1, 2, 1, 1); 
 REPLACE INTO `creature_loot_template` (`Entry`,`Item`,`Reference`, `Chance`, `QuestRequired`, `LootMode`, `GroupId`, `MinCount`, `MaxCount`)
-VALUES (800010, 45144, 0, 12, 0, 1, 2, 1, 1); 
+VALUES (800010, 45144, 0, 25, 0, 1, 2, 1, 1); 
 
 REPLACE INTO `creature_loot_template` (`Entry`,`Item`,`Reference`, `Chance`, `QuestRequired`, `LootMode`, `GroupId`, `MinCount`, `MaxCount`)
-VALUES (800010, 49798, 0, 12, 0, 1, 3, 1, 1); 
+VALUES (800010, 49798, 0, 25, 0, 1, 3, 1, 1); 
 REPLACE INTO `creature_loot_template` (`Entry`,`Item`,`Reference`, `Chance`, `QuestRequired`, `LootMode`, `GroupId`, `MinCount`, `MaxCount`)
-VALUES (800010, 49789, 0, 12, 0, 1, 3, 1, 1); 
+VALUES (800010, 49789, 0, 25, 0, 1, 3, 1, 1); 
 REPLACE INTO `creature_loot_template` (`Entry`,`Item`,`Reference`, `Chance`, `QuestRequired`, `LootMode`, `GroupId`, `MinCount`, `MaxCount`)
-VALUES (800010, 50380, 0, 12, 0, 1, 3, 1, 1); 
+VALUES (800010, 50380, 0, 25, 0, 1, 3, 1, 1); 
 REPLACE INTO `creature_loot_template` (`Entry`,`Item`,`Reference`, `Chance`, `QuestRequired`, `LootMode`, `GroupId`, `MinCount`, `MaxCount`)
-VALUES (800010, 50379, 0, 12, 0, 1, 3, 1, 1); 
+VALUES (800010, 50379, 0, 12.5, 0, 1, 3, 1, 1); 
 REPLACE INTO `creature_loot_template` (`Entry`,`Item`,`Reference`, `Chance`, `QuestRequired`, `LootMode`, `GroupId`, `MinCount`, `MaxCount`)
-VALUES (800010, 45142, 0, 12, 0, 1, 3, 1, 1); 
+VALUES (800010, 45142, 0, 12.5, 0, 1, 3, 1, 1); 
 
 
 
 REPLACE INTO `creature`(`guid`,`id`,`map`,`spawnMask`,`phaseMask`,`modelid`,`equipment_id`,`position_x`,`position_y`,`position_z`,`orientation`,`spawntimesecs`,`spawndist`,`currentwaypoint`,`curhealth`,`curmana`,`MovementType`) VALUES 
-('800010','800010','0','1','1','3597','0','-12525.50','-1317.90','69.91','4.423','20000','0','0','100000000','250000','1');
+('800010','800010','0','1','1','3597','0','-12625.56','-1353.60','53.53','6.23','20000','0','0','100000000','250000','1');
 
 REPLACE INTO `creature_template` (`entry`, `difficulty_entry_1`, `difficulty_entry_2`, `difficulty_entry_3`, `KillCredit1`, `KillCredit2`, `modelid1`, `modelid2`, `modelid3`, `modelid4`, `name`, `subname`, `IconName`, `gossip_menu_id`, `minlevel`, `maxlevel`, `exp`, `faction`,`npcflag`, `speed_walk`, `speed_run`, `scale`, `rank`, `dmgschool`, `BaseAttackTime`, `RangeAttackTime`, `unit_class`, `unit_flags`, `unit_flags2`, `dynamicflags`, `family`, `trainer_type`, `trainer_spell`, `trainer_class`, `trainer_race`, `type`, `type_flags`, `lootid`, `pickpocketloot`, `skinloot`, `resistance1`, `resistance2`, `resistance3`, `resistance4`, `resistance5`, `resistance6`, `spell1`, `spell2`, `spell3`, `spell4`, `spell5`, `spell6`, `spell7`, `spell8`, `PetSpellDataId`, `VehicleId`, `mingold`, `maxgold`, `AIName`, `MovementType`, `InhabitType`, `HoverHeight`, `RacialLeader`, `movementId`, `RegenHealth`, `mechanic_immune_mask`, `flags_extra`, `ScriptName`) 
 VALUES ( /*  ID */ 800010,
@@ -1556,10 +1270,10 @@ VALUES ( /*  ID */ 800010,
   /* Racial Leader  */0,
  /* movement id  */ 0, 
   /*  RegenHealth`` */1, 
-  /*  mechanic_immune_mask` */2147483647, 
+  /*  mechanic_immune_mask` */617299839, 
   /*  flags_extra` */0, 
   /* Scriptname  */'');
-UPDATE `creature_template` SET `HealthModifier`='200', `ArmorModifier`='5', `DamageModifier`='160' WHERE `entry`='800010';
+UPDATE `creature_template` SET `HealthModifier`='400', `ArmorModifier`='10', `DamageModifier`='160' WHERE `entry`='800010';
 
   
   
@@ -1643,7 +1357,7 @@ REPLACE INTO `creature` (`guid`,`id`,`map`,`spawnMask`,`phaseMask`,`modelid`,`eq
 
 DELETE FROM `creature_template` WHERE `Entry` = 800011;
 
-REPLACE INTO `creature_template` (`entry`, `difficulty_entry_1`, `difficulty_entry_2`, `difficulty_entry_3`, `KillCredit1`, `KillCredit2`, `modelid1`, `modelid2`, `modelid3`, `modelid4`, `name`, `subname`, `IconName`, `gossip_menu_id`, `minlevel`, `maxlevel`, `exp`,`faction`, `npcflag`, `speed_walk`, `speed_run`, `scale`, `rank`, `dmgschool`, `BaseAttackTime`, `RangeAttackTime`, `unit_class`, `unit_flags`, `unit_flags2`, `dynamicflags`, `family`, `trainer_type`, `trainer_spell`, `trainer_class`, `trainer_race`, `type`, `type_flags`, `lootid`, `pickpocketloot`, `skinloot`, `resistance1`, `resistance2`, `resistance3`, `resistance4`, `resistance5`, `resistance6`, `spell1`, `spell2`, `spell3`, `spell4`, `spell5`, `spell6`, `spell7`, `spell8`, `PetSpellDataId`, `VehicleId`, `mingold`, `maxgold`, `AIName`, `MovementType`, `InhabitType`, `HoverHeight`, `RacialLeader`, `movementId`, `RegenHealth`, `mechanic_immune_mask`, `flags_extra`, `ScriptName`) VALUES (800011, 0, 0, 0, 0, 0, 17822, 0, 0, 0, 'MMOwning  Schluesselmeister', 'Exitares Baby', '', 0, 80, 80, 0, 35 , 128, 0, 1.14286, 1, 1, 1, 1, 1, 0, 2, 0, 0, 0, 0, 0, 0, 0, 7, 0, 0, 0, 0, 100, 100, 100, 100, 100, 100, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, '', 0, 3, 1, 1, 0, 1, 0, 0, '');
+REPLACE INTO `creature_template` (`entry`, `difficulty_entry_1`, `difficulty_entry_2`, `difficulty_entry_3`, `KillCredit1`, `KillCredit2`, `modelid1`, `modelid2`, `modelid3`, `modelid4`, `name`, `subname`, `IconName`, `gossip_menu_id`, `minlevel`, `maxlevel`, `exp`,`faction`, `npcflag`, `speed_walk`, `speed_run`, `scale`, `rank`, `dmgschool`, `BaseAttackTime`, `RangeAttackTime`, `unit_class`, `unit_flags`, `unit_flags2`, `dynamicflags`, `family`, `trainer_type`, `trainer_spell`, `trainer_class`, `trainer_race`, `type`, `type_flags`, `lootid`, `pickpocketloot`, `skinloot`, `resistance1`, `resistance2`, `resistance3`, `resistance4`, `resistance5`, `resistance6`, `spell1`, `spell2`, `spell3`, `spell4`, `spell5`, `spell6`, `spell7`, `spell8`, `PetSpellDataId`, `VehicleId`, `mingold`, `maxgold`, `AIName`, `MovementType`, `InhabitType`, `HoverHeight`, `RacialLeader`, `movementId`, `RegenHealth`, `mechanic_immune_mask`, `flags_extra`, `ScriptName`) VALUES (800011, 0, 0, 0, 0, 0, 17822, 0, 0, 0, 'MMOwning  Schluesselmeister', 'Exitares NPC', '', 0, 80, 80, 0, 35 , 128, 0, 1.14286, 1, 1, 1, 1, 1, 0, 2, 0, 0, 0, 0, 0, 0, 0, 7, 0, 0, 0, 0, 100, 100, 100, 100, 100, 100, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, '', 0, 3, 1, 1, 0, 1, 0, 0, '');
 
 
 
@@ -2663,38 +2377,39 @@ VALUES ( /*  ID */ 800024,
   
   
 REPLACE INTO `creature` (`guid`,`id`,`map`,`spawnMask`,`phaseMask`,`modelid`,`equipment_id`,`position_x`,`position_y`,`position_z`,`orientation`,`spawntimesecs`,`spawndist`,`currentwaypoint`,`curhealth`,`curmana`,`MovementType`) VALUES 
-('800024','800024','0','1','1','18137','0','-14436.20','468.79','3.93','3.92','25','0','0','1000000','250000','0');/*Boss Exitares Schatten */
+('800024','800024','0','1','1','18137','0','-14436.20','468.79','3.93','3.92','25','0','0','1000000','250000','0');
 
+/*Boss Exitares Schatten */
 DELETE FROM `creature_loot_template` WHERE `Entry` = 800025;
 
 REPLACE INTO `creature_loot_template` (`Entry`,`Item`,`Reference`, `Chance`, `QuestRequired`, `LootMode`, `GroupId`, `MinCount`, `MaxCount`)
 VALUES (800025, 52006, 0, 1, 0, 1, 0, 1, 1); 
 REPLACE INTO `creature_loot_template` (`Entry`,`Item`,`Reference`, `Chance`, `QuestRequired`, `LootMode`, `GroupId`, `MinCount`, `MaxCount`)
-VALUES (800030, 38186, 0, 0.1, 0, 1, 0, 5, 20);
+VALUES (800030, 38186, 0, 1, 0, 1, 0, 5, 20);
 
 
 REPLACE INTO `creature_loot_template` (`Entry`,`Item`,`Reference`, `Chance`, `QuestRequired`, `LootMode`, `GroupId`, `MinCount`, `MaxCount`)
-VALUES (800025, 32458, 0, 0.1, 0, 1, 1, 1, 1); 
+VALUES (800025, 32458, 0, 1, 0, 1, 1, 1, 1); 
 REPLACE INTO `creature_loot_template` (`Entry`,`Item`,`Reference`, `Chance`, `QuestRequired`, `LootMode`, `GroupId`, `MinCount`, `MaxCount`)
-VALUES (800025, 51955, 0, 0.1, 0, 1, 1, 1, 1); 
+VALUES (800025, 51955, 0, 1, 0, 1, 1, 1, 1); 
 REPLACE INTO `creature_loot_template` (`Entry`,`Item`,`Reference`, `Chance`, `QuestRequired`, `LootMode`, `GroupId`, `MinCount`, `MaxCount`)
-VALUES (800025, 45234, 0, 50, 0, 1, 1, 1, 1); 
+VALUES (800025, 45234, 0, 47, 0, 1, 1, 1, 1); 
 REPLACE INTO `creature_loot_template` (`Entry`,`Item`,`Reference`, `Chance`, `QuestRequired`, `LootMode`, `GroupId`, `MinCount`, `MaxCount`)
-VALUES (800025, 17203, 0, 50, 0, 1, 1, 1, 1); 
-
+VALUES (800025, 17203, 0, 1, 0, 1, 1, 1, 1); 
 REPLACE INTO `creature_loot_template` (`Entry`,`Item`,`Reference`, `Chance`, `QuestRequired`, `LootMode`, `GroupId`, `MinCount`, `MaxCount`)
-VALUES (800025, 45167, 0, 50, 0, 1, 2, 1, 1); 
+VALUES (800025, 37663, 0, 20, 0, 1, 1, 1, 1); 
 REPLACE INTO `creature_loot_template` (`Entry`,`Item`,`Reference`, `Chance`, `QuestRequired`, `LootMode`, `GroupId`, `MinCount`, `MaxCount`)
-VALUES (800025, 45165, 0, 50, 0, 1, 2, 1, 1); 
-REPLACE INTO `creature_loot_template` (`Entry`,`Item`,`Reference`, `Chance`, `QuestRequired`, `LootMode`, `GroupId`, `MinCount`, `MaxCount`)
-VALUES (800025, 45250, 0, 50, 0, 1, 2, 1, 1); 
-REPLACE INTO `creature_loot_template` (`Entry`,`Item`,`Reference`, `Chance`, `QuestRequired`, `LootMode`, `GroupId`, `MinCount`, `MaxCount`)
-VALUES (800025, 49827, 0, 50, 0, 1, 2, 1, 1); 
+VALUES (800025, 46963, 0, 30, 0, 1, 1, 1, 1); 
 
 
-
-
-
+REPLACE INTO `creature_loot_template` (`Entry`,`Item`,`Reference`, `Chance`, `QuestRequired`, `LootMode`, `GroupId`, `MinCount`, `MaxCount`)
+VALUES (800025, 45167, 0, 25, 0, 1, 2, 1, 1); 
+REPLACE INTO `creature_loot_template` (`Entry`,`Item`,`Reference`, `Chance`, `QuestRequired`, `LootMode`, `GroupId`, `MinCount`, `MaxCount`)
+VALUES (800025, 45165, 0, 25, 0, 1, 2, 1, 1); 
+REPLACE INTO `creature_loot_template` (`Entry`,`Item`,`Reference`, `Chance`, `QuestRequired`, `LootMode`, `GroupId`, `MinCount`, `MaxCount`)
+VALUES (800025, 45250, 0, 25, 0, 1, 2, 1, 1); 
+REPLACE INTO `creature_loot_template` (`Entry`,`Item`,`Reference`, `Chance`, `QuestRequired`, `LootMode`, `GroupId`, `MinCount`, `MaxCount`)
+VALUES (800025, 49827, 0, 25, 0, 1, 2, 1, 1); 
 
 
 REPLACE INTO `creature`(`guid`,`id`,`map`,`spawnMask`,`phaseMask`,`modelid`,`equipment_id`,`position_x`,`position_y`,`position_z`,`orientation`,`spawntimesecs`,`spawndist`,`currentwaypoint`,`curhealth`,`curmana`,`MovementType`) VALUES 
@@ -2715,8 +2430,8 @@ VALUES ( /*  ID */ 800025,
   /*  Subname */'Abbild von Exitare',
   /*  Iconname */'',
   /* gossip_menu_id`  */0,
-  /*  Min Level */80,
-  /* Max Level  */80,
+  /*  Min Level */83,
+  /* Max Level  */83,
   /*  Exp */0,
   21,
   /*  npcflag Was ist er Questgeber oder weiteres? */0,
@@ -2725,10 +2440,10 @@ VALUES ( /*  ID */ 800025,
   /*  scale */3,
   /*  rank  Normal, Elite?*/3,
   /*  dmgschool Normal Holy Fire? */0,
-  /* BaseAttackTime`  */1000,
-  /* RangeAttackTime`  */2000,
+  /* BaseAttackTime`  */3000,
+  /* RangeAttackTime`  */5000,
   /*  Welche Klasse? Krieger Pala, also Mana oder kein MAna? */0,
-  /*  unit flag */4104,
+  /*  unit flag */0,
   /*  unit flags2  */0,
   /*  dynamicflag */0,
   /* Family  */0,
@@ -2741,12 +2456,12 @@ VALUES ( /*  ID */ 800025,
   /*  lootid */800025,
   /*  pickpocketloot` */0,
 /*Skinloot*/ 0,  
-  /* Restistance1  */100,
-  /*   */100,
-  /*   */100,
-  /*   */100,
-  /*   */100,
-  /*  Resi 6*/100,
+  /* Restistance1  */300,
+  /*   */300,
+  /*   */300,
+  /*   */300,
+  /*   */300,
+  /*  Resi 6*/300,
   /* spell1  */0, 
   /*   */0,
   /*   */0,
@@ -2766,10 +2481,10 @@ VALUES ( /*  ID */ 800025,
   /* Racial Leader  */0,
  /* movement id  */ 0, 
   /*  RegenHealth`` */1, 
-  /*  mechanic_immune_mask` */2147483647, 
+  /*  mechanic_immune_mask` */617299839, 
   /*  flags_extra` */0, 
   /* Scriptname  */'');
-UPDATE `creature_template` SET `HealthModifier`='1100', `ArmorModifier`='2', `DamageModifier`='160' WHERE `entry`='800025';
+UPDATE `creature_template` SET `HealthModifier`='1750', `ArmorModifier`='10', `DamageModifier`='120' WHERE `entry`='800025';
 
   
   
@@ -2806,7 +2521,7 @@ REPLACE INTO `smart_scripts` (`entryorguid`,`source_type`,`id`,`link`,`event_typ
 /* action_param4  */0,
 /* action_param5  */0,
 /* action_param6 */0,
-/* target_type  */5,
+/* target_type  */2,
 /* target_param1 */0,
 /* target_param2*/0,
 /* target_param3  */0,
@@ -2822,28 +2537,59 @@ REPLACE INTO `smart_scripts` (`entryorguid`,`source_type`,`id`,`link`,`event_typ
 (@ENTRY,@SOURCETYPE,2,0,2,0,100,0,75,80,10000,13000,11,69278,0,0,0,0,0,5,0,0,0,0.0,0.0,0.0,0.0,"FEAR"),
 (@ENTRY,@SOURCETYPE,3,0,2,0,100,1,60,70,0,0,11,74525,0,0,0,0,0,5,0,0,0,0.0,0.0,0.0,0.0,"FRENZY"),
 (@ENTRY,@SOURCETYPE,4,0,2,0,100,0,50,60,7000,8000,11,56908,0,0,0,0,0,5,0,0,0,0.0,0.0,0.0,0.0,"CHAIN_LIGHTNING"),
-(@ENTRY,@SOURCETYPE,5,0,2,0,100,1,40,50,0,0,11,69024,0,0,0,0,0,5,0,0,0,0.0,0.0,0.0,0.0,"BLISTERING_COLD"),
-(@ENTRY,@SOURCETYPE,8,0,2,0,100,0,10,20,6000,7000,11,68989,0,0,0,0,0,5,0,0,0,0.0,0.0,0.0,0.0,"SINBEAM"),
+(@ENTRY,@SOURCETYPE,5,0,2,0,100,1,40,60,7500,15000,11,69024,0,0,0,0,0,6,0,0,0,0.0,0.0,0.0,0.0,"SPELL_TOXIC_WASTE"),
+(@ENTRY,@SOURCETYPE,8,0,2,0,100,0,10,20,8000,10000,11,68989,0,0,0,0,0,5,0,0,0,0.0,0.0,0.0,0.0,"Poison Nova"),
 (@ENTRY,@SOURCETYPE,10,0,2,0,100,1,1,10,0,0,11,68335,2,0,0,0,0,1,0,0,0,0.0,0.0,0.0,0.0,"Enrage at 10%"),
 (@ENTRY,@SOURCETYPE,11,0,2,0,100,0,80,90,10000,70326,11,5649,0,0,0,0,0,5,0,0,0,0.0,0.0,0.0,0.0,"Stunning Blast "),
 (@ENTRY,@SOURCETYPE,12,0,2,0,100,1,30,40,0,0,11,66046,2,0,0,0,0,5,0,0,0,0.0,0.0,0.0,0.0,"Shield Block"),
-(@ENTRY,@SOURCETYPE,13,0,2,0,100,0,1,10,9000,10000,11,34784,0,0,0,0,0,5,0,0,0,0.0,0.0,0.0,0.0,"BLIZZARD"),
-(@ENTRY,@SOURCETYPE,14,0,2,0,100,1,60,95,0,0,1,/*ActionType 1*/1,0,0,0,0,0,2,0,0,0,0.0,0.0,0.0,0.0,"Yell 1"),
+(@ENTRY,@SOURCETYPE,13,0,2,0,100,0,1,10,9000,13000,11,34784,0,0,0,0,0,5,0,0,0,0.0,0.0,0.0,0.0,"BLIZZARD"),
+(@ENTRY,@SOURCETYPE,14,0,2,0,100,1,60,95,0,0,1,1,0,0,0,0,0,2,0,0,0,0.0,0.0,0.0,0.0,"Yell 1"),
 (@ENTRY,@SOURCETYPE,15,0,2,0,100,1,75,80,0,0,1,2,0,0,0,0,0,2,0,0,0,0.0,0.0,0.0,0.0,"Yell 2"),
 (@ENTRY,@SOURCETYPE,16,0,2,0,100,1,20,30,0,0,1,3,0,0,0,0,0,2,0,0,0,0.0,0.0,0.0,0.0,"Yell 3"),
 (@ENTRY,@SOURCETYPE,17,0,2,0,100,1,1,5,0,0,1,4,0,0,0,0,0,2,0,0,0,0.0,0.0,0.0,0.0,"Yell 4"),
+(@ENTRY,@SOURCETYPE,35,0,2,0,100,1,1,100,5000,15000,11,69024,0,0,0,0,0,6,0,0,0,0.0,0.0,0.0,0.0,"SPELL_TOXIC_WASTE"),
 (@ENTRY,@SOURCETYPE,18,0,2,0,100,1,90,100,0,0,11,54237,0,0,0,0,0,5,0,0,0,0.0,0.0,0.0,0.0,"Dark Barrage"),
-(@ENTRY,@SOURCETYPE,19,0,2,0,100,0,80,87,12000,13000,11,68989,0,0,0,0,0,5,0,0,0,0.0,0.0,0.0,0.0,"Knochenstachel"),
-(@ENTRY,@SOURCETYPE,20,0,2,0,100,1,70,80,0,0,11,59971,0,0,0,0,0,5,0,0,0,0.0,0.0,0.0,0.0,"Rain of Fire"),
+(@ENTRY,@SOURCETYPE,19,0,2,0,100,0,80,87,12000,13000,11,68989,0,0,0,0,0,5,0,0,0,0.0,0.0,0.0,0.0,"Poison Nova"),
+(@ENTRY,@SOURCETYPE,20,0,2,0,100,1,70,80,0,0,11,59971,0,0,0,0,0,6,0,0,0,0.0,0.0,0.0,0.0,"Rain of Fire"),
 (@ENTRY,@SOURCETYPE,21,0,2,0,100,1,60,70,15000,18000,11,40904,0,0,0,0,0,5,0,0,0,0.0,0.0,0.0,0.0,"Draw Soul"),
 (@ENTRY,@SOURCETYPE,22,0,2,0,100,0,50,60,8000,9000,11,41131,0,0,0,0,0,5,0,0,0,0.0,0.0,0.0,0.0,"Flame Burst"),
 (@ENTRY,@SOURCETYPE,23,0,2,0,100,0,40,50,13000,15000,11,41545,0,0,0,0,0,5,0,0,0,0.0,0.0,0.0,0.0,"Soul Scream"),
 (@ENTRY,@SOURCETYPE,24,0,2,0,100,1,55,100,0,0,1,5,1,0,0,0,0,2,0,0,0,0.0,0.0,0.0,0.0,"Emote 5"),
 (@ENTRY,@SOURCETYPE,25,0,2,0,100,1,1,50,0,0,1,6,1,0,0,0,0,2,0,0,0,0.0,0.0,0.0,0.0,"Emote 6"),
-(@ENTRY,@SOURCETYPE,27,0,2,0,100,0,25,35,8000,9000,11,68989,0,0,0,0,0,5,0,0,0,0.0,0.0,0.0,0.0,"Knochenstachel"),
+(@ENTRY,@SOURCETYPE,27,0,2,0,100,0,20,35,8000,9000,11,68989,0,0,0,0,0,5,0,0,0,0.0,0.0,0.0,0.0,"Poison Nova"),
+(@ENTRY,@SOURCETYPE,32,0,2,0,100,0,20,80,8000,9000,11,69015,0,0,0,0,0,5,0,0,0,0.0,0.0,0.0,0.0,"Cleave"),
+(@ENTRY,@SOURCETYPE,34,0,0,0,100,1,20,30,10000,15000,11,69024,0,0,0,0,0,5,0,0,0,0.0,0.0,0.0,0.0,"SPELL_TOXIC_WASTE"),
 (@ENTRY,@SOURCETYPE,28,0,2,0,100,0,20,30,8000,9000,11,56431,0,0,0,0,0,5,0,0,0,0.0,0.0,0.0,0.0,"Arcane Bomb"),
 (@ENTRY,@SOURCETYPE,30,0,2,0,100,1,1,0,0,0,1,7,0,0,0,0,0,2,0,0,0,0.0,0.0,0.0,0.0,"Yell 5"),
-(@ENTRY,@SOURCETYPE,31,0,2,0,100,0,5,10,8000,9000,11,56909,0,0,0,0,0,5,0,0,0,0.0,0.0,0.0,0.0,"Sartahrion");
+(@ENTRY,@SOURCETYPE,33,0,2,0,100,0,1,10,9000,15000,11,74806,0,0,0,0,0,5,0,0,0,0.0,0.0,0.0,0.0,"Dark Breath"),
+(@ENTRY,@SOURCETYPE,
+/*  id */  40,
+/* link  */0,
+/* event_type*/5,
+/* event_phase_mask */0,
+/* event_chance  */100,
+/* event_flags  */0,
+/* event_param1 */1,
+/* event_param2  */10,
+/* event_param3   */1,
+/* event_param4 */0,
+/* action_type  */11,
+/* action_param1 */74398,
+/* action_param2 */2,
+/* action_param3  */0,
+/* action_param4  */0,
+/* action_param5  */0,
+/* action_param6 */0,
+/* target_type  */5,
+/* target_param1 */0,
+/* target_param2*/0,
+/* target_param3  */0,
+/* target_x  */0.0,
+/* target_y   */0.0,
+/* target_z  */0.0,
+/* target_o */0.0,
+/* comment  */"Summon"),
+(@ENTRY,@SOURCETYPE,31,0,2,0,100,0,5,10,8000,9000,11,56910,0,0,0,0,0,5,0,0,0,0.0,0.0,0.0,0.0,"Sartahrion");
 
 
 
@@ -3203,7 +2949,7 @@ DELETE FROM `creature_loot_template` WHERE `Entry` = 800030;
 REPLACE INTO `creature_loot_template` (`Entry`,`Item`,`Reference`, `Chance`, `QuestRequired`, `LootMode`, `GroupId`, `MinCount`, `MaxCount`)
 VALUES (800030, 52006, 0, 1, 0, 1, 0, 1, 1); 
 REPLACE INTO `creature_loot_template` (`Entry`,`Item`,`Reference`, `Chance`, `QuestRequired`, `LootMode`, `GroupId`, `MinCount`, `MaxCount`)
-VALUES (800030, 38186, 0, 0.1, 0, 1, 0, 5, 20);
+VALUES (800030, 38186, 0, 1, 0, 1, 0, 5, 20);
 
 
 REPLACE INTO `creature_loot_template` (`Entry`,`Item`,`Reference`, `Chance`, `QuestRequired`, `LootMode`, `GroupId`, `MinCount`, `MaxCount`)
@@ -3213,7 +2959,7 @@ VALUES (800030, 51955, 0, 0.1, 0, 1, 1, 1, 1);
 REPLACE INTO `creature_loot_template` (`Entry`,`Item`,`Reference`, `Chance`, `QuestRequired`, `LootMode`, `GroupId`, `MinCount`, `MaxCount`)
 VALUES (800030, 45234, 0, 50, 0, 1, 1, 1, 1); 
 REPLACE INTO `creature_loot_template` (`Entry`,`Item`,`Reference`, `Chance`, `QuestRequired`, `LootMode`, `GroupId`, `MinCount`, `MaxCount`)
-VALUES (800030, 17203, 0, 50, 0, 1, 1, 1, 1); 
+VALUES (800030, 17203, 0, 0.01, 0, 1, 1, 1, 1); 
 
 REPLACE INTO `creature_loot_template` (`Entry`,`Item`,`Reference`, `Chance`, `QuestRequired`, `LootMode`, `GroupId`, `MinCount`, `MaxCount`)
 VALUES (800030, 45167, 0, 50, 0, 1, 2, 1, 1); 
@@ -3245,7 +2991,7 @@ VALUES ( /*  ID */ 800030,
   /* Modelid3   */0,
   /* Model4  */ 0,
  /* Name  */'Die gequälte Seele',
-  /*  Subname */'',
+  /*  Subname */'Pihaar',
   /*  Iconname */'',
   /* gossip_menu_id`  */0,
   /*  Min Level */80,
@@ -3258,8 +3004,8 @@ VALUES ( /*  ID */ 800030,
   /*  scale */0.1,
   /*  rank  Normal, Elite?*/3,
   /*  dmgschool Normal Holy Fire? */0,
-  /* BaseAttackTime`  */1000,
-  /* RangeAttackTime`  */2000,
+  /* BaseAttackTime`  */5000,
+  /* RangeAttackTime`  */4000,
   /*  Welche Klasse? Krieger Pala, also Mana oder kein MAna? */0,
   /*  unit flag */4104,
   /*  unit flags2  */0,
@@ -3299,10 +3045,10 @@ VALUES ( /*  ID */ 800030,
   /* Racial Leader  */0,
  /* movement id  */ 0, 
   /*  RegenHealth`` */1, 
-  /*  mechanic_immune_mask` */2147483647, 
+  /*  mechanic_immune_mask` */617299839, 
   /*  flags_extra` */0, 
   /* Scriptname  */'');
-UPDATE `creature_template` SET `HealthModifier`='1100', `ArmorModifier`='2', `DamageModifier`='160' WHERE `entry`='800030';
+UPDATE `creature_template` SET `HealthModifier`='1100', `ArmorModifier`='10', `DamageModifier`='160' WHERE `entry`='800030';
 
   
   
@@ -3376,7 +3122,7 @@ REPLACE INTO `smart_scripts` (`entryorguid`,`source_type`,`id`,`link`,`event_typ
 (@ENTRY,@SOURCETYPE,27,0,2,0,100,0,25,35,8000,9000,11,72080,0,0,0,0,0,5,0,0,0,0.0,0.0,0.0,0.0,"Knochenstachel"),
 (@ENTRY,@SOURCETYPE,28,0,2,0,100,0,20,30,8000,9000,11,70953,0,0,0,0,0,5,0,0,0,0.0,0.0,0.0,0.0,"Arcane Bomb"),
 (@ENTRY,@SOURCETYPE,30,0,2,0,100,1,1,0,0,0,1,7,0,0,0,0,0,2,0,0,0,0.0,0.0,0.0,0.0,"Yell 5"),
-(@ENTRY,@SOURCETYPE,31,0,2,0,100,0,5,10,8000,9000,11,70672,0,0,0,0,0,5,0,0,0,0.0,0.0,0.0,0.0,"Sartahrion");
+(@ENTRY,@SOURCETYPE,31,0,2,0,100,0,5,10,8000,9000,11,31306,0,0,0,0,0,5,0,0,0,0.0,0.0,0.0,0.0,"Sartahrion");
 
 
 
@@ -3985,7 +3731,7 @@ REPLACE INTO `creature_queststarter` (`id`, `quest`) VALUES
 
 
 REPLACE INTO `quest_template` (`ID`, `Method`, `QuestLevel`, `MinLevel`, `QuestSortID`, `QuestType`, `SuggestedGroupNum`, `LimitTime`, `RequiredRaces`, `RequiredFactionId1`, `RequiredFactionId2`, `RequiredFactionValue1`, `RequiredFactionValue2`, `NextQuestIdChain`, `RewardXPId`, `RewardOrRequiredMoney`, `RewardMoneyMaxLevel`, `RewardSpell`, `RewardSpellCast`, `RewardHonor`, `RewardHonorMultiplier`, `SourceItemId`, `Flags`, `RewardTitle`, `RequiredPlayerKills`, `RewardTalents`, `RewardArenaPoints`, `RewardItem1`, `RewardItem2`, `RewardItem3`, `RewardItem4`, `RewardAmount1`, `RewardAmount2`, `RewardAmount3`, `RewardAmount4`, `RewardChoiceItemID1`, `RewardChoiceItemID2`, `RewardChoiceItemID3`, `RewardChoiceItemID4`, `RewardChoiceItemID5`, `RewardChoiceItemID6`, `RewardChoiceItemQuantity1`, `RewardChoiceItemQuantity2`, `RewardChoiceItemQuantity3`, `RewardChoiceItemQuantity4`, `RewardChoiceItemQuantity5`, `RewardChoiceItemQuantity6`, `RewardFactionID1`, `RewardFactionID2`, `RewardFactionID3`, `RewardFactionID4`, `RewardFactionID5`, `RewardFactionValue1`, `RewardFactionValue2`, `RewardFactionValue3`, `RewardFactionValue4`, `RewardFactionValue5`, `RewardFactionOverride1`, `RewardFactionOverride2`, `RewardFactionOverride3`, `RewardFactionOverride4`, `RewardFactionOverride5`, `PointMapId`, `PointX`, `PointY`, `PointOption`, `LogTitle`, `LogDescription`, `QuestDescription`, `EndText`, `OfferRewardText`, `RequestItemsText`, `QuestCompletionLog`, `RequiredNpcOrGo1`, `RequiredNpcOrGo2`, `RequiredNpcOrGo3`, `RequiredNpcOrGo4`, `RequiredNpcOrGoCount1`, `RequiredNpcOrGoCount2`, `RequiredNpcOrGoCount3`, `RequiredNpcOrGoCount4`, `RequiredSourceItemId1`, `RequiredSourceItemId2`, `RequiredSourceItemId3`, `RequiredSourceItemId4`, `RequiredSourceItemCount1`, `RequiredSourceItemCount2`, `RequiredSourceItemCount3`, `RequiredSourceItemCount4`, `RequiredItemId1`, `RequiredItemId2`, `RequiredItemId3`, `RequiredItemId4`, `RequiredItemId5`, `RequiredItemId6`, `RequiredItemCount1`, `RequiredItemCount2`, `RequiredItemCount3`, `RequiredItemCount4`, `RequiredItemCount5`, `RequiredItemCount6`, `Unknown0`, `ObjectiveText1`, `ObjectiveText2`, `ObjectiveText3`, `ObjectiveText4`, `DetailsEmote1`, `DetailsEmote2`, `DetailsEmote3`, `DetailsEmote4`, `DetailsEmoteDelay1`, `DetailsEmoteDelay2`, `DetailsEmoteDelay3`, `DetailsEmoteDelay4`, `EmoteOnIncomplete`, `EmoteOnComplete`, `OfferRewardEmote1`, `OfferRewardEmote2`, `OfferRewardEmote3`, `OfferRewardEmote4`, `OfferRewardEmoteDelay1`, `OfferRewardEmoteDelay2`, `OfferRewardEmoteDelay3`, `OfferRewardEmoteDelay4`, `VerifiedBuild`) VALUES
-(799998, 2, 80, 80, -1, 0, 0, 0, 1791, 0, 0, 0, 0, 0, 250, -150000000, 0, 0, 0, 0, 0, 700501, 0, 0, 0, 0, 0, 700500, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 'Der mysteriöse Gegenstand', 'Findet den Mann der den mysteriösen Gegenstand verkauft.', 'Hey, ihr da.$BHabt ihr nichts zu tun?Ich hätte da etwas für Euch. In letzter geht das Gerücht um, das ein Mann einen mysteriösen und seltenen Gegestand gefunden hat. Habt ihr das nicht mitbekommen? Anscheinend soll er sich in der Scherbenwelt befinden, aber auch das ist sehr wage. Ich glaube mich noch zu erinnern, dass der Bereich indem er sich befinden könnte, im Bereich des Nethersturm ist. Wenn Ihr ihn findet könntet Ihr Euch von diesem Gegenstand überzeugen. Verzweifelt nicht zu schnell wenn ihr ihn nicht gleich am Anfang findet. Ich gebe Euch noch eine Replik des Gegenstandes mit. Diese hat leider keine besondere Macht. ', '', 'Habt Ihr ihn nicht gefunden?', 'Findet den Mann der den mysteriösen Gegenstand verkauft.', 'Es ist Eure Sache was ihr tut.', 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 700501, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, '', '', '', '', 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1);
+(799998, 2, 80, 80, -1, 0, 0, 0, 1791, 0, 0, 0, 0, 0, 250, -150000000, 0, 0, 0, 0, 0, 700501, 0, 0, 0, 0, 0, 700500, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 'Der mysteriöse Gegenstand', 'Findet den Mann der den mysteriösen Gegenstand besitzt.', 'Hey, ihr da.$BHabt ihr nichts zu tun?Ich hätte da etwas für Euch. In letzter Zeit geht das Gerücht um, das ein Mann einen mysteriösen und seltenen Gegestand gefunden hat. Habt ihr das nicht mitbekommen? Anscheinend soll er sich in der Scherbenwelt befinden, aber auch das ist sehr wage. Ich glaube mich noch zu erinnern, dass der Bereich indem er sich befinden könnte, im Bereich des Nethersturm ist. Wenn Ihr ihn findet könntet Ihr Euch von diesem Gegenstand überzeugen. Verzweifelt nicht zu schnell wenn ihr ihn nicht gleich am Anfang findet. Ich gebe Euch noch eine Replik des Gegenstandes mit. Diese hat leider keine besondere Macht. ', '', 'Habt Ihr ihn nicht gefunden?', 'Findet den Mann der den mysteriösen Gegenstand besitzt.', 'Es ist Eure Sache was ihr tut.', 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 700501, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, '', '', '', '', 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1);
 
 UPDATE `creature_template` SET `npcflag`='3' WHERE `entry`='32690';
 REPLACE INTO `quest_poi` (`QuestID`, `id`, `ObjectiveIndex`, `MapID`, `WorldMapAreaId`, `Floor`, `Priority`, `Flags`, `VerifiedBuild`) VALUES ('799998', '799998', '-1', '530', '3540', '3540', '0', '3', '0');
@@ -17910,7 +17656,7 @@ REPLACE INTO `quest_template_addon` (`ID`, `MaxLevel`, `AllowableClasses`, `Sour
   /*  AllowableClasses  */2047,
   /*  SourceSpellID  */ 0,
   /*  PrevQuestID */ 805020,
-  /*  NextQuestID  */805021,
+  /*  NextQuestID  */805022,
   /*  ExclusiveGroup  */ 0,
   /*  RewardMailTemplateID */ 0,
   /*  RewardMailDelay  */ 0,
@@ -18063,7 +17809,7 @@ REPLACE INTO `quest_template_addon` (`ID`, `MaxLevel`, `AllowableClasses`, `Sour
   /*  AllowableClasses  */2047,
   /*  SourceSpellID  */ 0,
   /*  PrevQuestID */ 805021,
-  /*  NextQuestID  */805022,
+  /*  NextQuestID  */805023,
   /*  ExclusiveGroup  */ 0,
   /*  RewardMailTemplateID */ 0,
   /*  RewardMailDelay  */ 0,
@@ -18081,6 +17827,8 @@ REPLACE INTO `creature_queststarter` (`id`, `quest`) VALUES
 
 REPLACE INTO `creature_questender` (`id`, `quest`) VALUES
 (800026, 805022);
+
+UPDATE `creature_template` SET `unit_flags`='0' WHERE `entry`='800033';
 
 
 
