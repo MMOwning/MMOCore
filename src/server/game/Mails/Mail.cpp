@@ -23,7 +23,6 @@
 #include "WorldSession.h"
 #include "ObjectMgr.h"
 #include "Player.h"
-#include "Unit.h"
 #include "BattlegroundMgr.h"
 #include "Item.h"
 #include "AuctionHouseMgr.h"
