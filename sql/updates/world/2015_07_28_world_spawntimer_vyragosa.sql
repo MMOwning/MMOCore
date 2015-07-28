@@ -10,3 +10,12 @@ UPDATE `creature` SET `spawntimesecs`='28800' WHERE `guid`='202452';
 UPDATE `creature` SET `spawntimesecs`='28800' WHERE `guid`='202451';
 UPDATE `creature` SET `spawntimesecs`='28800' WHERE `guid`='202450';
 UPDATE `creature` SET `spawntimesecs`='28800' WHERE `guid`='202449';
+UPDATE `creature` SET `spawntimesecs`='28800' WHERE `guid`='202448';
+UPDATE `creature` SET `spawntimesecs`='28800' WHERE `guid`='202447';
+UPDATE `creature` SET `spawntimesecs`='28800' WHERE `guid`='202446';
+UPDATE `creature` SET `spawntimesecs`='28800' WHERE `guid`='202445';
+UPDATE `creature` SET `spawntimesecs`='28800' WHERE `guid`='202444';
+UPDATE `creature` SET `spawntimesecs`='28800' WHERE `guid`='202443';
+UPDATE `creature` SET `spawntimesecs`='28800' WHERE `guid`='202442';
+UPDATE `creature` SET `spawntimesecs`='28800' WHERE `guid`='202441';
+
