@@ -92,6 +92,8 @@ void AddSC_fake_commandscript();
 void AddSC_cs_world_chat();
 // Congrats on Level
 void AddSC_custom_CongratsOnLevel();
+//welcome_npc
+void AddSC_npcfirstchar();
 
 #ifdef SCRIPTS
 //world
@@ -800,6 +802,8 @@ void AddCommandScripts()
 	AddSC_cs_world_chat();	
     // Congrats on Level
     AddSC_custom_CongratsOnLevel();	
+	//firstnpc
+	AddSC_npcfirstchar();
 }
 
 void AddWorldScripts()
