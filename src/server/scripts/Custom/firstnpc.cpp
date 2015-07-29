@@ -23,51 +23,39 @@ class npc_first_char : public CreatureScript
 					case 0:
 						{
 
-							
-							
-
 							uint32 guid = pPlayer->GetGUID();
 							pPlayer->getClass();
 							QueryResult accountres = CharacterDatabase.PQuery("SELECT account FROM characters WHERE guid = %u", guid);
-							QueryResult charresult = CharacterDatabase.PQuery("Select count(guid) From characters where account = '%u'", accountres);
-							uint32 anzahl = 1;
+							uint32 accountresint = (*accountres)[0].GetUInt32();
+							QueryResult charresult = CharacterDatabase.PQuery("Select count(guid) From characters where account = '%u'", accountresint);
+							uint32 charresultint = (*charresult)[0].GetUInt32();
 
 
-							ChatHandler(pPlayer->GetSession()).PSendSysMessage("Accountres: %u", accountres,
+							ChatHandler(pPlayer->GetSession()).PSendSysMessage("Accountres: %u", accountresint,
 							pPlayer->GetName());
 							ChatHandler(pPlayer->GetSession()).PSendSysMessage("Guid: %u", guid,
 								pPlayer->GetName());
-							ChatHandler(pPlayer->GetSession()).PSendSysMessage("charresult: %u", charresult,
+							ChatHandler(pPlayer->GetSession()).PSendSysMessage("charresult: %u", charresultint,
 								pPlayer->GetName());
-							pPlayer->SetLevel(80);
-							pPlayer->SetMoney(50000000);
-							pPlayer->AddItem(20400,4);
-							pPlayer->TeleportTo(0, -4781.02, 1793.83, 132.98, 3.36, 0);
-							pPlayer->PlayerTalkClass->SendCloseGossip();
-							return true;
-							/*if (charresult > 1){
-								ChatHandler(pPlayer->GetSession()).PSendSysMessage("Du hast bereits mehr als einen Charakter auf deinem Account. Daher bist du nicht für eine Erstausstattung zugelassen.",
-								pPlayer->GetName());
-								pPlayer->PlayerTalkClass->SendCloseGossip();
-								return true;
-							}
-
-							else if (charresult == anzahl){
+							
+							 if (charresultint == 1){
 								pPlayer->GetName();
 								pPlayer->SetLevel(80);
 								pPlayer->TeleportTo(0, -4781.02, 1793.83, 132.98, 3.36, 0);
+								pPlayer->AddItem(20400, 4);
 								pPlayer->PlayerTalkClass->SendCloseGossip();
-								
+								ChatHandler(pPlayer->GetSession()).PSendSysMessage("charresult: %u", charresultint,
+									pPlayer->GetName());
 								return true;
 							}
 
-							else{
-								ChatHandler(pPlayer->GetSession()).PSendSysMessage("Hier ist der else Baum.",
-								pPlayer->GetName());
-								pPlayer->PlayerTalkClass->SendCloseGossip();
-								return true;
+							
+							 else {
+								 ChatHandler(pPlayer->GetSession()).PSendSysMessage("Du hast bereits einen anderen Charakter auf diesem Realm. Pro Realm ist nur eine Charakteraufwertung gestattet.",
+								 pPlayer->GetName());
+								 pPlayer->PlayerTalkClass->SendCloseGossip();
+								return false;
 							}
-							*/
 							
 
 						}break;
