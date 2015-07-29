@@ -74,6 +74,7 @@ char const Holidaysfmt[] = "niiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiixxs
 char const Itemfmt[] = "niiiiiii";
 char const ItemBagFamilyfmt[] = "nxxxxxxxxxxxxxxxxx";
 //char const ItemDisplayTemplateEntryfmt[] = "nxxxxxxxxxxixxxxxxxxxxx";
+char const ItemDisplayTemplateEntryfmt[] = "nxxxxsxxxxxxxxxxxxxxxxxxx";
 //char const ItemCondExtCostsEntryfmt[] = "xiii";
 char const ItemExtendedCostEntryfmt[] = "niiiiiiiiiiiiiix";
 char const ItemLimitCategoryEntryfmt[] = "nxxxxxxxxxxxxxxxxxii";
