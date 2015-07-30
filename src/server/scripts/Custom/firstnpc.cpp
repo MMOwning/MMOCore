@@ -9,8 +9,8 @@ class npc_first_char : public CreatureScript
 
 				bool OnGossipHello(Player *pPlayer, Creature* _creature)
 				{
-					pPlayer->ADD_GOSSIP_ITEM(7, "Firstausstattung", GOSSIP_SENDER_MAIN, 1);
 					pPlayer->ADD_GOSSIP_ITEM(7, "Was tut dieser NPC?", GOSSIP_SENDER_MAIN, 0);
+					pPlayer->ADD_GOSSIP_ITEM(7, "Firstausstattung", GOSSIP_SENDER_MAIN, 1);
 					if (pPlayer->IsGameMaster()){
 						pPlayer->ADD_GOSSIP_ITEM(7, "GM Punkt", GOSSIP_SENDER_MAIN, 3);
 					}
@@ -37,13 +37,13 @@ class npc_first_char : public CreatureScript
 
 						
 							QueryResult ipadr = LoginDatabase.PQuery("SELECT last_ip FROM account where id = %u", accountresint);
-							uint32 ipadrint = (*ipadr)[0].GetInt32();
-							QueryResult ipadrcount = LoginDatabase.PQuery("SELECT count(last_ip) FROM account WHERE last_ip = '%u'", ipadrint);
+							std::string ipadrint = (*ipadr)[0].GetString();
+							QueryResult ipadrcount = LoginDatabase.PQuery("SELECT count(last_ip) FROM account WHERE last_ip = '%s'", ipadrint);
 							uint32 ipadrcountint = (*ipadrcount)[0].GetUInt32();
 							
 							ChatHandler(pPlayer->GetSession()).PSendSysMessage("ipadrcountint: %u", ipadrcountint,
 								pPlayer->GetName());
-							ChatHandler(pPlayer->GetSession()).PSendSysMessage("ipadrint: %u", ipadrint,
+							ChatHandler(pPlayer->GetSession()).PSendSysMessage("ipadrint: %s", ipadrint,
 								pPlayer->GetName());
 							ChatHandler(pPlayer->GetSession()).PSendSysMessage("charresultint %u", charresultint,
 								pPlayer->GetName());
