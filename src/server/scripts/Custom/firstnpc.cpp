@@ -2,6 +2,7 @@
 #include "AccountMgr.h"
 
 
+
 class npc_first_char : public CreatureScript
 {
 		public: npc_first_char() : CreatureScript("npc_first_char"){ }
@@ -34,11 +35,21 @@ class npc_first_char : public CreatureScript
 							QueryResult charresult = CharacterDatabase.PQuery("Select count(guid) From characters where account = '%u'", accountresint);
 							uint32 charresultint = (*charresult)[0].GetUInt32();
 
+						
 							QueryResult ipadr = LoginDatabase.PQuery("SELECT last_ip FROM account where id = %u", accountresint);
-							uint32 ipadrint = (*ipadr)[0].GetUInt32();
-							QueryResult ipadrcount = LoginDatabase.PQuery("SELECT count(last_ip) FROM account WHERE last_ip", ipadrint);
+							uint32 ipadrint = (*ipadr)[0].GetInt32();
+							QueryResult ipadrcount = LoginDatabase.PQuery("SELECT count(last_ip) FROM account WHERE last_ip = '%u'", ipadrint);
 							uint32 ipadrcountint = (*ipadrcount)[0].GetUInt32();
 							
+							ChatHandler(pPlayer->GetSession()).PSendSysMessage("ipadrcountint: %u", ipadrcountint,
+								pPlayer->GetName());
+							ChatHandler(pPlayer->GetSession()).PSendSysMessage("ipadrint: %u", ipadrint,
+								pPlayer->GetName());
+							ChatHandler(pPlayer->GetSession()).PSendSysMessage("charresultint %u", charresultint,
+								pPlayer->GetName());
+							ChatHandler(pPlayer->GetSession()).PSendSysMessage("accountresint: %u", accountresint,
+								pPlayer->GetName());
+						
 							
 							
 

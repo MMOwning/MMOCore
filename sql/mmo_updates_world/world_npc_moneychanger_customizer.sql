@@ -19,18 +19,20 @@ INSERT INTO `npc_vendor` (`entry`, `slot`, `item`, `maxcount`, `incrtime`, `Exte
 -- 100 Arenapunkte = 1 Splitter eines Steinbewahrers
 (99321, 0, 43228, 0, 0, 2596),
 -- 100 Arenapunkte = 1 Siegel des Champions
-(99321, 0, 44990, 0, 0, 2596),
+(99321, 1, 44990, 0, 0, 2596),
 -- 25 Abzeichen der Gerechtigkeit = 1 Emblem des Triumphs
-(99321, 0, 47241, 0, 0, 1015),
+(99321, 2, 47241, 0, 0, 1015),
 -- 1 Emblem der Ehre = 1 Emblem des Triumphs
-(99321, 0, 47241, 0, 0, 2589),
+(99321, 3, 47241, 0, 0, 2589),
 -- 1 Emblem der Eroberung = 1 Emblem des Triumphs
-(99321, 0, 47241, 0, 0, 2637),
+(99321, 4, 47241, 0, 0, 2637),
 -- 15 Emblem des Triumphs = 1 Emblem des Frosts
-(99321, 0, 49426, 0, 0, 2723),
+(99321, 5, 49426, 0, 0, 2723),
 -- 1 Frostmarke = 1 Emblem des Heldentums
-(99321, 0, 40752, 0, 0, 2743 ),
+(99321, 6, 40752, 0, 0, 2743 ),
 -- 1 Emblem des Triumphs = 1 Emblem des Heldentums
-(99321, 0, 40752, 0, 0, 2707 );
+(99321, 7, 40752, 0, 0, 2707 ),
+-- 300 Ehrenpunkte = 1 Ehrenpunkte
+(99321, 8, 43308, 0, 0, 826);
 -- (99321, 0, ??, 0, 0 ,2707); //1 эмблема триумфа
 -- (99321, 0, ??, 0, 0 ,2723); //15 эмблем триумфа
