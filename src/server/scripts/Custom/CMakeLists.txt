@@ -15,7 +15,8 @@ set(scripts_STAT_SRCS
   Custom/cs_fake.cpp  
   Custom/cs_worldchannel.cpp  
   Custom/Congrats_on_Level.cpp
-  Custom/firstnpc.cpp   
+  Custom/firstnpc.cpp
+   
   ${scripts_STAT_SRCS}
 #  ${sources_Custom}
   Custom/Transmog/Transmogrification.h

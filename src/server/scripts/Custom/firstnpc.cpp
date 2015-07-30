@@ -8,8 +8,12 @@ class npc_first_char : public CreatureScript
 
 				bool OnGossipHello(Player *pPlayer, Creature* _creature)
 				{
-					pPlayer->ADD_GOSSIP_ITEM(9, "Hochsetzen auf 80", GOSSIP_SENDER_MAIN, 0);
-					pPlayer->ADD_GOSSIP_ITEM(9, "Was tut dieser NPC?", GOSSIP_SENDER_MAIN, 1);
+					pPlayer->ADD_GOSSIP_ITEM(7, "Firstausstattung", GOSSIP_SENDER_MAIN, 1);
+					pPlayer->ADD_GOSSIP_ITEM(7, "Was tut dieser NPC?", GOSSIP_SENDER_MAIN, 0);
+					if (pPlayer->IsGameMaster()){
+						pPlayer->ADD_GOSSIP_ITEM(7, "GM Punkt", GOSSIP_SENDER_MAIN, 3);
+					}
+					
 					pPlayer->PlayerTalkClass->SendGossipMenu(907, _creature->GetGUID());
 					return true;
 
@@ -20,57 +24,71 @@ class npc_first_char : public CreatureScript
 				{
 					switch (uiAction)
 					{
-					case 0:
+					case 1:
 						{
 
 							uint32 guid = pPlayer->GetGUID();
-							pPlayer->getClass();
+							
 							QueryResult accountres = CharacterDatabase.PQuery("SELECT account FROM characters WHERE guid = %u", guid);
 							uint32 accountresint = (*accountres)[0].GetUInt32();
 							QueryResult charresult = CharacterDatabase.PQuery("Select count(guid) From characters where account = '%u'", accountresint);
 							uint32 charresultint = (*charresult)[0].GetUInt32();
 
-
-							ChatHandler(pPlayer->GetSession()).PSendSysMessage("Accountres: %u", accountresint,
-							pPlayer->GetName());
-							ChatHandler(pPlayer->GetSession()).PSendSysMessage("Guid: %u", guid,
-								pPlayer->GetName());
-							ChatHandler(pPlayer->GetSession()).PSendSysMessage("charresult: %u", charresultint,
-								pPlayer->GetName());
+							QueryResult ipadr = LoginDatabase.PQuery("SELECT last_ip FROM account where id = %u", accountresint);
+							uint32 ipadrint = (*ipadr)[0].GetUInt32();
+							QueryResult ipadrcount = LoginDatabase.PQuery("SELECT count(last_ip) FROM account WHERE last_ip", ipadrint);
+							uint32 ipadrcountint = (*ipadrcount)[0].GetUInt32();
 							
-							 if (charresultint == 1){
-								pPlayer->GetName();
+							
+							
+
+							 if (charresultint == 1 && ipadrcountint == 1){
+								
+								pPlayer->PlayerTalkClass->SendCloseGossip();
 								pPlayer->SetLevel(80);
 								pPlayer->TeleportTo(0, -4781.02, 1793.83, 132.98, 3.36, 0);
 								pPlayer->AddItem(20400, 4);
+								pPlayer->SetMoney(50000000);
+								ChatHandler(pPlayer->GetSession()).PSendSysMessage("Deine Aufwertung wurde ausgeführt. Sucht Euch nun Euer gewünschtes Equipment aus. Viel Spaß wünscht Exitare sowie das MMOwning-Team.",
+								pPlayer->GetName());
 								pPlayer->PlayerTalkClass->SendCloseGossip();
-								ChatHandler(pPlayer->GetSession()).PSendSysMessage("charresult: %u", charresultint,
-									pPlayer->GetName());
-								return true;
+								
+										
+								
+								
+				     			return true;
 							}
-
-							
+							 							
 							 else {
-								 ChatHandler(pPlayer->GetSession()).PSendSysMessage("Du hast bereits einen anderen Charakter auf diesem Realm. Pro Realm ist nur eine Charakteraufwertung gestattet.",
+								 ChatHandler(pPlayer->GetSession()).PSendSysMessage("Du hast bereits einen anderen Charakter auf diesem Realm oder versuchst mit\nzu vielen Accounts eine Erstaustattung zu erlangen.\nDiese wird daher abgelehnt.\nMfG Exitare und das MMOwning-Team.",
 								 pPlayer->GetName());
 								 pPlayer->PlayerTalkClass->SendCloseGossip();
 								return false;
 							}
+							 
 							
 
 						}break;
 
-					case 1:
+					case 0:
 						{
-							ChatHandler(pPlayer->GetSession()).PSendSysMessage("Dieser NPC vergibt deine Erstaustattung. Klicke einfach auf Hochsetzen auf 80 und es beginnt.", 
+							ChatHandler(pPlayer->GetSession()).PSendSysMessage("Dieser NPC vergibt deine Erstaustattung. Klicke einfach auf 'Firstausstattung'und es beginnt.", 
 							pPlayer->GetName());
 							pPlayer->PlayerTalkClass->SendCloseGossip();
+							return true;
 						}break;
 
-				}
-					return true;
-			}
+					
 
+					
+
+
+					
+
+				}
+					
+			}
+				
 
 };
 

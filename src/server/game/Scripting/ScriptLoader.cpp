@@ -95,6 +95,8 @@ void AddSC_custom_CongratsOnLevel();
 //welcome_npc
 void AddSC_npcfirstchar();
 
+
+
 #ifdef SCRIPTS
 //world
 void AddSC_areatrigger_scripts();
@@ -804,6 +806,8 @@ void AddCommandScripts()
     AddSC_custom_CongratsOnLevel();	
 	//firstnpc
 	AddSC_npcfirstchar();
+	
+	
 }
 
 void AddWorldScripts()
