@@ -32,7 +32,7 @@ INSERT INTO `npc_vendor` (`entry`, `slot`, `item`, `maxcount`, `incrtime`, `Exte
 (99321, 6, 40752, 0, 0, 2743 ),
 -- 1 Emblem des Triumphs = 1 Emblem des Heldentums
 (99321, 7, 40752, 0, 0, 2707 ),
--- 300 Ehrenpunkte = 1 Ehrenpunkte
+-- 300 Ehrenpunkte = 1 Ehrenpunkt
 (99321, 8, 43308, 0, 0, 826);
 -- (99321, 0, ??, 0, 0 ,2707); //1 эмблема триумфа
 -- (99321, 0, ??, 0, 0 ,2723); //15 эмблем триумфа
