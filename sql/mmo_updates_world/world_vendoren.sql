@@ -177,7 +177,7 @@ REPLACE INTO `creature_template` (`entry`, `difficulty_entry_1`, `difficulty_ent
 
 DELETE FROM `creature` WHERE `id` = 500121;
 REPLACE INTO `creature` (`guid`,`id`,`map`,`spawnMask`,`phaseMask`,`modelid`,`equipment_id`,`position_x`,`position_y`,`position_z`,`orientation`,`spawntimesecs`,`spawndist`,`currentwaypoint`,`curhealth`,`curmana`,`MovementType`) VALUES 
-('500121','500121','0','1','1','17072','0','-4812.89','1791.27','130.93','0.29','25','0','0','1000000','250000','0');
+('500121','500121','0','1','1','17072','0','-821.00','1508.02','104.54','5.76','25','0','0','1000000','250000','0');
 
 
 

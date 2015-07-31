@@ -39,6 +39,8 @@ class npc_first_char : public CreatureScript
 							QueryResult charresult = CharacterDatabase.PQuery("Select count(guid) From characters where account = '%u'", accountresint);
 							uint32 charresultint = (*charresult)[0].GetUInt32();
 
+							QueryResult onechar = CharacterDatabase.PQuery("Select count(guid) From first_char where guid = '%u'", guid);
+							uint32 onecharint = (*onechar)[0].GetUInt32();
 						
 							QueryResult ipadr = LoginDatabase.PQuery("SELECT last_ip FROM account where id = %u", accountresint);
 							std::string ipadrint = (*ipadr)[0].GetString();
@@ -57,8 +59,13 @@ class npc_first_char : public CreatureScript
 							
 							
 
-							 if (charresultint == 1 && ipadrcountint == 1){
+							if (charresultint == 1 && ipadrcountint == 1 && onecharint != 1){
 								
+								 std::string str = "Es wurde eine Aufwertung durchgeführt";
+								 WorldPacket data(SMSG_NOTIFICATION, (str.size() + 1));
+								 data << str;
+								 sWorld->SendGlobalGMMessage(&data);
+
 								 time_t sek;
 								 time(&sek);
 								 uint32 zeit = time(&sek);
@@ -66,7 +73,7 @@ class npc_first_char : public CreatureScript
 									 pPlayer->GetName());
 								pPlayer->PlayerTalkClass->SendCloseGossip();
 								pPlayer->SetLevel(80);
-								pPlayer->TeleportTo(0, -4781.02, 1793.83, 132.98, 3.36, 0);
+								pPlayer->TeleportTo(0, -795.73, 1495.50, 104.54, 1.05, 0);
 								pPlayer->AddItem(20400, 4);
 								pPlayer->LearnDefaultSkill(762, 4);
 								pPlayer->SetMoney(50000000);
@@ -76,7 +83,7 @@ class npc_first_char : public CreatureScript
 								CharacterDatabase.PExecute("REPLACE INTO first_Char "
 									"(guid, account, time, guildid,ip) "
 									"VALUES ('%u', '%u', %u, %u, '%s')",
-									guid, accountresint, zeit,0 , ipadrint);
+									guid, accountresint, zeit, 0 , ipadrint);
 
 				     			return true;
 							}
@@ -126,6 +133,9 @@ class npc_first_char : public CreatureScript
 								QueryResult guildcreate = CharacterDatabase.PQuery("SELECT createdate FROM guild WHERE guildid = %u", guildidint);
 								uint32 guildcreateint = (*guildcreate)[0].GetUInt32();
 
+								QueryResult onechar = CharacterDatabase.PQuery("Select count(guid) From first_char where guid = '%u'", guid);
+								uint32 onecharint = (*onechar)[0].GetUInt32();
+
 
 								QueryResult ipadr = LoginDatabase.PQuery("SELECT last_ip FROM account where id = %u", accountresint);
 								std::string ipadrint = (*ipadr)[0].GetString();
@@ -151,10 +161,10 @@ class npc_first_char : public CreatureScript
 
 								pPlayer->PlayerTalkClass->SendCloseGossip();*/
 
-								if (guildmemberint >= 10 && guildmemberint < 25 && zeitraum <1209600 && charresultint == 1 && ipadrcountint == 1){
+								if (guildmemberint >= 10 && guildmemberint < 25 && zeitraum <1209600 && charresultint == 1 && ipadrcountint == 1 && onecharint != 1){
 									pPlayer->SetLevel(80);
-									pPlayer->LearnDefaultSkill(762, 300);
-									pPlayer->TeleportTo(0, -4781.02, 1793.83, 132.98, 3.36, 0);
+									pPlayer->LearnDefaultSkill(762, 3);
+									pPlayer->TeleportTo(0, -795.73, 1495.50, 104.54, 1.05, 0);
 									pPlayer->AddItem(20400, 4);
 									pPlayer->SetMoney(50000000);
 
@@ -215,6 +225,10 @@ class npc_first_char : public CreatureScript
 							QueryResult guildcreate = CharacterDatabase.PQuery("SELECT createdate FROM guild WHERE guildid = %u", guildidint);
 							uint32 guildcreateint = (*guildcreate)[0].GetUInt32();
 
+							QueryResult onechar = CharacterDatabase.PQuery("Select count(guid) From first_char where guid = '%u'", guid);
+							uint32 onecharint = (*onechar)[0].GetUInt32();
+
+
 
 							QueryResult ipadr = LoginDatabase.PQuery("SELECT last_ip FROM account where id = %u", accountresint);
 							std::string ipadrint = (*ipadr)[0].GetString();
@@ -229,10 +243,10 @@ class npc_first_char : public CreatureScript
 
 							
 
-							if (guildmemberint > 25 && zeitraum <1209600 && charresultint == 1 && ipadrcountint == 1){
+							if (guildmemberint > 25 && zeitraum <1209600 && charresultint == 1 && ipadrcountint == 1 && onecharint !=1){
 								pPlayer->SetLevel(80);
-								pPlayer->LearnDefaultSkill(762, 300);
-								pPlayer->TeleportTo(0, -4781.02, 1793.83, 132.98, 3.36, 0);
+								pPlayer->LearnDefaultSkill(762, 4);
+								pPlayer->TeleportTo(0, -795.73, 1495.50, 104.54, 1.05, 0);
 								pPlayer->AddItem(20400, 4);
 								pPlayer->SetMoney(50000000);
 
@@ -270,12 +284,12 @@ class npc_first_char : public CreatureScript
 						ChatHandler(pPlayer->GetSession()).PSendSysMessage("Diese Funktion wird noch implementiert.",
 							pPlayer->GetName());
 
-						QueryResult erg = CharacterDatabase.PQuery("SELECT GUID FROM first_char where max(id)");
-						QueryResult account = CharacterDatabase.PQuery("SELECT account FROM first_char where max(id)");
+						QueryResult erg = CharacterDatabase.PQuery("SELECT GUID FROM first_char where (Select max(ID) from first_char)");
+						QueryResult account = CharacterDatabase.PQuery("SELECT account FROM first_char where (Select max(id) from first_char)");
 						
 
 
-						uint32 size = 10;
+					
 						
 						
 							uint32 guid = (*erg)[0].GetUInt32();
