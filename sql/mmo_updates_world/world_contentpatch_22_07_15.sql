@@ -6115,7 +6115,7 @@ REPLACE INTO `quest_template` (`ID`, `Method`, `QuestLevel`, `MinLevel`, `QuestS
  /*  PointOption  */ 0,
  /*  LogTitle  */ 'Friede sei mit uns.',
  /*  LogDescription  */  'Um Frieden zu wahren müssen wir unsere Feinde besiegen.',
- /*  QuestDescription   */ 'Hallo $N,tötet den Pusteligen Schrecken der hier am Strand entlang läuft. Ich bitte Euch inständig um Eure Hilfe. Wenn ihr das erledigt habt, geht bitte zu Bryana Atkenur in Beutebucht. Sie ist am Anleger für die Anleger und kleinere Schiffe zu finden.',
+ /*  QuestDescription   */ 'Hallo $N,tötet den Pusteligen Schrecken der hier am Strand entlang läuft. Ich bitte Euch inständig um Eure Hilfe. Wenn ihr das erledigt habt, geht bitte zu Bryana Atkenur in Beutebucht. Sie ist am Anleger kleinere Schiffe zu finden z.b f�r Fischerboote.',
  /*  EndText   */  '',
  /*  OfferRewardText  */  'Seid ihr fertig?',
  /*  RequestItemsText  */ 'Tötet den Pusteligen Schrecken.',

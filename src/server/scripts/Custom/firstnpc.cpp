@@ -47,6 +47,16 @@ class npc_first_char : public CreatureScript
 							QueryResult ipadrcount = LoginDatabase.PQuery("SELECT count(last_ip) FROM account WHERE last_ip = '%s'", ipadrint);
 							uint32 ipadrcountint = (*ipadrcount)[0].GetUInt32();
 							
+
+							/*Username*/
+							QueryResult guidname = CharacterDatabase.PQuery("SELECT name FROM characters where guid = %u", guid);
+							std::string charname = (*guidname)[0].GetString();
+
+							/*Accname*/
+							QueryResult accountname = LoginDatabase.PQuery("SELECT username FROM account where id = %u", accountresint);
+							std::string accname = (*accountname)[0].GetString();
+
+
 							ChatHandler(pPlayer->GetSession()).PSendSysMessage("ipadrcountint: %u", ipadrcountint,
 								pPlayer->GetName());
 							ChatHandler(pPlayer->GetSession()).PSendSysMessage("ipadrint: %s", ipadrint,
@@ -61,11 +71,6 @@ class npc_first_char : public CreatureScript
 
 							if (charresultint == 1 && ipadrcountint == 1 && onecharint != 1){
 								
-								 std::string str = "Es wurde eine Aufwertung durchgeführt";
-								 WorldPacket data(SMSG_NOTIFICATION, (str.size() + 1));
-								 data << str;
-								 sWorld->SendGlobalGMMessage(&data);
-
 								 time_t sek;
 								 time(&sek);
 								 uint32 zeit = time(&sek);
@@ -81,9 +86,9 @@ class npc_first_char : public CreatureScript
 								pPlayer->PlayerTalkClass->SendCloseGossip();	
 
 								CharacterDatabase.PExecute("REPLACE INTO first_Char "
-									"(guid, account, time, guildid,ip) "
-									"VALUES ('%u', '%u', %u, %u, '%s')",
-									guid, accountresint, zeit, 0 , ipadrint);
+									"(guid,Charname, account, Accname, time, guildid,ip) "
+									"VALUES ('%u', '%s', %u, '%s', %u, %u, '%s')",
+									guid, charname, accountresint, accname, zeit, 0 , ipadrint);
 
 				     			return true;
 							}
@@ -283,29 +288,7 @@ class npc_first_char : public CreatureScript
 					{
 						ChatHandler(pPlayer->GetSession()).PSendSysMessage("Diese Funktion wird noch implementiert.",
 							pPlayer->GetName());
-
-						QueryResult erg = CharacterDatabase.PQuery("SELECT GUID FROM first_char where (Select max(ID) from first_char)");
-						QueryResult account = CharacterDatabase.PQuery("SELECT account FROM first_char where (Select max(id) from first_char)");
-						
-
-
-					
-						
-						
-							uint32 guid = (*erg)[0].GetUInt32();
-							QueryResult guidname = CharacterDatabase.PQuery("SELECT name FROM characters where guid = %u", guid);
-							std::string charname = (*guidname)[0].GetString();
-
-							uint32 accountint = (*account)[0].GetUInt32();
-							QueryResult accountname = LoginDatabase.PQuery("SELECT username FROM account where id = %u", accountint);
-							std::string accname = (*accountname)[0].GetString();
-
-							ChatHandler(pPlayer->GetSession()).PSendSysMessage("Charakter: %s", charname,
-								pPlayer->GetName());
-							ChatHandler(pPlayer->GetSession()).PSendSysMessage("Accountname: %s", accname,
-								pPlayer->GetName());
-							
-							pPlayer->PlayerTalkClass->SendCloseGossip();
+						pPlayer->PlayerTalkClass->SendCloseGossip();
 							
 
 	      				
