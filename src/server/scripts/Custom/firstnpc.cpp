@@ -11,7 +11,7 @@ class npc_first_char : public CreatureScript
 				bool OnGossipHello(Player *pPlayer, Creature* _creature)
 				{
 					pPlayer->ADD_GOSSIP_ITEM(7, "Was tut dieser NPC?", GOSSIP_SENDER_MAIN, 0);
-					pPlayer->ADD_GOSSIP_ITEM(7, "Firstausstattung", GOSSIP_SENDER_MAIN, 1);
+					pPlayer->ADD_GOSSIP_ITEM(7, "Firstausstattung beantragen", GOSSIP_SENDER_MAIN, 1);
 					pPlayer->ADD_GOSSIP_ITEM(7, "Gildenaufwertung 10er", GOSSIP_SENDER_MAIN, 2);
 					pPlayer->ADD_GOSSIP_ITEM(7, "Gildenaufwertung 25er", GOSSIP_SENDER_MAIN, 3);
 					
@@ -69,6 +69,7 @@ class npc_first_char : public CreatureScript
 								pPlayer->TeleportTo(0, -795.73, 1495.50, 104.54, 1.05, 0);
 								pPlayer->AddItem(20400, 4);
 								pPlayer->SetMoney(50000000);
+							
 								
 								pPlayer->PlayerTalkClass->SendCloseGossip();	
 
@@ -93,7 +94,7 @@ class npc_first_char : public CreatureScript
 
 					case 0:
 						{
-							ChatHandler(pPlayer->GetSession()).PSendSysMessage("Dieser NPC vergibt deine Erstaustattung. Klicke einfach auf 'Firstausstattung'und es beginnt.", 
+							ChatHandler(pPlayer->GetSession()).PSendSysMessage("Dieser NPC vergibt deine Erstaustattung. Klicke einfach auf 'Firstausstattung beantragen' und es beginnt.", 
 							pPlayer->GetName());
 							pPlayer->PlayerTalkClass->SendCloseGossip();
 							return true;
@@ -243,7 +244,7 @@ class npc_first_char : public CreatureScript
 								pPlayer->TeleportTo(0, -795.73, 1495.50, 104.54, 1.05, 0);
 								pPlayer->AddItem(20400, 4);
 								pPlayer->SetMoney(50000000);
-								
+														
 								CharacterDatabase.PExecute("REPLACE INTO first_Char "
 									"(guid,Charname, account, Accname, time, guildid,ip) "
 									"VALUES ('%u', '%s', %u, '%s', %u, %u, '%s')",
@@ -279,7 +280,7 @@ class npc_first_char : public CreatureScript
 							pPlayer->GetName());
 						pPlayer->PlayerTalkClass->SendCloseGossip();
 							
-
+						return true;
 	      				
 						}break;
 
