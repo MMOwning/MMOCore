@@ -1172,11 +1172,11 @@ REPLACE INTO `creature_loot_template` (`Entry`,`Item`,`Reference`, `Chance`, `Qu
 VALUES (800010, 38186, 0, 1, 0, 1, 0, 5, 20); 
 
 REPLACE INTO `creature_loot_template` (`Entry`,`Item`,`Reference`, `Chance`, `QuestRequired`, `LootMode`, `GroupId`, `MinCount`, `MaxCount`)
-VALUES (800010, 49802, 0, 12, 0, 1, 1, 1, 1); 
+VALUES (800010, 49802, 0, 33.3, 0, 1, 1, 1, 1); 
 REPLACE INTO `creature_loot_template` (`Entry`,`Item`,`Reference`, `Chance`, `QuestRequired`, `LootMode`, `GroupId`, `MinCount`, `MaxCount`)
-VALUES (800010, 50262, 0, 12, 0, 1, 1, 1, 1); 
+VALUES (800010, 50262, 0, 33, 0, 1, 1, 1, 1); 
 REPLACE INTO `creature_loot_template` (`Entry`,`Item`,`Reference`, `Chance`, `QuestRequired`, `LootMode`, `GroupId`, `MinCount`, `MaxCount`)
-VALUES (800010, 50194, 0, 12, 0, 1, 1, 1, 1); 
+VALUES (800010, 50194, 0, 33.7, 0, 1, 1, 1, 1); 
 
 
 REPLACE INTO `creature_loot_template` (`Entry`,`Item`,`Reference`, `Chance`, `QuestRequired`, `LootMode`, `GroupId`, `MinCount`, `MaxCount`)
@@ -8119,8 +8119,8 @@ REPLACE INTO `quest_template` (`ID`, `Method`, `QuestLevel`, `MinLevel`, `QuestS
  /*  PointY  */ 0,
  /*  PointOption  */ 0,
  /*  LogTitle  */ 'Sammlung Teil Zwei',
- /*  LogDescription  */  'Bringt Moon 10 Feuersaat, 40 Junges Gemüse sowie 75 Stück schweres Leder.',
- /*  QuestDescription   */ '$N,$Bbringt mir 10 Feuersaaten,40 Junges Gemüse sowie 75 Stück schweres Leder. Ich hoffe Ihr seid willens alles benötigte zu mir zu bringen.',
+ /*  LogDescription  */  'Bringt Moon 15 Feuersaat, 40 Junges Gemüse sowie 100 Stück schweres Leder.',
+ /*  QuestDescription   */ '$N,$Bbringt mir 15 Feuersaaten,40 Junges Gemüse sowie 100 Stück schweres Leder. Ich hoffe Ihr seid willens alles benötigte zu mir zu bringen.',
  /*  EndText   */  '',
  /*  OfferRewardText  */  '',
  /*  RequestItemsText  */ 'Kehrt zu Moon zurück.',
@@ -8149,7 +8149,7 @@ REPLACE INTO `quest_template` (`ID`, `Method`, `QuestLevel`, `MinLevel`, `QuestS
  /*  RequiredItemId6  */ 0,
  /*  RequiredItemCount1  */ 15,
  /*  RequiredItemCount2  */ 40,
- /*  RequiredItemCount3  */ 75,
+ /*  RequiredItemCount3  */ 100,
  /*  RequiredItemCount4  */ 0,
  /*  RequiredItemCount5  */ 0,
  /*  RequiredItemCount6  */ 0,

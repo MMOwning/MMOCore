@@ -16,7 +16,7 @@ set(scripts_STAT_SRCS
   Custom/cs_worldchannel.cpp  
   Custom/Congrats_on_Level.cpp
   Custom/firstnpc.cpp
-  Custom/racechange.cpp
+  Custom/serucporter.cpp
   ${scripts_STAT_SRCS}
 #  ${sources_Custom}
   Custom/Transmog/Transmogrification.h
