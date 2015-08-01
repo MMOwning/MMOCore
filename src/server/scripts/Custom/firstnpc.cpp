@@ -55,19 +55,7 @@ class npc_first_char : public CreatureScript
 							/*Accname*/
 							QueryResult accountname = LoginDatabase.PQuery("SELECT username FROM account where id = %u", accountresint);
 							std::string accname = (*accountname)[0].GetString();
-
-
-							ChatHandler(pPlayer->GetSession()).PSendSysMessage("ipadrcountint: %u", ipadrcountint,
-								pPlayer->GetName());
-							ChatHandler(pPlayer->GetSession()).PSendSysMessage("ipadrint: %s", ipadrint,
-								pPlayer->GetName());
-							ChatHandler(pPlayer->GetSession()).PSendSysMessage("charresultint %u", charresultint,
-								pPlayer->GetName());
-							ChatHandler(pPlayer->GetSession()).PSendSysMessage("accountresint: %u", accountresint,
-								pPlayer->GetName());
-						
-							
-							
+									
 
 							if (charresultint == 1 && ipadrcountint == 1 && onecharint != 1){
 								
@@ -80,7 +68,6 @@ class npc_first_char : public CreatureScript
 								pPlayer->SetLevel(80);
 								pPlayer->TeleportTo(0, -795.73, 1495.50, 104.54, 1.05, 0);
 								pPlayer->AddItem(20400, 4);
-								pPlayer->LearnDefaultSkill(762, 4);
 								pPlayer->SetMoney(50000000);
 								
 								pPlayer->PlayerTalkClass->SendCloseGossip();	
@@ -141,6 +128,13 @@ class npc_first_char : public CreatureScript
 								QueryResult onechar = CharacterDatabase.PQuery("Select count(guid) From first_char where guid = '%u'", guid);
 								uint32 onecharint = (*onechar)[0].GetUInt32();
 
+								/*Username*/
+								QueryResult guidname = CharacterDatabase.PQuery("SELECT name FROM characters where guid = %u", guid);
+								std::string charname = (*guidname)[0].GetString();
+
+								/*Accname*/
+								QueryResult accountname = LoginDatabase.PQuery("SELECT username FROM account where id = %u", accountresint);
+								std::string accname = (*accountname)[0].GetString();
 
 								QueryResult ipadr = LoginDatabase.PQuery("SELECT last_ip FROM account where id = %u", accountresint);
 								std::string ipadrint = (*ipadr)[0].GetString();
@@ -153,18 +147,6 @@ class npc_first_char : public CreatureScript
 								uint32 zeit = time(&sek);
 								uint32 zeitraum = zeit - guildcreateint;
 
-								/*ChatHandler(pPlayer->GetSession()).PSendSysMessage("Memberanzahl: %u", guildmemberint,
-									pPlayer->GetName());
-								ChatHandler(pPlayer->GetSession()).PSendSysMessage("Gildeid: %u", guildidint,
-									pPlayer->GetName());
-								ChatHandler(pPlayer->GetSession()).PSendSysMessage("Gildecreatedate: %u", guildcreateint,
-									pPlayer->GetName());
-								ChatHandler(pPlayer->GetSession()).PSendSysMessage("Zeit: %u", zeit,
-									pPlayer->GetName());
-								ChatHandler(pPlayer->GetSession()).PSendSysMessage("Zeitraum: %u", zeitraum,
-									pPlayer->GetName());
-
-								pPlayer->PlayerTalkClass->SendCloseGossip();*/
 
 								if (guildmemberint >= 10 && guildmemberint < 25 && zeitraum <1209600 && charresultint == 1 && ipadrcountint == 1 && onecharint != 1){
 									pPlayer->SetLevel(80);
@@ -174,9 +156,9 @@ class npc_first_char : public CreatureScript
 									pPlayer->SetMoney(50000000);
 
 									CharacterDatabase.PExecute("REPLACE INTO first_Char "
-										"(guid, account, time, guildid,ip) "
-										"VALUES ('%u', '%u', %u, %u, '%s')",
-										guid, accountresint, zeit, guildidint, ipadrint);
+										"(guid,Charname, account, Accname, time, guildid,ip) "
+										"VALUES ('%u', '%s', %u, '%s', %u, %u, '%s')",
+										guid, charname, accountresint, accname, zeit, guildidint, ipadrint);
 									return true;
 
 									
@@ -233,6 +215,13 @@ class npc_first_char : public CreatureScript
 							QueryResult onechar = CharacterDatabase.PQuery("Select count(guid) From first_char where guid = '%u'", guid);
 							uint32 onecharint = (*onechar)[0].GetUInt32();
 
+							/*Username*/
+							QueryResult guidname = CharacterDatabase.PQuery("SELECT name FROM characters where guid = %u", guid);
+							std::string charname = (*guidname)[0].GetString();
+
+							/*Accname*/
+							QueryResult accountname = LoginDatabase.PQuery("SELECT username FROM account where id = %u", accountresint);
+							std::string accname = (*accountname)[0].GetString();
 
 
 							QueryResult ipadr = LoginDatabase.PQuery("SELECT last_ip FROM account where id = %u", accountresint);
@@ -254,11 +243,11 @@ class npc_first_char : public CreatureScript
 								pPlayer->TeleportTo(0, -795.73, 1495.50, 104.54, 1.05, 0);
 								pPlayer->AddItem(20400, 4);
 								pPlayer->SetMoney(50000000);
-
+								
 								CharacterDatabase.PExecute("REPLACE INTO first_Char "
-									"(guid, account, time, guildid,ip) "
-									"VALUES ('%u', '%u', %u, %u, '%s')",
-									guid, accountresint, zeit, guildidint, ipadrint);
+									"(guid,Charname, account, Accname, time, guildid,ip) "
+									"VALUES ('%u', '%s', %u, '%s', %u, %u, '%s')",
+									guid, charname, accountresint, accname, zeit, guildidint, ipadrint);
 								return true;
 							}
 
