@@ -4361,7 +4361,7 @@ REPLACE INTO `creature_queststarter` (`id`, `quest`) VALUES
  /*  RewardHonor  */ 0,
  /*  RewardHonorMultiplier  */ 0,
  /*  SourceItemId  */ 0,
- /*  Flags  */ 4096,
+ /*  Flags  */ 32768,
  /*  RewardTitle  */ 0,
  /*  RequiredPlayerKills  */ 0,
  /*  RewardTalents  */ 0,
