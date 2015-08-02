@@ -51,6 +51,7 @@ public: seruc() : CreatureScript("seruc"){ }
 				pPlayer->GetGUID();
 				uint32 rating = pPlayer->GetArenaPersonalRating(1);
 					if (rating >= 500){
+						pPlayer->ModifyHonorPoints(-500, NULL);
 						pPlayer->TeleportTo(0, -793.67,1565.25,19.88,3.25);
 						pPlayer->ModifyMoney(-200000);
 						return true;

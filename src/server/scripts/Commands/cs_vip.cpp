@@ -53,7 +53,8 @@ public:
             { "taxi",           SEC_ADMINISTRATOR,  false, &HandleVipTaxiCommand,               "", NULL },
             { "home",           SEC_ADMINISTRATOR,  false, &HandleVipHomeCommand,               "", NULL },
             { "capital",        SEC_ADMINISTRATOR,  false, &HandleVipCapitalCommand,            "", NULL },
-            { "status",         SEC_ADMINISTRATOR,  false, &HandleVipStatusCommand,             "", NULL },			
+            { "status",         SEC_ADMINISTRATOR,  false, &HandleVipStatusCommand,             "", NULL },
+			{"insel",			SEC_PLAYER,			false, &HandleInselCommand,					"", NULL },				
             //{ "",         		SEC_ADMINISTRATOR,  true,  &HandleVipCommand,		            "", NULL },			
 			
             { NULL,             0,                  false, NULL,                                "", NULL }
@@ -500,6 +501,34 @@ static bool HandleVipStatusCommand(ChatHandler* handler, char const* args)
 		handler->PSendSysMessage("Du hast keinen Elite Account.", days);
 	else
 		handler->PSendSysMessage("Dein Elite Account endet in %u Tagen.");
+
+	return true;
+}
+
+/*Insel*/
+static bool HandleInselCommand(ChatHandler* handler, const char* /*args*/)
+{
+	//MALL command
+
+	Player *chr = handler->GetSession()->GetPlayer();
+
+	if (chr->IsInCombat())
+	{
+		handler->PSendSysMessage(LANG_YOU_IN_COMBAT);
+		//SetSentErrorMessage(true);
+		return false;
+	}
+	
+	if (chr->IsInFlight())
+	{
+		handler->PSendSysMessage(LANG_YOU_IN_FLIGHT);
+		//SetSentErrorMessage(true);
+		return false;
+	}
+
+	chr->ResurrectPlayer(0.5, false);
+
+	chr->TeleportTo(0, -9771.67, 2127.04, 15.07, 3.75);    // Insel Coords
 
 	return true;
 }

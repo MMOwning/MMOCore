@@ -4,7 +4,7 @@
 
 enum Spells
 {
-	SPELL_OOZE_MERGE = 69889,
+	SPELL_SLIME_BOLT = 32309,
 	SPELL_BEBENDE_ERDE = 6524,
 	SPELL_BLISTERING_COLD = 70123,
 	SPELL_BERSERK = 26662,
@@ -16,7 +16,7 @@ enum Events
 {
 	EVENT_COLD = 1,
 	EVENT_BEBENDE_ERDE = 2,
-	EVENT_OOZE_MERGE = 3,
+	EVENT_SLIME_BOLT = 3,
 	EVENT_SUMMONS = 4,
 	EVENT_BERSERK = 5,
 	EVENT_ENRAGE = 6,
@@ -33,7 +33,7 @@ enum Phases
 
 enum Summons
 {
-	NPC_ONYXLAMMENRUFER = 39814
+	NPC_SCHMORRSCHUPPEN = 40421
 };
 
 enum Texts
@@ -68,7 +68,7 @@ public:
 			_events.ScheduleEvent(EVENT_COLD, 1000);
 			_events.ScheduleEvent(EVENT_BEBENDE_ERDE,10000);
 			_events.ScheduleEvent(EVENT_WASTE, 8000);
-			
+						
 		}
 
 		void DamageTaken(Unit* /*attacker*/, uint32& damage) override
@@ -76,7 +76,7 @@ public:
 			if (me->HealthBelowPctDamaged(75, damage) && _events.IsInPhase(PHASE_ONE))
 			{
 				_events.SetPhase(PHASE_TWO);
-				_events.ScheduleEvent(EVENT_OOZE_MERGE, 10000);
+				_events.ScheduleEvent(EVENT_SLIME_BOLT, 10000);
 				_events.ScheduleEvent(EVENT_WASTE, 20000);
 			
 			}
@@ -86,7 +86,7 @@ public:
 				_events.SetPhase(PHASE_THREE);
 				_events.ScheduleEvent(EVENT_SUMMONS, 5000);
 				_events.ScheduleEvent(EVENT_BERSERK, 10000);
-				_events.ScheduleEvent(EVENT_ENRAGE, 120000); //In phase 3 the player have 2 minutes to defeat the Boss or all will die !
+				_events.ScheduleEvent(EVENT_ENRAGE, 120000); //2Minuten sonst alle tot!
 			}
 		}
 
@@ -96,7 +96,7 @@ public:
 
 			switch (summon->GetEntry())
 			{
-			case NPC_ONYXLAMMENRUFER:
+			case NPC_SCHMORRSCHUPPEN:
 				if (Unit* target = SelectTarget(SELECT_TARGET_RANDOM, 0, 300.0f))
 					summon->AI()->AttackStart(target); // I think it means the Tank !
 				break;
@@ -120,8 +120,8 @@ public:
 			{
 				switch (eventId)
 				{
-				case EVENT_OOZE_MERGE:
-					DoCast(me, SPELL_OOZE_MERGE);
+				case EVENT_SLIME_BOLT:
+					DoCast(me, EVENT_SLIME_BOLT);
 					break;
 				case EVENT_BEBENDE_ERDE:
 					DoCastVictim(SPELL_BEBENDE_ERDE);
@@ -134,9 +134,9 @@ public:
 					break;
 				case EVENT_SUMMONS:
 					Talk(SAY_HELP);
-					me->SummonCreature(NPC_ONYXLAMMENRUFER, me->GetPositionX() + 5, me->GetPositionY(), me->GetPositionZ() + 5, 0, TEMPSUMMON_CORPSE_DESPAWN, 600000);
-					me->SummonCreature(NPC_ONYXLAMMENRUFER, me->GetPositionX() + 5, me->GetPositionY(), me->GetPositionZ() + 5, 0, TEMPSUMMON_CORPSE_DESPAWN, 600000);
-					me->SummonCreature(NPC_ONYXLAMMENRUFER, me->GetPositionX() + 5, me->GetPositionY(), me->GetPositionZ() + 5, 0, TEMPSUMMON_CORPSE_DESPAWN, 600000);
+					me->SummonCreature(NPC_SCHMORRSCHUPPEN, me->GetPositionX() + 5, me->GetPositionY(), me->GetPositionZ() + 5, 0, TEMPSUMMON_CORPSE_DESPAWN, 600000);
+					me->SummonCreature(NPC_SCHMORRSCHUPPEN, me->GetPositionX() + 5, me->GetPositionY(), me->GetPositionZ() + 5, 0, TEMPSUMMON_CORPSE_DESPAWN, 600000);
+					me->SummonCreature(NPC_SCHMORRSCHUPPEN, me->GetPositionX() + 5, me->GetPositionY(), me->GetPositionZ() + 5, 0, TEMPSUMMON_CORPSE_DESPAWN, 600000);
 					break;
 				case EVENT_BERSERK:
 					Talk(SAY_BERSERK);

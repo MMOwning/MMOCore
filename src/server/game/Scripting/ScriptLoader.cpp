@@ -100,6 +100,10 @@ void AddSC_seruc();
 void AddSC_eventnpc();
 //bosstwo
 void AddSC_boss_two();
+//boss tyranium
+void AddSC_tyranium();
+//boss anna
+void AddSC_anna();
 
 
 
@@ -818,6 +822,10 @@ void AddCommandScripts()
 	AddSC_eventnpc();
 	//bosstwo
 	AddSC_boss_two();
+	//boss tyranium
+	AddSC_tyranium();
+	//bawz anna
+	AddSC_anna();
 	
 }
 
