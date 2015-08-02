@@ -8,18 +8,20 @@ enum Spells
 	SPELL_BEBENDE_ERDE = 6524,
 	SPELL_BLISTERING_COLD = 70123,
 	SPELL_BERSERK = 26662,
-	SPELL_ENRAGE = 64487,
-	SPELL_TOXIC_WASTE = 69024;
+	SPELL_ENRAGE = 68335,
+	SPELL_TOXIC_WASTE = 69024
 };
 
 enum Events
 {
-	EVENT_VISUAL_NETHER_PORTAL = 1,
+	EVENT_COLD = 1,
 	EVENT_BEBENDE_ERDE = 2,
-	EVENT_BLADESTORM = 3,
+	EVENT_OOZE_MERGE = 3,
 	EVENT_SUMMONS = 4,
 	EVENT_BERSERK = 5,
-	EVENT_ENRAGE = 6
+	EVENT_ENRAGE = 6,
+	EVENT_WASTE = 7
+
 };
 
 enum Phases
@@ -31,7 +33,7 @@ enum Phases
 
 enum Summons
 {
-	NPC_FEUERTEUFEL = 150004
+	NPC_ONYXLAMMENRUFER = 39814
 };
 
 enum Texts
@@ -63,8 +65,10 @@ public:
 		{
 			Talk(SAY_AGGRO);
 			_events.SetPhase(PHASE_ONE);
-			_events.ScheduleEvent(EVENT_VISUAL_NETHER_PORTAL, 1000);
-			_events.ScheduleEvent(EVENT_BEBENDE_ERDE, 30000);
+			_events.ScheduleEvent(EVENT_COLD, 1000);
+			_events.ScheduleEvent(EVENT_BEBENDE_ERDE,10000);
+			_events.ScheduleEvent(EVENT_WASTE, 8000);
+			
 		}
 
 		void DamageTaken(Unit* /*attacker*/, uint32& damage) override
@@ -72,7 +76,9 @@ public:
 			if (me->HealthBelowPctDamaged(75, damage) && _events.IsInPhase(PHASE_ONE))
 			{
 				_events.SetPhase(PHASE_TWO);
-				_events.ScheduleEvent(EVENT_BLADESTORM, 10000);
+				_events.ScheduleEvent(EVENT_OOZE_MERGE, 10000);
+				_events.ScheduleEvent(EVENT_WASTE, 20000);
+			
 			}
 
 			if (me->HealthBelowPctDamaged(35, damage) && _events.IsInPhase(PHASE_TWO))
@@ -90,7 +96,7 @@ public:
 
 			switch (summon->GetEntry())
 			{
-			case NPC_FEUERTEUFEL:
+			case NPC_ONYXLAMMENRUFER:
 				if (Unit* target = SelectTarget(SELECT_TARGET_RANDOM, 0, 300.0f))
 					summon->AI()->AttackStart(target); // I think it means the Tank !
 				break;
@@ -114,23 +120,23 @@ public:
 			{
 				switch (eventId)
 				{
-				case EVENT_VISUAL_NETHER_PORTAL:
-					DoCast(me, VISUAL_NETHER_PORTAL);
+				case EVENT_OOZE_MERGE:
+					DoCast(me, SPELL_OOZE_MERGE);
 					break;
 				case EVENT_BEBENDE_ERDE:
 					DoCastVictim(SPELL_BEBENDE_ERDE);
 					_events.ScheduleEvent(EVENT_BEBENDE_ERDE, 8000);
 					break;
-				case EVENT_BLADESTORM:
+				case EVENT_COLD:
 					Talk(SAY_RANDOM);
 					DoCastVictim(SPELL_BLISTERING_COLD);
-					_events.ScheduleEvent(EVENT_BLADESTORM, 30000);
+					_events.ScheduleEvent(EVENT_COLD, 30000);
 					break;
 				case EVENT_SUMMONS:
 					Talk(SAY_HELP);
-					me->SummonCreature(NPC_FEUERTEUFEL, me->GetPositionX() + 5, me->GetPositionY(), me->GetPositionZ() + 5, 0, TEMPSUMMON_CORPSE_DESPAWN, 600000);
-					me->SummonCreature(NPC_FEUERTEUFEL, me->GetPositionX() + 5, me->GetPositionY(), me->GetPositionZ() + 5, 0, TEMPSUMMON_CORPSE_DESPAWN, 600000);
-					me->SummonCreature(NPC_FEUERTEUFEL, me->GetPositionX() + 5, me->GetPositionY(), me->GetPositionZ() + 5, 0, TEMPSUMMON_CORPSE_DESPAWN, 600000);
+					me->SummonCreature(NPC_ONYXLAMMENRUFER, me->GetPositionX() + 5, me->GetPositionY(), me->GetPositionZ() + 5, 0, TEMPSUMMON_CORPSE_DESPAWN, 600000);
+					me->SummonCreature(NPC_ONYXLAMMENRUFER, me->GetPositionX() + 5, me->GetPositionY(), me->GetPositionZ() + 5, 0, TEMPSUMMON_CORPSE_DESPAWN, 600000);
+					me->SummonCreature(NPC_ONYXLAMMENRUFER, me->GetPositionX() + 5, me->GetPositionY(), me->GetPositionZ() + 5, 0, TEMPSUMMON_CORPSE_DESPAWN, 600000);
 					break;
 				case EVENT_BERSERK:
 					Talk(SAY_BERSERK);
@@ -142,6 +148,11 @@ public:
 					DoCast(me, SPELL_ENRAGE);
 					_events.ScheduleEvent(EVENT_ENRAGE, 10000);
 					break;
+				case EVENT_WASTE:
+					DoCastToAllHostilePlayers(SPELL_TOXIC_WASTE);
+					_events.ScheduleEvent(EVENT_WASTE, 15000);
+					break;
+				
 				default:
 					break;
 				}
@@ -159,6 +170,9 @@ public:
 	{
 		return new boss_twoAI(creature);
 	}
+
+
+
 };
 
 void AddSC_boss_two()
