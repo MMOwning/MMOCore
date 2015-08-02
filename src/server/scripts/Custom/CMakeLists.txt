@@ -17,6 +17,8 @@ set(scripts_STAT_SRCS
   Custom/Congrats_on_Level.cpp
   Custom/firstnpc.cpp
   Custom/serucporter.cpp
+  Custom/eventnpc.cpp
+  Custom/bossscript.cpp
   ${scripts_STAT_SRCS}
 #  ${sources_Custom}
   Custom/Transmog/Transmogrification.h

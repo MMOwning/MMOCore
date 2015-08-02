@@ -94,6 +94,12 @@ void AddSC_cs_world_chat();
 void AddSC_custom_CongratsOnLevel();
 //welcome_npc
 void AddSC_npcfirstchar();
+//porter
+void AddSC_seruc();
+//eventnpc
+void AddSC_eventnpc();
+//bosstwo
+void AddSC_boss_two();
 
 
 
@@ -806,7 +812,12 @@ void AddCommandScripts()
     AddSC_custom_CongratsOnLevel();	
 	//firstnpc
 	AddSC_npcfirstchar();
-	
+	//porter
+	AddSC_seruc();
+	//eventnpc
+	AddSC_eventnpc();
+	//bosstwo
+	AddSC_boss_two();
 	
 }
 
