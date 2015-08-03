@@ -1,6 +1,8 @@
-
+#include "ScriptPCH.h"
+#include "ObjectMgr.h"
 #include "ScriptMgr.h"
 #include "ScriptedCreature.h"
+#include "Player.h"
 
 enum Spells
 {
@@ -103,9 +105,11 @@ public:
 			}
 		}
 
-		void JustDied(Unit* /*killer*/) override
+		void JustDied(Unit* player /*killer*/) 
 		{
-			Talk(SAY_DEAD);
+			char msg[250];
+			snprintf(msg, 250, "|cffff0000[Boss System]|r Boss|cffff6060 Galadriel|r wurde getötet! Der Respawn ist in 7 Tagen ab jetzt! ", player->GetName()); 
+			sWorld->SendGlobalText(msg, NULL);
 			Summons.DespawnAll();
 		}
 

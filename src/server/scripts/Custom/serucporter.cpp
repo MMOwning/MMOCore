@@ -26,7 +26,7 @@ public: seruc() : CreatureScript("seruc"){ }
 			pPlayer->ADD_GOSSIP_ITEM(7, "Boss: Moon [25-40]", GOSSIP_SENDER_MAIN, 10);
 			pPlayer->ADD_GOSSIP_ITEM(7, "Boss: Maltyriun [5-10]", GOSSIP_SENDER_MAIN, 11);
 			pPlayer->ADD_GOSSIP_ITEM(7, "Boss: LORDofDOOM [10-25]", GOSSIP_SENDER_MAIN, 12);
-
+			pPlayer->ADD_GOSSIP_ITEM(7, "Boss: Tyranium [5-10]", GOSSIP_SENDER_MAIN, 14);
 			pPlayer->PlayerTalkClass->SendGossipMenu(907, _creature->GetGUID());
 			return true;
 		}
@@ -187,6 +187,12 @@ public: seruc() : CreatureScript("seruc"){ }
 					return true;
 				}break;
 
+				case 14: {
+					pPlayer->GetGUID();
+					pPlayer->TeleportTo(0, -4698.80, -2045.90, 521.12, 1.4);
+					pPlayer->ModifyMoney(-200000);
+					return true;
+				}break;
 
 
 			}

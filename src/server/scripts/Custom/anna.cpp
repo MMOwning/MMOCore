@@ -119,8 +119,11 @@ class anna : public CreatureScript{
 				}
 			}
 
-			void JustDied(Unit* /*killer*/) override
+			void JustDied(Unit* pPlayer/*killer*/) override
 			{
+				char msg[250];
+				snprintf(msg, 250, "|cffff0000[Boss System]|r Boss|cffff6060 Anna|r wurde getötet! Der Respawn erfolgt in 7 Tagen.", pPlayer->GetName());
+				sWorld->SendGlobalText(msg, NULL);
 			}
 
 			void UpdateAI(uint32 diff) override

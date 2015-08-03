@@ -101,11 +101,13 @@ void AddSC_eventnpc();
 //bosstwo
 void AddSC_boss_two();
 //boss tyranium
-void AddSC_tyranium();
+ void AddSC_tyranium();
 //boss anna
 void AddSC_anna();
 //racechanger
 void AddSC_Race_Change_NPC();
+//allianzboss
+void AddSC_alliance_boss();
 
 
 
@@ -830,6 +832,8 @@ void AddCommandScripts()
 	AddSC_anna();
 	//racechanger
 	AddSC_Race_Change_NPC();
+	//allianzboss
+	AddSC_alliance_boss();
 }
 
 void AddWorldScripts()

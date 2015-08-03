@@ -10,6 +10,7 @@ REPLACE INTO `command` (`name`,`permission`,`help`) VALUES ('elite home', 195, '
 REPLACE INTO `command` (`name`,`permission`,`help`) VALUES ('elite capital', 195, 'Syntax: .elite capital - teleport owner to capital(Orgrimmar/Stormwind) depending on faction of player');
 REPLACE INTO `command` (`name`,`permission`,`help`) VALUES ('elite status', 193, 'Syntax: .elite  status $account - Elite Status eines Accounts anzeigen');
 REPLACE INTO `command` (`name`,`permission`,`help`) VALUES ('elite add', 193, 'Syntax: .elite add $account $days - Set or update a VIP account.');
+REPLACE INTO `command` (`name`,`permission`,`help`) VALUES ('elite insel', 193, 'Syntax: .elite insel  Teleportiert dich zur "Insel".');
 
 -- REPLACE INTO `command` (`name`,`permission`,`help`) VALUES ('elite', 195, 'Elite Status.');
 
