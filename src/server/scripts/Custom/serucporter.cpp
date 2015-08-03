@@ -58,6 +58,7 @@ public: seruc() : CreatureScript("seruc"){ }
 					}
 					
 					else{
+						pPlayer->GetGUID();
 						ChatHandler(pPlayer->GetSession()).PSendSysMessage("Deine persönliche Wertung ist zu gering. Sie muss mindestens 500 betragen.",
 							pPlayer->GetName());
 						pPlayer->PlayerTalkClass->SendCloseGossip();

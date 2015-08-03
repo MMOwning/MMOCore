@@ -12,14 +12,14 @@ public: eventnpc() : CreatureScript("eventnpc"){ }
 
 		bool OnGossipHello(Player *pPlayer, Creature* _creature)
 		{
-			pPlayer->ADD_GOSSIP_ITEM(7, "Winterevent Port", GOSSIP_SENDER_MAIN, 2);
+			pPlayer->ADD_GOSSIP_ITEM(7, "Was tut dieser NPC?", GOSSIP_SENDER_MAIN, 2);
 
 
-			if (pPlayer->IsGameMaster()){
+			/*if (pPlayer->IsGameMaster()){
 				pPlayer->ADD_GOSSIP_ITEM(7, "Winterevent Port", GOSSIP_SENDER_MAIN, 0);
 				pPlayer->PlayerTalkClass->SendGossipMenu(907, _creature->GetGUID());
 				return true;
-			}
+			}*/
 
 			return true;
 		}
@@ -39,7 +39,7 @@ public: eventnpc() : CreatureScript("eventnpc"){ }
 						
 				case 2: {
 					pPlayer->GetGUID();
-					ChatHandler(pPlayer->GetSession()).PSendSysMessage("Dieser NPC zeigt an, welche Events von MMOwning gerade aktiv. Wenn keine aktiv sind, werden auch keine angezeigt.",
+					ChatHandler(pPlayer->GetSession()).PSendSysMessage("Dieser NPC zeigt an, welche Events von MMOwning gerade aktiv sind. Wenn keine aktiv sind, werden auch keine angezeigt.",
 						pPlayer->GetName());
 					pPlayer->PlayerTalkClass->SendCloseGossip();
 					return true;

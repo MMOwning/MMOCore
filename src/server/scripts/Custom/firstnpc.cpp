@@ -62,6 +62,7 @@ class npc_first_char : public CreatureScript
 								 time_t sek;
 								 time(&sek);
 								 uint32 zeit = time(&sek);
+								 pPlayer->GetGUID();
 								 ChatHandler(pPlayer->GetSession()).PSendSysMessage("Deine Aufwertung wurde ausgeführt. Viel Spaß wünscht Exitare sowie das MMOwning-Team.",
 									 pPlayer->GetName());
 								pPlayer->PlayerTalkClass->SendCloseGossip();
@@ -82,6 +83,7 @@ class npc_first_char : public CreatureScript
 							}
 							 							
 							 else {
+								 pPlayer->GetGUID();
 								 ChatHandler(pPlayer->GetSession()).PSendSysMessage("Du hast bereits einen anderen Charakter auf diesem Realm oder versuchst mit\nzu vielen Accounts eine Erstaustattung zu erlangen.\nDiese wird daher abgelehnt.\nMfG Exitare und das MMOwning-Team.",
 								 pPlayer->GetName());
 								 pPlayer->PlayerTalkClass->SendCloseGossip();
@@ -94,6 +96,7 @@ class npc_first_char : public CreatureScript
 
 					case 0:
 						{
+							pPlayer->GetGUID();
 							ChatHandler(pPlayer->GetSession()).PSendSysMessage("Dieser NPC vergibt deine Erstaustattung. Klicke einfach auf 'Firstausstattung beantragen' und es beginnt.", 
 							pPlayer->GetName());
 							pPlayer->PlayerTalkClass->SendCloseGossip();

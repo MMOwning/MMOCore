@@ -195,3 +195,10 @@ INSERT INTO `npc_trainer` (`ID`,`SpellID`,`MoneyCost`,`ReqSkillRank`,`ReqLevel`)
 (@Skills,15590,10000,0,1), -- Fists
 (@Skills,8737,10000,0,40), -- Mail Armor
 (@Skills,750,10000,0,40); -- Plate Armor
+
+DELETE FROM `creature` WHERE `guid` = 90001;
+REPLACE INTO `creature` (`guid`,`id`,`map`,`spawnMask`,`phaseMask`,`modelid`,`equipment_id`,`position_x`,`position_y`,`position_z`,`orientation`,`spawntimesecs`,`spawndist`,`currentwaypoint`,`curhealth`,`curmana`,`MovementType`) VALUES 
+('90001','90001','0','1','1','22931','0','-771.83','1481.88','104.54','2.65','20000','0','0','1000000','250000','0');
+
+DELETE FROM `creature_addon` WHERE `guid` =90001;
+REPLACE INTO `creature_addon` (`guid`, `path_id`, `mount`, `bytes1`, `bytes2`, `emote`, `auras`) VALUES ('90001', '0', '24725', '0', '4096', '0', '0');
