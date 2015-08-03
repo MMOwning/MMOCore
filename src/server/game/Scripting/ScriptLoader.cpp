@@ -104,6 +104,8 @@ void AddSC_boss_two();
 void AddSC_tyranium();
 //boss anna
 void AddSC_anna();
+//racechanger
+void AddSC_Race_Change_NPC();
 
 
 
@@ -826,7 +828,8 @@ void AddCommandScripts()
 	AddSC_tyranium();
 	//bawz anna
 	AddSC_anna();
-	
+	//racechanger
+	AddSC_Race_Change_NPC();
 }
 
 void AddWorldScripts()
