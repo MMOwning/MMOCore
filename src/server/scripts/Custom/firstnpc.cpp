@@ -10,7 +10,7 @@ class npc_first_char : public CreatureScript
 
 				bool OnGossipHello(Player *pPlayer, Creature* _creature)
 				{
-					pPlayer->ADD_GOSSIP_ITEM(7, "Was tut dieser NPC?", GOSSIP_SENDER_MAIN, 0);
+					pPlayer->ADD_GOSSIP_ITEM(7, "Informationen und Hilfe", GOSSIP_SENDER_MAIN, 0);
 					pPlayer->ADD_GOSSIP_ITEM(7, "Firstausstattung beantragen", GOSSIP_SENDER_MAIN, 1);
 					pPlayer->ADD_GOSSIP_ITEM(7, "Gildenaufwertung 10er", GOSSIP_SENDER_MAIN, 2);
 					pPlayer->ADD_GOSSIP_ITEM(7, "Gildenaufwertung 25er", GOSSIP_SENDER_MAIN, 3);
@@ -55,15 +55,19 @@ class npc_first_char : public CreatureScript
 							/*Accname*/
 							QueryResult accountname = LoginDatabase.PQuery("SELECT username FROM account where id = %u", accountresint);
 							std::string accname = (*accountname)[0].GetString();
-									
 
-							if (charresultint == 1 && ipadrcountint == 1 && onecharint != 1){
+							/*Acccountanzahl zählen*/
+							QueryResult accountanz = CharacterDatabase.PQuery("SELECT count(account) FROM first_char WHERE guid = %u", guid);
+							uint32 accounanzint = (*accountanz)[0].GetUInt32();
+						
+
+							if (charresultint == 1 && ipadrcountint == 1 && onecharint != 1 && accounanzint <= 2){
 								
 								 time_t sek;
 								 time(&sek);
 								 uint32 zeit = time(&sek);
 								 pPlayer->GetGUID();
-								 ChatHandler(pPlayer->GetSession()).PSendSysMessage("Deine Aufwertung wurde ausgeführt. Viel Spaß wünscht Exitare sowie das MMOwning-Team.",
+								 ChatHandler(pPlayer->GetSession()).PSendSysMessage("[Aufwertungs System] Deine Aufwertung wurde ausgefuehrt. Viel Spass wuenscht Exitare sowie das MMOwning-Team.",
 									 pPlayer->GetName());
 								pPlayer->PlayerTalkClass->SendCloseGossip();
 								pPlayer->SetLevel(80);
@@ -78,13 +82,13 @@ class npc_first_char : public CreatureScript
 									"(guid,Charname, account, Accname, time, guildid,ip) "
 									"VALUES ('%u', '%s', %u, '%s', %u, %u, '%s')",
 									guid, charname, accountresint, accname, zeit, 0 , ipadrint);
-
+							
 				     			return true;
 							}
 							 							
 							 else {
 								 pPlayer->GetGUID();
-								 ChatHandler(pPlayer->GetSession()).PSendSysMessage("Du hast bereits einen anderen Charakter auf diesem Realm oder versuchst mit\nzu vielen Accounts eine Erstaustattung zu erlangen.\nDiese wird daher abgelehnt.\nMfG Exitare und das MMOwning-Team.",
+								 ChatHandler(pPlayer->GetSession()).PSendSysMessage("[Aufwertungs System]\nDu hast bereits einen anderen Charakter auf diesem Realm oder versuchst mit zu vielen Accounts eine Erstaustattung zu erlangen.\nDiese wird daher abgelehnt.\nMfG Exitare und das MMOwning-Team.",
 								 pPlayer->GetName());
 								 pPlayer->PlayerTalkClass->SendCloseGossip();
 								 return true;
@@ -97,12 +101,62 @@ class npc_first_char : public CreatureScript
 					case 0:
 						{
 							pPlayer->GetGUID();
-							ChatHandler(pPlayer->GetSession()).PSendSysMessage("Dieser NPC vergibt deine Erstaustattung. Klicke einfach auf 'Firstausstattung beantragen' und es beginnt.", 
-							pPlayer->GetName());
-							pPlayer->PlayerTalkClass->SendCloseGossip();
+							pPlayer->SEND_GOSSIP_MENU(DEFAULT_GOSSIP_MESSAGE, pCreature->GetGUID());
+							pPlayer->PlayerTalkClass->ClearMenus();
+							pPlayer->ADD_GOSSIP_ITEM(7, "Einzelausstattung. Wer/Was/Wie?", GOSSIP_SENDER_MAIN, 5);
+							pPlayer->ADD_GOSSIP_ITEM(7, "Gildentransfer Wer/Was/Wie?", GOSSIP_SENDER_MAIN, 6); 
+							pPlayer->ADD_GOSSIP_ITEM(7, "Meine Aufwertung wurde abgelehnt! Was tun?", GOSSIP_SENDER_MAIN, 7);
+							pPlayer->ADD_GOSSIP_ITEM(7, "Ich möchte einen anderen Charakter ausstatten lassen.", GOSSIP_SENDER_MAIN, 8);
+							pPlayer->ADD_GOSSIP_ITEM(7, "Ein Spieler mit der selben IP möchte eine Charakteraufwertung! Wie geht das?", GOSSIP_SENDER_MAIN, 9);
+							pPlayer->PlayerTalkClass->SendGossipMenu(907, pCreature->GetGUID());
 							return true;
 						}break;
-		
+
+					
+					case 5:
+					{
+						pPlayer->GetGUID();
+						ChatHandler(pPlayer->GetSession()).PSendSysMessage("[Aufwertungs System]:\nWer? \nJeder der noch keinen Character auf seinem Account hat. Es muss zwingend der erste Charakter ausgestattet werden. Existiert ein Charakter auf dem Account muss dieser geloescht werden.\nWas?\nEs gibt 5k Gold, 4 Taschen, sowie eine Grundausstattung auf Itemlevel 219.\nWie? \nEinfach auf ""Charakteraufwertung beantragen"" klicken und alles wird in die Wege geleitet.",
+							pPlayer->GetName());
+						pPlayer->PlayerTalkClass->SendCloseGossip();
+						return true;
+					}
+
+					case 6:
+					{
+						pPlayer->GetGUID();
+						ChatHandler(pPlayer->GetSession()).PSendSysMessage("[Aufwertungs System]:\nEine Gildenaufwertung funktioniert praktisch wie eine Einzelaufwertung. Ihr muesst jedoch in einer Gilde sein und duerft keine Einzelaufwertung beantragt haben. Solltet ihr das getan haben, einfach den Charakter loeschen und neu machen. Ihr muesst die Gilde schon gegruendet haben und Euch auch schon in dieser befinden. Waehlt dann die entsprechende Groesse aus um die Aufwertung zu bekommen.",
+							pPlayer->GetName());
+						pPlayer->PlayerTalkClass->SendCloseGossip();
+						return true;
+					}
+
+					case 7:
+					{
+						pPlayer->GetGUID();
+						ChatHandler(pPlayer->GetSession()).PSendSysMessage("[Aufwertungs System]:\nErst einmal keine Panik. Sollte deine Aufwertung abgelehnt werden, ist entweder ueber deinen Account oder deine IP schon eine Aufwertung erfolgt, der Charakter hat schon eine Aufwertung bekommen oder du hast mehr als 1 Charakter auf diesem Account.\nBeachte bitte: Nur der erste Charakter auf MMOwning darf ausgestattet werden. Solltest du dennoch Probleme haben, gehe bitte ins TS und frage nach Exitare.",
+							pPlayer->GetName());
+						pPlayer->PlayerTalkClass->SendCloseGossip();
+						return true;
+					}
+
+					case 8:
+					{
+						pPlayer->GetGUID();
+						ChatHandler(pPlayer->GetSession()).PSendSysMessage("[Aufwertungs System]:\nDas ist kein Problem. Loesche einfach diesen Charakter und erstelle dir einen neuen. Bedenke aber das du nur 2 Ausstattungen beantragen kannst. Solltest du deinen Charakter also loeschen, hast du nur noch einmal die Moeglichkeit eine Erstaustattung zu beantragen.",
+							pPlayer->GetName());
+						pPlayer->PlayerTalkClass->SendCloseGossip();
+						return true;
+					}
+
+					case 9:
+					{
+						pPlayer->GetGUID();
+						ChatHandler(pPlayer->GetSession()).PSendSysMessage("[Aufwertungs System]:\nUm eine Austattung über die gleiche IP vornehmen zu lassen muesst ihr euch BEIDE ins TS begeben. Fragt dort nach einem GM, dieser wird ueberpruefen ob alles für eine Ausstattung erfuellt ist und diese dann durchfuehren.",
+							pPlayer->GetName());
+						pPlayer->PlayerTalkClass->SendCloseGossip();
+						return true;
+					}
 
 					case 2:
 						{
@@ -150,9 +204,12 @@ class npc_first_char : public CreatureScript
 								time(&sek);
 								uint32 zeit = time(&sek);
 								uint32 zeitraum = zeit - guildcreateint;
+								
+								/*Acccountanzahl zählen*/
+								QueryResult accountanz = CharacterDatabase.PQuery("SELECT count(account) FROM first_char WHERE guid = %u", guid);
+								uint32 accounanzint = (*accountanz)[0].GetUInt32();
 
-
-								if (guildmemberint >= 10 && guildmemberint < 25 && zeitraum <1209600 && charresultint == 1 && ipadrcountint == 1 && onecharint != 1){
+								if (guildmemberint >= 10 && guildmemberint < 25 && zeitraum <1209600 && charresultint == 1 && ipadrcountint == 1 && onecharint != 1 && accounanzint <= 2){
 									pPlayer->SetLevel(80);
 									pPlayer->LearnDefaultSkill(762, 3);
 									pPlayer->TeleportTo(0, -795.73, 1495.50, 104.54, 1.05, 0);
@@ -170,7 +227,7 @@ class npc_first_char : public CreatureScript
 
 								
 								else{
-									ChatHandler(pPlayer->GetSession()).PSendSysMessage("Deine Gilde ist nicht neu, oder hat nicht genug oder zu viele Mitglieder.",
+									ChatHandler(pPlayer->GetSession()).PSendSysMessage("[Aufwertungs System] Deine Gilde ist nicht neu, oder hat nicht genug oder zu viele Mitglieder.",
 										pPlayer->GetName());
 									pPlayer->PlayerTalkClass->SendCloseGossip();
 									return true;
@@ -182,7 +239,7 @@ class npc_first_char : public CreatureScript
 							}
 
 							else {
-								ChatHandler(pPlayer->GetSession()).PSendSysMessage("Tut mir Leid du bist in keiner Gilde.",
+								ChatHandler(pPlayer->GetSession()).PSendSysMessage("[Aufwertungs System] Tut mir Leid du bist in keiner Gilde.",
 									pPlayer->GetName());
 								pPlayer->PlayerTalkClass->SendCloseGossip();
 								return false;
@@ -234,6 +291,10 @@ class npc_first_char : public CreatureScript
 							QueryResult ipadrcount = LoginDatabase.PQuery("SELECT count(last_ip) FROM account WHERE last_ip = '%s'", ipadrint);
 							uint32 ipadrcountint = (*ipadrcount)[0].GetUInt32();
 
+							/*Acccountanzahl zählen*/
+							QueryResult accountanz = CharacterDatabase.PQuery("SELECT count(account) FROM first_char WHERE guid = %u", guid);
+							uint32 accounanzint = (*accountanz)[0].GetUInt32();
+
 							time_t sek;
 							time(&sek);
 							uint32 zeit = time(&sek);
@@ -241,7 +302,7 @@ class npc_first_char : public CreatureScript
 
 							
 
-							if (guildmemberint > 25 && zeitraum <1209600 && charresultint == 1 && ipadrcountint == 1 && onecharint !=1){
+							if (guildmemberint > 25 && zeitraum <1209600 && charresultint == 1 && ipadrcountint == 1 && onecharint !=1 && accounanzint <= 2){
 								pPlayer->SetLevel(80);
 								pPlayer->LearnDefaultSkill(762, 4);
 								pPlayer->TeleportTo(0, -795.73, 1495.50, 104.54, 1.05, 0);
@@ -257,7 +318,7 @@ class npc_first_char : public CreatureScript
 
 
 							else{
-								ChatHandler(pPlayer->GetSession()).PSendSysMessage("Deine Gilde ist nicht neu, oder hat nicht genug oder zu viele Mitglieder.",
+								ChatHandler(pPlayer->GetSession()).PSendSysMessage("[Aufwertungs System] Deine Gilde ist nicht neu, oder hat nicht genug oder zu viele Mitglieder.",
 									pPlayer->GetName());
 								pPlayer->PlayerTalkClass->SendCloseGossip();
 								return true;
@@ -269,7 +330,7 @@ class npc_first_char : public CreatureScript
 						}
 
 						else {
-							ChatHandler(pPlayer->GetSession()).PSendSysMessage("Tut mir Leid du bist in keiner Gilde.",
+							ChatHandler(pPlayer->GetSession()).PSendSysMessage("[Aufwertungs System] Tut mir Leid du bist in keiner Gilde.",
 								pPlayer->GetName());
 							pPlayer->PlayerTalkClass->SendCloseGossip();
 							return false;
@@ -279,7 +340,7 @@ class npc_first_char : public CreatureScript
 
 					case 4:
 					{
-						ChatHandler(pPlayer->GetSession()).PSendSysMessage("Diese Funktion wird noch implementiert.",
+						ChatHandler(pPlayer->GetSession()).PSendSysMessage("[Aufwertungs System] Diese Funktion wird noch implementiert.",
 							pPlayer->GetName());
 						pPlayer->PlayerTalkClass->SendCloseGossip();
 							
@@ -294,7 +355,7 @@ class npc_first_char : public CreatureScript
 					
 
 
-					
+					return true;
 
 			}
 					

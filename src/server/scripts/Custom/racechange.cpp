@@ -20,7 +20,7 @@ public:
 
 		case GOSSIP_ACTION_INFO_DEF + 0:
 			pPlayer->GetGUID();
-			ChatHandler(pPlayer->GetSession()).PSendSysMessage("Einfach auswählen was man möchte und dann reloggen.",
+			ChatHandler(pPlayer->GetSession()).PSendSysMessage("Einfach auswaehlen was du moechtest und dann reloggen.",
 				pPlayer->GetName());
 			pPlayer->PlayerTalkClass->SendCloseGossip();
 			return true;
@@ -28,7 +28,7 @@ public:
 		case GOSSIP_ACTION_INFO_DEF + 1:
 			pPlayer->SetAtLoginFlag(AT_LOGIN_CHANGE_RACE);
 			pPlayer->GetGUID();
-			ChatHandler(pPlayer->GetSession()).PSendSysMessage("Bitte ausloggen um Änderungen durchzuführen.",
+			ChatHandler(pPlayer->GetSession()).PSendSysMessage("Bitte ausloggen um Aenderungen durchzufuehren.",
 				pPlayer->GetName());
 			pPlayer->PlayerTalkClass->SendCloseGossip();
 			return true;
@@ -36,7 +36,7 @@ public:
 		case GOSSIP_ACTION_INFO_DEF + 2:
 			pPlayer->SetAtLoginFlag(AT_LOGIN_CHANGE_FACTION);
 			pPlayer->GetGUID();
-			ChatHandler(pPlayer->GetSession()).PSendSysMessage("Bitte ausloggen um Änderungen durchzuführen.",
+			ChatHandler(pPlayer->GetSession()).PSendSysMessage("Bitte ausloggen um Aenderungen durchzufuehren.",
 				pPlayer->GetName());
 			pPlayer->PlayerTalkClass->SendCloseGossip();
 			return true;

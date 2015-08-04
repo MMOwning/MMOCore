@@ -29,10 +29,8 @@ INSERT INTO `npc_vendor` (`entry`, `slot`, `item`, `maxcount`, `incrtime`, `Exte
 -- 15 Emblem des Triumphs = 1 Emblem des Frosts
 (99321, 5, 49426, 0, 0, 2723),
 -- 1 Frostmarke = 1 Emblem des Heldentums
-(99321, 6, 40752, 0, 0, 2743 ),
+(99321, 6, 40752, 0, 0, 2743),
 -- 1 Emblem des Triumphs = 1 Emblem des Heldentums
-(99321, 7, 40752, 0, 0, 2707 ),
--- 300 Ehrenpunkte = 1 Ehrenpunkt
-(99321, 8, 43308, 0, 0, 826);
+(99321, 7, 40752, 0, 0, 2707);
 -- (99321, 0, ??, 0, 0 ,2707); //1 эмблема триумфа
 -- (99321, 0, ??, 0, 0 ,2723); //15 эмблем триумфа

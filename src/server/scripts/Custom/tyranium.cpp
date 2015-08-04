@@ -12,7 +12,11 @@ enum Spells
 	SPELL_CRYSTAL_CHAINS = 50997,
 	SPELL_NECROTIC_POISON = 28776,
 	SPELL_MANGLING_SLASH = 48873,
-	SPELL_PIERCING_SLASH = 48878
+	SPELL_PIERCING_SLASH = 48878,
+	SPELL_BLOOD_MIRROR_DAMAGE = 70821,
+	SPELL_ANNOYING_YIPPING = 31015,
+	SPELL_SARGERAS = 28342,
+	SPELL_BURN = 46218
 };
 
 enum Events
@@ -23,7 +27,11 @@ enum Events
 	EVENT_CRYSTAL_CHAINS = 4,
 	EVENT_NECROTIC_POISON = 5,
 	EVENT_MANGLING_SLASH = 6,
-	EVENT_PIERCING_SLASH = 7
+	EVENT_PIERCING_SLASH = 7,
+	EVENT_BLOOD_MIRROR_DAMAGE = 8,
+	EVENT_ANNOYING_YIPPING = 9,
+	EVENT_SARGERAS = 10,
+	EVENT_BURN = 11
 
 };
 
@@ -71,6 +79,7 @@ public:
 			_events.ScheduleEvent(EVENT_MANA_DESTRUCTION, 1000);
 			_events.ScheduleEvent(EVENT_BRAIN_LINK_DAMAGE, 10000);
 			_events.ScheduleEvent(EVENT_MANGLING_SLASH, 8000);
+			_events.ScheduleEvent(EVENT_SARGERAS, 5000);
 
 		}
 
@@ -82,6 +91,7 @@ public:
 				_events.ScheduleEvent(EVENT_MANA_DESTRUCTION, 10000);
 				_events.ScheduleEvent(EVENT_PIERCING_SLASH, 20000);
 				_events.ScheduleEvent(EVENT_BRAIN_LINK_DAMAGE, 10000);
+				_events.ScheduleEvent(EVENT_BLOOD_MIRROR_DAMAGE, 10000);
 
 			}
 
@@ -91,6 +101,8 @@ public:
 				_events.ScheduleEvent(EVENT_CRYSTAL_CHAINS, 5000);
 				_events.ScheduleEvent(EVENT_PIERCING_SLASH, 10000);
 				_events.ScheduleEvent(EVENT_NECROTIC_POISON, 12000); 
+				_events.ScheduleEvent(EVENT_ANNOYING_YIPPING, 25000);
+				_events.ScheduleEvent(EVENT_BURN, 35000);
 			}
 		}
 
@@ -110,7 +122,7 @@ public:
 		void JustDied(Unit* pPlayer)
 		{
 			char msg[250];
-			snprintf(msg, 250, "|cffff0000[Event System]|r Die|cffff6060 Horde|r hat das Event gewonnen! ", pPlayer->GetName());
+			snprintf(msg, 250, "|cffff0000[Boss System]|r Boss|cffff6060 Tyranium|r wurde getoetet! Respawn in 4h 30min.", pPlayer->GetName());
 			sWorld->SendGlobalText(msg, NULL);
 		}
 
@@ -135,7 +147,7 @@ public:
 				case EVENT_MANA_DESTRUCTION:
 					Talk(SAY_RANDOM);
 					DoCast(SPELL_MANA_DESTRUCTION);
-					_events.ScheduleEvent(EVENT_MANA_DESTRUCTION, 30000);
+					_events.ScheduleEvent(EVENT_MANA_DESTRUCTION, 1000);
 					break;
 				case EVENT_CRYSTAL_CHAINS:
 					DoCastVictim(SPELL_CRYSTAL_CHAINS);
@@ -155,6 +167,23 @@ public:
 					DoCastToAllHostilePlayers(SPELL_PIERCING_SLASH);
 					_events.ScheduleEvent(EVENT_PIERCING_SLASH, 15000);
 					break;
+				case EVENT_BLOOD_MIRROR_DAMAGE:
+					DoCast(SPELL_BLOOD_MIRROR_DAMAGE);
+					_events.ScheduleEvent(EVENT_BLOOD_MIRROR_DAMAGE, 18000);
+					break;
+				case EVENT_ANNOYING_YIPPING:
+					DoCastToAllHostilePlayers(SPELL_ANNOYING_YIPPING);
+					_events.ScheduleEvent(EVENT_ANNOYING_YIPPING, 25000);
+					break;
+				case EVENT_SARGERAS:
+					DoCastToAllHostilePlayers(SPELL_SARGERAS);
+					_events.ScheduleEvent(EVENT_SARGERAS, 5000);
+					break;
+				case EVENT_BURN:
+					DoCastToAllHostilePlayers(SPELL_BURN);
+					_events.ScheduleEvent(EVENT_BURN, 35000);
+					break;
+
 
 				default:
 					break;

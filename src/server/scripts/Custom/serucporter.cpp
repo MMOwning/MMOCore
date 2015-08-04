@@ -40,7 +40,6 @@ public: seruc() : CreatureScript("seruc"){ }
 			case 0: {
 				pPlayer->GetGUID();
 				pPlayer->TeleportTo(169, -393.26, 2972.93, 92.85, 5.94);
-				pPlayer->ActivateSpec(1);
 				pPlayer->ModifyMoney(-200000);
 				return true;
 			}break;
@@ -182,11 +181,11 @@ public: seruc() : CreatureScript("seruc"){ }
 				case 13: {
 					pPlayer->GetGUID();
 					pPlayer->TeleportTo(169, -393.26, 2972.93, 92.85, 5.94);
-					pPlayer->ActivateSpec(1);
 					pPlayer->ModifyMoney(-200000);
 					return true;
 				}break;
 
+					/*Tyranium*/
 				case 14: {
 					pPlayer->GetGUID();
 					pPlayer->TeleportTo(0, -4698.80, -2045.90, 521.12, 1.4);
@@ -196,6 +195,7 @@ public: seruc() : CreatureScript("seruc"){ }
 
 
 			}
+			return true;
 		}
 
 };
