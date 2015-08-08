@@ -18,12 +18,17 @@ set(scripts_STAT_SRCS
   Custom/firstnpc.cpp
   Custom/serucporter.cpp
   Custom/eventnpc.cpp
-  Custom/bossscript.cpp
-  Custom/tyranium.cpp
-  Custom/anna.cpp
+  Custom/boss_galadriel.cpp
+  Custom/boss_tyranium.cpp
+  Custom/boss_anna.cpp
   Custom/racechange.cpp
   Custom/Allianzboss.cpp
   Custom/Hordeboss.cpp
+  Custom/supportnpc.cpp
+  Custom/teleportitem.cpp
+  Custom/boss_orrig.cpp
+  Custom/boss_tolreos.cpp
+  Custom/boss_exitares_schatten.cpp
   ${scripts_STAT_SRCS}
 #  ${sources_Custom}
   Custom/Transmog/Transmogrification.h

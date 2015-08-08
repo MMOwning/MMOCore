@@ -108,8 +108,14 @@ void AddSC_anna();
 void AddSC_Race_Change_NPC();
 //allianzboss
 void AddSC_alliance_boss();
-
-
+//supportnpc
+void AddSC_supportnpc();
+//exitare_schatten
+void AddSC_exitare();
+//orrig
+void AddSC_orrig();
+//tolreos
+void AddSC_tolreos();
 
 #ifdef SCRIPTS
 //world
@@ -834,6 +840,14 @@ void AddCommandScripts()
 	AddSC_Race_Change_NPC();
 	//allianzboss
 	AddSC_alliance_boss();
+	//supportnpc
+	AddSC_supportnpc();
+	//exitare_schatten
+	AddSC_exitare();
+	//orrig
+	AddSC_orrig();
+	//tolreos
+	AddSC_tolreos();
 }
 
 void AddWorldScripts()

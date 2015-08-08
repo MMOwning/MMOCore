@@ -21,7 +21,7 @@ public: eventnpc() : CreatureScript("eventnpc"){ }
 				pPlayer->PlayerTalkClass->SendGossipMenu(907, _creature->GetGUID());
 				return true;
 			}*/
-
+			pPlayer->PlayerTalkClass->SendGossipMenu(907, _creature->GetGUID());
 			return true;
 		}
 
@@ -40,13 +40,13 @@ public: eventnpc() : CreatureScript("eventnpc"){ }
 						
 				case 2: {
 					pPlayer->GetGUID();
-					ChatHandler(pPlayer->GetSession()).PSendSysMessage("Dieser NPC zeigt an, welche Events von MMOwning gerade aktiv sind. Wenn keine aktiv sind, werden auch keine angezeigt.",
+					ChatHandler(pPlayer->GetSession()).PSendSysMessage("Dieser NPC zeigt an, welche Events von MMOwning gerade aktiv sind. Wenn keine Events aktiv sind, werden auch keine angezeigt.",
 						pPlayer->GetName());
 					pPlayer->PlayerTalkClass->SendCloseGossip();
 					return true;
 				}break;
 
-
+					return true;
 			}
 		}
 };

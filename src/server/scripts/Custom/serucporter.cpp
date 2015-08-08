@@ -12,21 +12,12 @@ public: seruc() : CreatureScript("seruc"){ }
 
 		bool OnGossipHello(Player *pPlayer, Creature* _creature)
 		{
-			pPlayer->ADD_GOSSIP_ITEM(7, "Raid [Gesperrt] Portkosten aktuell: 20000 Gold", GOSSIP_SENDER_MAIN, 0);
-			pPlayer->ADD_GOSSIP_ITEM(7, "Instanz [Gesperrt] Portkosten aktuell: 20000 Gold", GOSSIP_SENDER_MAIN, 13);
+			pPlayer->ADD_GOSSIP_ITEM(7, "Raid [Gesperrt]", GOSSIP_SENDER_MAIN, 0);
+			pPlayer->ADD_GOSSIP_ITEM(7, "Instanz [Gesperrt]", GOSSIP_SENDER_MAIN, 13);
 			pPlayer->ADD_GOSSIP_ITEM(7, "Teleport zum PVP Areal [500 Wertung]", GOSSIP_SENDER_MAIN, 1);
 			pPlayer->ADD_GOSSIP_ITEM(7, "Teleport zur Insel ", GOSSIP_SENDER_MAIN, 2);
 			pPlayer->ADD_GOSSIP_ITEM(7, "Teleport zu Yasio ", GOSSIP_SENDER_MAIN, 3);
-			pPlayer->ADD_GOSSIP_ITEM(7, "Boss: Orrig [5-10] ", GOSSIP_SENDER_MAIN, 4);
-			pPlayer->ADD_GOSSIP_ITEM(7, "Boss: Exitares Schatten [7-15]", GOSSIP_SENDER_MAIN,5);
-			pPlayer->ADD_GOSSIP_ITEM(7, "Boss: Die gequälte Seele [5-15]", GOSSIP_SENDER_MAIN, 6);
-			pPlayer->ADD_GOSSIP_ITEM(7, "Boss: Kayoula [25-40]", GOSSIP_SENDER_MAIN, 7);
-			pPlayer->ADD_GOSSIP_ITEM(7, "Boss: Tempus [15-25]", GOSSIP_SENDER_MAIN, 8);
-			pPlayer->ADD_GOSSIP_ITEM(7, "Boss: Arcturus [5-10] ", GOSSIP_SENDER_MAIN, 9);
-			pPlayer->ADD_GOSSIP_ITEM(7, "Boss: Moon [25-40]", GOSSIP_SENDER_MAIN, 10);
-			pPlayer->ADD_GOSSIP_ITEM(7, "Boss: Maltyriun [5-10]", GOSSIP_SENDER_MAIN, 11);
-			pPlayer->ADD_GOSSIP_ITEM(7, "Boss: LORDofDOOM [10-25]", GOSSIP_SENDER_MAIN, 12);
-			pPlayer->ADD_GOSSIP_ITEM(7, "Boss: Tyranium [5-10]", GOSSIP_SENDER_MAIN, 14);
+			pPlayer->ADD_GOSSIP_ITEM(7, "MMOwning Worldbosse", GOSSIP_SENDER_MAIN, 15);
 			pPlayer->PlayerTalkClass->SendGossipMenu(907, _creature->GetGUID());
 			return true;
 		}
@@ -44,7 +35,25 @@ public: seruc() : CreatureScript("seruc"){ }
 				return true;
 			}break;
 
+			case 15:
+			{
+				uint32 guid = pPlayer->GetGUID();
 
+				pPlayer->PlayerTalkClass->ClearMenus();
+				pPlayer->ADD_GOSSIP_ITEM(7, "Boss: Orrig [5-10] ", GOSSIP_SENDER_MAIN, 4);
+				pPlayer->ADD_GOSSIP_ITEM(7, "Boss: Exitares Schatten [7-15]", GOSSIP_SENDER_MAIN, 5);
+				pPlayer->ADD_GOSSIP_ITEM(7, "Boss: Die gequälte Seele [5-15]", GOSSIP_SENDER_MAIN, 6);
+				pPlayer->ADD_GOSSIP_ITEM(7, "Boss: Kayoula [25-40]", GOSSIP_SENDER_MAIN, 7);
+				pPlayer->ADD_GOSSIP_ITEM(7, "Boss: Tempus [15-25]", GOSSIP_SENDER_MAIN, 8);
+				pPlayer->ADD_GOSSIP_ITEM(7, "Boss: Arcturus [5-10] ", GOSSIP_SENDER_MAIN, 9);
+				pPlayer->ADD_GOSSIP_ITEM(7, "Boss: Moon [25-40]", GOSSIP_SENDER_MAIN, 10);
+				pPlayer->ADD_GOSSIP_ITEM(7, "Boss: Maltyriun [5-10]", GOSSIP_SENDER_MAIN, 11);
+				pPlayer->ADD_GOSSIP_ITEM(7, "Boss: LORDofDOOM [10-25]", GOSSIP_SENDER_MAIN, 12);
+				pPlayer->ADD_GOSSIP_ITEM(7, "Boss: Tyranium [5-10]", GOSSIP_SENDER_MAIN, 14);
+				pPlayer->ADD_GOSSIP_ITEM(7, "Boss: Tolreos [5-10]", GOSSIP_SENDER_MAIN, 16);
+				pPlayer->PlayerTalkClass->SendGossipMenu(907, pCreature->GetGUID());
+				return true;
+			}
 				/*PVP*/
 			case 1: {
 				pPlayer->GetGUID();
@@ -189,6 +198,14 @@ public: seruc() : CreatureScript("seruc"){ }
 				case 14: {
 					pPlayer->GetGUID();
 					pPlayer->TeleportTo(0, -4698.80, -2045.90, 521.12, 1.4);
+					pPlayer->ModifyMoney(-200000);
+					return true;
+				}break;
+
+					/*Tolreos*/
+				case 16: {
+					pPlayer->GetGUID();
+					pPlayer->TeleportTo(530, -745.15, 1500.09, 448.44, 2.96);
 					pPlayer->ModifyMoney(-200000);
 					return true;
 				}break;
