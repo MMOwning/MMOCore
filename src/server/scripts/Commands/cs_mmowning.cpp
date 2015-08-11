@@ -302,7 +302,7 @@ static bool HandleGHCommand(ChatHandler* handler, const char* args)
 /*Insel*/
 static bool HandleInselCommand(ChatHandler* handler, const char* /*args*/)
 {
-	//MALL command
+	
 
 	Player *chr = handler->GetSession()->GetPlayer();
 

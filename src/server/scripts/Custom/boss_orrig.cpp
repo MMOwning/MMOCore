@@ -115,6 +115,7 @@ public:
 			}
 		}
 
+
 		void JustDied(Unit* pPlayer)
 		{
 			char msg[250];

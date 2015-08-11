@@ -116,6 +116,12 @@ void AddSC_exitare();
 void AddSC_orrig();
 //tolreos
 void AddSC_tolreos();
+//dark
+void AddSC_dark();
+//light
+void AddSC_light();
+//lighthard
+void AddSC_lighthardmode();
 
 #ifdef SCRIPTS
 //world
@@ -848,6 +854,12 @@ void AddCommandScripts()
 	AddSC_orrig();
 	//tolreos
 	AddSC_tolreos();
+	//dark
+	AddSC_dark();
+	//light
+	AddSC_light();
+	//lighhard
+	AddSC_lighthardmode();
 }
 
 void AddWorldScripts()

@@ -125,6 +125,12 @@ VALUES (800035, 37364, 0, 33.3, 0, 1, 3, 1, 1);
 REPLACE INTO `creature_loot_template` (`Entry`,`Item`,`Reference`, `Chance`, `QuestRequired`, `LootMode`, `GroupId`, `MinCount`, `MaxCount`)
 VALUES (800035, 37360, 0, 33.3, 0, 1, 3, 1, 1);
 
+DELETE FROM `skinning_loot_template` WHERE `Entry` = 800035;
+INSERT INTO `skinning_loot_template` (`Entry`, `Item`, `Reference`, `Chance`, `QuestRequired`, `LootMode`, `GroupId`, `MinCount`, `MaxCount`) VALUES ('800035', '4234', '0', '30', '0', '1', '1', '1', '4');
+INSERT INTO `skinning_loot_template` (`Entry`, `Item`, `Reference`, `Chance`, `QuestRequired`, `LootMode`, `GroupId`, `MinCount`, `MaxCount`) VALUES ('800035', '44128', '0', '5', '0', '1', '1', '1', '2');
+INSERT INTO `skinning_loot_template` (`Entry`, `Item`, `Reference`, `Chance`, `QuestRequired`, `LootMode`, `GroupId`, `MinCount`, `MaxCount`) VALUES ('800035', '2318', '0', '50', '0', '1', '1', '1', '10');
+INSERT INTO `skinning_loot_template` (`Entry`, `Item`, `Reference`, `Chance`, `QuestRequired`, `LootMode`, `GroupId`, `MinCount`, `MaxCount`) VALUES ('800035', '33568', '0', '50', '0', '1', '1', '1', '4');
+
 
 
 
@@ -159,7 +165,7 @@ VALUES ( /*  ID */ 800035,
   /* Welche Klasse? Krieger Pala, also Mana oder kein MAna? */0,
   /* unit flkag */0,
   /* unit flags2  */0,
-  /* dynamicflag */0,
+  /* dynamicflag */1,
   /* Family  */0,
   /* Trainer type */0,
   /* trainer spell */0,
@@ -169,7 +175,7 @@ VALUES ( /*  ID */ 800035,
   /* type flag  */ 0,
   /* lootid */800035,
   /* pickpocketloot` */0,
-  /* Skinloot*/ 0,  
+  /* Skinloot*/ 800035,  
   /* Restistance1  */100,
   /*   */100,
   /*   */100,
@@ -195,7 +201,7 @@ VALUES ( /*  ID */ 800035,
   /*  Racial Leader  */0,
   /*  movement id  */ 0, 
   /*  RegenHealth`` */1, 
-  /*  mechanic_immune_mask` */617299839, 
+  /*  mechanic_immune_mask` */642465663, 
   /*  flags_extra` */0, 
   /*  Scriptname  */'');
 

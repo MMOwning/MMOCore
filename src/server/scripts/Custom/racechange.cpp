@@ -47,7 +47,7 @@ public:
 		case  2:
 
 			if (pPlayer->HasItemCount(49426, 4)){
-				pPlayer->DestroyItemCount(49426, 4, true, false);
+				pPlayer->DestroyItemCount(49426, 4, true);
 				pPlayer->SetAtLoginFlag(AT_LOGIN_CHANGE_FACTION);
 				pPlayer->GetGUID();
 				ChatHandler(pPlayer->GetSession()).PSendSysMessage("Bitte ausloggen um Aenderungen durchzufuehren.",

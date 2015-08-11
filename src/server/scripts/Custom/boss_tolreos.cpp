@@ -73,7 +73,7 @@ public:
 			Summons.DespawnAll();
 		}
 
-		void EnterCombat(Unit* /*who*/) override
+		void EnterCombat(Unit* ) override
 		{
 			Talk(SAY_AGGRO);
 			_events.SetPhase(PHASE_ONE);
@@ -141,7 +141,10 @@ public:
 				switch (eventId)
 				{
 				case EVENT_CURRUPTION:
-					DoCastVictim(SPELL_CORRUPTION);
+					if (Unit* target = SelectTarget(SELECT_TARGET_RANDOM, 1, 100.0f){
+						DoCastVictim(SPELL_CORRUPTION);
+						
+					}
 					_events.ScheduleEvent(EVENT_CURRUPTION, 10000);
 					break;
 				case EVENT_ENRAGE:
