@@ -119,10 +119,10 @@ public:
 			}
 		}
 
-		void JustDied(Unit* pPlayer)
+		void JustDied(Unit* )
 		{
 			char msg[250];
-			snprintf(msg, 250, "|cffff0000[Boss System]|r Boss|cffff6060 Tyranium|r wurde getoetet! Respawn in 4h 30min.", pPlayer->GetName());
+			snprintf(msg, 250, "|cffff0000[Boss System]|r Boss|cffff6060 Tyranium|r wurde getoetet! Respawn in 4h 30min.");
 			sWorld->SendGlobalText(msg, NULL);
 		}
 
@@ -146,7 +146,7 @@ public:
 					break;
 				case EVENT_MANA_DESTRUCTION:
 					Talk(SAY_RANDOM);
-					DoCast(SPELL_MANA_DESTRUCTION);
+					DoCastVictim(SPELL_MANA_DESTRUCTION);
 					_events.ScheduleEvent(EVENT_MANA_DESTRUCTION, 1000);
 					break;
 				case EVENT_CRYSTAL_CHAINS:

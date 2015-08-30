@@ -1,5 +1,5 @@
 
-DELETE FROM ``game_tele` WHERE `id` BETWEEN 5000 AND 5011;
+DELETE FROM `game_tele` WHERE `id` BETWEEN 5000 AND 5011;
 
 REPLACE INTO `game_tele` (`id`, `position_x`, `position_y`, `position_z`, `orientation`, `map`, `name`) 
 VALUES 

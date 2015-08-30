@@ -1,13 +1,21 @@
 GRANT USAGE ON * . * TO 'trinity'@'localhost' IDENTIFIED BY 'trinity' WITH MAX_QUERIES_PER_HOUR 0 MAX_CONNECTIONS_PER_HOUR 0 MAX_UPDATES_PER_HOUR 0 ;
 
-CREATE DATABASE `world` DEFAULT CHARACTER SET utf8 COLLATE utf8_general_ci;
+CREATE DATABASE `firstrealm_world` DEFAULT CHARACTER SET utf8 COLLATE utf8_general_ci;
 
-CREATE DATABASE `characters` DEFAULT CHARACTER SET utf8 COLLATE utf8_general_ci;
+CREATE DATABASE `firstrealm_characters` DEFAULT CHARACTER SET utf8 COLLATE utf8_general_ci;
+
+CREATE DATABASE `test_world` DEFAULT CHARACTER SET utf8 COLLATE utf8_general_ci;
+
+CREATE DATABASE `test_characters` DEFAULT CHARACTER SET utf8 COLLATE utf8_general_ci;
 
 CREATE DATABASE `auth` DEFAULT CHARACTER SET utf8 COLLATE utf8_general_ci;
 
-GRANT ALL PRIVILEGES ON `world` . * TO 'trinity'@'localhost' WITH GRANT OPTION;
+GRANT ALL PRIVILEGES ON `firstrealm_world` . * TO 'trinity'@'localhost' WITH GRANT OPTION;
 
-GRANT ALL PRIVILEGES ON `characters` . * TO 'trinity'@'localhost' WITH GRANT OPTION;
+GRANT ALL PRIVILEGES ON `firstrealm_characters` . * TO 'trinity'@'localhost' WITH GRANT OPTION;
+
+GRANT ALL PRIVILEGES ON `test_world` . * TO 'trinity'@'localhost' WITH GRANT OPTION;
+
+GRANT ALL PRIVILEGES ON `test_characters` . * TO 'trinity'@'localhost' WITH GRANT OPTION;
 
 GRANT ALL PRIVILEGES ON `auth` . * TO 'trinity'@'localhost' WITH GRANT OPTION;

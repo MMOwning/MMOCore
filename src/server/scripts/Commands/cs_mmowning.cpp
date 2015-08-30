@@ -53,8 +53,8 @@ public:
 			{ "buffs",			SEC_PLAYER,			false, &HandleBuffsCommand,				"", NULL }, 
 			//GuildHouse Tele
 			{ "gh",             SEC_PLAYER,      	false, &HandleGHCommand,				"", NULL },	
-			//Insel Tele
-			{"insel",			SEC_PLAYER,			false, &HandleInselCommand,				"", NULL },					
+			//insel
+			{ "insel",			SEC_PLAYER,			false, &HandleInselCommand,				"", NULL },
 			//{ "tcrecon",        SEC_MODERATOR,      false, &HandleIRCRelogCommand,            "", NULL },	
 			{ NULL,             0,                  false,  NULL,                            "", NULL }
         };
@@ -299,33 +299,17 @@ static bool HandleGHCommand(ChatHandler* handler, const char* args)
         return true;
 }
 
-/*Insel*/
-static bool HandleInselCommand(ChatHandler* handler, const char* /*args*/)
+//GuildHouse Tele
+static bool HandleInselCommand(ChatHandler* handler, const char* args)
 {
-	
-
 	Player *chr = handler->GetSession()->GetPlayer();
 
-	if (chr->IsInCombat())
-	{
-		handler->PSendSysMessage(LANG_YOU_IN_COMBAT);
-		//SetSentErrorMessage(true);
-		return false;
-	}
-	
-	if (chr->IsInFlight())
-	{
-		handler->PSendSysMessage(LANG_YOU_IN_FLIGHT);
-		//SetSentErrorMessage(true);
-		return false;
-	}
-
-	chr->ResurrectPlayer(0.5, false);
-
-	chr->TeleportTo(0, -9771.67, 2127.04, 15.07, 3.75);    // Insel Coords
-
+	chr->TeleportTo(1, 16226.20, 16257.00, 13.20, 1.65);
 	return true;
+
 }
+
+
 
 
 };

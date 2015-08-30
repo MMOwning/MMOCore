@@ -52,7 +52,7 @@
 using namespace boost::program_options;
 
 #ifndef _TRINITY_CORE_CONFIG
-    #define _TRINITY_CORE_CONFIG  "worldserver.conf"
+    #define _TRINITY_CORE_CONFIG  "worldserver2.conf"
 #endif
 
 #define WORLD_SLEEP_CONST 50
@@ -214,7 +214,7 @@ extern int main(int argc, char** argv)
     std::thread* soapThread = nullptr;
     if (sConfigMgr->GetBoolDefault("SOAP.Enabled", false))
     {
-        soapThread = new std::thread(TCSoapThread, sConfigMgr->GetStringDefault("SOAP.IP", "127.0.0.1"), uint16(sConfigMgr->GetIntDefault("SOAP.Port", 7878)));
+        soapThread = new std::thread(TCSoapThread, sConfigMgr->GetStringDefault("SOAP.IP", "127.0.0.1"), uint16(sConfigMgr->GetIntDefault("SOAP.Port",7878)));
     }
 
     // Launch the worldserver listener socket
@@ -459,7 +459,7 @@ bool StartDB()
         return false;
 
     ///- Get the realm Id from the configuration file
-    realmID = sConfigMgr->GetIntDefault("RealmID", 0);
+    realmID = sConfigMgr->GetIntDefault("RealmID",0);
     if (!realmID)
     {
         TC_LOG_ERROR("server.worldserver", "Realm ID not defined in configuration file");

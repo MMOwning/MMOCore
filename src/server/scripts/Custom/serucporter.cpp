@@ -205,7 +205,7 @@ public: seruc() : CreatureScript("seruc"){ }
 					/*Tolreos*/
 				case 16: {
 					pPlayer->GetGUID();
-					pPlayer->TeleportTo(530, -745.15, 1500.09, 448.44, 2.96);
+					pPlayer->TeleportTo(530, -1281.67, 1375.05, 6.75, 1.04);
 					pPlayer->ModifyMoney(-200000);
 					return true;
 				}break;

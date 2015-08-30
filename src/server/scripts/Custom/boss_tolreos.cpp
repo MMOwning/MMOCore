@@ -123,8 +123,20 @@ public:
 		void JustDied(Unit* pPlayer)
 		{
 			char msg[250];
-			snprintf(msg, 250, "|cffff0000[Boss System]|r Boss|cffff6060 Tolreos|r wurde getoetet! Respawn in 4h 33min.", pPlayer->GetName());
+			snprintf(msg, 250, "|cffff0000[Boss System]|r Boss|cffff6060 Tolreos|r wurde getoetet! Respawn in 4h 33min.");
 			sWorld->SendGlobalText(msg, NULL);
+		}
+
+
+		void SpellHit(Unit* caster, SpellInfo const* spell)
+		{
+			
+			if (caster == me)
+				return;
+			uint32 id = spell->Id;
+			if (id == 355){
+				DoCastToAllHostilePlayers(SPELL_ARMY_OF_DEAD);
+			}
 		}
 
 
@@ -141,9 +153,8 @@ public:
 				switch (eventId)
 				{
 				case EVENT_CURRUPTION:
-					if (Unit* target = SelectTarget(SELECT_TARGET_RANDOM, 1, 100.0f){
-						DoCastVictim(SPELL_CORRUPTION);
-						
+					if (Unit* target = SelectTarget(SELECT_TARGET_RANDOM, 1)){
+						DoCastVictim(SPELL_CORRUPTION);		
 					}
 					_events.ScheduleEvent(EVENT_CURRUPTION, 10000);
 					break;
@@ -161,7 +172,9 @@ public:
 					break;
 				case EVENT_DOMINATE_MIND:
 					Talk(SAY_BERSERK);
-					DoCast(me, SPELL_DOMINATE_MIND);
+					if (Unit* target = SelectTarget(SELECT_TARGET_TOPAGGRO,0)){
+						DoCastVictim(SPELL_DOMINATE_MIND);
+					}
 					_events.ScheduleEvent(EVENT_DOMINATE_MIND, 25000);
 					break;
 				case EVENT_EARTH:
@@ -205,6 +218,9 @@ public:
 	{
 		return new tolreosAI(creature);
 	}
+
+
+
 
 
 

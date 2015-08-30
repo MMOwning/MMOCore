@@ -23,9 +23,8 @@ set(scripts_STAT_SRCS
   Custom/boss_anna.cpp
   Custom/racechange.cpp
   Custom/Allianzboss.cpp
-  Custom/Hordeboss.cpp
+  Custom/hordeboss.cpp
   Custom/supportnpc.cpp
-  Custom/teleportitem.cpp
   Custom/boss_orrig.cpp
   Custom/boss_tolreos.cpp
   Custom/boss_exitares_schatten.cpp
@@ -33,6 +32,7 @@ set(scripts_STAT_SRCS
   Custom/dark.cpp
   Custom/boss_light.cpp
   Custom/light_hardmode.cpp
+  Custom/dark2.cpp
   ${scripts_STAT_SRCS}
 #  ${sources_Custom}
   Custom/Transmog/Transmogrification.h

@@ -15,7 +15,7 @@ enum Spells
 	SPELL_BLUTGERUCH = 72769,
 	SPELL_BRECHENDE_WELLE = 57652,
 	SPELL_DEGENERATION = 53605,
-	SPELL_DURCHDRINGENDE_KÄLTE = 66013,
+	SPELL_DURCHDRINGENDE_KAELTE = 66013,
 	SPELL_EISBLITZ = 31249,
 	SPELL_ERNEUERUNG = 66177,
 	SPELL_SEUCHENBOMBE = 61858,
@@ -35,7 +35,7 @@ enum Events
 	EVENT_BLUTGERUCH = 7,
 	EVENT_BRECHENDE_WELLE = 8,
 	EVENT_DEGENERATION = 9,
-	EVENT_DURCHDRINGENDE_KÄLTE = 10,
+	EVENT_DURCHDRINGENDE_KAELTE = 10,
 	EVENT_EISBLITZ = 11,
 	EVENT_ERNEUERUNG = 12,
 	EVENT_SEUCHENBOMBE = 13
@@ -134,7 +134,7 @@ public:
 			_events.ScheduleEvent(EVENT_FEUERBALL, 25000);
 			_events.ScheduleEvent(EVENT_BLITZENTLADUNG, 12000);
 			_events.ScheduleEvent(EVENT_SEUCHENBOMBE, 30000);
-
+			_events.ScheduleEvent(EVENT_DURCHDRINGENDE_KAELTE, 18000);
 		}
 
 		void DamageTaken(Unit* /*attacker*/, uint32& damage) override
@@ -181,9 +181,9 @@ public:
 		void JustDied(Unit* pPlayer)
 		{
 			Talk(SAY_DEAD);
-			char msg[250];
+			/*char msg[250];
 			snprintf(msg, 250, "|cffff0000[Boss System]|r Boss|cffff6060 Lightshadow|r wurde getoetet! Respawn in 4h 33min. Darkshadow ist nun der rechtmaessige Prinz! %u",playerdie, pPlayer->GetName());
-			sWorld->SendGlobalText(msg, NULL);
+			sWorld->SendGlobalText(msg, NULL);*/
 			Map::PlayerList const &PlList = pPlayer->GetMap()->GetPlayers();
 			if (PlList.isEmpty())
 				return;
@@ -218,7 +218,7 @@ public:
 			DoCast(SPELL_SEUCHENBOMBE);
 			DoCast(SPELL_BLISTERING_COLD);
 			++playerdie;
-			snprintf(msg, 250, "|cffff0000[Boss System]|r |cffff6060 Lightshadow|r hat einen Mitstreiter Darkshadows getoetet! Was fuer eine Schmach! Killcounter steht bei: %u", playerdie, victim->GetName());
+			snprintf(msg, 250, "|cffff0000[Boss System]|r |cffff6060 Lightshadow|r hat einen Mitstreiter Darkshadows getoetet! Was fuer eine Schmach! Killcounter steht bei: %u", playerdie);
 			sWorld->SendGlobalText(msg, NULL);
 		}
 
@@ -270,9 +270,9 @@ public:
 					DoCast(SPELL_DEGENERATION);
 					_events.ScheduleEvent(EVENT_DEGENERATION, 20000,1);
 					break;
-				case EVENT_DURCHDRINGENDE_KÄLTE:
-					DoCastToAllHostilePlayers(SPELL_DURCHDRINGENDE_KÄLTE);
-					_events.ScheduleEvent(EVENT_DURCHDRINGENDE_KÄLTE, 12000);
+				case EVENT_DURCHDRINGENDE_KAELTE:
+					DoCastToAllHostilePlayers(SPELL_DURCHDRINGENDE_KAELTE);
+					_events.ScheduleEvent(EVENT_DURCHDRINGENDE_KAELTE, 12000);
 					break;
 				case EVENT_EISBLITZ:
 					DoCastToAllHostilePlayers(SPELL_EISBLITZ);
