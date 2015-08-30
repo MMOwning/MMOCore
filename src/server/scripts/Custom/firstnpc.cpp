@@ -81,7 +81,7 @@ class npc_first_char : public CreatureScript
 								
 								pPlayer->PlayerTalkClass->SendCloseGossip();	
 
-								CharacterDatabase.PExecute("REPLACE INTO first_Char "
+								CharacterDatabase.PExecute("REPLACE INTO first_char "
 									"(guid,Charname, account, Accname, time, guildid,ip) "
 									"VALUES ('%u', '%s', %u, '%s', %u, %u, '%s')",
 									guid, charname, accountresint, accname, zeit, 0 , ipadrint);
@@ -223,7 +223,7 @@ class npc_first_char : public CreatureScript
 									pPlayer->AddItem(20400, 4);
 									pPlayer->SetMoney(50000000);
 
-									CharacterDatabase.PExecute("REPLACE INTO first_Char "
+									CharacterDatabase.PExecute("REPLACE INTO first_char "
 										"(guid,Charname, account, Accname, time, guildid,ip) "
 										"VALUES ('%u', '%s', %u, '%s', %u, %u, '%s')",
 										guid, charname, accountresint, accname, zeit, guildidint, ipadrint);
@@ -318,7 +318,7 @@ class npc_first_char : public CreatureScript
 								pPlayer->AddItem(20400, 4);
 								pPlayer->SetMoney(50000000);
 														
-								CharacterDatabase.PExecute("REPLACE INTO first_Char "
+								CharacterDatabase.PExecute("REPLACE INTO first_char "
 									"(guid,Charname, account, Accname, time, guildid,ip) "
 									"VALUES ('%u', '%s', %u, '%s', %u, %u, '%s')",
 									guid, charname, accountresint, accname, zeit, guildidint, ipadrint);
