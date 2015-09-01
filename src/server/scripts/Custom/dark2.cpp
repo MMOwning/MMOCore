@@ -1,4 +1,3 @@
-#include "ScriptPCH.h"
 #include "ScriptMgr.h"
 #include "AccountMgr.h"
 #include "ObjectMgr.h"
