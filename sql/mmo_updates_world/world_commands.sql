@@ -1,5 +1,3 @@
-DELETE FROM command WHERE `name`='insel';
-INSERT INTO `command` (`name`, `permission`, `help`) VALUES ('insel', 195, 'Syntax: .insel Teleportiert dich zur Ausstattungsinsel');
 
 
 DELETE FROM command WHERE `name`='mall';
