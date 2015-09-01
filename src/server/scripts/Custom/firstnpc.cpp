@@ -1,4 +1,4 @@
-#include "ScriptMgr.h"
+.ap#include "ScriptMgr.h"
 #include "AccountMgr.h"
 #include "time.h"
 #include <stdio.h>
@@ -204,11 +204,11 @@ class npc_first_char : public CreatureScript
 								QueryResult ipadrcount = LoginDatabase.PQuery("SELECT count(last_ip) FROM account WHERE last_ip = '%s'", ipadrint);
 								uint32 ipadrcountint = (*ipadrcount)[0].GetUInt32();
 
-								time_t sek;
-								time(&sek);
-								uint32 zeit = time(&sek);
+								time_t seconds;
+								seconds = time(NULL);
+								uint32 zeit = seconds;
 								uint32 zeitraum = zeit - guildcreateint;
-								
+																
 								
 								/*Acccountanzahl zählen*/
 								QueryResult accountanz = CharacterDatabase.PQuery("SELECT account FROM characters WHERE guid = %u", guid);
