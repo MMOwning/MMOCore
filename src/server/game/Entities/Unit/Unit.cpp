@@ -330,7 +330,7 @@ void Unit::Update(uint32 p_time)
         SendThreatListUpdate();
 
     // update combat timer only for players and pets (only pets with PetAI)
-    if (IsInCombat() && (GetTypeId() == TYPEID_PLAYER || (ToCreature()->IsPet() && IsControlledByPlayer())))
+    if (IsInCombat() && (GetTypeId() == TYPEID_PLAYER || (IsPet() && IsControlledByPlayer())))
     {
         // Check UNIT_STATE_MELEE_ATTACKING or UNIT_STATE_CHASE (without UNIT_STATE_FOLLOW in this case) so pets can reach far away
         // targets without stopping half way there and running off.
@@ -2131,8 +2131,8 @@ MeleeHitOutcome Unit::RollMeleeOutcomeAgainst (const Unit* victim, WeaponAttackT
 
     // Max 40% chance to score a glancing blow against mobs that are higher level (can do only players and pets and not with ranged weapon)
     if (attType != RANGED_ATTACK &&
-        (GetTypeId() == TYPEID_PLAYER || ToCreature()->IsPet()) &&
-        victim->GetTypeId() != TYPEID_PLAYER && !victim->ToCreature()->IsPet() &&
+        (GetTypeId() == TYPEID_PLAYER || IsPet()) &&
+        victim->GetTypeId() != TYPEID_PLAYER && !victim->IsPet() &&
         getLevel() < victim->getLevelForTarget(this))
     {
         // cap possible value (with bonuses > max skill)
@@ -2205,6 +2205,9 @@ uint32 Unit::CalculateDamage(WeaponAttackType attType, bool normalized, bool add
                 break;
         }
     }
+
+    minDamage = std::max(0.f, minDamage);
+    maxDamage = std::max(0.f, maxDamage);
 
     if (minDamage > maxDamage)
         std::swap(minDamage, maxDamage);
@@ -2702,7 +2705,7 @@ float Unit::GetUnitDodgeChance() const
         return GetFloatValue(PLAYER_DODGE_PERCENTAGE);
     else
     {
-        if (ToCreature()->IsTotem())
+        if (IsTotem())
             return 0.0f;
         else
         {
@@ -2777,7 +2780,7 @@ float Unit::GetUnitBlockChance() const
     }
     else
     {
-        if (ToCreature()->IsTotem())
+        if (IsTotem())
             return 0.0f;
         else
         {
@@ -3189,7 +3192,7 @@ bool Unit::IsUnderWater() const
 
 void Unit::UpdateUnderwaterState(Map* m, float x, float y, float z)
 {
-    if (!IsPet() && !IsVehicle())
+    if (IsFlying() || (!IsPet() && !IsVehicle()))
         return;
 
     LiquidData liquid_status;
@@ -3482,7 +3485,7 @@ void Unit::_UnapplyAura(AuraApplicationMap::iterator &i, AuraRemoveMode removeMo
     ASSERT(!aurApp->GetEffectMask());
 
     // Remove totem at next update if totem loses its aura
-    if (aurApp->GetRemoveMode() == AURA_REMOVE_BY_EXPIRE && GetTypeId() == TYPEID_UNIT && ToCreature()->IsTotem())
+    if (aurApp->GetRemoveMode() == AURA_REMOVE_BY_EXPIRE && GetTypeId() == TYPEID_UNIT && IsTotem())
     {
         if (ToTotem()->GetSpell() == aura->GetId() && ToTotem()->GetTotemType() == TOTEM_PASSIVE)
             ToTotem()->setDeathState(JUST_DIED);
@@ -5711,7 +5714,7 @@ bool Unit::HandleDummyAuraProc(Unit* victim, uint32 damage, AuraEffect* triggere
             if (dummySpell->SpellIconID == 1697)
             {
                 // only for spells and hit/crit (trigger start always) and not start from self cast spells (5530 Mace Stun Effect for example)
-                if (procSpell == 0 || !(procEx & (PROC_EX_NORMAL_HIT|PROC_EX_CRITICAL_HIT)) || this == victim)
+                if (!procSpell || !(procEx & (PROC_EX_NORMAL_HIT|PROC_EX_CRITICAL_HIT)) || this == victim)
                     return false;
                 // Need stun or root mechanic
                 if (!(procSpell->GetAllEffectsMechanicMask() & ((1<<MECHANIC_ROOT)|(1<<MECHANIC_STUN))))
@@ -5908,7 +5911,7 @@ bool Unit::HandleDummyAuraProc(Unit* victim, uint32 damage, AuraEffect* triggere
                 // Vampiric Embrace
                 case 15286:
                 {
-                    if (!victim || !victim->IsAlive() || procSpell->SpellFamilyFlags[1] & 0x80000)
+                    if (!victim || !victim->IsAlive() || !procSpell || procSpell->SpellFamilyFlags[1] & 0x80000)
                         return false;
 
                     // heal amount
@@ -5922,7 +5925,9 @@ bool Unit::HandleDummyAuraProc(Unit* victim, uint32 damage, AuraEffect* triggere
                 case 40438:
                 {
                     // Shadow Word: Pain
-                    if (procSpell->SpellFamilyFlags[0] & 0x8000)
+                    if (!procSpell)
+                        return false;
+                    else if (procSpell->SpellFamilyFlags[0] & 0x8000)
                         triggered_spell_id = 40441;
                     // Renew
                     else if (procSpell->SpellFamilyFlags[0] & 0x40)
@@ -5986,7 +5991,7 @@ bool Unit::HandleDummyAuraProc(Unit* victim, uint32 damage, AuraEffect* triggere
                 // Priest T10 Healer 2P Bonus
                 case 70770:
                     // Flash Heal
-                    if (procSpell->SpellFamilyFlags[0] & 0x800)
+                    if (procSpell && procSpell->SpellFamilyFlags[0] & 0x800)
                     {
                         triggered_spell_id = 70772;
                         SpellInfo const* blessHealing = sSpellMgr->GetSpellInfo(triggered_spell_id);
@@ -6005,7 +6010,7 @@ bool Unit::HandleDummyAuraProc(Unit* victim, uint32 damage, AuraEffect* triggere
                 // Glyph of Innervate
                 case 54832:
                 {
-                    if (procSpell->SpellIconID != 62)
+                    if (!procSpell || procSpell->SpellIconID != 62)
                         return false;
 
                     int32 mana_perc = triggeredByAura->GetSpellInfo()->Effects[triggeredByAura->GetEffIndex()].CalcValue();
@@ -6055,7 +6060,7 @@ bool Unit::HandleDummyAuraProc(Unit* victim, uint32 damage, AuraEffect* triggere
                 // Glyph of Rake
                 case 54821:
                 {
-                    if (procSpell->SpellVisual[0] == 750 && procSpell->Effects[1].ApplyAuraName == 3)
+                    if (procSpell && procSpell->SpellVisual[0] == 750 && procSpell->Effects[1].ApplyAuraName == 3)
                     {
                         if (target && target->GetTypeId() == TYPEID_UNIT)
                         {
@@ -6085,10 +6090,13 @@ bool Unit::HandleDummyAuraProc(Unit* victim, uint32 damage, AuraEffect* triggere
                 // Healing Touch (Dreamwalker Raiment set)
                 case 28719:
                 {
-                    // mana back
-                    basepoints0 = int32(CalculatePct(procSpell->ManaCost, 30));
-                    target = this;
-                    triggered_spell_id = 28742;
+                    if (procSpell)
+                    {
+                        // mana back
+                        basepoints0 = int32(CalculatePct(procSpell->ManaCost, 30));
+                        target = this;
+                        triggered_spell_id = 28742;
+                    }
                     break;
                 }
                 // Glyph of Rejuvenation
@@ -6120,8 +6128,10 @@ bool Unit::HandleDummyAuraProc(Unit* victim, uint32 damage, AuraEffect* triggere
                 {
                     float  chance;
 
+                    if (!procSpell)
+                        return false;
                     // Starfire
-                    if (procSpell->SpellFamilyFlags[0] & 0x4)
+                    else if (procSpell->SpellFamilyFlags[0] & 0x4)
                     {
                         triggered_spell_id = 40445;
                         chance = 25.0f;
@@ -6158,7 +6168,7 @@ bool Unit::HandleDummyAuraProc(Unit* victim, uint32 damage, AuraEffect* triggere
                 case 70723:
                 {
                     // Wrath & Starfire
-                    if ((procSpell->SpellFamilyFlags[0] & 0x5) && (procEx & PROC_EX_CRITICAL_HIT))
+                    if (procSpell && (procSpell->SpellFamilyFlags[0] & 0x5) && (procEx & PROC_EX_CRITICAL_HIT))
                     {
                         triggered_spell_id = 71023;
                         SpellInfo const* triggeredSpell = sSpellMgr->GetSpellInfo(triggered_spell_id);
@@ -6174,7 +6184,7 @@ bool Unit::HandleDummyAuraProc(Unit* victim, uint32 damage, AuraEffect* triggere
                 case 70664:
                 {
                     // Proc only from normal Rejuvenation
-                    if (procSpell->SpellVisual[0] != 32)
+                    if (!procSpell || procSpell->SpellVisual[0] != 32)
                         return false;
 
                     Player* caster = ToPlayer();
@@ -6305,7 +6315,7 @@ bool Unit::HandleDummyAuraProc(Unit* victim, uint32 damage, AuraEffect* triggere
                 case 3560: // Rapid Recuperation
                 {
                     // This effect only from Rapid Killing (mana regen)
-                    if (!(procSpell->SpellFamilyFlags[1] & 0x01000000))
+                    if (!procSpell || !(procSpell->SpellFamilyFlags[1] & 0x01000000))
                         return false;
 
                     target = this;
@@ -6347,7 +6357,7 @@ bool Unit::HandleDummyAuraProc(Unit* victim, uint32 damage, AuraEffect* triggere
             // Light's Beacon - Beacon of Light
             if (dummySpell->Id == 53651)
             {
-                if (!victim)
+                if (!victim || !procSpell)
                     return false;
                 triggered_spell_id = 0;
                 Unit* beaconTarget = NULL;
@@ -6508,9 +6518,9 @@ bool Unit::HandleDummyAuraProc(Unit* victim, uint32 damage, AuraEffect* triggere
                         return false;
 
                     // At melee attack or Hammer of the Righteous spell damage considered as melee attack
-                    bool stacker = !procSpell || procSpell->Id == 53595;
+                    bool stacker = procSpell ? procSpell->Id == 53595 : true;
                     // spells with SPELL_DAMAGE_CLASS_MELEE excluding Judgements
-                    bool damager = procSpell && (procSpell->EquippedItemClass != -1 || (procSpell->SpellIconID == 243 && procSpell->SpellVisual[0] == 39));
+                    bool damager = procSpell ? (procSpell->EquippedItemClass != -1 || (procSpell->SpellIconID == 243 && procSpell->SpellVisual[0] == 39)) : false;
 
                     if (!stacker && !damager)
                         return false;
@@ -6540,9 +6550,9 @@ bool Unit::HandleDummyAuraProc(Unit* victim, uint32 damage, AuraEffect* triggere
                         return false;
 
                     // At melee attack or Hammer of the Righteous spell damage considered as melee attack
-                    bool stacker = !procSpell || procSpell->Id == 53595;
+                    bool stacker = procSpell ? procSpell->Id == 53595 : true;
                     // spells with SPELL_DAMAGE_CLASS_MELEE excluding Judgements
-                    bool damager = procSpell && (procSpell->EquippedItemClass != -1 || (procSpell->SpellIconID == 243 && procSpell->SpellVisual[0] == 39));
+                    bool damager = procSpell ? (procSpell->EquippedItemClass != -1 || (procSpell->SpellIconID == 243 && procSpell->SpellVisual[0] == 39)) : false;
 
                     if (!stacker && !damager)
                         return false;
@@ -6889,7 +6899,7 @@ bool Unit::HandleDummyAuraProc(Unit* victim, uint32 damage, AuraEffect* triggere
                 case 67228:
                 {
                     // Lava Burst
-                    if (procSpell->SpellFamilyFlags[1] & 0x1000)
+                    if (procSpell && procSpell->SpellFamilyFlags[1] & 0x1000)
                     {
                         triggered_spell_id = 71824;
                         SpellInfo const* triggeredSpell = sSpellMgr->GetSpellInfo(triggered_spell_id);
@@ -6903,7 +6913,7 @@ bool Unit::HandleDummyAuraProc(Unit* victim, uint32 damage, AuraEffect* triggere
                 case 70808:
                 {
                     // Chain Heal
-                    if ((procSpell->SpellFamilyFlags[0] & 0x100) && (procEx & PROC_EX_CRITICAL_HIT))
+                    if (procSpell && (procSpell->SpellFamilyFlags[0] & 0x100) && (procEx & PROC_EX_CRITICAL_HIT))
                     {
                         triggered_spell_id = 70809;
                         SpellInfo const* triggeredSpell = sSpellMgr->GetSpellInfo(triggered_spell_id);
@@ -6939,7 +6949,7 @@ bool Unit::HandleDummyAuraProc(Unit* victim, uint32 damage, AuraEffect* triggere
                 }
                 case 63280: // Glyph of Totem of Wrath
                 {
-                    if (procSpell->SpellIconID != 2019)
+                    if (!procSpell || procSpell->SpellIconID != 2019)
                         return false;
 
                     if (Creature* totem = GetMap()->GetCreature(m_SummonSlot[1]))   // Fire totem summon slot
@@ -7031,7 +7041,9 @@ bool Unit::HandleDummyAuraProc(Unit* victim, uint32 damage, AuraEffect* triggere
                 // Default chance for Healing Wave and Riptide
                 float chance = (float)triggeredByAura->GetAmount();
 
-                if (procSpell->SpellFamilyFlags[0] & 0x80)
+                if (!procSpell)
+                    return false; //This is the same than putting chance *= 0.0f;
+                else if (procSpell->SpellFamilyFlags[0] & 0x80)
                     // Lesser Healing Wave - 0.6 of default
                     chance *= 0.6f;
                 else if (procSpell->SpellFamilyFlags[0] & 0x100)
@@ -7286,7 +7298,7 @@ bool Unit::HandleDummyAuraProc(Unit* victim, uint32 damage, AuraEffect* triggere
             if (dummySpell->Id == 61257)
             {
                 // only for spells and hit/crit (trigger start always) and not start from self cast spells
-                if (procSpell == 0 || !(procEx & (PROC_EX_NORMAL_HIT|PROC_EX_CRITICAL_HIT)) || this == victim)
+                if (!procSpell || !(procEx & (PROC_EX_NORMAL_HIT|PROC_EX_CRITICAL_HIT)) || this == victim)
                     return false;
                 // Need snare or root mechanic
                 if (!(procSpell->GetAllEffectsMechanicMask() & ((1<<MECHANIC_ROOT)|(1<<MECHANIC_SNARE))))
@@ -7345,7 +7357,7 @@ bool Unit::HandleDummyAuraProc(Unit* victim, uint32 damage, AuraEffect* triggere
         case SPELLFAMILY_POTION:
         {
             // alchemist's stone
-            if (dummySpell->Id == 17619)
+            if (procSpell && dummySpell->Id == 17619)
             {
                 if (procSpell->SpellFamilyName == SPELLFAMILY_POTION)
                 {
@@ -7377,7 +7389,7 @@ bool Unit::HandleDummyAuraProc(Unit* victim, uint32 damage, AuraEffect* triggere
                 // Guard Dog
                 case 201:
                 {
-                    if (!victim)
+                    if (!victim || !procSpell)
                         return false;
 
                     triggered_spell_id = 54445;
@@ -8981,7 +8993,7 @@ bool Unit::Attack(Unit* victim, bool meleeAttack)
     //if (GetTypeId() == TYPEID_UNIT)
     //    ToCreature()->SetCombatStartPosition(GetPositionX(), GetPositionY(), GetPositionZ());
 
-    if (GetTypeId() == TYPEID_UNIT && !ToCreature()->IsPet())
+    if (GetTypeId() == TYPEID_UNIT && !IsPet())
     {
         // should not let player enter combat by right clicking target - doesn't helps
         SetInCombatWith(victim);
@@ -9470,7 +9482,7 @@ void Unit::GetAllMinionsByEntry(std::list<Creature*>& Minions, uint32 entry)
         Unit* unit = *itr;
         ++itr;
         if (unit->GetEntry() == entry && unit->GetTypeId() == TYPEID_UNIT
-            && unit->ToCreature()->IsSummon()) // minion, actually
+            && unit->IsSummon()) // minion, actually
             Minions.push_back(unit->ToCreature());
     }
 }
@@ -9482,7 +9494,7 @@ void Unit::RemoveAllMinionsByEntry(uint32 entry)
         Unit* unit = *itr;
         ++itr;
         if (unit->GetEntry() == entry && unit->GetTypeId() == TYPEID_UNIT
-            && unit->ToCreature()->IsSummon()) // minion, actually
+            && unit->IsSummon()) // minion, actually
             unit->ToTempSummon()->UnSummon();
         // i think this is safe because i have never heard that a despawned minion will trigger a same minion
     }
@@ -9582,7 +9594,7 @@ int32 Unit::DealHeal(Unit* victim, uint32 addhealth)
 
     Unit* unit = this;
 
-    if (GetTypeId() == TYPEID_UNIT && ToCreature()->IsTotem())
+    if (GetTypeId() == TYPEID_UNIT && IsTotem())
         unit = GetOwner();
 
     if (Player* player = unit->ToPlayer())
@@ -9626,7 +9638,6 @@ Unit* Unit::GetMagicHitRedirectTarget(Unit* victim, SpellInfo const* spellInfo)
     {
         if (Unit* magnet = (*itr)->GetBase()->GetCaster())
             if (spellInfo->CheckExplicitTarget(this, magnet) == SPELL_CAST_OK
-                && spellInfo->CheckTarget(this, magnet, false) == SPELL_CAST_OK
                 && _IsValidAttackTarget(magnet, spellInfo))
             {
                 /// @todo handle this charge drop by proc in cast phase on explicit target
@@ -9635,7 +9646,7 @@ Unit* Unit::GetMagicHitRedirectTarget(Unit* victim, SpellInfo const* spellInfo)
                     // Set up missile speed based delay
                     uint32 delay = uint32(std::floor(std::max<float>(victim->GetDistance(this), 5.0f) / spellInfo->Speed * 1000.0f));
                     // Schedule charge drop
-                    (*itr)->GetBase()->DropChargeDelayed(delay,AURA_REMOVE_BY_EXPIRE);
+                    (*itr)->GetBase()->DropChargeDelayed(delay, AURA_REMOVE_BY_EXPIRE);
                 }
                 else
                     (*itr)->GetBase()->DropCharge(AURA_REMOVE_BY_EXPIRE);
@@ -9724,7 +9735,7 @@ Unit* Unit::GetNextRandomRaidMemberOrPet(float radius)
     if (GetTypeId() == TYPEID_PLAYER)
         player = ToPlayer();
     // Should we enable this also for charmed units?
-    else if (GetTypeId() == TYPEID_UNIT && ToCreature()->IsPet())
+    else if (GetTypeId() == TYPEID_UNIT && IsPet())
         player = GetOwner()->ToPlayer();
 
     if (!player)
@@ -9874,7 +9885,7 @@ uint32 Unit::SpellDamageBonusDone(Unit* victim, SpellInfo const* spellProto, uin
         return pdamage;
 
     // For totems get damage bonus from owner
-    if (GetTypeId() == TYPEID_UNIT && ToCreature()->IsTotem())
+    if (GetTypeId() == TYPEID_UNIT && IsTotem())
         if (Unit* owner = GetOwner())
             return owner->SpellDamageBonusDone(victim, spellProto, pdamage, damagetype);
 
@@ -10005,14 +10016,14 @@ float Unit::SpellDamagePctDone(Unit* victim, SpellInfo const* spellProto, Damage
         return 1.0f;
 
     // For totems pct done mods are calculated when its calculation is run on the player in SpellDamageBonusDone.
-    if (GetTypeId() == TYPEID_UNIT && ToCreature()->IsTotem())
+    if (GetTypeId() == TYPEID_UNIT && IsTotem())
         return 1.0f;
 
     // Done total percent damage auras
     float DoneTotalMod = 1.0f;
 
     // Pet damage?
-    if (GetTypeId() == TYPEID_UNIT && !ToCreature()->IsPet())
+    if (GetTypeId() == TYPEID_UNIT && !IsPet())
         DoneTotalMod *= ToCreature()->GetSpellDamageMod(ToCreature()->GetCreatureTemplate()->rank);
 
     AuraEffectList const& mModDamagePercentDone = GetAuraEffectsByType(SPELL_AURA_MOD_DAMAGE_PERCENT_DONE);
@@ -11936,9 +11947,9 @@ bool Unit::_IsValidAttackTarget(Unit const* target, SpellInfo const* bySpell, Wo
         || target->GetReactionTo(this) > REP_NEUTRAL)
         return false;
 
-    // Not all neutral creatures can be attacked
+    // Not all neutral creatures can be attacked (even some unfriendly faction does not react aggresive to you, like Sporaggar)
     if (GetReactionTo(target) == REP_NEUTRAL &&
-        target->GetReactionTo(this) == REP_NEUTRAL)
+        target->GetReactionTo(this) <= REP_NEUTRAL)
     {
         if  (!(target->GetTypeId() == TYPEID_PLAYER && GetTypeId() == TYPEID_PLAYER) &&
             !(target->GetTypeId() == TYPEID_UNIT && GetTypeId() == TYPEID_UNIT))
@@ -12568,7 +12579,7 @@ bool Unit::CanHaveThreatList(bool skipAliveCheck) const
         return false;
 
     // totems can not have threat list
-    if (ToCreature()->IsTotem())
+    if (IsTotem())
         return false;
 
     // vehicles can not have threat list
@@ -14516,7 +14527,7 @@ Player* Unit::GetSpellModOwner() const
     if (Player* player = const_cast<Unit*>(this)->ToPlayer())
         return player;
 
-    if (ToCreature()->IsPet() || ToCreature()->IsTotem())
+    if (IsPet() || IsTotem())
     {
         if (Unit* owner = GetOwner())
             if (Player* player = owner->ToPlayer())
@@ -14787,7 +14798,7 @@ void Unit::ApplyCastTimePercentMod(float val, bool apply)
 uint32 Unit::GetCastingTimeForBonus(SpellInfo const* spellProto, DamageEffectType damagetype, uint32 CastingTime) const
 {
     // Not apply this to creature cast spells with casttime == 0
-    if (CastingTime == 0 && GetTypeId() == TYPEID_UNIT && !ToCreature()->IsPet())
+    if (CastingTime == 0 && GetTypeId() == TYPEID_UNIT && !IsPet())
         return 3500;
 
     if (CastingTime > 7000) CastingTime = 7000;
@@ -14887,7 +14898,7 @@ void Unit::UpdateAuraForGroup(uint8 slot)
             player->SetAuraUpdateMaskForRaid(slot);
         }
     }
-    else if (GetTypeId() == TYPEID_UNIT && ToCreature()->IsPet())
+    else if (GetTypeId() == TYPEID_UNIT && IsPet())
     {
         Pet* pet = ((Pet*)this);
         if (pet->isControlled())
@@ -16055,7 +16066,7 @@ void Unit::RemoveCharmedBy(Unit* charmer)
     // a guardian should always have charminfo
     if (playerCharmer && this != charmer->GetFirstControlled())
         playerCharmer->SendRemoveControlBar();
-    else if (GetTypeId() == TYPEID_PLAYER || (GetTypeId() == TYPEID_UNIT && !ToCreature()->IsGuardian()))
+    else if (GetTypeId() == TYPEID_PLAYER || (GetTypeId() == TYPEID_UNIT && !IsGuardian()))
         DeleteCharmInfo();
 }
 

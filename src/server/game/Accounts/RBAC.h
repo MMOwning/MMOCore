@@ -695,6 +695,9 @@ enum RBACPermissions
     RBAC_PERM_COMMAND_PVPSTATS                               = 797,
     RBAC_PERM_COMMAND_MODIFY_XP                              = 798,
 	RBAC_PERM_COMMAND_WORLD_CHAT							 = 1020,
+    // 799 - 834 6.x only
+    RBAC_PERM_COMMAND_DEBUG_LOADCELLS                        = 835,
+
     // custom permissions 1000+
     RBAC_PERM_MAX
 };
