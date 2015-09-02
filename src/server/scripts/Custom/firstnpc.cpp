@@ -1,7 +1,28 @@
-.ap#include "ScriptMgr.h"
 #include "AccountMgr.h"
 #include "time.h"
 #include <stdio.h>
+#include "Bag.h"
+#include "Common.h"
+#include "Config.h"
+#include "DatabaseEnv.h"
+#include "DBCStructure.h"
+#include "Define.h"
+#include "Field.h"
+#include "GameEventMgr.h"
+#include "Item.h"
+#include "ItemPrototype.h"
+#include "Language.h"
+#include "Log.h"
+#include "ObjectGuid.h"
+#include "ObjectMgr.h"
+#include "Player.h"
+#include "QueryResult.h"
+#include "ScriptMgr.h"
+#include "SharedDefines.h"
+#include "Transaction.h"
+#include "WorldSession.h"
+#include <sstream>
+#include <string>
 #include <stdlib.h>
 
 class npc_first_char : public CreatureScript
@@ -304,9 +325,9 @@ class npc_first_char : public CreatureScript
 							QueryResult accountgesanz = CharacterDatabase.PQuery("SELECT count(account) FROM first_char WHERE account = '%u'", accountanzint);
 							uint32 accountanzgesint = (*accountgesanz)[0].GetUInt32();
 
-							time_t sek;
-							time(&sek);
-							uint32 zeit = time(&sek);
+							time_t seconds;
+							seconds = time(NULL);
+							uint32 zeit = seconds;
 							uint32 zeitraum = zeit - guildcreateint;
 
 							
