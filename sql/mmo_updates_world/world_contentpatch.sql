@@ -390,7 +390,7 @@ DELETE FROM `gameobject` WHERE `guid` = 800108;
 
 
 /* LOOTTABLES */
-/* Schattengram F�lschung ANFANG*/
+/* Schattengram Faelschung ANFANG*/
 REPLACE INTO `creature_loot_template` (`Entry`,`Item`,`Reference`, `Chance`, `QuestRequired`, `LootMode`, `GroupId`, `MinCount`, `MaxCount`)
 VALUES (36502, 700498, 0, 0.1, 0, 1, 0, 1, 1); 
 
@@ -440,7 +440,7 @@ VALUES (15990, 700498, 0, 0.1, 0, 1, 0, 1, 1);
 
 
 
-/* F�LSCHUNG ENDE */
+/* FaeLSCHUNG ENDE */
 
 /*Quest Essenz der ewigen 5*/
 /* Taerar */
@@ -497,7 +497,7 @@ VALUES (36502, 700499, 0, 0.1, 1, 1, 0, 1, 1);
 /* GIldenhaustoken */
 
 REPLACE INTO `item_template` (`entry`, `class`, `subclass`, `SoundOverrideSubclass`, `name`, `displayid`, `Quality`, `Flags`, `FlagsExtra`, `BuyCount`, `BuyPrice`, `SellPrice`, `InventoryType`, `AllowableClass`, `AllowableRace`, `ItemLevel`, `RequiredLevel`, `RequiredSkill`, `RequiredSkillRank`, `requiredspell`, `requiredhonorrank`, `RequiredCityRank`, `RequiredReputationFaction`, `RequiredReputationRank`, `maxcount`, `stackable`, `ContainerSlots`, `StatsCount`, `stat_type1`, `stat_value1`, `stat_type2`, `stat_value2`, `stat_type3`, `stat_value3`, `stat_type4`, `stat_value4`, `stat_type5`, `stat_value5`, `stat_type6`, `stat_value6`, `stat_type7`, `stat_value7`, `stat_type8`, `stat_value8`, `stat_type9`, `stat_value9`, `stat_type10`, `stat_value10`, `ScalingStatDistribution`, `ScalingStatValue`, `dmg_min1`, `dmg_max1`, `dmg_type1`, `dmg_min2`, `dmg_max2`, `dmg_type2`, `armor`, `holy_res`, `fire_res`, `nature_res`, `frost_res`, `shadow_res`, `arcane_res`, `delay`, `ammo_type`, `RangedModRange`, `spellid_1`, `spelltrigger_1`, `spellcharges_1`, `spellppmRate_1`, `spellcooldown_1`, `spellcategory_1`, `spellcategorycooldown_1`, `spellid_2`, `spelltrigger_2`, `spellcharges_2`, `spellppmRate_2`, `spellcooldown_2`, `spellcategory_2`, `spellcategorycooldown_2`, `spellid_3`, `spelltrigger_3`, `spellcharges_3`, `spellppmRate_3`, `spellcooldown_3`, `spellcategory_3`, `spellcategorycooldown_3`, `spellid_4`, `spelltrigger_4`, `spellcharges_4`, `spellppmRate_4`, `spellcooldown_4`, `spellcategory_4`, `spellcategorycooldown_4`, `spellid_5`, `spelltrigger_5`, `spellcharges_5`, `spellppmRate_5`, `spellcooldown_5`, `spellcategory_5`, `spellcategorycooldown_5`, `bonding`, `description`, `PageText`, `LanguageID`, `PageMaterial`, `startquest`, `lockid`, `Material`, `sheath`, `RandomProperty`, `RandomSuffix`, `block`, `itemset`, `MaxDurability`, `area`, `Map`, `BagFamily`, `TotemCategory`, `socketColor_1`, `socketContent_1`, `socketColor_2`, `socketContent_2`, `socketColor_3`, `socketContent_3`, `socketBonus`, `GemProperties`, `RequiredDisenchantSkill`, `ArmorDamageModifier`, `duration`, `ItemLimitCategory`, `HolidayId`, `ScriptName`, `DisenchantID`, `FoodType`, `minMoneyLoot`, `maxMoneyLoot`, `flagsCustom`, `VerifiedBuild`) VALUES
-(200000, 0, 0, -1, 'Gildenhaus Token', 7352, 5, 1, 0, 1, 0, 0, 0, -1, -1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 500, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1000, 0, 0, 0, 0, 0, 0, -1, 0, -1, 0, 0, 0, 0, -1, 0, -1, 0, 0, 0, 0, -1, 0, -1, 0, 0, 0, 0, -1, 0, -1, 0, 0, 0, 0, -1, 0, -1, 0, 'Ben�tigt um Gildenh�user zu erwerben', 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, -1, 0, 0, 0, 0, '', 0, 0, 0, 0, 0, 1);
+(200000, 0, 0, -1, 'Gildenhaus Token', 7352, 5, 1, 0, 1, 0, 0, 0, -1, -1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 500, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1000, 0, 0, 0, 0, 0, 0, -1, 0, -1, 0, 0, 0, 0, -1, 0, -1, 0, 0, 0, 0, -1, 0, -1, 0, 0, 0, 0, -1, 0, -1, 0, 0, 0, 0, -1, 0, -1, 0, 'Benoetigt um Gildenhaeuser zu erwerben', 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, -1, 0, 0, 0, 0, '', 0, 0, 0, 0, 0, 1);
 
 
 /*Verdammniswandler Verdammnislord */
@@ -512,13 +512,13 @@ REPLACE INTO `item_template` (`entry`, `class`, `subclass`, `name`, `displayid`,
 /*Qeustitem mit Quest*/
 
 
-REPLACE INTO `item_template` (`entry`, `class`, `subclass`, `name`, `displayid`, `Quality`, `Flags`, `FlagsExtra`, `BuyCount`, `BuyPrice`, `SellPrice`, `InventoryType`, `AllowableClass`, `AllowableRace`, `ItemLevel`, `RequiredLevel`, `RequiredSkill`, `RequiredSkillRank`, `requiredspell`, `requiredhonorrank`, `RequiredCityRank`, `RequiredReputationFaction`, `RequiredReputationRank`, `maxcount`, `stackable`, `ContainerSlots`, `StatsCount`, `stat_type1`, `stat_value1`, `stat_type2`, `stat_value2`, `stat_type3`, `stat_value3`, `stat_type4`, `stat_value4`, `stat_type5`, `stat_value5`, `stat_type6`, `stat_value6`, `stat_type7`, `stat_value7`, `stat_type8`, `stat_value8`, `stat_type9`, `stat_value9`, `stat_type10`, `stat_value10`, `ScalingStatDistribution`, `ScalingStatValue`, `dmg_min1`, `dmg_max1`, `dmg_type1`, `dmg_min2`, `dmg_max2`, `dmg_type2`, `armor`, `holy_res`, `fire_res`, `nature_res`, `frost_res`, `shadow_res`, `arcane_res`, `delay`, `ammo_type`, `RangedModRange`, `spellid_1`, `spelltrigger_1`, `spellcharges_1`, `spellppmRate_1`, `spellcooldown_1`, `spellcategory_1`, `spellcategorycooldown_1`, `spellid_2`, `spelltrigger_2`, `spellcharges_2`, `spellppmRate_2`, `spellcooldown_2`, `spellcategory_2`, `spellcategorycooldown_2`, `spellid_3`, `spelltrigger_3`, `spellcharges_3`, `spellppmRate_3`, `spellcooldown_3`, `spellcategory_3`, `spellcategorycooldown_3`, `spellid_4`, `spelltrigger_4`, `spellcharges_4`, `spellppmRate_4`, `spellcooldown_4`, `spellcategory_4`, `spellcategorycooldown_4`, `spellid_5`, `spelltrigger_5`, `spellcharges_5`, `spellppmRate_5`, `spellcooldown_5`, `spellcategory_5`, `spellcategorycooldown_5`, `bonding`, `description`, `PageText`, `LanguageID`, `PageMaterial`, `startquest`, `lockid`, `Material`, `sheath`, `RandomProperty`, `RandomSuffix`, `block`, `itemset`, `MaxDurability`, `area`, `Map`, `BagFamily`, `TotemCategory`, `socketColor_1`, `socketContent_1`, `socketColor_2`, `socketContent_2`, `socketColor_3`, `socketContent_3`, `socketBonus`, `GemProperties`, `RequiredDisenchantSkill`, `ArmorDamageModifier`, `duration`, `ItemLimitCategory`, `HolidayId`, `ScriptName`, `DisenchantID`, `FoodType`, `minMoneyLoot`, `maxMoneyLoot`, `flagsCustom`) VALUES (700500, 12, 0, 'Ein mysteri�ser Gegenstand', 7339, 7, 73, 0, 0, 0, 0, 0, 2047, 1791, 1, 80, 0, 0, 0, 0, 0, 1770, 0, 1, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 'Was mag sich hier drin verbergen?', 0, 0, 0, 799999, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 4);
+REPLACE INTO `item_template` (`entry`, `class`, `subclass`, `name`, `displayid`, `Quality`, `Flags`, `FlagsExtra`, `BuyCount`, `BuyPrice`, `SellPrice`, `InventoryType`, `AllowableClass`, `AllowableRace`, `ItemLevel`, `RequiredLevel`, `RequiredSkill`, `RequiredSkillRank`, `requiredspell`, `requiredhonorrank`, `RequiredCityRank`, `RequiredReputationFaction`, `RequiredReputationRank`, `maxcount`, `stackable`, `ContainerSlots`, `StatsCount`, `stat_type1`, `stat_value1`, `stat_type2`, `stat_value2`, `stat_type3`, `stat_value3`, `stat_type4`, `stat_value4`, `stat_type5`, `stat_value5`, `stat_type6`, `stat_value6`, `stat_type7`, `stat_value7`, `stat_type8`, `stat_value8`, `stat_type9`, `stat_value9`, `stat_type10`, `stat_value10`, `ScalingStatDistribution`, `ScalingStatValue`, `dmg_min1`, `dmg_max1`, `dmg_type1`, `dmg_min2`, `dmg_max2`, `dmg_type2`, `armor`, `holy_res`, `fire_res`, `nature_res`, `frost_res`, `shadow_res`, `arcane_res`, `delay`, `ammo_type`, `RangedModRange`, `spellid_1`, `spelltrigger_1`, `spellcharges_1`, `spellppmRate_1`, `spellcooldown_1`, `spellcategory_1`, `spellcategorycooldown_1`, `spellid_2`, `spelltrigger_2`, `spellcharges_2`, `spellppmRate_2`, `spellcooldown_2`, `spellcategory_2`, `spellcategorycooldown_2`, `spellid_3`, `spelltrigger_3`, `spellcharges_3`, `spellppmRate_3`, `spellcooldown_3`, `spellcategory_3`, `spellcategorycooldown_3`, `spellid_4`, `spelltrigger_4`, `spellcharges_4`, `spellppmRate_4`, `spellcooldown_4`, `spellcategory_4`, `spellcategorycooldown_4`, `spellid_5`, `spelltrigger_5`, `spellcharges_5`, `spellppmRate_5`, `spellcooldown_5`, `spellcategory_5`, `spellcategorycooldown_5`, `bonding`, `description`, `PageText`, `LanguageID`, `PageMaterial`, `startquest`, `lockid`, `Material`, `sheath`, `RandomProperty`, `RandomSuffix`, `block`, `itemset`, `MaxDurability`, `area`, `Map`, `BagFamily`, `TotemCategory`, `socketColor_1`, `socketContent_1`, `socketColor_2`, `socketContent_2`, `socketColor_3`, `socketContent_3`, `socketBonus`, `GemProperties`, `RequiredDisenchantSkill`, `ArmorDamageModifier`, `duration`, `ItemLimitCategory`, `HolidayId`, `ScriptName`, `DisenchantID`, `FoodType`, `minMoneyLoot`, `maxMoneyLoot`, `flagsCustom`) VALUES (700500, 12, 0, 'Ein mysterioeser Gegenstand', 7339, 7, 73, 0, 0, 0, 0, 0, 2047, 1791, 1, 80, 0, 0, 0, 0, 0, 1770, 0, 1, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 'Was mag sich hier drin verbergen?', 0, 0, 0, 799999, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 4);
 
 
 
 /* Questitemstart ohne Quest*/
 
-REPLACE INTO `item_template` (`entry`, `class`, `subclass`, `name`, `displayid`, `Quality`, `Flags`, `FlagsExtra`, `BuyCount`, `BuyPrice`, `SellPrice`, `InventoryType`, `AllowableClass`, `AllowableRace`, `ItemLevel`, `RequiredLevel`, `RequiredSkill`, `RequiredSkillRank`, `requiredspell`, `requiredhonorrank`, `RequiredCityRank`, `RequiredReputationFaction`, `RequiredReputationRank`, `maxcount`, `stackable`, `ContainerSlots`, `StatsCount`, `stat_type1`, `stat_value1`, `stat_type2`, `stat_value2`, `stat_type3`, `stat_value3`, `stat_type4`, `stat_value4`, `stat_type5`, `stat_value5`, `stat_type6`, `stat_value6`, `stat_type7`, `stat_value7`, `stat_type8`, `stat_value8`, `stat_type9`, `stat_value9`, `stat_type10`, `stat_value10`, `ScalingStatDistribution`, `ScalingStatValue`, `dmg_min1`, `dmg_max1`, `dmg_type1`, `dmg_min2`, `dmg_max2`, `dmg_type2`, `armor`, `holy_res`, `fire_res`, `nature_res`, `frost_res`, `shadow_res`, `arcane_res`, `delay`, `ammo_type`, `RangedModRange`, `spellid_1`, `spelltrigger_1`, `spellcharges_1`, `spellppmRate_1`, `spellcooldown_1`, `spellcategory_1`, `spellcategorycooldown_1`, `spellid_2`, `spelltrigger_2`, `spellcharges_2`, `spellppmRate_2`, `spellcooldown_2`, `spellcategory_2`, `spellcategorycooldown_2`, `spellid_3`, `spelltrigger_3`, `spellcharges_3`, `spellppmRate_3`, `spellcooldown_3`, `spellcategory_3`, `spellcategorycooldown_3`, `spellid_4`, `spelltrigger_4`, `spellcharges_4`, `spellppmRate_4`, `spellcooldown_4`, `spellcategory_4`, `spellcategorycooldown_4`, `spellid_5`, `spelltrigger_5`, `spellcharges_5`, `spellppmRate_5`, `spellcooldown_5`, `spellcategory_5`, `spellcategorycooldown_5`, `bonding`, `description`, `PageText`, `LanguageID`, `PageMaterial`, `startquest`, `lockid`, `Material`, `sheath`, `RandomProperty`, `RandomSuffix`, `block`, `itemset`, `MaxDurability`, `area`, `Map`, `BagFamily`, `TotemCategory`, `socketColor_1`, `socketContent_1`, `socketColor_2`, `socketContent_2`, `socketColor_3`, `socketContent_3`, `socketBonus`, `GemProperties`, `RequiredDisenchantSkill`, `ArmorDamageModifier`, `duration`, `ItemLimitCategory`, `HolidayId`, `ScriptName`, `DisenchantID`, `FoodType`, `minMoneyLoot`, `maxMoneyLoot`, `flagsCustom`) VALUES (700501, 12, 0, 'Ein mysteri�ser Gegenstand', 7339, 7, 73, 0, 0, 0, 0, 0, 2047, 1791, 1, 80, 0, 0, 0, 0, 0, 1770, 0, 1, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 'Was mag sich hier drin verbergen?', 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 4);
+REPLACE INTO `item_template` (`entry`, `class`, `subclass`, `name`, `displayid`, `Quality`, `Flags`, `FlagsExtra`, `BuyCount`, `BuyPrice`, `SellPrice`, `InventoryType`, `AllowableClass`, `AllowableRace`, `ItemLevel`, `RequiredLevel`, `RequiredSkill`, `RequiredSkillRank`, `requiredspell`, `requiredhonorrank`, `RequiredCityRank`, `RequiredReputationFaction`, `RequiredReputationRank`, `maxcount`, `stackable`, `ContainerSlots`, `StatsCount`, `stat_type1`, `stat_value1`, `stat_type2`, `stat_value2`, `stat_type3`, `stat_value3`, `stat_type4`, `stat_value4`, `stat_type5`, `stat_value5`, `stat_type6`, `stat_value6`, `stat_type7`, `stat_value7`, `stat_type8`, `stat_value8`, `stat_type9`, `stat_value9`, `stat_type10`, `stat_value10`, `ScalingStatDistribution`, `ScalingStatValue`, `dmg_min1`, `dmg_max1`, `dmg_type1`, `dmg_min2`, `dmg_max2`, `dmg_type2`, `armor`, `holy_res`, `fire_res`, `nature_res`, `frost_res`, `shadow_res`, `arcane_res`, `delay`, `ammo_type`, `RangedModRange`, `spellid_1`, `spelltrigger_1`, `spellcharges_1`, `spellppmRate_1`, `spellcooldown_1`, `spellcategory_1`, `spellcategorycooldown_1`, `spellid_2`, `spelltrigger_2`, `spellcharges_2`, `spellppmRate_2`, `spellcooldown_2`, `spellcategory_2`, `spellcategorycooldown_2`, `spellid_3`, `spelltrigger_3`, `spellcharges_3`, `spellppmRate_3`, `spellcooldown_3`, `spellcategory_3`, `spellcategorycooldown_3`, `spellid_4`, `spelltrigger_4`, `spellcharges_4`, `spellppmRate_4`, `spellcooldown_4`, `spellcategory_4`, `spellcategorycooldown_4`, `spellid_5`, `spelltrigger_5`, `spellcharges_5`, `spellppmRate_5`, `spellcooldown_5`, `spellcategory_5`, `spellcategorycooldown_5`, `bonding`, `description`, `PageText`, `LanguageID`, `PageMaterial`, `startquest`, `lockid`, `Material`, `sheath`, `RandomProperty`, `RandomSuffix`, `block`, `itemset`, `MaxDurability`, `area`, `Map`, `BagFamily`, `TotemCategory`, `socketColor_1`, `socketContent_1`, `socketColor_2`, `socketContent_2`, `socketColor_3`, `socketContent_3`, `socketBonus`, `GemProperties`, `RequiredDisenchantSkill`, `ArmorDamageModifier`, `duration`, `ItemLimitCategory`, `HolidayId`, `ScriptName`, `DisenchantID`, `FoodType`, `minMoneyLoot`, `maxMoneyLoot`, `flagsCustom`) VALUES (700501, 12, 0, 'Ein mysterioeser Gegenstand', 7339, 7, 73, 0, 0, 0, 0, 0, 2047, 1791, 1, 80, 0, 0, 0, 0, 0, 1770, 0, 1, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 'Was mag sich hier drin verbergen?', 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 4);
 
 
 /* QUESTITEMS Essenz der ewigen Fuenf */
@@ -561,7 +561,7 @@ REPLACE INTO `gameobject` (`guid`, `id`, `map`, `zoneId`, `areaId`, `spawnMask`,
 
 REPLACE INTO `gameobject` (`guid`, `id`, `map`, `zoneId`, `areaId`, `spawnMask`, `phaseMask`, `position_x`, `position_y`, `position_z`, `orientation`, `rotation2`, `rotation3`, `spawntimesecs`, `animprogress`, `state`, `VerifiedBuild`) VALUES ('800006', '800974', '0', '40', '2', '1', '1', '7948.09', '2146.090', '13.9185', '1.1200', '-0.38', '0.92388', '300', '0', '1', '1');
 
-/* KUPFERPUILVERSÄCKE START*/
+/* KUPFERPUILVERSaeCKE START*/
 
 REPLACE INTO `gameobject` (`guid`, `id`, `map`, `zoneId`, `areaId`, `spawnMask`, `phaseMask`, `position_x`, `position_y`, `position_z`, `orientation`, `rotation2`, `rotation3`, `spawntimesecs`, `animprogress`, `state`, `VerifiedBuild`) VALUES ('800007', '186736', '0', '40', '2', '1', '1', '-9794.58', '2083.67', '13.07', '1.1200', '-0.38', '0.92388', '600', '0', '1', '1');
 
@@ -585,10 +585,10 @@ REPLACE INTO `gameobject` (`guid`, `id`, `map`, `zoneId`, `areaId`, `spawnMask`,
 
 REPLACE INTO `gameobject` (`guid`, `id`, `map`, `zoneId`, `areaId`, `spawnMask`, `phaseMask`, `position_x`, `position_y`, `position_z`, `orientation`, `rotation2`, `rotation3`, `spawntimesecs`, `animprogress`, `state`, `VerifiedBuild`) VALUES ('800017', '186736', '0', '40', '2', '1', '1', '-9797.84', '2100.01', '10.85', '1.1200', '-0.38', '0.92388', '600', '0', '1', '1');
 
-/* KUPFERPULVERSÄCKE ENDE */
+/* KUPFERPULVERSaeCKE ENDE */
 
 
-/* BRÜCKE ZUR KLEINEN INSEL  START*/
+/* BRueCKE ZUR KLEINEN INSEL  START*/
 
 REPLACE INTO `gameobject` (`guid`, `id`, `map`, `zoneId`, `areaId`, `spawnMask`, `phaseMask`, `position_x`, `position_y`, `position_z`, `orientation`, `rotation2`, `rotation3`, `spawntimesecs`, `animprogress`, `state`, `VerifiedBuild`) VALUES ('800018', '190897', '0', '40', '2', '1', '1', '-9749.98', '2146.90', '10.91', '5.433480', '-0.38', '0.92388', '1', '0', '1', '1');
 
@@ -603,7 +603,7 @@ REPLACE INTO `gameobject` (`guid`, `id`, `map`, `zoneId`, `areaId`, `spawnMask`,
 REPLACE INTO `gameobject` (`guid`, `id`, `map`, `zoneId`, `areaId`, `spawnMask`, `phaseMask`, `position_x`, `position_y`, `position_z`, `orientation`, `rotation2`, `rotation3`, `spawntimesecs`, `animprogress`, `state`, `VerifiedBuild`) VALUES ('800023', '190897', '0', '40', '2', '1', '1', '-9765.88', '2132.02', '11.26', '2.295680', '-0.38', '0.92388', '1', '0', '1', '1');
 
 
-/* BRÜCKE ZUR KLEINEN INSEL ENDE */
+/* BRueCKE ZUR KLEINEN INSEL ENDE */
 
 
 /* Startquest Lager  ANFANG*/
@@ -916,13 +916,13 @@ REPLACE INTO `creature_template` (`entry`, `difficulty_entry_1`, `difficulty_ent
 
 REPLACE INTO `gossip_menu` (`entry`, `text_id`) VALUES ('50001', '25000');
 /*REPLACE INTO `npc_vendor` (`entry`, `slot`, `item`, `maxcount`, `incrtime`, `ExtendedCost`) VALUES 
--- Schlüssel zur sengenden Schlucht
+-- Schluessel zur sengenden Schlucht
 (799999,0,700500,0,0,0);
 
 
 UPDATE `item_template` SET `BuyPrice` = 1000000000 WHERE `entry` = 700500;*/REPLACE INTO `creature` (`guid`,`id`,`map`,`spawnMask`,`phaseMask`,`modelid`,`equipment_id`,`position_x`,`position_y`,`position_z`,`orientation`,`spawntimesecs`,`spawndist`,`currentwaypoint`,`curhealth`,`curmana`,`MovementType`) VALUES 
 ('800000','800000','571','1','1','89','0','5810.46','699.74','619.03','2.893497','25','0','0','1000000','250000','0');
-REPLACE INTO `creature_template` (`entry`, `difficulty_entry_1`, `difficulty_entry_2`, `difficulty_entry_3`, `KillCredit1`, `KillCredit2`, `modelid1`, `modelid2`, `modelid3`, `modelid4`, `name`, `subname`, `IconName`, `gossip_menu_id`, `minlevel`, `maxlevel`, `exp`, `faction`, `npcflag`, `speed_walk`, `speed_run`, `scale`, `rank`, `dmgschool`, `BaseAttackTime`, `RangeAttackTime`, `unit_class`, `unit_flags`, `unit_flags2`, `dynamicflags`, `family`, `trainer_type`, `trainer_spell`, `trainer_class`, `trainer_race`, `type`, `type_flags`, `lootid`, `pickpocketloot`, `skinloot`, `resistance1`, `resistance2`, `resistance3`, `resistance4`, `resistance5`, `resistance6`, `spell1`, `spell2`, `spell3`, `spell4`, `spell5`, `spell6`, `spell7`, `spell8`, `PetSpellDataId`, `VehicleId`, `mingold`, `maxgold`, `AIName`, `MovementType`, `InhabitType`, `HoverHeight`, `RacialLeader`, `movementId`, `RegenHealth`, `mechanic_immune_mask`, `flags_extra`, `ScriptName`) VALUES (800000, 0, 0, 0, 0, 0, 89, 0, 0, 0, 'Thedriun Wyrmbr�u', 'Der Reisende', '', 0, 80, 80, 0,35, 2, 0, 1.14286, 1, 1, 1, 1, 1, 0, 2, 0, 0, 0, 0, 0, 0, 0, 7, 0, 0, 0, 0, 100, 100, 100, 100, 100, 100, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, '', 0, 3, 1, 0, 0, 1, 0, 0, '');
+REPLACE INTO `creature_template` (`entry`, `difficulty_entry_1`, `difficulty_entry_2`, `difficulty_entry_3`, `KillCredit1`, `KillCredit2`, `modelid1`, `modelid2`, `modelid3`, `modelid4`, `name`, `subname`, `IconName`, `gossip_menu_id`, `minlevel`, `maxlevel`, `exp`, `faction`, `npcflag`, `speed_walk`, `speed_run`, `scale`, `rank`, `dmgschool`, `BaseAttackTime`, `RangeAttackTime`, `unit_class`, `unit_flags`, `unit_flags2`, `dynamicflags`, `family`, `trainer_type`, `trainer_spell`, `trainer_class`, `trainer_race`, `type`, `type_flags`, `lootid`, `pickpocketloot`, `skinloot`, `resistance1`, `resistance2`, `resistance3`, `resistance4`, `resistance5`, `resistance6`, `spell1`, `spell2`, `spell3`, `spell4`, `spell5`, `spell6`, `spell7`, `spell8`, `PetSpellDataId`, `VehicleId`, `mingold`, `maxgold`, `AIName`, `MovementType`, `InhabitType`, `HoverHeight`, `RacialLeader`, `movementId`, `RegenHealth`, `mechanic_immune_mask`, `flags_extra`, `ScriptName`) VALUES (800000, 0, 0, 0, 0, 0, 89, 0, 0, 0, 'Thedriun Wyrmbraeu', 'Der Reisende', '', 0, 80, 80, 0,35, 2, 0, 1.14286, 1, 1, 1, 1, 1, 0, 2, 0, 0, 0, 0, 0, 0, 0, 7, 0, 0, 0, 0, 100, 100, 100, 100, 100, 100, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, '', 0, 3, 1, 0, 0, 1, 0, 0, '');
 REPLACE INTO `creature` (`guid`,`id`,`map`,`spawnMask`,`phaseMask`,`modelid`,`equipment_id`,`position_x`,`position_y`,`position_z`,`orientation`,`spawntimesecs`,`spawndist`,`currentwaypoint`,`curhealth`,`curmana`,`MovementType`) VALUES 
 ('800001','800001','571','1','1','28159','0','3073.07','-3689.95','549.40','1.12','25','0','0','1000000','250000','0');
 DELETE FROM `creature_template` WHERE `Entry` = 800001;
@@ -946,7 +946,7 @@ VALUES ( /*  ID */ 800003,
   /* Modelid3   */0,
   /* Model4  */ 0,
  /* Name  */'Pi von Haar',
-  /*  Subname */'Der Sanfm�tige',
+  /*  Subname */'Der Sanfmuetige',
   /*  Iconname */'',
   /* gossip_menu_id`  */0,
   /*  Min Level */80,
@@ -1009,7 +1009,7 @@ REPLACE INTO `creature` (`guid`,`id`,`map`,`spawnMask`,`phaseMask`,`modelid`,`eq
 ('800004','800004','0','1','1','26790','0','-9791.30','2106.30','12.43','4.08','25','0','0','1000000','250000','0');
 DELETE FROM `creature_template` WHERE `Entry` = 800004;
 
-REPLACE INTO `creature_template` (`entry`, `difficulty_entry_1`, `difficulty_entry_2`, `difficulty_entry_3`, `KillCredit1`, `KillCredit2`, `modelid1`, `modelid2`, `modelid3`, `modelid4`, `name`, `subname`, `IconName`, `gossip_menu_id`, `minlevel`, `maxlevel`, `exp`, `faction`, `npcflag`, `speed_walk`, `speed_run`, `scale`, `rank`, `dmgschool`, `BaseAttackTime`, `RangeAttackTime`, `unit_class`, `unit_flags`, `unit_flags2`, `dynamicflags`, `family`, `trainer_type`, `trainer_spell`, `trainer_class`, `trainer_race`, `type`, `type_flags`, `lootid`, `pickpocketloot`, `skinloot`, `resistance1`, `resistance2`, `resistance3`, `resistance4`, `resistance5`, `resistance6`, `spell1`, `spell2`, `spell3`, `spell4`, `spell5`, `spell6`, `spell7`, `spell8`, `PetSpellDataId`, `VehicleId`, `mingold`, `maxgold`, `AIName`, `MovementType`, `InhabitType`, `HoverHeight`, `RacialLeader`, `movementId`, `RegenHealth`, `mechanic_immune_mask`, `flags_extra`, `ScriptName`) VALUES (800004, 0, 0, 0, 0, 0, 26790, 0, 0, 0, 'Destro MMOwning', 'Der Erw�hlte', '', 0, 80, 80, 0,35, 2, 0, 1.14286, 1, 1, 1, 1, 1, 0, 2, 0, 0, 0, 0, 0, 0, 0, 7, 0, 0, 0, 0, 100, 100, 100, 100, 100, 100, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, '', 0, 3, 1, 1, 0, 1, 0, 0, '');
+REPLACE INTO `creature_template` (`entry`, `difficulty_entry_1`, `difficulty_entry_2`, `difficulty_entry_3`, `KillCredit1`, `KillCredit2`, `modelid1`, `modelid2`, `modelid3`, `modelid4`, `name`, `subname`, `IconName`, `gossip_menu_id`, `minlevel`, `maxlevel`, `exp`, `faction`, `npcflag`, `speed_walk`, `speed_run`, `scale`, `rank`, `dmgschool`, `BaseAttackTime`, `RangeAttackTime`, `unit_class`, `unit_flags`, `unit_flags2`, `dynamicflags`, `family`, `trainer_type`, `trainer_spell`, `trainer_class`, `trainer_race`, `type`, `type_flags`, `lootid`, `pickpocketloot`, `skinloot`, `resistance1`, `resistance2`, `resistance3`, `resistance4`, `resistance5`, `resistance6`, `spell1`, `spell2`, `spell3`, `spell4`, `spell5`, `spell6`, `spell7`, `spell8`, `PetSpellDataId`, `VehicleId`, `mingold`, `maxgold`, `AIName`, `MovementType`, `InhabitType`, `HoverHeight`, `RacialLeader`, `movementId`, `RegenHealth`, `mechanic_immune_mask`, `flags_extra`, `ScriptName`) VALUES (800004, 0, 0, 0, 0, 0, 26790, 0, 0, 0, 'Destro MMOwning', 'Der Erwaehlte', '', 0, 80, 80, 0,35, 2, 0, 1.14286, 1, 1, 1, 1, 1, 0, 2, 0, 0, 0, 0, 0, 0, 0, 7, 0, 0, 0, 0, 100, 100, 100, 100, 100, 100, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, '', 0, 3, 1, 1, 0, 1, 0, 0, '');
 /* Sophie Mondhain */
 DELETE FROM `creature_text` WHERE `entry`=800005;
 
@@ -1028,7 +1028,7 @@ DELETE FROM `creature_template` WHERE `Entry` = 800006;
 REPLACE INTO `creature_template` (`entry`, `difficulty_entry_1`, `difficulty_entry_2`, `difficulty_entry_3`, `KillCredit1`, `KillCredit2`, `modelid1`, `modelid2`, `modelid3`, `modelid4`, `name`, `subname`, `IconName`, `gossip_menu_id`, `minlevel`, `maxlevel`, `exp`, `faction` ,`npcflag`, `speed_walk`, `speed_run`, `scale`, `rank`, `dmgschool`, `BaseAttackTime`, `RangeAttackTime`, `unit_class`, `unit_flags`, `unit_flags2`, `dynamicflags`, `family`, `trainer_type`, `trainer_spell`, `trainer_class`, `trainer_race`, `type`, `type_flags`, `lootid`, `pickpocketloot`, `skinloot`, `resistance1`, `resistance2`, `resistance3`, `resistance4`, `resistance5`, `resistance6`, `spell1`, `spell2`, `spell3`, `spell4`, `spell5`, `spell6`, `spell7`, `spell8`, `PetSpellDataId`, `VehicleId`, `mingold`, `maxgold`, `AIName`, `MovementType`, `InhabitType`, `HoverHeight`, `RacialLeader`, `movementId`, `RegenHealth`, `mechanic_immune_mask`, `flags_extra`, `ScriptName`) VALUES (800006, 0, 0, 0, 0, 0, 5769, 0, 0, 0, 'Torvan von Doom', 'Der Unerreichbare', '', 0, 80, 80, 0, 35, 2, 0, 1.14286, 1, 1, 1, 1, 1, 0, 2, 0, 0, 0, 0, 0, 0, 0, 7, 0, 0, 0, 0, 100, 100, 100, 100, 100, 100, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, '', 0, 3, 1, 1, 0, 1, 0, 0, '');
 /*Torwan von Monderius Varus*/
 
-/*REPLACE INTO `creature_text` (`entry`, `groupid`, `id`, `text`, `type`, `language`, `probability`, `emote`, `duration`, `sound`, `BroadcastTextId`, `TextRange`, `comment`) VALUES ('800007', '100', '100', 'Hallo $N, wenn ihr bereit seid wählt wohin ihr gehen wollt', '12', '0', '100', '21', '0', '0', '0', '0', 'NPC 800007');*/
+/*REPLACE INTO `creature_text` (`entry`, `groupid`, `id`, `text`, `type`, `language`, `probability`, `emote`, `duration`, `sound`, `BroadcastTextId`, `TextRange`, `comment`) VALUES ('800007', '100', '100', 'Hallo $N, wenn ihr bereit seid waehlt wohin ihr gehen wollt', '12', '0', '100', '21', '0', '0', '0', '0', 'NPC 800007');*/
 
 
 REPLACE INTO `creature`(`guid`,`id`,`map`,`spawnMask`,`phaseMask`,`modelid`,`equipment_id`,`position_x`,`position_y`,`position_z`,`orientation`,`spawntimesecs`,`spawndist`,`currentwaypoint`,`curhealth`,`curmana`,`MovementType`) VALUES 
@@ -1180,17 +1180,17 @@ REPLACE INTO `creature_template` (`entry`, `difficulty_entry_1`, `difficulty_ent
 
 DELETE FROM `npc_vendor` WHERE entry = 800011;
 INSERT INTO `npc_vendor` (`entry`, `slot`, `item`, `maxcount`, `incrtime`, `ExtendedCost`) VALUES 
--- Schlüssel zur sengenden Schlucht
+-- Schluessel zur sengenden Schlucht
 (800011,0,5396,0,0,0),
--- Werkstattschlüssel
+-- Werkstattschluessel
 -- ('900001','0','6893','0','0','0'),
--- Der Scharlachrote Schlüssel
+-- Der Scharlachrote Schluessel
 (800011,0,7146,0,0,0),
--- Schlüssel zur Schattenschmiede
+-- Schluessel zur Schattenschmiede
 (800011,0,11000,0,0,0),
--- Reliktkastenschlüssel
+-- Reliktkastenschluessel
 -- (900001,'0','11078','0','0','0'),
--- Schlüssel zur Stadt
+-- Schluessel zur Stadt
 (800011,0,12382,0,0,0),
 -- Silberdietrich
 -- ('900001','0','15869','0','0','0'),
@@ -1200,55 +1200,55 @@ INSERT INTO `npc_vendor` (`entry`, `slot`, `item`, `maxcount`, `incrtime`, `Exte
 -- ('900001','0','15871','0','0','0'),
 -- Arkanitdietrich
 -- ('900001','0','15872','0','0','0'),
--- Mondsichelschlüssel
+-- Mondsichelschluessel
 (800011,0,18249,0,0,0),
--- Gordokfesselschlüssel
+-- Gordokfesselschluessel
 -- ('900001','0','18250','0','0','0'),
--- Schlüssel für die Gordokhoftür
+-- Schluessel fuer die Gordokhoftuer
 -- ('900001','0','18266','0','0','0'),
--- Schlüssel für die Gordokinnentür
+-- Schluessel fuer die Gordokinnentuer
 -- ('900001','0','18268','0','0','0'),
--- Schlüssel für einen Skarabäuskasten
+-- Schluessel fuer einen Skarabaeuskasten
 -- ('900001','0','21761','0','0','0'),
--- Schlüssel für einen großen Skarabäuskasten
+-- Schluessel fuer einen großen Skarabaeuskasten
 -- ('900001','0','21762','0','0','0'),
--- Der Schlüssel des Meisters
+-- Der Schluessel des Meisters
 (800011,0,24490,0,0,0),
--- Schlüssel des Schattenlabyrinths
+-- Schluessel des Schattenlabyrinths
 (800011,0,27991,0,0,0),
--- Schlüssel der zerschmetterten Hallen
+-- Schluessel der zerschmetterten Hallen
 (800011,0,28395,0,0,0),
--- Flammengeschmiedeter Schlüssel
+-- Flammengeschmiedeter Schluessel
 (800011,0,30622,0,0,0),
--- Schlüssel des Kessels
+-- Schluessel des Kessels
 (800011,0,30623,0,0,0),
--- Schlüssel der Auchenai
+-- Schluessel der Auchenai
 (800011,0,30633,0,0,0),
--- Warpgeschmiedeter Schlüssel
+-- Warpgeschmiedeter Schluessel
 (800011,0,30634,0,0,0),
--- Schlüssel der Zeit
+-- Schluessel der Zeit
 (800011,0,30635,0,0,0),
--- Flammengeschmiedeter Schlüssel
+-- Flammengeschmiedeter Schluessel
 (800011,0,30637,0,0,0),
--- Schlüssel zur Arkatraz
+-- Schluessel zur Arkatraz
 (800011,0,31084,0,0,0),
--- Schlüssel der Stürme
+-- Schluessel der Stuerme
 (800011,0,31704,0,0,0),
--- Mit Essenz erfüllter Mondstein
+-- Mit Essenz erfuellter Mondstein
 (800011,0,32449,0,0,0),
--- Der Schlüssel zur Violetten Festung
+-- Der Schluessel zur Violetten Festung
 (800011,0,42482,0,0,0),
 -- Titandietrich
 -- ('900001','0','43853','0','0','0'),
 -- Kobaltdietrich
 -- ('900001','0','43854','0','0','0'),
--- Heroischer Schlüssel der fokussierenden Iris
+-- Heroischer Schluessel der fokussierenden Iris
 (800011,0,44581,0,0,0),
--- Schlüssel der fokussierenden Iris
+-- Schluessel der fokussierenden Iris
 (800011,0,44582,0,0,0),
--- Schlüssel des Himmlischen Planetariums
+-- Schluessel des Himmlischen Planetariums
 (800011,0,45796,0,0,0),
--- Heroischer Schlüssel des Himmlischen Planetariums
+-- Heroischer Schluessel des Himmlischen Planetariums
 (800011,0,45798,0,0,0);
 
 UPDATE `item_template` SET `BuyPrice` = 10000000 WHERE `entry` = 5396;
@@ -1281,7 +1281,7 @@ REPLACE INTO `creature`(`guid`,`id`,`map`,`spawnMask`,`phaseMask`,`modelid`,`equ
 ('800013','800013','0','1','1','28160','0','-9734.09','2166.44','7.56','3.99','25','0','0','1000000','250000','1');
 DELETE FROM `creature_template` WHERE `Entry` = 800013;
 
-REPLACE INTO `creature_template` (`entry`, `difficulty_entry_1`, `difficulty_entry_2`, `difficulty_entry_3`, `KillCredit1`, `KillCredit2`, `modelid1`, `modelid2`, `modelid3`, `modelid4`, `name`, `subname`, `IconName`, `gossip_menu_id`, `minlevel`, `maxlevel`, `exp`, `faction`, `npcflag`, `speed_walk`, `speed_run`, `scale`, `rank`, `dmgschool`, `BaseAttackTime`, `RangeAttackTime`, `unit_class`, `unit_flags`, `unit_flags2`, `dynamicflags`, `family`, `trainer_type`, `trainer_spell`, `trainer_class`, `trainer_race`, `type`, `type_flags`, `lootid`, `pickpocketloot`, `skinloot`, `resistance1`, `resistance2`, `resistance3`, `resistance4`, `resistance5`, `resistance6`, `spell1`, `spell2`, `spell3`, `spell4`, `spell5`, `spell6`, `spell7`, `spell8`, `PetSpellDataId`, `VehicleId`, `mingold`, `maxgold`, `AIName`, `MovementType`, `InhabitType`, `HoverHeight`, `RacialLeader`, `movementId`, `RegenHealth`, `mechanic_immune_mask`, `flags_extra`, `ScriptName`) VALUES (800013, 0, 0, 0, 0, 0, 28160, 0, 0, 0, 'Kadarius Silberleiter', 'Der Überfüllte', '', 0, 80, 80, 0, 35, 3, 0, 1.14286, 1, 1, 1, 1, 1, 0, 2, 0, 0, 0, 0, 0, 0, 0, 7, 0, 0, 0, 0, 100, 100, 100, 100, 100, 100, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, '', 0, 3, 1, 1, 0, 1, 0, 0, '');
+REPLACE INTO `creature_template` (`entry`, `difficulty_entry_1`, `difficulty_entry_2`, `difficulty_entry_3`, `KillCredit1`, `KillCredit2`, `modelid1`, `modelid2`, `modelid3`, `modelid4`, `name`, `subname`, `IconName`, `gossip_menu_id`, `minlevel`, `maxlevel`, `exp`, `faction`, `npcflag`, `speed_walk`, `speed_run`, `scale`, `rank`, `dmgschool`, `BaseAttackTime`, `RangeAttackTime`, `unit_class`, `unit_flags`, `unit_flags2`, `dynamicflags`, `family`, `trainer_type`, `trainer_spell`, `trainer_class`, `trainer_race`, `type`, `type_flags`, `lootid`, `pickpocketloot`, `skinloot`, `resistance1`, `resistance2`, `resistance3`, `resistance4`, `resistance5`, `resistance6`, `spell1`, `spell2`, `spell3`, `spell4`, `spell5`, `spell6`, `spell7`, `spell8`, `PetSpellDataId`, `VehicleId`, `mingold`, `maxgold`, `AIName`, `MovementType`, `InhabitType`, `HoverHeight`, `RacialLeader`, `movementId`, `RegenHealth`, `mechanic_immune_mask`, `flags_extra`, `ScriptName`) VALUES (800013, 0, 0, 0, 0, 0, 28160, 0, 0, 0, 'Kadarius Silberleiter', 'Der ueberfuellte', '', 0, 80, 80, 0, 35, 3, 0, 1.14286, 1, 1, 1, 1, 1, 0, 2, 0, 0, 0, 0, 0, 0, 0, 7, 0, 0, 0, 0, 100, 100, 100, 100, 100, 100, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, '', 0, 3, 1, 1, 0, 1, 0, 0, '');
 /*Kayoula Tariande*/
 
 
@@ -1303,7 +1303,7 @@ VALUES ( /*  ID */ 800015,
   /* Modelid3   */0,
   /* Model4  */ 0,
  /* Name  */'Exitare',
-  /*  Subname */'Der Wächter',
+  /*  Subname */'Der Waechter',
   /*  Iconname */'',
   /* gossip_menu_id`  */0,
   /*  Min Level */83,
@@ -1366,7 +1366,7 @@ REPLACE INTO `creature` (`guid`,`id`,`map`,`spawnMask`,`phaseMask`,`modelid`,`eq
 ('800015','800015','0','1','1','17372','0','-9802.89','2090.67','6.42','3.77','25','0','0','1000000','250000','0');
 
 
-REPLACE INTO `creature_text` (`entry`, `groupid`, `id`, `text`, `type`, `language`, `probability`, `emote`, `duration`, `sound`, `BroadcastTextId`, `TextRange`, `comment`) VALUES ('800015', '100', '0', 'Vor ein paar Wochen hat sich in verschiedenen Teilen unserer Welt ein neues Übel ausgebreitet, welches nach der Herrschaft unserer Welt trachtet.$BGlaubt mir wenn ich euch sage, dass das nur der Anfang einer viel schlimmeren Gefahr sein könnte. Ich hoffe ich irre mich, doch man weiß nie was an den Gerüchten wahr ist. Wir müssen der Sache auf den Grund gehen. Schnell und am besten sofort.', '16', '0', '100', '0', '0', '0', '0', '0', 'PREQUEST');
+REPLACE INTO `creature_text` (`entry`, `groupid`, `id`, `text`, `type`, `language`, `probability`, `emote`, `duration`, `sound`, `BroadcastTextId`, `TextRange`, `comment`) VALUES ('800015', '100', '0', 'Vor ein paar Wochen hat sich in verschiedenen Teilen unserer Welt ein neues uebel ausgebreitet, welches nach der Herrschaft unserer Welt trachtet.$BGlaubt mir wenn ich euch sage, dass das nur der Anfang einer viel schlimmeren Gefahr sein koennte. Ich hoffe ich irre mich, doch man weiß nie was an den Geruechten wahr ist. Wir muessen der Sache auf den Grund gehen. Schnell und am besten sofort.', '16', '0', '100', '0', '0', '0', '0', '0', 'PREQUEST');
 
 
 SET @ENTRY := 800015;
@@ -1491,7 +1491,7 @@ VALUES ( /*  ID */ 800017,
   /* Modelid3   */0,
   /* Model4  */ 0,
  /* Name  */'Punchii',
-  /*  Subname */'Der unermüdliche Helfer',
+  /*  Subname */'Der unermuedliche Helfer',
   /*  Iconname */'',
   /* gossip_menu_id`  */800017,
   /*  Min Level */80,
@@ -1641,7 +1641,7 @@ VALUES ( /*  ID */ 800019,
   /* Modelid3   */0,
   /* Model4  */ 0,
  /* Name  */'PVP Vendor',
-  /*  Subname */'Verkäufer von guten Dingen',
+  /*  Subname */'Verkaeufer von guten Dingen',
   /*  Iconname */'',
   /* gossip_menu_id`  */0,
   /*  Min Level */80,
@@ -1813,7 +1813,7 @@ VALUES ( /*  ID */ 800021,
   /* Modelid3   */0,
   /* Model4  */ 0,
  /* Name  */'Kalius',
-  /*  Subname */'Der Wächter',
+  /*  Subname */'Der Waechter',
   /*  Iconname */'',
   /* gossip_menu_id`  */0,
   /*  Min Level */80,
@@ -1950,7 +1950,7 @@ VALUES ( /*  ID */ 800022,
   /* Modelid3   */0,
   /* Model4  */ 0,
  /* Name  */'Tempus Irael',
-  /*  Subname */'Der oberste Kriegsfürst',
+  /*  Subname */'Der oberste Kriegsfuerst',
   /*  Iconname */'',
   /* gossip_menu_id`  */0,
   /*  Min Level */80,
@@ -2340,9 +2340,9 @@ VALUES ( /*  ID */ 800026,
 REPLACE INTO `creature` (`guid`,`id`,`map`,`spawnMask`,`phaseMask`,`modelid`,`equipment_id`,`position_x`,`position_y`,`position_z`,`orientation`,`spawntimesecs`,`spawndist`,`currentwaypoint`,`curhealth`,`curmana`,`MovementType`) VALUES 
 ('800026','800026','0','1','1','7389','0','-10669.43','386.24','35.31','1.86','25','15','0','1000000','250000','1');
 
-REPLACE INTO `gossip_menu_option` (`menu_id`, `id`, `option_icon`, `option_text`, `OptionBroadcastTextID`, `option_id`, `npc_option_npcflag`, `box_text`) VALUES ('60005', '1', '0', 'Rätsel Part 2', '0', '1', '1', '');
+REPLACE INTO `gossip_menu_option` (`menu_id`, `id`, `option_icon`, `option_text`, `OptionBroadcastTextID`, `option_id`, `npc_option_npcflag`, `box_text`) VALUES ('60005', '1', '0', 'Raetsel Part 2', '0', '1', '1', '');
 
-REPLACE INTO `creature_text` (`entry`, `groupid`, `id`, `text`, `type`, `language`, `probability`, `emote`, `duration`, `sound`, `BroadcastTextId`, `TextRange`, `comment`) VALUES ('800026', '100', '0', 'Ein Wort das Dunkelheit beschreibt, und meist in Horrorfilmen verweilt. Soldaten liefen auf gesuchten Routen. Verbindet ihr beide Hinweise erhaltet ihr den Standort. Dort exisitiert etwas auf 2 Stelzen, welches Koordinaten verändert.', '16', '0', '100', '0', '0', '0', '0', '0', 'Rätsel Teil2');
+REPLACE INTO `creature_text` (`entry`, `groupid`, `id`, `text`, `type`, `language`, `probability`, `emote`, `duration`, `sound`, `BroadcastTextId`, `TextRange`, `comment`) VALUES ('800026', '100', '0', 'Ein Wort das Dunkelheit beschreibt, und meist in Horrorfilmen verweilt. Soldaten liefen auf gesuchten Routen. Verbindet ihr beide Hinweise erhaltet ihr den Standort. Dort exisitiert etwas auf 2 Stelzen, welches Koordinaten veraendert.', '16', '0', '100', '0', '0', '0', '0', '0', 'Raetsel Teil2');
 
 
 
@@ -2378,7 +2378,7 @@ REPLACE INTO `smart_scripts` (`entryorguid`,`source_type`,`id`,`link`,`event_typ
 /* target_y   */0.0,
 /* target_z  */0.0,
 /* target_o */0.0,
-/* comment  */"Rätsel2");
+/* comment  */"Raetsel2");
 
 
 REPLACE INTO `creature_template` (`entry`, `difficulty_entry_1`, `difficulty_entry_2`, `difficulty_entry_3`, `KillCredit1`, `KillCredit2`, `modelid1`, `modelid2`, `modelid3`, `modelid4`, `name`, `subname`, `IconName`, `gossip_menu_id`, `minlevel`, `maxlevel`, `exp`,`faction` ,`npcflag`, `speed_walk`, `speed_run`, `scale`, `rank`, `dmgschool`, `BaseAttackTime`, `RangeAttackTime`, `unit_class`, `unit_flags`, `unit_flags2`, `dynamicflags`, `family`, `trainer_type`, `trainer_spell`, `trainer_class`, `trainer_race`, `type`, `type_flags`, `lootid`, `pickpocketloot`, `skinloot`, `resistance1`, `resistance2`, `resistance3`, `resistance4`, `resistance5`, `resistance6`, `spell1`, `spell2`, `spell3`, `spell4`, `spell5`, `spell6`, `spell7`, `spell8`, `PetSpellDataId`, `VehicleId`, `mingold`, `maxgold`, `AIName`, `MovementType`, `InhabitType`, `HoverHeight`, `RacialLeader`, `movementId`, `RegenHealth`, `mechanic_immune_mask`, `flags_extra`, `ScriptName`) 
@@ -2471,7 +2471,7 @@ VALUES ( /*  ID */ 800028,
   /* Modelid3   */0,
   /* Model4  */ 0,
  /* Name  */'Moon',
-  /*  Subname */'Unermüdlicher Sammler',
+  /*  Subname */'Unermuedlicher Sammler',
   /*  Iconname */'',
   /* gossip_menu_id`  */0,
   /*  Min Level */80,
@@ -2609,7 +2609,7 @@ REPLACE INTO `creature` (`guid`,`id`,`map`,`spawnMask`,`phaseMask`,`modelid`,`eq
 ('800029','800029','0','1','1','2255','0','-9778.07','2131.63','14.41','4.29','25','0','0','1000000','250000','0');
 
 
-/*Boss Pihaar gequälte */
+/*Boss Pihaar gequaelte */
 
 DELETE FROM `creature_loot_template` WHERE `Entry` = 800030;
 
@@ -2659,7 +2659,7 @@ VALUES ( /*  ID */ 800030,
   /* Modelid2  */0,
   /* Modelid3   */0,
   /* Model4  */ 0,
- /* Name  */'Die gequälte Seele',
+ /* Name  */'Die gequaelte Seele',
   /*  Subname */'Pihaar',
   /*  Iconname */'',
   /* gossip_menu_id`  */0,
@@ -2724,8 +2724,8 @@ UPDATE `creature_template` SET `HealthModifier`='1300', `ArmorModifier`='100', `
 DELETE FROM `creature_text` WHERE `entry`=800030;
 REPLACE INTO `creature_text` (`entry`,`groupid`,`id`,`text`,`type`,`language`,`probability`,`emote`,`duration`,`sound`,`comment`) VALUES (800030,1,0,'Lasst uns beginnen!',14,0,100,1,0,17457,'Comment');
 REPLACE INTO `creature_text` (`entry`,`groupid`,`id`,`text`,`type`,`language`,`probability`,`emote`,`duration`,`sound`,`comment`) VALUES (800030,2,0,'Dies wird Euer letzter Kampf sein.',14,0,100,1,0,17458,'Comment');
-REPLACE INTO `creature_text` (`entry`,`groupid`,`id`,`text`,`type`,`language`,`probability`,`emote`,`duration`,`sound`,`comment`) VALUES (800030,3,0,'Niemand, niemand darf Euch hören.',14,0,100,1,0,17459,'Comment');
-REPLACE INTO `creature_text` (`entry`,`groupid`,`id`,`text`,`type`,`language`,`probability`,`emote`,`duration`,`sound`,`comment`) VALUES (800030,4,0,'Euere Art und Weiße wie ihr kämpft, ist schon seit Tausend Jahren veraltet.',14,0,100,1,0,17460,'Comment');
+REPLACE INTO `creature_text` (`entry`,`groupid`,`id`,`text`,`type`,`language`,`probability`,`emote`,`duration`,`sound`,`comment`) VALUES (800030,3,0,'Niemand, niemand darf Euch hoeren.',14,0,100,1,0,17459,'Comment');
+REPLACE INTO `creature_text` (`entry`,`groupid`,`id`,`text`,`type`,`language`,`probability`,`emote`,`duration`,`sound`,`comment`) VALUES (800030,4,0,'Euere Art und Weiße wie ihr kaempft, ist schon seit Tausend Jahren veraltet.',14,0,100,1,0,17460,'Comment');
 REPLACE INTO `creature_text` (`entry`,`groupid`,`id`,`text`,`type`,`language`,`probability`,`emote`,`duration`,`sound`,`comment`) VALUES (800030,7,0,'Ihr seid verdammt!',14,0,100,1,0,17460,'Comment');
 REPLACE INTO `creature_text` (`entry`,`groupid`,`id`,`text`,`type`,`language`,`probability`,`emote`,`duration`,`sound`,`comment`) VALUES (800030,5,0,'1 Phase',41,0,100,1,0,0,'Comment');
 REPLACE INTO `creature_text` (`entry`,`groupid`,`id`,`text`,`type`,`language`,`probability`,`emote`,`duration`,`sound`,`comment`) VALUES (800030,6,0,'2 Phase',41,0,100,1,0,0,'Comment');
@@ -2885,7 +2885,7 @@ DELETE FROM `creature_text` WHERE `entry`=800031;
 REPLACE INTO `creature_text` (`entry`,`groupid`,`id`,`text`,`type`,`language`,`probability`,`emote`,`duration`,`sound`,`comment`) VALUES (800031,1,0,'Rumu hat Euch in den Untergang geschickt!',14,0,100,1,0,17457,'Comment');
 REPLACE INTO `creature_text` (`entry`,`groupid`,`id`,`text`,`type`,`language`,`probability`,`emote`,`duration`,`sound`,`comment`) VALUES (800031,2,0,'Eure letzte Stunde hat geschlagen $N.',14,0,100,1,0,17458,'Comment');
 REPLACE INTO `creature_text` (`entry`,`groupid`,`id`,`text`,`type`,`language`,`probability`,`emote`,`duration`,`sound`,`comment`) VALUES (800031,3,0,'Niemand wird Euch helfen!',14,0,100,1,0,17459,'Comment');
-REPLACE INTO `creature_text` (`entry`,`groupid`,`id`,`text`,`type`,`language`,`probability`,`emote`,`duration`,`sound`,`comment`) VALUES (800031,4,0,'Alles ist Rumu´s Schuld. Er ist der Verräter.',14,0,100,1,0,17460,'Comment');
+REPLACE INTO `creature_text` (`entry`,`groupid`,`id`,`text`,`type`,`language`,`probability`,`emote`,`duration`,`sound`,`comment`) VALUES (800031,4,0,'Alles ist Rumu´s Schuld. Er ist der Verraeter.',14,0,100,1,0,17460,'Comment');
 REPLACE INTO `creature_text` (`entry`,`groupid`,`id`,`text`,`type`,`language`,`probability`,`emote`,`duration`,`sound`,`comment`) VALUES (800031,5,0,'1 Phase',41,0,100,1,0,0,'Comment');
 REPLACE INTO `creature_text` (`entry`,`groupid`,`id`,`text`,`type`,`language`,`probability`,`emote`,`duration`,`sound`,`comment`) VALUES (800031,6,0,'2 Phase',41,0,100,1,0,0,'Comment');
 
@@ -3385,7 +3385,7 @@ REPLACE INTO `creature`(`guid`,`id`,`map`,`zoneId`,`areaId`,`spawnMask`,`phaseMa
 REPLACE INTO `creature`(`guid`,`id`,`map`,`zoneId`,`areaId`,`spawnMask`,`phaseMask`,`modelid`,`equipment_id`,`position_x`,`position_y`,`position_z`,`orientation`,`spawntimesecs`,`spawndist`,`currentwaypoint`,`curhealth`,`curmana`,`MovementType`,`npcflag`,`unit_flags`,`dynamicflags`,`VerifiedBuild`) VALUES
 ('50012', '14889', '1', '0', '0', '1', '1', '15366', '0', '-2872.66', '1884.25', '52.7336', '2.6529', '868400', '0', '0', '1895000', '0', '0', '0', '0', '0', '0');
 REPLACE INTO `quest_template` (`ID`, `Method`, `QuestLevel`, `MinLevel`, `QuestSortID`, `QuestType`, `SuggestedGroupNum`, `LimitTime`, `RequiredRaces`, `RequiredFactionId1`, `RequiredFactionId2`, `RequiredFactionValue1`, `RequiredFactionValue2`, `NextQuestIdChain`, `RewardXPId`, `RewardOrRequiredMoney`, `RewardMoneyMaxLevel`, `RewardSpell`, `RewardSpellCast`, `RewardHonor`, `RewardHonorMultiplier`, `SourceItemId`, `Flags`, `RewardTitle`, `RequiredPlayerKills`, `RewardTalents`, `RewardArenaPoints`, `RewardItem1`, `RewardItem2`, `RewardItem3`, `RewardItem4`, `RewardAmount1`, `RewardAmount2`, `RewardAmount3`, `RewardAmount4`, `RewardChoiceItemID1`, `RewardChoiceItemID2`, `RewardChoiceItemID3`, `RewardChoiceItemID4`, `RewardChoiceItemID5`, `RewardChoiceItemID6`, `RewardChoiceItemQuantity1`, `RewardChoiceItemQuantity2`, `RewardChoiceItemQuantity3`, `RewardChoiceItemQuantity4`, `RewardChoiceItemQuantity5`, `RewardChoiceItemQuantity6`, `RewardFactionID1`, `RewardFactionID2`, `RewardFactionID3`, `RewardFactionID4`, `RewardFactionID5`, `RewardFactionValue1`, `RewardFactionValue2`, `RewardFactionValue3`, `RewardFactionValue4`, `RewardFactionValue5`, `RewardFactionOverride1`, `RewardFactionOverride2`, `RewardFactionOverride3`, `RewardFactionOverride4`, `RewardFactionOverride5`, `PointMapId`, `PointX`, `PointY`, `PointOption`, `LogTitle`, `LogDescription`, `QuestDescription`, `EndText`, `OfferRewardText`, `RequestItemsText`, `QuestCompletionLog`, `RequiredNpcOrGo1`, `RequiredNpcOrGo2`, `RequiredNpcOrGo3`, `RequiredNpcOrGo4`, `RequiredNpcOrGoCount1`, `RequiredNpcOrGoCount2`, `RequiredNpcOrGoCount3`, `RequiredNpcOrGoCount4`, `RequiredSourceItemId1`, `RequiredSourceItemId2`, `RequiredSourceItemId3`, `RequiredSourceItemId4`, `RequiredSourceItemCount1`, `RequiredSourceItemCount2`, `RequiredSourceItemCount3`, `RequiredSourceItemCount4`, `RequiredItemId1`, `RequiredItemId2`, `RequiredItemId3`, `RequiredItemId4`, `RequiredItemId5`, `RequiredItemId6`, `RequiredItemCount1`, `RequiredItemCount2`, `RequiredItemCount3`, `RequiredItemCount4`, `RequiredItemCount5`, `RequiredItemCount6`, `Unknown0`, `ObjectiveText1`, `ObjectiveText2`, `ObjectiveText3`, `ObjectiveText4`, `DetailsEmote1`, `DetailsEmote2`, `DetailsEmote3`, `DetailsEmote4`, `DetailsEmoteDelay1`, `DetailsEmoteDelay2`, `DetailsEmoteDelay3`, `DetailsEmoteDelay4`, `EmoteOnIncomplete`, `EmoteOnComplete`, `OfferRewardEmote1`, `OfferRewardEmote2`, `OfferRewardEmote3`, `OfferRewardEmote4`, `OfferRewardEmoteDelay1`, `OfferRewardEmoteDelay2`, `OfferRewardEmoteDelay3`, `OfferRewardEmoteDelay4`, `VerifiedBuild`) VALUES
-(799997, 2, 80, 80, -1, 0, 0, 0, 1791, 0, 0, 0, 0, 0, 70, 1000000, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, /*RewardIten*/0, 0, 0, 0, /*Amount RewardItem*/0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 'Der Stein der kleinen Frau', 'Findet meinen Stein den ich verloren habe und bringt ihn mir zurück.', 'Hallo $N, ich habe meinen Stein in der Seelenschmiede verloren als ich vor dem grausigen Verschlinger der Seelen davon rannte. Ich glaube er hat ihn an sich genommen. Könnt ihr ihn mir bitte zurückholen? Vielleicht habe ich dann eine kleine Belohnung für Euch.', '', 'Habt Ihr ihn nicht gefunden?', 'Findet meinen Stein den ich verloren habe und bringt ihn mir zurück.', 'Es ist Eure Sache was ihr tut.', 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 700499, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, '', '', '', '', 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1);
+(799997, 2, 80, 80, -1, 0, 0, 0, 1791, 0, 0, 0, 0, 0, 70, 1000000, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, /*RewardIten*/0, 0, 0, 0, /*Amount RewardItem*/0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 'Der Stein der kleinen Frau', 'Findet meinen Stein den ich verloren habe und bringt ihn mir zurueck.', 'Hallo $N, ich habe meinen Stein in der Seelenschmiede verloren als ich vor dem grausigen Verschlinger der Seelen davon rannte. Ich glaube er hat ihn an sich genommen. Koennt ihr ihn mir bitte zurueckholen? Vielleicht habe ich dann eine kleine Belohnung fuer Euch.', '', 'Habt Ihr ihn nicht gefunden?', 'Findet meinen Stein den ich verloren habe und bringt ihn mir zurueck.', 'Es ist Eure Sache was ihr tut.', 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 700499, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, '', '', '', '', 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1);
 
 UPDATE `creature_template` SET `npcflag`='3' WHERE `entry`='32690';
 
@@ -3401,7 +3401,7 @@ REPLACE INTO `creature_queststarter` (`id`, `quest`) VALUES
 
 
 REPLACE INTO `quest_template` (`ID`, `Method`, `QuestLevel`, `MinLevel`, `QuestSortID`, `QuestType`, `SuggestedGroupNum`, `LimitTime`, `RequiredRaces`, `RequiredFactionId1`, `RequiredFactionId2`, `RequiredFactionValue1`, `RequiredFactionValue2`, `NextQuestIdChain`, `RewardXPId`, `RewardOrRequiredMoney`, `RewardMoneyMaxLevel`, `RewardSpell`, `RewardSpellCast`, `RewardHonor`, `RewardHonorMultiplier`, `SourceItemId`, `Flags`, `RewardTitle`, `RequiredPlayerKills`, `RewardTalents`, `RewardArenaPoints`, `RewardItem1`, `RewardItem2`, `RewardItem3`, `RewardItem4`, `RewardAmount1`, `RewardAmount2`, `RewardAmount3`, `RewardAmount4`, `RewardChoiceItemID1`, `RewardChoiceItemID2`, `RewardChoiceItemID3`, `RewardChoiceItemID4`, `RewardChoiceItemID5`, `RewardChoiceItemID6`, `RewardChoiceItemQuantity1`, `RewardChoiceItemQuantity2`, `RewardChoiceItemQuantity3`, `RewardChoiceItemQuantity4`, `RewardChoiceItemQuantity5`, `RewardChoiceItemQuantity6`, `RewardFactionID1`, `RewardFactionID2`, `RewardFactionID3`, `RewardFactionID4`, `RewardFactionID5`, `RewardFactionValue1`, `RewardFactionValue2`, `RewardFactionValue3`, `RewardFactionValue4`, `RewardFactionValue5`, `RewardFactionOverride1`, `RewardFactionOverride2`, `RewardFactionOverride3`, `RewardFactionOverride4`, `RewardFactionOverride5`, `PointMapId`, `PointX`, `PointY`, `PointOption`, `LogTitle`, `LogDescription`, `QuestDescription`, `EndText`, `OfferRewardText`, `RequestItemsText`, `QuestCompletionLog`, `RequiredNpcOrGo1`, `RequiredNpcOrGo2`, `RequiredNpcOrGo3`, `RequiredNpcOrGo4`, `RequiredNpcOrGoCount1`, `RequiredNpcOrGoCount2`, `RequiredNpcOrGoCount3`, `RequiredNpcOrGoCount4`, `RequiredSourceItemId1`, `RequiredSourceItemId2`, `RequiredSourceItemId3`, `RequiredSourceItemId4`, `RequiredSourceItemCount1`, `RequiredSourceItemCount2`, `RequiredSourceItemCount3`, `RequiredSourceItemCount4`, `RequiredItemId1`, `RequiredItemId2`, `RequiredItemId3`, `RequiredItemId4`, `RequiredItemId5`, `RequiredItemId6`, `RequiredItemCount1`, `RequiredItemCount2`, `RequiredItemCount3`, `RequiredItemCount4`, `RequiredItemCount5`, `RequiredItemCount6`, `Unknown0`, `ObjectiveText1`, `ObjectiveText2`, `ObjectiveText3`, `ObjectiveText4`, `DetailsEmote1`, `DetailsEmote2`, `DetailsEmote3`, `DetailsEmote4`, `DetailsEmoteDelay1`, `DetailsEmoteDelay2`, `DetailsEmoteDelay3`, `DetailsEmoteDelay4`, `EmoteOnIncomplete`, `EmoteOnComplete`, `OfferRewardEmote1`, `OfferRewardEmote2`, `OfferRewardEmote3`, `OfferRewardEmote4`, `OfferRewardEmoteDelay1`, `OfferRewardEmoteDelay2`, `OfferRewardEmoteDelay3`, `OfferRewardEmoteDelay4`, `VerifiedBuild`) VALUES
-(799998, 2, 80, 80, -1, 0, 0, 0, 1791, 0, 0, 0, 0, 0, 250, -150000000, 0, 0, 0, 0, 0, 700501, 0, 0, 0, 0, 0, 700500, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 'Der mysteriöse Gegenstand', 'Findet den Mann der den mysteriösen Gegenstand besitzt.', 'Hey, ihr da.$BHabt ihr nichts zu tun?Ich hätte da etwas für Euch. In letzter Zeit geht das Gerücht um, das ein Mann einen mysteriösen und seltenen Gegestand gefunden hat. Habt ihr das nicht mitbekommen? Anscheinend soll er sich in der Scherbenwelt befinden, aber auch das ist sehr wage. Ich glaube mich noch zu erinnern, dass der Bereich indem er sich befinden könnte, im Bereich des Nethersturm ist. Wenn Ihr ihn findet könntet Ihr Euch von diesem Gegenstand überzeugen. Verzweifelt nicht zu schnell wenn ihr ihn nicht gleich am Anfang findet. Ich gebe Euch noch eine Replik des Gegenstandes mit. Diese hat leider keine besondere Macht. ', '', 'Habt Ihr ihn nicht gefunden?', 'Findet den Mann der den mysteriösen Gegenstand besitzt.', 'Es ist Eure Sache was ihr tut.', 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 700501, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, '', '', '', '', 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1);
+(799998, 2, 80, 80, -1, 0, 0, 0, 1791, 0, 0, 0, 0, 0, 250, -150000000, 0, 0, 0, 0, 0, 700501, 0, 0, 0, 0, 0, 700500, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 'Der mysterioese Gegenstand', 'Findet den Mann der den mysterioesen Gegenstand besitzt.', 'Hey, ihr da.$BHabt ihr nichts zu tun?Ich haette da etwas fuer Euch. In letzter Zeit geht das Geruecht um, das ein Mann einen mysterioesen und seltenen Gegestand gefunden hat. Habt ihr das nicht mitbekommen? Anscheinend soll er sich in der Scherbenwelt befinden, aber auch das ist sehr wage. Ich glaube mich noch zu erinnern, dass der Bereich indem er sich befinden koennte, im Bereich des Nethersturm ist. Wenn Ihr ihn findet koenntet Ihr Euch von diesem Gegenstand ueberzeugen. Verzweifelt nicht zu schnell wenn ihr ihn nicht gleich am Anfang findet. Ich gebe Euch noch eine Replik des Gegenstandes mit. Diese hat leider keine besondere Macht. ', '', 'Habt Ihr ihn nicht gefunden?', 'Findet den Mann der den mysterioesen Gegenstand besitzt.', 'Es ist Eure Sache was ihr tut.', 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 700501, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, '', '', '', '', 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1);
 
 UPDATE `creature_template` SET `npcflag`='3' WHERE `entry`='32690';
 REPLACE INTO `quest_poi` (`QuestID`, `id`, `ObjectiveIndex`, `MapID`, `WorldMapAreaId`, `Floor`, `Priority`, `Flags`, `VerifiedBuild`) VALUES ('799998', '799998', '-1', '530', '3540', '3540', '0', '3', '0');
@@ -3487,11 +3487,11 @@ REPLACE INTO `quest_template` (`ID`, `Method`, `QuestLevel`, `MinLevel`, `QuestS
  /*  PointY  */ 0,
  /*  PointOption  */ 0,
  /*  LogTitle  */ 'PreQuest: Der Fall des verlorenen Herrschers',
- /*  LogDescription  */  'Hört Euch die einleitende Erzählung von Exitare an.',
- /*  QuestDescription   */ '$N,$Bich habe eine wichtige Nachricht für Euch. Eine neue Bedrohung ist im Begriff unsere Welt zu bedrohen.',
+ /*  LogDescription  */  'Hoert Euch die einleitende Erzaehlung von Exitare an.',
+ /*  QuestDescription   */ '$N,$Bich habe eine wichtige Nachricht fuer Euch. Eine neue Bedrohung ist im Begriff unsere Welt zu bedrohen.',
  /*  EndText   */  '',
- /*  OfferRewardText  */  'Hört Euch die einleitende Erzählung von Exitare an.',
- /*  RequestItemsText  */ 'Hört Euch die einleitende Erzählung von Exitare an.',
+ /*  OfferRewardText  */  'Hoert Euch die einleitende Erzaehlung von Exitare an.',
+ /*  RequestItemsText  */ 'Hoert Euch die einleitende Erzaehlung von Exitare an.',
  /*  QuestCompletionLog  */ 'Ich warte auf Euch.',
  /*  RequiredNpcOrGo1  */ 0,
  /*  RequiredNpcOrGo2  */ 0,
@@ -3642,11 +3642,11 @@ REPLACE INTO `quest_template` (`ID`, `Method`, `QuestLevel`, `MinLevel`, `QuestS
  /*  PointY  */ 0,
  /*  PointOption  */ 0,
  /*  LogTitle  */ 'PreQuest: Der Fall des verlorenen Herrschers',
- /*  LogDescription  */  'Sammelt 200 Grobe Steine, 5 Hammelkoteletts, 2 Schläuche mit zwergischen Starkbier und tötet 10 Kühe.',
- /*  QuestDescription   */ '$N,$Bdie ersten Schritte um das neue Übel aufzuhalten sind denkbar einfach. Bringt mir 5 Hammelkoteletts und 2 Schläuche mit zwergischen Starkbier. Ich habe nämlich Durst und Hunger. Während ich mich verköstige könnt Ihr mir gleich noch 200 grobe Steine bringen. Diese benötigen wir für unser erstes Pulver, welches hoffentlich den gewünschten Effekt auslöst.',
+ /*  LogDescription  */  'Sammelt 200 Grobe Steine, 5 Hammelkoteletts, 2 Schlaeuche mit zwergischen Starkbier und toetet 10 Kuehe.',
+ /*  QuestDescription   */ '$N,$Bdie ersten Schritte um das neue uebel aufzuhalten sind denkbar einfach. Bringt mir 5 Hammelkoteletts und 2 Schlaeuche mit zwergischen Starkbier. Ich habe naemlich Durst und Hunger. Waehrend ich mich verkoestige koennt Ihr mir gleich noch 200 grobe Steine bringen. Diese benoetigen wir fuer unser erstes Pulver, welches hoffentlich den gewuenschten Effekt ausloest.',
  /*  EndText   */  '',
- /*  OfferRewardText  */  'Sammelt 200 Grobe Steine, 5 Hammelkoteletts, 2 Schläuche mit zwergischen Starkbier und tötet 10 Kühe.',
- /*  RequestItemsText  */ 'Sammelt 200 Grobe Steine, 5 Hammelkoteletts, 2 Schläuche mit zwergischen Starkbier und tötet 10 Kühe.',
+ /*  OfferRewardText  */  'Sammelt 200 Grobe Steine, 5 Hammelkoteletts, 2 Schlaeuche mit zwergischen Starkbier und toetet 10 Kuehe.',
+ /*  RequestItemsText  */ 'Sammelt 200 Grobe Steine, 5 Hammelkoteletts, 2 Schlaeuche mit zwergischen Starkbier und toetet 10 Kuehe.',
  /*  QuestCompletionLog  */ 'Ich warte auf Euch.',
  /*  RequiredNpcOrGo1  */ 2442,
  /*  RequiredNpcOrGo2  */ 0,
@@ -3798,7 +3798,7 @@ REPLACE INTO `quest_template` (`ID`, `Method`, `QuestLevel`, `MinLevel`, `QuestS
  /*  PointOption  */ 0,
  /*  LogTitle  */ 'PreQuest: Der Fall des verlorenen Herrschers',
  /*  LogDescription  */  'Meldet Euch bei Bryana Atkenur und bringt ihr die Tinktur.',
- /*  QuestDescription   */ '$N,$Bunsere Tinktur scheint gut zu sein. Wir müssen sie nun nur noch testen. Bringt die Tinktur zu Bryana Atkenur. Sie wird die Güte überprüfen. Seid aber bitte zügig, den durch den Transport wird die Tinktur instabil.',
+ /*  QuestDescription   */ '$N,$Bunsere Tinktur scheint gut zu sein. Wir muessen sie nun nur noch testen. Bringt die Tinktur zu Bryana Atkenur. Sie wird die Guete ueberpruefen. Seid aber bitte zuegig, den durch den Transport wird die Tinktur instabil.',
  /*  EndText   */  '',
  /*  OfferRewardText  */  'Meldet Euch bei Bryana Atkenur und bringt ihr die Tinktur.',
  /*  RequestItemsText  */ 'Meldet Euch bei Bryana Atkenur und bringt ihr die Tinktur.',
@@ -3885,7 +3885,7 @@ REPLACE INTO `creature_questender` (`id`, `quest`) VALUES
 REPLACE INTO `creature_queststarter` (`id`, `quest`) VALUES
 (800015, 800011);
 REPLACE INTO `quest_template` (`ID`, `Method`, `QuestLevel`, `MinLevel`, `QuestSortID`, `QuestType`, `SuggestedGroupNum`, `LimitTime`, `RequiredRaces`, `RequiredFactionId1`, `RequiredFactionId2`, `RequiredFactionValue1`, `RequiredFactionValue2`, `NextQuestIdChain`, `RewardXPId`, `RewardOrRequiredMoney`, `RewardMoneyMaxLevel`, `RewardSpell`, `RewardSpellCast`, `RewardHonor`, `RewardHonorMultiplier`, `SourceItemId`, `Flags`, `RewardTitle`, `RequiredPlayerKills`, `RewardTalents`, `RewardArenaPoints`, `RewardItem1`, `RewardItem2`, `RewardItem3`, `RewardItem4`, `RewardAmount1`, `RewardAmount2`, `RewardAmount3`, `RewardAmount4`, `RewardChoiceItemID1`, `RewardChoiceItemID2`, `RewardChoiceItemID3`, `RewardChoiceItemID4`, `RewardChoiceItemID5`, `RewardChoiceItemID6`, `RewardChoiceItemQuantity1`, `RewardChoiceItemQuantity2`, `RewardChoiceItemQuantity3`, `RewardChoiceItemQuantity4`, `RewardChoiceItemQuantity5`, `RewardChoiceItemQuantity6`, `RewardFactionID1`, `RewardFactionID2`, `RewardFactionID3`, `RewardFactionID4`, `RewardFactionID5`, `RewardFactionValue1`, `RewardFactionValue2`, `RewardFactionValue3`, `RewardFactionValue4`, `RewardFactionValue5`, `RewardFactionOverride1`, `RewardFactionOverride2`, `RewardFactionOverride3`, `RewardFactionOverride4`, `RewardFactionOverride5`, `PointMapId`, `PointX`, `PointY`, `PointOption`, `LogTitle`, `LogDescription`, `QuestDescription`, `EndText`, `OfferRewardText`, `RequestItemsText`, `QuestCompletionLog`, `RequiredNpcOrGo1`, `RequiredNpcOrGo2`, `RequiredNpcOrGo3`, `RequiredNpcOrGo4`, `RequiredNpcOrGoCount1`, `RequiredNpcOrGoCount2`, `RequiredNpcOrGoCount3`, `RequiredNpcOrGoCount4`, `RequiredSourceItemId1`, `RequiredSourceItemId2`, `RequiredSourceItemId3`, `RequiredSourceItemId4`, `RequiredSourceItemCount1`, `RequiredSourceItemCount2`, `RequiredSourceItemCount3`, `RequiredSourceItemCount4`, `RequiredItemId1`, `RequiredItemId2`, `RequiredItemId3`, `RequiredItemId4`, `RequiredItemId5`, `RequiredItemId6`, `RequiredItemCount1`, `RequiredItemCount2`, `RequiredItemCount3`, `RequiredItemCount4`, `RequiredItemCount5`, `RequiredItemCount6`, `Unknown0`, `ObjectiveText1`, `ObjectiveText2`, `ObjectiveText3`, `ObjectiveText4`, `DetailsEmote1`, `DetailsEmote2`, `DetailsEmote3`, `DetailsEmote4`, `DetailsEmoteDelay1`, `DetailsEmoteDelay2`, `DetailsEmoteDelay3`, `DetailsEmoteDelay4`, `EmoteOnIncomplete`, `EmoteOnComplete`, `OfferRewardEmote1`, `OfferRewardEmote2`, `OfferRewardEmote3`, `OfferRewardEmote4`, `OfferRewardEmoteDelay1`, `OfferRewardEmoteDelay2`, `OfferRewardEmoteDelay3`, `OfferRewardEmoteDelay4`, `VerifiedBuild`) VALUES
-(800514, 2, 80, 80, -1, 62, 0, 0, 1791, 0, 0, 0, 0, 0, 250, 500000, 500000, 0, 0, 0, 0, 0, 32968, 0, 0, 0, 0, 49426, 47241, 38186, 0, 1, 1, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 'Weekly: Eiskronenzitadelle', 'Tötet den Lichkönig in der Eiskronenzitadelle. Ihr werdet reich belohnt werden !', '', '', 'Kommt doch morgen wieder um mir weiterzuhelfen.', 'Tötet den Lichkönig in der Eiskronenzitadelle. Ihr werdet reich belohnt werden !', 'Werdet ihr den Auftrag aufsführen?', 36597, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, '', '', '', '', 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1);
+(800514, 2, 80, 80, -1, 62, 0, 0, 1791, 0, 0, 0, 0, 0, 250, 500000, 500000, 0, 0, 0, 0, 0, 32968, 0, 0, 0, 0, 49426, 47241, 38186, 0, 1, 1, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 'Weekly: Eiskronenzitadelle', 'Toetet den Lichkoenig in der Eiskronenzitadelle. Ihr werdet reich belohnt werden !', '', '', 'Kommt doch morgen wieder um mir weiterzuhelfen.', 'Toetet den Lichkoenig in der Eiskronenzitadelle. Ihr werdet reich belohnt werden !', 'Werdet ihr den Auftrag aufsfuehren?', 36597, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, '', '', '', '', 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1);
 
 
 
@@ -3899,7 +3899,7 @@ REPLACE INTO `creature_questender` (`id`, `quest`) VALUES
 
 REPLACE INTO `creature_queststarter` (`id`, `quest`) VALUES
 (800013, 800514);REPLACE INTO `quest_template` (`ID`, `Method`, `QuestLevel`, `MinLevel`, `QuestSortID`, `QuestType`, `SuggestedGroupNum`, `LimitTime`, `RequiredRaces`, `RequiredFactionId1`, `RequiredFactionId2`, `RequiredFactionValue1`, `RequiredFactionValue2`, `NextQuestIdChain`, `RewardXPId`, `RewardOrRequiredMoney`, `RewardMoneyMaxLevel`, `RewardSpell`, `RewardSpellCast`, `RewardHonor`, `RewardHonorMultiplier`, `SourceItemId`, `Flags`, `RewardTitle`, `RequiredPlayerKills`, `RewardTalents`, `RewardArenaPoints`, `RewardItem1`, `RewardItem2`, `RewardItem3`, `RewardItem4`, `RewardAmount1`, `RewardAmount2`, `RewardAmount3`, `RewardAmount4`, `RewardChoiceItemID1`, `RewardChoiceItemID2`, `RewardChoiceItemID3`, `RewardChoiceItemID4`, `RewardChoiceItemID5`, `RewardChoiceItemID6`, `RewardChoiceItemQuantity1`, `RewardChoiceItemQuantity2`, `RewardChoiceItemQuantity3`, `RewardChoiceItemQuantity4`, `RewardChoiceItemQuantity5`, `RewardChoiceItemQuantity6`, `RewardFactionID1`, `RewardFactionID2`, `RewardFactionID3`, `RewardFactionID4`, `RewardFactionID5`, `RewardFactionValue1`, `RewardFactionValue2`, `RewardFactionValue3`, `RewardFactionValue4`, `RewardFactionValue5`, `RewardFactionOverride1`, `RewardFactionOverride2`, `RewardFactionOverride3`, `RewardFactionOverride4`, `RewardFactionOverride5`, `PointMapId`, `PointX`, `PointY`, `PointOption`, `LogTitle`, `LogDescription`, `QuestDescription`, `EndText`, `OfferRewardText`, `RequestItemsText`, `QuestCompletionLog`, `RequiredNpcOrGo1`, `RequiredNpcOrGo2`, `RequiredNpcOrGo3`, `RequiredNpcOrGo4`, `RequiredNpcOrGoCount1`, `RequiredNpcOrGoCount2`, `RequiredNpcOrGoCount3`, `RequiredNpcOrGoCount4`, `RequiredSourceItemId1`, `RequiredSourceItemId2`, `RequiredSourceItemId3`, `RequiredSourceItemId4`, `RequiredSourceItemCount1`, `RequiredSourceItemCount2`, `RequiredSourceItemCount3`, `RequiredSourceItemCount4`, `RequiredItemId1`, `RequiredItemId2`, `RequiredItemId3`, `RequiredItemId4`, `RequiredItemId5`, `RequiredItemId6`, `RequiredItemCount1`, `RequiredItemCount2`, `RequiredItemCount3`, `RequiredItemCount4`, `RequiredItemCount5`, `RequiredItemCount6`, `Unknown0`, `ObjectiveText1`, `ObjectiveText2`, `ObjectiveText3`, `ObjectiveText4`, `DetailsEmote1`, `DetailsEmote2`, `DetailsEmote3`, `DetailsEmote4`, `DetailsEmoteDelay1`, `DetailsEmoteDelay2`, `DetailsEmoteDelay3`, `DetailsEmoteDelay4`, `EmoteOnIncomplete`, `EmoteOnComplete`, `OfferRewardEmote1`, `OfferRewardEmote2`, `OfferRewardEmote3`, `OfferRewardEmote4`, `OfferRewardEmoteDelay1`, `OfferRewardEmoteDelay2`, `OfferRewardEmoteDelay3`, `OfferRewardEmoteDelay4`, `VerifiedBuild`) VALUES
-(800515, 2, 80, 80, -1, 62, 0, 0, 1791, 0, 0, 0, 0, 0, 250, 500000, 500000, 0, 0, 0, 0, 0, 32968, 0, 0, 0, 0, 49426, 38186, 47241, 0, 1, 1, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 'Weekly: Ulduar', 'Tötet Freya in Ulduar. Ihr werdet reich belohnt werden !', '', '', 'Kommt doch morgen wieder um mir weiterzuhelfen.', 'Tötet Freya in Ulduar. Ihr werdet reich belohnt werden !', 'Werdet ihr den Auftrag aufsführen?', 32906, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, '', '', '', '', 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1);
+(800515, 2, 80, 80, -1, 62, 0, 0, 1791, 0, 0, 0, 0, 0, 250, 500000, 500000, 0, 0, 0, 0, 0, 32968, 0, 0, 0, 0, 49426, 38186, 47241, 0, 1, 1, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 'Weekly: Ulduar', 'Toetet Freya in Ulduar. Ihr werdet reich belohnt werden !', '', '', 'Kommt doch morgen wieder um mir weiterzuhelfen.', 'Toetet Freya in Ulduar. Ihr werdet reich belohnt werden !', 'Werdet ihr den Auftrag aufsfuehren?', 32906, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, '', '', '', '', 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1);
 
 
 
@@ -3911,7 +3911,7 @@ REPLACE INTO `creature_questender` (`id`, `quest`) VALUES
 
 REPLACE INTO `creature_queststarter` (`id`, `quest`) VALUES
 (800013, 800515);REPLACE INTO `quest_template` (`ID`, `Method`, `QuestLevel`, `MinLevel`, `QuestSortID`, `QuestType`, `SuggestedGroupNum`, `LimitTime`, `RequiredRaces`, `RequiredFactionId1`, `RequiredFactionId2`, `RequiredFactionValue1`, `RequiredFactionValue2`, `NextQuestIdChain`, `RewardXPId`, `RewardOrRequiredMoney`, `RewardMoneyMaxLevel`, `RewardSpell`, `RewardSpellCast`, `RewardHonor`, `RewardHonorMultiplier`, `SourceItemId`, `Flags`, `RewardTitle`, `RequiredPlayerKills`, `RewardTalents`, `RewardArenaPoints`, `RewardItem1`, `RewardItem2`, `RewardItem3`, `RewardItem4`, `RewardAmount1`, `RewardAmount2`, `RewardAmount3`, `RewardAmount4`, `RewardChoiceItemID1`, `RewardChoiceItemID2`, `RewardChoiceItemID3`, `RewardChoiceItemID4`, `RewardChoiceItemID5`, `RewardChoiceItemID6`, `RewardChoiceItemQuantity1`, `RewardChoiceItemQuantity2`, `RewardChoiceItemQuantity3`, `RewardChoiceItemQuantity4`, `RewardChoiceItemQuantity5`, `RewardChoiceItemQuantity6`, `RewardFactionID1`, `RewardFactionID2`, `RewardFactionID3`, `RewardFactionID4`, `RewardFactionID5`, `RewardFactionValue1`, `RewardFactionValue2`, `RewardFactionValue3`, `RewardFactionValue4`, `RewardFactionValue5`, `RewardFactionOverride1`, `RewardFactionOverride2`, `RewardFactionOverride3`, `RewardFactionOverride4`, `RewardFactionOverride5`, `PointMapId`, `PointX`, `PointY`, `PointOption`, `LogTitle`, `LogDescription`, `QuestDescription`, `EndText`, `OfferRewardText`, `RequestItemsText`, `QuestCompletionLog`, `RequiredNpcOrGo1`, `RequiredNpcOrGo2`, `RequiredNpcOrGo3`, `RequiredNpcOrGo4`, `RequiredNpcOrGoCount1`, `RequiredNpcOrGoCount2`, `RequiredNpcOrGoCount3`, `RequiredNpcOrGoCount4`, `RequiredSourceItemId1`, `RequiredSourceItemId2`, `RequiredSourceItemId3`, `RequiredSourceItemId4`, `RequiredSourceItemCount1`, `RequiredSourceItemCount2`, `RequiredSourceItemCount3`, `RequiredSourceItemCount4`, `RequiredItemId1`, `RequiredItemId2`, `RequiredItemId3`, `RequiredItemId4`, `RequiredItemId5`, `RequiredItemId6`, `RequiredItemCount1`, `RequiredItemCount2`, `RequiredItemCount3`, `RequiredItemCount4`, `RequiredItemCount5`, `RequiredItemCount6`, `Unknown0`, `ObjectiveText1`, `ObjectiveText2`, `ObjectiveText3`, `ObjectiveText4`, `DetailsEmote1`, `DetailsEmote2`, `DetailsEmote3`, `DetailsEmote4`, `DetailsEmoteDelay1`, `DetailsEmoteDelay2`, `DetailsEmoteDelay3`, `DetailsEmoteDelay4`, `EmoteOnIncomplete`, `EmoteOnComplete`, `OfferRewardEmote1`, `OfferRewardEmote2`, `OfferRewardEmote3`, `OfferRewardEmote4`, `OfferRewardEmoteDelay1`, `OfferRewardEmoteDelay2`, `OfferRewardEmoteDelay3`, `OfferRewardEmoteDelay4`, `VerifiedBuild`) VALUES
-(800516, 2, 80, 80, -1, 62, 0, 0, 1791, 0, 0, 0, 0, 0, 250, 500000, 500000, 0, 0, 0, 0, 0, 32968, 0, 0, 0, 0, 49426, 38186, 47241, 0, 1, 1, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 'Weekly: Naxxramas', 'Tötet Kel\Thuzad in Naxxramas. Ihr werdet reich belohnt werden !', '', '', 'Kommt doch morgen wieder um mir weiterzuhelfen.', 'Tötet Kel\Thuzad in Naxxramas. Ihr werdet reich belohnt werden !', 'Werdet ihr den Auftrag aufsführen?', 15990, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, '', '', '', '', 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1);
+(800516, 2, 80, 80, -1, 62, 0, 0, 1791, 0, 0, 0, 0, 0, 250, 500000, 500000, 0, 0, 0, 0, 0, 32968, 0, 0, 0, 0, 49426, 38186, 47241, 0, 1, 1, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 'Weekly: Naxxramas', 'Toetet Kel\Thuzad in Naxxramas. Ihr werdet reich belohnt werden !', '', '', 'Kommt doch morgen wieder um mir weiterzuhelfen.', 'Toetet Kel\Thuzad in Naxxramas. Ihr werdet reich belohnt werden !', 'Werdet ihr den Auftrag aufsfuehren?', 15990, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, '', '', '', '', 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1);
 
 
 
@@ -3923,7 +3923,7 @@ REPLACE INTO `creature_questender` (`id`, `quest`) VALUES
 
 REPLACE INTO `creature_queststarter` (`id`, `quest`) VALUES
 (800013, 800516);REPLACE INTO `quest_template` (`ID`, `Method`, `QuestLevel`, `MinLevel`, `QuestSortID`, `QuestType`, `SuggestedGroupNum`, `LimitTime`, `RequiredRaces`, `RequiredFactionId1`, `RequiredFactionId2`, `RequiredFactionValue1`, `RequiredFactionValue2`, `NextQuestIdChain`, `RewardXPId`, `RewardOrRequiredMoney`, `RewardMoneyMaxLevel`, `RewardSpell`, `RewardSpellCast`, `RewardHonor`, `RewardHonorMultiplier`, `SourceItemId`, `Flags`, `RewardTitle`, `RequiredPlayerKills`, `RewardTalents`, `RewardArenaPoints`, `RewardItem1`, `RewardItem2`, `RewardItem3`, `RewardItem4`, `RewardAmount1`, `RewardAmount2`, `RewardAmount3`, `RewardAmount4`, `RewardChoiceItemID1`, `RewardChoiceItemID2`, `RewardChoiceItemID3`, `RewardChoiceItemID4`, `RewardChoiceItemID5`, `RewardChoiceItemID6`, `RewardChoiceItemQuantity1`, `RewardChoiceItemQuantity2`, `RewardChoiceItemQuantity3`, `RewardChoiceItemQuantity4`, `RewardChoiceItemQuantity5`, `RewardChoiceItemQuantity6`, `RewardFactionID1`, `RewardFactionID2`, `RewardFactionID3`, `RewardFactionID4`, `RewardFactionID5`, `RewardFactionValue1`, `RewardFactionValue2`, `RewardFactionValue3`, `RewardFactionValue4`, `RewardFactionValue5`, `RewardFactionOverride1`, `RewardFactionOverride2`, `RewardFactionOverride3`, `RewardFactionOverride4`, `RewardFactionOverride5`, `PointMapId`, `PointX`, `PointY`, `PointOption`, `LogTitle`, `LogDescription`, `QuestDescription`, `EndText`, `OfferRewardText`, `RequestItemsText`, `QuestCompletionLog`, `RequiredNpcOrGo1`, `RequiredNpcOrGo2`, `RequiredNpcOrGo3`, `RequiredNpcOrGo4`, `RequiredNpcOrGoCount1`, `RequiredNpcOrGoCount2`, `RequiredNpcOrGoCount3`, `RequiredNpcOrGoCount4`, `RequiredSourceItemId1`, `RequiredSourceItemId2`, `RequiredSourceItemId3`, `RequiredSourceItemId4`, `RequiredSourceItemCount1`, `RequiredSourceItemCount2`, `RequiredSourceItemCount3`, `RequiredSourceItemCount4`, `RequiredItemId1`, `RequiredItemId2`, `RequiredItemId3`, `RequiredItemId4`, `RequiredItemId5`, `RequiredItemId6`, `RequiredItemCount1`, `RequiredItemCount2`, `RequiredItemCount3`, `RequiredItemCount4`, `RequiredItemCount5`, `RequiredItemCount6`, `Unknown0`, `ObjectiveText1`, `ObjectiveText2`, `ObjectiveText3`, `ObjectiveText4`, `DetailsEmote1`, `DetailsEmote2`, `DetailsEmote3`, `DetailsEmote4`, `DetailsEmoteDelay1`, `DetailsEmoteDelay2`, `DetailsEmoteDelay3`, `DetailsEmoteDelay4`, `EmoteOnIncomplete`, `EmoteOnComplete`, `OfferRewardEmote1`, `OfferRewardEmote2`, `OfferRewardEmote3`, `OfferRewardEmote4`, `OfferRewardEmoteDelay1`, `OfferRewardEmoteDelay2`, `OfferRewardEmoteDelay3`, `OfferRewardEmoteDelay4`, `VerifiedBuild`) VALUES
-(800517, 2, 80, 80, -1, 62, 0, 0, 1791, 0, 0, 0, 0, 0, 250, 500000, 500000, 0, 0, 0, 0, 0, 32968, 0, 0, 0, 0, 49426, 38186, 47241, 0, 1, 1, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 'Weekly: Archavons Kammer', 'Tötet Toravon der Eiswächter in Archavons Kammer. Ihr werdet reich belohnt werden !', '', '', 'Kommt doch morgen wieder um mir weiterzuhelfen.', 'Tötet Toravon der Eiswächter in Archavons Kammer. Ihr werdet reich belohnt werden !', 'Werdet ihr den Auftrag aufsführen?', 31125, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, '', '', '', '', 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1);
+(800517, 2, 80, 80, -1, 62, 0, 0, 1791, 0, 0, 0, 0, 0, 250, 500000, 500000, 0, 0, 0, 0, 0, 32968, 0, 0, 0, 0, 49426, 38186, 47241, 0, 1, 1, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 'Weekly: Archavons Kammer', 'Toetet Toravon der Eiswaechter in Archavons Kammer. Ihr werdet reich belohnt werden !', '', '', 'Kommt doch morgen wieder um mir weiterzuhelfen.', 'Toetet Toravon der Eiswaechter in Archavons Kammer. Ihr werdet reich belohnt werden !', 'Werdet ihr den Auftrag aufsfuehren?', 31125, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, '', '', '', '', 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1);
 
 
 
@@ -3935,7 +3935,7 @@ REPLACE INTO `creature_questender` (`id`, `quest`) VALUES
 
 REPLACE INTO `creature_queststarter` (`id`, `quest`) VALUES
 (800013, 800517);REPLACE INTO `quest_template` (`ID`, `Method`, `QuestLevel`, `MinLevel`, `QuestSortID`, `QuestType`, `SuggestedGroupNum`, `LimitTime`, `RequiredRaces`, `RequiredFactionId1`, `RequiredFactionId2`, `RequiredFactionValue1`, `RequiredFactionValue2`, `NextQuestIdChain`, `RewardXPId`, `RewardOrRequiredMoney`, `RewardMoneyMaxLevel`, `RewardSpell`, `RewardSpellCast`, `RewardHonor`, `RewardHonorMultiplier`, `SourceItemId`, `Flags`, `RewardTitle`, `RequiredPlayerKills`, `RewardTalents`, `RewardArenaPoints`, `RewardItem1`, `RewardItem2`, `RewardItem3`, `RewardItem4`, `RewardAmount1`, `RewardAmount2`, `RewardAmount3`, `RewardAmount4`, `RewardChoiceItemID1`, `RewardChoiceItemID2`, `RewardChoiceItemID3`, `RewardChoiceItemID4`, `RewardChoiceItemID5`, `RewardChoiceItemID6`, `RewardChoiceItemQuantity1`, `RewardChoiceItemQuantity2`, `RewardChoiceItemQuantity3`, `RewardChoiceItemQuantity4`, `RewardChoiceItemQuantity5`, `RewardChoiceItemQuantity6`, `RewardFactionID1`, `RewardFactionID2`, `RewardFactionID3`, `RewardFactionID4`, `RewardFactionID5`, `RewardFactionValue1`, `RewardFactionValue2`, `RewardFactionValue3`, `RewardFactionValue4`, `RewardFactionValue5`, `RewardFactionOverride1`, `RewardFactionOverride2`, `RewardFactionOverride3`, `RewardFactionOverride4`, `RewardFactionOverride5`, `PointMapId`, `PointX`, `PointY`, `PointOption`, `LogTitle`, `LogDescription`, `QuestDescription`, `EndText`, `OfferRewardText`, `RequestItemsText`, `QuestCompletionLog`, `RequiredNpcOrGo1`, `RequiredNpcOrGo2`, `RequiredNpcOrGo3`, `RequiredNpcOrGo4`, `RequiredNpcOrGoCount1`, `RequiredNpcOrGoCount2`, `RequiredNpcOrGoCount3`, `RequiredNpcOrGoCount4`, `RequiredSourceItemId1`, `RequiredSourceItemId2`, `RequiredSourceItemId3`, `RequiredSourceItemId4`, `RequiredSourceItemCount1`, `RequiredSourceItemCount2`, `RequiredSourceItemCount3`, `RequiredSourceItemCount4`, `RequiredItemId1`, `RequiredItemId2`, `RequiredItemId3`, `RequiredItemId4`, `RequiredItemId5`, `RequiredItemId6`, `RequiredItemCount1`, `RequiredItemCount2`, `RequiredItemCount3`, `RequiredItemCount4`, `RequiredItemCount5`, `RequiredItemCount6`, `Unknown0`, `ObjectiveText1`, `ObjectiveText2`, `ObjectiveText3`, `ObjectiveText4`, `DetailsEmote1`, `DetailsEmote2`, `DetailsEmote3`, `DetailsEmote4`, `DetailsEmoteDelay1`, `DetailsEmoteDelay2`, `DetailsEmoteDelay3`, `DetailsEmoteDelay4`, `EmoteOnIncomplete`, `EmoteOnComplete`, `OfferRewardEmote1`, `OfferRewardEmote2`, `OfferRewardEmote3`, `OfferRewardEmote4`, `OfferRewardEmoteDelay1`, `OfferRewardEmoteDelay2`, `OfferRewardEmoteDelay3`, `OfferRewardEmoteDelay4`, `VerifiedBuild`) VALUES
-(800518, 2, 80, 80, -1, 62, 0, 0, 1791, 0, 0, 0, 0, 0, 250, 500000, 500000, 0, 0, 0, 0, 0, 32968, 0, 0, 0, 0, 49426, 38186, 47241, 0, 1, 1, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 'Weekly: Prüfung des Kreuzfahrers', 'Tötet Anub\arak in der Prüfung des Kreuzfahrers. Ihr werdet reich belohnt werden !', '', '', 'Kommt doch morgen wieder um mir weiterzuhelfen.', 'Tötet Anub\arak in der Prüfung des Kreuzfahrers. Ihr werdet reich belohnt werden !', 'Werdet ihr den Auftrag aufsführen?', 34564, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, '', '', '', '', 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1);
+(800518, 2, 80, 80, -1, 62, 0, 0, 1791, 0, 0, 0, 0, 0, 250, 500000, 500000, 0, 0, 0, 0, 0, 32968, 0, 0, 0, 0, 49426, 38186, 47241, 0, 1, 1, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 'Weekly: Pruefung des Kreuzfahrers', 'Toetet Anub\arak in der Pruefung des Kreuzfahrers. Ihr werdet reich belohnt werden !', '', '', 'Kommt doch morgen wieder um mir weiterzuhelfen.', 'Toetet Anub\arak in der Pruefung des Kreuzfahrers. Ihr werdet reich belohnt werden !', 'Werdet ihr den Auftrag aufsfuehren?', 34564, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, '', '', '', '', 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1);
 
 
 
@@ -3947,7 +3947,7 @@ REPLACE INTO `creature_questender` (`id`, `quest`) VALUES
 
 REPLACE INTO `creature_queststarter` (`id`, `quest`) VALUES
 (800013, 800518);REPLACE INTO `quest_template` (`ID`, `Method`, `QuestLevel`, `MinLevel`, `QuestSortID`, `QuestType`, `SuggestedGroupNum`, `LimitTime`, `RequiredRaces`, `RequiredFactionId1`, `RequiredFactionId2`, `RequiredFactionValue1`, `RequiredFactionValue2`, `NextQuestIdChain`, `RewardXPId`, `RewardOrRequiredMoney`, `RewardMoneyMaxLevel`, `RewardSpell`, `RewardSpellCast`, `RewardHonor`, `RewardHonorMultiplier`, `SourceItemId`, `Flags`, `RewardTitle`, `RequiredPlayerKills`, `RewardTalents`, `RewardArenaPoints`, `RewardItem1`, `RewardItem2`, `RewardItem3`, `RewardItem4`, `RewardAmount1`, `RewardAmount2`, `RewardAmount3`, `RewardAmount4`, `RewardChoiceItemID1`, `RewardChoiceItemID2`, `RewardChoiceItemID3`, `RewardChoiceItemID4`, `RewardChoiceItemID5`, `RewardChoiceItemID6`, `RewardChoiceItemQuantity1`, `RewardChoiceItemQuantity2`, `RewardChoiceItemQuantity3`, `RewardChoiceItemQuantity4`, `RewardChoiceItemQuantity5`, `RewardChoiceItemQuantity6`, `RewardFactionID1`, `RewardFactionID2`, `RewardFactionID3`, `RewardFactionID4`, `RewardFactionID5`, `RewardFactionValue1`, `RewardFactionValue2`, `RewardFactionValue3`, `RewardFactionValue4`, `RewardFactionValue5`, `RewardFactionOverride1`, `RewardFactionOverride2`, `RewardFactionOverride3`, `RewardFactionOverride4`, `RewardFactionOverride5`, `PointMapId`, `PointX`, `PointY`, `PointOption`, `LogTitle`, `LogDescription`, `QuestDescription`, `EndText`, `OfferRewardText`, `RequestItemsText`, `QuestCompletionLog`, `RequiredNpcOrGo1`, `RequiredNpcOrGo2`, `RequiredNpcOrGo3`, `RequiredNpcOrGo4`, `RequiredNpcOrGoCount1`, `RequiredNpcOrGoCount2`, `RequiredNpcOrGoCount3`, `RequiredNpcOrGoCount4`, `RequiredSourceItemId1`, `RequiredSourceItemId2`, `RequiredSourceItemId3`, `RequiredSourceItemId4`, `RequiredSourceItemCount1`, `RequiredSourceItemCount2`, `RequiredSourceItemCount3`, `RequiredSourceItemCount4`, `RequiredItemId1`, `RequiredItemId2`, `RequiredItemId3`, `RequiredItemId4`, `RequiredItemId5`, `RequiredItemId6`, `RequiredItemCount1`, `RequiredItemCount2`, `RequiredItemCount3`, `RequiredItemCount4`, `RequiredItemCount5`, `RequiredItemCount6`, `Unknown0`, `ObjectiveText1`, `ObjectiveText2`, `ObjectiveText3`, `ObjectiveText4`, `DetailsEmote1`, `DetailsEmote2`, `DetailsEmote3`, `DetailsEmote4`, `DetailsEmoteDelay1`, `DetailsEmoteDelay2`, `DetailsEmoteDelay3`, `DetailsEmoteDelay4`, `EmoteOnIncomplete`, `EmoteOnComplete`, `OfferRewardEmote1`, `OfferRewardEmote2`, `OfferRewardEmote3`, `OfferRewardEmote4`, `OfferRewardEmoteDelay1`, `OfferRewardEmoteDelay2`, `OfferRewardEmoteDelay3`, `OfferRewardEmoteDelay4`, `VerifiedBuild`) VALUES
-(800519, 2, 80, 80, -1, 62, 0, 0, 1791, 0, 0, 0, 0, 0, 250, 500000, 500000, 0, 0, 0, 0, 0, 32968, 0, 0, 0, 0, 49426, 38186, 47241, 0, 1, 1, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 'Weekly: Das Obsidiansanktum', 'Tötet Sartharion im Obsidiansanktum. Ihr werdet reich belohnt werden !', '', '', 'Kommt doch morgen wieder um mir weiterzuhelfen.', 'Tötet Sartharion im Obsidiansanktum. Ihr werdet reich belohnt werden !', 'Werdet ihr den Auftrag aufsführen?', 28860, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, '', '', '', '', 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1);
+(800519, 2, 80, 80, -1, 62, 0, 0, 1791, 0, 0, 0, 0, 0, 250, 500000, 500000, 0, 0, 0, 0, 0, 32968, 0, 0, 0, 0, 49426, 38186, 47241, 0, 1, 1, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 'Weekly: Das Obsidiansanktum', 'Toetet Sartharion im Obsidiansanktum. Ihr werdet reich belohnt werden !', '', '', 'Kommt doch morgen wieder um mir weiterzuhelfen.', 'Toetet Sartharion im Obsidiansanktum. Ihr werdet reich belohnt werden !', 'Werdet ihr den Auftrag aufsfuehren?', 28860, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, '', '', '', '', 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1);
 
 
 
@@ -3959,7 +3959,7 @@ REPLACE INTO `creature_questender` (`id`, `quest`) VALUES
 
 REPLACE INTO `creature_queststarter` (`id`, `quest`) VALUES
 (800013, 800519);REPLACE INTO `quest_template` (`ID`, `Method`, `QuestLevel`, `MinLevel`, `QuestSortID`, `QuestType`, `SuggestedGroupNum`, `LimitTime`, `RequiredRaces`, `RequiredFactionId1`, `RequiredFactionId2`, `RequiredFactionValue1`, `RequiredFactionValue2`, `NextQuestIdChain`, `RewardXPId`, `RewardOrRequiredMoney`, `RewardMoneyMaxLevel`, `RewardSpell`, `RewardSpellCast`, `RewardHonor`, `RewardHonorMultiplier`, `SourceItemId`, `Flags`, `RewardTitle`, `RequiredPlayerKills`, `RewardTalents`, `RewardArenaPoints`, `RewardItem1`, `RewardItem2`, `RewardItem3`, `RewardItem4`, `RewardAmount1`, `RewardAmount2`, `RewardAmount3`, `RewardAmount4`, `RewardChoiceItemID1`, `RewardChoiceItemID2`, `RewardChoiceItemID3`, `RewardChoiceItemID4`, `RewardChoiceItemID5`, `RewardChoiceItemID6`, `RewardChoiceItemQuantity1`, `RewardChoiceItemQuantity2`, `RewardChoiceItemQuantity3`, `RewardChoiceItemQuantity4`, `RewardChoiceItemQuantity5`, `RewardChoiceItemQuantity6`, `RewardFactionID1`, `RewardFactionID2`, `RewardFactionID3`, `RewardFactionID4`, `RewardFactionID5`, `RewardFactionValue1`, `RewardFactionValue2`, `RewardFactionValue3`, `RewardFactionValue4`, `RewardFactionValue5`, `RewardFactionOverride1`, `RewardFactionOverride2`, `RewardFactionOverride3`, `RewardFactionOverride4`, `RewardFactionOverride5`, `PointMapId`, `PointX`, `PointY`, `PointOption`, `LogTitle`, `LogDescription`, `QuestDescription`, `EndText`, `OfferRewardText`, `RequestItemsText`, `QuestCompletionLog`, `RequiredNpcOrGo1`, `RequiredNpcOrGo2`, `RequiredNpcOrGo3`, `RequiredNpcOrGo4`, `RequiredNpcOrGoCount1`, `RequiredNpcOrGoCount2`, `RequiredNpcOrGoCount3`, `RequiredNpcOrGoCount4`, `RequiredSourceItemId1`, `RequiredSourceItemId2`, `RequiredSourceItemId3`, `RequiredSourceItemId4`, `RequiredSourceItemCount1`, `RequiredSourceItemCount2`, `RequiredSourceItemCount3`, `RequiredSourceItemCount4`, `RequiredItemId1`, `RequiredItemId2`, `RequiredItemId3`, `RequiredItemId4`, `RequiredItemId5`, `RequiredItemId6`, `RequiredItemCount1`, `RequiredItemCount2`, `RequiredItemCount3`, `RequiredItemCount4`, `RequiredItemCount5`, `RequiredItemCount6`, `Unknown0`, `ObjectiveText1`, `ObjectiveText2`, `ObjectiveText3`, `ObjectiveText4`, `DetailsEmote1`, `DetailsEmote2`, `DetailsEmote3`, `DetailsEmote4`, `DetailsEmoteDelay1`, `DetailsEmoteDelay2`, `DetailsEmoteDelay3`, `DetailsEmoteDelay4`, `EmoteOnIncomplete`, `EmoteOnComplete`, `OfferRewardEmote1`, `OfferRewardEmote2`, `OfferRewardEmote3`, `OfferRewardEmote4`, `OfferRewardEmoteDelay1`, `OfferRewardEmoteDelay2`, `OfferRewardEmoteDelay3`, `OfferRewardEmoteDelay4`, `VerifiedBuild`) VALUES
-(800520, 2, 80, 80, -1, 62, 0, 0, 1791, 0, 0, 0, 0, 0, 250, 500000, 500000, 0, 0, 0, 0, 0, 32968, 0, 0, 0, 0, 49426, 38186, 47241, 0, 1, 1, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 'Weekly: Das Auge der Ewigkeit', 'Tötet Malygos im Auge der Ewigkeit. Ihr werdet reich belohnt werden !', '', '', 'Kommt doch morgen wieder um mir weiterzuhelfen.', 'Tötet Malygos im Auge der Ewigkeit. Ihr werdet reich belohnt werden !', 'Werdet ihr den Auftrag aufsführen?', 28860, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, '', '', '', '', 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1);
+(800520, 2, 80, 80, -1, 62, 0, 0, 1791, 0, 0, 0, 0, 0, 250, 500000, 500000, 0, 0, 0, 0, 0, 32968, 0, 0, 0, 0, 49426, 38186, 47241, 0, 1, 1, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 'Weekly: Das Auge der Ewigkeit', 'Toetet Malygos im Auge der Ewigkeit. Ihr werdet reich belohnt werden !', '', '', 'Kommt doch morgen wieder um mir weiterzuhelfen.', 'Toetet Malygos im Auge der Ewigkeit. Ihr werdet reich belohnt werden !', 'Werdet ihr den Auftrag aufsfuehren?', 28860, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, '', '', '', '', 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1);
 
 
 
@@ -3971,7 +3971,7 @@ REPLACE INTO `creature_questender` (`id`, `quest`) VALUES
 
 REPLACE INTO `creature_queststarter` (`id`, `quest`) VALUES
 (800013, 800520);REPLACE INTO `quest_template` (`ID`, `Method`, `QuestLevel`, `MinLevel`, `QuestSortID`, `QuestType`, `SuggestedGroupNum`, `LimitTime`, `RequiredRaces`, `RequiredFactionId1`, `RequiredFactionId2`, `RequiredFactionValue1`, `RequiredFactionValue2`, `NextQuestIdChain`, `RewardXPId`, `RewardOrRequiredMoney`, `RewardMoneyMaxLevel`, `RewardSpell`, `RewardSpellCast`, `RewardHonor`, `RewardHonorMultiplier`, `SourceItemId`, `Flags`, `RewardTitle`, `RequiredPlayerKills`, `RewardTalents`, `RewardArenaPoints`, `RewardItem1`, `RewardItem2`, `RewardItem3`, `RewardItem4`, `RewardAmount1`, `RewardAmount2`, `RewardAmount3`, `RewardAmount4`, `RewardChoiceItemID1`, `RewardChoiceItemID2`, `RewardChoiceItemID3`, `RewardChoiceItemID4`, `RewardChoiceItemID5`, `RewardChoiceItemID6`, `RewardChoiceItemQuantity1`, `RewardChoiceItemQuantity2`, `RewardChoiceItemQuantity3`, `RewardChoiceItemQuantity4`, `RewardChoiceItemQuantity5`, `RewardChoiceItemQuantity6`, `RewardFactionID1`, `RewardFactionID2`, `RewardFactionID3`, `RewardFactionID4`, `RewardFactionID5`, `RewardFactionValue1`, `RewardFactionValue2`, `RewardFactionValue3`, `RewardFactionValue4`, `RewardFactionValue5`, `RewardFactionOverride1`, `RewardFactionOverride2`, `RewardFactionOverride3`, `RewardFactionOverride4`, `RewardFactionOverride5`, `PointMapId`, `PointX`, `PointY`, `PointOption`, `LogTitle`, `LogDescription`, `QuestDescription`, `EndText`, `OfferRewardText`, `RequestItemsText`, `QuestCompletionLog`, `RequiredNpcOrGo1`, `RequiredNpcOrGo2`, `RequiredNpcOrGo3`, `RequiredNpcOrGo4`, `RequiredNpcOrGoCount1`, `RequiredNpcOrGoCount2`, `RequiredNpcOrGoCount3`, `RequiredNpcOrGoCount4`, `RequiredSourceItemId1`, `RequiredSourceItemId2`, `RequiredSourceItemId3`, `RequiredSourceItemId4`, `RequiredSourceItemCount1`, `RequiredSourceItemCount2`, `RequiredSourceItemCount3`, `RequiredSourceItemCount4`, `RequiredItemId1`, `RequiredItemId2`, `RequiredItemId3`, `RequiredItemId4`, `RequiredItemId5`, `RequiredItemId6`, `RequiredItemCount1`, `RequiredItemCount2`, `RequiredItemCount3`, `RequiredItemCount4`, `RequiredItemCount5`, `RequiredItemCount6`, `Unknown0`, `ObjectiveText1`, `ObjectiveText2`, `ObjectiveText3`, `ObjectiveText4`, `DetailsEmote1`, `DetailsEmote2`, `DetailsEmote3`, `DetailsEmote4`, `DetailsEmoteDelay1`, `DetailsEmoteDelay2`, `DetailsEmoteDelay3`, `DetailsEmoteDelay4`, `EmoteOnIncomplete`, `EmoteOnComplete`, `OfferRewardEmote1`, `OfferRewardEmote2`, `OfferRewardEmote3`, `OfferRewardEmote4`, `OfferRewardEmoteDelay1`, `OfferRewardEmoteDelay2`, `OfferRewardEmoteDelay3`, `OfferRewardEmoteDelay4`, `VerifiedBuild`) VALUES
-(800521, 2, 80, 80, -1, 62, 0, 0, 1791, 0, 0, 0, 0, 0, 250, 500000, 500000, 0, 0, 0, 0, 0, 32968, 0, 0, 0, 0, 49426, 38186, 47241, 0, 1, 1, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 'Weekly: Zul\Gurub', 'Tötet Hakkar in Zul\Gurub. Ihr werdet reich belohnt werden !', '', '', 'Kommt doch morgen wieder um mir weiterzuhelfen.', 'Tötet Hakkar in Zul\Gurub. Ihr werdet reich belohnt werden !', 'Werdet ihr den Auftrag aufsführen?', 14834, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, '', '', '', '', 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1);
+(800521, 2, 80, 80, -1, 62, 0, 0, 1791, 0, 0, 0, 0, 0, 250, 500000, 500000, 0, 0, 0, 0, 0, 32968, 0, 0, 0, 0, 49426, 38186, 47241, 0, 1, 1, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 'Weekly: Zul\Gurub', 'Toetet Hakkar in Zul\Gurub. Ihr werdet reich belohnt werden !', '', '', 'Kommt doch morgen wieder um mir weiterzuhelfen.', 'Toetet Hakkar in Zul\Gurub. Ihr werdet reich belohnt werden !', 'Werdet ihr den Auftrag aufsfuehren?', 14834, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, '', '', '', '', 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1);
 
 
 
@@ -3983,7 +3983,7 @@ REPLACE INTO `creature_questender` (`id`, `quest`) VALUES
 
 REPLACE INTO `creature_queststarter` (`id`, `quest`) VALUES
 (800013, 800521);REPLACE INTO `quest_template` (`ID`, `Method`, `QuestLevel`, `MinLevel`, `QuestSortID`, `QuestType`, `SuggestedGroupNum`, `LimitTime`, `RequiredRaces`, `RequiredFactionId1`, `RequiredFactionId2`, `RequiredFactionValue1`, `RequiredFactionValue2`, `NextQuestIdChain`, `RewardXPId`, `RewardOrRequiredMoney`, `RewardMoneyMaxLevel`, `RewardSpell`, `RewardSpellCast`, `RewardHonor`, `RewardHonorMultiplier`, `SourceItemId`, `Flags`, `RewardTitle`, `RequiredPlayerKills`, `RewardTalents`, `RewardArenaPoints`, `RewardItem1`, `RewardItem2`, `RewardItem3`, `RewardItem4`, `RewardAmount1`, `RewardAmount2`, `RewardAmount3`, `RewardAmount4`, `RewardChoiceItemID1`, `RewardChoiceItemID2`, `RewardChoiceItemID3`, `RewardChoiceItemID4`, `RewardChoiceItemID5`, `RewardChoiceItemID6`, `RewardChoiceItemQuantity1`, `RewardChoiceItemQuantity2`, `RewardChoiceItemQuantity3`, `RewardChoiceItemQuantity4`, `RewardChoiceItemQuantity5`, `RewardChoiceItemQuantity6`, `RewardFactionID1`, `RewardFactionID2`, `RewardFactionID3`, `RewardFactionID4`, `RewardFactionID5`, `RewardFactionValue1`, `RewardFactionValue2`, `RewardFactionValue3`, `RewardFactionValue4`, `RewardFactionValue5`, `RewardFactionOverride1`, `RewardFactionOverride2`, `RewardFactionOverride3`, `RewardFactionOverride4`, `RewardFactionOverride5`, `PointMapId`, `PointX`, `PointY`, `PointOption`, `LogTitle`, `LogDescription`, `QuestDescription`, `EndText`, `OfferRewardText`, `RequestItemsText`, `QuestCompletionLog`, `RequiredNpcOrGo1`, `RequiredNpcOrGo2`, `RequiredNpcOrGo3`, `RequiredNpcOrGo4`, `RequiredNpcOrGoCount1`, `RequiredNpcOrGoCount2`, `RequiredNpcOrGoCount3`, `RequiredNpcOrGoCount4`, `RequiredSourceItemId1`, `RequiredSourceItemId2`, `RequiredSourceItemId3`, `RequiredSourceItemId4`, `RequiredSourceItemCount1`, `RequiredSourceItemCount2`, `RequiredSourceItemCount3`, `RequiredSourceItemCount4`, `RequiredItemId1`, `RequiredItemId2`, `RequiredItemId3`, `RequiredItemId4`, `RequiredItemId5`, `RequiredItemId6`, `RequiredItemCount1`, `RequiredItemCount2`, `RequiredItemCount3`, `RequiredItemCount4`, `RequiredItemCount5`, `RequiredItemCount6`, `Unknown0`, `ObjectiveText1`, `ObjectiveText2`, `ObjectiveText3`, `ObjectiveText4`, `DetailsEmote1`, `DetailsEmote2`, `DetailsEmote3`, `DetailsEmote4`, `DetailsEmoteDelay1`, `DetailsEmoteDelay2`, `DetailsEmoteDelay3`, `DetailsEmoteDelay4`, `EmoteOnIncomplete`, `EmoteOnComplete`, `OfferRewardEmote1`, `OfferRewardEmote2`, `OfferRewardEmote3`, `OfferRewardEmote4`, `OfferRewardEmoteDelay1`, `OfferRewardEmoteDelay2`, `OfferRewardEmoteDelay3`, `OfferRewardEmoteDelay4`, `VerifiedBuild`) VALUES
-(800522, 2, 80, 80, -1, 62, 0, 0, 1791, 0, 0, 0, 0, 0, 250, 500000, 500000, 0, 0, 0, 0, 0, 32968, 0, 0, 0, 0, 49426, 38186, 47241, 0, 1, 1, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 'Weekly: Ruinen von Ahn\Qiraj', 'Tötet Ossirian in den Ruinen von Ahn\Qiraj. Ihr werdet reich belohnt werden !', '', '', 'Kommt doch morgen wieder um mir weiterzuhelfen.', 'Tötet Ossirian in den Ruinen von Ahn\Qiraj. Ihr werdet reich belohnt werden !', 'Werdet ihr den Auftrag aufsführen?', 15339, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, '', '', '', '', 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1);
+(800522, 2, 80, 80, -1, 62, 0, 0, 1791, 0, 0, 0, 0, 0, 250, 500000, 500000, 0, 0, 0, 0, 0, 32968, 0, 0, 0, 0, 49426, 38186, 47241, 0, 1, 1, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 'Weekly: Ruinen von Ahn\Qiraj', 'Toetet Ossirian in den Ruinen von Ahn\Qiraj. Ihr werdet reich belohnt werden !', '', '', 'Kommt doch morgen wieder um mir weiterzuhelfen.', 'Toetet Ossirian in den Ruinen von Ahn\Qiraj. Ihr werdet reich belohnt werden !', 'Werdet ihr den Auftrag aufsfuehren?', 15339, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, '', '', '', '', 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1);
 
 
 
@@ -3995,7 +3995,7 @@ REPLACE INTO `creature_questender` (`id`, `quest`) VALUES
 
 REPLACE INTO `creature_queststarter` (`id`, `quest`) VALUES
 (800013, 800522);REPLACE INTO `quest_template` (`ID`, `Method`, `QuestLevel`, `MinLevel`, `QuestSortID`, `QuestType`, `SuggestedGroupNum`, `LimitTime`, `RequiredRaces`, `RequiredFactionId1`, `RequiredFactionId2`, `RequiredFactionValue1`, `RequiredFactionValue2`, `NextQuestIdChain`, `RewardXPId`, `RewardOrRequiredMoney`, `RewardMoneyMaxLevel`, `RewardSpell`, `RewardSpellCast`, `RewardHonor`, `RewardHonorMultiplier`, `SourceItemId`, `Flags`, `RewardTitle`, `RequiredPlayerKills`, `RewardTalents`, `RewardArenaPoints`, `RewardItem1`, `RewardItem2`, `RewardItem3`, `RewardItem4`, `RewardAmount1`, `RewardAmount2`, `RewardAmount3`, `RewardAmount4`, `RewardChoiceItemID1`, `RewardChoiceItemID2`, `RewardChoiceItemID3`, `RewardChoiceItemID4`, `RewardChoiceItemID5`, `RewardChoiceItemID6`, `RewardChoiceItemQuantity1`, `RewardChoiceItemQuantity2`, `RewardChoiceItemQuantity3`, `RewardChoiceItemQuantity4`, `RewardChoiceItemQuantity5`, `RewardChoiceItemQuantity6`, `RewardFactionID1`, `RewardFactionID2`, `RewardFactionID3`, `RewardFactionID4`, `RewardFactionID5`, `RewardFactionValue1`, `RewardFactionValue2`, `RewardFactionValue3`, `RewardFactionValue4`, `RewardFactionValue5`, `RewardFactionOverride1`, `RewardFactionOverride2`, `RewardFactionOverride3`, `RewardFactionOverride4`, `RewardFactionOverride5`, `PointMapId`, `PointX`, `PointY`, `PointOption`, `LogTitle`, `LogDescription`, `QuestDescription`, `EndText`, `OfferRewardText`, `RequestItemsText`, `QuestCompletionLog`, `RequiredNpcOrGo1`, `RequiredNpcOrGo2`, `RequiredNpcOrGo3`, `RequiredNpcOrGo4`, `RequiredNpcOrGoCount1`, `RequiredNpcOrGoCount2`, `RequiredNpcOrGoCount3`, `RequiredNpcOrGoCount4`, `RequiredSourceItemId1`, `RequiredSourceItemId2`, `RequiredSourceItemId3`, `RequiredSourceItemId4`, `RequiredSourceItemCount1`, `RequiredSourceItemCount2`, `RequiredSourceItemCount3`, `RequiredSourceItemCount4`, `RequiredItemId1`, `RequiredItemId2`, `RequiredItemId3`, `RequiredItemId4`, `RequiredItemId5`, `RequiredItemId6`, `RequiredItemCount1`, `RequiredItemCount2`, `RequiredItemCount3`, `RequiredItemCount4`, `RequiredItemCount5`, `RequiredItemCount6`, `Unknown0`, `ObjectiveText1`, `ObjectiveText2`, `ObjectiveText3`, `ObjectiveText4`, `DetailsEmote1`, `DetailsEmote2`, `DetailsEmote3`, `DetailsEmote4`, `DetailsEmoteDelay1`, `DetailsEmoteDelay2`, `DetailsEmoteDelay3`, `DetailsEmoteDelay4`, `EmoteOnIncomplete`, `EmoteOnComplete`, `OfferRewardEmote1`, `OfferRewardEmote2`, `OfferRewardEmote3`, `OfferRewardEmote4`, `OfferRewardEmoteDelay1`, `OfferRewardEmoteDelay2`, `OfferRewardEmoteDelay3`, `OfferRewardEmoteDelay4`, `VerifiedBuild`) VALUES
-(800523, 2, 80, 80, -1, 62, 0, 0, 1791, 0, 0, 0, 0, 0, 250, 500000, 500000, 0, 0, 0, 0, 0, 32968, 0, 0, 0, 0, 49426, 38186, 47241, 0, 1, 1, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 'Weekly: Gruuls Unterschlupf', 'Tötet Gruuls in Gruuls Unterschlupf. Ihr werdet reich belohnt werden !', '', '', 'Kommt doch morgen wieder um mir weiterzuhelfen.', 'Tötet Gruuls in Gruuls Unterschlupf. Ihr werdet reich belohnt werden !', 'Werdet ihr den Auftrag aufsführen?', 19044, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, '', '', '', '', 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1);
+(800523, 2, 80, 80, -1, 62, 0, 0, 1791, 0, 0, 0, 0, 0, 250, 500000, 500000, 0, 0, 0, 0, 0, 32968, 0, 0, 0, 0, 49426, 38186, 47241, 0, 1, 1, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 'Weekly: Gruuls Unterschlupf', 'Toetet Gruuls in Gruuls Unterschlupf. Ihr werdet reich belohnt werden !', '', '', 'Kommt doch morgen wieder um mir weiterzuhelfen.', 'Toetet Gruuls in Gruuls Unterschlupf. Ihr werdet reich belohnt werden !', 'Werdet ihr den Auftrag aufsfuehren?', 19044, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, '', '', '', '', 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1);
 
 
 
@@ -4075,7 +4075,7 @@ REPLACE INTO `creature_queststarter` (`id`, `quest`) VALUES
  /*  PointOption  */ 0,
  /*  LogTitle  */ 'Angeln: Kiefers Engelfisch',
  /*  LogDescription  */  'Angelt Kiefers Engelfisch.',
- /*  QuestDescription   */ 'Hallo $N, bitte angelt mir Kiefers Engelfisch. Ihr bekommt eine Belohnung dafür.',
+ /*  QuestDescription   */ 'Hallo $N, bitte angelt mir Kiefers Engelfisch. Ihr bekommt eine Belohnung dafuer.',
  /*  EndText   */  '',
  /*  OfferRewardText  */  'Beißt er heute nicht?',
  /*  RequestItemsText  */ 'Angelt Kiefers Engelfisch.',
@@ -4162,7 +4162,7 @@ REPLACE INTO `creature_queststarter` (`id`, `quest`) VALUES
 (800009, 800524);
 
 REPLACE INTO `quest_template` (`ID`, `Method`, `QuestLevel`, `MinLevel`, `QuestSortID`, `QuestType`, `SuggestedGroupNum`, `LimitTime`, `RequiredRaces`, `RequiredFactionId1`, `RequiredFactionId2`, `RequiredFactionValue1`, `RequiredFactionValue2`, `NextQuestIdChain`, `RewardXPId`, `RewardOrRequiredMoney`, `RewardMoneyMaxLevel`, `RewardSpell`, `RewardSpellCast`, `RewardHonor`, `RewardHonorMultiplier`, `SourceItemId`, `Flags`, `RewardTitle`, `RequiredPlayerKills`, `RewardTalents`, `RewardArenaPoints`, `RewardItem1`, `RewardItem2`, `RewardItem3`, `RewardItem4`, `RewardAmount1`, `RewardAmount2`, `RewardAmount3`, `RewardAmount4`, `RewardChoiceItemID1`, `RewardChoiceItemID2`, `RewardChoiceItemID3`, `RewardChoiceItemID4`, `RewardChoiceItemID5`, `RewardChoiceItemID6`, `RewardChoiceItemQuantity1`, `RewardChoiceItemQuantity2`, `RewardChoiceItemQuantity3`, `RewardChoiceItemQuantity4`, `RewardChoiceItemQuantity5`, `RewardChoiceItemQuantity6`, `RewardFactionID1`, `RewardFactionID2`, `RewardFactionID3`, `RewardFactionID4`, `RewardFactionID5`, `RewardFactionValue1`, `RewardFactionValue2`, `RewardFactionValue3`, `RewardFactionValue4`, `RewardFactionValue5`, `RewardFactionOverride1`, `RewardFactionOverride2`, `RewardFactionOverride3`, `RewardFactionOverride4`, `RewardFactionOverride5`, `PointMapId`, `PointX`, `PointY`, `PointOption`, `LogTitle`, `LogDescription`, `QuestDescription`, `EndText`, `OfferRewardText`, `RequestItemsText`, `QuestCompletionLog`, `RequiredNpcOrGo1`, `RequiredNpcOrGo2`, `RequiredNpcOrGo3`, `RequiredNpcOrGo4`, `RequiredNpcOrGoCount1`, `RequiredNpcOrGoCount2`, `RequiredNpcOrGoCount3`, `RequiredNpcOrGoCount4`, `RequiredSourceItemId1`, `RequiredSourceItemId2`, `RequiredSourceItemId3`, `RequiredSourceItemId4`, `RequiredSourceItemCount1`, `RequiredSourceItemCount2`, `RequiredSourceItemCount3`, `RequiredSourceItemCount4`, `RequiredItemId1`, `RequiredItemId2`, `RequiredItemId3`, `RequiredItemId4`, `RequiredItemId5`, `RequiredItemId6`, `RequiredItemCount1`, `RequiredItemCount2`, `RequiredItemCount3`, `RequiredItemCount4`, `RequiredItemCount5`, `RequiredItemCount6`, `Unknown0`, `ObjectiveText1`, `ObjectiveText2`, `ObjectiveText3`, `ObjectiveText4`, `DetailsEmote1`, `DetailsEmote2`, `DetailsEmote3`, `DetailsEmote4`, `DetailsEmoteDelay1`, `DetailsEmoteDelay2`, `DetailsEmoteDelay3`, `DetailsEmoteDelay4`, `EmoteOnIncomplete`, `EmoteOnComplete`, `OfferRewardEmote1`, `OfferRewardEmote2`, `OfferRewardEmote3`, `OfferRewardEmote4`, `OfferRewardEmoteDelay1`, `OfferRewardEmoteDelay2`, `OfferRewardEmoteDelay3`, `OfferRewardEmoteDelay4`, `VerifiedBuild`) VALUES
-(800525, 2, 80, 80, -1, 62, 0, 0, 1791, 0, 0, 0, 0, 0, 250, 500000, 500000, 0, 0, 0, 0, 0, 32840, 0, 0, 0, 0, 49426, 38186, 47241, 0, 1, 1, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 'Weekly: Das Rubinsanktum', 'Tötet Halion im Rubinsanktum. Ihr werdet reich belohnt werden !', '', '', 'Kommt doch morgen wieder um mir weiterzuhelfen.', 'Tötet Halion im Rubinsanktum. Ihr werdet reich belohnt werden !', 'Werdet ihr den Auftrag aufsführen?', 39863, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, '', '', '', '', 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1);
+(800525, 2, 80, 80, -1, 62, 0, 0, 1791, 0, 0, 0, 0, 0, 250, 500000, 500000, 0, 0, 0, 0, 0, 32840, 0, 0, 0, 0, 49426, 38186, 47241, 0, 1, 1, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 'Weekly: Das Rubinsanktum', 'Toetet Halion im Rubinsanktum. Ihr werdet reich belohnt werden !', '', '', 'Kommt doch morgen wieder um mir weiterzuhelfen.', 'Toetet Halion im Rubinsanktum. Ihr werdet reich belohnt werden !', 'Werdet ihr den Auftrag aufsfuehren?', 39863, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, '', '', '', '', 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1);
 
 
 
@@ -4174,7 +4174,7 @@ REPLACE INTO `creature_questender` (`id`, `quest`) VALUES
 
 REPLACE INTO `creature_queststarter` (`id`, `quest`) VALUES
 (800013, 800525);REPLACE INTO `quest_template` (`ID`, `Method`, `QuestLevel`, `MinLevel`, `QuestSortID`, `QuestType`, `SuggestedGroupNum`, `LimitTime`, `RequiredRaces`, `RequiredFactionId1`, `RequiredFactionId2`, `RequiredFactionValue1`, `RequiredFactionValue2`, `NextQuestIdChain`, `RewardXPId`, `RewardOrRequiredMoney`, `RewardMoneyMaxLevel`, `RewardSpell`, `RewardSpellCast`, `RewardHonor`, `RewardHonorMultiplier`, `SourceItemId`, `Flags`, `RewardTitle`, `RequiredPlayerKills`, `RewardTalents`, `RewardArenaPoints`, `RewardItem1`, `RewardItem2`, `RewardItem3`, `RewardItem4`, `RewardAmount1`, `RewardAmount2`, `RewardAmount3`, `RewardAmount4`, `RewardChoiceItemID1`, `RewardChoiceItemID2`, `RewardChoiceItemID3`, `RewardChoiceItemID4`, `RewardChoiceItemID5`, `RewardChoiceItemID6`, `RewardChoiceItemQuantity1`, `RewardChoiceItemQuantity2`, `RewardChoiceItemQuantity3`, `RewardChoiceItemQuantity4`, `RewardChoiceItemQuantity5`, `RewardChoiceItemQuantity6`, `RewardFactionID1`, `RewardFactionID2`, `RewardFactionID3`, `RewardFactionID4`, `RewardFactionID5`, `RewardFactionValue1`, `RewardFactionValue2`, `RewardFactionValue3`, `RewardFactionValue4`, `RewardFactionValue5`, `RewardFactionOverride1`, `RewardFactionOverride2`, `RewardFactionOverride3`, `RewardFactionOverride4`, `RewardFactionOverride5`, `PointMapId`, `PointX`, `PointY`, `PointOption`, `LogTitle`, `LogDescription`, `QuestDescription`, `EndText`, `OfferRewardText`, `RequestItemsText`, `QuestCompletionLog`, `RequiredNpcOrGo1`, `RequiredNpcOrGo2`, `RequiredNpcOrGo3`, `RequiredNpcOrGo4`, `RequiredNpcOrGoCount1`, `RequiredNpcOrGoCount2`, `RequiredNpcOrGoCount3`, `RequiredNpcOrGoCount4`, `RequiredSourceItemId1`, `RequiredSourceItemId2`, `RequiredSourceItemId3`, `RequiredSourceItemId4`, `RequiredSourceItemCount1`, `RequiredSourceItemCount2`, `RequiredSourceItemCount3`, `RequiredSourceItemCount4`, `RequiredItemId1`, `RequiredItemId2`, `RequiredItemId3`, `RequiredItemId4`, `RequiredItemId5`, `RequiredItemId6`, `RequiredItemCount1`, `RequiredItemCount2`, `RequiredItemCount3`, `RequiredItemCount4`, `RequiredItemCount5`, `RequiredItemCount6`, `Unknown0`, `ObjectiveText1`, `ObjectiveText2`, `ObjectiveText3`, `ObjectiveText4`, `DetailsEmote1`, `DetailsEmote2`, `DetailsEmote3`, `DetailsEmote4`, `DetailsEmoteDelay1`, `DetailsEmoteDelay2`, `DetailsEmoteDelay3`, `DetailsEmoteDelay4`, `EmoteOnIncomplete`, `EmoteOnComplete`, `OfferRewardEmote1`, `OfferRewardEmote2`, `OfferRewardEmote3`, `OfferRewardEmote4`, `OfferRewardEmoteDelay1`, `OfferRewardEmoteDelay2`, `OfferRewardEmoteDelay3`, `OfferRewardEmoteDelay4`, `VerifiedBuild`) VALUES
-(800526, 2, 80, 80, -1, 62, 0, 0, 1791, 0, 0, 0, 0, 0, 250, 500000, 500000, 0, 0, 0, 0, 0, 32840, 0, 0, 0, 0, 49426, 38186, 47241, 0, 1, 1, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 'Weekly: Onyxias Hort', 'Tötet Onyxia in Onyxias Hort. Ihr werdet reich belohnt werden !', '', '', 'Kommt doch morgen wieder um mir weiterzuhelfen.', 'Tötet Onyxia in Onyxias Hort. Ihr werdet reich belohnt werden !', 'Werdet ihr den Auftrag aufsführen?', 10184, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, '', '', '', '', 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1);
+(800526, 2, 80, 80, -1, 62, 0, 0, 1791, 0, 0, 0, 0, 0, 250, 500000, 500000, 0, 0, 0, 0, 0, 32840, 0, 0, 0, 0, 49426, 38186, 47241, 0, 1, 1, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 'Weekly: Onyxias Hort', 'Toetet Onyxia in Onyxias Hort. Ihr werdet reich belohnt werden !', '', '', 'Kommt doch morgen wieder um mir weiterzuhelfen.', 'Toetet Onyxia in Onyxias Hort. Ihr werdet reich belohnt werden !', 'Werdet ihr den Auftrag aufsfuehren?', 10184, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, '', '', '', '', 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1);
 
 
 
@@ -4186,7 +4186,7 @@ REPLACE INTO `creature_questender` (`id`, `quest`) VALUES
 
 REPLACE INTO `creature_queststarter` (`id`, `quest`) VALUES
 (800013, 800526);REPLACE INTO `quest_template` (`ID`, `Method`, `QuestLevel`, `MinLevel`, `QuestSortID`, `QuestType`, `SuggestedGroupNum`, `LimitTime`, `RequiredRaces`, `RequiredFactionId1`, `RequiredFactionId2`, `RequiredFactionValue1`, `RequiredFactionValue2`, `NextQuestIdChain`, `RewardXPId`, `RewardOrRequiredMoney`, `RewardMoneyMaxLevel`, `RewardSpell`, `RewardSpellCast`, `RewardHonor`, `RewardHonorMultiplier`, `SourceItemId`, `Flags`, `RewardTitle`, `RequiredPlayerKills`, `RewardTalents`, `RewardArenaPoints`, `RewardItem1`, `RewardItem2`, `RewardItem3`, `RewardItem4`, `RewardAmount1`, `RewardAmount2`, `RewardAmount3`, `RewardAmount4`, `RewardChoiceItemID1`, `RewardChoiceItemID2`, `RewardChoiceItemID3`, `RewardChoiceItemID4`, `RewardChoiceItemID5`, `RewardChoiceItemID6`, `RewardChoiceItemQuantity1`, `RewardChoiceItemQuantity2`, `RewardChoiceItemQuantity3`, `RewardChoiceItemQuantity4`, `RewardChoiceItemQuantity5`, `RewardChoiceItemQuantity6`, `RewardFactionID1`, `RewardFactionID2`, `RewardFactionID3`, `RewardFactionID4`, `RewardFactionID5`, `RewardFactionValue1`, `RewardFactionValue2`, `RewardFactionValue3`, `RewardFactionValue4`, `RewardFactionValue5`, `RewardFactionOverride1`, `RewardFactionOverride2`, `RewardFactionOverride3`, `RewardFactionOverride4`, `RewardFactionOverride5`, `PointMapId`, `PointX`, `PointY`, `PointOption`, `LogTitle`, `LogDescription`, `QuestDescription`, `EndText`, `OfferRewardText`, `RequestItemsText`, `QuestCompletionLog`, `RequiredNpcOrGo1`, `RequiredNpcOrGo2`, `RequiredNpcOrGo3`, `RequiredNpcOrGo4`, `RequiredNpcOrGoCount1`, `RequiredNpcOrGoCount2`, `RequiredNpcOrGoCount3`, `RequiredNpcOrGoCount4`, `RequiredSourceItemId1`, `RequiredSourceItemId2`, `RequiredSourceItemId3`, `RequiredSourceItemId4`, `RequiredSourceItemCount1`, `RequiredSourceItemCount2`, `RequiredSourceItemCount3`, `RequiredSourceItemCount4`, `RequiredItemId1`, `RequiredItemId2`, `RequiredItemId3`, `RequiredItemId4`, `RequiredItemId5`, `RequiredItemId6`, `RequiredItemCount1`, `RequiredItemCount2`, `RequiredItemCount3`, `RequiredItemCount4`, `RequiredItemCount5`, `RequiredItemCount6`, `Unknown0`, `ObjectiveText1`, `ObjectiveText2`, `ObjectiveText3`, `ObjectiveText4`, `DetailsEmote1`, `DetailsEmote2`, `DetailsEmote3`, `DetailsEmote4`, `DetailsEmoteDelay1`, `DetailsEmoteDelay2`, `DetailsEmoteDelay3`, `DetailsEmoteDelay4`, `EmoteOnIncomplete`, `EmoteOnComplete`, `OfferRewardEmote1`, `OfferRewardEmote2`, `OfferRewardEmote3`, `OfferRewardEmote4`, `OfferRewardEmoteDelay1`, `OfferRewardEmoteDelay2`, `OfferRewardEmoteDelay3`, `OfferRewardEmoteDelay4`, `VerifiedBuild`) VALUES
-(800527, 2, 80, 80, -1, 62, 0, 0, 1791, 0, 0, 0, 0, 0, 250, 500000, 500000, 0, 0, 0, 0, 0, 32840, 0, 0, 0, 0, 49426, 38186, 47241, 0, 1, 1, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 'Weekly: Der Schwarze Tempel', 'Tötet Illidan im schwarzen Tempel. Ihr werdet reich belohnt werden !', '', '', 'Kommt doch morgen wieder um mir weiterzuhelfen.', 'Tötet Illidan im schwarzen Tempel. Ihr werdet reich belohnt werden !', 'Werdet ihr den Auftrag aufsführen?', 22917, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, '', '', '', '', 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1);
+(800527, 2, 80, 80, -1, 62, 0, 0, 1791, 0, 0, 0, 0, 0, 250, 500000, 500000, 0, 0, 0, 0, 0, 32840, 0, 0, 0, 0, 49426, 38186, 47241, 0, 1, 1, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 'Weekly: Der Schwarze Tempel', 'Toetet Illidan im schwarzen Tempel. Ihr werdet reich belohnt werden !', '', '', 'Kommt doch morgen wieder um mir weiterzuhelfen.', 'Toetet Illidan im schwarzen Tempel. Ihr werdet reich belohnt werden !', 'Werdet ihr den Auftrag aufsfuehren?', 22917, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, '', '', '', '', 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1);
 
 
 
@@ -4198,7 +4198,7 @@ REPLACE INTO `creature_questender` (`id`, `quest`) VALUES
 
 REPLACE INTO `creature_queststarter` (`id`, `quest`) VALUES
 (800013, 800527);REPLACE INTO `quest_template` (`ID`, `Method`, `QuestLevel`, `MinLevel`, `QuestSortID`, `QuestType`, `SuggestedGroupNum`, `LimitTime`, `RequiredRaces`, `RequiredFactionId1`, `RequiredFactionId2`, `RequiredFactionValue1`, `RequiredFactionValue2`, `NextQuestIdChain`, `RewardXPId`, `RewardOrRequiredMoney`, `RewardMoneyMaxLevel`, `RewardSpell`, `RewardSpellCast`, `RewardHonor`, `RewardHonorMultiplier`, `SourceItemId`, `Flags`, `RewardTitle`, `RequiredPlayerKills`, `RewardTalents`, `RewardArenaPoints`, `RewardItem1`, `RewardItem2`, `RewardItem3`, `RewardItem4`, `RewardAmount1`, `RewardAmount2`, `RewardAmount3`, `RewardAmount4`, `RewardChoiceItemID1`, `RewardChoiceItemID2`, `RewardChoiceItemID3`, `RewardChoiceItemID4`, `RewardChoiceItemID5`, `RewardChoiceItemID6`, `RewardChoiceItemQuantity1`, `RewardChoiceItemQuantity2`, `RewardChoiceItemQuantity3`, `RewardChoiceItemQuantity4`, `RewardChoiceItemQuantity5`, `RewardChoiceItemQuantity6`, `RewardFactionID1`, `RewardFactionID2`, `RewardFactionID3`, `RewardFactionID4`, `RewardFactionID5`, `RewardFactionValue1`, `RewardFactionValue2`, `RewardFactionValue3`, `RewardFactionValue4`, `RewardFactionValue5`, `RewardFactionOverride1`, `RewardFactionOverride2`, `RewardFactionOverride3`, `RewardFactionOverride4`, `RewardFactionOverride5`, `PointMapId`, `PointX`, `PointY`, `PointOption`, `LogTitle`, `LogDescription`, `QuestDescription`, `EndText`, `OfferRewardText`, `RequestItemsText`, `QuestCompletionLog`, `RequiredNpcOrGo1`, `RequiredNpcOrGo2`, `RequiredNpcOrGo3`, `RequiredNpcOrGo4`, `RequiredNpcOrGoCount1`, `RequiredNpcOrGoCount2`, `RequiredNpcOrGoCount3`, `RequiredNpcOrGoCount4`, `RequiredSourceItemId1`, `RequiredSourceItemId2`, `RequiredSourceItemId3`, `RequiredSourceItemId4`, `RequiredSourceItemCount1`, `RequiredSourceItemCount2`, `RequiredSourceItemCount3`, `RequiredSourceItemCount4`, `RequiredItemId1`, `RequiredItemId2`, `RequiredItemId3`, `RequiredItemId4`, `RequiredItemId5`, `RequiredItemId6`, `RequiredItemCount1`, `RequiredItemCount2`, `RequiredItemCount3`, `RequiredItemCount4`, `RequiredItemCount5`, `RequiredItemCount6`, `Unknown0`, `ObjectiveText1`, `ObjectiveText2`, `ObjectiveText3`, `ObjectiveText4`, `DetailsEmote1`, `DetailsEmote2`, `DetailsEmote3`, `DetailsEmote4`, `DetailsEmoteDelay1`, `DetailsEmoteDelay2`, `DetailsEmoteDelay3`, `DetailsEmoteDelay4`, `EmoteOnIncomplete`, `EmoteOnComplete`, `OfferRewardEmote1`, `OfferRewardEmote2`, `OfferRewardEmote3`, `OfferRewardEmote4`, `OfferRewardEmoteDelay1`, `OfferRewardEmoteDelay2`, `OfferRewardEmoteDelay3`, `OfferRewardEmoteDelay4`, `VerifiedBuild`) VALUES
-(800528, 2, 80, 80, -1, 62, 0, 0, 1791, 0, 0, 0, 0, 0, 250, 500000, 500000, 0, 0, 0, 0, 0, 32840, 0, 0, 0, 0, 49426, 38186, 47241, 0, 1, 1, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 'Weekly: Festung der Stürme', 'Tötet Kael\Thas in der Festung der Stürme. Ihr werdet reich belohnt werden !', '', '', 'Kommt doch morgen wieder um mir weiterzuhelfen.', 'Tötet Kael\Thas in der Festung der Stürme. Ihr werdet reich belohnt werden !', 'Werdet ihr den Auftrag aufsführen?', 19622, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, '', '', '', '', 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1);
+(800528, 2, 80, 80, -1, 62, 0, 0, 1791, 0, 0, 0, 0, 0, 250, 500000, 500000, 0, 0, 0, 0, 0, 32840, 0, 0, 0, 0, 49426, 38186, 47241, 0, 1, 1, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 'Weekly: Festung der Stuerme', 'Toetet Kael\Thas in der Festung der Stuerme. Ihr werdet reich belohnt werden !', '', '', 'Kommt doch morgen wieder um mir weiterzuhelfen.', 'Toetet Kael\Thas in der Festung der Stuerme. Ihr werdet reich belohnt werden !', 'Werdet ihr den Auftrag aufsfuehren?', 19622, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, '', '', '', '', 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1);
 
 
 
@@ -4210,7 +4210,7 @@ REPLACE INTO `creature_questender` (`id`, `quest`) VALUES
 
 REPLACE INTO `creature_queststarter` (`id`, `quest`) VALUES
 (800013, 800528);REPLACE INTO `quest_template` (`ID`, `Method`, `QuestLevel`, `MinLevel`, `QuestSortID`, `QuestType`, `SuggestedGroupNum`, `LimitTime`, `RequiredRaces`, `RequiredFactionId1`, `RequiredFactionId2`, `RequiredFactionValue1`, `RequiredFactionValue2`, `NextQuestIdChain`, `RewardXPId`, `RewardOrRequiredMoney`, `RewardMoneyMaxLevel`, `RewardSpell`, `RewardSpellCast`, `RewardHonor`, `RewardHonorMultiplier`, `SourceItemId`, `Flags`, `RewardTitle`, `RequiredPlayerKills`, `RewardTalents`, `RewardArenaPoints`, `RewardItem1`, `RewardItem2`, `RewardItem3`, `RewardItem4`, `RewardAmount1`, `RewardAmount2`, `RewardAmount3`, `RewardAmount4`, `RewardChoiceItemID1`, `RewardChoiceItemID2`, `RewardChoiceItemID3`, `RewardChoiceItemID4`, `RewardChoiceItemID5`, `RewardChoiceItemID6`, `RewardChoiceItemQuantity1`, `RewardChoiceItemQuantity2`, `RewardChoiceItemQuantity3`, `RewardChoiceItemQuantity4`, `RewardChoiceItemQuantity5`, `RewardChoiceItemQuantity6`, `RewardFactionID1`, `RewardFactionID2`, `RewardFactionID3`, `RewardFactionID4`, `RewardFactionID5`, `RewardFactionValue1`, `RewardFactionValue2`, `RewardFactionValue3`, `RewardFactionValue4`, `RewardFactionValue5`, `RewardFactionOverride1`, `RewardFactionOverride2`, `RewardFactionOverride3`, `RewardFactionOverride4`, `RewardFactionOverride5`, `PointMapId`, `PointX`, `PointY`, `PointOption`, `LogTitle`, `LogDescription`, `QuestDescription`, `EndText`, `OfferRewardText`, `RequestItemsText`, `QuestCompletionLog`, `RequiredNpcOrGo1`, `RequiredNpcOrGo2`, `RequiredNpcOrGo3`, `RequiredNpcOrGo4`, `RequiredNpcOrGoCount1`, `RequiredNpcOrGoCount2`, `RequiredNpcOrGoCount3`, `RequiredNpcOrGoCount4`, `RequiredSourceItemId1`, `RequiredSourceItemId2`, `RequiredSourceItemId3`, `RequiredSourceItemId4`, `RequiredSourceItemCount1`, `RequiredSourceItemCount2`, `RequiredSourceItemCount3`, `RequiredSourceItemCount4`, `RequiredItemId1`, `RequiredItemId2`, `RequiredItemId3`, `RequiredItemId4`, `RequiredItemId5`, `RequiredItemId6`, `RequiredItemCount1`, `RequiredItemCount2`, `RequiredItemCount3`, `RequiredItemCount4`, `RequiredItemCount5`, `RequiredItemCount6`, `Unknown0`, `ObjectiveText1`, `ObjectiveText2`, `ObjectiveText3`, `ObjectiveText4`, `DetailsEmote1`, `DetailsEmote2`, `DetailsEmote3`, `DetailsEmote4`, `DetailsEmoteDelay1`, `DetailsEmoteDelay2`, `DetailsEmoteDelay3`, `DetailsEmoteDelay4`, `EmoteOnIncomplete`, `EmoteOnComplete`, `OfferRewardEmote1`, `OfferRewardEmote2`, `OfferRewardEmote3`, `OfferRewardEmote4`, `OfferRewardEmoteDelay1`, `OfferRewardEmoteDelay2`, `OfferRewardEmoteDelay3`, `OfferRewardEmoteDelay4`, `VerifiedBuild`) VALUES
-(800529, 2, 80, 80, -1, 62, 0, 0, 1791, 0, 0, 0, 0, 0, 250, 500000, 500000, 0, 0, 0, 0, 0, 32840, 0, 0, 0, 0, 49426, 38186, 47241, 0, 1, 1, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 'Weekly: Hyjalgipfel', 'Tötet Archimonde im Hyjalgipfel. Ihr werdet reich belohnt werden !', '', '', 'Kommt doch morgen wieder um mir weiterzuhelfen.', 'Tötet Archimonde im Hyjalgipfel. Ihr werdet reich belohnt werden !', 'Werdet ihr den Auftrag aufsführen?', 17968, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, '', '', '', '', 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1);
+(800529, 2, 80, 80, -1, 62, 0, 0, 1791, 0, 0, 0, 0, 0, 250, 500000, 500000, 0, 0, 0, 0, 0, 32840, 0, 0, 0, 0, 49426, 38186, 47241, 0, 1, 1, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 'Weekly: Hyjalgipfel', 'Toetet Archimonde im Hyjalgipfel. Ihr werdet reich belohnt werden !', '', '', 'Kommt doch morgen wieder um mir weiterzuhelfen.', 'Toetet Archimonde im Hyjalgipfel. Ihr werdet reich belohnt werden !', 'Werdet ihr den Auftrag aufsfuehren?', 17968, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, '', '', '', '', 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1);
 
 
 
@@ -4222,7 +4222,7 @@ REPLACE INTO `creature_questender` (`id`, `quest`) VALUES
 
 REPLACE INTO `creature_queststarter` (`id`, `quest`) VALUES
 (800013, 800529);REPLACE INTO `quest_template` (`ID`, `Method`, `QuestLevel`, `MinLevel`, `QuestSortID`, `QuestType`, `SuggestedGroupNum`, `LimitTime`, `RequiredRaces`, `RequiredFactionId1`, `RequiredFactionId2`, `RequiredFactionValue1`, `RequiredFactionValue2`, `NextQuestIdChain`, `RewardXPId`, `RewardOrRequiredMoney`, `RewardMoneyMaxLevel`, `RewardSpell`, `RewardSpellCast`, `RewardHonor`, `RewardHonorMultiplier`, `SourceItemId`, `Flags`, `RewardTitle`, `RequiredPlayerKills`, `RewardTalents`, `RewardArenaPoints`, `RewardItem1`, `RewardItem2`, `RewardItem3`, `RewardItem4`, `RewardAmount1`, `RewardAmount2`, `RewardAmount3`, `RewardAmount4`, `RewardChoiceItemID1`, `RewardChoiceItemID2`, `RewardChoiceItemID3`, `RewardChoiceItemID4`, `RewardChoiceItemID5`, `RewardChoiceItemID6`, `RewardChoiceItemQuantity1`, `RewardChoiceItemQuantity2`, `RewardChoiceItemQuantity3`, `RewardChoiceItemQuantity4`, `RewardChoiceItemQuantity5`, `RewardChoiceItemQuantity6`, `RewardFactionID1`, `RewardFactionID2`, `RewardFactionID3`, `RewardFactionID4`, `RewardFactionID5`, `RewardFactionValue1`, `RewardFactionValue2`, `RewardFactionValue3`, `RewardFactionValue4`, `RewardFactionValue5`, `RewardFactionOverride1`, `RewardFactionOverride2`, `RewardFactionOverride3`, `RewardFactionOverride4`, `RewardFactionOverride5`, `PointMapId`, `PointX`, `PointY`, `PointOption`, `LogTitle`, `LogDescription`, `QuestDescription`, `EndText`, `OfferRewardText`, `RequestItemsText`, `QuestCompletionLog`, `RequiredNpcOrGo1`, `RequiredNpcOrGo2`, `RequiredNpcOrGo3`, `RequiredNpcOrGo4`, `RequiredNpcOrGoCount1`, `RequiredNpcOrGoCount2`, `RequiredNpcOrGoCount3`, `RequiredNpcOrGoCount4`, `RequiredSourceItemId1`, `RequiredSourceItemId2`, `RequiredSourceItemId3`, `RequiredSourceItemId4`, `RequiredSourceItemCount1`, `RequiredSourceItemCount2`, `RequiredSourceItemCount3`, `RequiredSourceItemCount4`, `RequiredItemId1`, `RequiredItemId2`, `RequiredItemId3`, `RequiredItemId4`, `RequiredItemId5`, `RequiredItemId6`, `RequiredItemCount1`, `RequiredItemCount2`, `RequiredItemCount3`, `RequiredItemCount4`, `RequiredItemCount5`, `RequiredItemCount6`, `Unknown0`, `ObjectiveText1`, `ObjectiveText2`, `ObjectiveText3`, `ObjectiveText4`, `DetailsEmote1`, `DetailsEmote2`, `DetailsEmote3`, `DetailsEmote4`, `DetailsEmoteDelay1`, `DetailsEmoteDelay2`, `DetailsEmoteDelay3`, `DetailsEmoteDelay4`, `EmoteOnIncomplete`, `EmoteOnComplete`, `OfferRewardEmote1`, `OfferRewardEmote2`, `OfferRewardEmote3`, `OfferRewardEmote4`, `OfferRewardEmoteDelay1`, `OfferRewardEmoteDelay2`, `OfferRewardEmoteDelay3`, `OfferRewardEmoteDelay4`, `VerifiedBuild`) VALUES
-(800530, 2, 80, 80, -1, 62, 0, 0, 1791, 0, 0, 0, 0, 0, 250, 500000, 500000, 0, 0, 0, 0, 0, 32840, 0, 0, 0, 0, 49426, 38186, 47241, 0, 1, 1, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 'Weekly: Höhle des Schlangenschreins', 'Tötet Lady Vashj in der Höhle des Schlangenschreins. Ihr werdet reich belohnt werden !', '', '', 'Kommt doch morgen wieder um mir weiterzuhelfen.', 'Tötet Lady Vashj in der Höhle des Schlangenschreins. Ihr werdet reich belohnt werden !', 'Werdet ihr den Auftrag aufsführen?', 21212, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, '', '', '', '', 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1);
+(800530, 2, 80, 80, -1, 62, 0, 0, 1791, 0, 0, 0, 0, 0, 250, 500000, 500000, 0, 0, 0, 0, 0, 32840, 0, 0, 0, 0, 49426, 38186, 47241, 0, 1, 1, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 'Weekly: Hoehle des Schlangenschreins', 'Toetet Lady Vashj in der Hoehle des Schlangenschreins. Ihr werdet reich belohnt werden !', '', '', 'Kommt doch morgen wieder um mir weiterzuhelfen.', 'Toetet Lady Vashj in der Hoehle des Schlangenschreins. Ihr werdet reich belohnt werden !', 'Werdet ihr den Auftrag aufsfuehren?', 21212, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, '', '', '', '', 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1);
 
 
 
@@ -4234,7 +4234,7 @@ REPLACE INTO `creature_questender` (`id`, `quest`) VALUES
 
 REPLACE INTO `creature_queststarter` (`id`, `quest`) VALUES
 (800013, 800530);REPLACE INTO `quest_template` (`ID`, `Method`, `QuestLevel`, `MinLevel`, `QuestSortID`, `QuestType`, `SuggestedGroupNum`, `LimitTime`, `RequiredRaces`, `RequiredFactionId1`, `RequiredFactionId2`, `RequiredFactionValue1`, `RequiredFactionValue2`, `NextQuestIdChain`, `RewardXPId`, `RewardOrRequiredMoney`, `RewardMoneyMaxLevel`, `RewardSpell`, `RewardSpellCast`, `RewardHonor`, `RewardHonorMultiplier`, `SourceItemId`, `Flags`, `RewardTitle`, `RequiredPlayerKills`, `RewardTalents`, `RewardArenaPoints`, `RewardItem1`, `RewardItem2`, `RewardItem3`, `RewardItem4`, `RewardAmount1`, `RewardAmount2`, `RewardAmount3`, `RewardAmount4`, `RewardChoiceItemID1`, `RewardChoiceItemID2`, `RewardChoiceItemID3`, `RewardChoiceItemID4`, `RewardChoiceItemID5`, `RewardChoiceItemID6`, `RewardChoiceItemQuantity1`, `RewardChoiceItemQuantity2`, `RewardChoiceItemQuantity3`, `RewardChoiceItemQuantity4`, `RewardChoiceItemQuantity5`, `RewardChoiceItemQuantity6`, `RewardFactionID1`, `RewardFactionID2`, `RewardFactionID3`, `RewardFactionID4`, `RewardFactionID5`, `RewardFactionValue1`, `RewardFactionValue2`, `RewardFactionValue3`, `RewardFactionValue4`, `RewardFactionValue5`, `RewardFactionOverride1`, `RewardFactionOverride2`, `RewardFactionOverride3`, `RewardFactionOverride4`, `RewardFactionOverride5`, `PointMapId`, `PointX`, `PointY`, `PointOption`, `LogTitle`, `LogDescription`, `QuestDescription`, `EndText`, `OfferRewardText`, `RequestItemsText`, `QuestCompletionLog`, `RequiredNpcOrGo1`, `RequiredNpcOrGo2`, `RequiredNpcOrGo3`, `RequiredNpcOrGo4`, `RequiredNpcOrGoCount1`, `RequiredNpcOrGoCount2`, `RequiredNpcOrGoCount3`, `RequiredNpcOrGoCount4`, `RequiredSourceItemId1`, `RequiredSourceItemId2`, `RequiredSourceItemId3`, `RequiredSourceItemId4`, `RequiredSourceItemCount1`, `RequiredSourceItemCount2`, `RequiredSourceItemCount3`, `RequiredSourceItemCount4`, `RequiredItemId1`, `RequiredItemId2`, `RequiredItemId3`, `RequiredItemId4`, `RequiredItemId5`, `RequiredItemId6`, `RequiredItemCount1`, `RequiredItemCount2`, `RequiredItemCount3`, `RequiredItemCount4`, `RequiredItemCount5`, `RequiredItemCount6`, `Unknown0`, `ObjectiveText1`, `ObjectiveText2`, `ObjectiveText3`, `ObjectiveText4`, `DetailsEmote1`, `DetailsEmote2`, `DetailsEmote3`, `DetailsEmote4`, `DetailsEmoteDelay1`, `DetailsEmoteDelay2`, `DetailsEmoteDelay3`, `DetailsEmoteDelay4`, `EmoteOnIncomplete`, `EmoteOnComplete`, `OfferRewardEmote1`, `OfferRewardEmote2`, `OfferRewardEmote3`, `OfferRewardEmote4`, `OfferRewardEmoteDelay1`, `OfferRewardEmoteDelay2`, `OfferRewardEmoteDelay3`, `OfferRewardEmoteDelay4`, `VerifiedBuild`) VALUES
-(800531, 2, 80, 80, -1, 62, 0, 0, 1791, 0, 0, 0, 0, 0, 250, 500000, 500000, 0, 0, 0, 0, 0, 32840, 0, 0, 0, 0, 49426, 38186, 47241, 0, 1, 1, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 'Weekly: Magtheridons Kammer', 'Tötet Magtheridon in Magtheridons Kammer. Ihr werdet reich belohnt werden !', '', '', 'Kommt doch morgen wieder um mir weiterzuhelfen.', 'Tötet Magtheridon in Magtheridons Kammer. Ihr werdet reich belohnt werden !', 'Werdet ihr den Auftrag aufsführen?', 17257, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, '', '', '', '', 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1);
+(800531, 2, 80, 80, -1, 62, 0, 0, 1791, 0, 0, 0, 0, 0, 250, 500000, 500000, 0, 0, 0, 0, 0, 32840, 0, 0, 0, 0, 49426, 38186, 47241, 0, 1, 1, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 'Weekly: Magtheridons Kammer', 'Toetet Magtheridon in Magtheridons Kammer. Ihr werdet reich belohnt werden !', '', '', 'Kommt doch morgen wieder um mir weiterzuhelfen.', 'Toetet Magtheridon in Magtheridons Kammer. Ihr werdet reich belohnt werden !', 'Werdet ihr den Auftrag aufsfuehren?', 17257, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, '', '', '', '', 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1);
 
 
 
@@ -4246,7 +4246,7 @@ REPLACE INTO `creature_questender` (`id`, `quest`) VALUES
 
 REPLACE INTO `creature_queststarter` (`id`, `quest`) VALUES
 (800013, 800531);REPLACE INTO `quest_template` (`ID`, `Method`, `QuestLevel`, `MinLevel`, `QuestSortID`, `QuestType`, `SuggestedGroupNum`, `LimitTime`, `RequiredRaces`, `RequiredFactionId1`, `RequiredFactionId2`, `RequiredFactionValue1`, `RequiredFactionValue2`, `NextQuestIdChain`, `RewardXPId`, `RewardOrRequiredMoney`, `RewardMoneyMaxLevel`, `RewardSpell`, `RewardSpellCast`, `RewardHonor`, `RewardHonorMultiplier`, `SourceItemId`, `Flags`, `RewardTitle`, `RequiredPlayerKills`, `RewardTalents`, `RewardArenaPoints`, `RewardItem1`, `RewardItem2`, `RewardItem3`, `RewardItem4`, `RewardAmount1`, `RewardAmount2`, `RewardAmount3`, `RewardAmount4`, `RewardChoiceItemID1`, `RewardChoiceItemID2`, `RewardChoiceItemID3`, `RewardChoiceItemID4`, `RewardChoiceItemID5`, `RewardChoiceItemID6`, `RewardChoiceItemQuantity1`, `RewardChoiceItemQuantity2`, `RewardChoiceItemQuantity3`, `RewardChoiceItemQuantity4`, `RewardChoiceItemQuantity5`, `RewardChoiceItemQuantity6`, `RewardFactionID1`, `RewardFactionID2`, `RewardFactionID3`, `RewardFactionID4`, `RewardFactionID5`, `RewardFactionValue1`, `RewardFactionValue2`, `RewardFactionValue3`, `RewardFactionValue4`, `RewardFactionValue5`, `RewardFactionOverride1`, `RewardFactionOverride2`, `RewardFactionOverride3`, `RewardFactionOverride4`, `RewardFactionOverride5`, `PointMapId`, `PointX`, `PointY`, `PointOption`, `LogTitle`, `LogDescription`, `QuestDescription`, `EndText`, `OfferRewardText`, `RequestItemsText`, `QuestCompletionLog`, `RequiredNpcOrGo1`, `RequiredNpcOrGo2`, `RequiredNpcOrGo3`, `RequiredNpcOrGo4`, `RequiredNpcOrGoCount1`, `RequiredNpcOrGoCount2`, `RequiredNpcOrGoCount3`, `RequiredNpcOrGoCount4`, `RequiredSourceItemId1`, `RequiredSourceItemId2`, `RequiredSourceItemId3`, `RequiredSourceItemId4`, `RequiredSourceItemCount1`, `RequiredSourceItemCount2`, `RequiredSourceItemCount3`, `RequiredSourceItemCount4`, `RequiredItemId1`, `RequiredItemId2`, `RequiredItemId3`, `RequiredItemId4`, `RequiredItemId5`, `RequiredItemId6`, `RequiredItemCount1`, `RequiredItemCount2`, `RequiredItemCount3`, `RequiredItemCount4`, `RequiredItemCount5`, `RequiredItemCount6`, `Unknown0`, `ObjectiveText1`, `ObjectiveText2`, `ObjectiveText3`, `ObjectiveText4`, `DetailsEmote1`, `DetailsEmote2`, `DetailsEmote3`, `DetailsEmote4`, `DetailsEmoteDelay1`, `DetailsEmoteDelay2`, `DetailsEmoteDelay3`, `DetailsEmoteDelay4`, `EmoteOnIncomplete`, `EmoteOnComplete`, `OfferRewardEmote1`, `OfferRewardEmote2`, `OfferRewardEmote3`, `OfferRewardEmote4`, `OfferRewardEmoteDelay1`, `OfferRewardEmoteDelay2`, `OfferRewardEmoteDelay3`, `OfferRewardEmoteDelay4`, `VerifiedBuild`) VALUES
-(800532, 2, 80, 80, -1, 62, 0, 0, 1791, 0, 0, 0, 0, 0, 250, 500000, 500000, 0, 0, 0, 0, 0, 32840, 0, 0, 0, 0, 49426, 38186, 47241, 0, 1, 1, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 'Weekly: Karazhan', 'Tötet Malchezaar in Karazhan. Ihr werdet reich belohnt werden !', '', '', 'Kommt doch morgen wieder um mir weiterzuhelfen.', 'Tötet Malchezaar in Karazhan. Ihr werdet reich belohnt werden !', 'Werdet ihr den Auftrag aufsführen?', 15690, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, '', '', '', '', 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1);
+(800532, 2, 80, 80, -1, 62, 0, 0, 1791, 0, 0, 0, 0, 0, 250, 500000, 500000, 0, 0, 0, 0, 0, 32840, 0, 0, 0, 0, 49426, 38186, 47241, 0, 1, 1, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 'Weekly: Karazhan', 'Toetet Malchezaar in Karazhan. Ihr werdet reich belohnt werden !', '', '', 'Kommt doch morgen wieder um mir weiterzuhelfen.', 'Toetet Malchezaar in Karazhan. Ihr werdet reich belohnt werden !', 'Werdet ihr den Auftrag aufsfuehren?', 15690, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, '', '', '', '', 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1);
 
 
 
@@ -4258,7 +4258,7 @@ REPLACE INTO `creature_questender` (`id`, `quest`) VALUES
 
 REPLACE INTO `creature_queststarter` (`id`, `quest`) VALUES
 (800013, 800532);REPLACE INTO `quest_template` (`ID`, `Method`, `QuestLevel`, `MinLevel`, `QuestSortID`, `QuestType`, `SuggestedGroupNum`, `LimitTime`, `RequiredRaces`, `RequiredFactionId1`, `RequiredFactionId2`, `RequiredFactionValue1`, `RequiredFactionValue2`, `NextQuestIdChain`, `RewardXPId`, `RewardOrRequiredMoney`, `RewardMoneyMaxLevel`, `RewardSpell`, `RewardSpellCast`, `RewardHonor`, `RewardHonorMultiplier`, `SourceItemId`, `Flags`, `RewardTitle`, `RequiredPlayerKills`, `RewardTalents`, `RewardArenaPoints`, `RewardItem1`, `RewardItem2`, `RewardItem3`, `RewardItem4`, `RewardAmount1`, `RewardAmount2`, `RewardAmount3`, `RewardAmount4`, `RewardChoiceItemID1`, `RewardChoiceItemID2`, `RewardChoiceItemID3`, `RewardChoiceItemID4`, `RewardChoiceItemID5`, `RewardChoiceItemID6`, `RewardChoiceItemQuantity1`, `RewardChoiceItemQuantity2`, `RewardChoiceItemQuantity3`, `RewardChoiceItemQuantity4`, `RewardChoiceItemQuantity5`, `RewardChoiceItemQuantity6`, `RewardFactionID1`, `RewardFactionID2`, `RewardFactionID3`, `RewardFactionID4`, `RewardFactionID5`, `RewardFactionValue1`, `RewardFactionValue2`, `RewardFactionValue3`, `RewardFactionValue4`, `RewardFactionValue5`, `RewardFactionOverride1`, `RewardFactionOverride2`, `RewardFactionOverride3`, `RewardFactionOverride4`, `RewardFactionOverride5`, `PointMapId`, `PointX`, `PointY`, `PointOption`, `LogTitle`, `LogDescription`, `QuestDescription`, `EndText`, `OfferRewardText`, `RequestItemsText`, `QuestCompletionLog`, `RequiredNpcOrGo1`, `RequiredNpcOrGo2`, `RequiredNpcOrGo3`, `RequiredNpcOrGo4`, `RequiredNpcOrGoCount1`, `RequiredNpcOrGoCount2`, `RequiredNpcOrGoCount3`, `RequiredNpcOrGoCount4`, `RequiredSourceItemId1`, `RequiredSourceItemId2`, `RequiredSourceItemId3`, `RequiredSourceItemId4`, `RequiredSourceItemCount1`, `RequiredSourceItemCount2`, `RequiredSourceItemCount3`, `RequiredSourceItemCount4`, `RequiredItemId1`, `RequiredItemId2`, `RequiredItemId3`, `RequiredItemId4`, `RequiredItemId5`, `RequiredItemId6`, `RequiredItemCount1`, `RequiredItemCount2`, `RequiredItemCount3`, `RequiredItemCount4`, `RequiredItemCount5`, `RequiredItemCount6`, `Unknown0`, `ObjectiveText1`, `ObjectiveText2`, `ObjectiveText3`, `ObjectiveText4`, `DetailsEmote1`, `DetailsEmote2`, `DetailsEmote3`, `DetailsEmote4`, `DetailsEmoteDelay1`, `DetailsEmoteDelay2`, `DetailsEmoteDelay3`, `DetailsEmoteDelay4`, `EmoteOnIncomplete`, `EmoteOnComplete`, `OfferRewardEmote1`, `OfferRewardEmote2`, `OfferRewardEmote3`, `OfferRewardEmote4`, `OfferRewardEmoteDelay1`, `OfferRewardEmoteDelay2`, `OfferRewardEmoteDelay3`, `OfferRewardEmoteDelay4`, `VerifiedBuild`) VALUES
-(800533, 2, 80, 80, -1, 62, 0, 0, 1791, 0, 0, 0, 0, 0, 250, 500000, 500000, 0, 0, 0, 0, 0, 32840, 0, 0, 0, 0, 49426, 38186, 47241, 0, 1, 1, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 'Weekly: Geschmolzener Kern', 'Tötet Ragnaros im Geschmolzener Kern. Ihr werdet reich belohnt werden !', '', '', 'Kommt doch morgen wieder um mir weiterzuhelfen.', 'Tötet Ragnaros im Geschmolzener Kern. Ihr werdet reich belohnt werden !', 'Werdet ihr den Auftrag aufsführen?', 11502, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, '', '', '', '', 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1);
+(800533, 2, 80, 80, -1, 62, 0, 0, 1791, 0, 0, 0, 0, 0, 250, 500000, 500000, 0, 0, 0, 0, 0, 32840, 0, 0, 0, 0, 49426, 38186, 47241, 0, 1, 1, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 'Weekly: Geschmolzener Kern', 'Toetet Ragnaros im Geschmolzener Kern. Ihr werdet reich belohnt werden !', '', '', 'Kommt doch morgen wieder um mir weiterzuhelfen.', 'Toetet Ragnaros im Geschmolzener Kern. Ihr werdet reich belohnt werden !', 'Werdet ihr den Auftrag aufsfuehren?', 11502, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, '', '', '', '', 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1);
 
 
 
@@ -4270,7 +4270,7 @@ REPLACE INTO `creature_questender` (`id`, `quest`) VALUES
 
 REPLACE INTO `creature_queststarter` (`id`, `quest`) VALUES
 (800013, 800533);REPLACE INTO `quest_template` (`ID`, `Method`, `QuestLevel`, `MinLevel`, `QuestSortID`, `QuestType`, `SuggestedGroupNum`, `LimitTime`, `RequiredRaces`, `RequiredFactionId1`, `RequiredFactionId2`, `RequiredFactionValue1`, `RequiredFactionValue2`, `NextQuestIdChain`, `RewardXPId`, `RewardOrRequiredMoney`, `RewardMoneyMaxLevel`, `RewardSpell`, `RewardSpellCast`, `RewardHonor`, `RewardHonorMultiplier`, `SourceItemId`, `Flags`, `RewardTitle`, `RequiredPlayerKills`, `RewardTalents`, `RewardArenaPoints`, `RewardItem1`, `RewardItem2`, `RewardItem3`, `RewardItem4`, `RewardAmount1`, `RewardAmount2`, `RewardAmount3`, `RewardAmount4`, `RewardChoiceItemID1`, `RewardChoiceItemID2`, `RewardChoiceItemID3`, `RewardChoiceItemID4`, `RewardChoiceItemID5`, `RewardChoiceItemID6`, `RewardChoiceItemQuantity1`, `RewardChoiceItemQuantity2`, `RewardChoiceItemQuantity3`, `RewardChoiceItemQuantity4`, `RewardChoiceItemQuantity5`, `RewardChoiceItemQuantity6`, `RewardFactionID1`, `RewardFactionID2`, `RewardFactionID3`, `RewardFactionID4`, `RewardFactionID5`, `RewardFactionValue1`, `RewardFactionValue2`, `RewardFactionValue3`, `RewardFactionValue4`, `RewardFactionValue5`, `RewardFactionOverride1`, `RewardFactionOverride2`, `RewardFactionOverride3`, `RewardFactionOverride4`, `RewardFactionOverride5`, `PointMapId`, `PointX`, `PointY`, `PointOption`, `LogTitle`, `LogDescription`, `QuestDescription`, `EndText`, `OfferRewardText`, `RequestItemsText`, `QuestCompletionLog`, `RequiredNpcOrGo1`, `RequiredNpcOrGo2`, `RequiredNpcOrGo3`, `RequiredNpcOrGo4`, `RequiredNpcOrGoCount1`, `RequiredNpcOrGoCount2`, `RequiredNpcOrGoCount3`, `RequiredNpcOrGoCount4`, `RequiredSourceItemId1`, `RequiredSourceItemId2`, `RequiredSourceItemId3`, `RequiredSourceItemId4`, `RequiredSourceItemCount1`, `RequiredSourceItemCount2`, `RequiredSourceItemCount3`, `RequiredSourceItemCount4`, `RequiredItemId1`, `RequiredItemId2`, `RequiredItemId3`, `RequiredItemId4`, `RequiredItemId5`, `RequiredItemId6`, `RequiredItemCount1`, `RequiredItemCount2`, `RequiredItemCount3`, `RequiredItemCount4`, `RequiredItemCount5`, `RequiredItemCount6`, `Unknown0`, `ObjectiveText1`, `ObjectiveText2`, `ObjectiveText3`, `ObjectiveText4`, `DetailsEmote1`, `DetailsEmote2`, `DetailsEmote3`, `DetailsEmote4`, `DetailsEmoteDelay1`, `DetailsEmoteDelay2`, `DetailsEmoteDelay3`, `DetailsEmoteDelay4`, `EmoteOnIncomplete`, `EmoteOnComplete`, `OfferRewardEmote1`, `OfferRewardEmote2`, `OfferRewardEmote3`, `OfferRewardEmote4`, `OfferRewardEmoteDelay1`, `OfferRewardEmoteDelay2`, `OfferRewardEmoteDelay3`, `OfferRewardEmoteDelay4`, `VerifiedBuild`) VALUES
-(800534, 2, 80, 80, -1, 62, 0, 0, 1791, 0, 0, 0, 0, 0, 250, 500000, 500000, 0, 0, 0, 0, 0, 32840, 0, 0, 0, 0, 49426, 38186, 47241, 0, 1, 1, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 'Weekly: Pechschwingenhort', 'Tötet Nefarian im Pechschwingenhort. Ihr werdet reich belohnt werden !', '', '', 'Kommt doch morgen wieder um mir weiterzuhelfen.', 'Tötet Nefarian im Pechschwingenhort. Ihr werdet reich belohnt werden !', 'Werdet ihr den Auftrag aufsführen?', 11502, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, '', '', '', '', 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1);
+(800534, 2, 80, 80, -1, 62, 0, 0, 1791, 0, 0, 0, 0, 0, 250, 500000, 500000, 0, 0, 0, 0, 0, 32840, 0, 0, 0, 0, 49426, 38186, 47241, 0, 1, 1, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 'Weekly: Pechschwingenhort', 'Toetet Nefarian im Pechschwingenhort. Ihr werdet reich belohnt werden !', '', '', 'Kommt doch morgen wieder um mir weiterzuhelfen.', 'Toetet Nefarian im Pechschwingenhort. Ihr werdet reich belohnt werden !', 'Werdet ihr den Auftrag aufsfuehren?', 11502, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, '', '', '', '', 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1);
 
 
 
@@ -4282,7 +4282,7 @@ REPLACE INTO `creature_questender` (`id`, `quest`) VALUES
 
 REPLACE INTO `creature_queststarter` (`id`, `quest`) VALUES
 (800013, 800534);REPLACE INTO `quest_template` (`ID`, `Method`, `QuestLevel`, `MinLevel`, `QuestSortID`, `QuestType`, `SuggestedGroupNum`, `LimitTime`, `RequiredRaces`, `RequiredFactionId1`, `RequiredFactionId2`, `RequiredFactionValue1`, `RequiredFactionValue2`, `NextQuestIdChain`, `RewardXPId`, `RewardOrRequiredMoney`, `RewardMoneyMaxLevel`, `RewardSpell`, `RewardSpellCast`, `RewardHonor`, `RewardHonorMultiplier`, `SourceItemId`, `Flags`, `RewardTitle`, `RequiredPlayerKills`, `RewardTalents`, `RewardArenaPoints`, `RewardItem1`, `RewardItem2`, `RewardItem3`, `RewardItem4`, `RewardAmount1`, `RewardAmount2`, `RewardAmount3`, `RewardAmount4`, `RewardChoiceItemID1`, `RewardChoiceItemID2`, `RewardChoiceItemID3`, `RewardChoiceItemID4`, `RewardChoiceItemID5`, `RewardChoiceItemID6`, `RewardChoiceItemQuantity1`, `RewardChoiceItemQuantity2`, `RewardChoiceItemQuantity3`, `RewardChoiceItemQuantity4`, `RewardChoiceItemQuantity5`, `RewardChoiceItemQuantity6`, `RewardFactionID1`, `RewardFactionID2`, `RewardFactionID3`, `RewardFactionID4`, `RewardFactionID5`, `RewardFactionValue1`, `RewardFactionValue2`, `RewardFactionValue3`, `RewardFactionValue4`, `RewardFactionValue5`, `RewardFactionOverride1`, `RewardFactionOverride2`, `RewardFactionOverride3`, `RewardFactionOverride4`, `RewardFactionOverride5`, `PointMapId`, `PointX`, `PointY`, `PointOption`, `LogTitle`, `LogDescription`, `QuestDescription`, `EndText`, `OfferRewardText`, `RequestItemsText`, `QuestCompletionLog`, `RequiredNpcOrGo1`, `RequiredNpcOrGo2`, `RequiredNpcOrGo3`, `RequiredNpcOrGo4`, `RequiredNpcOrGoCount1`, `RequiredNpcOrGoCount2`, `RequiredNpcOrGoCount3`, `RequiredNpcOrGoCount4`, `RequiredSourceItemId1`, `RequiredSourceItemId2`, `RequiredSourceItemId3`, `RequiredSourceItemId4`, `RequiredSourceItemCount1`, `RequiredSourceItemCount2`, `RequiredSourceItemCount3`, `RequiredSourceItemCount4`, `RequiredItemId1`, `RequiredItemId2`, `RequiredItemId3`, `RequiredItemId4`, `RequiredItemId5`, `RequiredItemId6`, `RequiredItemCount1`, `RequiredItemCount2`, `RequiredItemCount3`, `RequiredItemCount4`, `RequiredItemCount5`, `RequiredItemCount6`, `Unknown0`, `ObjectiveText1`, `ObjectiveText2`, `ObjectiveText3`, `ObjectiveText4`, `DetailsEmote1`, `DetailsEmote2`, `DetailsEmote3`, `DetailsEmote4`, `DetailsEmoteDelay1`, `DetailsEmoteDelay2`, `DetailsEmoteDelay3`, `DetailsEmoteDelay4`, `EmoteOnIncomplete`, `EmoteOnComplete`, `OfferRewardEmote1`, `OfferRewardEmote2`, `OfferRewardEmote3`, `OfferRewardEmote4`, `OfferRewardEmoteDelay1`, `OfferRewardEmoteDelay2`, `OfferRewardEmoteDelay3`, `OfferRewardEmoteDelay4`, `VerifiedBuild`) VALUES
-(800535, 2, 80, 80, -1, 62, 0, 0, 1791, 0, 0, 0, 0, 0, 250, 500000, 500000, 0, 0, 0, 0, 0, 32840, 0, 0, 0, 0, 49426, 38186, 47241, 0, 1, 1, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 'Weekly: Ahn\Qiraj', 'Tötet C\Thun in Ahn\Qiraj. Ihr werdet reich belohnt werden !', '', '', 'Kommt doch morgen wieder um mir weiterzuhelfen.', 'Tötet C\Thun in Ahn\Qiraj. Ihr werdet reich belohnt werden !', 'Werdet ihr den Auftrag aufsführen?', 15727, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, '', '', '', '', 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1);
+(800535, 2, 80, 80, -1, 62, 0, 0, 1791, 0, 0, 0, 0, 0, 250, 500000, 500000, 0, 0, 0, 0, 0, 32840, 0, 0, 0, 0, 49426, 38186, 47241, 0, 1, 1, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 'Weekly: Ahn\Qiraj', 'Toetet C\Thun in Ahn\Qiraj. Ihr werdet reich belohnt werden !', '', '', 'Kommt doch morgen wieder um mir weiterzuhelfen.', 'Toetet C\Thun in Ahn\Qiraj. Ihr werdet reich belohnt werden !', 'Werdet ihr den Auftrag aufsfuehren?', 15727, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, '', '', '', '', 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1);
 
 
 
@@ -4295,7 +4295,7 @@ REPLACE INTO `creature_questender` (`id`, `quest`) VALUES
 REPLACE INTO `creature_queststarter` (`id`, `quest`) VALUES
 (800013, 800535);
 REPLACE INTO `quest_template` (`ID`, `Method`, `QuestLevel`, `MinLevel`, `QuestSortID`, `QuestType`, `SuggestedGroupNum`, `LimitTime`, `RequiredRaces`, `RequiredFactionId1`, `RequiredFactionId2`, `RequiredFactionValue1`, `RequiredFactionValue2`, `NextQuestIdChain`, `RewardXPId`, `RewardOrRequiredMoney`, `RewardMoneyMaxLevel`, `RewardSpell`, `RewardSpellCast`, `RewardHonor`, `RewardHonorMultiplier`, `SourceItemId`, `Flags`, `RewardTitle`, `RequiredPlayerKills`, `RewardTalents`, `RewardArenaPoints`, `RewardItem1`, `RewardItem2`, `RewardItem3`, `RewardItem4`, `RewardAmount1`, `RewardAmount2`, `RewardAmount3`, `RewardAmount4`, `RewardChoiceItemID1`, `RewardChoiceItemID2`, `RewardChoiceItemID3`, `RewardChoiceItemID4`, `RewardChoiceItemID5`, `RewardChoiceItemID6`, `RewardChoiceItemQuantity1`, `RewardChoiceItemQuantity2`, `RewardChoiceItemQuantity3`, `RewardChoiceItemQuantity4`, `RewardChoiceItemQuantity5`, `RewardChoiceItemQuantity6`, `RewardFactionID1`, `RewardFactionID2`, `RewardFactionID3`, `RewardFactionID4`, `RewardFactionID5`, `RewardFactionValue1`, `RewardFactionValue2`, `RewardFactionValue3`, `RewardFactionValue4`, `RewardFactionValue5`, `RewardFactionOverride1`, `RewardFactionOverride2`, `RewardFactionOverride3`, `RewardFactionOverride4`, `RewardFactionOverride5`, `PointMapId`, `PointX`, `PointY`, `PointOption`, `LogTitle`, `LogDescription`, `QuestDescription`, `EndText`, `OfferRewardText`, `RequestItemsText`, `QuestCompletionLog`, `RequiredNpcOrGo1`, `RequiredNpcOrGo2`, `RequiredNpcOrGo3`, `RequiredNpcOrGo4`, `RequiredNpcOrGoCount1`, `RequiredNpcOrGoCount2`, `RequiredNpcOrGoCount3`, `RequiredNpcOrGoCount4`, `RequiredSourceItemId1`, `RequiredSourceItemId2`, `RequiredSourceItemId3`, `RequiredSourceItemId4`, `RequiredSourceItemCount1`, `RequiredSourceItemCount2`, `RequiredSourceItemCount3`, `RequiredSourceItemCount4`, `RequiredItemId1`, `RequiredItemId2`, `RequiredItemId3`, `RequiredItemId4`, `RequiredItemId5`, `RequiredItemId6`, `RequiredItemCount1`, `RequiredItemCount2`, `RequiredItemCount3`, `RequiredItemCount4`, `RequiredItemCount5`, `RequiredItemCount6`, `Unknown0`, `ObjectiveText1`, `ObjectiveText2`, `ObjectiveText3`, `ObjectiveText4`, `DetailsEmote1`, `DetailsEmote2`, `DetailsEmote3`, `DetailsEmote4`, `DetailsEmoteDelay1`, `DetailsEmoteDelay2`, `DetailsEmoteDelay3`, `DetailsEmoteDelay4`, `EmoteOnIncomplete`, `EmoteOnComplete`, `OfferRewardEmote1`, `OfferRewardEmote2`, `OfferRewardEmote3`, `OfferRewardEmote4`, `OfferRewardEmoteDelay1`, `OfferRewardEmoteDelay2`, `OfferRewardEmoteDelay3`, `OfferRewardEmoteDelay4`, `VerifiedBuild`) VALUES
-(800536, 2, 80, 80, -1, 0, 0, 0, 1791, 0, 0, 0, 0, 0, 250, 10000000, 10000000, 0, 0, 0, 0, 0, 4096, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 3860, 36913, 41163, 3577, 2840, 0, 20, 20, 18, 35, 40, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 'Sammelwut extrem', 'Sammelt 300 Stählerne Pfeilspitzen, 200 Netherstoff und tötet 60 Sonnenschuppenkreischer, 60 Fleischreißerhyjänen, 40 Kluftmoosgiftspucker, 40 Blutsichelfelzhetzer.', 'Helft uns bitte beim Sammeln dieser wichtigen Gegenstände. Wir benötigen diese wirklich dringend.', '', 'Sammelt 300 Stählerne Pfeilspitzen, 200 Netherstoff und tötet 60 Sonnenschuppenkreischer, 60 Fleischreißerhyjänen, 40 Kluftmoosgiftspucker, 40 Blutsichelfelzhetzer.', 'Du hast leider noch nicht alle benötigten Dinge zusammen.', 'Werdet ihr den Auftrag aufsführen?', 3255, 4127, 4007, 21423, 60, 60, 40, 40, 0, 0, 0, 0, 0, 0, 0, 0, 5123, 21877, 0, 0, 0, 0, 300, 200, 0, 0, 0, 0, 0, '', '', '', '', 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1);
+(800536, 2, 80, 80, -1, 0, 0, 0, 1791, 0, 0, 0, 0, 0, 250, 10000000, 10000000, 0, 0, 0, 0, 0, 4096, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 3860, 36913, 41163, 3577, 2840, 0, 20, 20, 18, 35, 40, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 'Sammelwut extrem', 'Sammelt 300 Staehlerne Pfeilspitzen, 200 Netherstoff und toetet 60 Sonnenschuppenkreischer, 60 Fleischreißerhyjaenen, 40 Kluftmoosgiftspucker, 40 Blutsichelfelzhetzer.', 'Helft uns bitte beim Sammeln dieser wichtigen Gegenstaende. Wir benoetigen diese wirklich dringend.', '', 'Sammelt 300 Staehlerne Pfeilspitzen, 200 Netherstoff und toetet 60 Sonnenschuppenkreischer, 60 Fleischreißerhyjaenen, 40 Kluftmoosgiftspucker, 40 Blutsichelfelzhetzer.', 'Du hast leider noch nicht alle benoetigten Dinge zusammen.', 'Werdet ihr den Auftrag aufsfuehren?', 3255, 4127, 4007, 21423, 60, 60, 40, 40, 0, 0, 0, 0, 0, 0, 0, 0, 5123, 21877, 0, 0, 0, 0, 300, 200, 0, 0, 0, 0, 0, '', '', '', '', 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1);
 
 
 REPLACE INTO `quest_template_addon` (`ID`, `MaxLevel`, `AllowableClasses`, `SourceSpellID`, `PrevQuestID`, `NextQuestID`, `ExclusiveGroup`, `RewardMailTemplateID`, `RewardMailDelay`, `RequiredSkillID`, `RequiredSkillPoints`, `RequiredMinRepFaction`, `RequiredMaxRepFaction`, `RequiredMinRepValue`, `RequiredMaxRepValue`, `ProvidedItemCount`, `SpecialFlags`) VALUES
@@ -4373,11 +4373,11 @@ REPLACE INTO `creature_questender` (`id`, `quest`) VALUES
  /*  PointY  */ 0,
  /*  PointOption  */ 0,
  /*  LogTitle  */ 'Weekly: Exitares Schatten',
- /*  LogDescription  */  'Tötet den Schatten von Exitare.',
- /*  QuestDescription   */ 'Hallo $N, tötet Exitare den dunklen Schatten. Er war lange genug am Leben. Seine Zeit ist nun vorrüber. Meine korrumpierte Seele hat genug Schaden angerichtet.',
+ /*  LogDescription  */  'Toetet den Schatten von Exitare.',
+ /*  QuestDescription   */ 'Hallo $N, toetet Exitare den dunklen Schatten. Er war lange genug am Leben. Seine Zeit ist nun vorrueber. Meine korrumpierte Seele hat genug Schaden angerichtet.',
  /*  EndText   */  '',
- /*  OfferRewardText  */  'Ist er zu schwer für Euch?',
- /*  RequestItemsText  */ 'Tötet den Schatten von Exitare.',
+ /*  OfferRewardText  */  'Ist er zu schwer fuer Euch?',
+ /*  RequestItemsText  */ 'Toetet den Schatten von Exitare.',
  /*  QuestCompletionLog  */ 'Es ist Eure Sache was ihr tut.',
  /*  RequiredNpcOrGo1  */ 800025,
  /*  RequiredNpcOrGo2  */ 0,
@@ -4461,7 +4461,7 @@ REPLACE INTO `creature_queststarter` (`id`, `quest`) VALUES
 (800015, 800537);
 
 REPLACE INTO `quest_template` (`ID`, `Method`, `QuestLevel`, `MinLevel`, `QuestSortID`, `QuestType`, `SuggestedGroupNum`, `LimitTime`, `RequiredRaces`, `RequiredFactionId1`, `RequiredFactionId2`, `RequiredFactionValue1`, `RequiredFactionValue2`, `NextQuestIdChain`, `RewardXPId`, `RewardOrRequiredMoney`, `RewardMoneyMaxLevel`, `RewardSpell`, `RewardSpellCast`, `RewardHonor`, `RewardHonorMultiplier`, `SourceItemId`, `Flags`, `RewardTitle`, `RequiredPlayerKills`, `RewardTalents`, `RewardArenaPoints`, `RewardItem1`, `RewardItem2`, `RewardItem3`, `RewardItem4`, `RewardAmount1`, `RewardAmount2`, `RewardAmount3`, `RewardAmount4`, `RewardChoiceItemID1`, `RewardChoiceItemID2`, `RewardChoiceItemID3`, `RewardChoiceItemID4`, `RewardChoiceItemID5`, `RewardChoiceItemID6`, `RewardChoiceItemQuantity1`, `RewardChoiceItemQuantity2`, `RewardChoiceItemQuantity3`, `RewardChoiceItemQuantity4`, `RewardChoiceItemQuantity5`, `RewardChoiceItemQuantity6`, `RewardFactionID1`, `RewardFactionID2`, `RewardFactionID3`, `RewardFactionID4`, `RewardFactionID5`, `RewardFactionValue1`, `RewardFactionValue2`, `RewardFactionValue3`, `RewardFactionValue4`, `RewardFactionValue5`, `RewardFactionOverride1`, `RewardFactionOverride2`, `RewardFactionOverride3`, `RewardFactionOverride4`, `RewardFactionOverride5`, `PointMapId`, `PointX`, `PointY`, `PointOption`, `LogTitle`, `LogDescription`, `QuestDescription`, `EndText`, `OfferRewardText`, `RequestItemsText`, `QuestCompletionLog`, `RequiredNpcOrGo1`, `RequiredNpcOrGo2`, `RequiredNpcOrGo3`, `RequiredNpcOrGo4`, `RequiredNpcOrGoCount1`, `RequiredNpcOrGoCount2`, `RequiredNpcOrGoCount3`, `RequiredNpcOrGoCount4`, `RequiredSourceItemId1`, `RequiredSourceItemId2`, `RequiredSourceItemId3`, `RequiredSourceItemId4`, `RequiredSourceItemCount1`, `RequiredSourceItemCount2`, `RequiredSourceItemCount3`, `RequiredSourceItemCount4`, `RequiredItemId1`, `RequiredItemId2`, `RequiredItemId3`, `RequiredItemId4`, `RequiredItemId5`, `RequiredItemId6`, `RequiredItemCount1`, `RequiredItemCount2`, `RequiredItemCount3`, `RequiredItemCount4`, `RequiredItemCount5`, `RequiredItemCount6`, `Unknown0`, `ObjectiveText1`, `ObjectiveText2`, `ObjectiveText3`, `ObjectiveText4`, `DetailsEmote1`, `DetailsEmote2`, `DetailsEmote3`, `DetailsEmote4`, `DetailsEmoteDelay1`, `DetailsEmoteDelay2`, `DetailsEmoteDelay3`, `DetailsEmoteDelay4`, `EmoteOnIncomplete`, `EmoteOnComplete`, `OfferRewardEmote1`, `OfferRewardEmote2`, `OfferRewardEmote3`, `OfferRewardEmote4`, `OfferRewardEmoteDelay1`, `OfferRewardEmoteDelay2`, `OfferRewardEmoteDelay3`, `OfferRewardEmoteDelay4`, `VerifiedBuild`) VALUES
-(800538, 2, 80, 80, -1, 62, 0, 0, 1791, 0, 0, 0, 0, 0, 250, 500000, 500000, 0, 0, 0, 0, 0, 32840, 0, 0, 0, 0, 0, 0, 47241, 0, 0, 0, 2, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 'Weekly: ICC Trash', 'Tötet die Diener in ICC vor dem erstem Boss!', '', '', 'Kommt doch morgen wieder um mir weiterzuhelfen.', 'Tötet die Diener in ICC vor dem erstem Boss!', 'Werdet ihr den Auftrag aufsführen?', 37011, 36724, 37012, 0, 10, 10, 10, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, '', '', '', '', 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1);
+(800538, 2, 80, 80, -1, 62, 0, 0, 1791, 0, 0, 0, 0, 0, 250, 500000, 500000, 0, 0, 0, 0, 0, 32840, 0, 0, 0, 0, 0, 0, 47241, 0, 0, 0, 2, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 'Weekly: ICC Trash', 'Toetet die Diener in ICC vor dem erstem Boss!', '', '', 'Kommt doch morgen wieder um mir weiterzuhelfen.', 'Toetet die Diener in ICC vor dem erstem Boss!', 'Werdet ihr den Auftrag aufsfuehren?', 37011, 36724, 37012, 0, 10, 10, 10, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, '', '', '', '', 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1);
 
 
 
@@ -4541,7 +4541,7 @@ REPLACE INTO `creature_queststarter` (`id`, `quest`) VALUES
  /*  PointOption  */ 0,
  /*  LogTitle  */ 'Runenstoff',
  /*  LogDescription  */  'Bringt mir 50 Runenstoffe.',
- /*  QuestDescription   */ '$N,für meine magischen Runenworte brauche ich Runenstoff. Bringt mir diesen bitte. Da ich einen großen Bedarf an Runenstoff habe, könnt ihr mir das jeden Tag vorbeibringen.',
+ /*  QuestDescription   */ '$N,fuer meine magischen Runenworte brauche ich Runenstoff. Bringt mir diesen bitte. Da ich einen großen Bedarf an Runenstoff habe, koennt ihr mir das jeden Tag vorbeibringen.',
  /*  EndText   */  '',
  /*  OfferRewardText  */  'Bringt mir 50 Runenstoffe.',
  /*  RequestItemsText  */ 'Bringt mir 50 Runenstoffe.',
@@ -4693,11 +4693,11 @@ REPLACE INTO `creature_questender` (`id`, `quest`) VALUES
  /*  PointY  */ 0,
  /*  PointOption  */ 0,
  /*  LogTitle  */ 'Grangol´var',
- /*  LogDescription  */  'Tötet 20 Schattenhafte Henker, 20 Schattenhafte Jäger, 20 Schattenhafte Beschwörer.',
- /*  QuestDescription   */ '$N,kennt ihr die Siedlung Grangol´var? Dort haußen die, die vom rechten Weg abgekommen sind. Wir müssen sie liquidieren, da sie das Böse verbreiten. Schaut täglich dort vorbei um sie dem Erdboden gleich zu machen.',
+ /*  LogDescription  */  'Toetet 20 Schattenhafte Henker, 20 Schattenhafte Jaeger, 20 Schattenhafte Beschwoerer.',
+ /*  QuestDescription   */ '$N,kennt ihr die Siedlung Grangol´var? Dort haußen die, die vom rechten Weg abgekommen sind. Wir muessen sie liquidieren, da sie das Boese verbreiten. Schaut taeglich dort vorbei um sie dem Erdboden gleich zu machen.',
  /*  EndText   */  '',
- /*  OfferRewardText  */  'Tötet 20 Schattenhafte Henker, 20 Schattenhafte Jäger, 20 Schattenhafte Beschwörer.',
- /*  RequestItemsText  */ 'Tötet 20 Schattenhafte Henker, 20 Schattenhafte Jäger, 20 Schattenhafte Beschwörer.',
+ /*  OfferRewardText  */  'Toetet 20 Schattenhafte Henker, 20 Schattenhafte Jaeger, 20 Schattenhafte Beschwoerer.',
+ /*  RequestItemsText  */ 'Toetet 20 Schattenhafte Henker, 20 Schattenhafte Jaeger, 20 Schattenhafte Beschwoerer.',
  /*  QuestCompletionLog  */ 'Es ist Eure Sache was ihr tut.',
  /*  RequiredNpcOrGo1  */ 16519,
  /*  RequiredNpcOrGo2  */ 17088,
@@ -4847,7 +4847,7 @@ REPLACE INTO `creature_questender` (`id`, `quest`) VALUES
  /*  PointOption  */ 0,
  /*  LogTitle  */ 'Neue Kleidung',
  /*  LogDescription  */  'Bringt mir 35 Leichte Federn sowie 60 Netherstoffe.',
- /*  QuestDescription   */ '$N,hier draussen windet es stark. Meine Kleidung leidet darunter. Bitte helft mir, sonst muss ich erfrieren. Bringt mir 35 Leichte Federn sowie 60 Netherstoffe um meine Kleidung zu reparieren. Ich würde mich dafür auch bedanken.',
+ /*  QuestDescription   */ '$N,hier draussen windet es stark. Meine Kleidung leidet darunter. Bitte helft mir, sonst muss ich erfrieren. Bringt mir 35 Leichte Federn sowie 60 Netherstoffe um meine Kleidung zu reparieren. Ich wuerde mich dafuer auch bedanken.',
  /*  EndText   */  '',
  /*  OfferRewardText  */  'Bringt mir 35 Leichte Federn sowie 60 Netherstoffe.',
  /*  RequestItemsText  */ 'Bringt mir 35 Leichte Federn sowie 60 Netherstoffe.',
@@ -5000,7 +5000,7 @@ REPLACE INTO `creature_questender` (`id`, `quest`) VALUES
  /*  PointOption  */ 0,
  /*  LogTitle  */ 'Spionageberichte',
  /*  LogDescription  */  'Bringt den Stapel Berichte zu Adal in Shattrath.',
- /*  QuestDescription   */ '$N,könnt ihr mir einen Gefallen machen? Bringt diese Berichte zu Adal. Sie sind wichtig und streng vertraulich. Ihr müsst Euch beeilen, den die Berichte müssen unverzüglich bei Adal ankommen.',
+ /*  QuestDescription   */ '$N,koennt ihr mir einen Gefallen machen? Bringt diese Berichte zu Adal. Sie sind wichtig und streng vertraulich. Ihr muesst Euch beeilen, den die Berichte muessen unverzueglich bei Adal ankommen.',
  /*  EndText   */  '',
  /*  OfferRewardText  */  'Bringt den Stapel Berichte zu Adal in Shattrath.',
  /*  RequestItemsText  */ 'Bringt den Stapel Berichte zu Adal in Shattrath.',
@@ -5305,11 +5305,11 @@ REPLACE INTO `creature_questender` (`id`, `quest`) VALUES
  /*  PointY  */ 0,
  /*  PointOption  */ 0,
 /*  LogTitle  */ 'Ein alter Bekannter',
-/*  LogDescription  */  'Bringt meinem alten Bekannten dieses Buch zurück.',
- /* QuestDescription   */ '$N, Ich habe mir vor langer Zeit ein Buch von einem alten Bekannten ausgeliehen.Könntet ihr es zurück bringen? Sie befindet sich an der Küste in Desolace am Sar´therisstrand.',
+/*  LogDescription  */  'Bringt meinem alten Bekannten dieses Buch zurueck.',
+ /* QuestDescription   */ '$N, Ich habe mir vor langer Zeit ein Buch von einem alten Bekannten ausgeliehen.Koenntet ihr es zurueck bringen? Sie befindet sich an der Kueste in Desolace am Sar´therisstrand.',
 /* EndText   */  '',
 /*  OfferRewardText  */  'Habt Ihr Sie nicht gefunden?',
- /*  RequestItemsText  */ 'Bringt meinem alten Bekannten dieses Buch zurück.',
+ /*  RequestItemsText  */ 'Bringt meinem alten Bekannten dieses Buch zurueck.',
  /*  QuestCompletionLog  */ 'Ich danke Euch von Herzen.',
  /*  RequiredNpcOrGo1  */ 0,
  /*  RequiredNpcOrGo2  */ 0,
@@ -5396,7 +5396,7 @@ REPLACE INTO `creature_queststarter` (`id`, `quest`) VALUES
 
 
 /*REPLACE INTO `quest_template` (`ID`, `Method`, `QuestLevel`, `MinLevel`, `QuestSortID`, `QuestType`, `SuggestedGroupNum`, `LimitTime`, `RequiredRaces`, `RequiredFactionId1`, `RequiredFactionId2`, `RequiredFactionValue1`, `RequiredFactionValue2`, `NextQuestIdChain`, `RewardXPId`, `RewardOrRequiredMoney`, `RewardMoneyMaxLevel`, `RewardSpell`, `RewardSpellCast`, `RewardHonor`, `RewardHonorMultiplier`, `SourceItemId`, `Flags`, `RewardTitle`, `RequiredPlayerKills`, `RewardTalents`, `RewardArenaPoints`, `RewardItem1`, `RewardItem2`, `RewardItem3`, `RewardItem4`, `RewardAmount1`, `RewardAmount2`, `RewardAmount3`, `RewardAmount4`, `RewardChoiceItemID1`, `RewardChoiceItemID2`, `RewardChoiceItemID3`, `RewardChoiceItemID4`, `RewardChoiceItemID5`, `RewardChoiceItemID6`, `RewardChoiceItemQuantity1`, `RewardChoiceItemQuantity2`, `RewardChoiceItemQuantity3`, `RewardChoiceItemQuantity4`, `RewardChoiceItemQuantity5`, `RewardChoiceItemQuantity6`, `RewardFactionID1`, `RewardFactionID2`, `RewardFactionID3`, `RewardFactionID4`, `RewardFactionID5`, `RewardFactionValue1`, `RewardFactionValue2`, `RewardFactionValue3`, `RewardFactionValue4`, `RewardFactionValue5`, `RewardFactionOverride1`, `RewardFactionOverride2`, `RewardFactionOverride3`, `RewardFactionOverride4`, `RewardFactionOverride5`, `PointMapId`, `PointX`, `PointY`, `PointOption`, `LogTitle`, `LogDescription`, `QuestDescription`, `EndText`, `OfferRewardText`, `RequestItemsText`, `QuestCompletionLog`, `RequiredNpcOrGo1`, `RequiredNpcOrGo2`, `RequiredNpcOrGo3`, `RequiredNpcOrGo4`, `RequiredNpcOrGoCount1`, `RequiredNpcOrGoCount2`, `RequiredNpcOrGoCount3`, `RequiredNpcOrGoCount4`, `RequiredSourceItemId1`, `RequiredSourceItemId2`, `RequiredSourceItemId3`, `RequiredSourceItemId4`, `RequiredSourceItemCount1`, `RequiredSourceItemCount2`, `RequiredSourceItemCount3`, `RequiredSourceItemCount4`, `RequiredItemId1`, `RequiredItemId2`, `RequiredItemId3`, `RequiredItemId4`, `RequiredItemId5`, `RequiredItemId6`, `RequiredItemCount1`, `RequiredItemCount2`, `RequiredItemCount3`, `RequiredItemCount4`, `RequiredItemCount5`, `RequiredItemCount6`, `Unknown0`, `ObjectiveText1`, `ObjectiveText2`, `ObjectiveText3`, `ObjectiveText4`, `DetailsEmote1`, `DetailsEmote2`, `DetailsEmote3`, `DetailsEmote4`, `DetailsEmoteDelay1`, `DetailsEmoteDelay2`, `DetailsEmoteDelay3`, `DetailsEmoteDelay4`, `EmoteOnIncomplete`, `EmoteOnComplete`, `OfferRewardEmote1`, `OfferRewardEmote2`, `OfferRewardEmote3`, `OfferRewardEmote4`, `OfferRewardEmoteDelay1`, `OfferRewardEmoteDelay2`, `OfferRewardEmoteDelay3`, `OfferRewardEmoteDelay4`, `VerifiedBuild`) VALUES
-(802003, 2, 80, 80, -1, 0, 0, 0, 1791, 0, 0, 0, 0, 0, 250, 500000, 500000, 0, 0, 0, 0, 6283, 0, 0, 0, 0, 0, 49426, 0, 47241, 0, 1, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 'Ein alter Bekannter', 'Bringt meinem alten Bekannten dieses Buch zurück.', 'Ich habe mir vor langer Zeit ein Buch von einem alten Bekannten ausgeliehen.Könntet ihr es zurück bringen?', '', 'Kommt doch morgen wieder um mir weiterzuhelfen.', 'Bringt meinem alten Bekannten dieses Buch zurück.', 'Werdet ihr den Auftrag aufsführen?', 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 6283, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, '', '', '', '', 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1);
+(802003, 2, 80, 80, -1, 0, 0, 0, 1791, 0, 0, 0, 0, 0, 250, 500000, 500000, 0, 0, 0, 0, 6283, 0, 0, 0, 0, 0, 49426, 0, 47241, 0, 1, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 'Ein alter Bekannter', 'Bringt meinem alten Bekannten dieses Buch zurueck.', 'Ich habe mir vor langer Zeit ein Buch von einem alten Bekannten ausgeliehen.Koenntet ihr es zurueck bringen?', '', 'Kommt doch morgen wieder um mir weiterzuhelfen.', 'Bringt meinem alten Bekannten dieses Buch zurueck.', 'Werdet ihr den Auftrag aufsfuehren?', 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 6283, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, '', '', '', '', 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1);
 
 
 
@@ -5474,9 +5474,9 @@ REPLACE INTO `creature_queststarter` (`id`, `quest`) VALUES
  /*  PointX  */ 0,
  /*  PointY  */ 0,
  /*  PointOption  */ 0,
- /*  LogTitle  */ 'Geschenkübermittlung',
- /*  LogDescription  */  'Bringt LokRegual auf der Insel mein Geschenk zurück.',
- /*  QuestDescription   */ 'Hallo $N, ich danke Euch für das Zurückbringen meines Buches. Wenn ihr ein Freund seid, übermittelt LokRequal bitte dieses Geschenk. Ich wollte es ihm seit längerer Zeit übermitteln, fand aber nie die Zeit dazu. Seid also bitte so freundlich.',
+ /*  LogTitle  */ 'Geschenkuebermittlung',
+ /*  LogDescription  */  'Bringt LokRegual auf der Insel mein Geschenk zurueck.',
+ /*  QuestDescription   */ 'Hallo $N, ich danke Euch fuer das Zurueckbringen meines Buches. Wenn ihr ein Freund seid, uebermittelt LokRequal bitte dieses Geschenk. Ich wollte es ihm seit laengerer Zeit uebermitteln, fand aber nie die Zeit dazu. Seid also bitte so freundlich.',
  /*  EndText   */  '',
  /*  OfferRewardText  */  'Habt Ihr ihn nicht gefunden?',
  /*  RequestItemsText  */ 'Bringt LokRegual auf der Insel mein Geschenk',
@@ -5630,11 +5630,11 @@ REPLACE INTO `quest_template` (`ID`, `Method`, `QuestLevel`, `MinLevel`, `QuestS
  /*  PointY  */ 0,
  /*  PointOption  */ 0,
  /*  LogTitle  */ 'Der Strand',
- /*  LogDescription  */  'Tötet 10 tobende Donnerechsen und nehmt Euch ihre undichten Muskelmagen.',
- /*  QuestDescription   */ 'Hallo $N, bitte säubert den Strand von den tobenden Donnerechsen. Sie haben die ganze Küste verwüstet.',
+ /*  LogDescription  */  'Toetet 10 tobende Donnerechsen und nehmt Euch ihre undichten Muskelmagen.',
+ /*  QuestDescription   */ 'Hallo $N, bitte saeubert den Strand von den tobenden Donnerechsen. Sie haben die ganze Kueste verwuestet.',
  /*  EndText   */  '',
  /*  OfferRewardText  */  'Seid ihr fertig?',
- /*  RequestItemsText  */ 'Tötet 10 tobende Donnerechsen und nehmt Euch ihre undichten Muskelmagen.',
+ /*  RequestItemsText  */ 'Toetet 10 tobende Donnerechsen und nehmt Euch ihre undichten Muskelmagen.',
  /*  QuestCompletionLog  */ 'Es ist Eure Sache was ihr tut.',
  /*  RequiredNpcOrGo1  */ 4726,
  /*  RequiredNpcOrGo2  */ 0,
@@ -5785,11 +5785,11 @@ REPLACE INTO `quest_template` (`ID`, `Method`, `QuestLevel`, `MinLevel`, `QuestS
  /*  PointY  */ 0,
  /*  PointOption  */ 0,
  /*  LogTitle  */ 'Friede sei mit uns.',
- /*  LogDescription  */  'Um Frieden zu wahren müssen wir unsere Feinde besiegen.',
- /*  QuestDescription   */ 'Hallo $N,tötet die Pusteligen Schrecken der hier am Strand entlang läuft. Ich bitte Euch inständig um Eure Hilfe. Wenn ihr das erledigt habt, geht bitte zu Silvaria Tularia in Beutebucht. Sie ist am Anleger f�r kleinere Schiffe zu finden z.b f�r Fischerboote.',
+ /*  LogDescription  */  'Um Frieden zu wahren muessen wir unsere Feinde besiegen.',
+ /*  QuestDescription   */ 'Hallo $N,toetet die Pusteligen Schrecken der hier am Strand entlang laeuft. Ich bitte Euch instaendig um Eure Hilfe. Wenn ihr das erledigt habt, geht bitte zu Silvaria Tularia in Beutebucht. Sie ist am Anleger fuer kleinere Schiffe zu finden z.b fuer Fischerboote.',
  /*  EndText   */  '',
  /*  OfferRewardText  */  'Seid ihr fertig?',
- /*  RequestItemsText  */ 'Tötet die Pusteligen Schrecken.',
+ /*  RequestItemsText  */ 'Toetet die Pusteligen Schrecken.',
  /*  QuestCompletionLog  */ 'Es ist Eure Sache was ihr tut.',
  /*  RequiredNpcOrGo1  */ 31139,
  /*  RequiredNpcOrGo2  */ 0,
@@ -6096,7 +6096,7 @@ REPLACE INTO `quest_template` (`ID`, `Method`, `QuestLevel`, `MinLevel`, `QuestS
  /*  PointOption  */ 0,
  /*  LogTitle  */ 'Der weitere Weg',
  /*  LogDescription  */  'Exitare erwartet Euch.',
- /*  QuestDescription   */ '$N, Exitare wartet auf Euch. Er möchte Euch in den weiteren Lehren eurer Ausbildung unterstützen. Bitte geht zu Ihm auf der "Insel".',
+ /*  QuestDescription   */ '$N, Exitare wartet auf Euch. Er moechte Euch in den weiteren Lehren eurer Ausbildung unterstuetzen. Bitte geht zu Ihm auf der "Insel".',
  /*  EndText   */  '',
  /*  OfferRewardText  */  'Geht Ihr zu Exitare?',
  /*  RequestItemsText  */ 'Exitare erwartet Euch.',
@@ -6249,11 +6249,11 @@ REPLACE INTO `quest_template` (`ID`, `Method`, `QuestLevel`, `MinLevel`, `QuestS
  /*  PointY  */ 0,
  /*  PointOption  */ 0,
  /*  LogTitle  */ 'Kriecherfleisch',
- /*  LogDescription  */  'Sammelt 15 Stück Kriecherfleisch.',
+ /*  LogDescription  */  'Sammelt 15 Stueck Kriecherfleisch.',
  /*  QuestDescription   */ '$N, ihr habt 15 Minuten Zeit um 15 Kriecherfleisch zu sammeln. Bitte schafft es in dieser Zeit,sonst ist das Fleisch leider wieder schlecht.',
  /*  EndText   */  '',
  /*  OfferRewardText  */  'Wo ist das Fleisch?',
- /*  RequestItemsText  */ 'Sammelt 15 Stück Kriecherfleisch.',
+ /*  RequestItemsText  */ 'Sammelt 15 Stueck Kriecherfleisch.',
  /*  QuestCompletionLog  */ 'Es ist Eure Sache was ihr tut.',
  /*  RequiredNpcOrGo1  */ 0,
  /*  RequiredNpcOrGo2  */ 0,
@@ -6404,7 +6404,7 @@ REPLACE INTO `quest_template` (`ID`, `Method`, `QuestLevel`, `MinLevel`, `QuestS
  /*  PointOption  */ 0,
  /*  LogTitle  */ 'Der Fremde',
  /*  LogDescription  */  'Bringt mir 5000 Ehrenpunkte sowie 15 Embleme des Triumphs.',
- /*  QuestDescription   */ '$N,in den tiefen Wäldern des Dämmerwaldes haust Rumu, ein alter weißer Schamane. Er ist schon sehr alt, wird Euch aber bestimmt ein offenes Ohr leihen. Wenn ihr mir 5000 Ehrenpunkte sowie 15 Embleme des Triumps bringt, sage Ich Euch welches Abzeichen Rumu von Euch haben möchte.',
+ /*  QuestDescription   */ '$N,in den tiefen Waeldern des Daemmerwaldes haust Rumu, ein alter weißer Schamane. Er ist schon sehr alt, wird Euch aber bestimmt ein offenes Ohr leihen. Wenn ihr mir 5000 Ehrenpunkte sowie 15 Embleme des Triumps bringt, sage Ich Euch welches Abzeichen Rumu von Euch haben moechte.',
  /*  EndText   */  '',
  /*  OfferRewardText  */  'Wo ist alles?',
  /*  RequestItemsText  */ 'Bringt mir 5000 Ehrenpunkte sowie 15 Embleme des Triumphs.',
@@ -6558,7 +6558,7 @@ REPLACE INTO `quest_template` (`ID`, `Method`, `QuestLevel`, `MinLevel`, `QuestS
  /*  PointOption  */ 0,
  /*  LogTitle  */ 'Findet Rumu',
  /*  LogDescription  */  'Findet Rumu und gebt ihm das Abzeichen des Wyrmruhpaktes.',
- /*  QuestDescription   */ '$N,Rumu ist in der Nähe der Rabenflucht. Meist läuft er dort an seinem Lagerfeuer herum. Das können manchmal längere Wege sein, also verzagt nicht wenn er beim ersten Mal nicht anzutreffen ist. Er erwartet Euch bestimmt schon.',
+ /*  QuestDescription   */ '$N,Rumu ist in der Naehe der Rabenflucht. Meist laeuft er dort an seinem Lagerfeuer herum. Das koennen manchmal laengere Wege sein, also verzagt nicht wenn er beim ersten Mal nicht anzutreffen ist. Er erwartet Euch bestimmt schon.',
  /*  EndText   */  '',
  /*  OfferRewardText  */  '',
  /*  RequestItemsText  */ 'Findet Rumu und gebt ihm das Abzeichen des Wyrmruhpaktes.',
@@ -6711,11 +6711,11 @@ REPLACE INTO `quest_template` (`ID`, `Method`, `QuestLevel`, `MinLevel`, `QuestS
  /*  PointY  */ 0,
  /*  PointOption  */ 0,
  /*  LogTitle  */ 'Rattenplage',
- /*  LogDescription  */  'Tötet 15 Ratten der Schattenseite.',
- /*  QuestDescription   */ '$N,in den Städten herrscht eine Rattenplage. Befreit Dalaran von der Rattenplage. Tötet daher 15 Ratten.',
+ /*  LogDescription  */  'Toetet 15 Ratten der Schattenseite.',
+ /*  QuestDescription   */ '$N,in den Staedten herrscht eine Rattenplage. Befreit Dalaran von der Rattenplage. Toetet daher 15 Ratten.',
  /*  EndText   */  '',
  /*  OfferRewardText  */  '',
- /*  RequestItemsText  */ 'Tötet 15 Ratten der Schattenseite.',
+ /*  RequestItemsText  */ 'Toetet 15 Ratten der Schattenseite.',
  /*  QuestCompletionLog  */ 'Es ist Eure Sache was ihr tut.',
  /*  RequiredNpcOrGo1  */ 32428,
  /*  RequiredNpcOrGo2  */ 0,
@@ -6864,11 +6864,11 @@ REPLACE INTO `creature_questender` (`id`, `quest`) VALUES
  /*  PointY  */ 0,
  /*  PointOption  */ 0,
  /*  LogTitle  */ 'Alchemie',
- /*  LogDescription  */  'Bringt mir 1 Elixier der Weisen, 1 Elixier der Schattenmacht sowie 1 Instabiles Fläschen des Banditen.',
- /*  QuestDescription   */ '$N,ich beobachte schon längere Zeit die Banditen des Defias in Westefall. Ein ungemütlicher Haufen, der zu allem fähig ist. Deswegen benötige ich diese Utensilien um mich bei ihnen heimlich einschleichen zu können. Bitte bringt mir alles so schnell wie möglich.',
+ /*  LogDescription  */  'Bringt mir 1 Elixier der Weisen, 1 Elixier der Schattenmacht sowie 1 Instabiles Flaeschen des Banditen.',
+ /*  QuestDescription   */ '$N,ich beobachte schon laengere Zeit die Banditen des Defias in Westefall. Ein ungemuetlicher Haufen, der zu allem faehig ist. Deswegen benoetige ich diese Utensilien um mich bei ihnen heimlich einschleichen zu koennen. Bitte bringt mir alles so schnell wie moeglich.',
  /*  EndText   */  '',
  /*  OfferRewardText  */  '',
- /*  RequestItemsText  */ 'Bringt mir 1 Elixier der Weisen, 1 Elixier der Schattenmacht sowie 1 Instabiles Fläschen des Banditen.',
+ /*  RequestItemsText  */ 'Bringt mir 1 Elixier der Weisen, 1 Elixier der Schattenmacht sowie 1 Instabiles Flaeschen des Banditen.',
  /*  QuestCompletionLog  */ 'Es ist Eure Sache was ihr tut.',
  /*  RequiredNpcOrGo1  */ 0,
  /*  RequiredNpcOrGo2  */ 0,
@@ -7016,9 +7016,9 @@ REPLACE INTO `creature_questender` (`id`, `quest`) VALUES
  /*  PointX  */ 0,
  /*  PointY  */ 0,
  /*  PointOption  */ 0,
- /*  LogTitle  */ 'Das Rätsel',
+ /*  LogTitle  */ 'Das Raetsel',
  /*  LogDescription  */  'Akzeptiert die Herausforderung.',
- /*  QuestDescription   */ '$N,Möchtet Ihr ein bisschen Abwechslung? Ich habe ein paar Rätsel für Euch. Diese sind unterschiedlich schwer. Es ist nicht wichtig wie lange Ihr dafür braucht oder ob Ihr diese alleine macht oder nicht. Nehmt Euch Zeit um sie zu lösen. ',
+ /*  QuestDescription   */ '$N,Moechtet Ihr ein bisschen Abwechslung? Ich habe ein paar Raetsel fuer Euch. Diese sind unterschiedlich schwer. Es ist nicht wichtig wie lange Ihr dafuer braucht oder ob Ihr diese alleine macht oder nicht. Nehmt Euch Zeit um sie zu loesen. ',
  /*  EndText   */  '',
  /*  OfferRewardText  */  '',
  /*  RequestItemsText  */ 'Akzeptiert die Herausforderung.',
@@ -7170,9 +7170,9 @@ REPLACE INTO `quest_template` (`ID`, `Method`, `QuestLevel`, `MinLevel`, `QuestS
  /*  PointX  */ 0,
  /*  PointY  */ 0,
  /*  PointOption  */ 0,
- /*  LogTitle  */ 'Das erste Rätsel',
- /*  LogDescription  */  'Löst das Rätsel.',
- /*  QuestDescription   */ '$N,im Norden des Östlichen Königreiches gibt es eine Halbmondformation auf der Karte. Rechts daneben gibt es 5 größere Punkte, auf der Karte, die einen weiteren Halbkreis bilden.Der 2te Fleck von oben ist Euer Ziel. Dort findet ihr was ihr sucht. Wenn ihr das Rätsel gelöst habt, wird Euch die Rückkehrquest automatisch hinzugefügt. Brecht diese also nicht ab.',
+ /*  LogTitle  */ 'Das erste Raetsel',
+ /*  LogDescription  */  'Loest das Raetsel.',
+ /*  QuestDescription   */ '$N,im Norden des oestlichen Koenigreiches gibt es eine Halbmondformation auf der Karte. Rechts daneben gibt es 5 groeßere Punkte, auf der Karte, die einen weiteren Halbkreis bilden.Der 2te Fleck von oben ist Euer Ziel. Dort findet ihr was ihr sucht. Wenn ihr das Raetsel geloest habt, wird Euch die Rueckkehrquest automatisch hinzugefuegt. Brecht diese also nicht ab.',
  /*  EndText   */  '',
  /*  OfferRewardText  */  '',
  /*  RequestItemsText  */ 'Akzeptiert die Herausforderung.',
@@ -7324,12 +7324,12 @@ REPLACE INTO `quest_template` (`ID`, `Method`, `QuestLevel`, `MinLevel`, `QuestS
  /*  PointX  */ 0,
  /*  PointY  */ 0,
  /*  PointOption  */ 0,
- /*  LogTitle  */ 'Die Rückkehr',
- /*  LogDescription  */  'Kehrt zu Rumu zurück.',
- /*  QuestDescription   */ '$N,kehrt zu Rumu zurück um eure Belohnung abzuholen.',
+ /*  LogTitle  */ 'Die Rueckkehr',
+ /*  LogDescription  */  'Kehrt zu Rumu zurueck.',
+ /*  QuestDescription   */ '$N,kehrt zu Rumu zurueck um eure Belohnung abzuholen.',
  /*  EndText   */  '',
  /*  OfferRewardText  */  '',
- /*  RequestItemsText  */ 'Kehrt zu Rumu zurück.',
+ /*  RequestItemsText  */ 'Kehrt zu Rumu zurueck.',
  /*  QuestCompletionLog  */ 'Ich warte auf Euch.',
  /*  RequiredNpcOrGo1  */ 0,
  /*  RequiredNpcOrGo2  */ 0,
@@ -7478,10 +7478,10 @@ REPLACE INTO `quest_template` (`ID`, `Method`, `QuestLevel`, `MinLevel`, `QuestS
  /*  PointOption  */ 0,
  /*  LogTitle  */ 'Willkommen bei den Farmern',
  /*  LogDescription  */  'Bringt Moon 20 Kupferbarren, 10 Eisenbarren sowie 50 Leichte Leder.',
- /*  QuestDescription   */ '$N,$Bich bin Moon die unermüdliche Sammlerin. Bei mir könnt ihr viel sammeln und viel zusammenfarmen. Es wird lange dauern alles zusammenzubekommen. Bringt mir als erstes 20 Kupferbarren, 10 Eisenbarren sowie 50 Leichte Leder. ',
+ /*  QuestDescription   */ '$N,$Bich bin Moon die unermuedliche Sammlerin. Bei mir koennt ihr viel sammeln und viel zusammenfarmen. Es wird lange dauern alles zusammenzubekommen. Bringt mir als erstes 20 Kupferbarren, 10 Eisenbarren sowie 50 Leichte Leder. ',
  /*  EndText   */  'Bringt Moon 20 Kupferbarren, 10 Eisenbarren sowie 50 Leichte Leder.',
  /*  OfferRewardText  */  'Bringt Moon 20 Kupferbarren, 10 Eisenbarren sowie 50 Leichte Leder.',
- /*  RequestItemsText  */ 'Kehrt zu Moon zurück.',
+ /*  RequestItemsText  */ 'Kehrt zu Moon zurueck.',
  /*  QuestCompletionLog  */ 'Ich warte auf Euch.',
  /*  RequiredNpcOrGo1  */ 0,
  /*  RequiredNpcOrGo2  */ 0,
@@ -7632,11 +7632,11 @@ REPLACE INTO `quest_template` (`ID`, `Method`, `QuestLevel`, `MinLevel`, `QuestS
  /*  PointY  */ 0,
  /*  PointOption  */ 0,
  /*  LogTitle  */ 'Sammlung Teil Eins',
- /*  LogDescription  */  'Bringt Moon 75 Goldklee, 50 Wildstahlblumen sowie 30 Stück Beulengras. ',
- /*  QuestDescription   */ '$N,$Bbringt mir 75 Goldklee, 50 Wildstahlblumen sowie 30 Stück Beulengras. Das ganze vermahlen wir zu einem neuen Trank, welchen ihr von mir bekommt. ',
+ /*  LogDescription  */  'Bringt Moon 75 Goldklee, 50 Wildstahlblumen sowie 30 Stueck Beulengras. ',
+ /*  QuestDescription   */ '$N,$Bbringt mir 75 Goldklee, 50 Wildstahlblumen sowie 30 Stueck Beulengras. Das ganze vermahlen wir zu einem neuen Trank, welchen ihr von mir bekommt. ',
  /*  EndText   */  '',
  /*  OfferRewardText  */  '',
- /*  RequestItemsText  */ 'Kehrt zu Moon zurück.',
+ /*  RequestItemsText  */ 'Kehrt zu Moon zurueck.',
  /*  QuestCompletionLog  */ 'Ich warte auf Euch.',
  /*  RequiredNpcOrGo1  */ 0,
  /*  RequiredNpcOrGo2  */ 0,
@@ -7787,11 +7787,11 @@ REPLACE INTO `quest_template` (`ID`, `Method`, `QuestLevel`, `MinLevel`, `QuestS
  /*  PointY  */ 0,
  /*  PointOption  */ 0,
  /*  LogTitle  */ 'Sammlung Teil Zwei',
- /*  LogDescription  */  'Bringt Moon 15 Feuersaat, 40 Junges Gemüse sowie 100 Stück schweres Leder.',
- /*  QuestDescription   */ '$N,$Bbringt mir 15 Feuersaaten,40 Junges Gemüse sowie 100 Stück schweres Leder. Ich hoffe Ihr seid willens alles benötigte zu mir zu bringen.',
+ /*  LogDescription  */  'Bringt Moon 15 Feuersaat, 40 Junges Gemuese sowie 100 Stueck schweres Leder.',
+ /*  QuestDescription   */ '$N,$Bbringt mir 15 Feuersaaten,40 Junges Gemuese sowie 100 Stueck schweres Leder. Ich hoffe Ihr seid willens alles benoetigte zu mir zu bringen.',
  /*  EndText   */  '',
  /*  OfferRewardText  */  '',
- /*  RequestItemsText  */ 'Kehrt zu Moon zurück.',
+ /*  RequestItemsText  */ 'Kehrt zu Moon zurueck.',
  /*  QuestCompletionLog  */ 'Ich warte auf Euch.',
  /*  RequiredNpcOrGo1  */ 0,
  /*  RequiredNpcOrGo2  */ 0,
@@ -7942,11 +7942,11 @@ REPLACE INTO `quest_template` (`ID`, `Method`, `QuestLevel`, `MinLevel`, `QuestS
  /*  PointY  */ 0,
  /*  PointOption  */ 0,
  /*  LogTitle  */ 'Sammlung Teil Drei',
- /*  LogDescription  */  'Bringt Moon 20 blutige Spinnenfangzähne, 20 Brocken Eberfleisch sowie 10 raue Eberhauer ',
- /*  QuestDescription   */ '$N,$Bas Sammeln geht weiter. Ich hoffe Ihr seid willens alles benötigte zu mir zu bringen. Ihr findet die benötigten Dinge bei Dun Morog, sowie im Schattenmondtal.',
+ /*  LogDescription  */  'Bringt Moon 20 blutige Spinnenfangzaehne, 20 Brocken Eberfleisch sowie 10 raue Eberhauer ',
+ /*  QuestDescription   */ '$N,$Bas Sammeln geht weiter. Ich hoffe Ihr seid willens alles benoetigte zu mir zu bringen. Ihr findet die benoetigten Dinge bei Dun Morog, sowie im Schattenmondtal.',
  /*  EndText   */  '',
  /*  OfferRewardText  */  '',
- /*  RequestItemsText  */ 'Kehrt zu Moon zurück.',
+ /*  RequestItemsText  */ 'Kehrt zu Moon zurueck.',
  /*  QuestCompletionLog  */ 'Ich warte auf Euch.',
  /*  RequiredNpcOrGo1  */ 0,
  /*  RequiredNpcOrGo2  */ 0,
@@ -8097,11 +8097,11 @@ REPLACE INTO `quest_template` (`ID`, `Method`, `QuestLevel`, `MinLevel`, `QuestS
  /*  PointY  */ 0,
  /*  PointOption  */ 0,
  /*  LogTitle  */ 'Sammlung Teil Vier',
- /*  LogDescription  */  'Bringt Moon 50 Spinnenseide, 100 Seidenstoffe und tötet 20 Domestizierter Krabbler, 20 Arbeiter des Hügellandes und 20 Fußsoldat des Hügellandes.',
- /*  QuestDescription   */ '$N,$Bbringt mir 50 Spinnenseide, 100 Seidenstoffe und tötet 20 Domestizierter Krabbler, 20 Arbeiter des Hügellandes und 20 Fußsoldat des Hügellandes. Ihr findet alles im Vorgebirge des Hügellandes.',
+ /*  LogDescription  */  'Bringt Moon 50 Spinnenseide, 100 Seidenstoffe und toetet 20 Domestizierter Krabbler, 20 Arbeiter des Huegellandes und 20 Fußsoldat des Huegellandes.',
+ /*  QuestDescription   */ '$N,$Bbringt mir 50 Spinnenseide, 100 Seidenstoffe und toetet 20 Domestizierter Krabbler, 20 Arbeiter des Huegellandes und 20 Fußsoldat des Huegellandes. Ihr findet alles im Vorgebirge des Huegellandes.',
  /*  EndText   */  '',
  /*  OfferRewardText  */  '',
- /*  RequestItemsText  */ 'Kehrt zu Moon zurück.',
+ /*  RequestItemsText  */ 'Kehrt zu Moon zurueck.',
  /*  QuestCompletionLog  */ 'Ich warte auf Euch.',
  /*  RequiredNpcOrGo1  */ 2349,
  /*  RequiredNpcOrGo2  */ 2267,
@@ -8251,12 +8251,12 @@ REPLACE INTO `quest_template` (`ID`, `Method`, `QuestLevel`, `MinLevel`, `QuestS
  /*  PointX  */ 0,
  /*  PointY  */ 0,
  /*  PointOption  */ 0,
- /*  LogTitle  */ 'Sammlung Teil Fünf',
+ /*  LogTitle  */ 'Sammlung Teil Fuenf',
  /*  LogDescription  */  'Bringt Moon 4 eisige Taschen und 10.000 Gold.',
- /*  QuestDescription   */ '$N,$Bbringt mir 4 eisige Taschen um alle meine Gewürze verstauen zu können und zusätzlich 10.000 Gold. Langsam werden meine braunen Rücksacke zu klein.',
+ /*  QuestDescription   */ '$N,$Bbringt mir 4 eisige Taschen um alle meine Gewuerze verstauen zu koennen und zusaetzlich 10.000 Gold. Langsam werden meine braunen Ruecksacke zu klein.',
  /*  EndText   */  '',
  /*  OfferRewardText  */  '',
- /*  RequestItemsText  */ 'Kehrt zu Moon zurück.',
+ /*  RequestItemsText  */ 'Kehrt zu Moon zurueck.',
  /*  QuestCompletionLog  */ 'Ich warte auf Euch.',
  /*  RequiredNpcOrGo1  */ 0,
  /*  RequiredNpcOrGo2  */ 0,
@@ -8407,11 +8407,11 @@ REPLACE INTO `quest_template` (`ID`, `Method`, `QuestLevel`, `MinLevel`, `QuestS
  /*  PointY  */ 0,
  /*  PointOption  */ 0,
  /*  LogTitle  */ 'Sammlung Teil Sechs',
- /*  LogDescription  */  'Bringt Moon 5 frostige Kugel und 150 Froststoffverbände.',
- /*  QuestDescription   */ '$N,$Bbringt mir 2 frostige Kugeln und 150 Froststoffverbände. Ihr erreicht langsam aber sicher die erste Belohnung.',
+ /*  LogDescription  */  'Bringt Moon 5 frostige Kugel und 150 Froststoffverbaende.',
+ /*  QuestDescription   */ '$N,$Bbringt mir 2 frostige Kugeln und 150 Froststoffverbaende. Ihr erreicht langsam aber sicher die erste Belohnung.',
  /*  EndText   */  '',
  /*  OfferRewardText  */  '',
- /*  RequestItemsText  */ 'Kehrt zu Moon zurück.',
+ /*  RequestItemsText  */ 'Kehrt zu Moon zurueck.',
  /*  QuestCompletionLog  */ 'Ich warte auf Euch.',
  /*  RequiredNpcOrGo1  */ 0,
  /*  RequiredNpcOrGo2  */ 0,
@@ -8561,12 +8561,12 @@ REPLACE INTO `quest_template` (`ID`, `Method`, `QuestLevel`, `MinLevel`, `QuestS
  /*  PointX  */ 0,
  /*  PointY  */ 0,
  /*  PointOption  */ 0,
- /*  LogTitle  */ 'Die Säuberung von Mondbruch',
- /*  LogDescription  */  'Löscht alle Besatzer von Mondbruch aus. Mindestens 20 Ausplünderer , 20 Plünderer und 20 Boten der Defias.',
- /*  QuestDescription   */ '$N,ich habe euch ja schon erzählt das die Defias ein größeres Problem in Westfall darstellen. Sie überfallen Händler und plündern unsere Farmen. Ich wurde geschickt um diesem Treiben ein Ende zu setzen. Und das werden wir nun gemeinsam umsetzen. Löscht alle Besatzer von Mondbruch aus. Mindestens 20 Ausplünderer , 20 Plünderer und 20 Boten der Defias.',
+ /*  LogTitle  */ 'Die Saeuberung von Mondbruch',
+ /*  LogDescription  */  'Loescht alle Besatzer von Mondbruch aus. Mindestens 20 Auspluenderer , 20 Pluenderer und 20 Boten der Defias.',
+ /*  QuestDescription   */ '$N,ich habe euch ja schon erzaehlt das die Defias ein groeßeres Problem in Westfall darstellen. Sie ueberfallen Haendler und pluendern unsere Farmen. Ich wurde geschickt um diesem Treiben ein Ende zu setzen. Und das werden wir nun gemeinsam umsetzen. Loescht alle Besatzer von Mondbruch aus. Mindestens 20 Auspluenderer , 20 Pluenderer und 20 Boten der Defias.',
  /*  EndText   */  '',
  /*  OfferRewardText  */  '',
- /*  RequestItemsText  */ 'Löscht alle Besatzer von Mondbruch aus. Mindestens 20 Ausplünderer , 20 Plünderer und 20 Boten der Defias.',
+ /*  RequestItemsText  */ 'Loescht alle Besatzer von Mondbruch aus. Mindestens 20 Auspluenderer , 20 Pluenderer und 20 Boten der Defias.',
  /*  QuestCompletionLog  */ 'Es ist Eure Sache was ihr tut.',
  /*  RequiredNpcOrGo1  */ 589,
  /*  RequiredNpcOrGo2  */ 550,
@@ -8714,12 +8714,12 @@ REPLACE INTO `creature_questender` (`id`, `quest`) VALUES
  /*  PointX  */ 0,
  /*  PointY  */ 0,
  /*  PointOption  */ 0,
- /*  LogTitle  */ 'Fortschreiten der Säuberung',
- /*  LogDescription  */  'Tötet 30 Beschwörer der Defias, 30 Buddler der Defias sowie 30 Handlanger der Defias.',
- /*  QuestDescription   */ '$N,es ist an der Zeit tiefer in die Gebiete der Defias vorzurücken. Mir müssen ihr Versteck oder das was sie so nennen, vernichten. Geht also in den Eingang der Todesminen und tötet 30 Beschwörer der Defias, 20 Buddler der Defias sowie 30 Handlanger der Defias.',
+ /*  LogTitle  */ 'Fortschreiten der Saeuberung',
+ /*  LogDescription  */  'Toetet 30 Beschwoerer der Defias, 30 Buddler der Defias sowie 30 Handlanger der Defias.',
+ /*  QuestDescription   */ '$N,es ist an der Zeit tiefer in die Gebiete der Defias vorzuruecken. Mir muessen ihr Versteck oder das was sie so nennen, vernichten. Geht also in den Eingang der Todesminen und toetet 30 Beschwoerer der Defias, 20 Buddler der Defias sowie 30 Handlanger der Defias.',
  /*  EndText   */  '',
  /*  OfferRewardText  */  '',
- /*  RequestItemsText  */ 'Tötet 30 Beschwörer der Defias, 20 Buddler der Defias sowie 30 Handlanger der Defias.',
+ /*  RequestItemsText  */ 'Toetet 30 Beschwoerer der Defias, 20 Buddler der Defias sowie 30 Handlanger der Defias.',
  /*  QuestCompletionLog  */ 'Es ist Eure Sache was ihr tut.',
  /*  RequiredNpcOrGo1  */ 594,
  /*  RequiredNpcOrGo2  */ 824,
@@ -8868,11 +8868,11 @@ REPLACE INTO `creature_questender` (`id`, `quest`) VALUES
  /*  PointY  */ 0,
  /*  PointOption  */ 0,
  /*  LogTitle  */ 'Eine neue Reise',
- /*  LogDescription  */  'Reist zu Krasus dem Gemahl der Königin.',
- /*  QuestDescription   */ 'Hallo $N,reist bitte zu Krasus dem Gemahl der Königin im Wyrmruhtempel in der Drachenöde. Er sollte Aufgaben für Euch haben.',
+ /*  LogDescription  */  'Reist zu Krasus dem Gemahl der Koenigin.',
+ /*  QuestDescription   */ 'Hallo $N,reist bitte zu Krasus dem Gemahl der Koenigin im Wyrmruhtempel in der Drachenoede. Er sollte Aufgaben fuer Euch haben.',
  /*  EndText   */  '',
  /*  OfferRewardText  */  'Seid ihr fertig?',
- /*  RequestItemsText  */ 'Reist zu Krasus dem Gemahl der Königin.',
+ /*  RequestItemsText  */ 'Reist zu Krasus dem Gemahl der Koenigin.',
  /*  QuestCompletionLog  */ 'Es ist Eure Sache was ihr tut.',
  /*  RequiredNpcOrGo1  */ 0,
  /*  RequiredNpcOrGo2  */ 0,
@@ -9022,12 +9022,12 @@ REPLACE INTO `quest_template` (`ID`, `Method`, `QuestLevel`, `MinLevel`, `QuestS
  /*  PointX  */ 0,
  /*  PointY  */ 0,
  /*  PointOption  */ 0,
- /*  LogTitle  */ 'Das zweite Rätsel',
- /*  LogDescription  */  'Löst das Rätsel.',
- /*  QuestDescription   */ '$N,kehrt zurück zu Rumu um Eure Belohnung abzuholen.',
+ /*  LogTitle  */ 'Das zweite Raetsel',
+ /*  LogDescription  */  'Loest das Raetsel.',
+ /*  QuestDescription   */ '$N,kehrt zurueck zu Rumu um Eure Belohnung abzuholen.',
  /*  EndText   */  '',
  /*  OfferRewardText  */  '',
- /*  RequestItemsText  */ 'Löst das Rätsel.',
+ /*  RequestItemsText  */ 'Loest das Raetsel.',
  /*  QuestCompletionLog  */ 'Ich warte auf Euch.',
  /*  RequiredNpcOrGo1  */ 0,
  /*  RequiredNpcOrGo2  */ 0,
@@ -9175,11 +9175,11 @@ REPLACE INTO `quest_template` (`ID`, `Method`, `QuestLevel`, `MinLevel`, `QuestS
  /*  PointY  */ 0,
  /*  PointOption  */ 0,
  /*  LogTitle  */ 'Der Pfad zum Powerranger',
- /*  LogDescription  */  'Tötet den Schmiedemeister Garfrost sowie 10 unbändige Seher im Kristallsangwald.',
- /*  QuestDescription   */ 'Hallo $C $N, eure erste Aufgabe besteht aus folgenden Teilen. Tötet den Schmiedemeister Garfrost sowie 10 unbändige Seher im Kristallsangwald. Ich wünsche viel Erfolg. Hoffentlich besteht ihr alle Prüfungen auf dem Weg zum Powerranger.',
+ /*  LogDescription  */  'Toetet den Schmiedemeister Garfrost sowie 10 unbaendige Seher im Kristallsangwald.',
+ /*  QuestDescription   */ 'Hallo $C $N, eure erste Aufgabe besteht aus folgenden Teilen. Toetet den Schmiedemeister Garfrost sowie 10 unbaendige Seher im Kristallsangwald. Ich wuensche viel Erfolg. Hoffentlich besteht ihr alle Pruefungen auf dem Weg zum Powerranger.',
  /*  EndText   */  '',
  /*  OfferRewardText  */  'Seid ihr fertig?',
- /*  RequestItemsText  */ 'Tötet den Schmiedemeister Garfrost sowie 10 unbändige Seher im Kristalsangwald.',
+ /*  RequestItemsText  */ 'Toetet den Schmiedemeister Garfrost sowie 10 unbaendige Seher im Kristalsangwald.',
  /*  QuestCompletionLog  */ 'Es ist Eure Sache was ihr tut.',
  /*  RequiredNpcOrGo1  */ 33422,
  /*  RequiredNpcOrGo2  */ 36494,
@@ -9330,11 +9330,11 @@ REPLACE INTO `quest_template` (`ID`, `Method`, `QuestLevel`, `MinLevel`, `QuestS
  /*  PointY  */ 0,
  /*  PointOption  */ 0,
  /*  LogTitle  */ 'Die Ausbildung beginnt',
- /*  LogDescription  */  'Löscht das kommplete Obsidiansanktum aus. ',
- /*  QuestDescription   */ 'Hallo $C $N, es ist schön das ihr Eure erste Aufgabe bestanden habt. Beginnen wir nun mit der Ausbildung zum Powerranger, damit ihr eurer Rüstung würdig erscheint. So kommen wir nun zur 2ten. Löscht das Obsidiansanktum ein für alle mal komplett aus. Diese Drachen verpesten mit ihrem ewigen Feuer nur unsere Umwelt. Drum rauft euch zusammen und entledigt Euch diesen Kreaturen.',
+ /*  LogDescription  */  'Loescht das kommplete Obsidiansanktum aus. ',
+ /*  QuestDescription   */ 'Hallo $C $N, es ist schoen das ihr Eure erste Aufgabe bestanden habt. Beginnen wir nun mit der Ausbildung zum Powerranger, damit ihr eurer Ruestung wuerdig erscheint. So kommen wir nun zur 2ten. Loescht das Obsidiansanktum ein fuer alle mal komplett aus. Diese Drachen verpesten mit ihrem ewigen Feuer nur unsere Umwelt. Drum rauft euch zusammen und entledigt Euch diesen Kreaturen.',
  /*  EndText   */  '',
  /*  OfferRewardText  */  'Seid ihr fertig?',
- /*  RequestItemsText  */ ' Löscht das kommplete Obsidiansanktum aus. ',
+ /*  RequestItemsText  */ ' Loescht das kommplete Obsidiansanktum aus. ',
  /*  QuestCompletionLog  */ 'Es ist Eure Sache was ihr tut.',
  /*  RequiredNpcOrGo1  */ 30451,
  /*  RequiredNpcOrGo2  */ 28860,
@@ -9485,11 +9485,11 @@ REPLACE INTO `quest_template` (`ID`, `Method`, `QuestLevel`, `MinLevel`, `QuestS
  /*  PointY  */ 0,
  /*  PointOption  */ 0,
  /*  LogTitle  */ 'Der Pfad eines echten Kriegers',
- /*  LogDescription  */  'Tötet den Schmiedemeister Garfrost sowie 10 unbändige Seher im Kristallsangwald.',
- /*  QuestDescription   */ 'Hallo $C $N, eure erste Aufgabe besteht aus folgenden Teilen. Tötet den Schmiedemeister Garfrost sowie 10 unbändige Seher im Kristallsangwald. Ich wünsche viel Erfolg. Hoffentlich besteht ihr alle Prüfungen auf dem Weg um ein echter Krieger zu werden.',
+ /*  LogDescription  */  'Toetet den Schmiedemeister Garfrost sowie 10 unbaendige Seher im Kristallsangwald.',
+ /*  QuestDescription   */ 'Hallo $C $N, eure erste Aufgabe besteht aus folgenden Teilen. Toetet den Schmiedemeister Garfrost sowie 10 unbaendige Seher im Kristallsangwald. Ich wuensche viel Erfolg. Hoffentlich besteht ihr alle Pruefungen auf dem Weg um ein echter Krieger zu werden.',
  /*  EndText   */  '',
  /*  OfferRewardText  */  'Seid ihr fertig?',
- /*  RequestItemsText  */ 'Tötet den Schmiedemeister Garfrost sowie 10 unbändige Seher im Kristalsangwald.',
+ /*  RequestItemsText  */ 'Toetet den Schmiedemeister Garfrost sowie 10 unbaendige Seher im Kristalsangwald.',
  /*  QuestCompletionLog  */ 'Es ist Eure Sache was ihr tut.',
  /*  RequiredNpcOrGo1  */ 33422,
  /*  RequiredNpcOrGo2  */ 36494,
@@ -9640,11 +9640,11 @@ REPLACE INTO `quest_template` (`ID`, `Method`, `QuestLevel`, `MinLevel`, `QuestS
  /*  PointY  */ 0,
  /*  PointOption  */ 0,
  /*  LogTitle  */ 'Die Ausbildung beginnt',
- /*  LogDescription  */  'Löscht das kommplete Obsidiansanktum aus. ',
- /*  QuestDescription   */ 'Hallo $C $N, es ist schön das ihr Eure erste Aufgabe bestanden habt. Beginnen wir nun mit der Ausbildung zum erstarkten Krieger, damit ihr eurer Rüstung würdig erscheint. So kommen wir nun zur 2ten. Löscht das Obsidiansanktum ein für alle mal komplett aus. Diese Drachen verpesten mit ihrem ewigen Feuer nur unsere Umwelt. Drum rauft euch zusammen und entledigt Euch diesen Kreaturen.',
+ /*  LogDescription  */  'Loescht das kommplete Obsidiansanktum aus. ',
+ /*  QuestDescription   */ 'Hallo $C $N, es ist schoen das ihr Eure erste Aufgabe bestanden habt. Beginnen wir nun mit der Ausbildung zum erstarkten Krieger, damit ihr eurer Ruestung wuerdig erscheint. So kommen wir nun zur 2ten. Loescht das Obsidiansanktum ein fuer alle mal komplett aus. Diese Drachen verpesten mit ihrem ewigen Feuer nur unsere Umwelt. Drum rauft euch zusammen und entledigt Euch diesen Kreaturen.',
  /*  EndText   */  '',
  /*  OfferRewardText  */  'Seid ihr fertig?',
- /*  RequestItemsText  */ ' Löscht das kommplete Obsidiansanktum aus. ',
+ /*  RequestItemsText  */ ' Loescht das kommplete Obsidiansanktum aus. ',
  /*  QuestCompletionLog  */ 'Es ist Eure Sache was ihr tut.',
  /*  RequiredNpcOrGo1  */ 30451,
  /*  RequiredNpcOrGo2  */ 28860,
@@ -9794,12 +9794,12 @@ REPLACE INTO `quest_template` (`ID`, `Method`, `QuestLevel`, `MinLevel`, `QuestS
  /*  PointX  */ 0,
  /*  PointY  */ 0,
  /*  PointOption  */ 0,
- /*  LogTitle  */ 'Der Pfad zum geläuterter Magier',
- /*  LogDescription  */  'Tötet den Schmiedemeister Garfrost sowie 10 unbändige Seher im Kristallsangwald.',
- /*  QuestDescription   */ 'Hallo $C $N, eure erste Aufgabe besteht aus folgenden Teilen. Tötet den Schmiedemeister Garfrost sowie 10 unbändige Seher im Kristallsangwald. Ich wünsche viel Erfolg. Hoffentlich besteht ihr alle Prüfungen auf dem Weg zum geläuterten Magier.',
+ /*  LogTitle  */ 'Der Pfad zum gelaeuterter Magier',
+ /*  LogDescription  */  'Toetet den Schmiedemeister Garfrost sowie 10 unbaendige Seher im Kristallsangwald.',
+ /*  QuestDescription   */ 'Hallo $C $N, eure erste Aufgabe besteht aus folgenden Teilen. Toetet den Schmiedemeister Garfrost sowie 10 unbaendige Seher im Kristallsangwald. Ich wuensche viel Erfolg. Hoffentlich besteht ihr alle Pruefungen auf dem Weg zum gelaeuterten Magier.',
  /*  EndText   */  '',
  /*  OfferRewardText  */  'Seid ihr fertig?',
- /*  RequestItemsText  */ 'Tötet den Schmiedemeister Garfrost sowie 10 unbändige Seher im Kristalsangwald.',
+ /*  RequestItemsText  */ 'Toetet den Schmiedemeister Garfrost sowie 10 unbaendige Seher im Kristalsangwald.',
  /*  QuestCompletionLog  */ 'Es ist Eure Sache was ihr tut.',
  /*  RequiredNpcOrGo1  */ 33422,
  /*  RequiredNpcOrGo2  */ 36494,
@@ -9950,11 +9950,11 @@ REPLACE INTO `quest_template` (`ID`, `Method`, `QuestLevel`, `MinLevel`, `QuestS
  /*  PointY  */ 0,
  /*  PointOption  */ 0,
  /*  LogTitle  */ 'Die Ausbildung beginnt',
- /*  LogDescription  */  'Löscht das kommplete Obsidiansanktum aus. ',
- /*  QuestDescription   */ 'Hallo $C $N, es ist schön das ihr Eure erste Aufgabe bestanden habt. Beginnen wir nun mit der Ausbildung zum geläuterten Magier, damit ihr eurer Rüstung würdig erscheint. So kommen wir nun zur 2ten. Löscht das Obsidiansanktum ein für alle mal komplett aus. Diese Drachen verpesten mit ihrem ewigen Feuer nur unsere Umwelt. Drum rauft euch zusammen und entledigt Euch diesen Kreaturen.',
+ /*  LogDescription  */  'Loescht das kommplete Obsidiansanktum aus. ',
+ /*  QuestDescription   */ 'Hallo $C $N, es ist schoen das ihr Eure erste Aufgabe bestanden habt. Beginnen wir nun mit der Ausbildung zum gelaeuterten Magier, damit ihr eurer Ruestung wuerdig erscheint. So kommen wir nun zur 2ten. Loescht das Obsidiansanktum ein fuer alle mal komplett aus. Diese Drachen verpesten mit ihrem ewigen Feuer nur unsere Umwelt. Drum rauft euch zusammen und entledigt Euch diesen Kreaturen.',
  /*  EndText   */  '',
  /*  OfferRewardText  */  'Seid ihr fertig?',
- /*  RequestItemsText  */ ' Löscht das kommplete Obsidiansanktum aus. ',
+ /*  RequestItemsText  */ ' Loescht das kommplete Obsidiansanktum aus. ',
  /*  QuestCompletionLog  */ 'Es ist Eure Sache was ihr tut.',
  /*  RequiredNpcOrGo1  */ 30451,
  /*  RequiredNpcOrGo2  */ 28860,
@@ -10105,11 +10105,11 @@ REPLACE INTO `quest_template` (`ID`, `Method`, `QuestLevel`, `MinLevel`, `QuestS
  /*  PointY  */ 0,
  /*  PointOption  */ 0,
  /*  LogTitle  */ 'Der Pfad zum lederhungrigen Schurken',
- /*  LogDescription  */  'Tötet den Schmiedemeister Garfrost sowie 10 unbändige Seher im Kristalsangwald.',
- /*  QuestDescription   */ 'Hallo $C $N, eure erste Aufgabe besteht aus folgenden Teilen. Tötet den Schmiedemeister Garfrost sowie 10 unbändige Seher im Kristallsangwald. Ich wünsche viel Erfolg. Hoffentlich besteht ihr alle Prüfungen auf dem Weg zum lederhungrigen Schurken.',
+ /*  LogDescription  */  'Toetet den Schmiedemeister Garfrost sowie 10 unbaendige Seher im Kristalsangwald.',
+ /*  QuestDescription   */ 'Hallo $C $N, eure erste Aufgabe besteht aus folgenden Teilen. Toetet den Schmiedemeister Garfrost sowie 10 unbaendige Seher im Kristallsangwald. Ich wuensche viel Erfolg. Hoffentlich besteht ihr alle Pruefungen auf dem Weg zum lederhungrigen Schurken.',
  /*  EndText   */  '',
  /*  OfferRewardText  */  'Seid ihr fertig?',
- /*  RequestItemsText  */ 'Tötet den Schmiedemeister Garfrost sowie 10 unbändige Seher im Kristalsangwald.',
+ /*  RequestItemsText  */ 'Toetet den Schmiedemeister Garfrost sowie 10 unbaendige Seher im Kristalsangwald.',
  /*  QuestCompletionLog  */ 'Es ist Eure Sache was ihr tut.',
  /*  RequiredNpcOrGo1  */ 33422,
  /*  RequiredNpcOrGo2  */ 36494,
@@ -10260,11 +10260,11 @@ REPLACE INTO `quest_template` (`ID`, `Method`, `QuestLevel`, `MinLevel`, `QuestS
  /*  PointY  */ 0,
  /*  PointOption  */ 0,
  /*  LogTitle  */ 'Die Ausbildung beginnt',
- /*  LogDescription  */  'Löscht das kommplete Obsidiansanktum aus. ',
- /*  QuestDescription   */ 'Hallo $C $N, es ist schön das ihr Eure erste Aufgabe bestanden habt. Beginnen wir nun mit der Ausbildung zum geläuterten Magier, damit ihr eurer Rüstung würdig erscheint. So kommen wir nun zur 2ten. Löscht das Obsidiansanktum ein für alle mal komplett aus. Diese Drachen verpesten mit ihrem ewigen Feuer nur unsere Umwelt. Drum rauft euch zusammen und entledigt Euch diesen Kreaturen.',
+ /*  LogDescription  */  'Loescht das kommplete Obsidiansanktum aus. ',
+ /*  QuestDescription   */ 'Hallo $C $N, es ist schoen das ihr Eure erste Aufgabe bestanden habt. Beginnen wir nun mit der Ausbildung zum gelaeuterten Magier, damit ihr eurer Ruestung wuerdig erscheint. So kommen wir nun zur 2ten. Loescht das Obsidiansanktum ein fuer alle mal komplett aus. Diese Drachen verpesten mit ihrem ewigen Feuer nur unsere Umwelt. Drum rauft euch zusammen und entledigt Euch diesen Kreaturen.',
  /*  EndText   */  '',
  /*  OfferRewardText  */  'Seid ihr fertig?',
- /*  RequestItemsText  */ ' Löscht das kommplete Obsidiansanktum aus. ',
+ /*  RequestItemsText  */ ' Loescht das kommplete Obsidiansanktum aus. ',
  /*  QuestCompletionLog  */ 'Es ist Eure Sache was ihr tut.',
  /*  RequiredNpcOrGo1  */ 30451,
  /*  RequiredNpcOrGo2  */ 28860,
@@ -10414,12 +10414,12 @@ REPLACE INTO `quest_template` (`ID`, `Method`, `QuestLevel`, `MinLevel`, `QuestS
  /*  PointX  */ 0,
  /*  PointY  */ 0,
  /*  PointOption  */ 0,
- /*  LogTitle  */ 'Der Pfad zum treffsicheren Jäger ',
- /*  LogDescription  */  'Tötet den Schmiedemeister Garfrost sowie 10 unbändige Seher im Kristallsangwald.',
- /*  QuestDescription   */ 'Hallo $C $N, eure erste Aufgabe besteht aus folgenden Teilen. Tötet den Schmiedemeister Garfrost sowie 10 unbändige Seher im Kristallsangwald. Ich wünsche viel Erfolg. Hoffentlich besteht ihr alle Prüfungen auf dem Weg zum treffsicheren Jäger.',
+ /*  LogTitle  */ 'Der Pfad zum treffsicheren Jaeger ',
+ /*  LogDescription  */  'Toetet den Schmiedemeister Garfrost sowie 10 unbaendige Seher im Kristallsangwald.',
+ /*  QuestDescription   */ 'Hallo $C $N, eure erste Aufgabe besteht aus folgenden Teilen. Toetet den Schmiedemeister Garfrost sowie 10 unbaendige Seher im Kristallsangwald. Ich wuensche viel Erfolg. Hoffentlich besteht ihr alle Pruefungen auf dem Weg zum treffsicheren Jaeger.',
  /*  EndText   */  '',
  /*  OfferRewardText  */  'Seid ihr fertig?',
- /*  RequestItemsText  */ 'Tötet den Schmiedemeister Garfrost sowie 10 unbändige Seher im Kristalsangwald.',
+ /*  RequestItemsText  */ 'Toetet den Schmiedemeister Garfrost sowie 10 unbaendige Seher im Kristalsangwald.',
  /*  QuestCompletionLog  */ 'Es ist Eure Sache was ihr tut.',
  /*  RequiredNpcOrGo1  */ 33422,
  /*  RequiredNpcOrGo2  */ 36494,
@@ -10570,11 +10570,11 @@ REPLACE INTO `quest_template` (`ID`, `Method`, `QuestLevel`, `MinLevel`, `QuestS
  /*  PointY  */ 0,
  /*  PointOption  */ 0,
  /*  LogTitle  */ 'Die Ausbildung beginnt',
- /*  LogDescription  */  'Löscht das kommplete Obsidiansanktum aus. ',
- /*  QuestDescription   */ 'Hallo $C $N, es ist schön das ihr Eure erste Aufgabe bestanden habt. Beginnen wir nun mit der Ausbildung zum treffsicheren Jäger, damit ihr eurer Rüstung würdig erscheint. So kommen wir nun zur 2ten. Löscht das Obsidiansanktum ein für alle mal komplett aus. Diese Drachen verpesten mit ihrem ewigen Feuer nur unsere Umwelt. Drum rauft euch zusammen und entledigt Euch diesen Kreaturen.',
+ /*  LogDescription  */  'Loescht das kommplete Obsidiansanktum aus. ',
+ /*  QuestDescription   */ 'Hallo $C $N, es ist schoen das ihr Eure erste Aufgabe bestanden habt. Beginnen wir nun mit der Ausbildung zum treffsicheren Jaeger, damit ihr eurer Ruestung wuerdig erscheint. So kommen wir nun zur 2ten. Loescht das Obsidiansanktum ein fuer alle mal komplett aus. Diese Drachen verpesten mit ihrem ewigen Feuer nur unsere Umwelt. Drum rauft euch zusammen und entledigt Euch diesen Kreaturen.',
  /*  EndText   */  '',
  /*  OfferRewardText  */  'Seid ihr fertig?',
- /*  RequestItemsText  */ ' Löscht das kommplete Obsidiansanktum aus. ',
+ /*  RequestItemsText  */ ' Loescht das kommplete Obsidiansanktum aus. ',
  /*  QuestCompletionLog  */ 'Es ist Eure Sache was ihr tut.',
  /*  RequiredNpcOrGo1  */ 30451,
  /*  RequiredNpcOrGo2  */ 28860,
@@ -10724,11 +10724,11 @@ REPLACE INTO `quest_template` (`ID`, `Method`, `QuestLevel`, `MinLevel`, `QuestS
  /*  PointY  */ 0,
  /*  PointOption  */ 0,
  /*  LogTitle  */ 'Der Pfad zum Schamane ',
- /*  LogDescription  */  'Tötet den Schmiedemeister Garfrost sowie 10 unbändige Seher im Kristallsangwald.',
- /*  QuestDescription   */ 'Hallo $C $N, eure erste Aufgabe besteht aus folgenden Teilen. Tötet den Schmiedemeister Garfrost sowie 10 unbändige Seher im Kristallsangwald. Ich wünsche viel Erfolg. Hoffentlich besteht ihr alle Prüfungen auf dem Weg zum mächtigen Schamanen.',
+ /*  LogDescription  */  'Toetet den Schmiedemeister Garfrost sowie 10 unbaendige Seher im Kristallsangwald.',
+ /*  QuestDescription   */ 'Hallo $C $N, eure erste Aufgabe besteht aus folgenden Teilen. Toetet den Schmiedemeister Garfrost sowie 10 unbaendige Seher im Kristallsangwald. Ich wuensche viel Erfolg. Hoffentlich besteht ihr alle Pruefungen auf dem Weg zum maechtigen Schamanen.',
  /*  EndText   */  '',
  /*  OfferRewardText  */  'Seid ihr fertig?',
- /*  RequestItemsText  */ 'Tötet den Schmiedemeister Garfrost sowie 10 unbändige Seher im Kristalsangwald.',
+ /*  RequestItemsText  */ 'Toetet den Schmiedemeister Garfrost sowie 10 unbaendige Seher im Kristalsangwald.',
  /*  QuestCompletionLog  */ 'Es ist Eure Sache was ihr tut.',
  /*  RequiredNpcOrGo1  */ 33422,
  /*  RequiredNpcOrGo2  */ 36494,
@@ -10879,11 +10879,11 @@ REPLACE INTO `quest_template` (`ID`, `Method`, `QuestLevel`, `MinLevel`, `QuestS
  /*  PointY  */ 0,
  /*  PointOption  */ 0,
  /*  LogTitle  */ 'Die Ausbildung beginnt',
- /*  LogDescription  */  'Löscht das kommplete Obsidiansanktum aus. ',
- /*  QuestDescription   */ 'Hallo $C $N, es ist schön das ihr Eure erste Aufgabe bestanden habt. Beginnen wir nun mit der Ausbildung zum mächtigen Schamanen, damit ihr eurer Rüstung würdig erscheint. So kommen wir nun zur 2ten. Löscht das Obsidiansanktum ein für alle mal komplett aus. Diese Drachen verpesten mit ihrem ewigen Feuer nur unsere Umwelt. Drum rauft euch zusammen und entledigt Euch diesen Kreaturen.',
+ /*  LogDescription  */  'Loescht das kommplete Obsidiansanktum aus. ',
+ /*  QuestDescription   */ 'Hallo $C $N, es ist schoen das ihr Eure erste Aufgabe bestanden habt. Beginnen wir nun mit der Ausbildung zum maechtigen Schamanen, damit ihr eurer Ruestung wuerdig erscheint. So kommen wir nun zur 2ten. Loescht das Obsidiansanktum ein fuer alle mal komplett aus. Diese Drachen verpesten mit ihrem ewigen Feuer nur unsere Umwelt. Drum rauft euch zusammen und entledigt Euch diesen Kreaturen.',
  /*  EndText   */  '',
  /*  OfferRewardText  */  'Seid ihr fertig?',
- /*  RequestItemsText  */ ' Löscht das kommplete Obsidiansanktum aus. ',
+ /*  RequestItemsText  */ ' Loescht das kommplete Obsidiansanktum aus. ',
  /*  QuestCompletionLog  */ 'Es ist Eure Sache was ihr tut.',
  /*  RequiredNpcOrGo1  */ 30451,
  /*  RequiredNpcOrGo2  */ 28860,
@@ -11033,11 +11033,11 @@ REPLACE INTO `quest_template` (`ID`, `Method`, `QuestLevel`, `MinLevel`, `QuestS
  /*  PointY  */ 0,
  /*  PointOption  */ 0,
  /*  LogTitle  */ 'Der Pfad zum Priester ',
- /*  LogDescription  */  'Tötet den Schmiedemeister Garfrost sowie 10 unbändige Seher im Kristallsangwald.',
- /*  QuestDescription   */ 'Hallo $C $N, eure erste Aufgabe besteht aus folgenden Teilen. Tötet den Schmiedemeister Garfrost sowie 10 unbändige Seher im Kristallsangwald. Ich wünsche viel Erfolg. Hoffentlich besteht ihr alle Prüfungen auf dem Weg zum mächtigen Schamanen.',
+ /*  LogDescription  */  'Toetet den Schmiedemeister Garfrost sowie 10 unbaendige Seher im Kristallsangwald.',
+ /*  QuestDescription   */ 'Hallo $C $N, eure erste Aufgabe besteht aus folgenden Teilen. Toetet den Schmiedemeister Garfrost sowie 10 unbaendige Seher im Kristallsangwald. Ich wuensche viel Erfolg. Hoffentlich besteht ihr alle Pruefungen auf dem Weg zum maechtigen Schamanen.',
  /*  EndText   */  '',
  /*  OfferRewardText  */  'Seid ihr fertig?',
- /*  RequestItemsText  */ 'Tötet den Schmiedemeister Garfrost sowie 10 unbändige Seher im Kristalsangwald.',
+ /*  RequestItemsText  */ 'Toetet den Schmiedemeister Garfrost sowie 10 unbaendige Seher im Kristalsangwald.',
  /*  QuestCompletionLog  */ 'Es ist Eure Sache was ihr tut.',
  /*  RequiredNpcOrGo1  */ 33422,
  /*  RequiredNpcOrGo2  */ 36494,
@@ -11188,11 +11188,11 @@ REPLACE INTO `quest_template` (`ID`, `Method`, `QuestLevel`, `MinLevel`, `QuestS
  /*  PointY  */ 0,
  /*  PointOption  */ 0,
  /*  LogTitle  */ 'Die Ausbildung beginnt',
- /*  LogDescription  */  'Löscht das kommplete Obsidiansanktum aus. ',
- /*  QuestDescription   */ 'Hallo $C $N, es ist schön das ihr Eure erste Aufgabe bestanden habt. Beginnen wir nun mit der Ausbildung zum Priester, damit ihr eurer Rüstung würdig erscheint. So kommen wir nun zur 2ten. Löscht das Obsidiansanktum ein für alle mal komplett aus. Diese Drachen verpesten mit ihrem ewigen Feuer nur unsere Umwelt. Drum rauft euch zusammen und entledigt Euch diesen Kreaturen.',
+ /*  LogDescription  */  'Loescht das kommplete Obsidiansanktum aus. ',
+ /*  QuestDescription   */ 'Hallo $C $N, es ist schoen das ihr Eure erste Aufgabe bestanden habt. Beginnen wir nun mit der Ausbildung zum Priester, damit ihr eurer Ruestung wuerdig erscheint. So kommen wir nun zur 2ten. Loescht das Obsidiansanktum ein fuer alle mal komplett aus. Diese Drachen verpesten mit ihrem ewigen Feuer nur unsere Umwelt. Drum rauft euch zusammen und entledigt Euch diesen Kreaturen.',
  /*  EndText   */  '',
  /*  OfferRewardText  */  'Seid ihr fertig?',
- /*  RequestItemsText  */ ' Löscht das kommplete Obsidiansanktum aus. ',
+ /*  RequestItemsText  */ ' Loescht das kommplete Obsidiansanktum aus. ',
  /*  QuestCompletionLog  */ 'Es ist Eure Sache was ihr tut.',
  /*  RequiredNpcOrGo1  */ 30451,
  /*  RequiredNpcOrGo2  */ 28860,
@@ -11342,11 +11342,11 @@ REPLACE INTO `quest_template` (`ID`, `Method`, `QuestLevel`, `MinLevel`, `QuestS
  /*  PointY  */ 0,
  /*  PointOption  */ 0,
  /*  LogTitle  */ 'Der Pfad zum Hexer ',
- /*  LogDescription  */  'Tötet den Schmiedemeister Garfrost sowie 10 unbändige Seher im Kristallsangwald.',
- /*  QuestDescription   */ 'Hallo $C $N, eure erste Aufgabe besteht aus folgenden Teilen. Tötet den Schmiedemeister Garfrost sowie 10 unbändige Seher im Kristallsangwald. Ich wünsche viel Erfolg. Hoffentlich besteht ihr alle Prüfungen auf dem Weg zum Hexer.',
+ /*  LogDescription  */  'Toetet den Schmiedemeister Garfrost sowie 10 unbaendige Seher im Kristallsangwald.',
+ /*  QuestDescription   */ 'Hallo $C $N, eure erste Aufgabe besteht aus folgenden Teilen. Toetet den Schmiedemeister Garfrost sowie 10 unbaendige Seher im Kristallsangwald. Ich wuensche viel Erfolg. Hoffentlich besteht ihr alle Pruefungen auf dem Weg zum Hexer.',
  /*  EndText   */  '',
  /*  OfferRewardText  */  'Seid ihr fertig?',
- /*  RequestItemsText  */ 'Tötet den Schmiedemeister Garfrost sowie 10 unbändige Seher im Kristalsangwald.',
+ /*  RequestItemsText  */ 'Toetet den Schmiedemeister Garfrost sowie 10 unbaendige Seher im Kristalsangwald.',
  /*  QuestCompletionLog  */ 'Es ist Eure Sache was ihr tut.',
  /*  RequiredNpcOrGo1  */ 33422,
  /*  RequiredNpcOrGo2  */ 36494,
@@ -11497,11 +11497,11 @@ REPLACE INTO `quest_template` (`ID`, `Method`, `QuestLevel`, `MinLevel`, `QuestS
  /*  PointY  */ 0,
  /*  PointOption  */ 0,
  /*  LogTitle  */ 'Die Ausbildung beginnt',
- /*  LogDescription  */  'Löscht das kommplete Obsidiansanktum aus. ',
- /*  QuestDescription   */ 'Hallo $C $N, es ist schön das ihr Eure erste Aufgabe bestanden habt. Beginnen wir nun mit der Ausbildung zum Hexer, damit ihr eurer Rüstung würdig erscheint. So kommen wir nun zur 2ten. Löscht das Obsidiansanktum ein für alle mal komplett aus. Diese Drachen verpesten mit ihrem ewigen Feuer nur unsere Umwelt. Drum rauft euch zusammen und entledigt Euch diesen Kreaturen.',
+ /*  LogDescription  */  'Loescht das kommplete Obsidiansanktum aus. ',
+ /*  QuestDescription   */ 'Hallo $C $N, es ist schoen das ihr Eure erste Aufgabe bestanden habt. Beginnen wir nun mit der Ausbildung zum Hexer, damit ihr eurer Ruestung wuerdig erscheint. So kommen wir nun zur 2ten. Loescht das Obsidiansanktum ein fuer alle mal komplett aus. Diese Drachen verpesten mit ihrem ewigen Feuer nur unsere Umwelt. Drum rauft euch zusammen und entledigt Euch diesen Kreaturen.',
  /*  EndText   */  '',
  /*  OfferRewardText  */  'Seid ihr fertig?',
- /*  RequestItemsText  */ ' Löscht das kommplete Obsidiansanktum aus. ',
+ /*  RequestItemsText  */ ' Loescht das kommplete Obsidiansanktum aus. ',
  /*  QuestCompletionLog  */ 'Es ist Eure Sache was ihr tut.',
  /*  RequiredNpcOrGo1  */ 30451,
  /*  RequiredNpcOrGo2  */ 28860,
@@ -11651,11 +11651,11 @@ REPLACE INTO `quest_template` (`ID`, `Method`, `QuestLevel`, `MinLevel`, `QuestS
  /*  PointY  */ 0,
  /*  PointOption  */ 0,
  /*  LogTitle  */ 'Der Pfad zum Druide ',
- /*  LogDescription  */  'Tötet den Schmiedemeister Garfrost sowie 10 unbändige Seher im Kristallsangwald.',
- /*  QuestDescription   */ 'Hallo $C $N, eure erste Aufgabe besteht aus folgenden Teilen. Tötet den Schmiedemeister Garfrost sowie 10 unbändige Seher im Kristallsangwald. Ich wünsche viel Erfolg. Hoffentlich besteht ihr alle Prüfungen auf dem Weg zum Druide.',
+ /*  LogDescription  */  'Toetet den Schmiedemeister Garfrost sowie 10 unbaendige Seher im Kristallsangwald.',
+ /*  QuestDescription   */ 'Hallo $C $N, eure erste Aufgabe besteht aus folgenden Teilen. Toetet den Schmiedemeister Garfrost sowie 10 unbaendige Seher im Kristallsangwald. Ich wuensche viel Erfolg. Hoffentlich besteht ihr alle Pruefungen auf dem Weg zum Druide.',
  /*  EndText   */  '',
  /*  OfferRewardText  */  'Seid ihr fertig?',
- /*  RequestItemsText  */ 'Tötet den Schmiedemeister Garfrost sowie 10 unbändige Seher im Kristalsangwald.',
+ /*  RequestItemsText  */ 'Toetet den Schmiedemeister Garfrost sowie 10 unbaendige Seher im Kristalsangwald.',
  /*  QuestCompletionLog  */ 'Es ist Eure Sache was ihr tut.',
  /*  RequiredNpcOrGo1  */ 33422,
  /*  RequiredNpcOrGo2  */ 36494,
@@ -11806,11 +11806,11 @@ REPLACE INTO `quest_template` (`ID`, `Method`, `QuestLevel`, `MinLevel`, `QuestS
  /*  PointY  */ 0,
  /*  PointOption  */ 0,
  /*  LogTitle  */ 'Die Ausbildung beginnt',
- /*  LogDescription  */  'Löscht das kommplete Obsidiansanktum aus. ',
- /*  QuestDescription   */ 'Hallo $C $N, es ist schön das ihr Eure erste Aufgabe bestanden habt. Beginnen wir nun mit der Ausbildung zum Druide, damit ihr eurer Rüstung würdig erscheint. So kommen wir nun zur 2ten. Löscht das Obsidiansanktum ein für alle mal komplett aus. Diese Drachen verpesten mit ihrem ewigen Feuer nur unsere Umwelt. Drum rauft euch zusammen und entledigt Euch diesen Kreaturen.',
+ /*  LogDescription  */  'Loescht das kommplete Obsidiansanktum aus. ',
+ /*  QuestDescription   */ 'Hallo $C $N, es ist schoen das ihr Eure erste Aufgabe bestanden habt. Beginnen wir nun mit der Ausbildung zum Druide, damit ihr eurer Ruestung wuerdig erscheint. So kommen wir nun zur 2ten. Loescht das Obsidiansanktum ein fuer alle mal komplett aus. Diese Drachen verpesten mit ihrem ewigen Feuer nur unsere Umwelt. Drum rauft euch zusammen und entledigt Euch diesen Kreaturen.',
  /*  EndText   */  '',
  /*  OfferRewardText  */  'Seid ihr fertig?',
- /*  RequestItemsText  */ ' Löscht das kommplete Obsidiansanktum aus. ',
+ /*  RequestItemsText  */ ' Loescht das kommplete Obsidiansanktum aus. ',
  /*  QuestCompletionLog  */ 'Es ist Eure Sache was ihr tut.',
  /*  RequiredNpcOrGo1  */ 30451,
  /*  RequiredNpcOrGo2  */ 28860,
@@ -11960,11 +11960,11 @@ REPLACE INTO `quest_template` (`ID`, `Method`, `QuestLevel`, `MinLevel`, `QuestS
  /*  PointY  */ 0,
  /*  PointOption  */ 0,
 /*  LogTitle  */ 'Der Novize',
-/*  LogDescription  */  'Bringt 1500 Ehrenpunkte zum Goldenen Schwein Yasio im Kreis der Mächte in Dalaran.',
- /* QuestDescription   */ '$N, Sei gegrüßt. Ich bin Tempus. Ich möchte dich einladen bei unseren blutigen Wettkämpfen teilzunehmen. Wenn du das möchtest bringe, als Zeichen deines Willens, 1500 Ehrenpunkte zu Yasio. Yasio ist ein goldenes Schwein , welches sich im Kreis der Mächte in Dalaran befindet.',
+/*  LogDescription  */  'Bringt 1500 Ehrenpunkte zum Goldenen Schwein Yasio im Kreis der Maechte in Dalaran.',
+ /* QuestDescription   */ '$N, Sei gegrueßt. Ich bin Tempus. Ich moechte dich einladen bei unseren blutigen Wettkaempfen teilzunehmen. Wenn du das moechtest bringe, als Zeichen deines Willens, 1500 Ehrenpunkte zu Yasio. Yasio ist ein goldenes Schwein , welches sich im Kreis der Maechte in Dalaran befindet.',
 /* EndText   */  '',
 /*  OfferRewardText  */  'Habt Ihr Yasio nicht gefunden?',
- /*  RequestItemsText  */ 'Bringt 1500 Ehrenpunkte zum Goldenen Schwein Yasio im Kreis der Mächte in Dalaran.',
+ /*  RequestItemsText  */ 'Bringt 1500 Ehrenpunkte zum Goldenen Schwein Yasio im Kreis der Maechte in Dalaran.',
  /*  QuestCompletionLog  */ 'Ihr seid wohl nicht so einfach gestrickt wie ich dachte.',
  /*  RequiredNpcOrGo1  */ 0,
  /*  RequiredNpcOrGo2  */ 0,
@@ -12118,7 +12118,7 @@ REPLACE INTO `quest_template` (`ID`, `Method`, `QuestLevel`, `MinLevel`, `QuestS
  /*  PointOption  */ 0,
 /*  LogTitle  */ 'Der erste Tag',
 /*  LogDescription  */  'Bringt mir 50 Splitter des Steinbewahrers',
- /* QuestDescription   */ '$N, Heute bricht der erste Tag an. Ich möchte das Ihr mir 50 Splitter eines Steinbewahrers bringt. Zeigt mir wie talentiert Ihr im Töten Eurer Feinde seid. Ich möchte das Blut Eurer Feinde an Eurer Kleidung sehen.',
+ /* QuestDescription   */ '$N, Heute bricht der erste Tag an. Ich moechte das Ihr mir 50 Splitter eines Steinbewahrers bringt. Zeigt mir wie talentiert Ihr im Toeten Eurer Feinde seid. Ich moechte das Blut Eurer Feinde an Eurer Kleidung sehen.',
 /* EndText   */  '',
 /*  OfferRewardText  */  'Ich sehe kein Blut. Seid ihr etwa zum Feigling geworden?',
  /*  RequestItemsText  */ 'Bringt mir 50 Splitter des Steinbewahrers',
@@ -12274,11 +12274,11 @@ REPLACE INTO `quest_template` (`ID`, `Method`, `QuestLevel`, `MinLevel`, `QuestS
  /*  PointY  */ 0,
  /*  PointOption  */ 0,
 /*  LogTitle  */ 'Der zweite Tag',
-/*  LogDescription  */  'Sammelt die benötigten Materialien damit wir unsere Kräfte wieder finden können um uns ins nächste Gemetzel stürzen zu können.',
- /* QuestDescription   */ '$N,bringt mir 10 Äonenwasser,10 Äonenerde,10 Äonenfeuer,10 Äonenleben, 10 Äonenluft, 300 Altersgraue Kristalle. Bringt diese anschließend zur Insel zu Tempus. Dieser wird Euch weitere Instruktionen geben.',
+/*  LogDescription  */  'Sammelt die benoetigten Materialien damit wir unsere Kraefte wieder finden koennen um uns ins naechste Gemetzel stuerzen zu koennen.',
+ /* QuestDescription   */ '$N,bringt mir 10 aeonenwasser,10 aeonenerde,10 aeonenfeuer,10 aeonenleben, 10 aeonenluft, 300 Altersgraue Kristalle. Bringt diese anschließend zur Insel zu Tempus. Dieser wird Euch weitere Instruktionen geben.',
 /* EndText   */  '',
-/*  OfferRewardText  */  'Ich habe keine Meldungen über Tote gehört. Kommt ihr noch einmal ohne Fortschritte werdet ihr getötet.',
- /*  RequestItemsText  */ 'Sammelt die benötigten Materialien damit wir unsere Kräfte wieder finden können um uns ins nächste Gemetzel stürzen zu können.',
+/*  OfferRewardText  */  'Ich habe keine Meldungen ueber Tote gehoert. Kommt ihr noch einmal ohne Fortschritte werdet ihr getoetet.',
+ /*  RequestItemsText  */ 'Sammelt die benoetigten Materialien damit wir unsere Kraefte wieder finden koennen um uns ins naechste Gemetzel stuerzen zu koennen.',
  /*  QuestCompletionLog  */ 'Ihr seid wohl nicht so einfach gestrickt wie ich dachte.',
  /*  RequiredNpcOrGo1  */ 0,
  /*  RequiredNpcOrGo2  */ 0,
@@ -12430,12 +12430,12 @@ REPLACE INTO `quest_template` (`ID`, `Method`, `QuestLevel`, `MinLevel`, `QuestS
  /*  PointX  */ 0,
  /*  PointY  */ 0,
  /*  PointOption  */ 0,
-/*  LogTitle  */ 'Der Härtetest',
-/*  LogDescription  */  'Tötet die Wachen der Allianz in Tausenwinter. ',
- /* QuestDescription   */ '$N, Ich möchte das ihr 200 Wachen der Allianz tötet. Lasst keine Gnade walten. Verschont keinen! Die Horde wird obsiegen.',
+/*  LogTitle  */ 'Der Haertetest',
+/*  LogDescription  */  'Toetet die Wachen der Allianz in Tausenwinter. ',
+ /* QuestDescription   */ '$N, Ich moechte das ihr 200 Wachen der Allianz toetet. Lasst keine Gnade walten. Verschont keinen! Die Horde wird obsiegen.',
 /* EndText   */  '',
-/*  OfferRewardText  */  'Ich habe keine Meldungen über Tote gehört. Kommt ihr noch einmal ohne Fortschritte werdet ihr getötet.',
- /*  RequestItemsText  */ 'Tötet die Wachen der Allianz in Tausenwinter.',
+/*  OfferRewardText  */  'Ich habe keine Meldungen ueber Tote gehoert. Kommt ihr noch einmal ohne Fortschritte werdet ihr getoetet.',
+ /*  RequestItemsText  */ 'Toetet die Wachen der Allianz in Tausenwinter.',
  /*  QuestCompletionLog  */ 'Ihr seid wohl nicht so einfach gestrickt wie ich dachte.',
  /*  RequiredNpcOrGo1  */ 30740,
  /*  RequiredNpcOrGo2  */ 0,
@@ -12587,12 +12587,12 @@ REPLACE INTO `quest_template` (`ID`, `Method`, `QuestLevel`, `MinLevel`, `QuestS
  /*  PointX  */ 0,
  /*  PointY  */ 0,
  /*  PointOption  */ 0,
-/*  LogTitle  */ 'Der Härtetest',
-/*  LogDescription  */  'Tötet die Wachen der Horde in Tausenwinter.',
- /* QuestDescription   */ '$N, Ich möchte das ihr 200 Wachen der Horde tötet. Es wird Zeit das wir der Horde einen schweren Schlag versetzen.',
+/*  LogTitle  */ 'Der Haertetest',
+/*  LogDescription  */  'Toetet die Wachen der Horde in Tausenwinter.',
+ /* QuestDescription   */ '$N, Ich moechte das ihr 200 Wachen der Horde toetet. Es wird Zeit das wir der Horde einen schweren Schlag versetzen.',
 /* EndText   */  '',
-/*  OfferRewardText  */  'Ich habe keine Meldungen über Tote gehört. Kommt ihr noch einmal ohne Fortschritte werdet ihr getötet.',
- /*  RequestItemsText  */ 'Tötet die Wachen der Horde in Tausenwinter.',
+/*  OfferRewardText  */  'Ich habe keine Meldungen ueber Tote gehoert. Kommt ihr noch einmal ohne Fortschritte werdet ihr getoetet.',
+ /*  RequestItemsText  */ 'Toetet die Wachen der Horde in Tausenwinter.',
  /*  QuestCompletionLog  */ 'Ihr seid wohl nicht so einfach gestrickt wie ich dachte.',
  /*  RequiredNpcOrGo1  */ 30739,
  /*  RequiredNpcOrGo2  */ 0,
@@ -12744,12 +12744,12 @@ REPLACE INTO `quest_template` (`ID`, `Method`, `QuestLevel`, `MinLevel`, `QuestS
  /*  PointX  */ 0,
  /*  PointY  */ 0,
  /*  PointOption  */ 0,
-/*  LogTitle  */ 'Meldung beim Obersten Kriegsfürst Tempus Irael',
-/*  LogDescription  */  'Meldet Euch beim Obersten Kriegsfürst Tempus Irael im PVP Areal.',
- /* QuestDescription   */ '$N, Ich möchte das ihr Euch bei Tempus Irael dem obersten Kriegsfürsten meldet. Geht zu Seruc von Lantus um Euch zum PVP-Areal bringen zu lassen.',
+/*  LogTitle  */ 'Meldung beim Obersten Kriegsfuerst Tempus Irael',
+/*  LogDescription  */  'Meldet Euch beim Obersten Kriegsfuerst Tempus Irael im PVP Areal.',
+ /* QuestDescription   */ '$N, Ich moechte das ihr Euch bei Tempus Irael dem obersten Kriegsfuersten meldet. Geht zu Seruc von Lantus um Euch zum PVP-Areal bringen zu lassen.',
 /* EndText   */  '',
 /*  OfferRewardText  */  'Findet Ihr ihn nicht?',
- /*  RequestItemsText  */ 'Meldet Euch beim Obersten Kriegsfürst Tempus Irael im PVP Areal.',
+ /*  RequestItemsText  */ 'Meldet Euch beim Obersten Kriegsfuerst Tempus Irael im PVP Areal.',
  /*  QuestCompletionLog  */ 'Ihr seid wohl nicht so einfach gestrickt wie ich dachte.',
  /*  RequiredNpcOrGo1  */ 0,
  /*  RequiredNpcOrGo2  */ 0,
@@ -12901,12 +12901,12 @@ REPLACE INTO `quest_template` (`ID`, `Method`, `QuestLevel`, `MinLevel`, `QuestS
  /*  PointX  */ 0,
  /*  PointY  */ 0,
  /*  PointOption  */ 0,
-/*  LogTitle  */ 'Tötet 10 Spieler',
-/*  LogDescription  */  'Tötet 10 Spieler. Egal wo. Egal wie! Tötet sie einfach.',
- /* QuestDescription   */ '$N, Ich möchte das Ihr 10 Feinde abschlachtet. Nehmt keine Rücksicht auf Verluste. Ihr seid Meister der Vernichtung. Ihr werdet Euren Feinden das Fürchten lehren. Geht jetzt.',
+/*  LogTitle  */ 'Toetet 10 Spieler',
+/*  LogDescription  */  'Toetet 10 Spieler. Egal wo. Egal wie! Toetet sie einfach.',
+ /* QuestDescription   */ '$N, Ich moechte das Ihr 10 Feinde abschlachtet. Nehmt keine Ruecksicht auf Verluste. Ihr seid Meister der Vernichtung. Ihr werdet Euren Feinden das Fuerchten lehren. Geht jetzt.',
 /* EndText   */  '',
-/*  OfferRewardText  */  'Ich habe keine Meldungen über Tote gehört. Kommt ihr noch einmal ohne Fortschritte werdet ihr getötet.',
- /*  RequestItemsText  */ 'Tötet 10 Spieler. Egal wo. Egal wie! Tötet sie einfach.',
+/*  OfferRewardText  */  'Ich habe keine Meldungen ueber Tote gehoert. Kommt ihr noch einmal ohne Fortschritte werdet ihr getoetet.',
+ /*  RequestItemsText  */ 'Toetet 10 Spieler. Egal wo. Egal wie! Toetet sie einfach.',
  /*  QuestCompletionLog  */ 'Ihr seid wohl nicht so einfach gestrickt wie ich dachte.',
  /*  RequiredNpcOrGo1  */ 0,
  /*  RequiredNpcOrGo2  */ 0,
@@ -13058,12 +13058,12 @@ REPLACE INTO `quest_template` (`ID`, `Method`, `QuestLevel`, `MinLevel`, `QuestS
  /*  PointX  */ 0,
  /*  PointY  */ 0,
  /*  PointOption  */ 0,
-/*  LogTitle  */ 'Tötet 20 Spieler',
-/*  LogDescription  */  'Tötet 20 Spieler. Egal wo. Egal wie! Tötet sie einfach.',
- /* QuestDescription   */ '$N, Ich möchte das Ihr 20 Feinde abschlachtet. Nehmt keine Rücksicht auf Verluste. Ihr seid Meister der Vernichtung. Ihr werdet Euren Feinden das Fürchten lehren. Geht jetzt.',
+/*  LogTitle  */ 'Toetet 20 Spieler',
+/*  LogDescription  */  'Toetet 20 Spieler. Egal wo. Egal wie! Toetet sie einfach.',
+ /* QuestDescription   */ '$N, Ich moechte das Ihr 20 Feinde abschlachtet. Nehmt keine Ruecksicht auf Verluste. Ihr seid Meister der Vernichtung. Ihr werdet Euren Feinden das Fuerchten lehren. Geht jetzt.',
 /* EndText   */  '',
-/*  OfferRewardText  */  'Ich habe keine Meldungen über Tote gehört. Kommt ihr noch einmal ohne Fortschritte werdet ihr getötet.',
- /*  RequestItemsText  */ 'Tötet 20 Spieler. Egal wo. Egal wie! Tötet sie einfach.',
+/*  OfferRewardText  */  'Ich habe keine Meldungen ueber Tote gehoert. Kommt ihr noch einmal ohne Fortschritte werdet ihr getoetet.',
+ /*  RequestItemsText  */ 'Toetet 20 Spieler. Egal wo. Egal wie! Toetet sie einfach.',
  /*  QuestCompletionLog  */ 'Ihr seid wohl nicht so einfach gestrickt wie ich dachte.',
  /*  RequiredNpcOrGo1  */ 0,
  /*  RequiredNpcOrGo2  */ 0,
@@ -13215,12 +13215,12 @@ REPLACE INTO `quest_template` (`ID`, `Method`, `QuestLevel`, `MinLevel`, `QuestS
  /*  PointX  */ 0,
  /*  PointY  */ 0,
  /*  PointOption  */ 0,
-/*  LogTitle  */ 'Tötet 50 Spieler',
-/*  LogDescription  */  'Tötet 50 Spieler. Egal wo. Egal wie! Tötet sie einfach.',
- /* QuestDescription   */ '$N, Ich möchte das Ihr 50 Feinde abschlachtet. Nehmt keine Rücksicht auf Verluste. Ihr seid Meister der Vernichtung. Ihr werdet Euren Feinden das Fürchten lehren. Geht jetzt.',
+/*  LogTitle  */ 'Toetet 50 Spieler',
+/*  LogDescription  */  'Toetet 50 Spieler. Egal wo. Egal wie! Toetet sie einfach.',
+ /* QuestDescription   */ '$N, Ich moechte das Ihr 50 Feinde abschlachtet. Nehmt keine Ruecksicht auf Verluste. Ihr seid Meister der Vernichtung. Ihr werdet Euren Feinden das Fuerchten lehren. Geht jetzt.',
 /* EndText   */  '',
-/*  OfferRewardText  */  'Ich habe keine Meldungen über Tote gehört. Kommt ihr noch einmal ohne Fortschritte werdet ihr getötet.',
- /*  RequestItemsText  */ 'Tötet 50 Spieler. Egal wo. Egal wie! Tötet sie einfach.',
+/*  OfferRewardText  */  'Ich habe keine Meldungen ueber Tote gehoert. Kommt ihr noch einmal ohne Fortschritte werdet ihr getoetet.',
+ /*  RequestItemsText  */ 'Toetet 50 Spieler. Egal wo. Egal wie! Toetet sie einfach.',
  /*  QuestCompletionLog  */ 'Ihr seid wohl nicht so einfach gestrickt wie ich dachte.',
  /*  RequiredNpcOrGo1  */ 0,
  /*  RequiredNpcOrGo2  */ 0,
@@ -13372,12 +13372,12 @@ REPLACE INTO `quest_template` (`ID`, `Method`, `QuestLevel`, `MinLevel`, `QuestS
  /*  PointX  */ 0,
  /*  PointY  */ 0,
  /*  PointOption  */ 0,
-/*  LogTitle  */ 'Tötet 100 Spieler',
-/*  LogDescription  */  'Tötet 100 Spieler. Egal wo. Egal wie! Tötet sie einfach.',
- /* QuestDescription   */ '$N, Ich möchte das Ihr 50 Feinde abschlachtet. Nehmt keine Rücksicht auf Verluste. Ihr seid Meister der Vernichtung. Ihr werdet Euren Feinden das Fürchten lehren. Geht jetzt.',
+/*  LogTitle  */ 'Toetet 100 Spieler',
+/*  LogDescription  */  'Toetet 100 Spieler. Egal wo. Egal wie! Toetet sie einfach.',
+ /* QuestDescription   */ '$N, Ich moechte das Ihr 50 Feinde abschlachtet. Nehmt keine Ruecksicht auf Verluste. Ihr seid Meister der Vernichtung. Ihr werdet Euren Feinden das Fuerchten lehren. Geht jetzt.',
 /* EndText   */  '',
-/*  OfferRewardText  */  'Ich habe keine Meldungen über Tote gehört. Kommt ihr noch einmal ohne Fortschritte werdet ihr getötet.',
- /*  RequestItemsText  */ 'Tötet 100 Spieler. Egal wo. Egal wie! Tötet sie einfach.',
+/*  OfferRewardText  */  'Ich habe keine Meldungen ueber Tote gehoert. Kommt ihr noch einmal ohne Fortschritte werdet ihr getoetet.',
+ /*  RequestItemsText  */ 'Toetet 100 Spieler. Egal wo. Egal wie! Toetet sie einfach.',
  /*  QuestCompletionLog  */ 'Ihr seid wohl nicht so einfach gestrickt wie ich dachte.',
  /*  RequiredNpcOrGo1  */ 0,
  /*  RequiredNpcOrGo2  */ 0,
@@ -13530,11 +13530,11 @@ REPLACE INTO `quest_template` (`ID`, `Method`, `QuestLevel`, `MinLevel`, `QuestS
  /*  PointY  */ 0,
  /*  PointOption  */ 0,
  /*  LogTitle  */ 'Der Aufbau',
- /*  LogDescription  */  'Geht zu Marlerian Vanduin und hört Euch an was er zu sagen hat.',
- /*  QuestDescription   */ '$N,$BMarlerian Vanduin hat Euch etwas wichtiges zu sagen. Geht zu ihm und hört es Euch an.',
+ /*  LogDescription  */  'Geht zu Marlerian Vanduin und hoert Euch an was er zu sagen hat.',
+ /*  QuestDescription   */ '$N,$BMarlerian Vanduin hat Euch etwas wichtiges zu sagen. Geht zu ihm und hoert es Euch an.',
  /*  EndText   */  '',
- /*  OfferRewardText  */  'Hört ihr mir zu?',
- /*  RequestItemsText  */ 'Geht zu Marlerian Vanduin und hört Euch an was er zu sagen hat.',
+ /*  OfferRewardText  */  'Hoert ihr mir zu?',
+ /*  RequestItemsText  */ 'Geht zu Marlerian Vanduin und hoert Euch an was er zu sagen hat.',
  /*  QuestCompletionLog  */ 'Ich warte auf Euch.',
  /*  RequiredNpcOrGo1  */ 0,
  /*  RequiredNpcOrGo2  */ 0,
@@ -13685,11 +13685,11 @@ REPLACE INTO `quest_template` (`ID`, `Method`, `QuestLevel`, `MinLevel`, `QuestS
  /*  PointY  */ 0,
  /*  PointOption  */ 0,
  /*  LogTitle  */ 'Berichte an Rumu',
- /*  LogDescription  */  'Informiert Rumu über die aktuelle Entwicklung.',
- /*  QuestDescription   */ '$N, Rumu muss unbedingt die aktuelle Entwicklung erfahren. Er ist ein guter Freund, daher möchte ich das er auf dem aktuellsten Stand ist. Er hat auch meistens gute Ideen zur Problemlösung. Daher geht bitte so schnell wie möglich zu Rumu. ',
+ /*  LogDescription  */  'Informiert Rumu ueber die aktuelle Entwicklung.',
+ /*  QuestDescription   */ '$N, Rumu muss unbedingt die aktuelle Entwicklung erfahren. Er ist ein guter Freund, daher moechte ich das er auf dem aktuellsten Stand ist. Er hat auch meistens gute Ideen zur Problemloesung. Daher geht bitte so schnell wie moeglich zu Rumu. ',
  /*  EndText   */  '',
- /*  OfferRewardText  */  'Informiert Rumu über die aktuelle Entwicklung.',
- /*  RequestItemsText  */ 'Informiert Rumu über die aktuelle Entwicklung.',
+ /*  OfferRewardText  */  'Informiert Rumu ueber die aktuelle Entwicklung.',
+ /*  RequestItemsText  */ 'Informiert Rumu ueber die aktuelle Entwicklung.',
  /*  QuestCompletionLog  */ 'Es ist Eure Sache was ihr tut.',
  /*  RequiredNpcOrGo1  */ 0,
  /*  RequiredNpcOrGo2  */ 0,
@@ -14051,32 +14051,32 @@ CREATE TABLE IF NOT EXISTS `quest_template` (
 --
 
 REPLACE INTO `quest_template` (`ID`, `Method`, `QuestLevel`, `MinLevel`, `QuestSortID`, `QuestType`, `SuggestedGroupNum`, `LimitTime`, `RequiredRaces`, `RequiredFactionId1`, `RequiredFactionId2`, `RequiredFactionValue1`, `RequiredFactionValue2`, `NextQuestIdChain`, `RewardXPId`, `RewardOrRequiredMoney`, `RewardMoneyMaxLevel`, `RewardSpell`, `RewardSpellCast`, `RewardHonor`, `RewardHonorMultiplier`, `SourceItemId`, `Flags`, `RewardTitle`, `RequiredPlayerKills`, `RewardTalents`, `RewardArenaPoints`, `RewardItem1`, `RewardItem2`, `RewardItem3`, `RewardItem4`, `RewardAmount1`, `RewardAmount2`, `RewardAmount3`, `RewardAmount4`, `RewardChoiceItemID1`, `RewardChoiceItemID2`, `RewardChoiceItemID3`, `RewardChoiceItemID4`, `RewardChoiceItemID5`, `RewardChoiceItemID6`, `RewardChoiceItemQuantity1`, `RewardChoiceItemQuantity2`, `RewardChoiceItemQuantity3`, `RewardChoiceItemQuantity4`, `RewardChoiceItemQuantity5`, `RewardChoiceItemQuantity6`, `RewardFactionID1`, `RewardFactionID2`, `RewardFactionID3`, `RewardFactionID4`, `RewardFactionID5`, `RewardFactionValue1`, `RewardFactionValue2`, `RewardFactionValue3`, `RewardFactionValue4`, `RewardFactionValue5`, `RewardFactionOverride1`, `RewardFactionOverride2`, `RewardFactionOverride3`, `RewardFactionOverride4`, `RewardFactionOverride5`, `PointMapId`, `PointX`, `PointY`, `PointOption`, `LogTitle`, `LogDescription`, `QuestDescription`, `EndText`, `OfferRewardText`, `RequestItemsText`, `QuestCompletionLog`, `RequiredNpcOrGo1`, `RequiredNpcOrGo2`, `RequiredNpcOrGo3`, `RequiredNpcOrGo4`, `RequiredNpcOrGoCount1`, `RequiredNpcOrGoCount2`, `RequiredNpcOrGoCount3`, `RequiredNpcOrGoCount4`, `RequiredSourceItemId1`, `RequiredSourceItemId2`, `RequiredSourceItemId3`, `RequiredSourceItemId4`, `RequiredSourceItemCount1`, `RequiredSourceItemCount2`, `RequiredSourceItemCount3`, `RequiredSourceItemCount4`, `RequiredItemId1`, `RequiredItemId2`, `RequiredItemId3`, `RequiredItemId4`, `RequiredItemId5`, `RequiredItemId6`, `RequiredItemCount1`, `RequiredItemCount2`, `RequiredItemCount3`, `RequiredItemCount4`, `RequiredItemCount5`, `RequiredItemCount6`, `Unknown0`, `ObjectiveText1`, `ObjectiveText2`, `ObjectiveText3`, `ObjectiveText4`, `DetailsEmote1`, `DetailsEmote2`, `DetailsEmote3`, `DetailsEmote4`, `DetailsEmoteDelay1`, `DetailsEmoteDelay2`, `DetailsEmoteDelay3`, `DetailsEmoteDelay4`, `EmoteOnIncomplete`, `EmoteOnComplete`, `OfferRewardEmote1`, `OfferRewardEmote2`, `OfferRewardEmote3`, `OfferRewardEmote4`, `OfferRewardEmoteDelay1`, `OfferRewardEmoteDelay2`, `OfferRewardEmoteDelay3`, `OfferRewardEmoteDelay4`, `VerifiedBuild`) VALUES
-(802002, 2, 80, 80, -1, 0, 0, 0, 1791, 0, 0, 0, 0, 0, 250, 500000, 500000, 0, 19838, 0, 0, 0, 32, 0, 0, 0, 0, 0, 0, 0, 0, 10, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 'Der Vogel', 'Tötet Sturmflamme im Krater von Un´goro', 'Guten Tag $N, $B Sturmflamme hat sich lange genug vor seinen Aufgaben ferngehalten. Er sollte den Berg unter Kontrolle halten, doch diese Aufgabe scheint ihm nun ueber den Kopf zu wachsen. Ihr müsst ihn liquidieren. Sofort!', '', 'Kommt doch morgen wieder um mir weiterzuhelfen.', 'Töte Sturmflamme noch heute!', 'Werdet ihr den Auftrag aufsführen?', 9376, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, '', '', '', '', 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1),
-(800513, 2, 80, 80, -1, 0, 0, 0, 1791, 0, 0, 0, 0, 0, 250, 0, 0, 0, 0, 0, 0, 0, 32768, 0, 0, 0, 0, 52006, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 'Kupferpulver', 'Bringt mir 30 Kupferpulver', 'Ich beötige Kupferpulver fuer meinen strahlenden Glanz des Gefieders', '', 'Kommt doch morgen wieder um mir weiterzuhelfen.', 'Bringt mir 30 Kupferpulver.', 'Werdet ihr den Auftrag aufsführen?', 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 24186, 0, 0, 0, 0, 0, 20, 0, 0, 0, 0, 0, 0, '', '', '', '', 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1),
-(802001, 2,80, 80, -1, 0, 0, 0, 1791, 0, 0, 0, 0, 802002, 250, 750000, 750000, 0, 0, 0, 0, 0, 32, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 49784, 49787, 49786, 49785, 0, 0, 1, 1, 1, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 'Die Grünen Hügel Teil 2', 'Bringt mir die Seiten 11,14,16,18,20 der Grünen Hügel des Schlingendorntals', 'Die ersten fuenf Seiten waren sehr spannend und ereignisreich. Könnt ihr mir die weiteren Seiten bringen? Auf den ersten Blick wird es sich nur für manche lohnen, aber glaubt mir wenn ich Euch sage das dem nicht so ist.', '', 'Kommt doch morgen wieder um mir weiterzuhelfen.', 'Bringt mir die Seiten 11,14,16,18,20 der Gruenen Huegel des Schlingendorntals', 'Werdet ihr den Auftrag aufsführen?', 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 2735, 2738, 2740, 2742, 2744, 0, 1, 1, 1, 1, 1, 0, 0, '', '', '', '', 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1),
-(802000, 2, 80, 80, -1, 0, 0, 0, 1791, 0, 0, 0, 0, 802001, 250, 1000000, 1000000, 0, 19838, 0, 0, 0, 32, 0, 0, 0, 0, 5740, 43015, 0, 0, 10, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 'Die Grünen Hügel Teil 1', 'Bringt mir die Seiten 1,4,6,8,10 der Grünen Hügel des Schlingendorntals', 'Ich bin sehr an Geschichten interessiert, deswegen bitte ich Euch, mir diese 5 Seiten zu bringen. Ich bin leider nicht sehr reich, daher kann ich Euch keine großen Belohnungen geben, aber ich kann Euch auf eine Reise schicken welche sich bestimmt für Euch lohnen wird.', '', 'Kommt doch morgen wieder um mir weiterzuhelfen.', 'Bringt mir die Seiten 1,4,6,8,10 der Gruenen Huegel des Schlingendorntals', 'Werdet ihr den Auftrag aufsführen?', 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 2725, 2728, 2730, 2732, 2734, 0, 1, 1, 1, 1, 1, 0, 0, '', '', '', '', 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1),
-(800511, 2, 80, 80, -1, 0, 0, 0, 1791, 0, 0, 0, 0, 0, 250, 1000000, 1000000, 0, 0, 0, 0, 0, 4096, 0, 0, 0, 0, 40752, 0, 0, 0, 10, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 'Federn für mein Kleid', 'Bringt mir 30 raue Geiernfedern.', 'Bitte helft mir, ich benötige neue Federn für mein Gefieder.', '', 'Kommt doch morgen wieder um mir weiterzuhelfen.', 'Bringt mir 30 raue Geiernfedern.', 'Werdet ihr den Auftrag aufsführen?', 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 555, 0, 0, 0, 0, 0, 30, 0, 0, 0, 0, 0, 0, '', '', '', '', 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1),
-(800512, 2, 80, 80, -1, 0, 0, 0, 1791, 0, 0, 0, 0, 0, 250, 10000000, 10000000, 0, 0, 0, 0, 0, 4096, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 3860, 36913, 41163, 3577, 2840, 0, 8, 8, 5, 12, 15, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 'Sammelwut', 'Sammelt 100 Stählerne Pfeilspitzen, 75 Netherstoff und tätet 10 Sonnenschuppenkreischer, 15 Fleischreißerhyjänen, 20 Kluftmoosgiftspucker, 15 Blutsichelfelzhetzer.', 'Helft uns bitte beim Sammeln dieser wichtigen Gegenstände. Wir benötigen diese wirklich dringend.', '', 'Sammelt 100 Stählerne Pfeilspitzen, 75 Netherstoff und tötet 10 Sonnenschuppenkreischer, 15 Fleischreißerhyjänen, 20 Kluftmoosgiftspucker, 15 Blutsichelfelzhetzer.', 'Du hast leider noch nicht alle benötigten Dinge zusammen.', 'Werdet ihr den Auftrag aufsführen?', 3255, 4127, 4007, 21423, 10, 15, 20, 15, 0, 0, 0, 0, 0, 0, 0, 0, 5123, 21877, 0, 0, 0, 0, 100, 75, 0, 0, 0, 0, 0, '', '', '', '', 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1),
-(800510, 2, 80, 80, -1, 62, 0, 0, 1791, 0, 0, 0, 0, 0, 250, 1000000, 1000000, 0, 0, 0, 0, 0, 32770, 0, 0, 0, 0, 47241, 0, 0, 0, 2, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1090, 0, 0, 0, 0, 250, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 'Orrig der dunkle Schatten ', 'Tötet Orrig den dunklen Schatten.', 'Wir können Orrig nicht weiter am Leben lassen. Er ist eine Gefahr für unser ganzes Volk. Vernichtet ihn. Geht zu Seruc von Lantus um zu Orrig zu gelangen.', '', 'Kommt doch morgen wieder um mir weiterzuhelfen.', 'Tötet Orrig den dunklen Schatten.', 'Werdet ihr den Auftrag aufsführen?', 800010, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, '', '', '', '', 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1),
-(800007, 2,80, 80, -1, 0, 0, 0, 1791, 0, 0, 0, 0, 800008, 250, 40000000, 40000000, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 34535, 10822, 8499, 0, 0, 0, 1, 1, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 'Die Essenz der ewigen Fünf', 'Bringt die Essenzen der ewigen Fünf zu Sophie Mondhain.', '$N,$BDie Tinktur der Sulforonblöcke war leider ein Fehlschlag. Ein  Vertrauter erzählte mir aber von Essenzen der ewigen Fünf. Diese sollen ueber magische Heilkräfte verfügen. Bitte helft mir und bringt mir diese 5 Essenzen. Die Essenzen der ewigen Fünf sollen sich im Besitz der 5 großen Weltendrachen befinden. Ein Name, an den ich mich errinern kann, war glaube ich Smariss.', '', 'Ich danke Euch.', 'Bringt die Essenzen der ewigen Fünf zu Sophie Mondhain.', 'Sophie Mondhain erwartet Euch sehnsüchtig.', 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 700502, 700503, 700504, 700505, 700506, 0, 1, 1, 1, 1, 1, 0, 0, '', '', '', '', 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 21, 0, 0, 0, 1000, 0, 0, 0, 1),
-(800509, 2, 80, 80, -1, 0, 1, 0, 1791, 0, 0, 0, 0, 0, 250, 7000000, 7000000, 0, 0, 0, 0, 0, 4096, 0, 0, 0, 0, 49426, 0, 0, 0, 2, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 'Froststoff sammeln ', 'Sammelt 100 Froststoff', 'Wir benötigen Froststoff zum Weben unserer Kleidung. Bitte helf uns dabei.', '', 'Ich danke Euch', 'Sammelt 100 Froststoff', 'Bringt Ihr mir die benötigten Dinge?', 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 33470, 0, 0, 0, 0, 0, 100, 0, 0, 0, 0, 0, 0, '', '', '', '', 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1),
-(800006, 2, 80, 80, -1, 0, 0, 0, 1791, 0, 0, 0, 0, 800007, 250, 15000000, 15000000, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 15198, 15199, 0, 0, 0, 0, 1, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 230, 1117.86, -455.74, 0, 'Die Gesteinstinktur', 'Bringt 3 Sulfuronblöcke sowie 3000 Ehrenpunkte zu Sophie Mondhain', 'Wie ihr seht ist mein Mann mit der Worgenkrankheit befallen. Ich habe von einer Tinktur gehört, fuer welche man in die Tiefen des geschmolzenen Kerns reissen muss.\r\nBringt mir von dort 3 Sulfuronblöcke und zusätzlich 3000 Ehrenpunkte. Beachtet wohl, Sulfuronblöcke sind ein äußert seltenes Gut. Dem Vernehmen nach sind die Sulfuronblöcke im Geschmolzenen Kern zu finden.', '', 'Ich danke Euch.', 'Bringt die Sulfuronblöcke, sowie die Ehrenpunkte zu Sophie Mondhain.', 'Sophie Mondhain erwartet Euch sehnsüchtig.', 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 17203, 43308, 0, 0, 0, 0, 3, 3000, 0, 0, 0, 0, 0, '', '', '', '', 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 21, 0, 0, 0, 1000, 0, 0, 0, 1),
-(800506, 2, 80, 80, -1, 0, 0, 0, 690, 0, 0, 0, 0, 0, 250, 10000000, 10000000, 0, 0, 0, 0, 0, 32832, 0, 0, 0, 20, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 'Zwergenfilet', '$N, tötet Magni Bronzebart', '$N, $B habt ihr Lust auf Zwergenfilet? Tötet Magni Bronzebart, den König der verachtenswerten Zwerge.', '', 'Kommt doch morgen wieder um mir weiterzuhelfen.', 'Ihr seid wohl ein kleiner Feigling?', 'Führt ihr meinen Auftrag aus?', 2784, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, '', '', '', '', 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1),
-(800507, 2, 80, 80, -1, 0, 0, 0, 1101, 0, 0, 0, 0, 0, 250, 10000000, 10000000, 0, 0, 0, 0, 0, 32832, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 'Hordenmassaker', '$N, tötet Thrall von Orgrimmar', '$N, $B habt ihr Lust auf ein Hordenmassaker? Tötet Thrall von Orgrimmar , den Hauptling der blutrünstigen Horde.', '', 'Kommt doch morgen wieder um mir weiterzuhelfen.', 'Ihr seid wohl ein kleiner Feigling?', 'Führt ihr meinen Auftrag aus?', 4949, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, '', '', '', '', 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1),
-(800508, 2, 80, 80, -1, 0, 10, 0, 690, 0, 0, 0, 0, 0, 250, 10000000, 10000000, 0, 0, 0, 0, 0, 32832, 0, 0, 0, 20, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 'Tot den Menschen', '$N, tötet Varian Wrynn', '$N, $B habt ihr Lust den Menschen Leid zuzufügen? Tötet Varian Wrynn, den König der hochnässigen Menschen.', '', 'Kommt doch morgen wieder um mir weiterzuhelfen.', 'Ihr seid wohl ein kleiner Feigling?', 'Fuehrt ihr meinen Auftrag aus?', 29611, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, '', '', '', '', 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1),
-(800500, 2, 80, 80, -1, 0, 1, 0, 1791, 0, 0, 0, 0, 0, 250, 2500000, 2500000, 0, 0, 1000, 0, 0, 4096, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 43102, 49908, 0, 0, 0, 0, 1, 1, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 'Mehr Hilfe für das Volk', 'Liefert 100 Netherstoff und 75 Raptorkrallen an mich.', 'Wir haben einen täglichen Bedarf an verschiedenen Gütern. Liefert 100 Netherstoff und 50 Raptorkrallen an mich.', '', 'Kommt doch morgen wieder um mir weiterzuhelfen.', 'Liefert 100 Netherstoff und 75 Raptorkrallen an mich.', 'Bringt Ihr mir die benötigten Dinge?', 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 21877, 29567, 0, 0, 0, 0, 100, 75, 0, 0, 0, 0, 0, '', '', '', '', 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1),
-(800504, 2, 80, 80, -1, 62, 10, 0, 1791, 0, 0, 0, 0, 0, 250, 1000000, 1000000, 0, 0, 0, 0, 0, 32840, 0, 0, 0, 0, 49426, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, -8607.57, 751.41, 0, 'Naxxramas Rally', '$N bitte tötet Saphiron und Kel´Thuzad.', '$N,$B bittet entledigt Euch dieser 2 Bestien. Sie zerstören unsere Dörfer und töten unsere Kinder.', '', 'Kommt doch morgen wieder um mir weiterzuhelfen.', 'Bitte tötet Saphiron und Kel´Thuzad.', 'Führt ihr meinen Auftrag aus?', 15989, 15990, 0, 0, 1, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, '', '', '', '', 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1),
-(800505, 2, 80, 80, -1, 0, 0, 0, 1791, 0, 0, 0, 0, 0, 250, 2500000, 2500000, 0, 0, 200, 0, 0, 4096, 0, 20, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, -8607.57, 751.41, 0, 'Gepflegt zerlegt', 'Erledigt 20 Spieler im PVP', 'Noch niemand hat eine Kneipenschlägerei geschadet. Also stuerzt euch mitten hinein.', '', 'Kommt doch morgen wieder um mir weiterzuhelfen.', 'Erledigt 20 Spieler im PVP', 'Fuehrt ihr meinen Auftrag aus?', 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, '', '', '', '', 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1),
-(800502, 2, 80, 80, -1, 0, 1, 0, 690, 0, 0, 0, 0, 0, 250, 50000, 50000, 0, 0, 0, 0, 2187, 4096, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 2592, 2589, 1475, 0, 0, 0, 10, 10, 10, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 'Die neue Postlieferung', '$N bitte liefert diesen Stapel Briefe an Johann Orrig vor Orgrimmar.', 'Diese Briefe muessen unbedingt Johann Orrig zugestellt werden. Sie enthalten wichtige Nachrichten unserer Mitglieder des Stammes. Ihr findet ihn vor Orgrimmar. ', '', 'Kommt doch morgen wieder um mir weiterzuhelfen.', 'Liefert den Stapel Briefe an Orrig vor Orgrimmar.', 'Bringt Ihr ihm die benötigten Briefe?', 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 2187, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, '', '', '', '', 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1),
-(800503, 2, 80, 80, -1, 0, 1, 0, 1101, 0, 0, 0, 0, 0, 250, 50000, 50000, 0, 0, 0, 0, 2187, 4096, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 2592, 2589, 1475, 0, 0, 0, 10, 10, 10, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, -8607.57, 751.41, 0, 'Die neue Postlieferung', '$N bitte liefert diesen Stapel Briefe an Pi von Haar in Sturmwind.', 'Diese Briefe muessen unbedingt Pi von Haar in Sturmwind zugestellt werden. Sie enthalten wichtige Nachrichten unserer Mitglieder des Stammes. Ihr findet Pi von Haar auf dem Kathedralenplatz.', '', 'Kommt doch morgen wieder um mir weiterzuhelfen.', 'Liefert den Stapel Briefe an Pi von Haar in Sturmwind.', 'Bringt Ihr ihm die benötigten Briefe?', 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 2187, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, '', '', '', '', 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1),
-(800501, 2, 80, 80, -1, 0, 1, 0, 1791, 0, 0, 0, 0, 0, 250, 400000, 4000000, 0, 0, 0, 0, 0, 4096, 0, 0, 0, 0, 25423, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 5, 5, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 'Tötet den Verschlinger der Seelen ', 'Tötet den Verschlinger der Seelen', 'Dies Bedarf keiner langen Erklärung! Tötet den Verschlinger der Seelen', '', 'Ich danke Euch', 'Tötet den Verschlinger der Seelen', 'Bringt Ihr mir die benötigten Dinge?', 36502, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, '', '', '', '', 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1),
-(799999, 2, 80, 80, -1, 0, 1, 0, 1791, 0, 0, 0, 0, 800000, 250, 500000, 500000, 0, 0, 0, 0, 700500, 0, 0, 0, 0, 100, 200000, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 'Der Gegenstand', 'Liefert diesen Gegenstand an einen Händler in Dalaran.', '$N, Liefert diesen Gegenstand an einen Händler in Dalaran. Gerüchten zufolge steht dieser eine bestimmte Händler im Untergrund von Dalaran. Schaut Euch dort doch einfach um und bringt im diesen Stein.', '', 'Ich danke Euch für diese Gabe.', 'Bringt ihr mir etwas von Wert?', 'Bringt diesen Stein zu einem Händler in Dalaran.', 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, '', '', '', '', 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1),
-(800000, 2, 80, 80, -1, 0, 1, 0, 1791, 0, 0, 0, 0, 800001, 250, 5000000, 5000000, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 200000, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 'Der Anfang', 'Liefert 20 Goldbarren an mich um euren Ehrgeiz und Euer Interesse zu beweisen.', 'Guten Tag $N. Ich habe von einem Volk gehört das in einem entlegenen Gebiet von Azeroth wohnt. Um mit diesem Volk in Kontakt treten zu können, bedarf es jedoch \r\neines kleinen Oboluses. Bringt mir 20 Goldbarren und ich werde Euch den Standort verraten.', 'Ich danke Euch. Wir werden sehen wie lange euer Ehrgeiz anhalten wird.', 'Ich danke Euch. Lasst mich nun den Standort verraten.', 'Bringt Ihr mir die 20 Goldbarren?', 'Bringt die Goldbarren zurück zu Thedrium Wyrmbräu um den Standort zu erfahren.', 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 3577, 0, 0, 0, 0, 0, 20, 0, 0, 0, 0, 0, 0, '', '', '', '', 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1),
-(800001, 2, 80, 80, -1, 0, 1, 0, 1791, 0, 0, 0, 0, 800002, 250, 10000000, 10000000, 0, 0, 0, 0, 38186, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 'Der Begin einer neuen Reise', 'Bringt den Astralen Kredit zu Extator Magista', 'Bringt den Astralen Kredit zu Extator Magista und zeigt ihm sofort Eure Bereitschaft sich Ihm anzuschliessen. Herr Magista befindet sich im Gebirge zwischen den Grizzlyhügeln sowie dem Heulenden Fjord.', '', 'Nun denn. Dann wollen wir sehen was ihr in eurem langen Leben gelernt habt.', 'Lasst Euch Zeit. Extator wird nicht weglaufen.', 'Bringt den Astralen Kredit zu Extator Magista.', 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 38186, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 'Eine neue Reise beginnt.', '', '', '', 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1),
-(800002, 2, 80, 80, -1, 0, 1, 0, 1791, 0, 0, 0, 0, 800003, 150, 5000000, 7500000, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 49426, 0, 0, 0, 2, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 571, 3465.48, -3226.91, 0, 'Die erste Prüfung', 'Bringt mir 20 Abgeworfene Echsenhäute, 20 Gorillafangzähne,30 Seidenstoffe.', 'Dies ist Eure erste Prüfung. Es wird eine leichte Aufgabe sein. Bringt mir 20 Abgeworfene Echsenhäute, 20 Gorillafangzähne,30 Seidenstoffe. Wir müssen ein Zeichen setzen, dass trotz unserer aktuellen Lage mit uns zu rechnen ist.', 'Ich danke Euch. Wir werden sehen wie lange euer Ehrgeiz anhalten wird.', 'Ihr habt die erste Prüfung gemeistert. Lasst uns die Nächste beginnen.', 'Bringt mir 20 Abgeworfene Echsenhäute, 20 Gorillafangzähne,30 Seidenstoffe.', 'Kehrt zu Extator Magista zurück um Eure Belohnung zu erhalten.', 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 5128, 2799, 4306, 0, 0, 0, 20, 20, 30, 0, 0, 0, 0, '', '', '', '', 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1),
-(800003, 2, 80, 80, -1, 0, 1, 0, 1791, 0, 0, 0, 0, 800004, 250, 1000000, 1000000, 0, 0, 3000, 2, 0, 0, 0, 10, 0, 0, 49908, 0, 0, 0, 5, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 'Die zweite Prüfung', 'Tötet 10 gegnerische Spieler', 'Bei der zweiten Prüfung wird Eure Kampffähigkeit gegen ebenbürtige Gegner auf die Probe gestellt. Tretet gegen 10 Spieler an um die Pruefung abzuschliessen.', 'Ich danke Euch. Wir werden sehen wie lange euer Ehrgeiz anhalten wird.', 'Ihr nähert Euch langsam dem Ziel.', 'Tötet 10 gegnerische Spieler, sonst braucht Ihr Euch erst gar nicht mehr hertrauen!', 'Kehrt zurück um die Pruefung abzuschließen.', 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, '0', '0', '0', '0', 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1),
-(800004, 2, 80, 80, -1, 0, 1, 0, 1791, 0, 0, 0, 0, 800005, 250, 100000, 100000, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 43102, 0, 0, 0, 2, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 'Die dritte Pruefung', 'Bringt mir 10 boreanische Leder und 10 Wollverbände um mich zu unterstuetzen.', 'Mein Volk muss leiden, bringt mir daher die benötigten Materialien, damit ich diese zu meinem Volk bringen kann.', '', 'Ich danke Euch.', 'Bringt mir 10 boreanische Leder und 10 Wollverbände um mich zu unterstuetzen.', 'Kehrt zurück um Eure Belohnung abzuholen.', 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 33568, 3530, 0, 0, 0, 0, 10, 10, 0, 0, 0, 0, 0, '', '', '', '', 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1),
-(800005, 2, 80, 80, -1, 62, 1, 0, 1791, 0, 0, 0, 0, 800006, 250, 5000000, 5000000, 0, 0, 0, 0, 44680, 32968, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 19364, 19363, 19360, 19356, 0, 0, 1, 1, 1, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 'Die Aufnahme', 'Bringt die Schriftensammlung zu Destro MMOwning. Tötet zusätzlich Geißelfuerst Tyrannus, Den Verschlinger der Seelen sowie Sartharion.', 'Bringt die Schriftensammlung zu Destro MMOwning. Ihr findet Ihn an der Küste von Westfall. Aus seiner Sicht gesehen schaut er auf ein Schriffswrack. Meist hört er im Wind die Schreie von Murlockreaturen. Zusätzlich müsst ihr Geißelfürst Tyrannus, Den Verschlinger der Seelen sowie Sartharion töten.', '', 'Ich danke Euch.', 'Bringt die Schriftensammlung zu Destro Mowning.', 'Destro Mowning ist erfreut Euch zu sehen. Tötet zusätzlich Geißelfürst Tyrannus, Den Verschlinger der Seelen sowie Sartharion.', 36502, 28860, 36658, 0, 1, 1, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 44680, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, '', '', '', '', 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 21, 0, 0, 0, 1000, 0, 0, 0, 1);
+(802002, 2, 80, 80, -1, 0, 0, 0, 1791, 0, 0, 0, 0, 0, 250, 500000, 500000, 0, 19838, 0, 0, 0, 32, 0, 0, 0, 0, 0, 0, 0, 0, 10, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 'Der Vogel', 'Toetet Sturmflamme im Krater von Un´goro', 'Guten Tag $N, $B Sturmflamme hat sich lange genug vor seinen Aufgaben ferngehalten. Er sollte den Berg unter Kontrolle halten, doch diese Aufgabe scheint ihm nun ueber den Kopf zu wachsen. Ihr muesst ihn liquidieren. Sofort!', '', 'Kommt doch morgen wieder um mir weiterzuhelfen.', 'Toete Sturmflamme noch heute!', 'Werdet ihr den Auftrag aufsfuehren?', 9376, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, '', '', '', '', 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1),
+(800513, 2, 80, 80, -1, 0, 0, 0, 1791, 0, 0, 0, 0, 0, 250, 0, 0, 0, 0, 0, 0, 0, 32768, 0, 0, 0, 0, 52006, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 'Kupferpulver', 'Bringt mir 30 Kupferpulver', 'Ich beoetige Kupferpulver fuer meinen strahlenden Glanz des Gefieders', '', 'Kommt doch morgen wieder um mir weiterzuhelfen.', 'Bringt mir 30 Kupferpulver.', 'Werdet ihr den Auftrag aufsfuehren?', 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 24186, 0, 0, 0, 0, 0, 20, 0, 0, 0, 0, 0, 0, '', '', '', '', 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1),
+(802001, 2,80, 80, -1, 0, 0, 0, 1791, 0, 0, 0, 0, 802002, 250, 750000, 750000, 0, 0, 0, 0, 0, 32, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 49784, 49787, 49786, 49785, 0, 0, 1, 1, 1, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 'Die Gruenen Huegel Teil 2', 'Bringt mir die Seiten 11,14,16,18,20 der Gruenen Huegel des Schlingendorntals', 'Die ersten fuenf Seiten waren sehr spannend und ereignisreich. Koennt ihr mir die weiteren Seiten bringen? Auf den ersten Blick wird es sich nur fuer manche lohnen, aber glaubt mir wenn ich Euch sage das dem nicht so ist.', '', 'Kommt doch morgen wieder um mir weiterzuhelfen.', 'Bringt mir die Seiten 11,14,16,18,20 der Gruenen Huegel des Schlingendorntals', 'Werdet ihr den Auftrag aufsfuehren?', 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 2735, 2738, 2740, 2742, 2744, 0, 1, 1, 1, 1, 1, 0, 0, '', '', '', '', 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1),
+(802000, 2, 80, 80, -1, 0, 0, 0, 1791, 0, 0, 0, 0, 802001, 250, 1000000, 1000000, 0, 19838, 0, 0, 0, 32, 0, 0, 0, 0, 5740, 43015, 0, 0, 10, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 'Die Gruenen Huegel Teil 1', 'Bringt mir die Seiten 1,4,6,8,10 der Gruenen Huegel des Schlingendorntals', 'Ich bin sehr an Geschichten interessiert, deswegen bitte ich Euch, mir diese 5 Seiten zu bringen. Ich bin leider nicht sehr reich, daher kann ich Euch keine großen Belohnungen geben, aber ich kann Euch auf eine Reise schicken welche sich bestimmt fuer Euch lohnen wird.', '', 'Kommt doch morgen wieder um mir weiterzuhelfen.', 'Bringt mir die Seiten 1,4,6,8,10 der Gruenen Huegel des Schlingendorntals', 'Werdet ihr den Auftrag aufsfuehren?', 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 2725, 2728, 2730, 2732, 2734, 0, 1, 1, 1, 1, 1, 0, 0, '', '', '', '', 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1),
+(800511, 2, 80, 80, -1, 0, 0, 0, 1791, 0, 0, 0, 0, 0, 250, 1000000, 1000000, 0, 0, 0, 0, 0, 4096, 0, 0, 0, 0, 40752, 0, 0, 0, 10, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 'Federn fuer mein Kleid', 'Bringt mir 30 raue Geiernfedern.', 'Bitte helft mir, ich benoetige neue Federn fuer mein Gefieder.', '', 'Kommt doch morgen wieder um mir weiterzuhelfen.', 'Bringt mir 30 raue Geiernfedern.', 'Werdet ihr den Auftrag aufsfuehren?', 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 555, 0, 0, 0, 0, 0, 30, 0, 0, 0, 0, 0, 0, '', '', '', '', 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1),
+(800512, 2, 80, 80, -1, 0, 0, 0, 1791, 0, 0, 0, 0, 0, 250, 10000000, 10000000, 0, 0, 0, 0, 0, 4096, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 3860, 36913, 41163, 3577, 2840, 0, 8, 8, 5, 12, 15, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 'Sammelwut', 'Sammelt 100 Staehlerne Pfeilspitzen, 75 Netherstoff und taetet 10 Sonnenschuppenkreischer, 15 Fleischreißerhyjaenen, 20 Kluftmoosgiftspucker, 15 Blutsichelfelzhetzer.', 'Helft uns bitte beim Sammeln dieser wichtigen Gegenstaende. Wir benoetigen diese wirklich dringend.', '', 'Sammelt 100 Staehlerne Pfeilspitzen, 75 Netherstoff und toetet 10 Sonnenschuppenkreischer, 15 Fleischreißerhyjaenen, 20 Kluftmoosgiftspucker, 15 Blutsichelfelzhetzer.', 'Du hast leider noch nicht alle benoetigten Dinge zusammen.', 'Werdet ihr den Auftrag aufsfuehren?', 3255, 4127, 4007, 21423, 10, 15, 20, 15, 0, 0, 0, 0, 0, 0, 0, 0, 5123, 21877, 0, 0, 0, 0, 100, 75, 0, 0, 0, 0, 0, '', '', '', '', 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1),
+(800510, 2, 80, 80, -1, 62, 0, 0, 1791, 0, 0, 0, 0, 0, 250, 1000000, 1000000, 0, 0, 0, 0, 0, 32770, 0, 0, 0, 0, 47241, 0, 0, 0, 2, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1090, 0, 0, 0, 0, 250, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 'Orrig der dunkle Schatten ', 'Toetet Orrig den dunklen Schatten.', 'Wir koennen Orrig nicht weiter am Leben lassen. Er ist eine Gefahr fuer unser ganzes Volk. Vernichtet ihn. Geht zu Seruc von Lantus um zu Orrig zu gelangen.', '', 'Kommt doch morgen wieder um mir weiterzuhelfen.', 'Toetet Orrig den dunklen Schatten.', 'Werdet ihr den Auftrag aufsfuehren?', 800010, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, '', '', '', '', 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1),
+(800007, 2,80, 80, -1, 0, 0, 0, 1791, 0, 0, 0, 0, 800008, 250, 40000000, 40000000, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 34535, 10822, 8499, 0, 0, 0, 1, 1, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 'Die Essenz der ewigen Fuenf', 'Bringt die Essenzen der ewigen Fuenf zu Sophie Mondhain.', '$N,$BDie Tinktur der Sulforonbloecke war leider ein Fehlschlag. Ein  Vertrauter erzaehlte mir aber von Essenzen der ewigen Fuenf. Diese sollen ueber magische Heilkraefte verfuegen. Bitte helft mir und bringt mir diese 5 Essenzen. Die Essenzen der ewigen Fuenf sollen sich im Besitz der 5 großen Weltendrachen befinden. Ein Name, an den ich mich errinern kann, war glaube ich Smariss.', '', 'Ich danke Euch.', 'Bringt die Essenzen der ewigen Fuenf zu Sophie Mondhain.', 'Sophie Mondhain erwartet Euch sehnsuechtig.', 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 700502, 700503, 700504, 700505, 700506, 0, 1, 1, 1, 1, 1, 0, 0, '', '', '', '', 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 21, 0, 0, 0, 1000, 0, 0, 0, 1),
+(800509, 2, 80, 80, -1, 0, 1, 0, 1791, 0, 0, 0, 0, 0, 250, 7000000, 7000000, 0, 0, 0, 0, 0, 4096, 0, 0, 0, 0, 49426, 0, 0, 0, 2, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 'Froststoff sammeln ', 'Sammelt 100 Froststoff', 'Wir benoetigen Froststoff zum Weben unserer Kleidung. Bitte helf uns dabei.', '', 'Ich danke Euch', 'Sammelt 100 Froststoff', 'Bringt Ihr mir die benoetigten Dinge?', 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 33470, 0, 0, 0, 0, 0, 100, 0, 0, 0, 0, 0, 0, '', '', '', '', 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1),
+(800006, 2, 80, 80, -1, 0, 0, 0, 1791, 0, 0, 0, 0, 800007, 250, 15000000, 15000000, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 15198, 15199, 0, 0, 0, 0, 1, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 230, 1117.86, -455.74, 0, 'Die Gesteinstinktur', 'Bringt 3 Sulfuronbloecke sowie 3000 Ehrenpunkte zu Sophie Mondhain', 'Wie ihr seht ist mein Mann mit der Worgenkrankheit befallen. Ich habe von einer Tinktur gehoert, fuer welche man in die Tiefen des geschmolzenen Kerns reissen muss.\r\nBringt mir von dort 3 Sulfuronbloecke und zusaetzlich 3000 Ehrenpunkte. Beachtet wohl, Sulfuronbloecke sind ein aeußert seltenes Gut. Dem Vernehmen nach sind die Sulfuronbloecke im Geschmolzenen Kern zu finden.', '', 'Ich danke Euch.', 'Bringt die Sulfuronbloecke, sowie die Ehrenpunkte zu Sophie Mondhain.', 'Sophie Mondhain erwartet Euch sehnsuechtig.', 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 17203, 43308, 0, 0, 0, 0, 3, 3000, 0, 0, 0, 0, 0, '', '', '', '', 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 21, 0, 0, 0, 1000, 0, 0, 0, 1),
+(800506, 2, 80, 80, -1, 0, 0, 0, 690, 0, 0, 0, 0, 0, 250, 10000000, 10000000, 0, 0, 0, 0, 0, 32832, 0, 0, 0, 20, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 'Zwergenfilet', '$N, toetet Magni Bronzebart', '$N, $B habt ihr Lust auf Zwergenfilet? Toetet Magni Bronzebart, den Koenig der verachtenswerten Zwerge.', '', 'Kommt doch morgen wieder um mir weiterzuhelfen.', 'Ihr seid wohl ein kleiner Feigling?', 'Fuehrt ihr meinen Auftrag aus?', 2784, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, '', '', '', '', 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1),
+(800507, 2, 80, 80, -1, 0, 0, 0, 1101, 0, 0, 0, 0, 0, 250, 10000000, 10000000, 0, 0, 0, 0, 0, 32832, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 'Hordenmassaker', '$N, toetet Thrall von Orgrimmar', '$N, $B habt ihr Lust auf ein Hordenmassaker? Toetet Thrall von Orgrimmar , den Hauptling der blutruenstigen Horde.', '', 'Kommt doch morgen wieder um mir weiterzuhelfen.', 'Ihr seid wohl ein kleiner Feigling?', 'Fuehrt ihr meinen Auftrag aus?', 4949, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, '', '', '', '', 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1),
+(800508, 2, 80, 80, -1, 0, 10, 0, 690, 0, 0, 0, 0, 0, 250, 10000000, 10000000, 0, 0, 0, 0, 0, 32832, 0, 0, 0, 20, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 'Tot den Menschen', '$N, toetet Varian Wrynn', '$N, $B habt ihr Lust den Menschen Leid zuzufuegen? Toetet Varian Wrynn, den Koenig der hochnaessigen Menschen.', '', 'Kommt doch morgen wieder um mir weiterzuhelfen.', 'Ihr seid wohl ein kleiner Feigling?', 'Fuehrt ihr meinen Auftrag aus?', 29611, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, '', '', '', '', 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1),
+(800500, 2, 80, 80, -1, 0, 1, 0, 1791, 0, 0, 0, 0, 0, 250, 2500000, 2500000, 0, 0, 1000, 0, 0, 4096, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 43102, 49908, 0, 0, 0, 0, 1, 1, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 'Mehr Hilfe fuer das Volk', 'Liefert 100 Netherstoff und 75 Raptorkrallen an mich.', 'Wir haben einen taeglichen Bedarf an verschiedenen Guetern. Liefert 100 Netherstoff und 50 Raptorkrallen an mich.', '', 'Kommt doch morgen wieder um mir weiterzuhelfen.', 'Liefert 100 Netherstoff und 75 Raptorkrallen an mich.', 'Bringt Ihr mir die benoetigten Dinge?', 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 21877, 29567, 0, 0, 0, 0, 100, 75, 0, 0, 0, 0, 0, '', '', '', '', 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1),
+(800504, 2, 80, 80, -1, 62, 10, 0, 1791, 0, 0, 0, 0, 0, 250, 1000000, 1000000, 0, 0, 0, 0, 0, 32840, 0, 0, 0, 0, 49426, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, -8607.57, 751.41, 0, 'Naxxramas Rally', '$N bitte toetet Saphiron und Kel´Thuzad.', '$N,$B bittet entledigt Euch dieser 2 Bestien. Sie zerstoeren unsere Doerfer und toeten unsere Kinder.', '', 'Kommt doch morgen wieder um mir weiterzuhelfen.', 'Bitte toetet Saphiron und Kel´Thuzad.', 'Fuehrt ihr meinen Auftrag aus?', 15989, 15990, 0, 0, 1, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, '', '', '', '', 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1),
+(800505, 2, 80, 80, -1, 0, 0, 0, 1791, 0, 0, 0, 0, 0, 250, 2500000, 2500000, 0, 0, 200, 0, 0, 4096, 0, 20, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, -8607.57, 751.41, 0, 'Gepflegt zerlegt', 'Erledigt 20 Spieler im PVP', 'Noch niemand hat eine Kneipenschlaegerei geschadet. Also stuerzt euch mitten hinein.', '', 'Kommt doch morgen wieder um mir weiterzuhelfen.', 'Erledigt 20 Spieler im PVP', 'Fuehrt ihr meinen Auftrag aus?', 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, '', '', '', '', 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1),
+(800502, 2, 80, 80, -1, 0, 1, 0, 690, 0, 0, 0, 0, 0, 250, 50000, 50000, 0, 0, 0, 0, 2187, 4096, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 2592, 2589, 1475, 0, 0, 0, 10, 10, 10, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 'Die neue Postlieferung', '$N bitte liefert diesen Stapel Briefe an Johann Orrig vor Orgrimmar.', 'Diese Briefe muessen unbedingt Johann Orrig zugestellt werden. Sie enthalten wichtige Nachrichten unserer Mitglieder des Stammes. Ihr findet ihn vor Orgrimmar. ', '', 'Kommt doch morgen wieder um mir weiterzuhelfen.', 'Liefert den Stapel Briefe an Orrig vor Orgrimmar.', 'Bringt Ihr ihm die benoetigten Briefe?', 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 2187, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, '', '', '', '', 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1),
+(800503, 2, 80, 80, -1, 0, 1, 0, 1101, 0, 0, 0, 0, 0, 250, 50000, 50000, 0, 0, 0, 0, 2187, 4096, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 2592, 2589, 1475, 0, 0, 0, 10, 10, 10, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, -8607.57, 751.41, 0, 'Die neue Postlieferung', '$N bitte liefert diesen Stapel Briefe an Pi von Haar in Sturmwind.', 'Diese Briefe muessen unbedingt Pi von Haar in Sturmwind zugestellt werden. Sie enthalten wichtige Nachrichten unserer Mitglieder des Stammes. Ihr findet Pi von Haar auf dem Kathedralenplatz.', '', 'Kommt doch morgen wieder um mir weiterzuhelfen.', 'Liefert den Stapel Briefe an Pi von Haar in Sturmwind.', 'Bringt Ihr ihm die benoetigten Briefe?', 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 2187, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, '', '', '', '', 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1),
+(800501, 2, 80, 80, -1, 0, 1, 0, 1791, 0, 0, 0, 0, 0, 250, 400000, 4000000, 0, 0, 0, 0, 0, 4096, 0, 0, 0, 0, 25423, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 5, 5, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 'Toetet den Verschlinger der Seelen ', 'Toetet den Verschlinger der Seelen', 'Dies Bedarf keiner langen Erklaerung! Toetet den Verschlinger der Seelen', '', 'Ich danke Euch', 'Toetet den Verschlinger der Seelen', 'Bringt Ihr mir die benoetigten Dinge?', 36502, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, '', '', '', '', 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1),
+(799999, 2, 80, 80, -1, 0, 1, 0, 1791, 0, 0, 0, 0, 800000, 250, 500000, 500000, 0, 0, 0, 0, 700500, 0, 0, 0, 0, 100, 200000, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 'Der Gegenstand', 'Liefert diesen Gegenstand an einen Haendler in Dalaran.', '$N, Liefert diesen Gegenstand an einen Haendler in Dalaran. Geruechten zufolge steht dieser eine bestimmte Haendler im Untergrund von Dalaran. Schaut Euch dort doch einfach um und bringt im diesen Stein.', '', 'Ich danke Euch fuer diese Gabe.', 'Bringt ihr mir etwas von Wert?', 'Bringt diesen Stein zu einem Haendler in Dalaran.', 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, '', '', '', '', 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1),
+(800000, 2, 80, 80, -1, 0, 1, 0, 1791, 0, 0, 0, 0, 800001, 250, 5000000, 5000000, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 200000, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 'Der Anfang', 'Liefert 20 Goldbarren an mich um euren Ehrgeiz und Euer Interesse zu beweisen.', 'Guten Tag $N. Ich habe von einem Volk gehoert das in einem entlegenen Gebiet von Azeroth wohnt. Um mit diesem Volk in Kontakt treten zu koennen, bedarf es jedoch \r\neines kleinen Oboluses. Bringt mir 20 Goldbarren und ich werde Euch den Standort verraten.', 'Ich danke Euch. Wir werden sehen wie lange euer Ehrgeiz anhalten wird.', 'Ich danke Euch. Lasst mich nun den Standort verraten.', 'Bringt Ihr mir die 20 Goldbarren?', 'Bringt die Goldbarren zurueck zu Thedrium Wyrmbraeu um den Standort zu erfahren.', 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 3577, 0, 0, 0, 0, 0, 20, 0, 0, 0, 0, 0, 0, '', '', '', '', 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1),
+(800001, 2, 80, 80, -1, 0, 1, 0, 1791, 0, 0, 0, 0, 800002, 250, 10000000, 10000000, 0, 0, 0, 0, 38186, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 'Der Begin einer neuen Reise', 'Bringt den Astralen Kredit zu Extator Magista', 'Bringt den Astralen Kredit zu Extator Magista und zeigt ihm sofort Eure Bereitschaft sich Ihm anzuschliessen. Herr Magista befindet sich im Gebirge zwischen den Grizzlyhuegeln sowie dem Heulenden Fjord.', '', 'Nun denn. Dann wollen wir sehen was ihr in eurem langen Leben gelernt habt.', 'Lasst Euch Zeit. Extator wird nicht weglaufen.', 'Bringt den Astralen Kredit zu Extator Magista.', 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 38186, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 'Eine neue Reise beginnt.', '', '', '', 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1),
+(800002, 2, 80, 80, -1, 0, 1, 0, 1791, 0, 0, 0, 0, 800003, 150, 5000000, 7500000, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 49426, 0, 0, 0, 2, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 571, 3465.48, -3226.91, 0, 'Die erste Pruefung', 'Bringt mir 20 Abgeworfene Echsenhaeute, 20 Gorillafangzaehne,30 Seidenstoffe.', 'Dies ist Eure erste Pruefung. Es wird eine leichte Aufgabe sein. Bringt mir 20 Abgeworfene Echsenhaeute, 20 Gorillafangzaehne,30 Seidenstoffe. Wir muessen ein Zeichen setzen, dass trotz unserer aktuellen Lage mit uns zu rechnen ist.', 'Ich danke Euch. Wir werden sehen wie lange euer Ehrgeiz anhalten wird.', 'Ihr habt die erste Pruefung gemeistert. Lasst uns die Naechste beginnen.', 'Bringt mir 20 Abgeworfene Echsenhaeute, 20 Gorillafangzaehne,30 Seidenstoffe.', 'Kehrt zu Extator Magista zurueck um Eure Belohnung zu erhalten.', 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 5128, 2799, 4306, 0, 0, 0, 20, 20, 30, 0, 0, 0, 0, '', '', '', '', 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1),
+(800003, 2, 80, 80, -1, 0, 1, 0, 1791, 0, 0, 0, 0, 800004, 250, 1000000, 1000000, 0, 0, 3000, 2, 0, 0, 0, 10, 0, 0, 49908, 0, 0, 0, 5, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 'Die zweite Pruefung', 'Toetet 10 gegnerische Spieler', 'Bei der zweiten Pruefung wird Eure Kampffaehigkeit gegen ebenbuertige Gegner auf die Probe gestellt. Tretet gegen 10 Spieler an um die Pruefung abzuschliessen.', 'Ich danke Euch. Wir werden sehen wie lange euer Ehrgeiz anhalten wird.', 'Ihr naehert Euch langsam dem Ziel.', 'Toetet 10 gegnerische Spieler, sonst braucht Ihr Euch erst gar nicht mehr hertrauen!', 'Kehrt zurueck um die Pruefung abzuschließen.', 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, '0', '0', '0', '0', 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1),
+(800004, 2, 80, 80, -1, 0, 1, 0, 1791, 0, 0, 0, 0, 800005, 250, 100000, 100000, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 43102, 0, 0, 0, 2, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 'Die dritte Pruefung', 'Bringt mir 10 boreanische Leder und 10 Wollverbaende um mich zu unterstuetzen.', 'Mein Volk muss leiden, bringt mir daher die benoetigten Materialien, damit ich diese zu meinem Volk bringen kann.', '', 'Ich danke Euch.', 'Bringt mir 10 boreanische Leder und 10 Wollverbaende um mich zu unterstuetzen.', 'Kehrt zurueck um Eure Belohnung abzuholen.', 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 33568, 3530, 0, 0, 0, 0, 10, 10, 0, 0, 0, 0, 0, '', '', '', '', 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1),
+(800005, 2, 80, 80, -1, 62, 1, 0, 1791, 0, 0, 0, 0, 800006, 250, 5000000, 5000000, 0, 0, 0, 0, 44680, 32968, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 19364, 19363, 19360, 19356, 0, 0, 1, 1, 1, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 'Die Aufnahme', 'Bringt die Schriftensammlung zu Destro MMOwning. Toetet zusaetzlich Geißelfuerst Tyrannus, Den Verschlinger der Seelen sowie Sartharion.', 'Bringt die Schriftensammlung zu Destro MMOwning. Ihr findet Ihn an der Kueste von Westfall. Aus seiner Sicht gesehen schaut er auf ein Schriffswrack. Meist hoert er im Wind die Schreie von Murlockreaturen. Zusaetzlich muesst ihr Geißelfuerst Tyrannus, Den Verschlinger der Seelen sowie Sartharion toeten.', '', 'Ich danke Euch.', 'Bringt die Schriftensammlung zu Destro Mowning.', 'Destro Mowning ist erfreut Euch zu sehen. Toetet zusaetzlich Geißelfuerst Tyrannus, Den Verschlinger der Seelen sowie Sartharion.', 36502, 28860, 36658, 0, 1, 1, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 44680, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, '', '', '', '', 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 21, 0, 0, 0, 1000, 0, 0, 0, 1);
 
 -- --------------------------------------------------------
 
@@ -14206,11 +14206,11 @@ REPLACE INTO `quest_template_addon` (`ID`, `MaxLevel`, `AllowableClasses`, `Sour
  /*  PointX  */ 0,
  /*  PointY  */ 0,
  /*  PointOption  */ 0,
- /*  LogTitle  */ 'Die Fälschung',
- /*  LogDescription  */  'Findet die kleine Frau, die diese Fälschung in Umlauf gebracht hat.',
- /*  QuestDescription   */ '$C, scheinbar wurde eine Fälschung dieses wertvollen Gegenstands produziert.$B$BFindet dieses kleine Ungeziefer, dass diesen Gegenstand hergestellt hat.',
+ /*  LogTitle  */ 'Die Faelschung',
+ /*  LogDescription  */  'Findet die kleine Frau, die diese Faelschung in Umlauf gebracht hat.',
+ /*  QuestDescription   */ '$C, scheinbar wurde eine Faelschung dieses wertvollen Gegenstands produziert.$B$BFindet dieses kleine Ungeziefer, dass diesen Gegenstand hergestellt hat.',
  /*  EndText klein geschriebener Text im Log  */  '',
- /*  OfferRewardText bevor man beendet  */  'Nagut, lasst mich erklären.                                                                                   Aber zuerst müsst ihr Etwas für mich tun.',
+ /*  OfferRewardText bevor man beendet  */  'Nagut, lasst mich erklaeren.                                                                                   Aber zuerst muesst ihr Etwas fuer mich tun.',
  /*  RequestItemsText  */ '',
  /*  Quest Completed Text wird rechts im Questlog angezeigt der Text */ 'Findet die kleine Frau in Dalaran.',
  /*  RequiredNpcOrGo1  */ 0,
@@ -14356,12 +14356,12 @@ REPLACE INTO `quest_template` (`ID`, `Method`, `QuestLevel`, `MinLevel`, `QuestS
  /*  PointX  */ 0,
  /*  PointY  */ 0,
   /*  PointOption  */ 0,
- /*  LogTitle  */ 'Wir brauchen Pläne!',
- /*  LogDescription  */  'Finde die Pläne!',
- /*  QuestDescription   */ 'Wir wollen  unser neues Areal aufbauen und dazu benötigen wir zu Beginn mal drei Baupläne.$BDiese Baupläne könnt ihr in den ersten Instanzen finden, welche ihr in eurer Laufbahn betreten konntet.',
+ /*  LogTitle  */ 'Wir brauchen Plaene!',
+ /*  LogDescription  */  'Finde die Plaene!',
+ /*  QuestDescription   */ 'Wir wollen  unser neues Areal aufbauen und dazu benoetigen wir zu Beginn mal drei Bauplaene.$BDiese Bauplaene koennt ihr in den ersten Instanzen finden, welche ihr in eurer Laufbahn betreten konntet.',
  /*  EndText   */  '',
- /*  OfferRewardText bevor man beendet  */  'Du wirst nicht enttäuscht sein, wenn du bis zum Ende durchhältst!',
- /*  RequestItemsText  */ 'Du wirst nicht enttäuscht sein, wenn du bis zum Ende durchhältst!',
+ /*  OfferRewardText bevor man beendet  */  'Du wirst nicht enttaeuscht sein, wenn du bis zum Ende durchhaeltst!',
+ /*  RequestItemsText  */ 'Du wirst nicht enttaeuscht sein, wenn du bis zum Ende durchhaeltst!',
  /*  QuestCompletionLog  */ 'Verflixt nochmal, wie lange soll ich den warten?',
  /*  RequiredNpcOrGo1  */ 0,
  /*  RequiredNpcOrGo2  */ 0,
@@ -14510,11 +14510,11 @@ REPLACE INTO `quest_template` (`ID`, `Method`, `QuestLevel`, `MinLevel`, `QuestS
  /*  PointY  */ 0,
   /*  PointOption  */ 0,
  /*  LogTitle  */ 'Meine Leute brauchen Ausdauer',
- /*  LogDescription  */  'Sie sind geschwächt, bringt mir diese Verzauberungen mit Ausdauer für sie.',
- /*  QuestDescription   */ 'Meine Leute brauchen für die nächsten Schritte unseres Bauvorhabens viel Ausdauer. Hilf mir indem du mir diese Verzauberungen besorgst!',
+ /*  LogDescription  */  'Sie sind geschwaecht, bringt mir diese Verzauberungen mit Ausdauer fuer sie.',
+ /*  QuestDescription   */ 'Meine Leute brauchen fuer die naechsten Schritte unseres Bauvorhabens viel Ausdauer. Hilf mir indem du mir diese Verzauberungen besorgst!',
  /*  EndText   */  '',
- /*  OfferRewardText bevor man beendet  */  'Du wirst nicht enttäuscht sein, wenn du bis zum Ende durchhältst!',
- /*  RequestItemsText  */ 'Du wirst nicht enttäuscht sein, wenn du bis zum Ende durchhältst!',
+ /*  OfferRewardText bevor man beendet  */  'Du wirst nicht enttaeuscht sein, wenn du bis zum Ende durchhaeltst!',
+ /*  RequestItemsText  */ 'Du wirst nicht enttaeuscht sein, wenn du bis zum Ende durchhaeltst!',
  /*  QuestCompletionLog  */ 'Verflixt nochmal, die Leute haben keine Ausdauer!',
  /*  RequiredNpcOrGo1  */ 0,
  /*  RequiredNpcOrGo2  */ 0,
@@ -14662,12 +14662,12 @@ REPLACE INTO `quest_template` (`ID`, `Method`, `QuestLevel`, `MinLevel`, `QuestS
  /*  PointX  */ 0,
  /*  PointY  */ 0,
  /*  PointOption  */ 0,
- /*  LogTitle  */ 'Murlocs stören die Transportarbeiten',
- /*  LogDescription  */  'Findet und tötet sie alle!',
- /*  QuestDescription   */ 'Wir können nicht zügig voran kommen.$BDiese Murlocs am Strand im Vorgebirge des Hügellands stören den Transport unserer Ressourcen.$B$N bereinigt den Strand und kommt wieder zu mir.',
+ /*  LogTitle  */ 'Murlocs stoeren die Transportarbeiten',
+ /*  LogDescription  */  'Findet und toetet sie alle!',
+ /*  QuestDescription   */ 'Wir koennen nicht zuegig voran kommen.$BDiese Murlocs am Strand im Vorgebirge des Huegellands stoeren den Transport unserer Ressourcen.$B$N bereinigt den Strand und kommt wieder zu mir.',
  /*  EndText   */  '',
- /*  OfferRewardText bevor man beendet  */  'Vielen Dank $N, jetzt können wieder weiter arbeiten.',
- /*  RequestItemsText  */ 'Vielen Dank $N, jetzt können wieder weiter arbeiten.',
+ /*  OfferRewardText bevor man beendet  */  'Vielen Dank $N, jetzt koennen wieder weiter arbeiten.',
+ /*  RequestItemsText  */ 'Vielen Dank $N, jetzt koennen wieder weiter arbeiten.',
  /*  QuestCompletionLog  */ 'Verflixt nochmal, wir kommen nicht voran!',
  /*  RequiredNpcOrGo1  */ 2376,
  /*  RequiredNpcOrGo2  */ 2377,
@@ -14817,7 +14817,7 @@ REPLACE INTO `quest_template` (`ID`, `Method`, `QuestLevel`, `MinLevel`, `QuestS
  /*  PointOption  */ 0,
  /*  LogTitle  */ 'Multifunktionswerkzeug',
  /*  LogDescription  */  'Bringt mir dieses Werkzeug.',
- /*  QuestDescription   */ 'Man munkelt, dass es ein paar Spezialisten gibt, welche dieses Gnomische Armeemesser herstellen können.$B$BBringt mir 5 Stück von diesem Werkzeug.',
+ /*  QuestDescription   */ 'Man munkelt, dass es ein paar Spezialisten gibt, welche dieses Gnomische Armeemesser herstellen koennen.$B$BBringt mir 5 Stueck von diesem Werkzeug.',
  /*  EndText   */  '',
  /*  OfferRewardText bevor man beendet  */  'Vielen Dank $N, damit kommen wir schneller voran!',
  /*  RequestItemsText  */ 'Vielen Dank $N, damit kommen wir schneller voran!',
@@ -14968,13 +14968,13 @@ REPLACE INTO `quest_template` (`ID`, `Method`, `QuestLevel`, `MinLevel`, `QuestS
  /*  PointX  */ 0,
  /*  PointY  */ 0,
  /*  PointOption  */ 0,
- /*  LogTitle  */ 'Baupläne für Dynamit',
- /*  LogDescription  */  'Für den Steinbruch brauchen wir Dynamit um die Steine zu lösen die wir transportieren müssen.$BEs fehlt uns jedoch an den Bauplänen dafür, besorgt mir diese.',
- /*  QuestDescription   */ 'Soweit ich informiert bin findest du eines dieser Rezepte ihr in Gnomeregan, dass andere kann man irgendwo in Tanaris kaufen.$BBeeilt euch, wir müssen mehr Steine für die Mauern besorgen!',
+ /*  LogTitle  */ 'Bauplaene fuer Dynamit',
+ /*  LogDescription  */  'Fuer den Steinbruch brauchen wir Dynamit um die Steine zu loesen die wir transportieren muessen.$BEs fehlt uns jedoch an den Bauplaenen dafuer, besorgt mir diese.',
+ /*  QuestDescription   */ 'Soweit ich informiert bin findest du eines dieser Rezepte ihr in Gnomeregan, dass andere kann man irgendwo in Tanaris kaufen.$BBeeilt euch, wir muessen mehr Steine fuer die Mauern besorgen!',
  /*  EndText   */  '',
  /*  OfferRewardText bevor man beendet  */  'Vielen Dank $N, damit wird es sicher bombastisch!',
  /*  RequestItemsText  */ 'Vielen Dank $N, damit wird es sicher bombastisch!',
- /*  QuestCompletionLog  */ 'Wir brauchen die Baupläne für das Dynamit.',
+ /*  QuestCompletionLog  */ 'Wir brauchen die Bauplaene fuer das Dynamit.',
  /*  RequiredNpcOrGo1  */ 0,
  /*  RequiredNpcOrGo2  */ 0,
  /*  RequiredNpcOrGo3  */ 0,
@@ -15123,11 +15123,11 @@ REPLACE INTO `quest_template` (`ID`, `Method`, `QuestLevel`, `MinLevel`, `QuestS
  /*  PointOption  */ 0,
  /*  LogTitle  */ 'Das Rennen',
  /*  LogDescription  */  'Renn, renn, RENN so schnell du kannst!',
- /*  QuestDescription   */ 'Renn und töte Hogger, beeil dich!',
+ /*  QuestDescription   */ 'Renn und toete Hogger, beeil dich!',
  /*  EndText   */  '',
  /*  OfferRewardText bevor man beendet  */  'Na, außer Puste?',
  /*  RequestItemsText  */ 'Na, außer Puste?',
- /*  QuestCompletionLog  */ 'Renn und töte Hogger!',
+ /*  QuestCompletionLog  */ 'Renn und toete Hogger!',
  /*  RequiredNpcOrGo1  */ 448,
  /*  RequiredNpcOrGo2  */ 0,
  /*  RequiredNpcOrGo3  */ 0,
@@ -15274,13 +15274,13 @@ REPLACE INTO `quest_template` (`ID`, `Method`, `QuestLevel`, `MinLevel`, `QuestS
  /*  PointX  */ 0,
  /*  PointY  */ 0,
  /*  PointOption  */ 0,
- /*  LogTitle  */ 'Von wegen erschöpft!',
- /*  LogDescription  */  'Sammle diverse Kräuter für die Anti-Erschöpfungs-Therapie',
- /*  QuestDescription   */ 'Bringe mir doch paar von diesen Kräutern, $N.$B$BAnschließend braue ich für euch einige aufputschende Tränke.',
+ /*  LogTitle  */ 'Von wegen erschoepft!',
+ /*  LogDescription  */  'Sammle diverse Kraeuter fuer die Anti-Erschoepfungs-Therapie',
+ /*  QuestDescription   */ 'Bringe mir doch paar von diesen Kraeutern, $N.$B$BAnschließend braue ich fuer euch einige aufputschende Traenke.',
  /*  EndText   */  '',
- /*  OfferRewardText bevor man beendet  */  'Hast du schon alle Kräuter?',
- /*  RequestItemsText  */ 'Hast du schon alle Kräuter?',
- /*  QuestCompletionLog  */ 'Hast du schon alle Kräuter?',
+ /*  OfferRewardText bevor man beendet  */  'Hast du schon alle Kraeuter?',
+ /*  RequestItemsText  */ 'Hast du schon alle Kraeuter?',
+ /*  QuestCompletionLog  */ 'Hast du schon alle Kraeuter?',
  /*  RequiredNpcOrGo1  */ 0,
  /*  RequiredNpcOrGo2  */ 0,
  /*  RequiredNpcOrGo3  */ 0,
@@ -15429,7 +15429,7 @@ REPLACE INTO `quest_template` (`ID`, `Method`, `QuestLevel`, `MinLevel`, `QuestS
  /*  PointOption  */ 0,
  /*  LogTitle  */ 'Ein Rat von einem alten Freund',
  /*  LogDescription  */  'Reist zu Devastor Saurutor und fragt ihn um den Rat.',
- /*  QuestDescription   */ 'Mein alter Freund Devastor Saurutor ist in Nagrand über dem Konstruktionslager: Furcht.$BEr ist ein alter Meister der Alchemie.$BReist dorthin und fragt ihn um den Rat zu den neuen Rezepten für unerlöschbare Kraft.',
+ /*  QuestDescription   */ 'Mein alter Freund Devastor Saurutor ist in Nagrand ueber dem Konstruktionslager: Furcht.$BEr ist ein alter Meister der Alchemie.$BReist dorthin und fragt ihn um den Rat zu den neuen Rezepten fuer unerloeschbare Kraft.',
  /*  EndText   */  '',
  /*  OfferRewardText bevor man beendet  */  'Hast du schon den Rat erhalten?',
  /*  RequestItemsText  */ 'Hast du schon den Rat erhalten?',
@@ -15581,12 +15581,12 @@ REPLACE INTO `quest_template` (`ID`, `Method`, `QuestLevel`, `MinLevel`, `QuestS
  /*  PointY  */ 0,
  /*  PointOption  */ 0,
  /*  LogTitle  */ 'Verrat',
- /*  LogDescription  */  'Kehrt zu Rumu zurück.',
- /*  QuestDescription   */ '$NWie sich heraus stellte ist Devastor Saurutor auf die andere Seite gewechselt, scheinbar haben wir ein Problem.$B$N, kehrt zu Rumu zurück und berichtet ihm unverzüglich von den Ereignissen.',
+ /*  LogDescription  */  'Kehrt zu Rumu zurueck.',
+ /*  QuestDescription   */ '$NWie sich heraus stellte ist Devastor Saurutor auf die andere Seite gewechselt, scheinbar haben wir ein Problem.$B$N, kehrt zu Rumu zurueck und berichtet ihm unverzueglich von den Ereignissen.',
  /*  EndText   */  '',
- /*  OfferRewardText bevor man beendet  */  'Habt ihr Neuigkeiten für mich, $N?',
- /*  RequestItemsText  */ 'Kehrt zurück zu Rumu.',
- /*  Quest Completed Text wird rechts im Questlog angezeigt der Text */ 'Kehrt zu Rumu zurück.',
+ /*  OfferRewardText bevor man beendet  */  'Habt ihr Neuigkeiten fuer mich, $N?',
+ /*  RequestItemsText  */ 'Kehrt zurueck zu Rumu.',
+ /*  Quest Completed Text wird rechts im Questlog angezeigt der Text */ 'Kehrt zu Rumu zurueck.',
  /*  RequiredNpcOrGo1  */ 0,
  /*  RequiredNpcOrGo2  */ 0,
  /*  RequiredNpcOrGo3  */ 0,
@@ -15733,7 +15733,7 @@ REPLACE INTO `quest_template` (`ID`, `Method`, `QuestLevel`, `MinLevel`, `QuestS
  /*  PointOption  */ 0,
  /*  LogTitle  */ 'Hilfe von Exitare',
  /*  LogDescription  */  'Geht zu Exitare, berichtet ihm was gerade geschehen ist und bittet ihn um Hilfe im Falle eines Verrats.',
- /*  QuestDescription   */ 'Devastor Saurutor war einstmalig ein Feind, jedoch hatte er vor langer Zeit seine Loyalität uns gezeigt.$Bscheinbar war dies schon vor langer Zeit geplant, dass er sich in unseren Zirkel einschließt und uns von Innen angreift.$B$B$C reist zu Exitare auf die Insel und bittet ihn um Hilfe!',
+ /*  QuestDescription   */ 'Devastor Saurutor war einstmalig ein Feind, jedoch hatte er vor langer Zeit seine Loyalitaet uns gezeigt.$Bscheinbar war dies schon vor langer Zeit geplant, dass er sich in unseren Zirkel einschließt und uns von Innen angreift.$B$B$C reist zu Exitare auf die Insel und bittet ihn um Hilfe!',
  /*  EndText   */  '',
  /*  OfferRewardText bevor man beendet  */  'Hallo, wie kann ich behilflich sein?',
  /*  RequestItemsText  */ '',
@@ -15886,7 +15886,7 @@ REPLACE INTO `quest_template` (`ID`, `Method`, `QuestLevel`, `MinLevel`, `QuestS
  /*  PointOption  */ 0,
  /*  LogTitle  */ 'Sucht Rat bei A\'dal',
  /*  LogDescription  */  'Ihr findet ihn in bei der Terrasse des Lichts.',
- /*  QuestDescription   */ 'In solch einem Fall von Verat müssen wir uns Hilfe von A\'dal besorgen. A\'dal wird jedoch nicht sofort uns helfen, er wird Vieles von uns erwarten, bevor er überhaupt sich unser Problem anhören wird.$B$BA\'dal ist in der Scherbenwelt, bei der Terrasse des Lichts.',
+ /*  QuestDescription   */ 'In solch einem Fall von Verat muessen wir uns Hilfe von A\'dal besorgen. A\'dal wird jedoch nicht sofort uns helfen, er wird Vieles von uns erwarten, bevor er ueberhaupt sich unser Problem anhoeren wird.$B$BA\'dal ist in der Scherbenwelt, bei der Terrasse des Lichts.',
  /*  EndText   */  '',
  /*  OfferRewardText bevor man beendet  */  '',
  /*  RequestItemsText  */ '',
@@ -16037,9 +16037,9 @@ REPLACE INTO `quest_template` (`ID`, `Method`, `QuestLevel`, `MinLevel`, `QuestS
  /*  PointX  */ 0,
  /*  PointY  */ 0,
  /*  PointOption  */ 0,
- /*  LogTitle  */ 'Loyalitätsbeweis',
- /*  LogDescription  */  'Beweist mir eure Loyalität indem ihr mir paar Marken abgebt.',
- /*  QuestDescription   */ '$R, bevor ich mir überhaupt euer Problem anhören werde, müsst ihr den langen Prozess des Loyalitätsbeweis bewältigen.$BFangen wir mal mit etwas Leichtem an. Nachdem Lich King an die Herrschaft gekommen ist, sind scheinbar neue Marken in den Umlauf gekommen, ich möchte mir diese genauer ansehen, besorgt mir einige von denen, $N.',
+ /*  LogTitle  */ 'Loyalitaetsbeweis',
+ /*  LogDescription  */  'Beweist mir eure Loyalitaet indem ihr mir paar Marken abgebt.',
+ /*  QuestDescription   */ '$R, bevor ich mir ueberhaupt euer Problem anhoeren werde, muesst ihr den langen Prozess des Loyalitaetsbeweis bewaeltigen.$BFangen wir mal mit etwas Leichtem an. Nachdem Lich King an die Herrschaft gekommen ist, sind scheinbar neue Marken in den Umlauf gekommen, ich moechte mir diese genauer ansehen, besorgt mir einige von denen, $N.',
  /*  EndText   */  '',
  /*  OfferRewardText bevor man beendet  */  'Ihr werdet es nicht bereuen.',
  /*  RequestItemsText  */ 'Ihr werdet es nicht bereuen.',
@@ -16191,8 +16191,8 @@ REPLACE INTO `quest_template` (`ID`, `Method`, `QuestLevel`, `MinLevel`, `QuestS
  /*  PointY  */ 0,
  /*  PointOption  */ 0,
  /*  LogTitle  */ 'Das Reskkversteck',
- /*  LogDescription  */  'Vor nicht all zu langer Zeit sind diese ekligen Krähen dort eingezogen und haben sich breit gemacht. Hilf mir bei meinen Plänen.',
- /*  QuestDescription   */ 'Fliegt zum Reskkversteck, welches östlich von Shattrath liegt und besorgt mir paar Federn dieser Krähen, damit ich diese untersuchen kann. Und wenn ihr schon da seid, dann zeigt ihnen wie stark wir sind.',
+ /*  LogDescription  */  'Vor nicht all zu langer Zeit sind diese ekligen Kraehen dort eingezogen und haben sich breit gemacht. Hilf mir bei meinen Plaenen.',
+ /*  QuestDescription   */ 'Fliegt zum Reskkversteck, welches oestlich von Shattrath liegt und besorgt mir paar Federn dieser Kraehen, damit ich diese untersuchen kann. Und wenn ihr schon da seid, dann zeigt ihnen wie stark wir sind.',
  /*  EndText   */  '',
  /*  OfferRewardText bevor man beendet  */  'Habt ihr schon alles?',
  /*  RequestItemsText  */ 'Ihr braucht noch diese Federn.',
@@ -16344,10 +16344,10 @@ REPLACE INTO `quest_template` (`ID`, `Method`, `QuestLevel`, `MinLevel`, `QuestS
  /*  PointY  */ 0,
  /*  PointOption  */ 0,
  /*  LogTitle  */ 'Ein Anliegen',
- /*  LogDescription  */  'Zul\'Aman ist euer nächstes Ziel auf dem Pfad der Intrigen.',
- /*  QuestDescription   */ 'Reist als starke Gruppe nach Zul\'Aman und erledigt die Besatzung. Sie haben vor langer Zeit meine Familie getötet und ich bin allein zu schwach dafür. Helft mir bitte, $C.',
+ /*  LogDescription  */  'Zul\'Aman ist euer naechstes Ziel auf dem Pfad der Intrigen.',
+ /*  QuestDescription   */ 'Reist als starke Gruppe nach Zul\'Aman und erledigt die Besatzung. Sie haben vor langer Zeit meine Familie getoetet und ich bin allein zu schwach dafuer. Helft mir bitte, $C.',
  /*  EndText   */  '',
- /*  OfferRewardText bevor man beendet  */  'Habt ihr es tatsächlich geschafft?',
+ /*  OfferRewardText bevor man beendet  */  'Habt ihr es tatsaechlich geschafft?',
  /*  RequestItemsText  */ 'Ihr solltet euch mit eurer Gruppe auf den Weg machen.',
  /*  Quest Completed Text wird rechts im Questlog angezeigt der Text */ 'test3',
  /*  RequiredNpcOrGo1  */ 23578,
@@ -16498,9 +16498,9 @@ REPLACE INTO `quest_template` (`ID`, `Method`, `QuestLevel`, `MinLevel`, `QuestS
  /*  PointOption  */ 0,
  /*  LogTitle  */ 'Findet unseren Spion',
  /*  LogDescription  */  'Wir haben einige Spione ausgesandt welche die aktuelle Lage in der Scherbenwelt beobachten. Findet einen bestimmten Spion.',
- /*  QuestDescription   */ 'Findet einen Spion von uns in der Scherbenwelt, er ist nach Schergrat geschickt worden. Ich kann mich nicht mehr gut daran erinnern. Er wurde aber in den Norden geschickt, ich glaube, er war auf einem separaten Plateau. Ich weiß aber, dass es grün ist und lauter Krähen dort stehen.',
+ /*  QuestDescription   */ 'Findet einen Spion von uns in der Scherbenwelt, er ist nach Schergrat geschickt worden. Ich kann mich nicht mehr gut daran erinnern. Er wurde aber in den Norden geschickt, ich glaube, er war auf einem separaten Plateau. Ich weiß aber, dass es gruen ist und lauter Kraehen dort stehen.',
  /*  EndText */  '',
- /*  OfferRewardText bevor man beendet  */  'Hallo $R, seid leise wir dürfen nicht entdeckt werden.$B$BIch bin hier um diese Krähen auszuspähen. Hört euch meine Geschichte an.',
+ /*  OfferRewardText bevor man beendet  */  'Hallo $R, seid leise wir duerfen nicht entdeckt werden.$B$BIch bin hier um diese Kraehen auszuspaehen. Hoert euch meine Geschichte an.',
  /*  RequestItemsText  */ 'test2',
  /*  Quest Completed Text wird rechts im Questlog angezeigt der Text */ 'Findet den Spion in Schergrat.',
  /*  RequiredNpcOrGo1  */ 0,
@@ -16650,12 +16650,12 @@ REPLACE INTO `quest_template` (`ID`, `Method`, `QuestLevel`, `MinLevel`, `QuestS
  /*  PointY  */ 0,
  /*  PointOption  */ 0,
  /*  LogTitle  */ 'Hilfe bei der Spionage',
- /*  LogDescription  */  'Ich bin hier schon seit Ewigkeiten, könntest du mir nicht etwas helfen?',
- /*  QuestDescription   */ 'Es wäre sehr hilfreich, wenn mir jemand meine Verpflegung wieder auffrischen könnte. Ich sitze hier schon seit... seit sehr langer Zeit und muss diese Krähen beobachten.$B$BBesorgt mir doch bitte etwas Fleisch und Pflaster. Aber bitte kein Rohes, ich kann hier kein Lagerfeuer aufschlagen.',
+ /*  LogDescription  */  'Ich bin hier schon seit Ewigkeiten, koenntest du mir nicht etwas helfen?',
+ /*  QuestDescription   */ 'Es waere sehr hilfreich, wenn mir jemand meine Verpflegung wieder auffrischen koennte. Ich sitze hier schon seit... seit sehr langer Zeit und muss diese Kraehen beobachten.$B$BBesorgt mir doch bitte etwas Fleisch und Pflaster. Aber bitte kein Rohes, ich kann hier kein Lagerfeuer aufschlagen.',
  /*  EndText */  '',
- /*  OfferRewardText bevor man beendet  */  'Grüßet $N, habt ihr für mich alles mitgebracht?',
- /*  RequestItemsText  */ 'Grüßet $N, habt ihr für mich alles mitgebracht?',
- /*  Quest Completed Text wird rechts im Questlog angezeigt der Text */ 'Reist zurück zu dem Spion.',
+ /*  OfferRewardText bevor man beendet  */  'Grueßet $N, habt ihr fuer mich alles mitgebracht?',
+ /*  RequestItemsText  */ 'Grueßet $N, habt ihr fuer mich alles mitgebracht?',
+ /*  Quest Completed Text wird rechts im Questlog angezeigt der Text */ 'Reist zurueck zu dem Spion.',
  /*  RequiredNpcOrGo1  */ 0,
  /*  RequiredNpcOrGo2  */ 0,
  /*  RequiredNpcOrGo3  */ 0,
@@ -16803,11 +16803,11 @@ REPLACE INTO `quest_template` (`ID`, `Method`, `QuestLevel`, `MinLevel`, `QuestS
  /*  PointY  */ 0,
  /*  PointOption  */ 0,
  /*  LogTitle  */ 'Berichterstattung',
- /*  LogDescription  */  'Du hast mir nun schon geholfen, jetzt hab ich endlich wieder Nahrung und Verbände. Nur weiß ich nicht wohin ich all diese Sachen packen soll.',
- /*  QuestDescription   */ 'Ich habe hier ungewöhnliche Bewegungen festgestellt, ich vermute da wird etwas Großes geplant, aber ich kann es noch nicht genau sagen. Es wird noch etwas dauern, bis ich genaueres weiß.$B$BDamit meine Vorräte nicht zu faulen, brauche ich noch Taschen. Wärt ihr so nett und würdet mir zwei dieser Taschen später mitbringen?',
+ /*  LogDescription  */  'Du hast mir nun schon geholfen, jetzt hab ich endlich wieder Nahrung und Verbaende. Nur weiß ich nicht wohin ich all diese Sachen packen soll.',
+ /*  QuestDescription   */ 'Ich habe hier ungewoehnliche Bewegungen festgestellt, ich vermute da wird etwas Großes geplant, aber ich kann es noch nicht genau sagen. Es wird noch etwas dauern, bis ich genaueres weiß.$B$BDamit meine Vorraete nicht zu faulen, brauche ich noch Taschen. Waert ihr so nett und wuerdet mir zwei dieser Taschen spaeter mitbringen?',
  /*  EndText */  '',
- /*  OfferRewardText bevor man beendet  */  'Nun ich habe nicht all zu gute Nachrichten, scheinbar gibt es einen Krähenzirkel der überall in der Scherbenwelt Standpunkte hat, jeder dieser Standorte hat einen Anführer, der scheinbar zum großen Rat dazu gehört, welcher von einer sehr mächtigen Kreatur geleitet wird.',
- /*  RequestItemsText  */ 'Grüßet $N, ich glaube ich kann dir nun schon mehr sagen.',
+ /*  OfferRewardText bevor man beendet  */  'Nun ich habe nicht all zu gute Nachrichten, scheinbar gibt es einen Kraehenzirkel der ueberall in der Scherbenwelt Standpunkte hat, jeder dieser Standorte hat einen Anfuehrer, der scheinbar zum großen Rat dazu gehoert, welcher von einer sehr maechtigen Kreatur geleitet wird.',
+ /*  RequestItemsText  */ 'Grueßet $N, ich glaube ich kann dir nun schon mehr sagen.',
  /*  Quest Completed Text wird rechts im Questlog angezeigt der Text */ 'Nun besorgt euch den Bericht.',
  /*  RequiredNpcOrGo1  */ 0,
  /*  RequiredNpcOrGo2  */ 0,
@@ -16956,11 +16956,11 @@ REPLACE INTO `quest_template` (`ID`, `Method`, `QuestLevel`, `MinLevel`, `QuestS
  /*  PointY  */ 0,
  /*  PointOption  */ 0,
  /*  LogTitle  */ 'Meldung an Exitare',
- /*  LogDescription  */  'Geht zurück zur Insel und leitet die Informationen an Exitare weiter.',
- /*  QuestDescription   */ 'Reist unverzüglich zurück zur Insel und berichtet Exitare von den neuen Errungenschaften.',
+ /*  LogDescription  */  'Geht zurueck zur Insel und leitet die Informationen an Exitare weiter.',
+ /*  QuestDescription   */ 'Reist unverzueglich zurueck zur Insel und berichtet Exitare von den neuen Errungenschaften.',
  /*  EndText */  '',
  /*  OfferRewardText bevor man beendet  */  'Berichtet Exitare von den Nachrichten, welche ihr vom Spion erhalten habt. Vergesst nicht ihn darauf hinzuweisen, dass es ein sehr großer Zirkel ist.',
- /*  RequestItemsText  */ 'Grüßet $N, was habt ihr mir den zu sagen?',
+ /*  RequestItemsText  */ 'Grueßet $N, was habt ihr mir den zu sagen?',
  /*  Quest Completed Text wird rechts im Questlog angezeigt der Text */ 'Berichtet von den Errungenschaften.',
  /*  RequiredNpcOrGo1  */ 0,
  /*  RequiredNpcOrGo2  */ 0,
@@ -17108,12 +17108,12 @@ REPLACE INTO `quest_template` (`ID`, `Method`, `QuestLevel`, `MinLevel`, `QuestS
  /*  PointX  */ 0,
  /*  PointY  */ 0,
  /*  PointOption  */ 0,
- /*  LogTitle  */ 'Messung der Stärke',
- /*  LogDescription  */  'Macht euch auf den Weg nach Grishnath, kämpft gegen deren Einwohner und dokumentiert deren Stärke.',
- /*  QuestDescription   */ 'Damit ich uns auf den Kampf vorbereiten kann, müssen wir herausfinden wie stark diese Krähen sind. Begebt euch nach Grishnath und tötet ein paar von den Einwohnern.$B$BPasst jedoch auf, dass ihr nicht den Falken von Grishna tötet, er ist einer von uns und kundschaftet das Gebiet aus.',
+ /*  LogTitle  */ 'Messung der Staerke',
+ /*  LogDescription  */  'Macht euch auf den Weg nach Grishnath, kaempft gegen deren Einwohner und dokumentiert deren Staerke.',
+ /*  QuestDescription   */ 'Damit ich uns auf den Kampf vorbereiten kann, muessen wir herausfinden wie stark diese Kraehen sind. Begebt euch nach Grishnath und toetet ein paar von den Einwohnern.$B$BPasst jedoch auf, dass ihr nicht den Falken von Grishna toetet, er ist einer von uns und kundschaftet das Gebiet aus.',
  /*  EndText */  '',
- /*  OfferRewardText bevor man beendet  */  'Super ihr habt es geschafft, nun kann ich die Pläne für den Kampf schmieden.',
- /*  RequestItemsText  */ 'Hallo $R, habt ihr schon die Stärke gemessen?',
+ /*  OfferRewardText bevor man beendet  */  'Super ihr habt es geschafft, nun kann ich die Plaene fuer den Kampf schmieden.',
+ /*  RequestItemsText  */ 'Hallo $R, habt ihr schon die Staerke gemessen?',
  /*  Quest Completed Text wird rechts im Questlog angezeigt der Text */ 'Berichtet von den Errungenschaften.',
  /*  RequiredNpcOrGo1  */ 19988,
  /*  RequiredNpcOrGo2  */ 19990,
@@ -17261,13 +17261,13 @@ REPLACE INTO `quest_template` (`ID`, `Method`, `QuestLevel`, `MinLevel`, `QuestS
  /*  PointX  */ 0,
  /*  PointY  */ 0,
  /*  PointOption  */ 0,
- /*  LogTitle  */ 'Aufrüstung Teil: 1',
- /*  LogDescription  */  'Für Trainingszwecke brauchen wir einige Gegenstände um unsere Kräfte zu stärken.',
- /*  QuestDescription   */ 'Wir werden hart trainieren müssen, deswegen brauchen wir bestimmte Gegenstände die uns helfen werden dabei unsere Kampfkünste zu verbessern.$B$BWir sollten damit beginnen, dass wir Verzauberungen und Stärkungsrollen sammeln und horten. Macht euch auf den Weg und besorgt mir diese Gegenstände.',
+ /*  LogTitle  */ 'Aufruestung Teil: 1',
+ /*  LogDescription  */  'Fuer Trainingszwecke brauchen wir einige Gegenstaende um unsere Kraefte zu staerken.',
+ /*  QuestDescription   */ 'Wir werden hart trainieren muessen, deswegen brauchen wir bestimmte Gegenstaende die uns helfen werden dabei unsere Kampfkuenste zu verbessern.$B$BWir sollten damit beginnen, dass wir Verzauberungen und Staerkungsrollen sammeln und horten. Macht euch auf den Weg und besorgt mir diese Gegenstaende.',
  /*  EndText */  '',
- /*  OfferRewardText bevor man beendet  */  'Wunderbar $C, nun kann ich diese Gegenstände an meine Schüler verteilen und diese anschließend trainieren.',
+ /*  OfferRewardText bevor man beendet  */  'Wunderbar $C, nun kann ich diese Gegenstaende an meine Schueler verteilen und diese anschließend trainieren.',
  /*  RequestItemsText  */ 'Hallo $N, braucht ihr etwa Hilfe?',
- /*  Quest Completed Text wird rechts im Questlog angezeigt der Text */ 'Gebt diese Gegenstände ab.',
+ /*  Quest Completed Text wird rechts im Questlog angezeigt der Text */ 'Gebt diese Gegenstaende ab.',
  /*  RequiredNpcOrGo1  */ 0,
  /*  RequiredNpcOrGo2  */ 0,
  /*  RequiredNpcOrGo3  */ 0,
@@ -17414,13 +17414,13 @@ REPLACE INTO `quest_template` (`ID`, `Method`, `QuestLevel`, `MinLevel`, `QuestS
  /*  PointX  */ 0,
  /*  PointY  */ 0,
  /*  PointOption  */ 0,
- /*  LogTitle  */ 'Aufrüstung Teil: 2',
- /*  LogDescription  */  'Meine Schüler sind am Verhungern, wir brauchen mehr Nahrung.',
- /*  QuestDescription   */ 'Wir machen gute Fortschritte, aber das Training ist auch sehr hart und macht meine Schüler hungrig... $BIhr habt doch ein Reittier, könntet ihr nicht etwas Obst und Wasser besorgen?',
+ /*  LogTitle  */ 'Aufruestung Teil: 2',
+ /*  LogDescription  */  'Meine Schueler sind am Verhungern, wir brauchen mehr Nahrung.',
+ /*  QuestDescription   */ 'Wir machen gute Fortschritte, aber das Training ist auch sehr hart und macht meine Schueler hungrig... $BIhr habt doch ein Reittier, koenntet ihr nicht etwas Obst und Wasser besorgen?',
  /*  EndText */  '',
- /*  OfferRewardText bevor man beendet  */  'Wunderbar $C, ich packe diese Gegenstände in die Truhe. Damit haben wir wieder unsere Vorräte aufgestockt.',
+ /*  OfferRewardText bevor man beendet  */  'Wunderbar $C, ich packe diese Gegenstaende in die Truhe. Damit haben wir wieder unsere Vorraete aufgestockt.',
  /*  RequestItemsText  */ 'Hallo $N, uns fehlt noch Obst und Wasser, besorgt es bitte.',
- /*  Quest Completed Text wird rechts im Questlog angezeigt der Text */ 'Gebt diese Gegenstände ab.',
+ /*  Quest Completed Text wird rechts im Questlog angezeigt der Text */ 'Gebt diese Gegenstaende ab.',
  /*  RequiredNpcOrGo1  */ 0,
  /*  RequiredNpcOrGo2  */ 0,
  /*  RequiredNpcOrGo3  */ 0,
@@ -17650,7 +17650,7 @@ VALUES ( /*  ID */ 800035,
   /* Modelid3   */0,
   /* Model4  */ 0,
   /* Name  */'Arcturus',
-  /* Subname */'Herrscher der K�lte',
+  /* Subname */'Herrscher der Kaelte',
   /* Iconname */'',
   /* gossip_menu_id`  */800035,
   /* Min Level */83,
@@ -17715,10 +17715,10 @@ REPLACE INTO `creature`(`guid`,`id`,`map`,`spawnMask`,`phaseMask`,`modelid`,`equ
 UPDATE `creature_template` SET `HealthModifier`='1000', `ArmorModifier`='80', `DamageModifier`='100' WHERE `entry`='800035';
 
 DELETE FROM `creature_text` WHERE `entry`=800035;
-INSERT INTO `creature_text` (`entry`,`groupid`,`id`,`text`,`type`,`language`,`probability`,`emote`,`duration`,`sound`,`comment`) VALUES (800035,1,0,'Ihr kleinen Wichte. Sp�rt meine K�lte',14,0,100,5,0,0,'Comment');
-INSERT INTO `creature_text` (`entry`,`groupid`,`id`,`text`,`type`,`language`,`probability`,`emote`,`duration`,`sound`,`comment`) VALUES (800035,2,0,'Hier gibt es nichts als Schmerz f�r Euch',14,0,100,5,0,0,'Comment');
+INSERT INTO `creature_text` (`entry`,`groupid`,`id`,`text`,`type`,`language`,`probability`,`emote`,`duration`,`sound`,`comment`) VALUES (800035,1,0,'Ihr kleinen Wichte. Spuert meine Kaelte',14,0,100,5,0,0,'Comment');
+INSERT INTO `creature_text` (`entry`,`groupid`,`id`,`text`,`type`,`language`,`probability`,`emote`,`duration`,`sound`,`comment`) VALUES (800035,2,0,'Hier gibt es nichts als Schmerz fuer Euch',14,0,100,5,0,0,'Comment');
 INSERT INTO `creature_text` (`entry`,`groupid`,`id`,`text`,`type`,`language`,`probability`,`emote`,`duration`,`sound`,`comment`) VALUES (800035,3,0,'Keine Spielchen jetzt! Sterbt!',14,0,100,5,0,0,'Comment');
-INSERT INTO `creature_text` (`entry`,`groupid`,`id`,`text`,`type`,`language`,`probability`,`emote`,`duration`,`sound`,`comment`) VALUES (800035,7,0,'Eine Troph�e mehr an meiner Wand!',14,0,100,5,0,0,'Comment');
+INSERT INTO `creature_text` (`entry`,`groupid`,`id`,`text`,`type`,`language`,`probability`,`emote`,`duration`,`sound`,`comment`) VALUES (800035,7,0,'Eine Trophaee mehr an meiner Wand!',14,0,100,5,0,0,'Comment');
 INSERT INTO `creature_text` (`entry`,`groupid`,`id`,`text`,`type`,`language`,`probability`,`emote`,`duration`,`sound`,`comment`) VALUES (800035,4,0,'Phase 1',41,0,100,5,0,0,'Comment');
 INSERT INTO `creature_text` (`entry`,`groupid`,`id`,`text`,`type`,`language`,`probability`,`emote`,`duration`,`sound`,`comment`) VALUES (800035,5,0,'Phase 2',41,0,100,5,0,0,'Comment');
 INSERT INTO `creature_text` (`entry`,`groupid`,`id`,`text`,`type`,`language`,`probability`,`emote`,`duration`,`sound`,`comment`) VALUES (800035,6,0,'Phase 3',41,0,100,5,0,0,'Comment');
@@ -17867,9 +17867,9 @@ UPDATE `creature_template` SET `HealthModifier`='1000', `ArmorModifier`='10', `D
   
   
 DELETE FROM `creature_text` WHERE `entry`=800036;
-REPLACE INTO `creature_text` (`entry`,`groupid`,`id`,`text`,`type`,`language`,`probability`,`emote`,`duration`,`sound`,`comment`) VALUES (800036,1,0,'Wer m�chte gegen mich bestehen?',14,0,100,1,0,17457,'Comment');
+REPLACE INTO `creature_text` (`entry`,`groupid`,`id`,`text`,`type`,`language`,`probability`,`emote`,`duration`,`sound`,`comment`) VALUES (800036,1,0,'Wer moechte gegen mich bestehen?',14,0,100,1,0,17457,'Comment');
 REPLACE INTO `creature_text` (`entry`,`groupid`,`id`,`text`,`type`,`language`,`probability`,`emote`,`duration`,`sound`,`comment`) VALUES (800036,2,0,'Ihr Wenigen wollt gegen mich standhalten?',14,0,100,1,0,17458,'Comment');
-REPLACE INTO `creature_text` (`entry`,`groupid`,`id`,`text`,`type`,`language`,`probability`,`emote`,`duration`,`sound`,`comment`) VALUES (800036,3,0,'Ahh sehr sch�n. Unterst�tzung.',14,0,100,1,0,17459,'Comment');
+REPLACE INTO `creature_text` (`entry`,`groupid`,`id`,`text`,`type`,`language`,`probability`,`emote`,`duration`,`sound`,`comment`) VALUES (800036,3,0,'Ahh sehr schoen. Unterstuetzung.',14,0,100,1,0,17459,'Comment');
 REPLACE INTO `creature_text` (`entry`,`groupid`,`id`,`text`,`type`,`language`,`probability`,`emote`,`duration`,`sound`,`comment`) VALUES (800036,4,0,'Merkt Euch meine Worte!',14,0,100,1,0,17460,'Comment');
 REPLACE INTO `creature_text` (`entry`,`groupid`,`id`,`text`,`type`,`language`,`probability`,`emote`,`duration`,`sound`,`comment`) VALUES (800036,7,0,'Ich .... kann ...nicht tot sein. Arrgh Ich komme wieder!',14,0,100,1,0,17460,'Comment');
 REPLACE INTO `creature_text` (`entry`,`groupid`,`id`,`text`,`type`,`language`,`probability`,`emote`,`duration`,`sound`,`comment`) VALUES (800036,5,0,'Erzittert vor meiner Angst',41,0,100,1,0,0,'Comment');
@@ -17938,7 +17938,7 @@ REPLACE INTO `smart_scripts` (`entryorguid`,`source_type`,`id`,`link`,`event_typ
 (@ENTRY,@SOURCETYPE,30,0,2,0,100,1,1,0,0,0,1,7,0,0,0,0,0,2,0,0,0,0.0,0.0,0.0,0.0,"Yell 5"),
 (@ENTRY,@SOURCETYPE,32,0,25,0,100,0,0,0,0,0,41,/*58907*/1000,0,0,0,0,0,9,39814,0,5000,0.0,0.0,0.0,0.0,"FEAR"),
 (@ENTRY,@SOURCETYPE,35,0,2,0,100,0,10,20,12000,13000,11,68989,2,0,0,0,0,5,0,0,0,0.0,0.0,0.0,0.0,"Knochenstachel"),
-(@ENTRY,@SOURCETYPE,33,0,0,0,100,0,1,100,25000,35000,11,74367,0,0,0,0,0,2,0,0,0,0.0,0.0,0.0,0.0,"R�stung_spalten"),
+(@ENTRY,@SOURCETYPE,33,0,0,0,100,0,1,100,25000,35000,11,74367,0,0,0,0,0,2,0,0,0,0.0,0.0,0.0,0.0,"Ruestung_spalten"),
 (@ENTRY,@SOURCETYPE,
 /*  id */  34,
 /* link  */0,
@@ -18113,10 +18113,10 @@ UPDATE `creature_template` SET `HealthModifier`='5500', `ArmorModifier`='200', `
 
 
 DELETE FROM `creature_text` WHERE `entry`=800037;
-INSERT INTO `creature_text` (`entry`,`groupid`,`id`,`text`,`type`,`language`,`probability`,`emote`,`duration`,`sound`,`comment`) VALUES (800037,1,0,'Oh sch�n. Neue Kundschaft.',14,0,100,5,0,0,'Comment');
+INSERT INTO `creature_text` (`entry`,`groupid`,`id`,`text`,`type`,`language`,`probability`,`emote`,`duration`,`sound`,`comment`) VALUES (800037,1,0,'Oh schoen. Neue Kundschaft.',14,0,100,5,0,0,'Comment');
 INSERT INTO `creature_text` (`entry`,`groupid`,`id`,`text`,`type`,`language`,`probability`,`emote`,`duration`,`sound`,`comment`) VALUES (800037,2,0,'Hahaha. Ihr kitzelt mich.',14,0,100,5,0,0,'Comment');
-INSERT INTO `creature_text` (`entry`,`groupid`,`id`,`text`,`type`,`language`,`probability`,`emote`,`duration`,`sound`,`comment`) VALUES (800037,3,0,'Ihr m�sst viel lernen.',14,0,100,5,0,0,'Comment');
-INSERT INTO `creature_text` (`entry`,`groupid`,`id`,`text`,`type`,`language`,`probability`,`emote`,`duration`,`sound`,`comment`) VALUES (800037,4,0,'Habt ihr niemand anderen, dem ihr auf die Nerven gehen k�nnt?',14,0,100,5,0,0,'Comment');
+INSERT INTO `creature_text` (`entry`,`groupid`,`id`,`text`,`type`,`language`,`probability`,`emote`,`duration`,`sound`,`comment`) VALUES (800037,3,0,'Ihr muesst viel lernen.',14,0,100,5,0,0,'Comment');
+INSERT INTO `creature_text` (`entry`,`groupid`,`id`,`text`,`type`,`language`,`probability`,`emote`,`duration`,`sound`,`comment`) VALUES (800037,4,0,'Habt ihr niemand anderen, dem ihr auf die Nerven gehen koennt?',14,0,100,5,0,0,'Comment');
 INSERT INTO `creature_text` (`entry`,`groupid`,`id`,`text`,`type`,`language`,`probability`,`emote`,`duration`,`sound`,`comment`) VALUES (800037,5,0,'Phase 1',41,0,100,5,0,0,'Comment');
 INSERT INTO `creature_text` (`entry`,`groupid`,`id`,`text`,`type`,`language`,`probability`,`emote`,`duration`,`sound`,`comment`) VALUES (800037,6,0,'Phase 2',41,0,100,5,0,0,'Comment');
 INSERT INTO `creature_text` (`entry`,`groupid`,`id`,`text`,`type`,`language`,`probability`,`emote`,`duration`,`sound`,`comment`) VALUES (800037,7,0,'Phase 3',41,0,100,5,0,0,'Comment');
@@ -18624,8 +18624,8 @@ UPDATE `creature_template` SET `HealthModifier`='3800', `ArmorModifier`='20', `D
 DELETE FROM `creature_text` WHERE `entry`=800038;
 INSERT INTO `creature_text` (`entry`,`groupid`,`id`,`text`,`type`,`language`,`probability`,`emote`,`duration`,`sound`,`comment`) VALUES (800038,1,0,'Willkommen! Ich habe Euch erwartet.',14,0,100,5,0,0,'Comment');
 INSERT INTO `creature_text` (`entry`,`groupid`,`id`,`text`,`type`,`language`,`probability`,`emote`,`duration`,`sound`,`comment`) VALUES (800038,2,0,'Eine nette kleine Runde hier. Fast wie damals.',14,0,100,5,0,0,'Comment');
-INSERT INTO `creature_text` (`entry`,`groupid`,`id`,`text`,`type`,`language`,`probability`,`emote`,`duration`,`sound`,`comment`) VALUES (800038,3,0,'Wer ist euer Anf�hrer?',14,0,100,5,0,0,'Comment');
-INSERT INTO `creature_text` (`entry`,`groupid`,`id`,`text`,`type`,`language`,`probability`,`emote`,`duration`,`sound`,`comment`) VALUES (800038,4,0,'Ihr seid so erb�rmlich',14,0,100,5,0,0,'Comment');
+INSERT INTO `creature_text` (`entry`,`groupid`,`id`,`text`,`type`,`language`,`probability`,`emote`,`duration`,`sound`,`comment`) VALUES (800038,3,0,'Wer ist euer Anfuehrer?',14,0,100,5,0,0,'Comment');
+INSERT INTO `creature_text` (`entry`,`groupid`,`id`,`text`,`type`,`language`,`probability`,`emote`,`duration`,`sound`,`comment`) VALUES (800038,4,0,'Ihr seid so erbaermlich',14,0,100,5,0,0,'Comment');
 INSERT INTO `creature_text` (`entry`,`groupid`,`id`,`text`,`type`,`language`,`probability`,`emote`,`duration`,`sound`,`comment`) VALUES (800038,5,0,'Phase 1',41,0,100,5,0,0,'Comment');
 INSERT INTO `creature_text` (`entry`,`groupid`,`id`,`text`,`type`,`language`,`probability`,`emote`,`duration`,`sound`,`comment`) VALUES (800038,6,0,'Phase 2',41,0,100,5,0,0,'Comment');
 INSERT INTO `creature_text` (`entry`,`groupid`,`id`,`text`,`type`,`language`,`probability`,`emote`,`duration`,`sound`,`comment`) VALUES (800038,7,0,'Phase 3',41,0,100,5,0,0,'Comment');
@@ -18671,7 +18671,7 @@ REPLACE INTO `smart_scripts` (`entryorguid`,`source_type`,`id`,`link`,`event_typ
 
 (@ENTRY,@SOURCETYPE,4,0,2,0,100,0,50,60,7000,8000,11,40504,2,0,0,0,0,6,0,0,0,0.0,0.0,0.0,0.0,"Ruby"),
 (@ENTRY,@SOURCETYPE,5,0,2,0,100,0,40,50,0,0,11,70123,0,0,0,0,0,5,0,0,0,0.0,0.0,0.0,0.0,"BLISTERING_COLD"),
-(@ENTRY,@SOURCETYPE,8,0,0,0,100,0,1,100,10000,15000,11,74367,0,0,0,0,0,2,0,0,0,0.0,0.0,0.0,0.0,"R�stung_spalten"),
+(@ENTRY,@SOURCETYPE,8,0,0,0,100,0,1,100,10000,15000,11,74367,0,0,0,0,0,2,0,0,0,0.0,0.0,0.0,0.0,"Ruestung_spalten"),
 (@ENTRY,@SOURCETYPE,10,0,2,0,100,1,1,8,0,0,11,68335,2,0,0,0,0,1,0,0,0,0.0,0.0,0.0,0.0,"Enrage_@_8%"),
 (@ENTRY,@SOURCETYPE,11,0,2,0,100,0,70,75,10000,69140,11,72363,0,0,0,0,0,5,0,0,0,0.0,0.0,0.0,0.0,"SPELL_CORRUPTED_FLESH"),
 (@ENTRY,@SOURCETYPE,12,0,2,0,100,1,30,40,0,0,11,40504,2,0,0,0,0,6,0,0,0,0.0,0.0,0.0,0.0,"Ruby"),
@@ -18816,7 +18816,7 @@ VALUES ( /*  ID */ 800039,
   /* Modelid3   */0,
   /* Model4  */ 0,
   /* Name  */'Moon',
-  /* Subname */'Die abtr�nnige Sammlerin',
+  /* Subname */'Die abtruennige Sammlerin',
   /* Iconname */'',
   /* gossip_menu_id`  */800039,
   /* Min Level */83,
@@ -18886,10 +18886,10 @@ REPLACE INTO `creature` (`guid`,`id`,`map`,`spawnMask`,`phaseMask`,`modelid`,`eq
 
 
 DELETE FROM `creature_text` WHERE `entry`=800039;
-INSERT INTO `creature_text` (`entry`,`groupid`,`id`,`text`,`type`,`language`,`probability`,`emote`,`duration`,`sound`,`comment`) VALUES (800039,1,0,'Die Sammler m�ssen vernichtet werden.',14,0,100,5,0,0,'Comment');
+INSERT INTO `creature_text` (`entry`,`groupid`,`id`,`text`,`type`,`language`,`probability`,`emote`,`duration`,`sound`,`comment`) VALUES (800039,1,0,'Die Sammler muessen vernichtet werden.',14,0,100,5,0,0,'Comment');
 INSERT INTO `creature_text` (`entry`,`groupid`,`id`,`text`,`type`,`language`,`probability`,`emote`,`duration`,`sound`,`comment`) VALUES (800039,2,0,'Niemand hat verdient am Leben zu bleiben',14,0,100,5,0,0,'Comment');
-INSERT INTO `creature_text` (`entry`,`groupid`,`id`,`text`,`type`,`language`,`probability`,`emote`,`duration`,`sound`,`comment`) VALUES (800039,3,0,'Ich werde die Insel s�ubern.',14,0,100,5,0,0,'Comment');
-INSERT INTO `creature_text` (`entry`,`groupid`,`id`,`text`,`type`,`language`,`probability`,`emote`,`duration`,`sound`,`comment`) VALUES (800039,4,0,'Habt ihr niemand anderen, dem ihr auf die Nerven gehen k�nnt?',14,0,100,5,0,0,'Comment');
+INSERT INTO `creature_text` (`entry`,`groupid`,`id`,`text`,`type`,`language`,`probability`,`emote`,`duration`,`sound`,`comment`) VALUES (800039,3,0,'Ich werde die Insel saeubern.',14,0,100,5,0,0,'Comment');
+INSERT INTO `creature_text` (`entry`,`groupid`,`id`,`text`,`type`,`language`,`probability`,`emote`,`duration`,`sound`,`comment`) VALUES (800039,4,0,'Habt ihr niemand anderen, dem ihr auf die Nerven gehen koennt?',14,0,100,5,0,0,'Comment');
 INSERT INTO `creature_text` (`entry`,`groupid`,`id`,`text`,`type`,`language`,`probability`,`emote`,`duration`,`sound`,`comment`) VALUES (800039,5,0,'Phase 1',41,0,100,5,0,0,'Comment');
 INSERT INTO `creature_text` (`entry`,`groupid`,`id`,`text`,`type`,`language`,`probability`,`emote`,`duration`,`sound`,`comment`) VALUES (800039,6,0,'Phase 2',41,0,100,5,0,0,'Comment');
 INSERT INTO `creature_text` (`entry`,`groupid`,`id`,`text`,`type`,`language`,`probability`,`emote`,`duration`,`sound`,`comment`) VALUES (800039,7,0,'Phase 3',41,0,100,5,0,0,'Comment');
@@ -19289,7 +19289,7 @@ VALUES ( /*  ID */ 800040,
   /* Modelid3   */0,
   /* Model4  */ 0,
   /* Name  */'Marltyriun',
-  /* Subname */'Der Zerst�rer',
+  /* Subname */'Der Zerstoerer',
   /* Iconname */'',
   /* gossip_menu_id`  */0,
   /* Min Level */80,
@@ -19357,10 +19357,10 @@ REPLACE INTO `creature` (`guid`,`id`,`map`,`spawnMask`,`phaseMask`,`modelid`,`eq
   
  
 DELETE FROM `creature_text` WHERE `entry`=800040;
-INSERT INTO `creature_text` (`entry`,`groupid`,`id`,`text`,`type`,`language`,`probability`,`emote`,`duration`,`sound`,`comment`) VALUES (800040,1,0,'Ihr Verr�ter. Loyalistenschweine.',14,0,100,1,0,17457,'Comment');
+INSERT INTO `creature_text` (`entry`,`groupid`,`id`,`text`,`type`,`language`,`probability`,`emote`,`duration`,`sound`,`comment`) VALUES (800040,1,0,'Ihr Verraeter. Loyalistenschweine.',14,0,100,1,0,17457,'Comment');
 INSERT INTO `creature_text` (`entry`,`groupid`,`id`,`text`,`type`,`language`,`probability`,`emote`,`duration`,`sound`,`comment`) VALUES (800040,2,0,'Habt ihr nichts anderes zu tun?!!',14,0,100,1,0,17458,'Comment');
 INSERT INTO `creature_text` (`entry`,`groupid`,`id`,`text`,`type`,`language`,`probability`,`emote`,`duration`,`sound`,`comment`) VALUES (800040,3,0,'Seid ihr so lumpig vorbereitet?!',14,0,100,1,0,17459,'Comment');
-INSERT INTO `creature_text` (`entry`,`groupid`,`id`,`text`,`type`,`language`,`probability`,`emote`,`duration`,`sound`,`comment`) VALUES (800040,4,0,'H�rt auf! Ich tue alles was ihr wollt.',14,0,100,1,0,17460,'Comment');
+INSERT INTO `creature_text` (`entry`,`groupid`,`id`,`text`,`type`,`language`,`probability`,`emote`,`duration`,`sound`,`comment`) VALUES (800040,4,0,'Hoert auf! Ich tue alles was ihr wollt.',14,0,100,1,0,17460,'Comment');
 INSERT INTO `creature_text` (`entry`,`groupid`,`id`,`text`,`type`,`language`,`probability`,`emote`,`duration`,`sound`,`comment`) VALUES (800040,5,0,'Phase 1',41,0,100,1,0,0,'Comment');
 INSERT INTO `creature_text` (`entry`,`groupid`,`id`,`text`,`type`,`language`,`probability`,`emote`,`duration`,`sound`,`comment`) VALUES (800040,6,0,'Phase 2',41,0,100,1,0,0,'Comment');
  
@@ -19505,10 +19505,10 @@ UPDATE `creature_template` SET `HealthModifier`=1500, `ArmorModifier`=50, `Damag
 
 DELETE FROM `creature_text` WHERE `entry` = 800041;
 REPLACE INTO  `creature_text` (`entry`, `groupid`, `id`, `text`, `type`, `language`, `probability`, `emote`, `duration`, `sound`, `comment`) VALUES ('800041', '1', '0', 'Ihr seid langweilig. Moment ich hole einen Kaffee.', '14', '0', '100', '5', '0', '0', 'VPP');
-REPLACE INTO  `creature_text` (`entry`, `groupid`, `id`, `text`, `type`, `language`, `probability`, `emote`, `duration`, `sound`, `comment`) VALUES ('800041', '2', '0', 'T�tet ihr mich, wird das Konsequenzen nach sich ziehen.', '14', '0', '100', '5', '0', '0', 'VPP');
+REPLACE INTO  `creature_text` (`entry`, `groupid`, `id`, `text`, `type`, `language`, `probability`, `emote`, `duration`, `sound`, `comment`) VALUES ('800041', '2', '0', 'Toetet ihr mich, wird das Konsequenzen nach sich ziehen.', '14', '0', '100', '5', '0', '0', 'VPP');
 REPLACE INTO  `creature_text` (`entry`, `groupid`, `id`, `text`, `type`, `language`, `probability`, `emote`, `duration`, `sound`, `comment`) VALUES ('800041', '3', '0', 'Niemals! Bevor ich sterbe, wird der Server ausgemacht.', '14', '0', '100', '5', '0', '0', 'VPP');
 REPLACE INTO  `creature_text` (`entry`, `groupid`, `id`, `text`, `type`, `language`, `probability`, `emote`, `duration`, `sound`, `comment`) VALUES ('800041', '4', '0', 'Ich habe Euch gewarnt.', '14', '0', '100', '5', '0', '0', 'VPP');
-REPLACE INTO  `creature_text` (`entry`, `groupid`, `id`, `text`, `type`, `language`, `probability`, `emote`, `duration`, `sound`, `comment`) VALUES ('800041', '5', '0', 'Verdammt! Ihr wart zu schnell f�r mich!', '14', '0', '100', '5', '0', '0', 'VPP');
+REPLACE INTO  `creature_text` (`entry`, `groupid`, `id`, `text`, `type`, `language`, `probability`, `emote`, `duration`, `sound`, `comment`) VALUES ('800041', '5', '0', 'Verdammt! Ihr wart zu schnell fuer mich!', '14', '0', '100', '5', '0', '0', 'VPP');
 
 
 
@@ -19634,7 +19634,7 @@ REPLACE INTO `npc_vendor` (`entry`, `slot`, `item`, `maxcount`, `incrtime`, `Ext
 REPLACE INTO `npc_vendor` (`entry`, `slot`, `item`, `maxcount`, `incrtime`, `ExtendedCost`) VALUES 
 (800042,0,40374,0,0,0);
 
-/* R�cken*/
+/* Ruecken*/
 REPLACE INTO `npc_vendor` (`entry`, `slot`, `item`, `maxcount`, `incrtime`, `ExtendedCost`) VALUES 
 (800042,0,49792,0,0,0);
 REPLACE INTO `npc_vendor` (`entry`, `slot`, `item`, `maxcount`, `incrtime`, `ExtendedCost`) VALUES 
@@ -19731,7 +19731,7 @@ REPLACE INTO `npc_vendor` (`entry`, `slot`, `item`, `maxcount`, `incrtime`, `Ext
 REPLACE INTO `npc_vendor` (`entry`, `slot`, `item`, `maxcount`, `incrtime`, `ExtendedCost`) VALUES 
 (800042,0,47229,0,0,0);
 
-/*F��e*/
+/*Fue�e*/
 REPLACE INTO `npc_vendor` (`entry`, `slot`, `item`, `maxcount`, `incrtime`, `ExtendedCost`) VALUES 
 (800042,0,47560,0,0,0);
 REPLACE INTO `npc_vendor` (`entry`, `slot`, `item`, `maxcount`, `incrtime`, `ExtendedCost`) VALUES 
@@ -19956,7 +19956,7 @@ VALUES ( /*  ID */ 800043,
   /*  flags_extra` */0, 
   /* Scriptname  */'');
  
- DELETE FROM `creature` WHERE `guid` = 800043;
+DELETE FROM `creature` WHERE `guid` = 800043;
 REPLACE INTO `creature` (`guid`,`id`,`map`,`spawnMask`,`phaseMask`,`modelid`,`equipment_id`,`position_x`,`position_y`,`position_z`,`orientation`,`spawntimesecs`,`spawndist`,`currentwaypoint`,`curhealth`,`curmana`,`MovementType`) VALUES 
 ('800043','800043','0','1','1','17072','0','-780.79','1499.60','104.47','4.13','20000','0','0','1000000','250000','0');
 
@@ -20461,7 +20461,7 @@ DELETE FROM `npc_vendor` WHERE `entry` =800046;
 
 
 
-/*Zauberst�be*/
+/*Zauberstaebe*/
 REPLACE INTO `npc_vendor` (`entry`, `slot`, `item`, `maxcount`, `incrtime`, `ExtendedCost`) VALUES 
 (800046,0,49852,0,0,0);
 REPLACE INTO `npc_vendor` (`entry`, `slot`, `item`, `maxcount`, `incrtime`, `ExtendedCost`) VALUES 
@@ -20553,7 +20553,7 @@ REPLACE INTO `npc_vendor` (`entry`, `slot`, `item`, `maxcount`, `incrtime`, `Ext
 REPLACE INTO `npc_vendor` (`entry`, `slot`, `item`, `maxcount`, `incrtime`, `ExtendedCost`) VALUES 
 (800046,0,45331,0,0,0);
 
-/*St�be*/
+/*Staebe*/
 REPLACE INTO `npc_vendor` (`entry`, `slot`, `item`, `maxcount`, `incrtime`, `ExtendedCost`) VALUES 
 (800046,0,45695,0,0,0);
 REPLACE INTO `npc_vendor` (`entry`, `slot`, `item`, `maxcount`, `incrtime`, `ExtendedCost`) VALUES 
@@ -20946,7 +20946,7 @@ VALUES ( /*  ID */ 800050,
   /* Modelid3   */0,
   /* Model4  */ 0,
   /* Name  */'Tyranium',
-  /* Subname */'Der gefl�gelte Schrecken',
+  /* Subname */'Der gefluegelte Schrecken',
   /* Iconname */'',
   /* gossip_menu_id`  */0,
   /* Min Level */83,
@@ -21101,10 +21101,10 @@ REPLACE INTO `npc_vendor` (`entry`, `slot`, `item`, `maxcount`, `incrtime`, `Ext
 -- 1 Feuerstein und Zunder 4500 Arena Points + 1930 Rating 
 REPLACE INTO `npc_vendor` (`entry`, `slot`, `item`, `maxcount`, `incrtime`, `ExtendedCost`) VALUES 
 (800051, 0, 4471, 0, 0, 2460);
--- 1 Feine Gew�rze = 1 Mal der Illidari
+-- 1 Feine Gewuerze = 1 Mal der Illidari
 REPLACE INTO `npc_vendor` (`entry`, `slot`, `item`, `maxcount`, `incrtime`, `ExtendedCost`) VALUES 
 (800051, 0, 3713, 10, 10000, 1959);
--- 1Scharfes Gew�rz =
+-- 1Scharfes Gewuerz =
 REPLACE INTO `npc_vendor` (`entry`, `slot`, `item`, `maxcount`, `incrtime`, `ExtendedCost`) VALUES 
 (800051, 0, 3713, 10, 10000, 1959);
 
@@ -21266,11 +21266,11 @@ REPLACE INTO `quest_template` (`ID`, `Method`, `QuestLevel`, `MinLevel`, `QuestS
  /*  PointY  */ 0,
  /*  PointOption  */ 0,
  /*  LogTitle  */ 'Die Drachenmutter',
- /*  LogDescription  */  'T�tet Sindragosa',
- /*  QuestDescription   */ 'Hallo $N,t�tet Sindragosa. Sindragosa ist die Mutter aller Drachen, die ihr schon bezwungen habt. Sie muss sterben damit ich die ben�tigte Tinktur erstellen kann bzw sie wirksam werden kann.',
+ /*  LogDescription  */  'Toetet Sindragosa',
+ /*  QuestDescription   */ 'Hallo $N,toetet Sindragosa. Sindragosa ist die Mutter aller Drachen, die ihr schon bezwungen habt. Sie muss sterben damit ich die benoetigte Tinktur erstellen kann bzw sie wirksam werden kann.',
  /*  EndText   */  '',
  /*  OfferRewardText  */  'Seid ihr fertig?',
- /*  RequestItemsText  */ 'T�tet Sindragosa',
+ /*  RequestItemsText  */ 'Toetet Sindragosa',
  /*  QuestCompletionLog  */ 'Es ist Eure Sache was ihr tut.',
  /*  RequiredNpcOrGo1  */ 36853,
  /*  RequiredNpcOrGo2  */ 0,
@@ -21428,11 +21428,11 @@ REPLACE INTO `quest_template` (`ID`, `Method`, `QuestLevel`, `MinLevel`, `QuestS
  /*  PointY  */ 0,
  /*  PointOption  */ 0,
  /*  LogTitle  */ 'Die Tinktur der 4 Elemente',
- /*  LogDescription  */  'T�tet die Verk�rperung der 4 Elemente.',
- /*  QuestDescription   */ 'Hallo $N,die 4 Elemente besitzen M�chte die wir f�r das erfolgreiche Einsetzen der Tinktur brauchen. T�tet sie daher alle und nehmt deren Kraft in Euch auf. Viel Erfolg flei�ige Wanderer.',
+ /*  LogDescription  */  'Toetet die Verkoerperung der 4 Elemente.',
+ /*  QuestDescription   */ 'Hallo $N,die 4 Elemente besitzen Maechte die wir fuer das erfolgreiche Einsetzen der Tinktur brauchen. Toetet sie daher alle und nehmt deren Kraft in Euch auf. Viel Erfolg flei�ige Wanderer.',
  /*  EndText   */  '',
  /*  OfferRewardText  */  'Seid ihr fertig?',
- /*  RequestItemsText  */ 'T�tet die Verk�rperung der 4 Elemente.',
+ /*  RequestItemsText  */ 'Toetet die Verkoerperung der 4 Elemente.',
  /*  QuestCompletionLog  */ 'Es ist Eure Sache was ihr tut.',
  /*  RequiredNpcOrGo1  */ 800037,
  /*  RequiredNpcOrGo2  */ 800038,
@@ -21589,9 +21589,9 @@ REPLACE INTO `quest_template` (`ID`, `Method`, `QuestLevel`, `MinLevel`, `QuestS
  /*  PointX  */ 0,
  /*  PointY  */ 0,
  /*  PointOption  */ 0,
- /*  LogTitle  */ '�berbringt die Tinkur meinem Mann',
+ /*  LogTitle  */ 'ueberbringt die Tinkur meinem Mann',
  /*  LogDescription  */  'Bringt die Tinktur zu Destro MMOwning.',
- /*  QuestDescription   */ 'Hallo $N, die Tinktur ist fertig und muss nun nur noch meinem Mann �berbracht werden. Aber beeilt Euch.',
+ /*  QuestDescription   */ 'Hallo $N, die Tinktur ist fertig und muss nun nur noch meinem Mann ueberbracht werden. Aber beeilt Euch.',
  /*  EndText   */  '',
  /*  OfferRewardText  */  'Seid ihr fertig?',
  /*  RequestItemsText  */ 'Bringt die Tinktur zu Destro MMOwning.',
@@ -21745,11 +21745,11 @@ REPLACE INTO `quest_template` (`ID`, `Method`, `QuestLevel`, `MinLevel`, `QuestS
  /*  PointY  */ 0,
  /*  PointOption  */ 0,
  /*  LogTitle  */ 'Weekly: Kayoula',
- /*  LogDescription  */  'T�tet Kayoula.',
- /*  QuestDescription   */ 'Hallo $N, t�tet Kayoula. Kayoula ist die verschollene Frau von Exitare. Sie muss sterben damit sich diese Brut nicht weiterentwickeln kann. Es ist notwendig!',
+ /*  LogDescription  */  'Toetet Kayoula.',
+ /*  QuestDescription   */ 'Hallo $N, toetet Kayoula. Kayoula ist die verschollene Frau von Exitare. Sie muss sterben damit sich diese Brut nicht weiterentwickeln kann. Es ist notwendig!',
  /*  EndText   */  '',
- /*  OfferRewardText  */  'Ist er zu schwer f�r Euch?',
- /*  RequestItemsText  */ 'T�tet Kayoula.',
+ /*  OfferRewardText  */  'Ist er zu schwer fuer Euch?',
+ /*  RequestItemsText  */ 'Toetet Kayoula.',
  /*  QuestCompletionLog  */ 'Es ist Eure Sache was ihr tut.',
  /*  RequiredNpcOrGo1  */ 800037,
  /*  RequiredNpcOrGo2  */ 0,
@@ -21900,11 +21900,11 @@ REPLACE INTO `quest_template` (`ID`, `Method`, `QuestLevel`, `MinLevel`, `QuestS
  /*  PointY  */ 0,
  /*  PointOption  */ 0,
  /*  LogTitle  */ 'Weekly: Tempus',
- /*  LogDescription  */  'T�tet Tempus.',
- /*  QuestDescription   */ 'Hallo $N, T�tet Tempus den Verr�tern. Er ist �ber den Porter zu erreichen. Er muss vernichtet werden.',
+ /*  LogDescription  */  'Toetet Tempus.',
+ /*  QuestDescription   */ 'Hallo $N, Toetet Tempus den Verraetern. Er ist ueber den Porter zu erreichen. Er muss vernichtet werden.',
  /*  EndText   */  '',
- /*  OfferRewardText  */  'Ist er zu schwer f�r Euch?',
- /*  RequestItemsText  */ 'T�tet Tempus.',
+ /*  OfferRewardText  */  'Ist er zu schwer fuer Euch?',
+ /*  RequestItemsText  */ 'Toetet Tempus.',
  /*  QuestCompletionLog  */ 'Es ist Eure Sache was ihr tut.',
  /*  RequiredNpcOrGo1  */ 800038,
  /*  RequiredNpcOrGo2  */ 0,
@@ -22060,11 +22060,11 @@ REPLACE INTO `quest_template` (`ID`, `Method`, `QuestLevel`, `MinLevel`, `QuestS
  /*  PointY  */ 0,
  /*  PointOption  */ 0,
  /*  LogTitle  */ 'Weekly: Moon',
- /*  LogDescription  */  'T�tet Moon.',
- /*  QuestDescription   */ 'Hallo $N, T�tet Moon die Verr�terin. Sie ist �ber den Porter zu erreichen. Sie muss vernichtet werden.',
+ /*  LogDescription  */  'Toetet Moon.',
+ /*  QuestDescription   */ 'Hallo $N, Toetet Moon die Verraeterin. Sie ist ueber den Porter zu erreichen. Sie muss vernichtet werden.',
  /*  EndText   */  '',
- /*  OfferRewardText  */  'Ist sie zu schwer f�r Euch?',
- /*  RequestItemsText  */ 'T�tet Moon.',
+ /*  OfferRewardText  */  'Ist sie zu schwer fuer Euch?',
+ /*  RequestItemsText  */ 'Toetet Moon.',
  /*  QuestCompletionLog  */ 'Es ist Eure Sache was ihr tut.',
  /*  RequiredNpcOrGo1  */ 800039,
  /*  RequiredNpcOrGo2  */ 0,
@@ -22215,11 +22215,11 @@ REPLACE INTO `quest_template` (`ID`, `Method`, `QuestLevel`, `MinLevel`, `QuestS
  /*  PointY  */ 0,
  /*  PointOption  */ 0,
  /*  LogTitle  */ 'Weekly: Maltyriun',
- /*  LogDescription  */  'T�tet Maltyriun.',
- /*  QuestDescription   */ 'Hallo $N, T�tet Maltyriun den Verr�tern. Er ist �ber den Porter zu erreichen. Er muss vernichtet werden.',
+ /*  LogDescription  */  'Toetet Maltyriun.',
+ /*  QuestDescription   */ 'Hallo $N, Toetet Maltyriun den Verraetern. Er ist ueber den Porter zu erreichen. Er muss vernichtet werden.',
  /*  EndText   */  '',
- /*  OfferRewardText  */  'Ist er zu schwer f�r Euch?',
- /*  RequestItemsText  */ 'T�tet Maltyriun.',
+ /*  OfferRewardText  */  'Ist er zu schwer fuer Euch?',
+ /*  RequestItemsText  */ 'Toetet Maltyriun.',
  /*  QuestCompletionLog  */ 'Es ist Eure Sache was ihr tut.',
  /*  RequiredNpcOrGo1  */ 800040,
  /*  RequiredNpcOrGo2  */ 0,
@@ -22374,12 +22374,12 @@ REPLACE INTO `quest_template` (`ID`, `Method`, `QuestLevel`, `MinLevel`, `QuestS
  /*  PointX  */ 0,
  /*  PointY  */ 0,
  /*  PointOption  */ 0,
- /*  LogTitle  */ 'S�uberung vom Schlamm',
- /*  LogDescription  */  'S�ubert uns vom Schlamm und t�tet 25 schwarzer Schlamm.',
- /*  QuestDescription   */ 'Dieser ekelhafte Schlamm verteilt �berall seinen Unrat. Bitte bitte k�mmert Euch darum. Sie d�rfen nicht wieder ihre schleimigen Spuren auf dem Boden hinterlassen',
+ /*  LogTitle  */ 'Saeuberung vom Schlamm',
+ /*  LogDescription  */  'Saeubert uns vom Schlamm und toetet 25 schwarzer Schlamm.',
+ /*  QuestDescription   */ 'Dieser ekelhafte Schlamm verteilt ueberall seinen Unrat. Bitte bitte kuemmert Euch darum. Sie duerfen nicht wieder ihre schleimigen Spuren auf dem Boden hinterlassen',
  /*  EndText */  '',
  /*  OfferRewardText bevor man beendet  */  'Wunderbar $N, dem Schlamm wird das eine Lehre sein.',
- /*  RequestItemsText  */ 'Hallo $N, hast du alles get�tet?',
+ /*  RequestItemsText  */ 'Hallo $N, hast du alles getoetet?',
  /*  Quest Completed Text wird rechts im Questlog angezeigt der Text */ '',
  /*  RequiredNpcOrGo1  */ 1032,
  /*  RequiredNpcOrGo2  */ 0,
@@ -22533,8 +22533,8 @@ REPLACE INTO `quest_template` (`ID`, `Method`, `QuestLevel`, `MinLevel`, `QuestS
  /*  PointY  */ 0,
  /*  PointOption  */ 0,
  /*  LogTitle  */ 'Die Moosfelle',
- /*  LogDescription  */  'Die Mossfelle und der Wollstoff m�ssen get�tet sowie gesammelt werden.',
- /*  QuestDescription   */ 'Die Mossfelle sammeln viel Wollstoff der uns fehlt, f�r Kleidung. Wir werden uns deren Wollstoffen aneignen. T�tet sie also alle, und klaut den Wollstoff.',
+ /*  LogDescription  */  'Die Mossfelle und der Wollstoff muessen getoetet sowie gesammelt werden.',
+ /*  QuestDescription   */ 'Die Mossfelle sammeln viel Wollstoff der uns fehlt, fuer Kleidung. Wir werden uns deren Wollstoffen aneignen. Toetet sie also alle, und klaut den Wollstoff.',
  /*  EndText */  '',
  /*  OfferRewardText bevor man beendet  */  'Wunderbar $N, unsere Kleidungsproduktion ist gesichert.',
  /*  RequestItemsText  */ 'Hallo $N, hast du alles was du brauchst?',
@@ -22691,10 +22691,10 @@ REPLACE INTO `quest_template` (`ID`, `Method`, `QuestLevel`, `MinLevel`, `QuestS
  /*  PointY  */ 0,
  /*  PointOption  */ 0,
  /*  LogTitle  */ 'Die Eulen',
- /*  LogDescription  */  'T�tet die primitiven Eulenbestien',
- /*  QuestDescription   */ 'T�te die primitiven Eulenbestien und die gifitgen Seuchenflederm�use um die Welt frei von Ungeziffer zu machen.',
+ /*  LogDescription  */  'Toetet die primitiven Eulenbestien',
+ /*  QuestDescription   */ 'Toete die primitiven Eulenbestien und die gifitgen Seuchenfledermaeuse um die Welt frei von Ungeziffer zu machen.',
  /*  EndText */  '',
- /*  OfferRewardText bevor man beendet  */  'Wunderbar $N, sch�n das ihr alles geschafft habt.',
+ /*  OfferRewardText bevor man beendet  */  'Wunderbar $N, schoen das ihr alles geschafft habt.',
  /*  RequestItemsText  */ 'Hallo $N, hast du alles was du brauchst?',
  /*  Quest Completed Text wird rechts im Questlog angezeigt der Text */ '',
  /*  RequiredNpcOrGo1  */ 2928,
@@ -22847,12 +22847,12 @@ REPLACE INTO `quest_template` (`ID`, `Method`, `QuestLevel`, `MinLevel`, `QuestS
  /*  PointX  */ 0,
  /*  PointY  */ 0,
  /*  PointOption  */ 0,
- /*  LogTitle  */ 'Der Gei�elf�rst',
- /*  LogDescription  */  'Der Gei�elf�rst muss sterben',
- /*  QuestDescription   */ 'Der Gei�elf�rst Tyrannus ist mehr als nur ein Geschw�r in unserem Land. Holt die Grube zur�ck. Sie war Teil unseres Reichtums. Dort haben wir unser Erz gesch�rft, bis der Gei�elf�rst sie uns abnahm.',
+ /*  LogTitle  */ 'Der Gei�elfuerst',
+ /*  LogDescription  */  'Der Gei�elfuerst muss sterben',
+ /*  QuestDescription   */ 'Der Gei�elfuerst Tyrannus ist mehr als nur ein Geschwuer in unserem Land. Holt die Grube zurueck. Sie war Teil unseres Reichtums. Dort haben wir unser Erz geschuerft, bis der Gei�elfuerst sie uns abnahm.',
  /*  EndText */  '',
- /*  OfferRewardText bevor man beendet  */  'Der Gei�elf�rst muss sterben',
- /*  RequestItemsText  */ 'Hallo $N, hast du alles get�tet?',
+ /*  OfferRewardText bevor man beendet  */  'Der Gei�elfuerst muss sterben',
+ /*  RequestItemsText  */ 'Hallo $N, hast du alles getoetet?',
  /*  Quest Completed Text wird rechts im Questlog angezeigt der Text */ '',
  /*  RequiredNpcOrGo1  */ 36658,
  /*  RequiredNpcOrGo2  */ 0,
@@ -23001,11 +23001,11 @@ REPLACE INTO `quest_template` (`ID`, `Method`, `QuestLevel`, `MinLevel`, `QuestS
  /*  PointY  */ 0,
  /*  PointOption  */ 0,
  /*  LogTitle  */ 'Weekly: Tyranium',
- /*  LogDescription  */  'T�tet Tyranium.',
- /*  QuestDescription   */ 'Hallo $N, T�tet Tyranium den gefl�gelten Schrecken. Er ist �ber den Porter zu erreichen. Er muss vernichtet werden.',
+ /*  LogDescription  */  'Toetet Tyranium.',
+ /*  QuestDescription   */ 'Hallo $N, Toetet Tyranium den gefluegelten Schrecken. Er ist ueber den Porter zu erreichen. Er muss vernichtet werden.',
  /*  EndText   */  '',
- /*  OfferRewardText  */  'Ist er zu schwer f�r Euch?',
- /*  RequestItemsText  */ 'T�tet Tyranium.',
+ /*  OfferRewardText  */  'Ist er zu schwer fuer Euch?',
+ /*  RequestItemsText  */ 'Toetet Tyranium.',
  /*  QuestCompletionLog  */ 'Es ist Eure Sache was ihr tut.',
  /*  RequiredNpcOrGo1  */ 800050,
  /*  RequiredNpcOrGo2  */ 0,
@@ -23163,11 +23163,11 @@ REPLACE INTO `quest_template` (`ID`, `Method`, `QuestLevel`, `MinLevel`, `QuestS
  /*  PointY  */ 0,
  /*  PointOption  */ 0,
  /*  LogTitle  */ 'Kristallisierte Steinsplitter',
- /*  LogDescription  */  'Sammelt 60 St�ck der Steinsplitter',
- /*  QuestDescription   */ 'Hallo $C, sch�n Euch hier begr��en zu d�rfen. Bringt mir kristallierste Steinsplitter damit ich meine KLinge wieder sch�rfen kann. Sie ist im Kampf gegen unseren Feid ganz stumpf geworden.',
+ /*  LogDescription  */  'Sammelt 60 Stueck der Steinsplitter',
+ /*  QuestDescription   */ 'Hallo $C, schoen Euch hier begrue�en zu duerfen. Bringt mir kristallierste Steinsplitter damit ich meine KLinge wieder schaerfen kann. Sie ist im Kampf gegen unseren Feid ganz stumpf geworden.',
  /*  EndText   */  '',
  /*  OfferRewardText  */  'Seid ihr fertig?',
- /*  RequestItemsText  */ 'Sammelt 60 St�ck der Steinsplitter',
+ /*  RequestItemsText  */ 'Sammelt 60 Stueck der Steinsplitter',
  /*  QuestCompletionLog  */ 'Es ist Eure Sache was ihr tut.',
  /*  RequiredNpcOrGo1  */ 0,
  /*  RequiredNpcOrGo2  */ 0,
@@ -23323,12 +23323,12 @@ REPLACE INTO `quest_template` (`ID`, `Method`, `QuestLevel`, `MinLevel`, `QuestS
  /*  PointX  */ 0,
  /*  PointY  */ 0,
  /*  PointOption  */ 0,
- /*  LogTitle  */ 'Die Verj�ngung',
- /*  LogDescription  */  'Bringt Krasus die Glyphe der Verj�ngung.',
- /*  QuestDescription   */ 'Hallo $N,bringt mir bitte die Glyphe der Verj�ngung. Es ist Zeit  mein ewiges Leben um ein weiteres St�ck zu verl�ngern. Helft mir bitte.',
+ /*  LogTitle  */ 'Die Verjuengung',
+ /*  LogDescription  */  'Bringt Krasus die Glyphe der Verjuengung.',
+ /*  QuestDescription   */ 'Hallo $N,bringt mir bitte die Glyphe der Verjuengung. Es ist Zeit  mein ewiges Leben um ein weiteres Stueck zu verlaengern. Helft mir bitte.',
  /*  EndText   */  '',
  /*  OfferRewardText  */  'Seid ihr fertig?',
- /*  RequestItemsText  */ 'Bringt Krasus die Glyphe der Verj�ngung.',
+ /*  RequestItemsText  */ 'Bringt Krasus die Glyphe der Verjuengung.',
  /*  QuestCompletionLog  */ 'Es ist Eure Sache was ihr tut.',
  /*  RequiredNpcOrGo1  */ 0,
  /*  RequiredNpcOrGo2  */ 0,
@@ -23486,11 +23486,11 @@ REPLACE INTO `quest_template` (`ID`, `Method`, `QuestLevel`, `MinLevel`, `QuestS
  /*  PointY  */ 0,
  /*  PointOption  */ 0,
  /*  LogTitle  */ 'Der Kommandant',
- /*  LogDescription  */  'T�tet den Nerubischen Kommandanten.',
- /*  QuestDescription   */ 'Hallo $N,der Nerubische Kommandant wacht auf seinem Berg und sch�chtert seine ganze Umgebung ein. Wir m�ssen ihn loswerden. T�tet ihn. Ihr findet ihn auf der Anh�he kurz hinter Gallgrimm in der Drachen�de. Es liegt zwischen der Feste Wintergarde und Gallgrimm.',
+ /*  LogDescription  */  'Toetet den Nerubischen Kommandanten.',
+ /*  QuestDescription   */ 'Hallo $N,der Nerubische Kommandant wacht auf seinem Berg und schuechtert seine ganze Umgebung ein. Wir muessen ihn loswerden. Toetet ihn. Ihr findet ihn auf der Anhoehe kurz hinter Gallgrimm in der Drachenoede. Es liegt zwischen der Feste Wintergarde und Gallgrimm.',
  /*  EndText   */  '',
  /*  OfferRewardText  */  'Seid ihr fertig?',
- /*  RequestItemsText  */ 'T�tet den Nerubischen Kommandanten.',
+ /*  RequestItemsText  */ 'Toetet den Nerubischen Kommandanten.',
  /*  QuestCompletionLog  */ 'Es ist Eure Sache was ihr tut.',
  /*  RequiredNpcOrGo1  */ 800036,
  /*  RequiredNpcOrGo2  */ 0,
@@ -23649,7 +23649,7 @@ REPLACE INTO `quest_template` (`ID`, `Method`, `QuestLevel`, `MinLevel`, `QuestS
  /*  PointOption  */ 0,
  /*  LogTitle  */ 'Suche nach Exitares Frau',
  /*  LogDescription  */  'Findet und untersucht die Stelle an welcher Exitares Frau zuletzt gesehen wurde.',
- /*  QuestDescription   */ 'Hallo $N,Exitares Frau wurde entf�hrt. Er bat mich um Hilfe und ich werde ihm helfen. Sucht die Stelle auf, an der Kayoula zuletzt gesehen wurde und bringt mir erste Indizien f�r ihr verschwinden. Sucht nach ihren Federschmuck. Es kann sein, das dieser nicht mehr verstreut auf dem Boden liegt, sondern von den dort vorkommenden Drachenknochenkondoren aufgelesen wurde. Der letzte Ort an dem Kayoula gesehen wurde war links vom Obsidiandrachenschrein. Helft uns und ihr werdet reich belohnt.',
+ /*  QuestDescription   */ 'Hallo $N,Exitares Frau wurde entfuehrt. Er bat mich um Hilfe und ich werde ihm helfen. Sucht die Stelle auf, an der Kayoula zuletzt gesehen wurde und bringt mir erste Indizien fuer ihr verschwinden. Sucht nach ihren Federschmuck. Es kann sein, das dieser nicht mehr verstreut auf dem Boden liegt, sondern von den dort vorkommenden Drachenknochenkondoren aufgelesen wurde. Der letzte Ort an dem Kayoula gesehen wurde war links vom Obsidiandrachenschrein. Helft uns und ihr werdet reich belohnt.',
  /*  EndText   */  '',
  /*  OfferRewardText  */  'Seid ihr fertig?',
  /*  RequestItemsText  */ 'Findet und untersucht die Stelle an welcher Exitares Frau zuletzt gesehen wurde.',
@@ -23810,7 +23810,7 @@ REPLACE INTO `quest_template` (`ID`, `Method`, `QuestLevel`, `MinLevel`, `QuestS
  /*  PointOption  */ 0,
  /*  LogTitle  */ 'Folgt der Spur',
  /*  LogDescription  */  'Folgt der Spur die Exitares Frau hinterlassen hat.',
- /*  QuestDescription   */ 'Hallo $N,zum Gl�ck seid ihr zur�ckgekommen. Sucht nach einem weiteren Anhaltspunkt zum Verschwinden von Exitares Frau. Ich wei� das sie einen Zwischenstopp in der Gegend zwischen Granitquell und der Venturebucht machen wollten. Aber aus Sicherheitsgr�nden wurde mir der genaue Ort verschwiegen.',
+ /*  QuestDescription   */ 'Hallo $N,zum Glueck seid ihr zurueckgekommen. Sucht nach einem weiteren Anhaltspunkt zum Verschwinden von Exitares Frau. Ich wei� das sie einen Zwischenstopp in der Gegend zwischen Granitquell und der Venturebucht machen wollten. Aber aus Sicherheitsgruenden wurde mir der genaue Ort verschwiegen.',
  /*  EndText   */  '',
  /*  OfferRewardText  */  'Seid ihr fertig?',
  /*  RequestItemsText  */ 'Folgt der Spur die Exitares Frau hinterlassen hat.',
@@ -23970,11 +23970,11 @@ REPLACE INTO `quest_template` (`ID`, `Method`, `QuestLevel`, `MinLevel`, `QuestS
  /*  PointY  */ 0,
  /*  PointOption  */ 0,
  /*  LogTitle  */ 'Verlagerung der Truppen',
- /*  LogDescription  */  'Reist zur H�llenfeuerhalbinsel und verst�rkt unsere Aushilfstruppen.',
- /*  QuestDescription   */ 'Hallo $N,wir m�ssen die Suche leider ruhen lassen. Unsere Aushilfstruppen sind in gro�er Bedr�ngnis. Ihr m�sst sie Unterst�tzen. Rei�t zur H�llenfeuerhalbinsel zum Posten des Cenarius und meldet Euch bei Tiah Rotm�hne.',
+ /*  LogDescription  */  'Reist zur Hoellenfeuerhalbinsel und verstaerkt unsere Aushilfstruppen.',
+ /*  QuestDescription   */ 'Hallo $N,wir muessen die Suche leider ruhen lassen. Unsere Aushilfstruppen sind in gro�er Bedraengnis. Ihr muesst sie Unterstuetzen. Rei�t zur Hoellenfeuerhalbinsel zum Posten des Cenarius und meldet Euch bei Tiah Rotmaehne.',
  /*  EndText   */  '',
  /*  OfferRewardText  */  'Seid ihr fertig?',
- /*  RequestItemsText  */ 'Reist zur H�llenfeuerhalbinsel und verst�rkt unsere Aushilfstruppen.',
+ /*  RequestItemsText  */ 'Reist zur Hoellenfeuerhalbinsel und verstaerkt unsere Aushilfstruppen.',
  /*  QuestCompletionLog  */ 'Es ist Eure Sache was ihr tut.',
  /*  RequiredNpcOrGo1  */ 0,
  /*  RequiredNpcOrGo2  */ 0,
@@ -24131,11 +24131,11 @@ REPLACE INTO `quest_template` (`ID`, `Method`, `QuestLevel`, `MinLevel`, `QuestS
  /*  PointY  */ 0,
  /*  PointOption  */ 0,
  /*  LogTitle  */ 'Angriff auf die Angreifer',
- /*  LogDescription  */  'T�tet 40 Sumpflichtbluter und 25 Verhungender Fungusgiganten.',
- /*  QuestDescription   */ 'Hallo $N, Euere erste Schlacht wird in Zangarmarschen stattfinden. Geht dorthin und t�tet 40 Sumpflichtbluter sowie 25 Verhungende Fungusgiganten. Sie koorperieren mit unserem eigentlichen Feind. Daher m�ssen sie vernichtet werden.',
+ /*  LogDescription  */  'Toetet 40 Sumpflichtbluter und 25 Verhungender Fungusgiganten.',
+ /*  QuestDescription   */ 'Hallo $N, Euere erste Schlacht wird in Zangarmarschen stattfinden. Geht dorthin und toetet 40 Sumpflichtbluter sowie 25 Verhungende Fungusgiganten. Sie koorperieren mit unserem eigentlichen Feind. Daher muessen sie vernichtet werden.',
  /*  EndText   */  '',
  /*  OfferRewardText  */  'Seid ihr fertig?',
- /*  RequestItemsText  */ 'T�tet 40 Sumpflichtbluter und 25 Verhungender Fungusgiganten.',
+ /*  RequestItemsText  */ 'Toetet 40 Sumpflichtbluter und 25 Verhungender Fungusgiganten.',
  /*  QuestCompletionLog  */ 'Es ist Eure Sache was ihr tut.',
  /*  RequiredNpcOrGo1  */ 18125,
  /*  RequiredNpcOrGo2  */ 18133,
@@ -24292,11 +24292,11 @@ REPLACE INTO `quest_template` (`ID`, `Method`, `QuestLevel`, `MinLevel`, `QuestS
  /*  PointY  */ 0,
  /*  PointOption  */ 0,
  /*  LogTitle  */ 'Die zweite Welle abfangen',
- /*  LogDescription  */  'T�tet Kael�thas, Murmur, Magheridon sowie das Grauen aus der Tiefe.',
- /*  QuestDescription   */ 'Hallo $N, die zweite Welle werden wir abfangen. Die 4 Kommandanten m�ssem dazu vernichtet werden. Hoffen wir das ihre Anstrengungen dadurch durcheinander gebracht werden.',
+ /*  LogDescription  */  'Toetet Kael�thas, Murmur, Magheridon sowie das Grauen aus der Tiefe.',
+ /*  QuestDescription   */ 'Hallo $N, die zweite Welle werden wir abfangen. Die 4 Kommandanten muessem dazu vernichtet werden. Hoffen wir das ihre Anstrengungen dadurch durcheinander gebracht werden.',
  /*  EndText   */  '',
  /*  OfferRewardText  */  'Seid ihr fertig?',
- /*  RequestItemsText  */ 'T�tet Kael�thas, Murmur, Magheridon sowie das Grauen aus der Tiefe.',
+ /*  RequestItemsText  */ 'Toetet Kael�thas, Murmur, Magheridon sowie das Grauen aus der Tiefe.',
  /*  QuestCompletionLog  */ 'Es ist Eure Sache was ihr tut.',
  /*  RequiredNpcOrGo1  */ 24664,
  /*  RequiredNpcOrGo2  */ 18708,
@@ -24453,11 +24453,11 @@ REPLACE INTO `quest_template` (`ID`, `Method`, `QuestLevel`, `MinLevel`, `QuestS
  /*  PointY  */ 0,
  /*  PointOption  */ 0,
  /*  LogTitle  */ 'Erfolg oder doch nicht?',
- /*  LogDescription  */  'Um den Erfolg zu garantieren m�ssen wir Auktionspapiere erlangen.',
- /*  QuestDescription   */ 'Hallo $N, wir haben von Auktionspapieren erfunden, welche unser Feind nutzt um seine Gesch�fte auf den M�rkten geheim zu halten. Wir m�ssen diese Papiere erlangen um deren Transaktionen folgen zu k�nnen. Bitte bringt uns 10 solcher Papiere, das sollte uns reichen.',
+ /*  LogDescription  */  'Um den Erfolg zu garantieren muessen wir Auktionspapiere erlangen.',
+ /*  QuestDescription   */ 'Hallo $N, wir haben von Auktionspapieren erfunden, welche unser Feind nutzt um seine Geschaefte auf den Maerkten geheim zu halten. Wir muessen diese Papiere erlangen um deren Transaktionen folgen zu koennen. Bitte bringt uns 10 solcher Papiere, das sollte uns reichen.',
  /*  EndText   */  '',
  /*  OfferRewardText  */  'Seid ihr fertig?',
- /*  RequestItemsText  */ 'Um den Erfolg zu garantieren m�ssen wir Auktionspapiere erlangen.',
+ /*  RequestItemsText  */ 'Um den Erfolg zu garantieren muessen wir Auktionspapiere erlangen.',
  /*  QuestCompletionLog  */ 'Es ist Eure Sache was ihr tut.',
  /*  RequiredNpcOrGo1  */ 0,
  /*  RequiredNpcOrGo2  */ 0,
@@ -24614,11 +24614,11 @@ REPLACE INTO `quest_template` (`ID`, `Method`, `QuestLevel`, `MinLevel`, `QuestS
  /*  PointY  */ 0,
  /*  PointOption  */ 0,
  /*  LogTitle  */ 'Beutebucht',
- /*  LogDescription  */  'T�tet Mok�rash den Spalter',
- /*  QuestDescription   */ 'Hallo $N, Mok�rash der Spalter versperrt die Bucht zu Beutebucht. Er muss get�tet werden, damit wir weitere Handelslieferungen erhalten k�nnen.',
+ /*  LogDescription  */  'Toetet Mok�rash den Spalter',
+ /*  QuestDescription   */ 'Hallo $N, Mok�rash der Spalter versperrt die Bucht zu Beutebucht. Er muss getoetet werden, damit wir weitere Handelslieferungen erhalten koennen.',
  /*  EndText   */  '',
  /*  OfferRewardText  */  'Seid ihr fertig?',
- /*  RequestItemsText  */ 'T�tet Mok�rash den Spalter',
+ /*  RequestItemsText  */ 'Toetet Mok�rash den Spalter',
  /*  QuestCompletionLog  */ 'Es ist Eure Sache was ihr tut.',
  /*  RequiredNpcOrGo1  */ 1493,
  /*  RequiredNpcOrGo2  */ 0,
@@ -24775,11 +24775,11 @@ REPLACE INTO `quest_template` (`ID`, `Method`, `QuestLevel`, `MinLevel`, `QuestS
  /*  PointY  */ 0,
  /*  PointOption  */ 0,
  /*  LogTitle  */ 'Meldung in Ratchet',
- /*  LogDescription  */  'Meldet Euch bei Kapit�n Thalo`thas Blendsoon',
- /*  QuestDescription   */ 'Hallo $N, meldet Euch bei Kapit�n Thalo`thas Blendsoon. Er hat weitere Instruktionen f�r Euch. Es ist sehr sehr wichtig. ',
+ /*  LogDescription  */  'Meldet Euch bei Kapitaen Thalo`thas Blendsoon',
+ /*  QuestDescription   */ 'Hallo $N, meldet Euch bei Kapitaen Thalo`thas Blendsoon. Er hat weitere Instruktionen fuer Euch. Es ist sehr sehr wichtig. ',
  /*  EndText   */  '',
  /*  OfferRewardText  */  'Seid ihr fertig?',
- /*  RequestItemsText  */ 'Meldet Euch bei Kapit�n Thalo`thas Blendsoon',
+ /*  RequestItemsText  */ 'Meldet Euch bei Kapitaen Thalo`thas Blendsoon',
  /*  QuestCompletionLog  */ 'Es ist Eure Sache was ihr tut.',
  /*  RequiredNpcOrGo1  */ 0,
  /*  RequiredNpcOrGo2  */ 0,
@@ -24937,7 +24937,7 @@ REPLACE INTO `quest_template` (`ID`, `Method`, `QuestLevel`, `MinLevel`, `QuestS
  /*  PointOption  */ 0,
  /*  LogTitle  */ 'Alte Rechnungen begleichen',
  /*  LogDescription  */  'Begleicht meine alten Rechnungen',
- /*  QuestDescription   */ 'Hallo $N, ich hab noch ein paar Rechnungen mit alten Bekannten offen. K�nnt ihr Euch darum k�mmern bitte? Ich finde es sehr sehr wichtig. Ich wurde hintergangen, w�hrend unserer gemeinsamen Zeit. K�nnt ihr mir bei der Gelegenheit gleich noch etwas f�r meinen Eintopf bringen? Ich danke $N.',
+ /*  QuestDescription   */ 'Hallo $N, ich hab noch ein paar Rechnungen mit alten Bekannten offen. Koennt ihr Euch darum kuemmern bitte? Ich finde es sehr sehr wichtig. Ich wurde hintergangen, waehrend unserer gemeinsamen Zeit. Koennt ihr mir bei der Gelegenheit gleich noch etwas fuer meinen Eintopf bringen? Ich danke $N.',
  /*  EndText   */  '',
  /*  OfferRewardText  */  'Seid ihr fertig?',
  /*  RequestItemsText  */ 'Begleicht meine alten Rechnungen',
@@ -25098,7 +25098,7 @@ REPLACE INTO `quest_template` (`ID`, `Method`, `QuestLevel`, `MinLevel`, `QuestS
  /*  PointOption  */ 0,
  /*  LogTitle  */ 'Die Mechanar',
  /*  LogDescription  */  'Nehmt Euch den Mechanar an',
- /*  QuestDescription   */ 'Piep, Piep, Piep....... *Roll* *Roll* *Roll* Oh hallo $N. Ich habe gerade versucht die Mechanar ironisch zu vertonen. Naja war nicht so erfolgreich. Aber lassen wir das. Meine Freunde von den Sha`tar hassen dieses Gesocks von verhassten Leuten. Wenn ihr Euch bei den Sha`tar beliebt machen wollt, f�hrt ihr diese Aufgabe aus. ',
+ /*  QuestDescription   */ 'Piep, Piep, Piep....... *Roll* *Roll* *Roll* Oh hallo $N. Ich habe gerade versucht die Mechanar ironisch zu vertonen. Naja war nicht so erfolgreich. Aber lassen wir das. Meine Freunde von den Sha`tar hassen dieses Gesocks von verhassten Leuten. Wenn ihr Euch bei den Sha`tar beliebt machen wollt, fuehrt ihr diese Aufgabe aus. ',
  /*  EndText   */  '',
  /*  OfferRewardText  */  'Seid ihr fertig?',
  /*  RequestItemsText  */ 'Nehmt Euch den Mechanar an',
@@ -25260,11 +25260,11 @@ REPLACE INTO `quest_template` (`ID`, `Method`, `QuestLevel`, `MinLevel`, `QuestS
  /*  PointY  */ 0,
  /*  PointOption  */ 0,
  /*  LogTitle  */ 'Reise durch die Zeit',
- /*  LogDescription  */  'T�tet die Intriganten',
- /*  QuestDescription   */ 'Ich danke Euch f�r das Ausf�hren der Aufgabe. Ich habe auch sofort eine n�chste f�r Euch. Im Scharlachroten Kloster gibt es Wesen, wenn man das so sagen darf, welche des Lebens nicht w�rdig sind.',
+ /*  LogDescription  */  'Toetet die Intriganten',
+ /*  QuestDescription   */ 'Ich danke Euch fuer das Ausfuehren der Aufgabe. Ich habe auch sofort eine naechste fuer Euch. Im Scharlachroten Kloster gibt es Wesen, wenn man das so sagen darf, welche des Lebens nicht wuerdig sind.',
  /*  EndText   */  '',
  /*  OfferRewardText  */  'Seid ihr fertig?',
- /*  RequestItemsText  */ 'T�tet die Intriganten',
+ /*  RequestItemsText  */ 'Toetet die Intriganten',
  /*  QuestCompletionLog  */ 'Es ist Eure Sache was ihr tut.',
  /*  RequiredNpcOrGo1  */ 4283,
  /*  RequiredNpcOrGo2  */ 0,
@@ -25424,7 +25424,7 @@ REPLACE INTO `quest_template` (`ID`, `Method`, `QuestLevel`, `MinLevel`, `QuestS
  /*  PointOption  */ 0,
  /*  LogTitle  */ 'Torvan von Doom',
  /*  LogDescription  */  'Reise zu einem alten Freund',
- /*  QuestDescription   */ 'Arggh $R. Ihr m�sst unbedingt zu Tovan von Doom dem Unerreichbaren reisen. Torvan ist ein alter Reisegeselle aus unseren Seemanszeiten. Geht zu ihm und berichtet ihm, dass sein alter Freund Raubein noch lebt. Er wird sich an mich erinnern. Vielleicht m�chtet ihr ihm aber noch etwas zu trinken bringen. Wir Seem�nner sind ja ein Trinkerv�lkchen.',
+ /*  QuestDescription   */ 'Arggh $R. Ihr muesst unbedingt zu Tovan von Doom dem Unerreichbaren reisen. Torvan ist ein alter Reisegeselle aus unseren Seemanszeiten. Geht zu ihm und berichtet ihm, dass sein alter Freund Raubein noch lebt. Er wird sich an mich erinnern. Vielleicht moechtet ihr ihm aber noch etwas zu trinken bringen. Wir Seemaenner sind ja ein Trinkervoelkchen.',
  /*  EndText   */  '',
  /*  OfferRewardText  */  'Seid ihr fertig?',
  /*  RequestItemsText  */ 'Reise zu einem alten Freund',
@@ -25585,7 +25585,7 @@ REPLACE INTO `quest_template` (`ID`, `Method`, `QuestLevel`, `MinLevel`, `QuestS
  /*  PointOption  */ 0,
  /*  LogTitle  */ 'Die geheime Nachricht',
  /*  LogDescription  */  'Bringt die geheime Nachricht zu Rumus Diener',
- /*  QuestDescription   */ 'Bringt die geheime Nachricht an einen von Rumu�s Dienern. Ich m�chte das ihr mir beweist, das ihr zu eurem Wort steht. Bringt einem Diener von Rumu die Nachricht. Geht jetzt Landratten!',
+ /*  QuestDescription   */ 'Bringt die geheime Nachricht an einen von Rumu�s Dienern. Ich moechte das ihr mir beweist, das ihr zu eurem Wort steht. Bringt einem Diener von Rumu die Nachricht. Geht jetzt Landratten!',
  /*  EndText   */  '',
  /*  OfferRewardText  */  'Seid ihr fertig?',
  /*  RequestItemsText  */ 'Bringt die geheime Nachricht zu Rumus Diener',
@@ -25743,12 +25743,12 @@ REPLACE INTO `quest_template` (`ID`, `Method`, `QuestLevel`, `MinLevel`, `QuestS
  /*  PointX  */ 0,
  /*  PointY  */ 0,
  /*  PointOption  */ 0,
- /*  LogTitle  */ 'Die R�ckkehr',
- /*  LogDescription  */  'Bringt die mysteri�se Nachricht zur�ck zu Torvan.',
- /*  QuestDescription   */ 'Bringt die mysteri�se Nachricht zur�ck zu Tovan von Doom. In der Nachricht ist bestimmt bescheinigt das ihr loyal und ausdauernd seid.',
+ /*  LogTitle  */ 'Die Rueckkehr',
+ /*  LogDescription  */  'Bringt die mysterioese Nachricht zurueck zu Torvan.',
+ /*  QuestDescription   */ 'Bringt die mysterioese Nachricht zurueck zu Tovan von Doom. In der Nachricht ist bestimmt bescheinigt das ihr loyal und ausdauernd seid.',
  /*  EndText   */  '',
  /*  OfferRewardText  */  'Seid ihr fertig?',
- /*  RequestItemsText  */ 'Bringt die mysteri�se Nachricht zur�ck zu Torvan.',
+ /*  RequestItemsText  */ 'Bringt die mysterioese Nachricht zurueck zu Torvan.',
  /*  QuestCompletionLog  */ 'Es ist Eure Sache was ihr tut.',
  /*  RequiredNpcOrGo1  */ 0,
  /*  RequiredNpcOrGo2  */ 0,
@@ -26065,12 +26065,12 @@ REPLACE INTO `quest_template` (`ID`, `Method`, `QuestLevel`, `MinLevel`, `QuestS
  /*  PointY  */ 0,
  /*  PointOption  */ 0,
  /*  LogTitle  */ 'Magie aufladen',
- /*  LogDescription  */  'Um �berhaupt diese m�chtige Magie einsetzen zu k�nnen bedarf es wichtiger Vorbereitungen.',
- /*  QuestDescription   */ 'Es scheint als m�ssten wir alte Zauber aus den Lehrb�chern verwenden um diese Kr�hen los zu werden, ich hab in den B�chern schon nachgelesen und brauche dadurch noch einige Materialen. Ihr findet diese Gegenst�nde in der Scherbenwelt.',
+ /*  LogDescription  */  'Um ueberhaupt diese maechtige Magie einsetzen zu koennen bedarf es wichtiger Vorbereitungen.',
+ /*  QuestDescription   */ 'Es scheint als muessten wir alte Zauber aus den Lehrbuechern verwenden um diese Kraehen los zu werden, ich hab in den Buechern schon nachgelesen und brauche dadurch noch einige Materialen. Ihr findet diese Gegenstaende in der Scherbenwelt.',
  /*  EndText */  '',
- /*  OfferRewardText bevor man beendet  */  'Wunderbar $C, ich packe diese Gegenst�nde in die Truhe.',
+ /*  OfferRewardText bevor man beendet  */  'Wunderbar $C, ich packe diese Gegenstaende in die Truhe.',
  /*  RequestItemsText  */ 'Hallo $N, uns fehlen noch paar Materialen, besorg diese doch bitte.',
- /*  Quest Completed Text wird rechts im Questlog angezeigt der Text */ 'Gebt diese Gegenst�nde ab.',
+ /*  Quest Completed Text wird rechts im Questlog angezeigt der Text */ 'Gebt diese Gegenstaende ab.',
  /*  RequiredNpcOrGo1  */ 0,
  /*  RequiredNpcOrGo2  */ 0,
  /*  RequiredNpcOrGo3  */ 0,
@@ -26224,10 +26224,10 @@ REPLACE INTO `quest_template` (`ID`, `Method`, `QuestLevel`, `MinLevel`, `QuestS
  /*  PointOption  */ 0,
  /*  LogTitle  */ 'Rumus Zeitvertreib',
  /*  LogDescription  */  'Angeln, angeln, angeln - Ruhe, psssht.',
- /*  QuestDescription   */ 'T�glich muss ich meinen Bedarf an Kohlenhydraten decken, deswegen gehe ich regelm��ig fischen. Mittlerweile schaffe ich nicht alleine die Menge zu fischen, die ich f�r die Nahrungszufuhr brauch.$B$BHelft mir bitte beim Fischen.',
+ /*  QuestDescription   */ 'Taeglich muss ich meinen Bedarf an Kohlenhydraten decken, deswegen gehe ich regelmae�ig fischen. Mittlerweile schaffe ich nicht alleine die Menge zu fischen, die ich fuer die Nahrungszufuhr brauch.$B$BHelft mir bitte beim Fischen.',
  /*  EndText */  '',
- /*  OfferRewardText bevor man beendet  */  'Wunderbar $C, ich packe diese Gegenst�nde in die Truhe. Damit hab ich wieder einen kleinen Vorrat.',
- /*  RequestItemsText  */ 'Hallo $N, hast du Fische f�r mich?',
+ /*  OfferRewardText bevor man beendet  */  'Wunderbar $C, ich packe diese Gegenstaende in die Truhe. Damit hab ich wieder einen kleinen Vorrat.',
+ /*  RequestItemsText  */ 'Hallo $N, hast du Fische fuer mich?',
  /*  Quest Completed Text wird rechts im Questlog angezeigt der Text */ 'Gebt die Fische ab.',
  /*  RequiredNpcOrGo1  */ 0,
  /*  RequiredNpcOrGo2  */ 0,
@@ -26539,10 +26539,10 @@ REPLACE INTO `quest_template` (`ID`, `Method`, `QuestLevel`, `MinLevel`, `QuestS
  /*  PointY  */ 0,
  /*  PointOption  */ 0,
  /*  LogTitle  */ 'Sammlung Teil Acht',
- /*  LogDescription  */  'Bringt mir 75 Sonnenpartikel und t�tet Selin Feuerherz sowie Mutantus den Verschlinger.',
- /*  QuestDescription   */ 'Hallo $N. Ich m�chte Euch auf der Reise zu den Sammlern eine weitere Aufgabe geben. Bringt mir 75 Sonnenpartikel und t�tet Selin Feuerherz sowie Mutantus den Verschlinger. Diese sind uns schon lange ein Dorn im Auge. Aber ihr habt es bald geschafft und k�nnt dann bald in die Feste der Sammler aufbrechen.',
+ /*  LogDescription  */  'Bringt mir 75 Sonnenpartikel und toetet Selin Feuerherz sowie Mutantus den Verschlinger.',
+ /*  QuestDescription   */ 'Hallo $N. Ich moechte Euch auf der Reise zu den Sammlern eine weitere Aufgabe geben. Bringt mir 75 Sonnenpartikel und toetet Selin Feuerherz sowie Mutantus den Verschlinger. Diese sind uns schon lange ein Dorn im Auge. Aber ihr habt es bald geschafft und koennt dann bald in die Feste der Sammler aufbrechen.',
  /*  EndText */  '',
- /*  OfferRewardText bevor man beendet  */  'Bringt mir 75 Sonnenpartikel und t�tet Selin Feuerherz sowie Mutantus den Verschlinger.',
+ /*  OfferRewardText bevor man beendet  */  'Bringt mir 75 Sonnenpartikel und toetet Selin Feuerherz sowie Mutantus den Verschlinger.',
  /*  RequestItemsText  */ 'Hallo $N, hast du die Aufgabe abgeschlossen?',
  /*  Quest Completed Text wird rechts im Questlog angezeigt der Text */ '',
  /*  RequiredNpcOrGo1  */ 24723,
@@ -26697,10 +26697,10 @@ REPLACE INTO `quest_template` (`ID`, `Method`, `QuestLevel`, `MinLevel`, `QuestS
  /*  PointY  */ 0,
  /*  PointOption  */ 0,
  /*  LogTitle  */ 'Orca',
- /*  LogDescription  */  'Geht zu Orca und begr��t ihn hier auf MMOwning World.',
- /*  QuestDescription   */ 'Ein neuer Mitstreiter ist in MMOwning World eingetroffen. Geht zu ihm und begr��t ihn.',
+ /*  LogDescription  */  'Geht zu Orca und begrue�t ihn hier auf MMOwning World.',
+ /*  QuestDescription   */ 'Ein neuer Mitstreiter ist in MMOwning World eingetroffen. Geht zu ihm und begrue�t ihn.',
  /*  EndText */  '',
- /*  OfferRewardText bevor man beendet  */  'Geht zu Orca und begr��t ihn hier auf MMOwning World.',
+ /*  OfferRewardText bevor man beendet  */  'Geht zu Orca und begrue�t ihn hier auf MMOwning World.',
  /*  RequestItemsText  */ 'Hallo $N, hast du die Aufgabe abgeschlossen?',
  /*  Quest Completed Text wird rechts im Questlog angezeigt der Text */ '',
  /*  RequiredNpcOrGo1  */ 0,
@@ -26856,9 +26856,9 @@ REPLACE INTO `quest_template` (`ID`, `Method`, `QuestLevel`, `MinLevel`, `QuestS
  /*  PointOption  */ 0,
  /*  LogTitle  */ 'MMOWNING WORLD',
  /*  LogDescription  */  'Sammelt 1000 Emblem des Triumphs.',
- /*  QuestDescription   */ 'Hallo $N. Ich begr��e Euch. Ich soll Euch einen Gru� von Exitare und Rumu hier lassen. Sie w�nschen Euch viel Spa� beim bestreiten dieser Questreihe. Diese Questreihe ist absichtlich extrem gew�hlt und soll extreme Belohnungen gew�hren. Ihr k�nnt darauf einstellen, fie�e, langwierige, sowie schwere Quests zu bekommen. Verzweifelt aber nicht. Es warten gute Belohnung auf Euch.',
+ /*  QuestDescription   */ 'Hallo $N. Ich begrue�e Euch. Ich soll Euch einen Gru� von Exitare und Rumu hier lassen. Sie wuenschen Euch viel Spa� beim bestreiten dieser Questreihe. Diese Questreihe ist absichtlich extrem gewaehlt und soll extreme Belohnungen gewaehren. Ihr koennt darauf einstellen, fie�e, langwierige, sowie schwere Quests zu bekommen. Verzweifelt aber nicht. Es warten gute Belohnung auf Euch.',
  /*  EndText */  '',
- /*  OfferRewardText bevor man beendet  */  'Geht zu Orca und begr��t ihn hier auf MMOwning World.',
+ /*  OfferRewardText bevor man beendet  */  'Geht zu Orca und begrue�t ihn hier auf MMOwning World.',
  /*  RequestItemsText  */ 'Hallo $N, hast du die Aufgabe abgeschlossen?',
  /*  Quest Completed Text wird rechts im Questlog angezeigt der Text */ '',
  /*  RequiredNpcOrGo1  */ 0,
@@ -27676,7 +27676,7 @@ VALUES ( /*  ID */ 800061,
   /* Modelid3   */0,
   /* Model4  */ 0,
   /* Name  */'Lightshadow',
-  /* Subname */'Der unrechtm��ige Prinz',
+  /* Subname */'Der unrechtmae�ige Prinz',
   /* Iconname */'',
   /* gossip_menu_id`  */0,
   /* Min Level */83,
@@ -27744,11 +27744,11 @@ DELETE FROM `creature` WHERE `guid` = 800061;
 
 
 DELETE FROM `creature_text` WHERE `entry`=800061;
-INSERT INTO `creature_text` (`entry`,`groupid`,`id`,`text`,`type`,`language`,`probability`,`emote`,`duration`,`sound`,`comment`) VALUES (800061,0,0,'Da kommt mein kleiner erb�rmlicher Bruder mit seiner Gefolgschaft!',14,0,100,1,0,17457,'Say Aggro');
+INSERT INTO `creature_text` (`entry`,`groupid`,`id`,`text`,`type`,`language`,`probability`,`emote`,`duration`,`sound`,`comment`) VALUES (800061,0,0,'Da kommt mein kleiner erbaermlicher Bruder mit seiner Gefolgschaft!',14,0,100,1,0,17457,'Say Aggro');
 INSERT INTO `creature_text` (`entry`,`groupid`,`id`,`text`,`type`,`language`,`probability`,`emote`,`duration`,`sound`,`comment`) VALUES (800061,1,0,'Hat er Euch wirklich so belogen?',14,0,100,1,0,17458,'Random');
 INSERT INTO `creature_text` (`entry`,`groupid`,`id`,`text`,`type`,`language`,`probability`,`emote`,`duration`,`sound`,`comment`) VALUES (800061,2,0,'Einer von Euch lausigen Maden weniger.',14,0,100,1,0,17459,'Kill');
 INSERT INTO `creature_text` (`entry`,`groupid`,`id`,`text`,`type`,`language`,`probability`,`emote`,`duration`,`sound`,`comment`) VALUES (800061,3,0,'Ihr werdet bereuen was ihr getan habt. Ihr wisst nicht wer Darkshadow wirklich ist!',14,0,100,1,0,17460,'Dead');
-INSERT INTO `creature_text` (`entry`,`groupid`,`id`,`text`,`type`,`language`,`probability`,`emote`,`duration`,`sound`,`comment`) VALUES (800061,4,0,'Sp�rt die frostige K�lte!',14,0,100,1,0,17460,'Blizzard');
+INSERT INTO `creature_text` (`entry`,`groupid`,`id`,`text`,`type`,`language`,`probability`,`emote`,`duration`,`sound`,`comment`) VALUES (800061,4,0,'Spuert die frostige Kaelte!',14,0,100,1,0,17460,'Blizzard');
 
 
 
@@ -27905,7 +27905,7 @@ VALUES ( /*  ID */ 800063,
   /* Modelid3   */0,
   /* Model4  */ 0,
   /* Name  */'Lightshadow',
-  /* Subname */'Der unrechtm��ige Prinz',
+  /* Subname */'Der unrechtmae�ige Prinz',
   /* Iconname */'',
   /* gossip_menu_id`  */0,
   /* Min Level */83,
@@ -27973,11 +27973,11 @@ DELETE FROM `creature` WHERE `guid` = 800063;
 
 
 DELETE FROM `creature_text` WHERE `entry`=800063;
-INSERT INTO `creature_text` (`entry`,`groupid`,`id`,`text`,`type`,`language`,`probability`,`emote`,`duration`,`sound`,`comment`) VALUES (800063,0,0,'Da kommt mein kleiner erb�rmlicher Bruder mit seiner Gefolgschaft!',14,0,100,1,0,17457,'Say Aggro');
+INSERT INTO `creature_text` (`entry`,`groupid`,`id`,`text`,`type`,`language`,`probability`,`emote`,`duration`,`sound`,`comment`) VALUES (800063,0,0,'Da kommt mein kleiner erbaermlicher Bruder mit seiner Gefolgschaft!',14,0,100,1,0,17457,'Say Aggro');
 INSERT INTO `creature_text` (`entry`,`groupid`,`id`,`text`,`type`,`language`,`probability`,`emote`,`duration`,`sound`,`comment`) VALUES (800063,1,0,'Hat er Euch wirklich so belogen?',14,0,100,1,0,17458,'Random');
 INSERT INTO `creature_text` (`entry`,`groupid`,`id`,`text`,`type`,`language`,`probability`,`emote`,`duration`,`sound`,`comment`) VALUES (800063,2,0,'Einer von Euch lausigen Maden weniger.',14,0,100,1,0,17459,'Kill');
 INSERT INTO `creature_text` (`entry`,`groupid`,`id`,`text`,`type`,`language`,`probability`,`emote`,`duration`,`sound`,`comment`) VALUES (800063,3,0,'Ihr werdet bereuen was ihr getan habt. Ihr wisst nicht wer Darkshadow wirklich ist!',14,0,100,1,0,17460,'Dead');
-INSERT INTO `creature_text` (`entry`,`groupid`,`id`,`text`,`type`,`language`,`probability`,`emote`,`duration`,`sound`,`comment`) VALUES (800063,4,0,'Sp�rt die frostige K�lte!',14,0,100,1,0,17460,'Blizzard');
+INSERT INTO `creature_text` (`entry`,`groupid`,`id`,`text`,`type`,`language`,`probability`,`emote`,`duration`,`sound`,`comment`) VALUES (800063,4,0,'Spuert die frostige Kaelte!',14,0,100,1,0,17460,'Blizzard');
 
 
 DELETE FROM `quest_template` WHERE  `id` = 800554;
@@ -28054,12 +28054,12 @@ REPLACE INTO `quest_template` (`ID`, `Method`, `QuestLevel`, `MinLevel`, `QuestS
  /*  PointX  */ 0,
  /*  PointY  */ 0,
  /*  PointOption  */ 0,
- /*  LogTitle  */ 'Erwei�t Euch w�rdig',
- /*  LogDescription  */  'Sammelt 30 Waffen der Unterst�tzer',
- /*  QuestDescription   */ 'Hallo $C $N, sch�n das ihr euren Weg hierher gefunden habt. Ich hab eine wichtige Aufgabe f�r Euch, die f�r das K�nigshaus ernorm wichtig ist. Sammelt 30 Waffen der Unterst�tzer. Sie sind �ber ganz Azeroth und die Scherbenwelt verteilt. Um genauere Angaben zu finden geht auf die Homepage und sucht im Arsenal nach den Waffen.',
+ /*  LogTitle  */ 'Erwei�t Euch wuerdig',
+ /*  LogDescription  */  'Sammelt 30 Waffen der Unterstuetzer',
+ /*  QuestDescription   */ 'Hallo $C $N, schoen das ihr euren Weg hierher gefunden habt. Ich hab eine wichtige Aufgabe fuer Euch, die fuer das Koenigshaus ernorm wichtig ist. Sammelt 30 Waffen der Unterstuetzer. Sie sind ueber ganz Azeroth und die Scherbenwelt verteilt. Um genauere Angaben zu finden geht auf die Homepage und sucht im Arsenal nach den Waffen.',
  /*  EndText   */  '',
  /*  OfferRewardText  */  'Seid ihr fertig?',
- /*  RequestItemsText  */ 'Sammelt 30 Waffen der Unterst�tzer.',
+ /*  RequestItemsText  */ 'Sammelt 30 Waffen der Unterstuetzer.',
  /*  QuestCompletionLog  */ 'Es ist Eure Sache was ihr tut.',
  /*  RequiredNpcOrGo1  */ 0,
  /*  RequiredNpcOrGo2  */ 0,
@@ -28216,11 +28216,11 @@ REPLACE INTO `quest_template` (`ID`, `Method`, `QuestLevel`, `MinLevel`, `QuestS
  /*  PointY  */ 0,
  /*  PointOption  */ 0,
  /*  LogTitle  */ 'Die erste Spur',
- /*  LogDescription  */  'Wir haben eine erste Spur, bringt Kayoulas zerbrochene Anh�ngerst�cke zu mir.',
- /*  QuestDescription   */ 'Hallo $N, ich habe aufregende Neuigkeiten f�r Euch. Wir haben durch die Auktionspapiere einen ersten Unterh�ndler ausfindig machen k�nnen. Anscheinend soll er am �berfall auf Exitares Frau beteiligt gewesen sein. Geht zu ihm und pr�ft ob er beteiligt war, und bringt entsprechende Beweise zu mir zur�ck. Ob er dabei am Leben bleibt oder nicht, ist mir egal. Macht was ihr wollt mit ihm.',
+ /*  LogDescription  */  'Wir haben eine erste Spur, bringt Kayoulas zerbrochene Anhaengerstuecke zu mir.',
+ /*  QuestDescription   */ 'Hallo $N, ich habe aufregende Neuigkeiten fuer Euch. Wir haben durch die Auktionspapiere einen ersten Unterhaendler ausfindig machen koennen. Anscheinend soll er am ueberfall auf Exitares Frau beteiligt gewesen sein. Geht zu ihm und prueft ob er beteiligt war, und bringt entsprechende Beweise zu mir zurueck. Ob er dabei am Leben bleibt oder nicht, ist mir egal. Macht was ihr wollt mit ihm.',
  /*  EndText   */  '',
  /*  OfferRewardText  */  'Seid ihr fertig?',
- /*  RequestItemsText  */ 'Wir haben eine erste Spur, bringt Kayoulas zerbrochener Anh�nger zu mir.',
+ /*  RequestItemsText  */ 'Wir haben eine erste Spur, bringt Kayoulas zerbrochener Anhaenger zu mir.',
  /*  QuestCompletionLog  */ 'Es ist Eure Sache was ihr tut.',
  /*  RequiredNpcOrGo1  */ 0,
  /*  RequiredNpcOrGo2  */ 0,
@@ -28378,7 +28378,7 @@ REPLACE INTO `quest_template` (`ID`, `Method`, `QuestLevel`, `MinLevel`, `QuestS
  /*  PointOption  */ 0,
  /*  LogTitle  */ 'Die Verfeinerung',
  /*  LogDescription  */  'Bringt mir die glitzernde Spinnenseide.',
- /*  QuestDescription   */ 'Hallo $N, wir haben den fertiggestellten Anh�nger hier. Nun muss er mit glitzernder Spinnenseide umgarnt werden. Diese k�nnen wir nur bei der K�nigin der Spinnen finden. Maexxa. Geht zu ihr und entwedet ihr diesen extrem seltenen Seidenstoff. ',
+ /*  QuestDescription   */ 'Hallo $N, wir haben den fertiggestellten Anhaenger hier. Nun muss er mit glitzernder Spinnenseide umgarnt werden. Diese koennen wir nur bei der Koenigin der Spinnen finden. Maexxa. Geht zu ihr und entwedet ihr diesen extrem seltenen Seidenstoff. ',
  /*  EndText   */  '',
  /*  OfferRewardText  */  'Seid ihr fertig?',
  /*  RequestItemsText  */ 'Bringt mir die glitzernde Spinnenseide.',
@@ -28538,7 +28538,7 @@ REPLACE INTO `quest_template` (`ID`, `Method`, `QuestLevel`, `MinLevel`, `QuestS
  /*  PointOption  */ 0,
  /*  LogTitle  */ 'Das flammende Herz',
  /*  LogDescription  */  'Bringt Torvan das flammende Herz',
- /*  QuestDescription   */ 'Jetzt wo ihr mir mein Gold gebracht habt, kann ich ja normal mit Euch reden. Bringt mir das flammende Herz des Verdammniswandlers! �s ist ein wertvolles episches St�ck! Damit l�sst sich auf dem Schwarzmarkt ein guter Preis erzielen.',
+ /*  QuestDescription   */ 'Jetzt wo ihr mir mein Gold gebracht habt, kann ich ja normal mit Euch reden. Bringt mir das flammende Herz des Verdammniswandlers! �s ist ein wertvolles episches Stueck! Damit laesst sich auf dem Schwarzmarkt ein guter Preis erzielen.',
  /*  EndText   */  '',
  /*  OfferRewardText  */  'Seid ihr fertig?',
  /*  RequestItemsText  */ 'Bringt Torvan das flammende Herz',
@@ -28699,7 +28699,7 @@ REPLACE INTO `quest_template` (`ID`, `Method`, `QuestLevel`, `MinLevel`, `QuestS
  /*  PointOption  */ 0,
  /*  LogTitle  */ 'Das brennende Herz',
  /*  LogDescription  */  'Bringt Torvan das brennende Herz',
- /*  QuestDescription   */ 'Der Verkauf des flammenden Herzen hat mir eine Menge Gold eingebracht. Ich habe von einem weiteren Herzen geh�rt. Bringt mir das brennende Herz des Verdammniswandlers Kazzak! �s ist ein wertvolles episches St�ck! Damit l�sst sich auf dem Schwarzmarkt ein guter Preis erzielen. Wenn ihr mir beides gebracht habt, bekommt ihr ein Teil des Erl�ses.',
+ /*  QuestDescription   */ 'Der Verkauf des flammenden Herzen hat mir eine Menge Gold eingebracht. Ich habe von einem weiteren Herzen gehoert. Bringt mir das brennende Herz des Verdammniswandlers Kazzak! �s ist ein wertvolles episches Stueck! Damit laesst sich auf dem Schwarzmarkt ein guter Preis erzielen. Wenn ihr mir beides gebracht habt, bekommt ihr ein Teil des Erloeses.',
  /*  EndText   */  '',
  /*  OfferRewardText  */  'Seid ihr fertig?',
  /*  RequestItemsText  */ 'Bringt Torvan das brennende Herz',
@@ -28859,7 +28859,7 @@ REPLACE INTO `quest_template` (`ID`, `Method`, `QuestLevel`, `MinLevel`, `QuestS
  /*  PointOption  */ 0,
  /*  LogTitle  */ 'Reise zum Au�enposten der Sammler',
  /*  LogDescription  */  'Reist zum Au�enposten der Sammler um Euch dort mit Moons Stellvertreter zu treffen.',
- /*  QuestDescription   */ 'Hallo $N. Ihr habt es geschafft. Ihr habt bewiesen das ihr w�rdig seid den Sammlern gegen�ber treten zu k�nnen. Am Flussnabel ist unser erster Au�enposten. Rei�t dorthin um in unsere Gemeinschaft aufgenommen zu werden.',
+ /*  QuestDescription   */ 'Hallo $N. Ihr habt es geschafft. Ihr habt bewiesen das ihr wuerdig seid den Sammlern gegenueber treten zu koennen. Am Flussnabel ist unser erster Au�enposten. Rei�t dorthin um in unsere Gemeinschaft aufgenommen zu werden.',
  /*  EndText */  '',
  /*  OfferRewardText bevor man beendet  */  'Reist zum Au�enposten der Sammler um Euch dort mit Moons Stellvertreter zu treffen.',
  /*  RequestItemsText  */ 'Hallo $N, hast du die Aufgabe abgeschlossen?',
@@ -29016,10 +29016,10 @@ REPLACE INTO `quest_template` (`ID`, `Method`, `QuestLevel`, `MinLevel`, `QuestS
  /*  PointY  */ 0,
  /*  PointOption  */ 0,
  /*  LogTitle  */ 'Die Prinzessin',
- /*  LogDescription  */  'Geht zur Prinzessin der Sammler und h�rt Euch ihre Geschichte an.',
- /*  QuestDescription   */ 'Hallo $N. Willkommen im Au�enposten der Sammler. Macht es Euch bequem, und wenn ihr Interesse habt geht zu Prinzessin Alanna. Sie braucht bestimmt ein offenes Ohr. Wenn ihr Zeit habt, wird sie Euch vielleicht etwas erz�hlen.',
+ /*  LogDescription  */  'Geht zur Prinzessin der Sammler und hoert Euch ihre Geschichte an.',
+ /*  QuestDescription   */ 'Hallo $N. Willkommen im Au�enposten der Sammler. Macht es Euch bequem, und wenn ihr Interesse habt geht zu Prinzessin Alanna. Sie braucht bestimmt ein offenes Ohr. Wenn ihr Zeit habt, wird sie Euch vielleicht etwas erzaehlen.',
  /*  EndText */  '',
- /*  OfferRewardText bevor man beendet  */  'Geht zur Prinzessin der Sammler und h�rt Euch ihre Geschichte an.',
+ /*  OfferRewardText bevor man beendet  */  'Geht zur Prinzessin der Sammler und hoert Euch ihre Geschichte an.',
  /*  RequestItemsText  */ 'Hallo $N, hast du die Aufgabe abgeschlossen?',
  /*  Quest Completed Text wird rechts im Questlog angezeigt der Text */ '',
  /*  RequiredNpcOrGo1  */ 0,
@@ -29174,11 +29174,11 @@ REPLACE INTO `quest_template` (`ID`, `Method`, `QuestLevel`, `MinLevel`, `QuestS
  /*  PointY  */ 0,
  /*  PointOption  */ 0,
  /*  LogTitle  */ 'Die verlorene Scherbe',
- /*  LogDescription  */  'Bringt mir meine Scherbe zur�ck sofort.',
- /*  QuestDescription   */ 'Hey $c. Ich hab meine Scherbe verloren und da ich geh�rt habe ihr m�sst f�r uns arbeiten und vorallem f�r mich, die wundersch�ne Prinzessin, sollt ihr mir die Scherbe zur�ckholen. Und wenn ihr sie auch nur ein bisschen verkratzt braucht ihr gar nicht zur�ck kommen. Ich werde mich dann bei Moon beschweren.',
+ /*  LogDescription  */  'Bringt mir meine Scherbe zurueck sofort.',
+ /*  QuestDescription   */ 'Hey $c. Ich hab meine Scherbe verloren und da ich gehoert habe ihr muesst fuer uns arbeiten und vorallem fuer mich, die wunderschoene Prinzessin, sollt ihr mir die Scherbe zurueckholen. Und wenn ihr sie auch nur ein bisschen verkratzt braucht ihr gar nicht zurueck kommen. Ich werde mich dann bei Moon beschweren.',
  /*  EndText */  '',
- /*  OfferRewardText bevor man beendet  */  'Bringt mir meine Scherbe zur�ck sofort.',
- /*  RequestItemsText  */ '$C $N, warst du endlich f�hig die Aufgabe abzuschlie�en?',
+ /*  OfferRewardText bevor man beendet  */  'Bringt mir meine Scherbe zurueck sofort.',
+ /*  RequestItemsText  */ '$C $N, warst du endlich faehig die Aufgabe abzuschlie�en?',
  /*  Quest Completed Text wird rechts im Questlog angezeigt der Text */ '',
  /*  RequiredNpcOrGo1  */ 0,
  /*  RequiredNpcOrGo2  */ 0,
@@ -29332,10 +29332,10 @@ REPLACE INTO `quest_template` (`ID`, `Method`, `QuestLevel`, `MinLevel`, `QuestS
  /*  PointY  */ 0,
  /*  PointOption  */ 0,
  /*  LogTitle  */ 'MMOWNING WORLD',
- /*  LogDescription  */  'Sammelt 600 K�nigstinte, 600 L�wentinte, 450 Meerestinte',
- /*  QuestDescription   */ 'Hallo $N. Heute m�sst ihr mir Tinten sammeln. Ich brauche einiges an Tinten da ich die Bibel neu schreiben m�chte. Und das per Hand. Da braucht man eben unter Wasser einiges an Tinten.',
+ /*  LogDescription  */  'Sammelt 600 Koenigstinte, 600 Loewentinte, 450 Meerestinte',
+ /*  QuestDescription   */ 'Hallo $N. Heute muesst ihr mir Tinten sammeln. Ich brauche einiges an Tinten da ich die Bibel neu schreiben moechte. Und das per Hand. Da braucht man eben unter Wasser einiges an Tinten.',
  /*  EndText */  '',
- /*  OfferRewardText bevor man beendet  */  'Geht zu Orca und begr��t ihn hier auf MMOwning World.',
+ /*  OfferRewardText bevor man beendet  */  'Geht zu Orca und begrue�t ihn hier auf MMOwning World.',
  /*  RequestItemsText  */ 'Hallo $N, hast du die Aufgabe abgeschlossen?',
  /*  Quest Completed Text wird rechts im Questlog angezeigt der Text */ '',
  /*  RequiredNpcOrGo1  */ 0,
@@ -29430,12 +29430,12 @@ DELETE FROM `creature_loot_template` WHERE `Entry` = 17308 and `Item` = 700510;
 REPLACE INTO `creature_loot_template` (`Entry`, `Item`, `Reference`, `Chance`, `QuestRequired`, `LootMode`, `GroupId`, `MinCount`, `MaxCount`) 
 VALUES ('17308', '700510', '0', '2.5', '1', '1', '0', '1', '1');
 DELETE FROM `item_template` WHERE `entry` = 700510;
-REPLACE INTO `item_template` (`entry`, `class`, `subclass`, `name`, `displayid`, `Quality`, `Flags`, `FlagsExtra`, `BuyCount`, `BuyPrice`, `SellPrice`, `InventoryType`, `AllowableClass`, `AllowableRace`, `ItemLevel`, `RequiredLevel`, `RequiredSkill`, `RequiredSkillRank`, `requiredspell`, `requiredhonorrank`, `RequiredCityRank`, `RequiredReputationFaction`, `RequiredReputationRank`, `maxcount`, `stackable`, `ContainerSlots`, `StatsCount`, `stat_type1`, `stat_value1`, `stat_type2`, `stat_value2`, `stat_type3`, `stat_value3`, `stat_type4`, `stat_value4`, `stat_type5`, `stat_value5`, `stat_type6`, `stat_value6`, `stat_type7`, `stat_value7`, `stat_type8`, `stat_value8`, `stat_type9`, `stat_value9`, `stat_type10`, `stat_value10`, `ScalingStatDistribution`, `ScalingStatValue`, `dmg_min1`, `dmg_max1`, `dmg_type1`, `dmg_min2`, `dmg_max2`, `dmg_type2`, `armor`, `holy_res`, `fire_res`, `nature_res`, `frost_res`, `shadow_res`, `arcane_res`, `delay`, `ammo_type`, `RangedModRange`, `spellid_1`, `spelltrigger_1`, `spellcharges_1`, `spellppmRate_1`, `spellcooldown_1`, `spellcategory_1`, `spellcategorycooldown_1`, `spellid_2`, `spelltrigger_2`, `spellcharges_2`, `spellppmRate_2`, `spellcooldown_2`, `spellcategory_2`, `spellcategorycooldown_2`, `spellid_3`, `spelltrigger_3`, `spellcharges_3`, `spellppmRate_3`, `spellcooldown_3`, `spellcategory_3`, `spellcategorycooldown_3`, `spellid_4`, `spelltrigger_4`, `spellcharges_4`, `spellppmRate_4`, `spellcooldown_4`, `spellcategory_4`, `spellcategorycooldown_4`, `spellid_5`, `spelltrigger_5`, `spellcharges_5`, `spellppmRate_5`, `spellcooldown_5`, `spellcategory_5`, `spellcategorycooldown_5`, `bonding`, `description`, `PageText`, `LanguageID`, `PageMaterial`, `startquest`, `lockid`, `Material`, `sheath`, `RandomProperty`, `RandomSuffix`, `block`, `itemset`, `MaxDurability`, `area`, `Map`, `BagFamily`, `TotemCategory`, `socketColor_1`, `socketContent_1`, `socketColor_2`, `socketContent_2`, `socketColor_3`, `socketContent_3`, `socketBonus`, `GemProperties`, `RequiredDisenchantSkill`, `ArmorDamageModifier`, `duration`, `ItemLimitCategory`, `HolidayId`, `ScriptName`, `DisenchantID`, `FoodType`, `minMoneyLoot`, `maxMoneyLoot`, `flagsCustom`) VALUES (700510, 12, 0, 'Zerbrochenes St�ck des Anh�ngers', 7339, 5, 8, 0, 0, 0, 0, 0, 2047, 1791, 1, 80, 0, 0, 0, 0, 0, 1770, 0, 1, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 'Er strahlt Liebe aus.', 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 4);
+REPLACE INTO `item_template` (`entry`, `class`, `subclass`, `name`, `displayid`, `Quality`, `Flags`, `FlagsExtra`, `BuyCount`, `BuyPrice`, `SellPrice`, `InventoryType`, `AllowableClass`, `AllowableRace`, `ItemLevel`, `RequiredLevel`, `RequiredSkill`, `RequiredSkillRank`, `requiredspell`, `requiredhonorrank`, `RequiredCityRank`, `RequiredReputationFaction`, `RequiredReputationRank`, `maxcount`, `stackable`, `ContainerSlots`, `StatsCount`, `stat_type1`, `stat_value1`, `stat_type2`, `stat_value2`, `stat_type3`, `stat_value3`, `stat_type4`, `stat_value4`, `stat_type5`, `stat_value5`, `stat_type6`, `stat_value6`, `stat_type7`, `stat_value7`, `stat_type8`, `stat_value8`, `stat_type9`, `stat_value9`, `stat_type10`, `stat_value10`, `ScalingStatDistribution`, `ScalingStatValue`, `dmg_min1`, `dmg_max1`, `dmg_type1`, `dmg_min2`, `dmg_max2`, `dmg_type2`, `armor`, `holy_res`, `fire_res`, `nature_res`, `frost_res`, `shadow_res`, `arcane_res`, `delay`, `ammo_type`, `RangedModRange`, `spellid_1`, `spelltrigger_1`, `spellcharges_1`, `spellppmRate_1`, `spellcooldown_1`, `spellcategory_1`, `spellcategorycooldown_1`, `spellid_2`, `spelltrigger_2`, `spellcharges_2`, `spellppmRate_2`, `spellcooldown_2`, `spellcategory_2`, `spellcategorycooldown_2`, `spellid_3`, `spelltrigger_3`, `spellcharges_3`, `spellppmRate_3`, `spellcooldown_3`, `spellcategory_3`, `spellcategorycooldown_3`, `spellid_4`, `spelltrigger_4`, `spellcharges_4`, `spellppmRate_4`, `spellcooldown_4`, `spellcategory_4`, `spellcategorycooldown_4`, `spellid_5`, `spelltrigger_5`, `spellcharges_5`, `spellppmRate_5`, `spellcooldown_5`, `spellcategory_5`, `spellcategorycooldown_5`, `bonding`, `description`, `PageText`, `LanguageID`, `PageMaterial`, `startquest`, `lockid`, `Material`, `sheath`, `RandomProperty`, `RandomSuffix`, `block`, `itemset`, `MaxDurability`, `area`, `Map`, `BagFamily`, `TotemCategory`, `socketColor_1`, `socketContent_1`, `socketColor_2`, `socketContent_2`, `socketColor_3`, `socketContent_3`, `socketBonus`, `GemProperties`, `RequiredDisenchantSkill`, `ArmorDamageModifier`, `duration`, `ItemLimitCategory`, `HolidayId`, `ScriptName`, `DisenchantID`, `FoodType`, `minMoneyLoot`, `maxMoneyLoot`, `flagsCustom`) VALUES (700510, 12, 0, 'Zerbrochenes Stueck des Anhaengers', 7339, 5, 8, 0, 0, 0, 0, 0, 2047, 1791, 1, 80, 0, 0, 0, 0, 0, 1770, 0, 1, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 'Er strahlt Liebe aus.', 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 4);
 
 
 
 DELETE FROM `item_template` WHERE `entry` = 700511;
-REPLACE INTO `item_template` (`entry`, `class`, `subclass`, `name`, `displayid`, `Quality`, `Flags`, `FlagsExtra`, `BuyCount`, `BuyPrice`, `SellPrice`, `InventoryType`, `AllowableClass`, `AllowableRace`, `ItemLevel`, `RequiredLevel`, `RequiredSkill`, `RequiredSkillRank`, `requiredspell`, `requiredhonorrank`, `RequiredCityRank`, `RequiredReputationFaction`, `RequiredReputationRank`, `maxcount`, `stackable`, `ContainerSlots`, `StatsCount`, `stat_type1`, `stat_value1`, `stat_type2`, `stat_value2`, `stat_type3`, `stat_value3`, `stat_type4`, `stat_value4`, `stat_type5`, `stat_value5`, `stat_type6`, `stat_value6`, `stat_type7`, `stat_value7`, `stat_type8`, `stat_value8`, `stat_type9`, `stat_value9`, `stat_type10`, `stat_value10`, `ScalingStatDistribution`, `ScalingStatValue`, `dmg_min1`, `dmg_max1`, `dmg_type1`, `dmg_min2`, `dmg_max2`, `dmg_type2`, `armor`, `holy_res`, `fire_res`, `nature_res`, `frost_res`, `shadow_res`, `arcane_res`, `delay`, `ammo_type`, `RangedModRange`, `spellid_1`, `spelltrigger_1`, `spellcharges_1`, `spellppmRate_1`, `spellcooldown_1`, `spellcategory_1`, `spellcategorycooldown_1`, `spellid_2`, `spelltrigger_2`, `spellcharges_2`, `spellppmRate_2`, `spellcooldown_2`, `spellcategory_2`, `spellcategorycooldown_2`, `spellid_3`, `spelltrigger_3`, `spellcharges_3`, `spellppmRate_3`, `spellcooldown_3`, `spellcategory_3`, `spellcategorycooldown_3`, `spellid_4`, `spelltrigger_4`, `spellcharges_4`, `spellppmRate_4`, `spellcooldown_4`, `spellcategory_4`, `spellcategorycooldown_4`, `spellid_5`, `spelltrigger_5`, `spellcharges_5`, `spellppmRate_5`, `spellcooldown_5`, `spellcategory_5`, `spellcategorycooldown_5`, `bonding`, `description`, `PageText`, `LanguageID`, `PageMaterial`, `startquest`, `lockid`, `Material`, `sheath`, `RandomProperty`, `RandomSuffix`, `block`, `itemset`, `MaxDurability`, `area`, `Map`, `BagFamily`, `TotemCategory`, `socketColor_1`, `socketContent_1`, `socketColor_2`, `socketContent_2`, `socketColor_3`, `socketContent_3`, `socketBonus`, `GemProperties`, `RequiredDisenchantSkill`, `ArmorDamageModifier`, `duration`, `ItemLimitCategory`, `HolidayId`, `ScriptName`, `DisenchantID`, `FoodType`, `minMoneyLoot`, `maxMoneyLoot`, `flagsCustom`) VALUES (700511, 12, 0, 'Magisches Medallion der Sammler', 7339, 5, 72, 0, 0, 0, 0, 0, 2047, 1791, 1, 80, 0, 0, 0, 0, 0, 1770, 0, 1, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 'Magische T�ne kommen aus dem Inneren.', 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0,'teleportitem', 0, 0, 0, 0, 4);
+REPLACE INTO `item_template` (`entry`, `class`, `subclass`, `name`, `displayid`, `Quality`, `Flags`, `FlagsExtra`, `BuyCount`, `BuyPrice`, `SellPrice`, `InventoryType`, `AllowableClass`, `AllowableRace`, `ItemLevel`, `RequiredLevel`, `RequiredSkill`, `RequiredSkillRank`, `requiredspell`, `requiredhonorrank`, `RequiredCityRank`, `RequiredReputationFaction`, `RequiredReputationRank`, `maxcount`, `stackable`, `ContainerSlots`, `StatsCount`, `stat_type1`, `stat_value1`, `stat_type2`, `stat_value2`, `stat_type3`, `stat_value3`, `stat_type4`, `stat_value4`, `stat_type5`, `stat_value5`, `stat_type6`, `stat_value6`, `stat_type7`, `stat_value7`, `stat_type8`, `stat_value8`, `stat_type9`, `stat_value9`, `stat_type10`, `stat_value10`, `ScalingStatDistribution`, `ScalingStatValue`, `dmg_min1`, `dmg_max1`, `dmg_type1`, `dmg_min2`, `dmg_max2`, `dmg_type2`, `armor`, `holy_res`, `fire_res`, `nature_res`, `frost_res`, `shadow_res`, `arcane_res`, `delay`, `ammo_type`, `RangedModRange`, `spellid_1`, `spelltrigger_1`, `spellcharges_1`, `spellppmRate_1`, `spellcooldown_1`, `spellcategory_1`, `spellcategorycooldown_1`, `spellid_2`, `spelltrigger_2`, `spellcharges_2`, `spellppmRate_2`, `spellcooldown_2`, `spellcategory_2`, `spellcategorycooldown_2`, `spellid_3`, `spelltrigger_3`, `spellcharges_3`, `spellppmRate_3`, `spellcooldown_3`, `spellcategory_3`, `spellcategorycooldown_3`, `spellid_4`, `spelltrigger_4`, `spellcharges_4`, `spellppmRate_4`, `spellcooldown_4`, `spellcategory_4`, `spellcategorycooldown_4`, `spellid_5`, `spelltrigger_5`, `spellcharges_5`, `spellppmRate_5`, `spellcooldown_5`, `spellcategory_5`, `spellcategorycooldown_5`, `bonding`, `description`, `PageText`, `LanguageID`, `PageMaterial`, `startquest`, `lockid`, `Material`, `sheath`, `RandomProperty`, `RandomSuffix`, `block`, `itemset`, `MaxDurability`, `area`, `Map`, `BagFamily`, `TotemCategory`, `socketColor_1`, `socketContent_1`, `socketColor_2`, `socketContent_2`, `socketColor_3`, `socketContent_3`, `socketBonus`, `GemProperties`, `RequiredDisenchantSkill`, `ArmorDamageModifier`, `duration`, `ItemLimitCategory`, `HolidayId`, `ScriptName`, `DisenchantID`, `FoodType`, `minMoneyLoot`, `maxMoneyLoot`, `flagsCustom`) VALUES (700511, 12, 0, 'Magisches Medallion der Sammler', 7339, 5, 72, 0, 0, 0, 0, 0, 2047, 1791, 1, 80, 0, 0, 0, 0, 0, 1770, 0, 1, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 'Magische Toene kommen aus dem Inneren.', 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0,'teleportitem', 0, 0, 0, 0, 4);
 
 
 
@@ -29443,25 +29443,25 @@ DELETE FROM `creature_loot_template` WHERE `Entry` = 20886 and `Item` = 700512;
 REPLACE INTO `creature_loot_template` (`Entry`, `Item`, `Reference`, `Chance`, `QuestRequired`, `LootMode`, `GroupId`, `MinCount`, `MaxCount`) 
 VALUES ('20886', '700512', '0', '2.5', '1', '1', '0', '1', '1');
 DELETE FROM `item_template` WHERE `entry` = 700512;
-REPLACE INTO `item_template` (`entry`, `class`, `subclass`, `name`, `displayid`, `Quality`, `Flags`, `FlagsExtra`, `BuyCount`, `BuyPrice`, `SellPrice`, `InventoryType`, `AllowableClass`, `AllowableRace`, `ItemLevel`, `RequiredLevel`, `RequiredSkill`, `RequiredSkillRank`, `requiredspell`, `requiredhonorrank`, `RequiredCityRank`, `RequiredReputationFaction`, `RequiredReputationRank`, `maxcount`, `stackable`, `ContainerSlots`, `StatsCount`, `stat_type1`, `stat_value1`, `stat_type2`, `stat_value2`, `stat_type3`, `stat_value3`, `stat_type4`, `stat_value4`, `stat_type5`, `stat_value5`, `stat_type6`, `stat_value6`, `stat_type7`, `stat_value7`, `stat_type8`, `stat_value8`, `stat_type9`, `stat_value9`, `stat_type10`, `stat_value10`, `ScalingStatDistribution`, `ScalingStatValue`, `dmg_min1`, `dmg_max1`, `dmg_type1`, `dmg_min2`, `dmg_max2`, `dmg_type2`, `armor`, `holy_res`, `fire_res`, `nature_res`, `frost_res`, `shadow_res`, `arcane_res`, `delay`, `ammo_type`, `RangedModRange`, `spellid_1`, `spelltrigger_1`, `spellcharges_1`, `spellppmRate_1`, `spellcooldown_1`, `spellcategory_1`, `spellcategorycooldown_1`, `spellid_2`, `spelltrigger_2`, `spellcharges_2`, `spellppmRate_2`, `spellcooldown_2`, `spellcategory_2`, `spellcategorycooldown_2`, `spellid_3`, `spelltrigger_3`, `spellcharges_3`, `spellppmRate_3`, `spellcooldown_3`, `spellcategory_3`, `spellcategorycooldown_3`, `spellid_4`, `spelltrigger_4`, `spellcharges_4`, `spellppmRate_4`, `spellcooldown_4`, `spellcategory_4`, `spellcategorycooldown_4`, `spellid_5`, `spelltrigger_5`, `spellcharges_5`, `spellppmRate_5`, `spellcooldown_5`, `spellcategory_5`, `spellcategorycooldown_5`, `bonding`, `description`, `PageText`, `LanguageID`, `PageMaterial`, `startquest`, `lockid`, `Material`, `sheath`, `RandomProperty`, `RandomSuffix`, `block`, `itemset`, `MaxDurability`, `area`, `Map`, `BagFamily`, `TotemCategory`, `socketColor_1`, `socketContent_1`, `socketColor_2`, `socketContent_2`, `socketColor_3`, `socketContent_3`, `socketBonus`, `GemProperties`, `RequiredDisenchantSkill`, `ArmorDamageModifier`, `duration`, `ItemLimitCategory`, `HolidayId`, `ScriptName`, `DisenchantID`, `FoodType`, `minMoneyLoot`, `maxMoneyLoot`, `flagsCustom`) VALUES (700512, 12, 0, 'Zerbrochenes St�ck des Anh�ngers', 7339, 5, 8, 0, 0, 0, 0, 0, 2047, 1791, 1, 80, 0, 0, 0, 0, 0, 1770, 0, 1, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 'Er strahlt Liebe aus.', 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 4);
+REPLACE INTO `item_template` (`entry`, `class`, `subclass`, `name`, `displayid`, `Quality`, `Flags`, `FlagsExtra`, `BuyCount`, `BuyPrice`, `SellPrice`, `InventoryType`, `AllowableClass`, `AllowableRace`, `ItemLevel`, `RequiredLevel`, `RequiredSkill`, `RequiredSkillRank`, `requiredspell`, `requiredhonorrank`, `RequiredCityRank`, `RequiredReputationFaction`, `RequiredReputationRank`, `maxcount`, `stackable`, `ContainerSlots`, `StatsCount`, `stat_type1`, `stat_value1`, `stat_type2`, `stat_value2`, `stat_type3`, `stat_value3`, `stat_type4`, `stat_value4`, `stat_type5`, `stat_value5`, `stat_type6`, `stat_value6`, `stat_type7`, `stat_value7`, `stat_type8`, `stat_value8`, `stat_type9`, `stat_value9`, `stat_type10`, `stat_value10`, `ScalingStatDistribution`, `ScalingStatValue`, `dmg_min1`, `dmg_max1`, `dmg_type1`, `dmg_min2`, `dmg_max2`, `dmg_type2`, `armor`, `holy_res`, `fire_res`, `nature_res`, `frost_res`, `shadow_res`, `arcane_res`, `delay`, `ammo_type`, `RangedModRange`, `spellid_1`, `spelltrigger_1`, `spellcharges_1`, `spellppmRate_1`, `spellcooldown_1`, `spellcategory_1`, `spellcategorycooldown_1`, `spellid_2`, `spelltrigger_2`, `spellcharges_2`, `spellppmRate_2`, `spellcooldown_2`, `spellcategory_2`, `spellcategorycooldown_2`, `spellid_3`, `spelltrigger_3`, `spellcharges_3`, `spellppmRate_3`, `spellcooldown_3`, `spellcategory_3`, `spellcategorycooldown_3`, `spellid_4`, `spelltrigger_4`, `spellcharges_4`, `spellppmRate_4`, `spellcooldown_4`, `spellcategory_4`, `spellcategorycooldown_4`, `spellid_5`, `spelltrigger_5`, `spellcharges_5`, `spellppmRate_5`, `spellcooldown_5`, `spellcategory_5`, `spellcategorycooldown_5`, `bonding`, `description`, `PageText`, `LanguageID`, `PageMaterial`, `startquest`, `lockid`, `Material`, `sheath`, `RandomProperty`, `RandomSuffix`, `block`, `itemset`, `MaxDurability`, `area`, `Map`, `BagFamily`, `TotemCategory`, `socketColor_1`, `socketContent_1`, `socketColor_2`, `socketContent_2`, `socketColor_3`, `socketContent_3`, `socketBonus`, `GemProperties`, `RequiredDisenchantSkill`, `ArmorDamageModifier`, `duration`, `ItemLimitCategory`, `HolidayId`, `ScriptName`, `DisenchantID`, `FoodType`, `minMoneyLoot`, `maxMoneyLoot`, `flagsCustom`) VALUES (700512, 12, 0, 'Zerbrochenes Stueck des Anhaengers', 7339, 5, 8, 0, 0, 0, 0, 0, 2047, 1791, 1, 80, 0, 0, 0, 0, 0, 1770, 0, 1, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 'Er strahlt Liebe aus.', 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 4);
 
 
 DELETE FROM `creature_loot_template` WHERE `Entry` = 17798 and `Item` = 700513;
 REPLACE INTO `creature_loot_template` (`Entry`, `Item`, `Reference`, `Chance`, `QuestRequired`, `LootMode`, `GroupId`, `MinCount`, `MaxCount`) 
 VALUES ('17798', '700513', '0', '2.5', '1', '1', '0', '1', '1');
 DELETE FROM `item_template` WHERE `entry` = 700513;
-REPLACE INTO `item_template` (`entry`, `class`, `subclass`, `name`, `displayid`, `Quality`, `Flags`, `FlagsExtra`, `BuyCount`, `BuyPrice`, `SellPrice`, `InventoryType`, `AllowableClass`, `AllowableRace`, `ItemLevel`, `RequiredLevel`, `RequiredSkill`, `RequiredSkillRank`, `requiredspell`, `requiredhonorrank`, `RequiredCityRank`, `RequiredReputationFaction`, `RequiredReputationRank`, `maxcount`, `stackable`, `ContainerSlots`, `StatsCount`, `stat_type1`, `stat_value1`, `stat_type2`, `stat_value2`, `stat_type3`, `stat_value3`, `stat_type4`, `stat_value4`, `stat_type5`, `stat_value5`, `stat_type6`, `stat_value6`, `stat_type7`, `stat_value7`, `stat_type8`, `stat_value8`, `stat_type9`, `stat_value9`, `stat_type10`, `stat_value10`, `ScalingStatDistribution`, `ScalingStatValue`, `dmg_min1`, `dmg_max1`, `dmg_type1`, `dmg_min2`, `dmg_max2`, `dmg_type2`, `armor`, `holy_res`, `fire_res`, `nature_res`, `frost_res`, `shadow_res`, `arcane_res`, `delay`, `ammo_type`, `RangedModRange`, `spellid_1`, `spelltrigger_1`, `spellcharges_1`, `spellppmRate_1`, `spellcooldown_1`, `spellcategory_1`, `spellcategorycooldown_1`, `spellid_2`, `spelltrigger_2`, `spellcharges_2`, `spellppmRate_2`, `spellcooldown_2`, `spellcategory_2`, `spellcategorycooldown_2`, `spellid_3`, `spelltrigger_3`, `spellcharges_3`, `spellppmRate_3`, `spellcooldown_3`, `spellcategory_3`, `spellcategorycooldown_3`, `spellid_4`, `spelltrigger_4`, `spellcharges_4`, `spellppmRate_4`, `spellcooldown_4`, `spellcategory_4`, `spellcategorycooldown_4`, `spellid_5`, `spelltrigger_5`, `spellcharges_5`, `spellppmRate_5`, `spellcooldown_5`, `spellcategory_5`, `spellcategorycooldown_5`, `bonding`, `description`, `PageText`, `LanguageID`, `PageMaterial`, `startquest`, `lockid`, `Material`, `sheath`, `RandomProperty`, `RandomSuffix`, `block`, `itemset`, `MaxDurability`, `area`, `Map`, `BagFamily`, `TotemCategory`, `socketColor_1`, `socketContent_1`, `socketColor_2`, `socketContent_2`, `socketColor_3`, `socketContent_3`, `socketBonus`, `GemProperties`, `RequiredDisenchantSkill`, `ArmorDamageModifier`, `duration`, `ItemLimitCategory`, `HolidayId`, `ScriptName`, `DisenchantID`, `FoodType`, `minMoneyLoot`, `maxMoneyLoot`, `flagsCustom`) VALUES (700513, 12, 0, 'Zerbrochenes St�ck des Anh�ngers', 7339, 5, 8, 0, 0, 0, 0, 0, 2047, 1791, 1, 80, 0, 0, 0, 0, 0, 1770, 0, 1, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 'Er strahlt Liebe aus.', 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 4);
+REPLACE INTO `item_template` (`entry`, `class`, `subclass`, `name`, `displayid`, `Quality`, `Flags`, `FlagsExtra`, `BuyCount`, `BuyPrice`, `SellPrice`, `InventoryType`, `AllowableClass`, `AllowableRace`, `ItemLevel`, `RequiredLevel`, `RequiredSkill`, `RequiredSkillRank`, `requiredspell`, `requiredhonorrank`, `RequiredCityRank`, `RequiredReputationFaction`, `RequiredReputationRank`, `maxcount`, `stackable`, `ContainerSlots`, `StatsCount`, `stat_type1`, `stat_value1`, `stat_type2`, `stat_value2`, `stat_type3`, `stat_value3`, `stat_type4`, `stat_value4`, `stat_type5`, `stat_value5`, `stat_type6`, `stat_value6`, `stat_type7`, `stat_value7`, `stat_type8`, `stat_value8`, `stat_type9`, `stat_value9`, `stat_type10`, `stat_value10`, `ScalingStatDistribution`, `ScalingStatValue`, `dmg_min1`, `dmg_max1`, `dmg_type1`, `dmg_min2`, `dmg_max2`, `dmg_type2`, `armor`, `holy_res`, `fire_res`, `nature_res`, `frost_res`, `shadow_res`, `arcane_res`, `delay`, `ammo_type`, `RangedModRange`, `spellid_1`, `spelltrigger_1`, `spellcharges_1`, `spellppmRate_1`, `spellcooldown_1`, `spellcategory_1`, `spellcategorycooldown_1`, `spellid_2`, `spelltrigger_2`, `spellcharges_2`, `spellppmRate_2`, `spellcooldown_2`, `spellcategory_2`, `spellcategorycooldown_2`, `spellid_3`, `spelltrigger_3`, `spellcharges_3`, `spellppmRate_3`, `spellcooldown_3`, `spellcategory_3`, `spellcategorycooldown_3`, `spellid_4`, `spelltrigger_4`, `spellcharges_4`, `spellppmRate_4`, `spellcooldown_4`, `spellcategory_4`, `spellcategorycooldown_4`, `spellid_5`, `spelltrigger_5`, `spellcharges_5`, `spellppmRate_5`, `spellcooldown_5`, `spellcategory_5`, `spellcategorycooldown_5`, `bonding`, `description`, `PageText`, `LanguageID`, `PageMaterial`, `startquest`, `lockid`, `Material`, `sheath`, `RandomProperty`, `RandomSuffix`, `block`, `itemset`, `MaxDurability`, `area`, `Map`, `BagFamily`, `TotemCategory`, `socketColor_1`, `socketContent_1`, `socketColor_2`, `socketContent_2`, `socketColor_3`, `socketContent_3`, `socketBonus`, `GemProperties`, `RequiredDisenchantSkill`, `ArmorDamageModifier`, `duration`, `ItemLimitCategory`, `HolidayId`, `ScriptName`, `DisenchantID`, `FoodType`, `minMoneyLoot`, `maxMoneyLoot`, `flagsCustom`) VALUES (700513, 12, 0, 'Zerbrochenes Stueck des Anhaengers', 7339, 5, 8, 0, 0, 0, 0, 0, 2047, 1791, 1, 80, 0, 0, 0, 0, 0, 1770, 0, 1, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 'Er strahlt Liebe aus.', 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 4);
 
 
 DELETE FROM `creature_loot_template` WHERE `Entry` = 17879 and `Item` = 700514;
 REPLACE INTO `creature_loot_template` (`Entry`, `Item`, `Reference`, `Chance`, `QuestRequired`, `LootMode`, `GroupId`, `MinCount`, `MaxCount`) 
 VALUES ('17879', '700514', '0', '2.5', '1', '1', '0', '1', '1');
 DELETE FROM `item_template` WHERE `entry` = 700514;
-REPLACE INTO `item_template` (`entry`, `class`, `subclass`, `name`, `displayid`, `Quality`, `Flags`, `FlagsExtra`, `BuyCount`, `BuyPrice`, `SellPrice`, `InventoryType`, `AllowableClass`, `AllowableRace`, `ItemLevel`, `RequiredLevel`, `RequiredSkill`, `RequiredSkillRank`, `requiredspell`, `requiredhonorrank`, `RequiredCityRank`, `RequiredReputationFaction`, `RequiredReputationRank`, `maxcount`, `stackable`, `ContainerSlots`, `StatsCount`, `stat_type1`, `stat_value1`, `stat_type2`, `stat_value2`, `stat_type3`, `stat_value3`, `stat_type4`, `stat_value4`, `stat_type5`, `stat_value5`, `stat_type6`, `stat_value6`, `stat_type7`, `stat_value7`, `stat_type8`, `stat_value8`, `stat_type9`, `stat_value9`, `stat_type10`, `stat_value10`, `ScalingStatDistribution`, `ScalingStatValue`, `dmg_min1`, `dmg_max1`, `dmg_type1`, `dmg_min2`, `dmg_max2`, `dmg_type2`, `armor`, `holy_res`, `fire_res`, `nature_res`, `frost_res`, `shadow_res`, `arcane_res`, `delay`, `ammo_type`, `RangedModRange`, `spellid_1`, `spelltrigger_1`, `spellcharges_1`, `spellppmRate_1`, `spellcooldown_1`, `spellcategory_1`, `spellcategorycooldown_1`, `spellid_2`, `spelltrigger_2`, `spellcharges_2`, `spellppmRate_2`, `spellcooldown_2`, `spellcategory_2`, `spellcategorycooldown_2`, `spellid_3`, `spelltrigger_3`, `spellcharges_3`, `spellppmRate_3`, `spellcooldown_3`, `spellcategory_3`, `spellcategorycooldown_3`, `spellid_4`, `spelltrigger_4`, `spellcharges_4`, `spellppmRate_4`, `spellcooldown_4`, `spellcategory_4`, `spellcategorycooldown_4`, `spellid_5`, `spelltrigger_5`, `spellcharges_5`, `spellppmRate_5`, `spellcooldown_5`, `spellcategory_5`, `spellcategorycooldown_5`, `bonding`, `description`, `PageText`, `LanguageID`, `PageMaterial`, `startquest`, `lockid`, `Material`, `sheath`, `RandomProperty`, `RandomSuffix`, `block`, `itemset`, `MaxDurability`, `area`, `Map`, `BagFamily`, `TotemCategory`, `socketColor_1`, `socketContent_1`, `socketColor_2`, `socketContent_2`, `socketColor_3`, `socketContent_3`, `socketBonus`, `GemProperties`, `RequiredDisenchantSkill`, `ArmorDamageModifier`, `duration`, `ItemLimitCategory`, `HolidayId`, `ScriptName`, `DisenchantID`, `FoodType`, `minMoneyLoot`, `maxMoneyLoot`, `flagsCustom`) VALUES (700514, 12, 0, 'Zerbrochenes St�ck des Anh�ngers', 7339, 5, 8, 0, 0, 0, 0, 0, 2047, 1791, 1, 80, 0, 0, 0, 0, 0, 1770, 0, 1, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 'Er strahlt Liebe aus.', 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 4);
+REPLACE INTO `item_template` (`entry`, `class`, `subclass`, `name`, `displayid`, `Quality`, `Flags`, `FlagsExtra`, `BuyCount`, `BuyPrice`, `SellPrice`, `InventoryType`, `AllowableClass`, `AllowableRace`, `ItemLevel`, `RequiredLevel`, `RequiredSkill`, `RequiredSkillRank`, `requiredspell`, `requiredhonorrank`, `RequiredCityRank`, `RequiredReputationFaction`, `RequiredReputationRank`, `maxcount`, `stackable`, `ContainerSlots`, `StatsCount`, `stat_type1`, `stat_value1`, `stat_type2`, `stat_value2`, `stat_type3`, `stat_value3`, `stat_type4`, `stat_value4`, `stat_type5`, `stat_value5`, `stat_type6`, `stat_value6`, `stat_type7`, `stat_value7`, `stat_type8`, `stat_value8`, `stat_type9`, `stat_value9`, `stat_type10`, `stat_value10`, `ScalingStatDistribution`, `ScalingStatValue`, `dmg_min1`, `dmg_max1`, `dmg_type1`, `dmg_min2`, `dmg_max2`, `dmg_type2`, `armor`, `holy_res`, `fire_res`, `nature_res`, `frost_res`, `shadow_res`, `arcane_res`, `delay`, `ammo_type`, `RangedModRange`, `spellid_1`, `spelltrigger_1`, `spellcharges_1`, `spellppmRate_1`, `spellcooldown_1`, `spellcategory_1`, `spellcategorycooldown_1`, `spellid_2`, `spelltrigger_2`, `spellcharges_2`, `spellppmRate_2`, `spellcooldown_2`, `spellcategory_2`, `spellcategorycooldown_2`, `spellid_3`, `spelltrigger_3`, `spellcharges_3`, `spellppmRate_3`, `spellcooldown_3`, `spellcategory_3`, `spellcategorycooldown_3`, `spellid_4`, `spelltrigger_4`, `spellcharges_4`, `spellppmRate_4`, `spellcooldown_4`, `spellcategory_4`, `spellcategorycooldown_4`, `spellid_5`, `spelltrigger_5`, `spellcharges_5`, `spellppmRate_5`, `spellcooldown_5`, `spellcategory_5`, `spellcategorycooldown_5`, `bonding`, `description`, `PageText`, `LanguageID`, `PageMaterial`, `startquest`, `lockid`, `Material`, `sheath`, `RandomProperty`, `RandomSuffix`, `block`, `itemset`, `MaxDurability`, `area`, `Map`, `BagFamily`, `TotemCategory`, `socketColor_1`, `socketContent_1`, `socketColor_2`, `socketContent_2`, `socketColor_3`, `socketContent_3`, `socketBonus`, `GemProperties`, `RequiredDisenchantSkill`, `ArmorDamageModifier`, `duration`, `ItemLimitCategory`, `HolidayId`, `ScriptName`, `DisenchantID`, `FoodType`, `minMoneyLoot`, `maxMoneyLoot`, `flagsCustom`) VALUES (700514, 12, 0, 'Zerbrochenes Stueck des Anhaengers', 7339, 5, 8, 0, 0, 0, 0, 0, 2047, 1791, 1, 80, 0, 0, 0, 0, 0, 1770, 0, 1, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 'Er strahlt Liebe aus.', 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 4);
 
 
 DELETE FROM `item_template` WHERE `entry` = 700515;
-REPLACE INTO `item_template` (`entry`, `class`, `subclass`, `name`, `displayid`, `Quality`, `Flags`, `FlagsExtra`, `BuyCount`, `BuyPrice`, `SellPrice`, `InventoryType`, `AllowableClass`, `AllowableRace`, `ItemLevel`, `RequiredLevel`, `RequiredSkill`, `RequiredSkillRank`, `requiredspell`, `requiredhonorrank`, `RequiredCityRank`, `RequiredReputationFaction`, `RequiredReputationRank`, `maxcount`, `stackable`, `ContainerSlots`, `StatsCount`, `stat_type1`, `stat_value1`, `stat_type2`, `stat_value2`, `stat_type3`, `stat_value3`, `stat_type4`, `stat_value4`, `stat_type5`, `stat_value5`, `stat_type6`, `stat_value6`, `stat_type7`, `stat_value7`, `stat_type8`, `stat_value8`, `stat_type9`, `stat_value9`, `stat_type10`, `stat_value10`, `ScalingStatDistribution`, `ScalingStatValue`, `dmg_min1`, `dmg_max1`, `dmg_type1`, `dmg_min2`, `dmg_max2`, `dmg_type2`, `armor`, `holy_res`, `fire_res`, `nature_res`, `frost_res`, `shadow_res`, `arcane_res`, `delay`, `ammo_type`, `RangedModRange`, `spellid_1`, `spelltrigger_1`, `spellcharges_1`, `spellppmRate_1`, `spellcooldown_1`, `spellcategory_1`, `spellcategorycooldown_1`, `spellid_2`, `spelltrigger_2`, `spellcharges_2`, `spellppmRate_2`, `spellcooldown_2`, `spellcategory_2`, `spellcategorycooldown_2`, `spellid_3`, `spelltrigger_3`, `spellcharges_3`, `spellppmRate_3`, `spellcooldown_3`, `spellcategory_3`, `spellcategorycooldown_3`, `spellid_4`, `spelltrigger_4`, `spellcharges_4`, `spellppmRate_4`, `spellcooldown_4`, `spellcategory_4`, `spellcategorycooldown_4`, `spellid_5`, `spelltrigger_5`, `spellcharges_5`, `spellppmRate_5`, `spellcooldown_5`, `spellcategory_5`, `spellcategorycooldown_5`, `bonding`, `description`, `PageText`, `LanguageID`, `PageMaterial`, `startquest`, `lockid`, `Material`, `sheath`, `RandomProperty`, `RandomSuffix`, `block`, `itemset`, `MaxDurability`, `area`, `Map`, `BagFamily`, `TotemCategory`, `socketColor_1`, `socketContent_1`, `socketColor_2`, `socketContent_2`, `socketColor_3`, `socketContent_3`, `socketBonus`, `GemProperties`, `RequiredDisenchantSkill`, `ArmorDamageModifier`, `duration`, `ItemLimitCategory`, `HolidayId`, `ScriptName`, `DisenchantID`, `FoodType`, `minMoneyLoot`, `maxMoneyLoot`, `flagsCustom`) VALUES (700515, 12, 0, 'Zusammengesetzter Anh�nger', 7339, 5, 8, 0, 0, 0, 0, 0, 2047, 1791, 1, 80, 0, 0, 0, 0, 0, 1770, 0, 1, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 'Magie durchstr�mt ihn.', 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 4);
+REPLACE INTO `item_template` (`entry`, `class`, `subclass`, `name`, `displayid`, `Quality`, `Flags`, `FlagsExtra`, `BuyCount`, `BuyPrice`, `SellPrice`, `InventoryType`, `AllowableClass`, `AllowableRace`, `ItemLevel`, `RequiredLevel`, `RequiredSkill`, `RequiredSkillRank`, `requiredspell`, `requiredhonorrank`, `RequiredCityRank`, `RequiredReputationFaction`, `RequiredReputationRank`, `maxcount`, `stackable`, `ContainerSlots`, `StatsCount`, `stat_type1`, `stat_value1`, `stat_type2`, `stat_value2`, `stat_type3`, `stat_value3`, `stat_type4`, `stat_value4`, `stat_type5`, `stat_value5`, `stat_type6`, `stat_value6`, `stat_type7`, `stat_value7`, `stat_type8`, `stat_value8`, `stat_type9`, `stat_value9`, `stat_type10`, `stat_value10`, `ScalingStatDistribution`, `ScalingStatValue`, `dmg_min1`, `dmg_max1`, `dmg_type1`, `dmg_min2`, `dmg_max2`, `dmg_type2`, `armor`, `holy_res`, `fire_res`, `nature_res`, `frost_res`, `shadow_res`, `arcane_res`, `delay`, `ammo_type`, `RangedModRange`, `spellid_1`, `spelltrigger_1`, `spellcharges_1`, `spellppmRate_1`, `spellcooldown_1`, `spellcategory_1`, `spellcategorycooldown_1`, `spellid_2`, `spelltrigger_2`, `spellcharges_2`, `spellppmRate_2`, `spellcooldown_2`, `spellcategory_2`, `spellcategorycooldown_2`, `spellid_3`, `spelltrigger_3`, `spellcharges_3`, `spellppmRate_3`, `spellcooldown_3`, `spellcategory_3`, `spellcategorycooldown_3`, `spellid_4`, `spelltrigger_4`, `spellcharges_4`, `spellppmRate_4`, `spellcooldown_4`, `spellcategory_4`, `spellcategorycooldown_4`, `spellid_5`, `spelltrigger_5`, `spellcharges_5`, `spellppmRate_5`, `spellcooldown_5`, `spellcategory_5`, `spellcategorycooldown_5`, `bonding`, `description`, `PageText`, `LanguageID`, `PageMaterial`, `startquest`, `lockid`, `Material`, `sheath`, `RandomProperty`, `RandomSuffix`, `block`, `itemset`, `MaxDurability`, `area`, `Map`, `BagFamily`, `TotemCategory`, `socketColor_1`, `socketContent_1`, `socketColor_2`, `socketContent_2`, `socketColor_3`, `socketContent_3`, `socketBonus`, `GemProperties`, `RequiredDisenchantSkill`, `ArmorDamageModifier`, `duration`, `ItemLimitCategory`, `HolidayId`, `ScriptName`, `DisenchantID`, `FoodType`, `minMoneyLoot`, `maxMoneyLoot`, `flagsCustom`) VALUES (700515, 12, 0, 'Zusammengesetzter Anhaenger', 7339, 5, 8, 0, 0, 0, 0, 0, 2047, 1791, 1, 80, 0, 0, 0, 0, 0, 1770, 0, 1, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 'Magie durchstroemt ihn.', 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 4);
 
 
 
@@ -29475,13 +29475,13 @@ REPLACE INTO `item_template` (`entry`, `class`, `subclass`, `name`, `displayid`,
 
 
 DELETE FROM `item_template` WHERE `entry` = 700517;
-REPLACE INTO `item_template` (`entry`, `class`, `subclass`, `name`, `displayid`, `Quality`, `Flags`, `FlagsExtra`, `BuyCount`, `BuyPrice`, `SellPrice`, `InventoryType`, `AllowableClass`, `AllowableRace`, `ItemLevel`, `RequiredLevel`, `RequiredSkill`, `RequiredSkillRank`, `requiredspell`, `requiredhonorrank`, `RequiredCityRank`, `RequiredReputationFaction`, `RequiredReputationRank`, `maxcount`, `stackable`, `ContainerSlots`, `StatsCount`, `stat_type1`, `stat_value1`, `stat_type2`, `stat_value2`, `stat_type3`, `stat_value3`, `stat_type4`, `stat_value4`, `stat_type5`, `stat_value5`, `stat_type6`, `stat_value6`, `stat_type7`, `stat_value7`, `stat_type8`, `stat_value8`, `stat_type9`, `stat_value9`, `stat_type10`, `stat_value10`, `ScalingStatDistribution`, `ScalingStatValue`, `dmg_min1`, `dmg_max1`, `dmg_type1`, `dmg_min2`, `dmg_max2`, `dmg_type2`, `armor`, `holy_res`, `fire_res`, `nature_res`, `frost_res`, `shadow_res`, `arcane_res`, `delay`, `ammo_type`, `RangedModRange`, `spellid_1`, `spelltrigger_1`, `spellcharges_1`, `spellppmRate_1`, `spellcooldown_1`, `spellcategory_1`, `spellcategorycooldown_1`, `spellid_2`, `spelltrigger_2`, `spellcharges_2`, `spellppmRate_2`, `spellcooldown_2`, `spellcategory_2`, `spellcategorycooldown_2`, `spellid_3`, `spelltrigger_3`, `spellcharges_3`, `spellppmRate_3`, `spellcooldown_3`, `spellcategory_3`, `spellcategorycooldown_3`, `spellid_4`, `spelltrigger_4`, `spellcharges_4`, `spellppmRate_4`, `spellcooldown_4`, `spellcategory_4`, `spellcategorycooldown_4`, `spellid_5`, `spelltrigger_5`, `spellcharges_5`, `spellppmRate_5`, `spellcooldown_5`, `spellcategory_5`, `spellcategorycooldown_5`, `bonding`, `description`, `PageText`, `LanguageID`, `PageMaterial`, `startquest`, `lockid`, `Material`, `sheath`, `RandomProperty`, `RandomSuffix`, `block`, `itemset`, `MaxDurability`, `area`, `Map`, `BagFamily`, `TotemCategory`, `socketColor_1`, `socketContent_1`, `socketColor_2`, `socketContent_2`, `socketColor_3`, `socketContent_3`, `socketBonus`, `GemProperties`, `RequiredDisenchantSkill`, `ArmorDamageModifier`, `duration`, `ItemLimitCategory`, `HolidayId`, `ScriptName`, `DisenchantID`, `FoodType`, `minMoneyLoot`, `maxMoneyLoot`, `flagsCustom`) VALUES (700517, 12, 0, 'Seidener Anh�nger', 7339, 5, 8, 0, 0, 0, 0, 0, 2047, 1791, 1, 80, 0, 0, 0, 0, 0, 1770, 0, 1, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1,'Sie ist weich und flauschig.', 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 4);
+REPLACE INTO `item_template` (`entry`, `class`, `subclass`, `name`, `displayid`, `Quality`, `Flags`, `FlagsExtra`, `BuyCount`, `BuyPrice`, `SellPrice`, `InventoryType`, `AllowableClass`, `AllowableRace`, `ItemLevel`, `RequiredLevel`, `RequiredSkill`, `RequiredSkillRank`, `requiredspell`, `requiredhonorrank`, `RequiredCityRank`, `RequiredReputationFaction`, `RequiredReputationRank`, `maxcount`, `stackable`, `ContainerSlots`, `StatsCount`, `stat_type1`, `stat_value1`, `stat_type2`, `stat_value2`, `stat_type3`, `stat_value3`, `stat_type4`, `stat_value4`, `stat_type5`, `stat_value5`, `stat_type6`, `stat_value6`, `stat_type7`, `stat_value7`, `stat_type8`, `stat_value8`, `stat_type9`, `stat_value9`, `stat_type10`, `stat_value10`, `ScalingStatDistribution`, `ScalingStatValue`, `dmg_min1`, `dmg_max1`, `dmg_type1`, `dmg_min2`, `dmg_max2`, `dmg_type2`, `armor`, `holy_res`, `fire_res`, `nature_res`, `frost_res`, `shadow_res`, `arcane_res`, `delay`, `ammo_type`, `RangedModRange`, `spellid_1`, `spelltrigger_1`, `spellcharges_1`, `spellppmRate_1`, `spellcooldown_1`, `spellcategory_1`, `spellcategorycooldown_1`, `spellid_2`, `spelltrigger_2`, `spellcharges_2`, `spellppmRate_2`, `spellcooldown_2`, `spellcategory_2`, `spellcategorycooldown_2`, `spellid_3`, `spelltrigger_3`, `spellcharges_3`, `spellppmRate_3`, `spellcooldown_3`, `spellcategory_3`, `spellcategorycooldown_3`, `spellid_4`, `spelltrigger_4`, `spellcharges_4`, `spellppmRate_4`, `spellcooldown_4`, `spellcategory_4`, `spellcategorycooldown_4`, `spellid_5`, `spelltrigger_5`, `spellcharges_5`, `spellppmRate_5`, `spellcooldown_5`, `spellcategory_5`, `spellcategorycooldown_5`, `bonding`, `description`, `PageText`, `LanguageID`, `PageMaterial`, `startquest`, `lockid`, `Material`, `sheath`, `RandomProperty`, `RandomSuffix`, `block`, `itemset`, `MaxDurability`, `area`, `Map`, `BagFamily`, `TotemCategory`, `socketColor_1`, `socketContent_1`, `socketColor_2`, `socketContent_2`, `socketColor_3`, `socketContent_3`, `socketBonus`, `GemProperties`, `RequiredDisenchantSkill`, `ArmorDamageModifier`, `duration`, `ItemLimitCategory`, `HolidayId`, `ScriptName`, `DisenchantID`, `FoodType`, `minMoneyLoot`, `maxMoneyLoot`, `flagsCustom`) VALUES (700517, 12, 0, 'Seidener Anhaenger', 7339, 5, 8, 0, 0, 0, 0, 0, 2047, 1791, 1, 80, 0, 0, 0, 0, 0, 1770, 0, 1, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1,'Sie ist weich und flauschig.', 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 4);
 
 
 
 DELETE FROM `item_template` WHERE `entry` = 700518;
 REPLACE INTO `item_template` (`entry`, `class`, `subclass`, `name`, `displayid`, `Quality`, `Flags`, `FlagsExtra`, `BuyCount`, `BuyPrice`, `SellPrice`, `InventoryType`, `AllowableClass`, `AllowableRace`, `ItemLevel`, `RequiredLevel`, `RequiredSkill`, `RequiredSkillRank`, `requiredspell`, `requiredhonorrank`, `RequiredCityRank`, `RequiredReputationFaction`, `RequiredReputationRank`, `maxcount`, `stackable`, `ContainerSlots`, `StatsCount`, `stat_type1`, `stat_value1`, `stat_type2`, `stat_value2`, `stat_type3`, `stat_value3`, `stat_type4`, `stat_value4`, `stat_type5`, `stat_value5`, `stat_type6`, `stat_value6`, `stat_type7`, `stat_value7`, `stat_type8`, `stat_value8`, `stat_type9`, `stat_value9`, `stat_type10`, `stat_value10`, `ScalingStatDistribution`, `ScalingStatValue`, `dmg_min1`, `dmg_max1`, `dmg_type1`, `dmg_min2`, `dmg_max2`, `dmg_type2`, `armor`, `holy_res`, `fire_res`, `nature_res`, `frost_res`, `shadow_res`, `arcane_res`, `delay`, `ammo_type`, `RangedModRange`, `spellid_1`, `spelltrigger_1`, `spellcharges_1`, `spellppmRate_1`, `spellcooldown_1`, `spellcategory_1`, `spellcategorycooldown_1`, `spellid_2`, `spelltrigger_2`, `spellcharges_2`, `spellppmRate_2`, `spellcooldown_2`, `spellcategory_2`, `spellcategorycooldown_2`, `spellid_3`, `spelltrigger_3`, `spellcharges_3`, `spellppmRate_3`, `spellcooldown_3`, `spellcategory_3`, `spellcategorycooldown_3`, `spellid_4`, `spelltrigger_4`, `spellcharges_4`, `spellppmRate_4`, `spellcooldown_4`, `spellcategory_4`, `spellcategorycooldown_4`, `spellid_5`, `spelltrigger_5`, `spellcharges_5`, `spellppmRate_5`, `spellcooldown_5`, `spellcategory_5`, `spellcategorycooldown_5`, `bonding`, `description`, `PageText`, `LanguageID`, `PageMaterial`, `startquest`, `lockid`, `Material`, `sheath`, `RandomProperty`, `RandomSuffix`, `block`, `itemset`, `MaxDurability`, `area`, `Map`, `BagFamily`, `TotemCategory`, `socketColor_1`, `socketContent_1`, `socketColor_2`, `socketContent_2`, `socketColor_3`, `socketContent_3`, `socketBonus`, `GemProperties`, `RequiredDisenchantSkill`, `ArmorDamageModifier`, `duration`, `ItemLimitCategory`, `HolidayId`, `ScriptName`, `DisenchantID`, `FoodType`, `minMoneyLoot`, `maxMoneyLoot`, `flagsCustom`) 
-VALUES (700518, 12, 0, 'Abzeichen von Darkshadow', 7339, 2, 2147483904, 0, 0, 0, 0, 0, 2047, 1791, 80, 80, 0, 0, 0, 0, 0, 1770, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 'Eigentum des K�nigshauses', 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, '', 0, 0, 0, 0, 0);
+VALUES (700518, 12, 0, 'Abzeichen von Darkshadow', 7339, 2, 2147483904, 0, 0, 0, 0, 0, 2047, 1791, 80, 80, 0, 0, 0, 0, 0, 1770, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 'Eigentum des Koenigshauses', 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, '', 0, 0, 0, 0, 0);
 UPDATE `item_template` SET `stackable`='100' WHERE `entry`='700518';
 
 
@@ -29556,7 +29556,7 @@ VALUES ('14458', '700519', '0', '5', '0', '1', '0', '1', '1');
 
 DELETE FROM `item_template` WHERE `entry` = 700519;
 REPLACE INTO `item_template` (`entry`, `class`, `subclass`, `name`, `displayid`, `Quality`, `Flags`, `FlagsExtra`, `BuyCount`, `BuyPrice`, `SellPrice`, `InventoryType`, `AllowableClass`, `AllowableRace`, `ItemLevel`, `RequiredLevel`, `RequiredSkill`, `RequiredSkillRank`, `requiredspell`, `requiredhonorrank`, `RequiredCityRank`, `RequiredReputationFaction`, `RequiredReputationRank`, `maxcount`, `stackable`, `ContainerSlots`, `StatsCount`, `stat_type1`, `stat_value1`, `stat_type2`, `stat_value2`, `stat_type3`, `stat_value3`, `stat_type4`, `stat_value4`, `stat_type5`, `stat_value5`, `stat_type6`, `stat_value6`, `stat_type7`, `stat_value7`, `stat_type8`, `stat_value8`, `stat_type9`, `stat_value9`, `stat_type10`, `stat_value10`, `ScalingStatDistribution`, `ScalingStatValue`, `dmg_min1`, `dmg_max1`, `dmg_type1`, `dmg_min2`, `dmg_max2`, `dmg_type2`, `armor`, `holy_res`, `fire_res`, `nature_res`, `frost_res`, `shadow_res`, `arcane_res`, `delay`, `ammo_type`, `RangedModRange`, `spellid_1`, `spelltrigger_1`, `spellcharges_1`, `spellppmRate_1`, `spellcooldown_1`, `spellcategory_1`, `spellcategorycooldown_1`, `spellid_2`, `spelltrigger_2`, `spellcharges_2`, `spellppmRate_2`, `spellcooldown_2`, `spellcategory_2`, `spellcategorycooldown_2`, `spellid_3`, `spelltrigger_3`, `spellcharges_3`, `spellppmRate_3`, `spellcooldown_3`, `spellcategory_3`, `spellcategorycooldown_3`, `spellid_4`, `spelltrigger_4`, `spellcharges_4`, `spellppmRate_4`, `spellcooldown_4`, `spellcategory_4`, `spellcategorycooldown_4`, `spellid_5`, `spelltrigger_5`, `spellcharges_5`, `spellppmRate_5`, `spellcooldown_5`, `spellcategory_5`, `spellcategorycooldown_5`, `bonding`, `description`, `PageText`, `LanguageID`, `PageMaterial`, `startquest`, `lockid`, `Material`, `sheath`, `RandomProperty`, `RandomSuffix`, `block`, `itemset`, `MaxDurability`, `area`, `Map`, `BagFamily`, `TotemCategory`, `socketColor_1`, `socketContent_1`, `socketColor_2`, `socketContent_2`, `socketColor_3`, `socketContent_3`, `socketBonus`, `GemProperties`, `RequiredDisenchantSkill`, `ArmorDamageModifier`, `duration`, `ItemLimitCategory`, `HolidayId`, `ScriptName`, `DisenchantID`, `FoodType`, `minMoneyLoot`, `maxMoneyLoot`, `flagsCustom`) 
-VALUES (700519, 12, 0, 'Waffen der Unterst�tzer', 55276, 2, 2147483904, 0, 0, 0, 0, 0, 2047, 1791, 80, 80, 0, 0, 0, 0, 0, 1770, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 'Das K�nigshaus sucht nach diesen Waffen', 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, '', 0, 0, 0, 0, 0);
+VALUES (700519, 12, 0, 'Waffen der Unterstuetzer', 55276, 2, 2147483904, 0, 0, 0, 0, 0, 2047, 1791, 80, 80, 0, 0, 0, 0, 0, 1770, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 'Das Koenigshaus sucht nach diesen Waffen', 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, '', 0, 0, 0, 0, 0);
 UPDATE `item_template` SET `stackable`='100' WHERE `entry`='700519';
 
 
