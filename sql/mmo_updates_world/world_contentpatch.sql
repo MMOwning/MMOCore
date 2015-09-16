@@ -390,7 +390,7 @@ DELETE FROM `gameobject` WHERE `guid` = 800108;
 
 
 /* LOOTTABLES */
-/* Schattengram Fälschung ANFANG*/
+/* Schattengram Faelschung ANFANG*/
 REPLACE INTO `creature_loot_template` (`Entry`,`Item`,`Reference`, `Chance`, `QuestRequired`, `LootMode`, `GroupId`, `MinCount`, `MaxCount`)
 VALUES (36502, 700498, 0, 0.1, 0, 1, 0, 1, 1); 
 
@@ -440,7 +440,7 @@ VALUES (15990, 700498, 0, 0.1, 0, 1, 0, 1, 1);
 
 
 
-/* FÄLSCHUNG ENDE */
+/* FaeLSCHUNG ENDE */
 
 /*Quest Essenz der ewigen 5*/
 /* Taerar */
@@ -497,7 +497,7 @@ VALUES (36502, 700499, 0, 0.1, 1, 1, 0, 1, 1);
 /* GIldenhaustoken */
 
 REPLACE INTO `item_template` (`entry`, `class`, `subclass`, `SoundOverrideSubclass`, `name`, `displayid`, `Quality`, `Flags`, `FlagsExtra`, `BuyCount`, `BuyPrice`, `SellPrice`, `InventoryType`, `AllowableClass`, `AllowableRace`, `ItemLevel`, `RequiredLevel`, `RequiredSkill`, `RequiredSkillRank`, `requiredspell`, `requiredhonorrank`, `RequiredCityRank`, `RequiredReputationFaction`, `RequiredReputationRank`, `maxcount`, `stackable`, `ContainerSlots`, `StatsCount`, `stat_type1`, `stat_value1`, `stat_type2`, `stat_value2`, `stat_type3`, `stat_value3`, `stat_type4`, `stat_value4`, `stat_type5`, `stat_value5`, `stat_type6`, `stat_value6`, `stat_type7`, `stat_value7`, `stat_type8`, `stat_value8`, `stat_type9`, `stat_value9`, `stat_type10`, `stat_value10`, `ScalingStatDistribution`, `ScalingStatValue`, `dmg_min1`, `dmg_max1`, `dmg_type1`, `dmg_min2`, `dmg_max2`, `dmg_type2`, `armor`, `holy_res`, `fire_res`, `nature_res`, `frost_res`, `shadow_res`, `arcane_res`, `delay`, `ammo_type`, `RangedModRange`, `spellid_1`, `spelltrigger_1`, `spellcharges_1`, `spellppmRate_1`, `spellcooldown_1`, `spellcategory_1`, `spellcategorycooldown_1`, `spellid_2`, `spelltrigger_2`, `spellcharges_2`, `spellppmRate_2`, `spellcooldown_2`, `spellcategory_2`, `spellcategorycooldown_2`, `spellid_3`, `spelltrigger_3`, `spellcharges_3`, `spellppmRate_3`, `spellcooldown_3`, `spellcategory_3`, `spellcategorycooldown_3`, `spellid_4`, `spelltrigger_4`, `spellcharges_4`, `spellppmRate_4`, `spellcooldown_4`, `spellcategory_4`, `spellcategorycooldown_4`, `spellid_5`, `spelltrigger_5`, `spellcharges_5`, `spellppmRate_5`, `spellcooldown_5`, `spellcategory_5`, `spellcategorycooldown_5`, `bonding`, `description`, `PageText`, `LanguageID`, `PageMaterial`, `startquest`, `lockid`, `Material`, `sheath`, `RandomProperty`, `RandomSuffix`, `block`, `itemset`, `MaxDurability`, `area`, `Map`, `BagFamily`, `TotemCategory`, `socketColor_1`, `socketContent_1`, `socketColor_2`, `socketContent_2`, `socketColor_3`, `socketContent_3`, `socketBonus`, `GemProperties`, `RequiredDisenchantSkill`, `ArmorDamageModifier`, `duration`, `ItemLimitCategory`, `HolidayId`, `ScriptName`, `DisenchantID`, `FoodType`, `minMoneyLoot`, `maxMoneyLoot`, `flagsCustom`, `VerifiedBuild`) VALUES
-(200000, 0, 0, -1, 'Gildenhaus Token', 7352, 5, 1, 0, 1, 0, 0, 0, -1, -1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 500, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1000, 0, 0, 0, 0, 0, 0, -1, 0, -1, 0, 0, 0, 0, -1, 0, -1, 0, 0, 0, 0, -1, 0, -1, 0, 0, 0, 0, -1, 0, -1, 0, 0, 0, 0, -1, 0, -1, 0, 'Benötigt um Gildenhäuser zu erwerben', 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, -1, 0, 0, 0, 0, '', 0, 0, 0, 0, 0, 1);
+(200000, 0, 0, -1, 'Gildenhaus Token', 7352, 5, 1, 0, 1, 0, 0, 0, -1, -1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 500, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1000, 0, 0, 0, 0, 0, 0, -1, 0, -1, 0, 0, 0, 0, -1, 0, -1, 0, 0, 0, 0, -1, 0, -1, 0, 0, 0, 0, -1, 0, -1, 0, 0, 0, 0, -1, 0, -1, 0, 'Benoetigt um Gildenhaeuser zu erwerben', 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, -1, 0, 0, 0, 0, '', 0, 0, 0, 0, 0, 1);
 
 
 /*Verdammniswandler Verdammnislord */
@@ -512,13 +512,13 @@ REPLACE INTO `item_template` (`entry`, `class`, `subclass`, `name`, `displayid`,
 /*Qeustitem mit Quest*/
 
 
-REPLACE INTO `item_template` (`entry`, `class`, `subclass`, `name`, `displayid`, `Quality`, `Flags`, `FlagsExtra`, `BuyCount`, `BuyPrice`, `SellPrice`, `InventoryType`, `AllowableClass`, `AllowableRace`, `ItemLevel`, `RequiredLevel`, `RequiredSkill`, `RequiredSkillRank`, `requiredspell`, `requiredhonorrank`, `RequiredCityRank`, `RequiredReputationFaction`, `RequiredReputationRank`, `maxcount`, `stackable`, `ContainerSlots`, `StatsCount`, `stat_type1`, `stat_value1`, `stat_type2`, `stat_value2`, `stat_type3`, `stat_value3`, `stat_type4`, `stat_value4`, `stat_type5`, `stat_value5`, `stat_type6`, `stat_value6`, `stat_type7`, `stat_value7`, `stat_type8`, `stat_value8`, `stat_type9`, `stat_value9`, `stat_type10`, `stat_value10`, `ScalingStatDistribution`, `ScalingStatValue`, `dmg_min1`, `dmg_max1`, `dmg_type1`, `dmg_min2`, `dmg_max2`, `dmg_type2`, `armor`, `holy_res`, `fire_res`, `nature_res`, `frost_res`, `shadow_res`, `arcane_res`, `delay`, `ammo_type`, `RangedModRange`, `spellid_1`, `spelltrigger_1`, `spellcharges_1`, `spellppmRate_1`, `spellcooldown_1`, `spellcategory_1`, `spellcategorycooldown_1`, `spellid_2`, `spelltrigger_2`, `spellcharges_2`, `spellppmRate_2`, `spellcooldown_2`, `spellcategory_2`, `spellcategorycooldown_2`, `spellid_3`, `spelltrigger_3`, `spellcharges_3`, `spellppmRate_3`, `spellcooldown_3`, `spellcategory_3`, `spellcategorycooldown_3`, `spellid_4`, `spelltrigger_4`, `spellcharges_4`, `spellppmRate_4`, `spellcooldown_4`, `spellcategory_4`, `spellcategorycooldown_4`, `spellid_5`, `spelltrigger_5`, `spellcharges_5`, `spellppmRate_5`, `spellcooldown_5`, `spellcategory_5`, `spellcategorycooldown_5`, `bonding`, `description`, `PageText`, `LanguageID`, `PageMaterial`, `startquest`, `lockid`, `Material`, `sheath`, `RandomProperty`, `RandomSuffix`, `block`, `itemset`, `MaxDurability`, `area`, `Map`, `BagFamily`, `TotemCategory`, `socketColor_1`, `socketContent_1`, `socketColor_2`, `socketContent_2`, `socketColor_3`, `socketContent_3`, `socketBonus`, `GemProperties`, `RequiredDisenchantSkill`, `ArmorDamageModifier`, `duration`, `ItemLimitCategory`, `HolidayId`, `ScriptName`, `DisenchantID`, `FoodType`, `minMoneyLoot`, `maxMoneyLoot`, `flagsCustom`) VALUES (700500, 12, 0, 'Ein mysteriöser Gegenstand', 7339, 7, 73, 0, 0, 0, 0, 0, 2047, 1791, 1, 80, 0, 0, 0, 0, 0, 1770, 0, 1, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 'Was mag sich hier drin verbergen?', 0, 0, 0, 799999, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 4);
+REPLACE INTO `item_template` (`entry`, `class`, `subclass`, `name`, `displayid`, `Quality`, `Flags`, `FlagsExtra`, `BuyCount`, `BuyPrice`, `SellPrice`, `InventoryType`, `AllowableClass`, `AllowableRace`, `ItemLevel`, `RequiredLevel`, `RequiredSkill`, `RequiredSkillRank`, `requiredspell`, `requiredhonorrank`, `RequiredCityRank`, `RequiredReputationFaction`, `RequiredReputationRank`, `maxcount`, `stackable`, `ContainerSlots`, `StatsCount`, `stat_type1`, `stat_value1`, `stat_type2`, `stat_value2`, `stat_type3`, `stat_value3`, `stat_type4`, `stat_value4`, `stat_type5`, `stat_value5`, `stat_type6`, `stat_value6`, `stat_type7`, `stat_value7`, `stat_type8`, `stat_value8`, `stat_type9`, `stat_value9`, `stat_type10`, `stat_value10`, `ScalingStatDistribution`, `ScalingStatValue`, `dmg_min1`, `dmg_max1`, `dmg_type1`, `dmg_min2`, `dmg_max2`, `dmg_type2`, `armor`, `holy_res`, `fire_res`, `nature_res`, `frost_res`, `shadow_res`, `arcane_res`, `delay`, `ammo_type`, `RangedModRange`, `spellid_1`, `spelltrigger_1`, `spellcharges_1`, `spellppmRate_1`, `spellcooldown_1`, `spellcategory_1`, `spellcategorycooldown_1`, `spellid_2`, `spelltrigger_2`, `spellcharges_2`, `spellppmRate_2`, `spellcooldown_2`, `spellcategory_2`, `spellcategorycooldown_2`, `spellid_3`, `spelltrigger_3`, `spellcharges_3`, `spellppmRate_3`, `spellcooldown_3`, `spellcategory_3`, `spellcategorycooldown_3`, `spellid_4`, `spelltrigger_4`, `spellcharges_4`, `spellppmRate_4`, `spellcooldown_4`, `spellcategory_4`, `spellcategorycooldown_4`, `spellid_5`, `spelltrigger_5`, `spellcharges_5`, `spellppmRate_5`, `spellcooldown_5`, `spellcategory_5`, `spellcategorycooldown_5`, `bonding`, `description`, `PageText`, `LanguageID`, `PageMaterial`, `startquest`, `lockid`, `Material`, `sheath`, `RandomProperty`, `RandomSuffix`, `block`, `itemset`, `MaxDurability`, `area`, `Map`, `BagFamily`, `TotemCategory`, `socketColor_1`, `socketContent_1`, `socketColor_2`, `socketContent_2`, `socketColor_3`, `socketContent_3`, `socketBonus`, `GemProperties`, `RequiredDisenchantSkill`, `ArmorDamageModifier`, `duration`, `ItemLimitCategory`, `HolidayId`, `ScriptName`, `DisenchantID`, `FoodType`, `minMoneyLoot`, `maxMoneyLoot`, `flagsCustom`) VALUES (700500, 12, 0, 'Ein mysterioeser Gegenstand', 7339, 7, 73, 0, 0, 0, 0, 0, 2047, 1791, 1, 80, 0, 0, 0, 0, 0, 1770, 0, 1, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 'Was mag sich hier drin verbergen?', 0, 0, 0, 799999, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 4);
 
 
 
 /* Questitemstart ohne Quest*/
 
-REPLACE INTO `item_template` (`entry`, `class`, `subclass`, `name`, `displayid`, `Quality`, `Flags`, `FlagsExtra`, `BuyCount`, `BuyPrice`, `SellPrice`, `InventoryType`, `AllowableClass`, `AllowableRace`, `ItemLevel`, `RequiredLevel`, `RequiredSkill`, `RequiredSkillRank`, `requiredspell`, `requiredhonorrank`, `RequiredCityRank`, `RequiredReputationFaction`, `RequiredReputationRank`, `maxcount`, `stackable`, `ContainerSlots`, `StatsCount`, `stat_type1`, `stat_value1`, `stat_type2`, `stat_value2`, `stat_type3`, `stat_value3`, `stat_type4`, `stat_value4`, `stat_type5`, `stat_value5`, `stat_type6`, `stat_value6`, `stat_type7`, `stat_value7`, `stat_type8`, `stat_value8`, `stat_type9`, `stat_value9`, `stat_type10`, `stat_value10`, `ScalingStatDistribution`, `ScalingStatValue`, `dmg_min1`, `dmg_max1`, `dmg_type1`, `dmg_min2`, `dmg_max2`, `dmg_type2`, `armor`, `holy_res`, `fire_res`, `nature_res`, `frost_res`, `shadow_res`, `arcane_res`, `delay`, `ammo_type`, `RangedModRange`, `spellid_1`, `spelltrigger_1`, `spellcharges_1`, `spellppmRate_1`, `spellcooldown_1`, `spellcategory_1`, `spellcategorycooldown_1`, `spellid_2`, `spelltrigger_2`, `spellcharges_2`, `spellppmRate_2`, `spellcooldown_2`, `spellcategory_2`, `spellcategorycooldown_2`, `spellid_3`, `spelltrigger_3`, `spellcharges_3`, `spellppmRate_3`, `spellcooldown_3`, `spellcategory_3`, `spellcategorycooldown_3`, `spellid_4`, `spelltrigger_4`, `spellcharges_4`, `spellppmRate_4`, `spellcooldown_4`, `spellcategory_4`, `spellcategorycooldown_4`, `spellid_5`, `spelltrigger_5`, `spellcharges_5`, `spellppmRate_5`, `spellcooldown_5`, `spellcategory_5`, `spellcategorycooldown_5`, `bonding`, `description`, `PageText`, `LanguageID`, `PageMaterial`, `startquest`, `lockid`, `Material`, `sheath`, `RandomProperty`, `RandomSuffix`, `block`, `itemset`, `MaxDurability`, `area`, `Map`, `BagFamily`, `TotemCategory`, `socketColor_1`, `socketContent_1`, `socketColor_2`, `socketContent_2`, `socketColor_3`, `socketContent_3`, `socketBonus`, `GemProperties`, `RequiredDisenchantSkill`, `ArmorDamageModifier`, `duration`, `ItemLimitCategory`, `HolidayId`, `ScriptName`, `DisenchantID`, `FoodType`, `minMoneyLoot`, `maxMoneyLoot`, `flagsCustom`) VALUES (700501, 12, 0, 'Ein mysteriöser Gegenstand', 7339, 7, 73, 0, 0, 0, 0, 0, 2047, 1791, 1, 80, 0, 0, 0, 0, 0, 1770, 0, 1, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 'Was mag sich hier drin verbergen?', 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 4);
+REPLACE INTO `item_template` (`entry`, `class`, `subclass`, `name`, `displayid`, `Quality`, `Flags`, `FlagsExtra`, `BuyCount`, `BuyPrice`, `SellPrice`, `InventoryType`, `AllowableClass`, `AllowableRace`, `ItemLevel`, `RequiredLevel`, `RequiredSkill`, `RequiredSkillRank`, `requiredspell`, `requiredhonorrank`, `RequiredCityRank`, `RequiredReputationFaction`, `RequiredReputationRank`, `maxcount`, `stackable`, `ContainerSlots`, `StatsCount`, `stat_type1`, `stat_value1`, `stat_type2`, `stat_value2`, `stat_type3`, `stat_value3`, `stat_type4`, `stat_value4`, `stat_type5`, `stat_value5`, `stat_type6`, `stat_value6`, `stat_type7`, `stat_value7`, `stat_type8`, `stat_value8`, `stat_type9`, `stat_value9`, `stat_type10`, `stat_value10`, `ScalingStatDistribution`, `ScalingStatValue`, `dmg_min1`, `dmg_max1`, `dmg_type1`, `dmg_min2`, `dmg_max2`, `dmg_type2`, `armor`, `holy_res`, `fire_res`, `nature_res`, `frost_res`, `shadow_res`, `arcane_res`, `delay`, `ammo_type`, `RangedModRange`, `spellid_1`, `spelltrigger_1`, `spellcharges_1`, `spellppmRate_1`, `spellcooldown_1`, `spellcategory_1`, `spellcategorycooldown_1`, `spellid_2`, `spelltrigger_2`, `spellcharges_2`, `spellppmRate_2`, `spellcooldown_2`, `spellcategory_2`, `spellcategorycooldown_2`, `spellid_3`, `spelltrigger_3`, `spellcharges_3`, `spellppmRate_3`, `spellcooldown_3`, `spellcategory_3`, `spellcategorycooldown_3`, `spellid_4`, `spelltrigger_4`, `spellcharges_4`, `spellppmRate_4`, `spellcooldown_4`, `spellcategory_4`, `spellcategorycooldown_4`, `spellid_5`, `spelltrigger_5`, `spellcharges_5`, `spellppmRate_5`, `spellcooldown_5`, `spellcategory_5`, `spellcategorycooldown_5`, `bonding`, `description`, `PageText`, `LanguageID`, `PageMaterial`, `startquest`, `lockid`, `Material`, `sheath`, `RandomProperty`, `RandomSuffix`, `block`, `itemset`, `MaxDurability`, `area`, `Map`, `BagFamily`, `TotemCategory`, `socketColor_1`, `socketContent_1`, `socketColor_2`, `socketContent_2`, `socketColor_3`, `socketContent_3`, `socketBonus`, `GemProperties`, `RequiredDisenchantSkill`, `ArmorDamageModifier`, `duration`, `ItemLimitCategory`, `HolidayId`, `ScriptName`, `DisenchantID`, `FoodType`, `minMoneyLoot`, `maxMoneyLoot`, `flagsCustom`) VALUES (700501, 12, 0, 'Ein mysterioeser Gegenstand', 7339, 7, 73, 0, 0, 0, 0, 0, 2047, 1791, 1, 80, 0, 0, 0, 0, 0, 1770, 0, 1, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 'Was mag sich hier drin verbergen?', 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 4);
 
 
 /* QUESTITEMS Essenz der ewigen Fuenf */
@@ -922,7 +922,7 @@ REPLACE INTO `gossip_menu` (`entry`, `text_id`) VALUES ('50001', '25000');
 
 UPDATE `item_template` SET `BuyPrice` = 1000000000 WHERE `entry` = 700500;*/REPLACE INTO `creature` (`guid`,`id`,`map`,`spawnMask`,`phaseMask`,`modelid`,`equipment_id`,`position_x`,`position_y`,`position_z`,`orientation`,`spawntimesecs`,`spawndist`,`currentwaypoint`,`curhealth`,`curmana`,`MovementType`) VALUES 
 ('800000','800000','571','1','1','89','0','5810.46','699.74','619.03','2.893497','25','0','0','1000000','250000','0');
-REPLACE INTO `creature_template` (`entry`, `difficulty_entry_1`, `difficulty_entry_2`, `difficulty_entry_3`, `KillCredit1`, `KillCredit2`, `modelid1`, `modelid2`, `modelid3`, `modelid4`, `name`, `subname`, `IconName`, `gossip_menu_id`, `minlevel`, `maxlevel`, `exp`, `faction`, `npcflag`, `speed_walk`, `speed_run`, `scale`, `rank`, `dmgschool`, `BaseAttackTime`, `RangeAttackTime`, `unit_class`, `unit_flags`, `unit_flags2`, `dynamicflags`, `family`, `trainer_type`, `trainer_spell`, `trainer_class`, `trainer_race`, `type`, `type_flags`, `lootid`, `pickpocketloot`, `skinloot`, `resistance1`, `resistance2`, `resistance3`, `resistance4`, `resistance5`, `resistance6`, `spell1`, `spell2`, `spell3`, `spell4`, `spell5`, `spell6`, `spell7`, `spell8`, `PetSpellDataId`, `VehicleId`, `mingold`, `maxgold`, `AIName`, `MovementType`, `InhabitType`, `HoverHeight`, `RacialLeader`, `movementId`, `RegenHealth`, `mechanic_immune_mask`, `flags_extra`, `ScriptName`) VALUES (800000, 0, 0, 0, 0, 0, 89, 0, 0, 0, 'Thedriun Wyrmbräu', 'Der Reisende', '', 0, 80, 80, 0,35, 2, 0, 1.14286, 1, 1, 1, 1, 1, 0, 2, 0, 0, 0, 0, 0, 0, 0, 7, 0, 0, 0, 0, 100, 100, 100, 100, 100, 100, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, '', 0, 3, 1, 0, 0, 1, 0, 0, '');
+REPLACE INTO `creature_template` (`entry`, `difficulty_entry_1`, `difficulty_entry_2`, `difficulty_entry_3`, `KillCredit1`, `KillCredit2`, `modelid1`, `modelid2`, `modelid3`, `modelid4`, `name`, `subname`, `IconName`, `gossip_menu_id`, `minlevel`, `maxlevel`, `exp`, `faction`, `npcflag`, `speed_walk`, `speed_run`, `scale`, `rank`, `dmgschool`, `BaseAttackTime`, `RangeAttackTime`, `unit_class`, `unit_flags`, `unit_flags2`, `dynamicflags`, `family`, `trainer_type`, `trainer_spell`, `trainer_class`, `trainer_race`, `type`, `type_flags`, `lootid`, `pickpocketloot`, `skinloot`, `resistance1`, `resistance2`, `resistance3`, `resistance4`, `resistance5`, `resistance6`, `spell1`, `spell2`, `spell3`, `spell4`, `spell5`, `spell6`, `spell7`, `spell8`, `PetSpellDataId`, `VehicleId`, `mingold`, `maxgold`, `AIName`, `MovementType`, `InhabitType`, `HoverHeight`, `RacialLeader`, `movementId`, `RegenHealth`, `mechanic_immune_mask`, `flags_extra`, `ScriptName`) VALUES (800000, 0, 0, 0, 0, 0, 89, 0, 0, 0, 'Thedriun Wyrmbraeu', 'Der Reisende', '', 0, 80, 80, 0,35, 2, 0, 1.14286, 1, 1, 1, 1, 1, 0, 2, 0, 0, 0, 0, 0, 0, 0, 7, 0, 0, 0, 0, 100, 100, 100, 100, 100, 100, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, '', 0, 3, 1, 0, 0, 1, 0, 0, '');
 REPLACE INTO `creature` (`guid`,`id`,`map`,`spawnMask`,`phaseMask`,`modelid`,`equipment_id`,`position_x`,`position_y`,`position_z`,`orientation`,`spawntimesecs`,`spawndist`,`currentwaypoint`,`curhealth`,`curmana`,`MovementType`) VALUES 
 ('800001','800001','571','1','1','28159','0','3073.07','-3689.95','549.40','1.12','25','0','0','1000000','250000','0');
 DELETE FROM `creature_template` WHERE `Entry` = 800001;
@@ -946,7 +946,7 @@ VALUES ( /*  ID */ 800003,
   /* Modelid3   */0,
   /* Model4  */ 0,
  /* Name  */'Pi von Haar',
-  /*  Subname */'Der Sanfmütige',
+  /*  Subname */'Der Sanfmuetige',
   /*  Iconname */'',
   /* gossip_menu_id`  */0,
   /*  Min Level */80,
@@ -1009,7 +1009,7 @@ REPLACE INTO `creature` (`guid`,`id`,`map`,`spawnMask`,`phaseMask`,`modelid`,`eq
 ('800004','800004','0','1','1','26790','0','-9791.30','2106.30','12.43','4.08','25','0','0','1000000','250000','0');
 DELETE FROM `creature_template` WHERE `Entry` = 800004;
 
-REPLACE INTO `creature_template` (`entry`, `difficulty_entry_1`, `difficulty_entry_2`, `difficulty_entry_3`, `KillCredit1`, `KillCredit2`, `modelid1`, `modelid2`, `modelid3`, `modelid4`, `name`, `subname`, `IconName`, `gossip_menu_id`, `minlevel`, `maxlevel`, `exp`, `faction`, `npcflag`, `speed_walk`, `speed_run`, `scale`, `rank`, `dmgschool`, `BaseAttackTime`, `RangeAttackTime`, `unit_class`, `unit_flags`, `unit_flags2`, `dynamicflags`, `family`, `trainer_type`, `trainer_spell`, `trainer_class`, `trainer_race`, `type`, `type_flags`, `lootid`, `pickpocketloot`, `skinloot`, `resistance1`, `resistance2`, `resistance3`, `resistance4`, `resistance5`, `resistance6`, `spell1`, `spell2`, `spell3`, `spell4`, `spell5`, `spell6`, `spell7`, `spell8`, `PetSpellDataId`, `VehicleId`, `mingold`, `maxgold`, `AIName`, `MovementType`, `InhabitType`, `HoverHeight`, `RacialLeader`, `movementId`, `RegenHealth`, `mechanic_immune_mask`, `flags_extra`, `ScriptName`) VALUES (800004, 0, 0, 0, 0, 0, 26790, 0, 0, 0, 'Destro MMOwning', 'Der Erwählte', '', 0, 80, 80, 0,35, 2, 0, 1.14286, 1, 1, 1, 1, 1, 0, 2, 0, 0, 0, 0, 0, 0, 0, 7, 0, 0, 0, 0, 100, 100, 100, 100, 100, 100, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, '', 0, 3, 1, 1, 0, 1, 0, 0, '');
+REPLACE INTO `creature_template` (`entry`, `difficulty_entry_1`, `difficulty_entry_2`, `difficulty_entry_3`, `KillCredit1`, `KillCredit2`, `modelid1`, `modelid2`, `modelid3`, `modelid4`, `name`, `subname`, `IconName`, `gossip_menu_id`, `minlevel`, `maxlevel`, `exp`, `faction`, `npcflag`, `speed_walk`, `speed_run`, `scale`, `rank`, `dmgschool`, `BaseAttackTime`, `RangeAttackTime`, `unit_class`, `unit_flags`, `unit_flags2`, `dynamicflags`, `family`, `trainer_type`, `trainer_spell`, `trainer_class`, `trainer_race`, `type`, `type_flags`, `lootid`, `pickpocketloot`, `skinloot`, `resistance1`, `resistance2`, `resistance3`, `resistance4`, `resistance5`, `resistance6`, `spell1`, `spell2`, `spell3`, `spell4`, `spell5`, `spell6`, `spell7`, `spell8`, `PetSpellDataId`, `VehicleId`, `mingold`, `maxgold`, `AIName`, `MovementType`, `InhabitType`, `HoverHeight`, `RacialLeader`, `movementId`, `RegenHealth`, `mechanic_immune_mask`, `flags_extra`, `ScriptName`) VALUES (800004, 0, 0, 0, 0, 0, 26790, 0, 0, 0, 'Destro MMOwning', 'Der Erwaehlte', '', 0, 80, 80, 0,35, 2, 0, 1.14286, 1, 1, 1, 1, 1, 0, 2, 0, 0, 0, 0, 0, 0, 0, 7, 0, 0, 0, 0, 100, 100, 100, 100, 100, 100, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, '', 0, 3, 1, 1, 0, 1, 0, 0, '');
 /* Sophie Mondhain */
 DELETE FROM `creature_text` WHERE `entry`=800005;
 
@@ -5786,7 +5786,7 @@ REPLACE INTO `quest_template` (`ID`, `Method`, `QuestLevel`, `MinLevel`, `QuestS
  /*  PointOption  */ 0,
  /*  LogTitle  */ 'Friede sei mit uns.',
  /*  LogDescription  */  'Um Frieden zu wahren mÃ¼ssen wir unsere Feinde besiegen.',
- /*  QuestDescription   */ 'Hallo $N,tÃ¶tet die Pusteligen Schrecken der hier am Strand entlang lÃ¤uft. Ich bitte Euch instÃ¤ndig um Eure Hilfe. Wenn ihr das erledigt habt, geht bitte zu Silvaria Tularia in Beutebucht. Sie ist am Anleger für kleinere Schiffe zu finden z.b für Fischerboote.',
+ /*  QuestDescription   */ 'Hallo $N,tÃ¶tet die Pusteligen Schrecken der hier am Strand entlang lÃ¤uft. Ich bitte Euch instÃ¤ndig um Eure Hilfe. Wenn ihr das erledigt habt, geht bitte zu Silvaria Tularia in Beutebucht. Sie ist am Anleger fuer kleinere Schiffe zu finden z.b fuer Fischerboote.',
  /*  EndText   */  '',
  /*  OfferRewardText  */  'Seid ihr fertig?',
  /*  RequestItemsText  */ 'TÃ¶tet die Pusteligen Schrecken.',
@@ -17650,7 +17650,7 @@ VALUES ( /*  ID */ 800035,
   /* Modelid3   */0,
   /* Model4  */ 0,
   /* Name  */'Arcturus',
-  /* Subname */'Herrscher der Kälte',
+  /* Subname */'Herrscher der Kaelte',
   /* Iconname */'',
   /* gossip_menu_id`  */800035,
   /* Min Level */83,
@@ -17715,10 +17715,10 @@ REPLACE INTO `creature`(`guid`,`id`,`map`,`spawnMask`,`phaseMask`,`modelid`,`equ
 UPDATE `creature_template` SET `HealthModifier`='1000', `ArmorModifier`='80', `DamageModifier`='100' WHERE `entry`='800035';
 
 DELETE FROM `creature_text` WHERE `entry`=800035;
-INSERT INTO `creature_text` (`entry`,`groupid`,`id`,`text`,`type`,`language`,`probability`,`emote`,`duration`,`sound`,`comment`) VALUES (800035,1,0,'Ihr kleinen Wichte. Spürt meine Kälte',14,0,100,5,0,0,'Comment');
-INSERT INTO `creature_text` (`entry`,`groupid`,`id`,`text`,`type`,`language`,`probability`,`emote`,`duration`,`sound`,`comment`) VALUES (800035,2,0,'Hier gibt es nichts als Schmerz für Euch',14,0,100,5,0,0,'Comment');
+INSERT INTO `creature_text` (`entry`,`groupid`,`id`,`text`,`type`,`language`,`probability`,`emote`,`duration`,`sound`,`comment`) VALUES (800035,1,0,'Ihr kleinen Wichte. Spuert meine Kaelte',14,0,100,5,0,0,'Comment');
+INSERT INTO `creature_text` (`entry`,`groupid`,`id`,`text`,`type`,`language`,`probability`,`emote`,`duration`,`sound`,`comment`) VALUES (800035,2,0,'Hier gibt es nichts als Schmerz fuer Euch',14,0,100,5,0,0,'Comment');
 INSERT INTO `creature_text` (`entry`,`groupid`,`id`,`text`,`type`,`language`,`probability`,`emote`,`duration`,`sound`,`comment`) VALUES (800035,3,0,'Keine Spielchen jetzt! Sterbt!',14,0,100,5,0,0,'Comment');
-INSERT INTO `creature_text` (`entry`,`groupid`,`id`,`text`,`type`,`language`,`probability`,`emote`,`duration`,`sound`,`comment`) VALUES (800035,7,0,'Eine Trophäe mehr an meiner Wand!',14,0,100,5,0,0,'Comment');
+INSERT INTO `creature_text` (`entry`,`groupid`,`id`,`text`,`type`,`language`,`probability`,`emote`,`duration`,`sound`,`comment`) VALUES (800035,7,0,'Eine Trophaee mehr an meiner Wand!',14,0,100,5,0,0,'Comment');
 INSERT INTO `creature_text` (`entry`,`groupid`,`id`,`text`,`type`,`language`,`probability`,`emote`,`duration`,`sound`,`comment`) VALUES (800035,4,0,'Phase 1',41,0,100,5,0,0,'Comment');
 INSERT INTO `creature_text` (`entry`,`groupid`,`id`,`text`,`type`,`language`,`probability`,`emote`,`duration`,`sound`,`comment`) VALUES (800035,5,0,'Phase 2',41,0,100,5,0,0,'Comment');
 INSERT INTO `creature_text` (`entry`,`groupid`,`id`,`text`,`type`,`language`,`probability`,`emote`,`duration`,`sound`,`comment`) VALUES (800035,6,0,'Phase 3',41,0,100,5,0,0,'Comment');
@@ -17867,9 +17867,9 @@ UPDATE `creature_template` SET `HealthModifier`='1000', `ArmorModifier`='10', `D
   
   
 DELETE FROM `creature_text` WHERE `entry`=800036;
-REPLACE INTO `creature_text` (`entry`,`groupid`,`id`,`text`,`type`,`language`,`probability`,`emote`,`duration`,`sound`,`comment`) VALUES (800036,1,0,'Wer möchte gegen mich bestehen?',14,0,100,1,0,17457,'Comment');
+REPLACE INTO `creature_text` (`entry`,`groupid`,`id`,`text`,`type`,`language`,`probability`,`emote`,`duration`,`sound`,`comment`) VALUES (800036,1,0,'Wer moechte gegen mich bestehen?',14,0,100,1,0,17457,'Comment');
 REPLACE INTO `creature_text` (`entry`,`groupid`,`id`,`text`,`type`,`language`,`probability`,`emote`,`duration`,`sound`,`comment`) VALUES (800036,2,0,'Ihr Wenigen wollt gegen mich standhalten?',14,0,100,1,0,17458,'Comment');
-REPLACE INTO `creature_text` (`entry`,`groupid`,`id`,`text`,`type`,`language`,`probability`,`emote`,`duration`,`sound`,`comment`) VALUES (800036,3,0,'Ahh sehr schön. Unterstützung.',14,0,100,1,0,17459,'Comment');
+REPLACE INTO `creature_text` (`entry`,`groupid`,`id`,`text`,`type`,`language`,`probability`,`emote`,`duration`,`sound`,`comment`) VALUES (800036,3,0,'Ahh sehr schoen. Unterstuetzung.',14,0,100,1,0,17459,'Comment');
 REPLACE INTO `creature_text` (`entry`,`groupid`,`id`,`text`,`type`,`language`,`probability`,`emote`,`duration`,`sound`,`comment`) VALUES (800036,4,0,'Merkt Euch meine Worte!',14,0,100,1,0,17460,'Comment');
 REPLACE INTO `creature_text` (`entry`,`groupid`,`id`,`text`,`type`,`language`,`probability`,`emote`,`duration`,`sound`,`comment`) VALUES (800036,7,0,'Ich .... kann ...nicht tot sein. Arrgh Ich komme wieder!',14,0,100,1,0,17460,'Comment');
 REPLACE INTO `creature_text` (`entry`,`groupid`,`id`,`text`,`type`,`language`,`probability`,`emote`,`duration`,`sound`,`comment`) VALUES (800036,5,0,'Erzittert vor meiner Angst',41,0,100,1,0,0,'Comment');
@@ -17938,7 +17938,7 @@ REPLACE INTO `smart_scripts` (`entryorguid`,`source_type`,`id`,`link`,`event_typ
 (@ENTRY,@SOURCETYPE,30,0,2,0,100,1,1,0,0,0,1,7,0,0,0,0,0,2,0,0,0,0.0,0.0,0.0,0.0,"Yell 5"),
 (@ENTRY,@SOURCETYPE,32,0,25,0,100,0,0,0,0,0,41,/*58907*/1000,0,0,0,0,0,9,39814,0,5000,0.0,0.0,0.0,0.0,"FEAR"),
 (@ENTRY,@SOURCETYPE,35,0,2,0,100,0,10,20,12000,13000,11,68989,2,0,0,0,0,5,0,0,0,0.0,0.0,0.0,0.0,"Knochenstachel"),
-(@ENTRY,@SOURCETYPE,33,0,0,0,100,0,1,100,25000,35000,11,74367,0,0,0,0,0,2,0,0,0,0.0,0.0,0.0,0.0,"Rüstung_spalten"),
+(@ENTRY,@SOURCETYPE,33,0,0,0,100,0,1,100,25000,35000,11,74367,0,0,0,0,0,2,0,0,0,0.0,0.0,0.0,0.0,"Ruestung_spalten"),
 (@ENTRY,@SOURCETYPE,
 /*  id */  34,
 /* link  */0,
@@ -18113,10 +18113,10 @@ UPDATE `creature_template` SET `HealthModifier`='5500', `ArmorModifier`='200', `
 
 
 DELETE FROM `creature_text` WHERE `entry`=800037;
-INSERT INTO `creature_text` (`entry`,`groupid`,`id`,`text`,`type`,`language`,`probability`,`emote`,`duration`,`sound`,`comment`) VALUES (800037,1,0,'Oh schön. Neue Kundschaft.',14,0,100,5,0,0,'Comment');
+INSERT INTO `creature_text` (`entry`,`groupid`,`id`,`text`,`type`,`language`,`probability`,`emote`,`duration`,`sound`,`comment`) VALUES (800037,1,0,'Oh schoen. Neue Kundschaft.',14,0,100,5,0,0,'Comment');
 INSERT INTO `creature_text` (`entry`,`groupid`,`id`,`text`,`type`,`language`,`probability`,`emote`,`duration`,`sound`,`comment`) VALUES (800037,2,0,'Hahaha. Ihr kitzelt mich.',14,0,100,5,0,0,'Comment');
-INSERT INTO `creature_text` (`entry`,`groupid`,`id`,`text`,`type`,`language`,`probability`,`emote`,`duration`,`sound`,`comment`) VALUES (800037,3,0,'Ihr müsst viel lernen.',14,0,100,5,0,0,'Comment');
-INSERT INTO `creature_text` (`entry`,`groupid`,`id`,`text`,`type`,`language`,`probability`,`emote`,`duration`,`sound`,`comment`) VALUES (800037,4,0,'Habt ihr niemand anderen, dem ihr auf die Nerven gehen könnt?',14,0,100,5,0,0,'Comment');
+INSERT INTO `creature_text` (`entry`,`groupid`,`id`,`text`,`type`,`language`,`probability`,`emote`,`duration`,`sound`,`comment`) VALUES (800037,3,0,'Ihr muesst viel lernen.',14,0,100,5,0,0,'Comment');
+INSERT INTO `creature_text` (`entry`,`groupid`,`id`,`text`,`type`,`language`,`probability`,`emote`,`duration`,`sound`,`comment`) VALUES (800037,4,0,'Habt ihr niemand anderen, dem ihr auf die Nerven gehen koennt?',14,0,100,5,0,0,'Comment');
 INSERT INTO `creature_text` (`entry`,`groupid`,`id`,`text`,`type`,`language`,`probability`,`emote`,`duration`,`sound`,`comment`) VALUES (800037,5,0,'Phase 1',41,0,100,5,0,0,'Comment');
 INSERT INTO `creature_text` (`entry`,`groupid`,`id`,`text`,`type`,`language`,`probability`,`emote`,`duration`,`sound`,`comment`) VALUES (800037,6,0,'Phase 2',41,0,100,5,0,0,'Comment');
 INSERT INTO `creature_text` (`entry`,`groupid`,`id`,`text`,`type`,`language`,`probability`,`emote`,`duration`,`sound`,`comment`) VALUES (800037,7,0,'Phase 3',41,0,100,5,0,0,'Comment');
@@ -18624,8 +18624,8 @@ UPDATE `creature_template` SET `HealthModifier`='3800', `ArmorModifier`='20', `D
 DELETE FROM `creature_text` WHERE `entry`=800038;
 INSERT INTO `creature_text` (`entry`,`groupid`,`id`,`text`,`type`,`language`,`probability`,`emote`,`duration`,`sound`,`comment`) VALUES (800038,1,0,'Willkommen! Ich habe Euch erwartet.',14,0,100,5,0,0,'Comment');
 INSERT INTO `creature_text` (`entry`,`groupid`,`id`,`text`,`type`,`language`,`probability`,`emote`,`duration`,`sound`,`comment`) VALUES (800038,2,0,'Eine nette kleine Runde hier. Fast wie damals.',14,0,100,5,0,0,'Comment');
-INSERT INTO `creature_text` (`entry`,`groupid`,`id`,`text`,`type`,`language`,`probability`,`emote`,`duration`,`sound`,`comment`) VALUES (800038,3,0,'Wer ist euer Anführer?',14,0,100,5,0,0,'Comment');
-INSERT INTO `creature_text` (`entry`,`groupid`,`id`,`text`,`type`,`language`,`probability`,`emote`,`duration`,`sound`,`comment`) VALUES (800038,4,0,'Ihr seid so erbärmlich',14,0,100,5,0,0,'Comment');
+INSERT INTO `creature_text` (`entry`,`groupid`,`id`,`text`,`type`,`language`,`probability`,`emote`,`duration`,`sound`,`comment`) VALUES (800038,3,0,'Wer ist euer Anfuehrer?',14,0,100,5,0,0,'Comment');
+INSERT INTO `creature_text` (`entry`,`groupid`,`id`,`text`,`type`,`language`,`probability`,`emote`,`duration`,`sound`,`comment`) VALUES (800038,4,0,'Ihr seid so erbaermlich',14,0,100,5,0,0,'Comment');
 INSERT INTO `creature_text` (`entry`,`groupid`,`id`,`text`,`type`,`language`,`probability`,`emote`,`duration`,`sound`,`comment`) VALUES (800038,5,0,'Phase 1',41,0,100,5,0,0,'Comment');
 INSERT INTO `creature_text` (`entry`,`groupid`,`id`,`text`,`type`,`language`,`probability`,`emote`,`duration`,`sound`,`comment`) VALUES (800038,6,0,'Phase 2',41,0,100,5,0,0,'Comment');
 INSERT INTO `creature_text` (`entry`,`groupid`,`id`,`text`,`type`,`language`,`probability`,`emote`,`duration`,`sound`,`comment`) VALUES (800038,7,0,'Phase 3',41,0,100,5,0,0,'Comment');
@@ -18671,7 +18671,7 @@ REPLACE INTO `smart_scripts` (`entryorguid`,`source_type`,`id`,`link`,`event_typ
 
 (@ENTRY,@SOURCETYPE,4,0,2,0,100,0,50,60,7000,8000,11,40504,2,0,0,0,0,6,0,0,0,0.0,0.0,0.0,0.0,"Ruby"),
 (@ENTRY,@SOURCETYPE,5,0,2,0,100,0,40,50,0,0,11,70123,0,0,0,0,0,5,0,0,0,0.0,0.0,0.0,0.0,"BLISTERING_COLD"),
-(@ENTRY,@SOURCETYPE,8,0,0,0,100,0,1,100,10000,15000,11,74367,0,0,0,0,0,2,0,0,0,0.0,0.0,0.0,0.0,"Rüstung_spalten"),
+(@ENTRY,@SOURCETYPE,8,0,0,0,100,0,1,100,10000,15000,11,74367,0,0,0,0,0,2,0,0,0,0.0,0.0,0.0,0.0,"Ruestung_spalten"),
 (@ENTRY,@SOURCETYPE,10,0,2,0,100,1,1,8,0,0,11,68335,2,0,0,0,0,1,0,0,0,0.0,0.0,0.0,0.0,"Enrage_@_8%"),
 (@ENTRY,@SOURCETYPE,11,0,2,0,100,0,70,75,10000,69140,11,72363,0,0,0,0,0,5,0,0,0,0.0,0.0,0.0,0.0,"SPELL_CORRUPTED_FLESH"),
 (@ENTRY,@SOURCETYPE,12,0,2,0,100,1,30,40,0,0,11,40504,2,0,0,0,0,6,0,0,0,0.0,0.0,0.0,0.0,"Ruby"),
@@ -18816,7 +18816,7 @@ VALUES ( /*  ID */ 800039,
   /* Modelid3   */0,
   /* Model4  */ 0,
   /* Name  */'Moon',
-  /* Subname */'Die abtrünnige Sammlerin',
+  /* Subname */'Die abtruennige Sammlerin',
   /* Iconname */'',
   /* gossip_menu_id`  */800039,
   /* Min Level */83,
@@ -18886,10 +18886,10 @@ REPLACE INTO `creature` (`guid`,`id`,`map`,`spawnMask`,`phaseMask`,`modelid`,`eq
 
 
 DELETE FROM `creature_text` WHERE `entry`=800039;
-INSERT INTO `creature_text` (`entry`,`groupid`,`id`,`text`,`type`,`language`,`probability`,`emote`,`duration`,`sound`,`comment`) VALUES (800039,1,0,'Die Sammler müssen vernichtet werden.',14,0,100,5,0,0,'Comment');
+INSERT INTO `creature_text` (`entry`,`groupid`,`id`,`text`,`type`,`language`,`probability`,`emote`,`duration`,`sound`,`comment`) VALUES (800039,1,0,'Die Sammler muessen vernichtet werden.',14,0,100,5,0,0,'Comment');
 INSERT INTO `creature_text` (`entry`,`groupid`,`id`,`text`,`type`,`language`,`probability`,`emote`,`duration`,`sound`,`comment`) VALUES (800039,2,0,'Niemand hat verdient am Leben zu bleiben',14,0,100,5,0,0,'Comment');
-INSERT INTO `creature_text` (`entry`,`groupid`,`id`,`text`,`type`,`language`,`probability`,`emote`,`duration`,`sound`,`comment`) VALUES (800039,3,0,'Ich werde die Insel säubern.',14,0,100,5,0,0,'Comment');
-INSERT INTO `creature_text` (`entry`,`groupid`,`id`,`text`,`type`,`language`,`probability`,`emote`,`duration`,`sound`,`comment`) VALUES (800039,4,0,'Habt ihr niemand anderen, dem ihr auf die Nerven gehen könnt?',14,0,100,5,0,0,'Comment');
+INSERT INTO `creature_text` (`entry`,`groupid`,`id`,`text`,`type`,`language`,`probability`,`emote`,`duration`,`sound`,`comment`) VALUES (800039,3,0,'Ich werde die Insel saeubern.',14,0,100,5,0,0,'Comment');
+INSERT INTO `creature_text` (`entry`,`groupid`,`id`,`text`,`type`,`language`,`probability`,`emote`,`duration`,`sound`,`comment`) VALUES (800039,4,0,'Habt ihr niemand anderen, dem ihr auf die Nerven gehen koennt?',14,0,100,5,0,0,'Comment');
 INSERT INTO `creature_text` (`entry`,`groupid`,`id`,`text`,`type`,`language`,`probability`,`emote`,`duration`,`sound`,`comment`) VALUES (800039,5,0,'Phase 1',41,0,100,5,0,0,'Comment');
 INSERT INTO `creature_text` (`entry`,`groupid`,`id`,`text`,`type`,`language`,`probability`,`emote`,`duration`,`sound`,`comment`) VALUES (800039,6,0,'Phase 2',41,0,100,5,0,0,'Comment');
 INSERT INTO `creature_text` (`entry`,`groupid`,`id`,`text`,`type`,`language`,`probability`,`emote`,`duration`,`sound`,`comment`) VALUES (800039,7,0,'Phase 3',41,0,100,5,0,0,'Comment');
@@ -19289,7 +19289,7 @@ VALUES ( /*  ID */ 800040,
   /* Modelid3   */0,
   /* Model4  */ 0,
   /* Name  */'Marltyriun',
-  /* Subname */'Der Zerstörer',
+  /* Subname */'Der Zerstoerer',
   /* Iconname */'',
   /* gossip_menu_id`  */0,
   /* Min Level */80,
@@ -19357,10 +19357,10 @@ REPLACE INTO `creature` (`guid`,`id`,`map`,`spawnMask`,`phaseMask`,`modelid`,`eq
   
  
 DELETE FROM `creature_text` WHERE `entry`=800040;
-INSERT INTO `creature_text` (`entry`,`groupid`,`id`,`text`,`type`,`language`,`probability`,`emote`,`duration`,`sound`,`comment`) VALUES (800040,1,0,'Ihr Verräter. Loyalistenschweine.',14,0,100,1,0,17457,'Comment');
+INSERT INTO `creature_text` (`entry`,`groupid`,`id`,`text`,`type`,`language`,`probability`,`emote`,`duration`,`sound`,`comment`) VALUES (800040,1,0,'Ihr Verraeter. Loyalistenschweine.',14,0,100,1,0,17457,'Comment');
 INSERT INTO `creature_text` (`entry`,`groupid`,`id`,`text`,`type`,`language`,`probability`,`emote`,`duration`,`sound`,`comment`) VALUES (800040,2,0,'Habt ihr nichts anderes zu tun?!!',14,0,100,1,0,17458,'Comment');
 INSERT INTO `creature_text` (`entry`,`groupid`,`id`,`text`,`type`,`language`,`probability`,`emote`,`duration`,`sound`,`comment`) VALUES (800040,3,0,'Seid ihr so lumpig vorbereitet?!',14,0,100,1,0,17459,'Comment');
-INSERT INTO `creature_text` (`entry`,`groupid`,`id`,`text`,`type`,`language`,`probability`,`emote`,`duration`,`sound`,`comment`) VALUES (800040,4,0,'Hört auf! Ich tue alles was ihr wollt.',14,0,100,1,0,17460,'Comment');
+INSERT INTO `creature_text` (`entry`,`groupid`,`id`,`text`,`type`,`language`,`probability`,`emote`,`duration`,`sound`,`comment`) VALUES (800040,4,0,'Hoert auf! Ich tue alles was ihr wollt.',14,0,100,1,0,17460,'Comment');
 INSERT INTO `creature_text` (`entry`,`groupid`,`id`,`text`,`type`,`language`,`probability`,`emote`,`duration`,`sound`,`comment`) VALUES (800040,5,0,'Phase 1',41,0,100,1,0,0,'Comment');
 INSERT INTO `creature_text` (`entry`,`groupid`,`id`,`text`,`type`,`language`,`probability`,`emote`,`duration`,`sound`,`comment`) VALUES (800040,6,0,'Phase 2',41,0,100,1,0,0,'Comment');
  
@@ -19505,10 +19505,10 @@ UPDATE `creature_template` SET `HealthModifier`=1500, `ArmorModifier`=50, `Damag
 
 DELETE FROM `creature_text` WHERE `entry` = 800041;
 REPLACE INTO  `creature_text` (`entry`, `groupid`, `id`, `text`, `type`, `language`, `probability`, `emote`, `duration`, `sound`, `comment`) VALUES ('800041', '1', '0', 'Ihr seid langweilig. Moment ich hole einen Kaffee.', '14', '0', '100', '5', '0', '0', 'VPP');
-REPLACE INTO  `creature_text` (`entry`, `groupid`, `id`, `text`, `type`, `language`, `probability`, `emote`, `duration`, `sound`, `comment`) VALUES ('800041', '2', '0', 'Tötet ihr mich, wird das Konsequenzen nach sich ziehen.', '14', '0', '100', '5', '0', '0', 'VPP');
+REPLACE INTO  `creature_text` (`entry`, `groupid`, `id`, `text`, `type`, `language`, `probability`, `emote`, `duration`, `sound`, `comment`) VALUES ('800041', '2', '0', 'Toetet ihr mich, wird das Konsequenzen nach sich ziehen.', '14', '0', '100', '5', '0', '0', 'VPP');
 REPLACE INTO  `creature_text` (`entry`, `groupid`, `id`, `text`, `type`, `language`, `probability`, `emote`, `duration`, `sound`, `comment`) VALUES ('800041', '3', '0', 'Niemals! Bevor ich sterbe, wird der Server ausgemacht.', '14', '0', '100', '5', '0', '0', 'VPP');
 REPLACE INTO  `creature_text` (`entry`, `groupid`, `id`, `text`, `type`, `language`, `probability`, `emote`, `duration`, `sound`, `comment`) VALUES ('800041', '4', '0', 'Ich habe Euch gewarnt.', '14', '0', '100', '5', '0', '0', 'VPP');
-REPLACE INTO  `creature_text` (`entry`, `groupid`, `id`, `text`, `type`, `language`, `probability`, `emote`, `duration`, `sound`, `comment`) VALUES ('800041', '5', '0', 'Verdammt! Ihr wart zu schnell für mich!', '14', '0', '100', '5', '0', '0', 'VPP');
+REPLACE INTO  `creature_text` (`entry`, `groupid`, `id`, `text`, `type`, `language`, `probability`, `emote`, `duration`, `sound`, `comment`) VALUES ('800041', '5', '0', 'Verdammt! Ihr wart zu schnell fuer mich!', '14', '0', '100', '5', '0', '0', 'VPP');
 
 
 
@@ -19634,7 +19634,7 @@ REPLACE INTO `npc_vendor` (`entry`, `slot`, `item`, `maxcount`, `incrtime`, `Ext
 REPLACE INTO `npc_vendor` (`entry`, `slot`, `item`, `maxcount`, `incrtime`, `ExtendedCost`) VALUES 
 (800042,0,40374,0,0,0);
 
-/* Rücken*/
+/* Ruecken*/
 REPLACE INTO `npc_vendor` (`entry`, `slot`, `item`, `maxcount`, `incrtime`, `ExtendedCost`) VALUES 
 (800042,0,49792,0,0,0);
 REPLACE INTO `npc_vendor` (`entry`, `slot`, `item`, `maxcount`, `incrtime`, `ExtendedCost`) VALUES 
@@ -19731,7 +19731,7 @@ REPLACE INTO `npc_vendor` (`entry`, `slot`, `item`, `maxcount`, `incrtime`, `Ext
 REPLACE INTO `npc_vendor` (`entry`, `slot`, `item`, `maxcount`, `incrtime`, `ExtendedCost`) VALUES 
 (800042,0,47229,0,0,0);
 
-/*Füße*/
+/*Fueße*/
 REPLACE INTO `npc_vendor` (`entry`, `slot`, `item`, `maxcount`, `incrtime`, `ExtendedCost`) VALUES 
 (800042,0,47560,0,0,0);
 REPLACE INTO `npc_vendor` (`entry`, `slot`, `item`, `maxcount`, `incrtime`, `ExtendedCost`) VALUES 
@@ -20461,7 +20461,7 @@ DELETE FROM `npc_vendor` WHERE `entry` =800046;
 
 
 
-/*Zauberstäbe*/
+/*Zauberstaebe*/
 REPLACE INTO `npc_vendor` (`entry`, `slot`, `item`, `maxcount`, `incrtime`, `ExtendedCost`) VALUES 
 (800046,0,49852,0,0,0);
 REPLACE INTO `npc_vendor` (`entry`, `slot`, `item`, `maxcount`, `incrtime`, `ExtendedCost`) VALUES 
@@ -20553,7 +20553,7 @@ REPLACE INTO `npc_vendor` (`entry`, `slot`, `item`, `maxcount`, `incrtime`, `Ext
 REPLACE INTO `npc_vendor` (`entry`, `slot`, `item`, `maxcount`, `incrtime`, `ExtendedCost`) VALUES 
 (800046,0,45331,0,0,0);
 
-/*Stäbe*/
+/*Staebe*/
 REPLACE INTO `npc_vendor` (`entry`, `slot`, `item`, `maxcount`, `incrtime`, `ExtendedCost`) VALUES 
 (800046,0,45695,0,0,0);
 REPLACE INTO `npc_vendor` (`entry`, `slot`, `item`, `maxcount`, `incrtime`, `ExtendedCost`) VALUES 
@@ -20946,7 +20946,7 @@ VALUES ( /*  ID */ 800050,
   /* Modelid3   */0,
   /* Model4  */ 0,
   /* Name  */'Tyranium',
-  /* Subname */'Der geflügelte Schrecken',
+  /* Subname */'Der gefluegelte Schrecken',
   /* Iconname */'',
   /* gossip_menu_id`  */0,
   /* Min Level */83,
@@ -21101,10 +21101,10 @@ REPLACE INTO `npc_vendor` (`entry`, `slot`, `item`, `maxcount`, `incrtime`, `Ext
 -- 1 Feuerstein und Zunder 4500 Arena Points + 1930 Rating 
 REPLACE INTO `npc_vendor` (`entry`, `slot`, `item`, `maxcount`, `incrtime`, `ExtendedCost`) VALUES 
 (800051, 0, 4471, 0, 0, 2460);
--- 1 Feine Gewürze = 1 Mal der Illidari
+-- 1 Feine Gewuerze = 1 Mal der Illidari
 REPLACE INTO `npc_vendor` (`entry`, `slot`, `item`, `maxcount`, `incrtime`, `ExtendedCost`) VALUES 
 (800051, 0, 3713, 10, 10000, 1959);
--- 1Scharfes Gewürz =
+-- 1Scharfes Gewuerz =
 REPLACE INTO `npc_vendor` (`entry`, `slot`, `item`, `maxcount`, `incrtime`, `ExtendedCost`) VALUES 
 (800051, 0, 3713, 10, 10000, 1959);
 
@@ -21266,11 +21266,11 @@ REPLACE INTO `quest_template` (`ID`, `Method`, `QuestLevel`, `MinLevel`, `QuestS
  /*  PointY  */ 0,
  /*  PointOption  */ 0,
  /*  LogTitle  */ 'Die Drachenmutter',
- /*  LogDescription  */  'Tötet Sindragosa',
- /*  QuestDescription   */ 'Hallo $N,tötet Sindragosa. Sindragosa ist die Mutter aller Drachen, die ihr schon bezwungen habt. Sie muss sterben damit ich die benötigte Tinktur erstellen kann bzw sie wirksam werden kann.',
+ /*  LogDescription  */  'Toetet Sindragosa',
+ /*  QuestDescription   */ 'Hallo $N,toetet Sindragosa. Sindragosa ist die Mutter aller Drachen, die ihr schon bezwungen habt. Sie muss sterben damit ich die benoetigte Tinktur erstellen kann bzw sie wirksam werden kann.',
  /*  EndText   */  '',
  /*  OfferRewardText  */  'Seid ihr fertig?',
- /*  RequestItemsText  */ 'Tötet Sindragosa',
+ /*  RequestItemsText  */ 'Toetet Sindragosa',
  /*  QuestCompletionLog  */ 'Es ist Eure Sache was ihr tut.',
  /*  RequiredNpcOrGo1  */ 36853,
  /*  RequiredNpcOrGo2  */ 0,
@@ -21428,11 +21428,11 @@ REPLACE INTO `quest_template` (`ID`, `Method`, `QuestLevel`, `MinLevel`, `QuestS
  /*  PointY  */ 0,
  /*  PointOption  */ 0,
  /*  LogTitle  */ 'Die Tinktur der 4 Elemente',
- /*  LogDescription  */  'Tötet die Verkörperung der 4 Elemente.',
- /*  QuestDescription   */ 'Hallo $N,die 4 Elemente besitzen Mächte die wir für das erfolgreiche Einsetzen der Tinktur brauchen. Tötet sie daher alle und nehmt deren Kraft in Euch auf. Viel Erfolg fleißige Wanderer.',
+ /*  LogDescription  */  'Toetet die Verkoerperung der 4 Elemente.',
+ /*  QuestDescription   */ 'Hallo $N,die 4 Elemente besitzen Maechte die wir fuer das erfolgreiche Einsetzen der Tinktur brauchen. Toetet sie daher alle und nehmt deren Kraft in Euch auf. Viel Erfolg fleißige Wanderer.',
  /*  EndText   */  '',
  /*  OfferRewardText  */  'Seid ihr fertig?',
- /*  RequestItemsText  */ 'Tötet die Verkörperung der 4 Elemente.',
+ /*  RequestItemsText  */ 'Toetet die Verkoerperung der 4 Elemente.',
  /*  QuestCompletionLog  */ 'Es ist Eure Sache was ihr tut.',
  /*  RequiredNpcOrGo1  */ 800037,
  /*  RequiredNpcOrGo2  */ 800038,
@@ -21589,9 +21589,9 @@ REPLACE INTO `quest_template` (`ID`, `Method`, `QuestLevel`, `MinLevel`, `QuestS
  /*  PointX  */ 0,
  /*  PointY  */ 0,
  /*  PointOption  */ 0,
- /*  LogTitle  */ 'Überbringt die Tinkur meinem Mann',
+ /*  LogTitle  */ 'ueberbringt die Tinkur meinem Mann',
  /*  LogDescription  */  'Bringt die Tinktur zu Destro MMOwning.',
- /*  QuestDescription   */ 'Hallo $N, die Tinktur ist fertig und muss nun nur noch meinem Mann überbracht werden. Aber beeilt Euch.',
+ /*  QuestDescription   */ 'Hallo $N, die Tinktur ist fertig und muss nun nur noch meinem Mann ueberbracht werden. Aber beeilt Euch.',
  /*  EndText   */  '',
  /*  OfferRewardText  */  'Seid ihr fertig?',
  /*  RequestItemsText  */ 'Bringt die Tinktur zu Destro MMOwning.',
@@ -21745,11 +21745,11 @@ REPLACE INTO `quest_template` (`ID`, `Method`, `QuestLevel`, `MinLevel`, `QuestS
  /*  PointY  */ 0,
  /*  PointOption  */ 0,
  /*  LogTitle  */ 'Weekly: Kayoula',
- /*  LogDescription  */  'Tötet Kayoula.',
- /*  QuestDescription   */ 'Hallo $N, tötet Kayoula. Kayoula ist die verschollene Frau von Exitare. Sie muss sterben damit sich diese Brut nicht weiterentwickeln kann. Es ist notwendig!',
+ /*  LogDescription  */  'Toetet Kayoula.',
+ /*  QuestDescription   */ 'Hallo $N, toetet Kayoula. Kayoula ist die verschollene Frau von Exitare. Sie muss sterben damit sich diese Brut nicht weiterentwickeln kann. Es ist notwendig!',
  /*  EndText   */  '',
- /*  OfferRewardText  */  'Ist er zu schwer für Euch?',
- /*  RequestItemsText  */ 'Tötet Kayoula.',
+ /*  OfferRewardText  */  'Ist er zu schwer fuer Euch?',
+ /*  RequestItemsText  */ 'Toetet Kayoula.',
  /*  QuestCompletionLog  */ 'Es ist Eure Sache was ihr tut.',
  /*  RequiredNpcOrGo1  */ 800037,
  /*  RequiredNpcOrGo2  */ 0,
@@ -21900,11 +21900,11 @@ REPLACE INTO `quest_template` (`ID`, `Method`, `QuestLevel`, `MinLevel`, `QuestS
  /*  PointY  */ 0,
  /*  PointOption  */ 0,
  /*  LogTitle  */ 'Weekly: Tempus',
- /*  LogDescription  */  'Tötet Tempus.',
- /*  QuestDescription   */ 'Hallo $N, Tötet Tempus den Verrätern. Er ist über den Porter zu erreichen. Er muss vernichtet werden.',
+ /*  LogDescription  */  'Toetet Tempus.',
+ /*  QuestDescription   */ 'Hallo $N, Toetet Tempus den Verraetern. Er ist ueber den Porter zu erreichen. Er muss vernichtet werden.',
  /*  EndText   */  '',
- /*  OfferRewardText  */  'Ist er zu schwer für Euch?',
- /*  RequestItemsText  */ 'Tötet Tempus.',
+ /*  OfferRewardText  */  'Ist er zu schwer fuer Euch?',
+ /*  RequestItemsText  */ 'Toetet Tempus.',
  /*  QuestCompletionLog  */ 'Es ist Eure Sache was ihr tut.',
  /*  RequiredNpcOrGo1  */ 800038,
  /*  RequiredNpcOrGo2  */ 0,
@@ -22060,11 +22060,11 @@ REPLACE INTO `quest_template` (`ID`, `Method`, `QuestLevel`, `MinLevel`, `QuestS
  /*  PointY  */ 0,
  /*  PointOption  */ 0,
  /*  LogTitle  */ 'Weekly: Moon',
- /*  LogDescription  */  'Tötet Moon.',
- /*  QuestDescription   */ 'Hallo $N, Tötet Moon die Verräterin. Sie ist über den Porter zu erreichen. Sie muss vernichtet werden.',
+ /*  LogDescription  */  'Toetet Moon.',
+ /*  QuestDescription   */ 'Hallo $N, Toetet Moon die Verraeterin. Sie ist ueber den Porter zu erreichen. Sie muss vernichtet werden.',
  /*  EndText   */  '',
- /*  OfferRewardText  */  'Ist sie zu schwer für Euch?',
- /*  RequestItemsText  */ 'Tötet Moon.',
+ /*  OfferRewardText  */  'Ist sie zu schwer fuer Euch?',
+ /*  RequestItemsText  */ 'Toetet Moon.',
  /*  QuestCompletionLog  */ 'Es ist Eure Sache was ihr tut.',
  /*  RequiredNpcOrGo1  */ 800039,
  /*  RequiredNpcOrGo2  */ 0,
@@ -22215,11 +22215,11 @@ REPLACE INTO `quest_template` (`ID`, `Method`, `QuestLevel`, `MinLevel`, `QuestS
  /*  PointY  */ 0,
  /*  PointOption  */ 0,
  /*  LogTitle  */ 'Weekly: Maltyriun',
- /*  LogDescription  */  'Tötet Maltyriun.',
- /*  QuestDescription   */ 'Hallo $N, Tötet Maltyriun den Verrätern. Er ist über den Porter zu erreichen. Er muss vernichtet werden.',
+ /*  LogDescription  */  'Toetet Maltyriun.',
+ /*  QuestDescription   */ 'Hallo $N, Toetet Maltyriun den Verraetern. Er ist ueber den Porter zu erreichen. Er muss vernichtet werden.',
  /*  EndText   */  '',
- /*  OfferRewardText  */  'Ist er zu schwer für Euch?',
- /*  RequestItemsText  */ 'Tötet Maltyriun.',
+ /*  OfferRewardText  */  'Ist er zu schwer fuer Euch?',
+ /*  RequestItemsText  */ 'Toetet Maltyriun.',
  /*  QuestCompletionLog  */ 'Es ist Eure Sache was ihr tut.',
  /*  RequiredNpcOrGo1  */ 800040,
  /*  RequiredNpcOrGo2  */ 0,
@@ -22374,12 +22374,12 @@ REPLACE INTO `quest_template` (`ID`, `Method`, `QuestLevel`, `MinLevel`, `QuestS
  /*  PointX  */ 0,
  /*  PointY  */ 0,
  /*  PointOption  */ 0,
- /*  LogTitle  */ 'Säuberung vom Schlamm',
- /*  LogDescription  */  'Säubert uns vom Schlamm und tötet 25 schwarzer Schlamm.',
- /*  QuestDescription   */ 'Dieser ekelhafte Schlamm verteilt überall seinen Unrat. Bitte bitte kümmert Euch darum. Sie dürfen nicht wieder ihre schleimigen Spuren auf dem Boden hinterlassen',
+ /*  LogTitle  */ 'Saeuberung vom Schlamm',
+ /*  LogDescription  */  'Saeubert uns vom Schlamm und toetet 25 schwarzer Schlamm.',
+ /*  QuestDescription   */ 'Dieser ekelhafte Schlamm verteilt ueberall seinen Unrat. Bitte bitte kuemmert Euch darum. Sie duerfen nicht wieder ihre schleimigen Spuren auf dem Boden hinterlassen',
  /*  EndText */  '',
  /*  OfferRewardText bevor man beendet  */  'Wunderbar $N, dem Schlamm wird das eine Lehre sein.',
- /*  RequestItemsText  */ 'Hallo $N, hast du alles getötet?',
+ /*  RequestItemsText  */ 'Hallo $N, hast du alles getoetet?',
  /*  Quest Completed Text wird rechts im Questlog angezeigt der Text */ '',
  /*  RequiredNpcOrGo1  */ 1032,
  /*  RequiredNpcOrGo2  */ 0,
@@ -22533,8 +22533,8 @@ REPLACE INTO `quest_template` (`ID`, `Method`, `QuestLevel`, `MinLevel`, `QuestS
  /*  PointY  */ 0,
  /*  PointOption  */ 0,
  /*  LogTitle  */ 'Die Moosfelle',
- /*  LogDescription  */  'Die Mossfelle und der Wollstoff müssen getötet sowie gesammelt werden.',
- /*  QuestDescription   */ 'Die Mossfelle sammeln viel Wollstoff der uns fehlt, für Kleidung. Wir werden uns deren Wollstoffen aneignen. Tötet sie also alle, und klaut den Wollstoff.',
+ /*  LogDescription  */  'Die Mossfelle und der Wollstoff muessen getoetet sowie gesammelt werden.',
+ /*  QuestDescription   */ 'Die Mossfelle sammeln viel Wollstoff der uns fehlt, fuer Kleidung. Wir werden uns deren Wollstoffen aneignen. Toetet sie also alle, und klaut den Wollstoff.',
  /*  EndText */  '',
  /*  OfferRewardText bevor man beendet  */  'Wunderbar $N, unsere Kleidungsproduktion ist gesichert.',
  /*  RequestItemsText  */ 'Hallo $N, hast du alles was du brauchst?',
@@ -22691,10 +22691,10 @@ REPLACE INTO `quest_template` (`ID`, `Method`, `QuestLevel`, `MinLevel`, `QuestS
  /*  PointY  */ 0,
  /*  PointOption  */ 0,
  /*  LogTitle  */ 'Die Eulen',
- /*  LogDescription  */  'Tötet die primitiven Eulenbestien',
- /*  QuestDescription   */ 'Töte die primitiven Eulenbestien und die gifitgen Seuchenfledermäuse um die Welt frei von Ungeziffer zu machen.',
+ /*  LogDescription  */  'Toetet die primitiven Eulenbestien',
+ /*  QuestDescription   */ 'Toete die primitiven Eulenbestien und die gifitgen Seuchenfledermaeuse um die Welt frei von Ungeziffer zu machen.',
  /*  EndText */  '',
- /*  OfferRewardText bevor man beendet  */  'Wunderbar $N, schön das ihr alles geschafft habt.',
+ /*  OfferRewardText bevor man beendet  */  'Wunderbar $N, schoen das ihr alles geschafft habt.',
  /*  RequestItemsText  */ 'Hallo $N, hast du alles was du brauchst?',
  /*  Quest Completed Text wird rechts im Questlog angezeigt der Text */ '',
  /*  RequiredNpcOrGo1  */ 2928,
@@ -22847,12 +22847,12 @@ REPLACE INTO `quest_template` (`ID`, `Method`, `QuestLevel`, `MinLevel`, `QuestS
  /*  PointX  */ 0,
  /*  PointY  */ 0,
  /*  PointOption  */ 0,
- /*  LogTitle  */ 'Der Geißelfürst',
- /*  LogDescription  */  'Der Geißelfürst muss sterben',
- /*  QuestDescription   */ 'Der Geißelfürst Tyrannus ist mehr als nur ein Geschwür in unserem Land. Holt die Grube zurück. Sie war Teil unseres Reichtums. Dort haben wir unser Erz geschürft, bis der Geißelfürst sie uns abnahm.',
+ /*  LogTitle  */ 'Der Geißelfuerst',
+ /*  LogDescription  */  'Der Geißelfuerst muss sterben',
+ /*  QuestDescription   */ 'Der Geißelfuerst Tyrannus ist mehr als nur ein Geschwuer in unserem Land. Holt die Grube zurueck. Sie war Teil unseres Reichtums. Dort haben wir unser Erz geschuerft, bis der Geißelfuerst sie uns abnahm.',
  /*  EndText */  '',
- /*  OfferRewardText bevor man beendet  */  'Der Geißelfürst muss sterben',
- /*  RequestItemsText  */ 'Hallo $N, hast du alles getötet?',
+ /*  OfferRewardText bevor man beendet  */  'Der Geißelfuerst muss sterben',
+ /*  RequestItemsText  */ 'Hallo $N, hast du alles getoetet?',
  /*  Quest Completed Text wird rechts im Questlog angezeigt der Text */ '',
  /*  RequiredNpcOrGo1  */ 36658,
  /*  RequiredNpcOrGo2  */ 0,
@@ -23001,11 +23001,11 @@ REPLACE INTO `quest_template` (`ID`, `Method`, `QuestLevel`, `MinLevel`, `QuestS
  /*  PointY  */ 0,
  /*  PointOption  */ 0,
  /*  LogTitle  */ 'Weekly: Tyranium',
- /*  LogDescription  */  'Tötet Tyranium.',
- /*  QuestDescription   */ 'Hallo $N, Tötet Tyranium den geflügelten Schrecken. Er ist über den Porter zu erreichen. Er muss vernichtet werden.',
+ /*  LogDescription  */  'Toetet Tyranium.',
+ /*  QuestDescription   */ 'Hallo $N, Toetet Tyranium den gefluegelten Schrecken. Er ist ueber den Porter zu erreichen. Er muss vernichtet werden.',
  /*  EndText   */  '',
- /*  OfferRewardText  */  'Ist er zu schwer für Euch?',
- /*  RequestItemsText  */ 'Tötet Tyranium.',
+ /*  OfferRewardText  */  'Ist er zu schwer fuer Euch?',
+ /*  RequestItemsText  */ 'Toetet Tyranium.',
  /*  QuestCompletionLog  */ 'Es ist Eure Sache was ihr tut.',
  /*  RequiredNpcOrGo1  */ 800050,
  /*  RequiredNpcOrGo2  */ 0,
@@ -23163,11 +23163,11 @@ REPLACE INTO `quest_template` (`ID`, `Method`, `QuestLevel`, `MinLevel`, `QuestS
  /*  PointY  */ 0,
  /*  PointOption  */ 0,
  /*  LogTitle  */ 'Kristallisierte Steinsplitter',
- /*  LogDescription  */  'Sammelt 60 Stück der Steinsplitter',
- /*  QuestDescription   */ 'Hallo $C, schön Euch hier begrüßen zu dürfen. Bringt mir kristallierste Steinsplitter damit ich meine KLinge wieder schärfen kann. Sie ist im Kampf gegen unseren Feid ganz stumpf geworden.',
+ /*  LogDescription  */  'Sammelt 60 Stueck der Steinsplitter',
+ /*  QuestDescription   */ 'Hallo $C, schoen Euch hier begrueßen zu duerfen. Bringt mir kristallierste Steinsplitter damit ich meine KLinge wieder schaerfen kann. Sie ist im Kampf gegen unseren Feid ganz stumpf geworden.',
  /*  EndText   */  '',
  /*  OfferRewardText  */  'Seid ihr fertig?',
- /*  RequestItemsText  */ 'Sammelt 60 Stück der Steinsplitter',
+ /*  RequestItemsText  */ 'Sammelt 60 Stueck der Steinsplitter',
  /*  QuestCompletionLog  */ 'Es ist Eure Sache was ihr tut.',
  /*  RequiredNpcOrGo1  */ 0,
  /*  RequiredNpcOrGo2  */ 0,
@@ -23323,12 +23323,12 @@ REPLACE INTO `quest_template` (`ID`, `Method`, `QuestLevel`, `MinLevel`, `QuestS
  /*  PointX  */ 0,
  /*  PointY  */ 0,
  /*  PointOption  */ 0,
- /*  LogTitle  */ 'Die Verjüngung',
- /*  LogDescription  */  'Bringt Krasus die Glyphe der Verjüngung.',
- /*  QuestDescription   */ 'Hallo $N,bringt mir bitte die Glyphe der Verjüngung. Es ist Zeit  mein ewiges Leben um ein weiteres Stück zu verlängern. Helft mir bitte.',
+ /*  LogTitle  */ 'Die Verjuengung',
+ /*  LogDescription  */  'Bringt Krasus die Glyphe der Verjuengung.',
+ /*  QuestDescription   */ 'Hallo $N,bringt mir bitte die Glyphe der Verjuengung. Es ist Zeit  mein ewiges Leben um ein weiteres Stueck zu verlaengern. Helft mir bitte.',
  /*  EndText   */  '',
  /*  OfferRewardText  */  'Seid ihr fertig?',
- /*  RequestItemsText  */ 'Bringt Krasus die Glyphe der Verjüngung.',
+ /*  RequestItemsText  */ 'Bringt Krasus die Glyphe der Verjuengung.',
  /*  QuestCompletionLog  */ 'Es ist Eure Sache was ihr tut.',
  /*  RequiredNpcOrGo1  */ 0,
  /*  RequiredNpcOrGo2  */ 0,
@@ -23486,11 +23486,11 @@ REPLACE INTO `quest_template` (`ID`, `Method`, `QuestLevel`, `MinLevel`, `QuestS
  /*  PointY  */ 0,
  /*  PointOption  */ 0,
  /*  LogTitle  */ 'Der Kommandant',
- /*  LogDescription  */  'Tötet den Nerubischen Kommandanten.',
- /*  QuestDescription   */ 'Hallo $N,der Nerubische Kommandant wacht auf seinem Berg und schüchtert seine ganze Umgebung ein. Wir müssen ihn loswerden. Tötet ihn. Ihr findet ihn auf der Anhöhe kurz hinter Gallgrimm in der Drachenöde. Es liegt zwischen der Feste Wintergarde und Gallgrimm.',
+ /*  LogDescription  */  'Toetet den Nerubischen Kommandanten.',
+ /*  QuestDescription   */ 'Hallo $N,der Nerubische Kommandant wacht auf seinem Berg und schuechtert seine ganze Umgebung ein. Wir muessen ihn loswerden. Toetet ihn. Ihr findet ihn auf der Anhoehe kurz hinter Gallgrimm in der Drachenoede. Es liegt zwischen der Feste Wintergarde und Gallgrimm.',
  /*  EndText   */  '',
  /*  OfferRewardText  */  'Seid ihr fertig?',
- /*  RequestItemsText  */ 'Tötet den Nerubischen Kommandanten.',
+ /*  RequestItemsText  */ 'Toetet den Nerubischen Kommandanten.',
  /*  QuestCompletionLog  */ 'Es ist Eure Sache was ihr tut.',
  /*  RequiredNpcOrGo1  */ 800036,
  /*  RequiredNpcOrGo2  */ 0,
@@ -23649,7 +23649,7 @@ REPLACE INTO `quest_template` (`ID`, `Method`, `QuestLevel`, `MinLevel`, `QuestS
  /*  PointOption  */ 0,
  /*  LogTitle  */ 'Suche nach Exitares Frau',
  /*  LogDescription  */  'Findet und untersucht die Stelle an welcher Exitares Frau zuletzt gesehen wurde.',
- /*  QuestDescription   */ 'Hallo $N,Exitares Frau wurde entführt. Er bat mich um Hilfe und ich werde ihm helfen. Sucht die Stelle auf, an der Kayoula zuletzt gesehen wurde und bringt mir erste Indizien für ihr verschwinden. Sucht nach ihren Federschmuck. Es kann sein, das dieser nicht mehr verstreut auf dem Boden liegt, sondern von den dort vorkommenden Drachenknochenkondoren aufgelesen wurde. Der letzte Ort an dem Kayoula gesehen wurde war links vom Obsidiandrachenschrein. Helft uns und ihr werdet reich belohnt.',
+ /*  QuestDescription   */ 'Hallo $N,Exitares Frau wurde entfuehrt. Er bat mich um Hilfe und ich werde ihm helfen. Sucht die Stelle auf, an der Kayoula zuletzt gesehen wurde und bringt mir erste Indizien fuer ihr verschwinden. Sucht nach ihren Federschmuck. Es kann sein, das dieser nicht mehr verstreut auf dem Boden liegt, sondern von den dort vorkommenden Drachenknochenkondoren aufgelesen wurde. Der letzte Ort an dem Kayoula gesehen wurde war links vom Obsidiandrachenschrein. Helft uns und ihr werdet reich belohnt.',
  /*  EndText   */  '',
  /*  OfferRewardText  */  'Seid ihr fertig?',
  /*  RequestItemsText  */ 'Findet und untersucht die Stelle an welcher Exitares Frau zuletzt gesehen wurde.',
@@ -23810,7 +23810,7 @@ REPLACE INTO `quest_template` (`ID`, `Method`, `QuestLevel`, `MinLevel`, `QuestS
  /*  PointOption  */ 0,
  /*  LogTitle  */ 'Folgt der Spur',
  /*  LogDescription  */  'Folgt der Spur die Exitares Frau hinterlassen hat.',
- /*  QuestDescription   */ 'Hallo $N,zum Glück seid ihr zurückgekommen. Sucht nach einem weiteren Anhaltspunkt zum Verschwinden von Exitares Frau. Ich weiß das sie einen Zwischenstopp in der Gegend zwischen Granitquell und der Venturebucht machen wollten. Aber aus Sicherheitsgründen wurde mir der genaue Ort verschwiegen.',
+ /*  QuestDescription   */ 'Hallo $N,zum Glueck seid ihr zurueckgekommen. Sucht nach einem weiteren Anhaltspunkt zum Verschwinden von Exitares Frau. Ich weiß das sie einen Zwischenstopp in der Gegend zwischen Granitquell und der Venturebucht machen wollten. Aber aus Sicherheitsgruenden wurde mir der genaue Ort verschwiegen.',
  /*  EndText   */  '',
  /*  OfferRewardText  */  'Seid ihr fertig?',
  /*  RequestItemsText  */ 'Folgt der Spur die Exitares Frau hinterlassen hat.',
@@ -23970,11 +23970,11 @@ REPLACE INTO `quest_template` (`ID`, `Method`, `QuestLevel`, `MinLevel`, `QuestS
  /*  PointY  */ 0,
  /*  PointOption  */ 0,
  /*  LogTitle  */ 'Verlagerung der Truppen',
- /*  LogDescription  */  'Reist zur Höllenfeuerhalbinsel und verstärkt unsere Aushilfstruppen.',
- /*  QuestDescription   */ 'Hallo $N,wir müssen die Suche leider ruhen lassen. Unsere Aushilfstruppen sind in großer Bedrängnis. Ihr müsst sie Unterstützen. Reißt zur Höllenfeuerhalbinsel zum Posten des Cenarius und meldet Euch bei Tiah Rotmähne.',
+ /*  LogDescription  */  'Reist zur Hoellenfeuerhalbinsel und verstaerkt unsere Aushilfstruppen.',
+ /*  QuestDescription   */ 'Hallo $N,wir muessen die Suche leider ruhen lassen. Unsere Aushilfstruppen sind in großer Bedraengnis. Ihr muesst sie Unterstuetzen. Reißt zur Hoellenfeuerhalbinsel zum Posten des Cenarius und meldet Euch bei Tiah Rotmaehne.',
  /*  EndText   */  '',
  /*  OfferRewardText  */  'Seid ihr fertig?',
- /*  RequestItemsText  */ 'Reist zur Höllenfeuerhalbinsel und verstärkt unsere Aushilfstruppen.',
+ /*  RequestItemsText  */ 'Reist zur Hoellenfeuerhalbinsel und verstaerkt unsere Aushilfstruppen.',
  /*  QuestCompletionLog  */ 'Es ist Eure Sache was ihr tut.',
  /*  RequiredNpcOrGo1  */ 0,
  /*  RequiredNpcOrGo2  */ 0,
@@ -24131,11 +24131,11 @@ REPLACE INTO `quest_template` (`ID`, `Method`, `QuestLevel`, `MinLevel`, `QuestS
  /*  PointY  */ 0,
  /*  PointOption  */ 0,
  /*  LogTitle  */ 'Angriff auf die Angreifer',
- /*  LogDescription  */  'Tötet 40 Sumpflichtbluter und 25 Verhungender Fungusgiganten.',
- /*  QuestDescription   */ 'Hallo $N, Euere erste Schlacht wird in Zangarmarschen stattfinden. Geht dorthin und tötet 40 Sumpflichtbluter sowie 25 Verhungende Fungusgiganten. Sie koorperieren mit unserem eigentlichen Feind. Daher müssen sie vernichtet werden.',
+ /*  LogDescription  */  'Toetet 40 Sumpflichtbluter und 25 Verhungender Fungusgiganten.',
+ /*  QuestDescription   */ 'Hallo $N, Euere erste Schlacht wird in Zangarmarschen stattfinden. Geht dorthin und toetet 40 Sumpflichtbluter sowie 25 Verhungende Fungusgiganten. Sie koorperieren mit unserem eigentlichen Feind. Daher muessen sie vernichtet werden.',
  /*  EndText   */  '',
  /*  OfferRewardText  */  'Seid ihr fertig?',
- /*  RequestItemsText  */ 'Tötet 40 Sumpflichtbluter und 25 Verhungender Fungusgiganten.',
+ /*  RequestItemsText  */ 'Toetet 40 Sumpflichtbluter und 25 Verhungender Fungusgiganten.',
  /*  QuestCompletionLog  */ 'Es ist Eure Sache was ihr tut.',
  /*  RequiredNpcOrGo1  */ 18125,
  /*  RequiredNpcOrGo2  */ 18133,
@@ -24292,11 +24292,11 @@ REPLACE INTO `quest_template` (`ID`, `Method`, `QuestLevel`, `MinLevel`, `QuestS
  /*  PointY  */ 0,
  /*  PointOption  */ 0,
  /*  LogTitle  */ 'Die zweite Welle abfangen',
- /*  LogDescription  */  'Tötet Kael´thas, Murmur, Magheridon sowie das Grauen aus der Tiefe.',
- /*  QuestDescription   */ 'Hallo $N, die zweite Welle werden wir abfangen. Die 4 Kommandanten müssem dazu vernichtet werden. Hoffen wir das ihre Anstrengungen dadurch durcheinander gebracht werden.',
+ /*  LogDescription  */  'Toetet Kael´thas, Murmur, Magheridon sowie das Grauen aus der Tiefe.',
+ /*  QuestDescription   */ 'Hallo $N, die zweite Welle werden wir abfangen. Die 4 Kommandanten muessem dazu vernichtet werden. Hoffen wir das ihre Anstrengungen dadurch durcheinander gebracht werden.',
  /*  EndText   */  '',
  /*  OfferRewardText  */  'Seid ihr fertig?',
- /*  RequestItemsText  */ 'Tötet Kael´thas, Murmur, Magheridon sowie das Grauen aus der Tiefe.',
+ /*  RequestItemsText  */ 'Toetet Kael´thas, Murmur, Magheridon sowie das Grauen aus der Tiefe.',
  /*  QuestCompletionLog  */ 'Es ist Eure Sache was ihr tut.',
  /*  RequiredNpcOrGo1  */ 24664,
  /*  RequiredNpcOrGo2  */ 18708,
@@ -24453,11 +24453,11 @@ REPLACE INTO `quest_template` (`ID`, `Method`, `QuestLevel`, `MinLevel`, `QuestS
  /*  PointY  */ 0,
  /*  PointOption  */ 0,
  /*  LogTitle  */ 'Erfolg oder doch nicht?',
- /*  LogDescription  */  'Um den Erfolg zu garantieren müssen wir Auktionspapiere erlangen.',
- /*  QuestDescription   */ 'Hallo $N, wir haben von Auktionspapieren erfunden, welche unser Feind nutzt um seine Geschäfte auf den Märkten geheim zu halten. Wir müssen diese Papiere erlangen um deren Transaktionen folgen zu können. Bitte bringt uns 10 solcher Papiere, das sollte uns reichen.',
+ /*  LogDescription  */  'Um den Erfolg zu garantieren muessen wir Auktionspapiere erlangen.',
+ /*  QuestDescription   */ 'Hallo $N, wir haben von Auktionspapieren erfunden, welche unser Feind nutzt um seine Geschaefte auf den Maerkten geheim zu halten. Wir muessen diese Papiere erlangen um deren Transaktionen folgen zu koennen. Bitte bringt uns 10 solcher Papiere, das sollte uns reichen.',
  /*  EndText   */  '',
  /*  OfferRewardText  */  'Seid ihr fertig?',
- /*  RequestItemsText  */ 'Um den Erfolg zu garantieren müssen wir Auktionspapiere erlangen.',
+ /*  RequestItemsText  */ 'Um den Erfolg zu garantieren muessen wir Auktionspapiere erlangen.',
  /*  QuestCompletionLog  */ 'Es ist Eure Sache was ihr tut.',
  /*  RequiredNpcOrGo1  */ 0,
  /*  RequiredNpcOrGo2  */ 0,
@@ -24614,11 +24614,11 @@ REPLACE INTO `quest_template` (`ID`, `Method`, `QuestLevel`, `MinLevel`, `QuestS
  /*  PointY  */ 0,
  /*  PointOption  */ 0,
  /*  LogTitle  */ 'Beutebucht',
- /*  LogDescription  */  'Tötet Mok´rash den Spalter',
- /*  QuestDescription   */ 'Hallo $N, Mok´rash der Spalter versperrt die Bucht zu Beutebucht. Er muss getötet werden, damit wir weitere Handelslieferungen erhalten können.',
+ /*  LogDescription  */  'Toetet Mok´rash den Spalter',
+ /*  QuestDescription   */ 'Hallo $N, Mok´rash der Spalter versperrt die Bucht zu Beutebucht. Er muss getoetet werden, damit wir weitere Handelslieferungen erhalten koennen.',
  /*  EndText   */  '',
  /*  OfferRewardText  */  'Seid ihr fertig?',
- /*  RequestItemsText  */ 'Tötet Mok´rash den Spalter',
+ /*  RequestItemsText  */ 'Toetet Mok´rash den Spalter',
  /*  QuestCompletionLog  */ 'Es ist Eure Sache was ihr tut.',
  /*  RequiredNpcOrGo1  */ 1493,
  /*  RequiredNpcOrGo2  */ 0,
@@ -24775,11 +24775,11 @@ REPLACE INTO `quest_template` (`ID`, `Method`, `QuestLevel`, `MinLevel`, `QuestS
  /*  PointY  */ 0,
  /*  PointOption  */ 0,
  /*  LogTitle  */ 'Meldung in Ratchet',
- /*  LogDescription  */  'Meldet Euch bei Kapitän Thalo`thas Blendsoon',
- /*  QuestDescription   */ 'Hallo $N, meldet Euch bei Kapitän Thalo`thas Blendsoon. Er hat weitere Instruktionen für Euch. Es ist sehr sehr wichtig. ',
+ /*  LogDescription  */  'Meldet Euch bei Kapitaen Thalo`thas Blendsoon',
+ /*  QuestDescription   */ 'Hallo $N, meldet Euch bei Kapitaen Thalo`thas Blendsoon. Er hat weitere Instruktionen fuer Euch. Es ist sehr sehr wichtig. ',
  /*  EndText   */  '',
  /*  OfferRewardText  */  'Seid ihr fertig?',
- /*  RequestItemsText  */ 'Meldet Euch bei Kapitän Thalo`thas Blendsoon',
+ /*  RequestItemsText  */ 'Meldet Euch bei Kapitaen Thalo`thas Blendsoon',
  /*  QuestCompletionLog  */ 'Es ist Eure Sache was ihr tut.',
  /*  RequiredNpcOrGo1  */ 0,
  /*  RequiredNpcOrGo2  */ 0,
@@ -24937,7 +24937,7 @@ REPLACE INTO `quest_template` (`ID`, `Method`, `QuestLevel`, `MinLevel`, `QuestS
  /*  PointOption  */ 0,
  /*  LogTitle  */ 'Alte Rechnungen begleichen',
  /*  LogDescription  */  'Begleicht meine alten Rechnungen',
- /*  QuestDescription   */ 'Hallo $N, ich hab noch ein paar Rechnungen mit alten Bekannten offen. Könnt ihr Euch darum kümmern bitte? Ich finde es sehr sehr wichtig. Ich wurde hintergangen, während unserer gemeinsamen Zeit. Könnt ihr mir bei der Gelegenheit gleich noch etwas für meinen Eintopf bringen? Ich danke $N.',
+ /*  QuestDescription   */ 'Hallo $N, ich hab noch ein paar Rechnungen mit alten Bekannten offen. Koennt ihr Euch darum kuemmern bitte? Ich finde es sehr sehr wichtig. Ich wurde hintergangen, waehrend unserer gemeinsamen Zeit. Koennt ihr mir bei der Gelegenheit gleich noch etwas fuer meinen Eintopf bringen? Ich danke $N.',
  /*  EndText   */  '',
  /*  OfferRewardText  */  'Seid ihr fertig?',
  /*  RequestItemsText  */ 'Begleicht meine alten Rechnungen',
@@ -25098,7 +25098,7 @@ REPLACE INTO `quest_template` (`ID`, `Method`, `QuestLevel`, `MinLevel`, `QuestS
  /*  PointOption  */ 0,
  /*  LogTitle  */ 'Die Mechanar',
  /*  LogDescription  */  'Nehmt Euch den Mechanar an',
- /*  QuestDescription   */ 'Piep, Piep, Piep....... *Roll* *Roll* *Roll* Oh hallo $N. Ich habe gerade versucht die Mechanar ironisch zu vertonen. Naja war nicht so erfolgreich. Aber lassen wir das. Meine Freunde von den Sha`tar hassen dieses Gesocks von verhassten Leuten. Wenn ihr Euch bei den Sha`tar beliebt machen wollt, führt ihr diese Aufgabe aus. ',
+ /*  QuestDescription   */ 'Piep, Piep, Piep....... *Roll* *Roll* *Roll* Oh hallo $N. Ich habe gerade versucht die Mechanar ironisch zu vertonen. Naja war nicht so erfolgreich. Aber lassen wir das. Meine Freunde von den Sha`tar hassen dieses Gesocks von verhassten Leuten. Wenn ihr Euch bei den Sha`tar beliebt machen wollt, fuehrt ihr diese Aufgabe aus. ',
  /*  EndText   */  '',
  /*  OfferRewardText  */  'Seid ihr fertig?',
  /*  RequestItemsText  */ 'Nehmt Euch den Mechanar an',
@@ -25260,11 +25260,11 @@ REPLACE INTO `quest_template` (`ID`, `Method`, `QuestLevel`, `MinLevel`, `QuestS
  /*  PointY  */ 0,
  /*  PointOption  */ 0,
  /*  LogTitle  */ 'Reise durch die Zeit',
- /*  LogDescription  */  'Tötet die Intriganten',
- /*  QuestDescription   */ 'Ich danke Euch für das Ausführen der Aufgabe. Ich habe auch sofort eine nächste für Euch. Im Scharlachroten Kloster gibt es Wesen, wenn man das so sagen darf, welche des Lebens nicht würdig sind.',
+ /*  LogDescription  */  'Toetet die Intriganten',
+ /*  QuestDescription   */ 'Ich danke Euch fuer das Ausfuehren der Aufgabe. Ich habe auch sofort eine naechste fuer Euch. Im Scharlachroten Kloster gibt es Wesen, wenn man das so sagen darf, welche des Lebens nicht wuerdig sind.',
  /*  EndText   */  '',
  /*  OfferRewardText  */  'Seid ihr fertig?',
- /*  RequestItemsText  */ 'Tötet die Intriganten',
+ /*  RequestItemsText  */ 'Toetet die Intriganten',
  /*  QuestCompletionLog  */ 'Es ist Eure Sache was ihr tut.',
  /*  RequiredNpcOrGo1  */ 4283,
  /*  RequiredNpcOrGo2  */ 0,
@@ -25424,7 +25424,7 @@ REPLACE INTO `quest_template` (`ID`, `Method`, `QuestLevel`, `MinLevel`, `QuestS
  /*  PointOption  */ 0,
  /*  LogTitle  */ 'Torvan von Doom',
  /*  LogDescription  */  'Reise zu einem alten Freund',
- /*  QuestDescription   */ 'Arggh $R. Ihr müsst unbedingt zu Tovan von Doom dem Unerreichbaren reisen. Torvan ist ein alter Reisegeselle aus unseren Seemanszeiten. Geht zu ihm und berichtet ihm, dass sein alter Freund Raubein noch lebt. Er wird sich an mich erinnern. Vielleicht möchtet ihr ihm aber noch etwas zu trinken bringen. Wir Seemänner sind ja ein Trinkervölkchen.',
+ /*  QuestDescription   */ 'Arggh $R. Ihr muesst unbedingt zu Tovan von Doom dem Unerreichbaren reisen. Torvan ist ein alter Reisegeselle aus unseren Seemanszeiten. Geht zu ihm und berichtet ihm, dass sein alter Freund Raubein noch lebt. Er wird sich an mich erinnern. Vielleicht moechtet ihr ihm aber noch etwas zu trinken bringen. Wir Seemaenner sind ja ein Trinkervoelkchen.',
  /*  EndText   */  '',
  /*  OfferRewardText  */  'Seid ihr fertig?',
  /*  RequestItemsText  */ 'Reise zu einem alten Freund',
@@ -25585,7 +25585,7 @@ REPLACE INTO `quest_template` (`ID`, `Method`, `QuestLevel`, `MinLevel`, `QuestS
  /*  PointOption  */ 0,
  /*  LogTitle  */ 'Die geheime Nachricht',
  /*  LogDescription  */  'Bringt die geheime Nachricht zu Rumus Diener',
- /*  QuestDescription   */ 'Bringt die geheime Nachricht an einen von Rumu´s Dienern. Ich möchte das ihr mir beweist, das ihr zu eurem Wort steht. Bringt einem Diener von Rumu die Nachricht. Geht jetzt Landratten!',
+ /*  QuestDescription   */ 'Bringt die geheime Nachricht an einen von Rumu´s Dienern. Ich moechte das ihr mir beweist, das ihr zu eurem Wort steht. Bringt einem Diener von Rumu die Nachricht. Geht jetzt Landratten!',
  /*  EndText   */  '',
  /*  OfferRewardText  */  'Seid ihr fertig?',
  /*  RequestItemsText  */ 'Bringt die geheime Nachricht zu Rumus Diener',
@@ -25743,12 +25743,12 @@ REPLACE INTO `quest_template` (`ID`, `Method`, `QuestLevel`, `MinLevel`, `QuestS
  /*  PointX  */ 0,
  /*  PointY  */ 0,
  /*  PointOption  */ 0,
- /*  LogTitle  */ 'Die Rückkehr',
- /*  LogDescription  */  'Bringt die mysteriöse Nachricht zurück zu Torvan.',
- /*  QuestDescription   */ 'Bringt die mysteriöse Nachricht zurück zu Tovan von Doom. In der Nachricht ist bestimmt bescheinigt das ihr loyal und ausdauernd seid.',
+ /*  LogTitle  */ 'Die Rueckkehr',
+ /*  LogDescription  */  'Bringt die mysterioese Nachricht zurueck zu Torvan.',
+ /*  QuestDescription   */ 'Bringt die mysterioese Nachricht zurueck zu Tovan von Doom. In der Nachricht ist bestimmt bescheinigt das ihr loyal und ausdauernd seid.',
  /*  EndText   */  '',
  /*  OfferRewardText  */  'Seid ihr fertig?',
- /*  RequestItemsText  */ 'Bringt die mysteriöse Nachricht zurück zu Torvan.',
+ /*  RequestItemsText  */ 'Bringt die mysterioese Nachricht zurueck zu Torvan.',
  /*  QuestCompletionLog  */ 'Es ist Eure Sache was ihr tut.',
  /*  RequiredNpcOrGo1  */ 0,
  /*  RequiredNpcOrGo2  */ 0,
@@ -26065,12 +26065,12 @@ REPLACE INTO `quest_template` (`ID`, `Method`, `QuestLevel`, `MinLevel`, `QuestS
  /*  PointY  */ 0,
  /*  PointOption  */ 0,
  /*  LogTitle  */ 'Magie aufladen',
- /*  LogDescription  */  'Um überhaupt diese mächtige Magie einsetzen zu können bedarf es wichtiger Vorbereitungen.',
- /*  QuestDescription   */ 'Es scheint als müssten wir alte Zauber aus den Lehrbüchern verwenden um diese Krähen los zu werden, ich hab in den Büchern schon nachgelesen und brauche dadurch noch einige Materialen. Ihr findet diese Gegenstände in der Scherbenwelt.',
+ /*  LogDescription  */  'Um ueberhaupt diese maechtige Magie einsetzen zu koennen bedarf es wichtiger Vorbereitungen.',
+ /*  QuestDescription   */ 'Es scheint als muessten wir alte Zauber aus den Lehrbuechern verwenden um diese Kraehen los zu werden, ich hab in den Buechern schon nachgelesen und brauche dadurch noch einige Materialen. Ihr findet diese Gegenstaende in der Scherbenwelt.',
  /*  EndText */  '',
- /*  OfferRewardText bevor man beendet  */  'Wunderbar $C, ich packe diese Gegenstände in die Truhe.',
+ /*  OfferRewardText bevor man beendet  */  'Wunderbar $C, ich packe diese Gegenstaende in die Truhe.',
  /*  RequestItemsText  */ 'Hallo $N, uns fehlen noch paar Materialen, besorg diese doch bitte.',
- /*  Quest Completed Text wird rechts im Questlog angezeigt der Text */ 'Gebt diese Gegenstände ab.',
+ /*  Quest Completed Text wird rechts im Questlog angezeigt der Text */ 'Gebt diese Gegenstaende ab.',
  /*  RequiredNpcOrGo1  */ 0,
  /*  RequiredNpcOrGo2  */ 0,
  /*  RequiredNpcOrGo3  */ 0,
@@ -26224,10 +26224,10 @@ REPLACE INTO `quest_template` (`ID`, `Method`, `QuestLevel`, `MinLevel`, `QuestS
  /*  PointOption  */ 0,
  /*  LogTitle  */ 'Rumus Zeitvertreib',
  /*  LogDescription  */  'Angeln, angeln, angeln - Ruhe, psssht.',
- /*  QuestDescription   */ 'Täglich muss ich meinen Bedarf an Kohlenhydraten decken, deswegen gehe ich regelmäßig fischen. Mittlerweile schaffe ich nicht alleine die Menge zu fischen, die ich für die Nahrungszufuhr brauch.$B$BHelft mir bitte beim Fischen.',
+ /*  QuestDescription   */ 'Taeglich muss ich meinen Bedarf an Kohlenhydraten decken, deswegen gehe ich regelmaeßig fischen. Mittlerweile schaffe ich nicht alleine die Menge zu fischen, die ich fuer die Nahrungszufuhr brauch.$B$BHelft mir bitte beim Fischen.',
  /*  EndText */  '',
- /*  OfferRewardText bevor man beendet  */  'Wunderbar $C, ich packe diese Gegenstände in die Truhe. Damit hab ich wieder einen kleinen Vorrat.',
- /*  RequestItemsText  */ 'Hallo $N, hast du Fische für mich?',
+ /*  OfferRewardText bevor man beendet  */  'Wunderbar $C, ich packe diese Gegenstaende in die Truhe. Damit hab ich wieder einen kleinen Vorrat.',
+ /*  RequestItemsText  */ 'Hallo $N, hast du Fische fuer mich?',
  /*  Quest Completed Text wird rechts im Questlog angezeigt der Text */ 'Gebt die Fische ab.',
  /*  RequiredNpcOrGo1  */ 0,
  /*  RequiredNpcOrGo2  */ 0,
@@ -26539,10 +26539,10 @@ REPLACE INTO `quest_template` (`ID`, `Method`, `QuestLevel`, `MinLevel`, `QuestS
  /*  PointY  */ 0,
  /*  PointOption  */ 0,
  /*  LogTitle  */ 'Sammlung Teil Acht',
- /*  LogDescription  */  'Bringt mir 75 Sonnenpartikel und tötet Selin Feuerherz sowie Mutantus den Verschlinger.',
- /*  QuestDescription   */ 'Hallo $N. Ich möchte Euch auf der Reise zu den Sammlern eine weitere Aufgabe geben. Bringt mir 75 Sonnenpartikel und tötet Selin Feuerherz sowie Mutantus den Verschlinger. Diese sind uns schon lange ein Dorn im Auge. Aber ihr habt es bald geschafft und könnt dann bald in die Feste der Sammler aufbrechen.',
+ /*  LogDescription  */  'Bringt mir 75 Sonnenpartikel und toetet Selin Feuerherz sowie Mutantus den Verschlinger.',
+ /*  QuestDescription   */ 'Hallo $N. Ich moechte Euch auf der Reise zu den Sammlern eine weitere Aufgabe geben. Bringt mir 75 Sonnenpartikel und toetet Selin Feuerherz sowie Mutantus den Verschlinger. Diese sind uns schon lange ein Dorn im Auge. Aber ihr habt es bald geschafft und koennt dann bald in die Feste der Sammler aufbrechen.',
  /*  EndText */  '',
- /*  OfferRewardText bevor man beendet  */  'Bringt mir 75 Sonnenpartikel und tötet Selin Feuerherz sowie Mutantus den Verschlinger.',
+ /*  OfferRewardText bevor man beendet  */  'Bringt mir 75 Sonnenpartikel und toetet Selin Feuerherz sowie Mutantus den Verschlinger.',
  /*  RequestItemsText  */ 'Hallo $N, hast du die Aufgabe abgeschlossen?',
  /*  Quest Completed Text wird rechts im Questlog angezeigt der Text */ '',
  /*  RequiredNpcOrGo1  */ 24723,
@@ -26697,10 +26697,10 @@ REPLACE INTO `quest_template` (`ID`, `Method`, `QuestLevel`, `MinLevel`, `QuestS
  /*  PointY  */ 0,
  /*  PointOption  */ 0,
  /*  LogTitle  */ 'Orca',
- /*  LogDescription  */  'Geht zu Orca und begrüßt ihn hier auf MMOwning World.',
- /*  QuestDescription   */ 'Ein neuer Mitstreiter ist in MMOwning World eingetroffen. Geht zu ihm und begrüßt ihn.',
+ /*  LogDescription  */  'Geht zu Orca und begrueßt ihn hier auf MMOwning World.',
+ /*  QuestDescription   */ 'Ein neuer Mitstreiter ist in MMOwning World eingetroffen. Geht zu ihm und begrueßt ihn.',
  /*  EndText */  '',
- /*  OfferRewardText bevor man beendet  */  'Geht zu Orca und begrüßt ihn hier auf MMOwning World.',
+ /*  OfferRewardText bevor man beendet  */  'Geht zu Orca und begrueßt ihn hier auf MMOwning World.',
  /*  RequestItemsText  */ 'Hallo $N, hast du die Aufgabe abgeschlossen?',
  /*  Quest Completed Text wird rechts im Questlog angezeigt der Text */ '',
  /*  RequiredNpcOrGo1  */ 0,
@@ -26856,9 +26856,9 @@ REPLACE INTO `quest_template` (`ID`, `Method`, `QuestLevel`, `MinLevel`, `QuestS
  /*  PointOption  */ 0,
  /*  LogTitle  */ 'MMOWNING WORLD',
  /*  LogDescription  */  'Sammelt 1000 Emblem des Triumphs.',
- /*  QuestDescription   */ 'Hallo $N. Ich begrüße Euch. Ich soll Euch einen Gruß von Exitare und Rumu hier lassen. Sie wünschen Euch viel Spaß beim bestreiten dieser Questreihe. Diese Questreihe ist absichtlich extrem gewählt und soll extreme Belohnungen gewähren. Ihr könnt darauf einstellen, fieße, langwierige, sowie schwere Quests zu bekommen. Verzweifelt aber nicht. Es warten gute Belohnung auf Euch.',
+ /*  QuestDescription   */ 'Hallo $N. Ich begrueße Euch. Ich soll Euch einen Gruß von Exitare und Rumu hier lassen. Sie wuenschen Euch viel Spaß beim bestreiten dieser Questreihe. Diese Questreihe ist absichtlich extrem gewaehlt und soll extreme Belohnungen gewaehren. Ihr koennt darauf einstellen, fieße, langwierige, sowie schwere Quests zu bekommen. Verzweifelt aber nicht. Es warten gute Belohnung auf Euch.',
  /*  EndText */  '',
- /*  OfferRewardText bevor man beendet  */  'Geht zu Orca und begrüßt ihn hier auf MMOwning World.',
+ /*  OfferRewardText bevor man beendet  */  'Geht zu Orca und begrueßt ihn hier auf MMOwning World.',
  /*  RequestItemsText  */ 'Hallo $N, hast du die Aufgabe abgeschlossen?',
  /*  Quest Completed Text wird rechts im Questlog angezeigt der Text */ '',
  /*  RequiredNpcOrGo1  */ 0,
@@ -27676,7 +27676,7 @@ VALUES ( /*  ID */ 800061,
   /* Modelid3   */0,
   /* Model4  */ 0,
   /* Name  */'Lightshadow',
-  /* Subname */'Der unrechtmäßige Prinz',
+  /* Subname */'Der unrechtmaeßige Prinz',
   /* Iconname */'',
   /* gossip_menu_id`  */0,
   /* Min Level */83,
@@ -27744,11 +27744,11 @@ DELETE FROM `creature` WHERE `guid` = 800061;
 
 
 DELETE FROM `creature_text` WHERE `entry`=800061;
-INSERT INTO `creature_text` (`entry`,`groupid`,`id`,`text`,`type`,`language`,`probability`,`emote`,`duration`,`sound`,`comment`) VALUES (800061,0,0,'Da kommt mein kleiner erbärmlicher Bruder mit seiner Gefolgschaft!',14,0,100,1,0,17457,'Say Aggro');
+INSERT INTO `creature_text` (`entry`,`groupid`,`id`,`text`,`type`,`language`,`probability`,`emote`,`duration`,`sound`,`comment`) VALUES (800061,0,0,'Da kommt mein kleiner erbaermlicher Bruder mit seiner Gefolgschaft!',14,0,100,1,0,17457,'Say Aggro');
 INSERT INTO `creature_text` (`entry`,`groupid`,`id`,`text`,`type`,`language`,`probability`,`emote`,`duration`,`sound`,`comment`) VALUES (800061,1,0,'Hat er Euch wirklich so belogen?',14,0,100,1,0,17458,'Random');
 INSERT INTO `creature_text` (`entry`,`groupid`,`id`,`text`,`type`,`language`,`probability`,`emote`,`duration`,`sound`,`comment`) VALUES (800061,2,0,'Einer von Euch lausigen Maden weniger.',14,0,100,1,0,17459,'Kill');
 INSERT INTO `creature_text` (`entry`,`groupid`,`id`,`text`,`type`,`language`,`probability`,`emote`,`duration`,`sound`,`comment`) VALUES (800061,3,0,'Ihr werdet bereuen was ihr getan habt. Ihr wisst nicht wer Darkshadow wirklich ist!',14,0,100,1,0,17460,'Dead');
-INSERT INTO `creature_text` (`entry`,`groupid`,`id`,`text`,`type`,`language`,`probability`,`emote`,`duration`,`sound`,`comment`) VALUES (800061,4,0,'Spürt die frostige Kälte!',14,0,100,1,0,17460,'Blizzard');
+INSERT INTO `creature_text` (`entry`,`groupid`,`id`,`text`,`type`,`language`,`probability`,`emote`,`duration`,`sound`,`comment`) VALUES (800061,4,0,'Spuert die frostige Kaelte!',14,0,100,1,0,17460,'Blizzard');
 
 
 
@@ -27905,7 +27905,7 @@ VALUES ( /*  ID */ 800063,
   /* Modelid3   */0,
   /* Model4  */ 0,
   /* Name  */'Lightshadow',
-  /* Subname */'Der unrechtmäßige Prinz',
+  /* Subname */'Der unrechtmaeßige Prinz',
   /* Iconname */'',
   /* gossip_menu_id`  */0,
   /* Min Level */83,
@@ -27973,11 +27973,11 @@ DELETE FROM `creature` WHERE `guid` = 800063;
 
 
 DELETE FROM `creature_text` WHERE `entry`=800063;
-INSERT INTO `creature_text` (`entry`,`groupid`,`id`,`text`,`type`,`language`,`probability`,`emote`,`duration`,`sound`,`comment`) VALUES (800063,0,0,'Da kommt mein kleiner erbärmlicher Bruder mit seiner Gefolgschaft!',14,0,100,1,0,17457,'Say Aggro');
+INSERT INTO `creature_text` (`entry`,`groupid`,`id`,`text`,`type`,`language`,`probability`,`emote`,`duration`,`sound`,`comment`) VALUES (800063,0,0,'Da kommt mein kleiner erbaermlicher Bruder mit seiner Gefolgschaft!',14,0,100,1,0,17457,'Say Aggro');
 INSERT INTO `creature_text` (`entry`,`groupid`,`id`,`text`,`type`,`language`,`probability`,`emote`,`duration`,`sound`,`comment`) VALUES (800063,1,0,'Hat er Euch wirklich so belogen?',14,0,100,1,0,17458,'Random');
 INSERT INTO `creature_text` (`entry`,`groupid`,`id`,`text`,`type`,`language`,`probability`,`emote`,`duration`,`sound`,`comment`) VALUES (800063,2,0,'Einer von Euch lausigen Maden weniger.',14,0,100,1,0,17459,'Kill');
 INSERT INTO `creature_text` (`entry`,`groupid`,`id`,`text`,`type`,`language`,`probability`,`emote`,`duration`,`sound`,`comment`) VALUES (800063,3,0,'Ihr werdet bereuen was ihr getan habt. Ihr wisst nicht wer Darkshadow wirklich ist!',14,0,100,1,0,17460,'Dead');
-INSERT INTO `creature_text` (`entry`,`groupid`,`id`,`text`,`type`,`language`,`probability`,`emote`,`duration`,`sound`,`comment`) VALUES (800063,4,0,'Spürt die frostige Kälte!',14,0,100,1,0,17460,'Blizzard');
+INSERT INTO `creature_text` (`entry`,`groupid`,`id`,`text`,`type`,`language`,`probability`,`emote`,`duration`,`sound`,`comment`) VALUES (800063,4,0,'Spuert die frostige Kaelte!',14,0,100,1,0,17460,'Blizzard');
 
 
 DELETE FROM `quest_template` WHERE  `id` = 800554;
@@ -28054,12 +28054,12 @@ REPLACE INTO `quest_template` (`ID`, `Method`, `QuestLevel`, `MinLevel`, `QuestS
  /*  PointX  */ 0,
  /*  PointY  */ 0,
  /*  PointOption  */ 0,
- /*  LogTitle  */ 'Erweißt Euch würdig',
- /*  LogDescription  */  'Sammelt 30 Waffen der Unterstützer',
- /*  QuestDescription   */ 'Hallo $C $N, schön das ihr euren Weg hierher gefunden habt. Ich hab eine wichtige Aufgabe für Euch, die für das Königshaus ernorm wichtig ist. Sammelt 30 Waffen der Unterstützer. Sie sind über ganz Azeroth und die Scherbenwelt verteilt. Um genauere Angaben zu finden geht auf die Homepage und sucht im Arsenal nach den Waffen.',
+ /*  LogTitle  */ 'Erweißt Euch wuerdig',
+ /*  LogDescription  */  'Sammelt 30 Waffen der Unterstuetzer',
+ /*  QuestDescription   */ 'Hallo $C $N, schoen das ihr euren Weg hierher gefunden habt. Ich hab eine wichtige Aufgabe fuer Euch, die fuer das Koenigshaus ernorm wichtig ist. Sammelt 30 Waffen der Unterstuetzer. Sie sind ueber ganz Azeroth und die Scherbenwelt verteilt. Um genauere Angaben zu finden geht auf die Homepage und sucht im Arsenal nach den Waffen.',
  /*  EndText   */  '',
  /*  OfferRewardText  */  'Seid ihr fertig?',
- /*  RequestItemsText  */ 'Sammelt 30 Waffen der Unterstützer.',
+ /*  RequestItemsText  */ 'Sammelt 30 Waffen der Unterstuetzer.',
  /*  QuestCompletionLog  */ 'Es ist Eure Sache was ihr tut.',
  /*  RequiredNpcOrGo1  */ 0,
  /*  RequiredNpcOrGo2  */ 0,
@@ -28216,11 +28216,11 @@ REPLACE INTO `quest_template` (`ID`, `Method`, `QuestLevel`, `MinLevel`, `QuestS
  /*  PointY  */ 0,
  /*  PointOption  */ 0,
  /*  LogTitle  */ 'Die erste Spur',
- /*  LogDescription  */  'Wir haben eine erste Spur, bringt Kayoulas zerbrochene Anhängerstücke zu mir.',
- /*  QuestDescription   */ 'Hallo $N, ich habe aufregende Neuigkeiten für Euch. Wir haben durch die Auktionspapiere einen ersten Unterhändler ausfindig machen können. Anscheinend soll er am Überfall auf Exitares Frau beteiligt gewesen sein. Geht zu ihm und prüft ob er beteiligt war, und bringt entsprechende Beweise zu mir zurück. Ob er dabei am Leben bleibt oder nicht, ist mir egal. Macht was ihr wollt mit ihm.',
+ /*  LogDescription  */  'Wir haben eine erste Spur, bringt Kayoulas zerbrochene Anhaengerstuecke zu mir.',
+ /*  QuestDescription   */ 'Hallo $N, ich habe aufregende Neuigkeiten fuer Euch. Wir haben durch die Auktionspapiere einen ersten Unterhaendler ausfindig machen koennen. Anscheinend soll er am ueberfall auf Exitares Frau beteiligt gewesen sein. Geht zu ihm und prueft ob er beteiligt war, und bringt entsprechende Beweise zu mir zurueck. Ob er dabei am Leben bleibt oder nicht, ist mir egal. Macht was ihr wollt mit ihm.',
  /*  EndText   */  '',
  /*  OfferRewardText  */  'Seid ihr fertig?',
- /*  RequestItemsText  */ 'Wir haben eine erste Spur, bringt Kayoulas zerbrochener Anhänger zu mir.',
+ /*  RequestItemsText  */ 'Wir haben eine erste Spur, bringt Kayoulas zerbrochener Anhaenger zu mir.',
  /*  QuestCompletionLog  */ 'Es ist Eure Sache was ihr tut.',
  /*  RequiredNpcOrGo1  */ 0,
  /*  RequiredNpcOrGo2  */ 0,
@@ -28378,7 +28378,7 @@ REPLACE INTO `quest_template` (`ID`, `Method`, `QuestLevel`, `MinLevel`, `QuestS
  /*  PointOption  */ 0,
  /*  LogTitle  */ 'Die Verfeinerung',
  /*  LogDescription  */  'Bringt mir die glitzernde Spinnenseide.',
- /*  QuestDescription   */ 'Hallo $N, wir haben den fertiggestellten Anhänger hier. Nun muss er mit glitzernder Spinnenseide umgarnt werden. Diese können wir nur bei der Königin der Spinnen finden. Maexxa. Geht zu ihr und entwedet ihr diesen extrem seltenen Seidenstoff. ',
+ /*  QuestDescription   */ 'Hallo $N, wir haben den fertiggestellten Anhaenger hier. Nun muss er mit glitzernder Spinnenseide umgarnt werden. Diese koennen wir nur bei der Koenigin der Spinnen finden. Maexxa. Geht zu ihr und entwedet ihr diesen extrem seltenen Seidenstoff. ',
  /*  EndText   */  '',
  /*  OfferRewardText  */  'Seid ihr fertig?',
  /*  RequestItemsText  */ 'Bringt mir die glitzernde Spinnenseide.',
@@ -28538,7 +28538,7 @@ REPLACE INTO `quest_template` (`ID`, `Method`, `QuestLevel`, `MinLevel`, `QuestS
  /*  PointOption  */ 0,
  /*  LogTitle  */ 'Das flammende Herz',
  /*  LogDescription  */  'Bringt Torvan das flammende Herz',
- /*  QuestDescription   */ 'Jetzt wo ihr mir mein Gold gebracht habt, kann ich ja normal mit Euch reden. Bringt mir das flammende Herz des Verdammniswandlers! És ist ein wertvolles episches Stück! Damit lässt sich auf dem Schwarzmarkt ein guter Preis erzielen.',
+ /*  QuestDescription   */ 'Jetzt wo ihr mir mein Gold gebracht habt, kann ich ja normal mit Euch reden. Bringt mir das flammende Herz des Verdammniswandlers! És ist ein wertvolles episches Stueck! Damit laesst sich auf dem Schwarzmarkt ein guter Preis erzielen.',
  /*  EndText   */  '',
  /*  OfferRewardText  */  'Seid ihr fertig?',
  /*  RequestItemsText  */ 'Bringt Torvan das flammende Herz',
@@ -28699,7 +28699,7 @@ REPLACE INTO `quest_template` (`ID`, `Method`, `QuestLevel`, `MinLevel`, `QuestS
  /*  PointOption  */ 0,
  /*  LogTitle  */ 'Das brennende Herz',
  /*  LogDescription  */  'Bringt Torvan das brennende Herz',
- /*  QuestDescription   */ 'Der Verkauf des flammenden Herzen hat mir eine Menge Gold eingebracht. Ich habe von einem weiteren Herzen gehört. Bringt mir das brennende Herz des Verdammniswandlers Kazzak! És ist ein wertvolles episches Stück! Damit lässt sich auf dem Schwarzmarkt ein guter Preis erzielen. Wenn ihr mir beides gebracht habt, bekommt ihr ein Teil des Erlöses.',
+ /*  QuestDescription   */ 'Der Verkauf des flammenden Herzen hat mir eine Menge Gold eingebracht. Ich habe von einem weiteren Herzen gehoert. Bringt mir das brennende Herz des Verdammniswandlers Kazzak! És ist ein wertvolles episches Stueck! Damit laesst sich auf dem Schwarzmarkt ein guter Preis erzielen. Wenn ihr mir beides gebracht habt, bekommt ihr ein Teil des Erloeses.',
  /*  EndText   */  '',
  /*  OfferRewardText  */  'Seid ihr fertig?',
  /*  RequestItemsText  */ 'Bringt Torvan das brennende Herz',
@@ -28859,7 +28859,7 @@ REPLACE INTO `quest_template` (`ID`, `Method`, `QuestLevel`, `MinLevel`, `QuestS
  /*  PointOption  */ 0,
  /*  LogTitle  */ 'Reise zum Außenposten der Sammler',
  /*  LogDescription  */  'Reist zum Außenposten der Sammler um Euch dort mit Moons Stellvertreter zu treffen.',
- /*  QuestDescription   */ 'Hallo $N. Ihr habt es geschafft. Ihr habt bewiesen das ihr würdig seid den Sammlern gegenüber treten zu können. Am Flussnabel ist unser erster Außenposten. Reißt dorthin um in unsere Gemeinschaft aufgenommen zu werden.',
+ /*  QuestDescription   */ 'Hallo $N. Ihr habt es geschafft. Ihr habt bewiesen das ihr wuerdig seid den Sammlern gegenueber treten zu koennen. Am Flussnabel ist unser erster Außenposten. Reißt dorthin um in unsere Gemeinschaft aufgenommen zu werden.',
  /*  EndText */  '',
  /*  OfferRewardText bevor man beendet  */  'Reist zum Außenposten der Sammler um Euch dort mit Moons Stellvertreter zu treffen.',
  /*  RequestItemsText  */ 'Hallo $N, hast du die Aufgabe abgeschlossen?',
@@ -29016,10 +29016,10 @@ REPLACE INTO `quest_template` (`ID`, `Method`, `QuestLevel`, `MinLevel`, `QuestS
  /*  PointY  */ 0,
  /*  PointOption  */ 0,
  /*  LogTitle  */ 'Die Prinzessin',
- /*  LogDescription  */  'Geht zur Prinzessin der Sammler und hört Euch ihre Geschichte an.',
- /*  QuestDescription   */ 'Hallo $N. Willkommen im Außenposten der Sammler. Macht es Euch bequem, und wenn ihr Interesse habt geht zu Prinzessin Alanna. Sie braucht bestimmt ein offenes Ohr. Wenn ihr Zeit habt, wird sie Euch vielleicht etwas erzählen.',
+ /*  LogDescription  */  'Geht zur Prinzessin der Sammler und hoert Euch ihre Geschichte an.',
+ /*  QuestDescription   */ 'Hallo $N. Willkommen im Außenposten der Sammler. Macht es Euch bequem, und wenn ihr Interesse habt geht zu Prinzessin Alanna. Sie braucht bestimmt ein offenes Ohr. Wenn ihr Zeit habt, wird sie Euch vielleicht etwas erzaehlen.',
  /*  EndText */  '',
- /*  OfferRewardText bevor man beendet  */  'Geht zur Prinzessin der Sammler und hört Euch ihre Geschichte an.',
+ /*  OfferRewardText bevor man beendet  */  'Geht zur Prinzessin der Sammler und hoert Euch ihre Geschichte an.',
  /*  RequestItemsText  */ 'Hallo $N, hast du die Aufgabe abgeschlossen?',
  /*  Quest Completed Text wird rechts im Questlog angezeigt der Text */ '',
  /*  RequiredNpcOrGo1  */ 0,
@@ -29174,11 +29174,11 @@ REPLACE INTO `quest_template` (`ID`, `Method`, `QuestLevel`, `MinLevel`, `QuestS
  /*  PointY  */ 0,
  /*  PointOption  */ 0,
  /*  LogTitle  */ 'Die verlorene Scherbe',
- /*  LogDescription  */  'Bringt mir meine Scherbe zurück sofort.',
- /*  QuestDescription   */ 'Hey $c. Ich hab meine Scherbe verloren und da ich gehört habe ihr müsst für uns arbeiten und vorallem für mich, die wunderschöne Prinzessin, sollt ihr mir die Scherbe zurückholen. Und wenn ihr sie auch nur ein bisschen verkratzt braucht ihr gar nicht zurück kommen. Ich werde mich dann bei Moon beschweren.',
+ /*  LogDescription  */  'Bringt mir meine Scherbe zurueck sofort.',
+ /*  QuestDescription   */ 'Hey $c. Ich hab meine Scherbe verloren und da ich gehoert habe ihr muesst fuer uns arbeiten und vorallem fuer mich, die wunderschoene Prinzessin, sollt ihr mir die Scherbe zurueckholen. Und wenn ihr sie auch nur ein bisschen verkratzt braucht ihr gar nicht zurueck kommen. Ich werde mich dann bei Moon beschweren.',
  /*  EndText */  '',
- /*  OfferRewardText bevor man beendet  */  'Bringt mir meine Scherbe zurück sofort.',
- /*  RequestItemsText  */ '$C $N, warst du endlich fähig die Aufgabe abzuschließen?',
+ /*  OfferRewardText bevor man beendet  */  'Bringt mir meine Scherbe zurueck sofort.',
+ /*  RequestItemsText  */ '$C $N, warst du endlich faehig die Aufgabe abzuschließen?',
  /*  Quest Completed Text wird rechts im Questlog angezeigt der Text */ '',
  /*  RequiredNpcOrGo1  */ 0,
  /*  RequiredNpcOrGo2  */ 0,
@@ -29332,10 +29332,10 @@ REPLACE INTO `quest_template` (`ID`, `Method`, `QuestLevel`, `MinLevel`, `QuestS
  /*  PointY  */ 0,
  /*  PointOption  */ 0,
  /*  LogTitle  */ 'MMOWNING WORLD',
- /*  LogDescription  */  'Sammelt 600 Königstinte, 600 Löwentinte, 450 Meerestinte',
- /*  QuestDescription   */ 'Hallo $N. Heute müsst ihr mir Tinten sammeln. Ich brauche einiges an Tinten da ich die Bibel neu schreiben möchte. Und das per Hand. Da braucht man eben unter Wasser einiges an Tinten.',
+ /*  LogDescription  */  'Sammelt 600 Koenigstinte, 600 Loewentinte, 450 Meerestinte',
+ /*  QuestDescription   */ 'Hallo $N. Heute muesst ihr mir Tinten sammeln. Ich brauche einiges an Tinten da ich die Bibel neu schreiben moechte. Und das per Hand. Da braucht man eben unter Wasser einiges an Tinten.',
  /*  EndText */  '',
- /*  OfferRewardText bevor man beendet  */  'Geht zu Orca und begrüßt ihn hier auf MMOwning World.',
+ /*  OfferRewardText bevor man beendet  */  'Geht zu Orca und begrueßt ihn hier auf MMOwning World.',
  /*  RequestItemsText  */ 'Hallo $N, hast du die Aufgabe abgeschlossen?',
  /*  Quest Completed Text wird rechts im Questlog angezeigt der Text */ '',
  /*  RequiredNpcOrGo1  */ 0,
@@ -29430,12 +29430,12 @@ DELETE FROM `creature_loot_template` WHERE `Entry` = 17308 and `Item` = 700510;
 REPLACE INTO `creature_loot_template` (`Entry`, `Item`, `Reference`, `Chance`, `QuestRequired`, `LootMode`, `GroupId`, `MinCount`, `MaxCount`) 
 VALUES ('17308', '700510', '0', '2.5', '1', '1', '0', '1', '1');
 DELETE FROM `item_template` WHERE `entry` = 700510;
-REPLACE INTO `item_template` (`entry`, `class`, `subclass`, `name`, `displayid`, `Quality`, `Flags`, `FlagsExtra`, `BuyCount`, `BuyPrice`, `SellPrice`, `InventoryType`, `AllowableClass`, `AllowableRace`, `ItemLevel`, `RequiredLevel`, `RequiredSkill`, `RequiredSkillRank`, `requiredspell`, `requiredhonorrank`, `RequiredCityRank`, `RequiredReputationFaction`, `RequiredReputationRank`, `maxcount`, `stackable`, `ContainerSlots`, `StatsCount`, `stat_type1`, `stat_value1`, `stat_type2`, `stat_value2`, `stat_type3`, `stat_value3`, `stat_type4`, `stat_value4`, `stat_type5`, `stat_value5`, `stat_type6`, `stat_value6`, `stat_type7`, `stat_value7`, `stat_type8`, `stat_value8`, `stat_type9`, `stat_value9`, `stat_type10`, `stat_value10`, `ScalingStatDistribution`, `ScalingStatValue`, `dmg_min1`, `dmg_max1`, `dmg_type1`, `dmg_min2`, `dmg_max2`, `dmg_type2`, `armor`, `holy_res`, `fire_res`, `nature_res`, `frost_res`, `shadow_res`, `arcane_res`, `delay`, `ammo_type`, `RangedModRange`, `spellid_1`, `spelltrigger_1`, `spellcharges_1`, `spellppmRate_1`, `spellcooldown_1`, `spellcategory_1`, `spellcategorycooldown_1`, `spellid_2`, `spelltrigger_2`, `spellcharges_2`, `spellppmRate_2`, `spellcooldown_2`, `spellcategory_2`, `spellcategorycooldown_2`, `spellid_3`, `spelltrigger_3`, `spellcharges_3`, `spellppmRate_3`, `spellcooldown_3`, `spellcategory_3`, `spellcategorycooldown_3`, `spellid_4`, `spelltrigger_4`, `spellcharges_4`, `spellppmRate_4`, `spellcooldown_4`, `spellcategory_4`, `spellcategorycooldown_4`, `spellid_5`, `spelltrigger_5`, `spellcharges_5`, `spellppmRate_5`, `spellcooldown_5`, `spellcategory_5`, `spellcategorycooldown_5`, `bonding`, `description`, `PageText`, `LanguageID`, `PageMaterial`, `startquest`, `lockid`, `Material`, `sheath`, `RandomProperty`, `RandomSuffix`, `block`, `itemset`, `MaxDurability`, `area`, `Map`, `BagFamily`, `TotemCategory`, `socketColor_1`, `socketContent_1`, `socketColor_2`, `socketContent_2`, `socketColor_3`, `socketContent_3`, `socketBonus`, `GemProperties`, `RequiredDisenchantSkill`, `ArmorDamageModifier`, `duration`, `ItemLimitCategory`, `HolidayId`, `ScriptName`, `DisenchantID`, `FoodType`, `minMoneyLoot`, `maxMoneyLoot`, `flagsCustom`) VALUES (700510, 12, 0, 'Zerbrochenes Stück des Anhängers', 7339, 5, 8, 0, 0, 0, 0, 0, 2047, 1791, 1, 80, 0, 0, 0, 0, 0, 1770, 0, 1, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 'Er strahlt Liebe aus.', 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 4);
+REPLACE INTO `item_template` (`entry`, `class`, `subclass`, `name`, `displayid`, `Quality`, `Flags`, `FlagsExtra`, `BuyCount`, `BuyPrice`, `SellPrice`, `InventoryType`, `AllowableClass`, `AllowableRace`, `ItemLevel`, `RequiredLevel`, `RequiredSkill`, `RequiredSkillRank`, `requiredspell`, `requiredhonorrank`, `RequiredCityRank`, `RequiredReputationFaction`, `RequiredReputationRank`, `maxcount`, `stackable`, `ContainerSlots`, `StatsCount`, `stat_type1`, `stat_value1`, `stat_type2`, `stat_value2`, `stat_type3`, `stat_value3`, `stat_type4`, `stat_value4`, `stat_type5`, `stat_value5`, `stat_type6`, `stat_value6`, `stat_type7`, `stat_value7`, `stat_type8`, `stat_value8`, `stat_type9`, `stat_value9`, `stat_type10`, `stat_value10`, `ScalingStatDistribution`, `ScalingStatValue`, `dmg_min1`, `dmg_max1`, `dmg_type1`, `dmg_min2`, `dmg_max2`, `dmg_type2`, `armor`, `holy_res`, `fire_res`, `nature_res`, `frost_res`, `shadow_res`, `arcane_res`, `delay`, `ammo_type`, `RangedModRange`, `spellid_1`, `spelltrigger_1`, `spellcharges_1`, `spellppmRate_1`, `spellcooldown_1`, `spellcategory_1`, `spellcategorycooldown_1`, `spellid_2`, `spelltrigger_2`, `spellcharges_2`, `spellppmRate_2`, `spellcooldown_2`, `spellcategory_2`, `spellcategorycooldown_2`, `spellid_3`, `spelltrigger_3`, `spellcharges_3`, `spellppmRate_3`, `spellcooldown_3`, `spellcategory_3`, `spellcategorycooldown_3`, `spellid_4`, `spelltrigger_4`, `spellcharges_4`, `spellppmRate_4`, `spellcooldown_4`, `spellcategory_4`, `spellcategorycooldown_4`, `spellid_5`, `spelltrigger_5`, `spellcharges_5`, `spellppmRate_5`, `spellcooldown_5`, `spellcategory_5`, `spellcategorycooldown_5`, `bonding`, `description`, `PageText`, `LanguageID`, `PageMaterial`, `startquest`, `lockid`, `Material`, `sheath`, `RandomProperty`, `RandomSuffix`, `block`, `itemset`, `MaxDurability`, `area`, `Map`, `BagFamily`, `TotemCategory`, `socketColor_1`, `socketContent_1`, `socketColor_2`, `socketContent_2`, `socketColor_3`, `socketContent_3`, `socketBonus`, `GemProperties`, `RequiredDisenchantSkill`, `ArmorDamageModifier`, `duration`, `ItemLimitCategory`, `HolidayId`, `ScriptName`, `DisenchantID`, `FoodType`, `minMoneyLoot`, `maxMoneyLoot`, `flagsCustom`) VALUES (700510, 12, 0, 'Zerbrochenes Stueck des Anhaengers', 7339, 5, 8, 0, 0, 0, 0, 0, 2047, 1791, 1, 80, 0, 0, 0, 0, 0, 1770, 0, 1, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 'Er strahlt Liebe aus.', 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 4);
 
 
 
 DELETE FROM `item_template` WHERE `entry` = 700511;
-REPLACE INTO `item_template` (`entry`, `class`, `subclass`, `name`, `displayid`, `Quality`, `Flags`, `FlagsExtra`, `BuyCount`, `BuyPrice`, `SellPrice`, `InventoryType`, `AllowableClass`, `AllowableRace`, `ItemLevel`, `RequiredLevel`, `RequiredSkill`, `RequiredSkillRank`, `requiredspell`, `requiredhonorrank`, `RequiredCityRank`, `RequiredReputationFaction`, `RequiredReputationRank`, `maxcount`, `stackable`, `ContainerSlots`, `StatsCount`, `stat_type1`, `stat_value1`, `stat_type2`, `stat_value2`, `stat_type3`, `stat_value3`, `stat_type4`, `stat_value4`, `stat_type5`, `stat_value5`, `stat_type6`, `stat_value6`, `stat_type7`, `stat_value7`, `stat_type8`, `stat_value8`, `stat_type9`, `stat_value9`, `stat_type10`, `stat_value10`, `ScalingStatDistribution`, `ScalingStatValue`, `dmg_min1`, `dmg_max1`, `dmg_type1`, `dmg_min2`, `dmg_max2`, `dmg_type2`, `armor`, `holy_res`, `fire_res`, `nature_res`, `frost_res`, `shadow_res`, `arcane_res`, `delay`, `ammo_type`, `RangedModRange`, `spellid_1`, `spelltrigger_1`, `spellcharges_1`, `spellppmRate_1`, `spellcooldown_1`, `spellcategory_1`, `spellcategorycooldown_1`, `spellid_2`, `spelltrigger_2`, `spellcharges_2`, `spellppmRate_2`, `spellcooldown_2`, `spellcategory_2`, `spellcategorycooldown_2`, `spellid_3`, `spelltrigger_3`, `spellcharges_3`, `spellppmRate_3`, `spellcooldown_3`, `spellcategory_3`, `spellcategorycooldown_3`, `spellid_4`, `spelltrigger_4`, `spellcharges_4`, `spellppmRate_4`, `spellcooldown_4`, `spellcategory_4`, `spellcategorycooldown_4`, `spellid_5`, `spelltrigger_5`, `spellcharges_5`, `spellppmRate_5`, `spellcooldown_5`, `spellcategory_5`, `spellcategorycooldown_5`, `bonding`, `description`, `PageText`, `LanguageID`, `PageMaterial`, `startquest`, `lockid`, `Material`, `sheath`, `RandomProperty`, `RandomSuffix`, `block`, `itemset`, `MaxDurability`, `area`, `Map`, `BagFamily`, `TotemCategory`, `socketColor_1`, `socketContent_1`, `socketColor_2`, `socketContent_2`, `socketColor_3`, `socketContent_3`, `socketBonus`, `GemProperties`, `RequiredDisenchantSkill`, `ArmorDamageModifier`, `duration`, `ItemLimitCategory`, `HolidayId`, `ScriptName`, `DisenchantID`, `FoodType`, `minMoneyLoot`, `maxMoneyLoot`, `flagsCustom`) VALUES (700511, 12, 0, 'Magisches Medallion der Sammler', 7339, 5, 72, 0, 0, 0, 0, 0, 2047, 1791, 1, 80, 0, 0, 0, 0, 0, 1770, 0, 1, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 'Magische Töne kommen aus dem Inneren.', 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0,'teleportitem', 0, 0, 0, 0, 4);
+REPLACE INTO `item_template` (`entry`, `class`, `subclass`, `name`, `displayid`, `Quality`, `Flags`, `FlagsExtra`, `BuyCount`, `BuyPrice`, `SellPrice`, `InventoryType`, `AllowableClass`, `AllowableRace`, `ItemLevel`, `RequiredLevel`, `RequiredSkill`, `RequiredSkillRank`, `requiredspell`, `requiredhonorrank`, `RequiredCityRank`, `RequiredReputationFaction`, `RequiredReputationRank`, `maxcount`, `stackable`, `ContainerSlots`, `StatsCount`, `stat_type1`, `stat_value1`, `stat_type2`, `stat_value2`, `stat_type3`, `stat_value3`, `stat_type4`, `stat_value4`, `stat_type5`, `stat_value5`, `stat_type6`, `stat_value6`, `stat_type7`, `stat_value7`, `stat_type8`, `stat_value8`, `stat_type9`, `stat_value9`, `stat_type10`, `stat_value10`, `ScalingStatDistribution`, `ScalingStatValue`, `dmg_min1`, `dmg_max1`, `dmg_type1`, `dmg_min2`, `dmg_max2`, `dmg_type2`, `armor`, `holy_res`, `fire_res`, `nature_res`, `frost_res`, `shadow_res`, `arcane_res`, `delay`, `ammo_type`, `RangedModRange`, `spellid_1`, `spelltrigger_1`, `spellcharges_1`, `spellppmRate_1`, `spellcooldown_1`, `spellcategory_1`, `spellcategorycooldown_1`, `spellid_2`, `spelltrigger_2`, `spellcharges_2`, `spellppmRate_2`, `spellcooldown_2`, `spellcategory_2`, `spellcategorycooldown_2`, `spellid_3`, `spelltrigger_3`, `spellcharges_3`, `spellppmRate_3`, `spellcooldown_3`, `spellcategory_3`, `spellcategorycooldown_3`, `spellid_4`, `spelltrigger_4`, `spellcharges_4`, `spellppmRate_4`, `spellcooldown_4`, `spellcategory_4`, `spellcategorycooldown_4`, `spellid_5`, `spelltrigger_5`, `spellcharges_5`, `spellppmRate_5`, `spellcooldown_5`, `spellcategory_5`, `spellcategorycooldown_5`, `bonding`, `description`, `PageText`, `LanguageID`, `PageMaterial`, `startquest`, `lockid`, `Material`, `sheath`, `RandomProperty`, `RandomSuffix`, `block`, `itemset`, `MaxDurability`, `area`, `Map`, `BagFamily`, `TotemCategory`, `socketColor_1`, `socketContent_1`, `socketColor_2`, `socketContent_2`, `socketColor_3`, `socketContent_3`, `socketBonus`, `GemProperties`, `RequiredDisenchantSkill`, `ArmorDamageModifier`, `duration`, `ItemLimitCategory`, `HolidayId`, `ScriptName`, `DisenchantID`, `FoodType`, `minMoneyLoot`, `maxMoneyLoot`, `flagsCustom`) VALUES (700511, 12, 0, 'Magisches Medallion der Sammler', 7339, 5, 72, 0, 0, 0, 0, 0, 2047, 1791, 1, 80, 0, 0, 0, 0, 0, 1770, 0, 1, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 'Magische Toene kommen aus dem Inneren.', 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0,'teleportitem', 0, 0, 0, 0, 4);
 
 
 
@@ -29443,25 +29443,25 @@ DELETE FROM `creature_loot_template` WHERE `Entry` = 20886 and `Item` = 700512;
 REPLACE INTO `creature_loot_template` (`Entry`, `Item`, `Reference`, `Chance`, `QuestRequired`, `LootMode`, `GroupId`, `MinCount`, `MaxCount`) 
 VALUES ('20886', '700512', '0', '2.5', '1', '1', '0', '1', '1');
 DELETE FROM `item_template` WHERE `entry` = 700512;
-REPLACE INTO `item_template` (`entry`, `class`, `subclass`, `name`, `displayid`, `Quality`, `Flags`, `FlagsExtra`, `BuyCount`, `BuyPrice`, `SellPrice`, `InventoryType`, `AllowableClass`, `AllowableRace`, `ItemLevel`, `RequiredLevel`, `RequiredSkill`, `RequiredSkillRank`, `requiredspell`, `requiredhonorrank`, `RequiredCityRank`, `RequiredReputationFaction`, `RequiredReputationRank`, `maxcount`, `stackable`, `ContainerSlots`, `StatsCount`, `stat_type1`, `stat_value1`, `stat_type2`, `stat_value2`, `stat_type3`, `stat_value3`, `stat_type4`, `stat_value4`, `stat_type5`, `stat_value5`, `stat_type6`, `stat_value6`, `stat_type7`, `stat_value7`, `stat_type8`, `stat_value8`, `stat_type9`, `stat_value9`, `stat_type10`, `stat_value10`, `ScalingStatDistribution`, `ScalingStatValue`, `dmg_min1`, `dmg_max1`, `dmg_type1`, `dmg_min2`, `dmg_max2`, `dmg_type2`, `armor`, `holy_res`, `fire_res`, `nature_res`, `frost_res`, `shadow_res`, `arcane_res`, `delay`, `ammo_type`, `RangedModRange`, `spellid_1`, `spelltrigger_1`, `spellcharges_1`, `spellppmRate_1`, `spellcooldown_1`, `spellcategory_1`, `spellcategorycooldown_1`, `spellid_2`, `spelltrigger_2`, `spellcharges_2`, `spellppmRate_2`, `spellcooldown_2`, `spellcategory_2`, `spellcategorycooldown_2`, `spellid_3`, `spelltrigger_3`, `spellcharges_3`, `spellppmRate_3`, `spellcooldown_3`, `spellcategory_3`, `spellcategorycooldown_3`, `spellid_4`, `spelltrigger_4`, `spellcharges_4`, `spellppmRate_4`, `spellcooldown_4`, `spellcategory_4`, `spellcategorycooldown_4`, `spellid_5`, `spelltrigger_5`, `spellcharges_5`, `spellppmRate_5`, `spellcooldown_5`, `spellcategory_5`, `spellcategorycooldown_5`, `bonding`, `description`, `PageText`, `LanguageID`, `PageMaterial`, `startquest`, `lockid`, `Material`, `sheath`, `RandomProperty`, `RandomSuffix`, `block`, `itemset`, `MaxDurability`, `area`, `Map`, `BagFamily`, `TotemCategory`, `socketColor_1`, `socketContent_1`, `socketColor_2`, `socketContent_2`, `socketColor_3`, `socketContent_3`, `socketBonus`, `GemProperties`, `RequiredDisenchantSkill`, `ArmorDamageModifier`, `duration`, `ItemLimitCategory`, `HolidayId`, `ScriptName`, `DisenchantID`, `FoodType`, `minMoneyLoot`, `maxMoneyLoot`, `flagsCustom`) VALUES (700512, 12, 0, 'Zerbrochenes Stück des Anhängers', 7339, 5, 8, 0, 0, 0, 0, 0, 2047, 1791, 1, 80, 0, 0, 0, 0, 0, 1770, 0, 1, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 'Er strahlt Liebe aus.', 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 4);
+REPLACE INTO `item_template` (`entry`, `class`, `subclass`, `name`, `displayid`, `Quality`, `Flags`, `FlagsExtra`, `BuyCount`, `BuyPrice`, `SellPrice`, `InventoryType`, `AllowableClass`, `AllowableRace`, `ItemLevel`, `RequiredLevel`, `RequiredSkill`, `RequiredSkillRank`, `requiredspell`, `requiredhonorrank`, `RequiredCityRank`, `RequiredReputationFaction`, `RequiredReputationRank`, `maxcount`, `stackable`, `ContainerSlots`, `StatsCount`, `stat_type1`, `stat_value1`, `stat_type2`, `stat_value2`, `stat_type3`, `stat_value3`, `stat_type4`, `stat_value4`, `stat_type5`, `stat_value5`, `stat_type6`, `stat_value6`, `stat_type7`, `stat_value7`, `stat_type8`, `stat_value8`, `stat_type9`, `stat_value9`, `stat_type10`, `stat_value10`, `ScalingStatDistribution`, `ScalingStatValue`, `dmg_min1`, `dmg_max1`, `dmg_type1`, `dmg_min2`, `dmg_max2`, `dmg_type2`, `armor`, `holy_res`, `fire_res`, `nature_res`, `frost_res`, `shadow_res`, `arcane_res`, `delay`, `ammo_type`, `RangedModRange`, `spellid_1`, `spelltrigger_1`, `spellcharges_1`, `spellppmRate_1`, `spellcooldown_1`, `spellcategory_1`, `spellcategorycooldown_1`, `spellid_2`, `spelltrigger_2`, `spellcharges_2`, `spellppmRate_2`, `spellcooldown_2`, `spellcategory_2`, `spellcategorycooldown_2`, `spellid_3`, `spelltrigger_3`, `spellcharges_3`, `spellppmRate_3`, `spellcooldown_3`, `spellcategory_3`, `spellcategorycooldown_3`, `spellid_4`, `spelltrigger_4`, `spellcharges_4`, `spellppmRate_4`, `spellcooldown_4`, `spellcategory_4`, `spellcategorycooldown_4`, `spellid_5`, `spelltrigger_5`, `spellcharges_5`, `spellppmRate_5`, `spellcooldown_5`, `spellcategory_5`, `spellcategorycooldown_5`, `bonding`, `description`, `PageText`, `LanguageID`, `PageMaterial`, `startquest`, `lockid`, `Material`, `sheath`, `RandomProperty`, `RandomSuffix`, `block`, `itemset`, `MaxDurability`, `area`, `Map`, `BagFamily`, `TotemCategory`, `socketColor_1`, `socketContent_1`, `socketColor_2`, `socketContent_2`, `socketColor_3`, `socketContent_3`, `socketBonus`, `GemProperties`, `RequiredDisenchantSkill`, `ArmorDamageModifier`, `duration`, `ItemLimitCategory`, `HolidayId`, `ScriptName`, `DisenchantID`, `FoodType`, `minMoneyLoot`, `maxMoneyLoot`, `flagsCustom`) VALUES (700512, 12, 0, 'Zerbrochenes Stueck des Anhaengers', 7339, 5, 8, 0, 0, 0, 0, 0, 2047, 1791, 1, 80, 0, 0, 0, 0, 0, 1770, 0, 1, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 'Er strahlt Liebe aus.', 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 4);
 
 
 DELETE FROM `creature_loot_template` WHERE `Entry` = 17798 and `Item` = 700513;
 REPLACE INTO `creature_loot_template` (`Entry`, `Item`, `Reference`, `Chance`, `QuestRequired`, `LootMode`, `GroupId`, `MinCount`, `MaxCount`) 
 VALUES ('17798', '700513', '0', '2.5', '1', '1', '0', '1', '1');
 DELETE FROM `item_template` WHERE `entry` = 700513;
-REPLACE INTO `item_template` (`entry`, `class`, `subclass`, `name`, `displayid`, `Quality`, `Flags`, `FlagsExtra`, `BuyCount`, `BuyPrice`, `SellPrice`, `InventoryType`, `AllowableClass`, `AllowableRace`, `ItemLevel`, `RequiredLevel`, `RequiredSkill`, `RequiredSkillRank`, `requiredspell`, `requiredhonorrank`, `RequiredCityRank`, `RequiredReputationFaction`, `RequiredReputationRank`, `maxcount`, `stackable`, `ContainerSlots`, `StatsCount`, `stat_type1`, `stat_value1`, `stat_type2`, `stat_value2`, `stat_type3`, `stat_value3`, `stat_type4`, `stat_value4`, `stat_type5`, `stat_value5`, `stat_type6`, `stat_value6`, `stat_type7`, `stat_value7`, `stat_type8`, `stat_value8`, `stat_type9`, `stat_value9`, `stat_type10`, `stat_value10`, `ScalingStatDistribution`, `ScalingStatValue`, `dmg_min1`, `dmg_max1`, `dmg_type1`, `dmg_min2`, `dmg_max2`, `dmg_type2`, `armor`, `holy_res`, `fire_res`, `nature_res`, `frost_res`, `shadow_res`, `arcane_res`, `delay`, `ammo_type`, `RangedModRange`, `spellid_1`, `spelltrigger_1`, `spellcharges_1`, `spellppmRate_1`, `spellcooldown_1`, `spellcategory_1`, `spellcategorycooldown_1`, `spellid_2`, `spelltrigger_2`, `spellcharges_2`, `spellppmRate_2`, `spellcooldown_2`, `spellcategory_2`, `spellcategorycooldown_2`, `spellid_3`, `spelltrigger_3`, `spellcharges_3`, `spellppmRate_3`, `spellcooldown_3`, `spellcategory_3`, `spellcategorycooldown_3`, `spellid_4`, `spelltrigger_4`, `spellcharges_4`, `spellppmRate_4`, `spellcooldown_4`, `spellcategory_4`, `spellcategorycooldown_4`, `spellid_5`, `spelltrigger_5`, `spellcharges_5`, `spellppmRate_5`, `spellcooldown_5`, `spellcategory_5`, `spellcategorycooldown_5`, `bonding`, `description`, `PageText`, `LanguageID`, `PageMaterial`, `startquest`, `lockid`, `Material`, `sheath`, `RandomProperty`, `RandomSuffix`, `block`, `itemset`, `MaxDurability`, `area`, `Map`, `BagFamily`, `TotemCategory`, `socketColor_1`, `socketContent_1`, `socketColor_2`, `socketContent_2`, `socketColor_3`, `socketContent_3`, `socketBonus`, `GemProperties`, `RequiredDisenchantSkill`, `ArmorDamageModifier`, `duration`, `ItemLimitCategory`, `HolidayId`, `ScriptName`, `DisenchantID`, `FoodType`, `minMoneyLoot`, `maxMoneyLoot`, `flagsCustom`) VALUES (700513, 12, 0, 'Zerbrochenes Stück des Anhängers', 7339, 5, 8, 0, 0, 0, 0, 0, 2047, 1791, 1, 80, 0, 0, 0, 0, 0, 1770, 0, 1, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 'Er strahlt Liebe aus.', 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 4);
+REPLACE INTO `item_template` (`entry`, `class`, `subclass`, `name`, `displayid`, `Quality`, `Flags`, `FlagsExtra`, `BuyCount`, `BuyPrice`, `SellPrice`, `InventoryType`, `AllowableClass`, `AllowableRace`, `ItemLevel`, `RequiredLevel`, `RequiredSkill`, `RequiredSkillRank`, `requiredspell`, `requiredhonorrank`, `RequiredCityRank`, `RequiredReputationFaction`, `RequiredReputationRank`, `maxcount`, `stackable`, `ContainerSlots`, `StatsCount`, `stat_type1`, `stat_value1`, `stat_type2`, `stat_value2`, `stat_type3`, `stat_value3`, `stat_type4`, `stat_value4`, `stat_type5`, `stat_value5`, `stat_type6`, `stat_value6`, `stat_type7`, `stat_value7`, `stat_type8`, `stat_value8`, `stat_type9`, `stat_value9`, `stat_type10`, `stat_value10`, `ScalingStatDistribution`, `ScalingStatValue`, `dmg_min1`, `dmg_max1`, `dmg_type1`, `dmg_min2`, `dmg_max2`, `dmg_type2`, `armor`, `holy_res`, `fire_res`, `nature_res`, `frost_res`, `shadow_res`, `arcane_res`, `delay`, `ammo_type`, `RangedModRange`, `spellid_1`, `spelltrigger_1`, `spellcharges_1`, `spellppmRate_1`, `spellcooldown_1`, `spellcategory_1`, `spellcategorycooldown_1`, `spellid_2`, `spelltrigger_2`, `spellcharges_2`, `spellppmRate_2`, `spellcooldown_2`, `spellcategory_2`, `spellcategorycooldown_2`, `spellid_3`, `spelltrigger_3`, `spellcharges_3`, `spellppmRate_3`, `spellcooldown_3`, `spellcategory_3`, `spellcategorycooldown_3`, `spellid_4`, `spelltrigger_4`, `spellcharges_4`, `spellppmRate_4`, `spellcooldown_4`, `spellcategory_4`, `spellcategorycooldown_4`, `spellid_5`, `spelltrigger_5`, `spellcharges_5`, `spellppmRate_5`, `spellcooldown_5`, `spellcategory_5`, `spellcategorycooldown_5`, `bonding`, `description`, `PageText`, `LanguageID`, `PageMaterial`, `startquest`, `lockid`, `Material`, `sheath`, `RandomProperty`, `RandomSuffix`, `block`, `itemset`, `MaxDurability`, `area`, `Map`, `BagFamily`, `TotemCategory`, `socketColor_1`, `socketContent_1`, `socketColor_2`, `socketContent_2`, `socketColor_3`, `socketContent_3`, `socketBonus`, `GemProperties`, `RequiredDisenchantSkill`, `ArmorDamageModifier`, `duration`, `ItemLimitCategory`, `HolidayId`, `ScriptName`, `DisenchantID`, `FoodType`, `minMoneyLoot`, `maxMoneyLoot`, `flagsCustom`) VALUES (700513, 12, 0, 'Zerbrochenes Stueck des Anhaengers', 7339, 5, 8, 0, 0, 0, 0, 0, 2047, 1791, 1, 80, 0, 0, 0, 0, 0, 1770, 0, 1, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 'Er strahlt Liebe aus.', 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 4);
 
 
 DELETE FROM `creature_loot_template` WHERE `Entry` = 17879 and `Item` = 700514;
 REPLACE INTO `creature_loot_template` (`Entry`, `Item`, `Reference`, `Chance`, `QuestRequired`, `LootMode`, `GroupId`, `MinCount`, `MaxCount`) 
 VALUES ('17879', '700514', '0', '2.5', '1', '1', '0', '1', '1');
 DELETE FROM `item_template` WHERE `entry` = 700514;
-REPLACE INTO `item_template` (`entry`, `class`, `subclass`, `name`, `displayid`, `Quality`, `Flags`, `FlagsExtra`, `BuyCount`, `BuyPrice`, `SellPrice`, `InventoryType`, `AllowableClass`, `AllowableRace`, `ItemLevel`, `RequiredLevel`, `RequiredSkill`, `RequiredSkillRank`, `requiredspell`, `requiredhonorrank`, `RequiredCityRank`, `RequiredReputationFaction`, `RequiredReputationRank`, `maxcount`, `stackable`, `ContainerSlots`, `StatsCount`, `stat_type1`, `stat_value1`, `stat_type2`, `stat_value2`, `stat_type3`, `stat_value3`, `stat_type4`, `stat_value4`, `stat_type5`, `stat_value5`, `stat_type6`, `stat_value6`, `stat_type7`, `stat_value7`, `stat_type8`, `stat_value8`, `stat_type9`, `stat_value9`, `stat_type10`, `stat_value10`, `ScalingStatDistribution`, `ScalingStatValue`, `dmg_min1`, `dmg_max1`, `dmg_type1`, `dmg_min2`, `dmg_max2`, `dmg_type2`, `armor`, `holy_res`, `fire_res`, `nature_res`, `frost_res`, `shadow_res`, `arcane_res`, `delay`, `ammo_type`, `RangedModRange`, `spellid_1`, `spelltrigger_1`, `spellcharges_1`, `spellppmRate_1`, `spellcooldown_1`, `spellcategory_1`, `spellcategorycooldown_1`, `spellid_2`, `spelltrigger_2`, `spellcharges_2`, `spellppmRate_2`, `spellcooldown_2`, `spellcategory_2`, `spellcategorycooldown_2`, `spellid_3`, `spelltrigger_3`, `spellcharges_3`, `spellppmRate_3`, `spellcooldown_3`, `spellcategory_3`, `spellcategorycooldown_3`, `spellid_4`, `spelltrigger_4`, `spellcharges_4`, `spellppmRate_4`, `spellcooldown_4`, `spellcategory_4`, `spellcategorycooldown_4`, `spellid_5`, `spelltrigger_5`, `spellcharges_5`, `spellppmRate_5`, `spellcooldown_5`, `spellcategory_5`, `spellcategorycooldown_5`, `bonding`, `description`, `PageText`, `LanguageID`, `PageMaterial`, `startquest`, `lockid`, `Material`, `sheath`, `RandomProperty`, `RandomSuffix`, `block`, `itemset`, `MaxDurability`, `area`, `Map`, `BagFamily`, `TotemCategory`, `socketColor_1`, `socketContent_1`, `socketColor_2`, `socketContent_2`, `socketColor_3`, `socketContent_3`, `socketBonus`, `GemProperties`, `RequiredDisenchantSkill`, `ArmorDamageModifier`, `duration`, `ItemLimitCategory`, `HolidayId`, `ScriptName`, `DisenchantID`, `FoodType`, `minMoneyLoot`, `maxMoneyLoot`, `flagsCustom`) VALUES (700514, 12, 0, 'Zerbrochenes Stück des Anhängers', 7339, 5, 8, 0, 0, 0, 0, 0, 2047, 1791, 1, 80, 0, 0, 0, 0, 0, 1770, 0, 1, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 'Er strahlt Liebe aus.', 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 4);
+REPLACE INTO `item_template` (`entry`, `class`, `subclass`, `name`, `displayid`, `Quality`, `Flags`, `FlagsExtra`, `BuyCount`, `BuyPrice`, `SellPrice`, `InventoryType`, `AllowableClass`, `AllowableRace`, `ItemLevel`, `RequiredLevel`, `RequiredSkill`, `RequiredSkillRank`, `requiredspell`, `requiredhonorrank`, `RequiredCityRank`, `RequiredReputationFaction`, `RequiredReputationRank`, `maxcount`, `stackable`, `ContainerSlots`, `StatsCount`, `stat_type1`, `stat_value1`, `stat_type2`, `stat_value2`, `stat_type3`, `stat_value3`, `stat_type4`, `stat_value4`, `stat_type5`, `stat_value5`, `stat_type6`, `stat_value6`, `stat_type7`, `stat_value7`, `stat_type8`, `stat_value8`, `stat_type9`, `stat_value9`, `stat_type10`, `stat_value10`, `ScalingStatDistribution`, `ScalingStatValue`, `dmg_min1`, `dmg_max1`, `dmg_type1`, `dmg_min2`, `dmg_max2`, `dmg_type2`, `armor`, `holy_res`, `fire_res`, `nature_res`, `frost_res`, `shadow_res`, `arcane_res`, `delay`, `ammo_type`, `RangedModRange`, `spellid_1`, `spelltrigger_1`, `spellcharges_1`, `spellppmRate_1`, `spellcooldown_1`, `spellcategory_1`, `spellcategorycooldown_1`, `spellid_2`, `spelltrigger_2`, `spellcharges_2`, `spellppmRate_2`, `spellcooldown_2`, `spellcategory_2`, `spellcategorycooldown_2`, `spellid_3`, `spelltrigger_3`, `spellcharges_3`, `spellppmRate_3`, `spellcooldown_3`, `spellcategory_3`, `spellcategorycooldown_3`, `spellid_4`, `spelltrigger_4`, `spellcharges_4`, `spellppmRate_4`, `spellcooldown_4`, `spellcategory_4`, `spellcategorycooldown_4`, `spellid_5`, `spelltrigger_5`, `spellcharges_5`, `spellppmRate_5`, `spellcooldown_5`, `spellcategory_5`, `spellcategorycooldown_5`, `bonding`, `description`, `PageText`, `LanguageID`, `PageMaterial`, `startquest`, `lockid`, `Material`, `sheath`, `RandomProperty`, `RandomSuffix`, `block`, `itemset`, `MaxDurability`, `area`, `Map`, `BagFamily`, `TotemCategory`, `socketColor_1`, `socketContent_1`, `socketColor_2`, `socketContent_2`, `socketColor_3`, `socketContent_3`, `socketBonus`, `GemProperties`, `RequiredDisenchantSkill`, `ArmorDamageModifier`, `duration`, `ItemLimitCategory`, `HolidayId`, `ScriptName`, `DisenchantID`, `FoodType`, `minMoneyLoot`, `maxMoneyLoot`, `flagsCustom`) VALUES (700514, 12, 0, 'Zerbrochenes Stueck des Anhaengers', 7339, 5, 8, 0, 0, 0, 0, 0, 2047, 1791, 1, 80, 0, 0, 0, 0, 0, 1770, 0, 1, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 'Er strahlt Liebe aus.', 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 4);
 
 
 DELETE FROM `item_template` WHERE `entry` = 700515;
-REPLACE INTO `item_template` (`entry`, `class`, `subclass`, `name`, `displayid`, `Quality`, `Flags`, `FlagsExtra`, `BuyCount`, `BuyPrice`, `SellPrice`, `InventoryType`, `AllowableClass`, `AllowableRace`, `ItemLevel`, `RequiredLevel`, `RequiredSkill`, `RequiredSkillRank`, `requiredspell`, `requiredhonorrank`, `RequiredCityRank`, `RequiredReputationFaction`, `RequiredReputationRank`, `maxcount`, `stackable`, `ContainerSlots`, `StatsCount`, `stat_type1`, `stat_value1`, `stat_type2`, `stat_value2`, `stat_type3`, `stat_value3`, `stat_type4`, `stat_value4`, `stat_type5`, `stat_value5`, `stat_type6`, `stat_value6`, `stat_type7`, `stat_value7`, `stat_type8`, `stat_value8`, `stat_type9`, `stat_value9`, `stat_type10`, `stat_value10`, `ScalingStatDistribution`, `ScalingStatValue`, `dmg_min1`, `dmg_max1`, `dmg_type1`, `dmg_min2`, `dmg_max2`, `dmg_type2`, `armor`, `holy_res`, `fire_res`, `nature_res`, `frost_res`, `shadow_res`, `arcane_res`, `delay`, `ammo_type`, `RangedModRange`, `spellid_1`, `spelltrigger_1`, `spellcharges_1`, `spellppmRate_1`, `spellcooldown_1`, `spellcategory_1`, `spellcategorycooldown_1`, `spellid_2`, `spelltrigger_2`, `spellcharges_2`, `spellppmRate_2`, `spellcooldown_2`, `spellcategory_2`, `spellcategorycooldown_2`, `spellid_3`, `spelltrigger_3`, `spellcharges_3`, `spellppmRate_3`, `spellcooldown_3`, `spellcategory_3`, `spellcategorycooldown_3`, `spellid_4`, `spelltrigger_4`, `spellcharges_4`, `spellppmRate_4`, `spellcooldown_4`, `spellcategory_4`, `spellcategorycooldown_4`, `spellid_5`, `spelltrigger_5`, `spellcharges_5`, `spellppmRate_5`, `spellcooldown_5`, `spellcategory_5`, `spellcategorycooldown_5`, `bonding`, `description`, `PageText`, `LanguageID`, `PageMaterial`, `startquest`, `lockid`, `Material`, `sheath`, `RandomProperty`, `RandomSuffix`, `block`, `itemset`, `MaxDurability`, `area`, `Map`, `BagFamily`, `TotemCategory`, `socketColor_1`, `socketContent_1`, `socketColor_2`, `socketContent_2`, `socketColor_3`, `socketContent_3`, `socketBonus`, `GemProperties`, `RequiredDisenchantSkill`, `ArmorDamageModifier`, `duration`, `ItemLimitCategory`, `HolidayId`, `ScriptName`, `DisenchantID`, `FoodType`, `minMoneyLoot`, `maxMoneyLoot`, `flagsCustom`) VALUES (700515, 12, 0, 'Zusammengesetzter Anhänger', 7339, 5, 8, 0, 0, 0, 0, 0, 2047, 1791, 1, 80, 0, 0, 0, 0, 0, 1770, 0, 1, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 'Magie durchströmt ihn.', 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 4);
+REPLACE INTO `item_template` (`entry`, `class`, `subclass`, `name`, `displayid`, `Quality`, `Flags`, `FlagsExtra`, `BuyCount`, `BuyPrice`, `SellPrice`, `InventoryType`, `AllowableClass`, `AllowableRace`, `ItemLevel`, `RequiredLevel`, `RequiredSkill`, `RequiredSkillRank`, `requiredspell`, `requiredhonorrank`, `RequiredCityRank`, `RequiredReputationFaction`, `RequiredReputationRank`, `maxcount`, `stackable`, `ContainerSlots`, `StatsCount`, `stat_type1`, `stat_value1`, `stat_type2`, `stat_value2`, `stat_type3`, `stat_value3`, `stat_type4`, `stat_value4`, `stat_type5`, `stat_value5`, `stat_type6`, `stat_value6`, `stat_type7`, `stat_value7`, `stat_type8`, `stat_value8`, `stat_type9`, `stat_value9`, `stat_type10`, `stat_value10`, `ScalingStatDistribution`, `ScalingStatValue`, `dmg_min1`, `dmg_max1`, `dmg_type1`, `dmg_min2`, `dmg_max2`, `dmg_type2`, `armor`, `holy_res`, `fire_res`, `nature_res`, `frost_res`, `shadow_res`, `arcane_res`, `delay`, `ammo_type`, `RangedModRange`, `spellid_1`, `spelltrigger_1`, `spellcharges_1`, `spellppmRate_1`, `spellcooldown_1`, `spellcategory_1`, `spellcategorycooldown_1`, `spellid_2`, `spelltrigger_2`, `spellcharges_2`, `spellppmRate_2`, `spellcooldown_2`, `spellcategory_2`, `spellcategorycooldown_2`, `spellid_3`, `spelltrigger_3`, `spellcharges_3`, `spellppmRate_3`, `spellcooldown_3`, `spellcategory_3`, `spellcategorycooldown_3`, `spellid_4`, `spelltrigger_4`, `spellcharges_4`, `spellppmRate_4`, `spellcooldown_4`, `spellcategory_4`, `spellcategorycooldown_4`, `spellid_5`, `spelltrigger_5`, `spellcharges_5`, `spellppmRate_5`, `spellcooldown_5`, `spellcategory_5`, `spellcategorycooldown_5`, `bonding`, `description`, `PageText`, `LanguageID`, `PageMaterial`, `startquest`, `lockid`, `Material`, `sheath`, `RandomProperty`, `RandomSuffix`, `block`, `itemset`, `MaxDurability`, `area`, `Map`, `BagFamily`, `TotemCategory`, `socketColor_1`, `socketContent_1`, `socketColor_2`, `socketContent_2`, `socketColor_3`, `socketContent_3`, `socketBonus`, `GemProperties`, `RequiredDisenchantSkill`, `ArmorDamageModifier`, `duration`, `ItemLimitCategory`, `HolidayId`, `ScriptName`, `DisenchantID`, `FoodType`, `minMoneyLoot`, `maxMoneyLoot`, `flagsCustom`) VALUES (700515, 12, 0, 'Zusammengesetzter Anhaenger', 7339, 5, 8, 0, 0, 0, 0, 0, 2047, 1791, 1, 80, 0, 0, 0, 0, 0, 1770, 0, 1, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 'Magie durchstroemt ihn.', 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 4);
 
 
 
@@ -29475,13 +29475,13 @@ REPLACE INTO `item_template` (`entry`, `class`, `subclass`, `name`, `displayid`,
 
 
 DELETE FROM `item_template` WHERE `entry` = 700517;
-REPLACE INTO `item_template` (`entry`, `class`, `subclass`, `name`, `displayid`, `Quality`, `Flags`, `FlagsExtra`, `BuyCount`, `BuyPrice`, `SellPrice`, `InventoryType`, `AllowableClass`, `AllowableRace`, `ItemLevel`, `RequiredLevel`, `RequiredSkill`, `RequiredSkillRank`, `requiredspell`, `requiredhonorrank`, `RequiredCityRank`, `RequiredReputationFaction`, `RequiredReputationRank`, `maxcount`, `stackable`, `ContainerSlots`, `StatsCount`, `stat_type1`, `stat_value1`, `stat_type2`, `stat_value2`, `stat_type3`, `stat_value3`, `stat_type4`, `stat_value4`, `stat_type5`, `stat_value5`, `stat_type6`, `stat_value6`, `stat_type7`, `stat_value7`, `stat_type8`, `stat_value8`, `stat_type9`, `stat_value9`, `stat_type10`, `stat_value10`, `ScalingStatDistribution`, `ScalingStatValue`, `dmg_min1`, `dmg_max1`, `dmg_type1`, `dmg_min2`, `dmg_max2`, `dmg_type2`, `armor`, `holy_res`, `fire_res`, `nature_res`, `frost_res`, `shadow_res`, `arcane_res`, `delay`, `ammo_type`, `RangedModRange`, `spellid_1`, `spelltrigger_1`, `spellcharges_1`, `spellppmRate_1`, `spellcooldown_1`, `spellcategory_1`, `spellcategorycooldown_1`, `spellid_2`, `spelltrigger_2`, `spellcharges_2`, `spellppmRate_2`, `spellcooldown_2`, `spellcategory_2`, `spellcategorycooldown_2`, `spellid_3`, `spelltrigger_3`, `spellcharges_3`, `spellppmRate_3`, `spellcooldown_3`, `spellcategory_3`, `spellcategorycooldown_3`, `spellid_4`, `spelltrigger_4`, `spellcharges_4`, `spellppmRate_4`, `spellcooldown_4`, `spellcategory_4`, `spellcategorycooldown_4`, `spellid_5`, `spelltrigger_5`, `spellcharges_5`, `spellppmRate_5`, `spellcooldown_5`, `spellcategory_5`, `spellcategorycooldown_5`, `bonding`, `description`, `PageText`, `LanguageID`, `PageMaterial`, `startquest`, `lockid`, `Material`, `sheath`, `RandomProperty`, `RandomSuffix`, `block`, `itemset`, `MaxDurability`, `area`, `Map`, `BagFamily`, `TotemCategory`, `socketColor_1`, `socketContent_1`, `socketColor_2`, `socketContent_2`, `socketColor_3`, `socketContent_3`, `socketBonus`, `GemProperties`, `RequiredDisenchantSkill`, `ArmorDamageModifier`, `duration`, `ItemLimitCategory`, `HolidayId`, `ScriptName`, `DisenchantID`, `FoodType`, `minMoneyLoot`, `maxMoneyLoot`, `flagsCustom`) VALUES (700517, 12, 0, 'Seidener Anhänger', 7339, 5, 8, 0, 0, 0, 0, 0, 2047, 1791, 1, 80, 0, 0, 0, 0, 0, 1770, 0, 1, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1,'Sie ist weich und flauschig.', 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 4);
+REPLACE INTO `item_template` (`entry`, `class`, `subclass`, `name`, `displayid`, `Quality`, `Flags`, `FlagsExtra`, `BuyCount`, `BuyPrice`, `SellPrice`, `InventoryType`, `AllowableClass`, `AllowableRace`, `ItemLevel`, `RequiredLevel`, `RequiredSkill`, `RequiredSkillRank`, `requiredspell`, `requiredhonorrank`, `RequiredCityRank`, `RequiredReputationFaction`, `RequiredReputationRank`, `maxcount`, `stackable`, `ContainerSlots`, `StatsCount`, `stat_type1`, `stat_value1`, `stat_type2`, `stat_value2`, `stat_type3`, `stat_value3`, `stat_type4`, `stat_value4`, `stat_type5`, `stat_value5`, `stat_type6`, `stat_value6`, `stat_type7`, `stat_value7`, `stat_type8`, `stat_value8`, `stat_type9`, `stat_value9`, `stat_type10`, `stat_value10`, `ScalingStatDistribution`, `ScalingStatValue`, `dmg_min1`, `dmg_max1`, `dmg_type1`, `dmg_min2`, `dmg_max2`, `dmg_type2`, `armor`, `holy_res`, `fire_res`, `nature_res`, `frost_res`, `shadow_res`, `arcane_res`, `delay`, `ammo_type`, `RangedModRange`, `spellid_1`, `spelltrigger_1`, `spellcharges_1`, `spellppmRate_1`, `spellcooldown_1`, `spellcategory_1`, `spellcategorycooldown_1`, `spellid_2`, `spelltrigger_2`, `spellcharges_2`, `spellppmRate_2`, `spellcooldown_2`, `spellcategory_2`, `spellcategorycooldown_2`, `spellid_3`, `spelltrigger_3`, `spellcharges_3`, `spellppmRate_3`, `spellcooldown_3`, `spellcategory_3`, `spellcategorycooldown_3`, `spellid_4`, `spelltrigger_4`, `spellcharges_4`, `spellppmRate_4`, `spellcooldown_4`, `spellcategory_4`, `spellcategorycooldown_4`, `spellid_5`, `spelltrigger_5`, `spellcharges_5`, `spellppmRate_5`, `spellcooldown_5`, `spellcategory_5`, `spellcategorycooldown_5`, `bonding`, `description`, `PageText`, `LanguageID`, `PageMaterial`, `startquest`, `lockid`, `Material`, `sheath`, `RandomProperty`, `RandomSuffix`, `block`, `itemset`, `MaxDurability`, `area`, `Map`, `BagFamily`, `TotemCategory`, `socketColor_1`, `socketContent_1`, `socketColor_2`, `socketContent_2`, `socketColor_3`, `socketContent_3`, `socketBonus`, `GemProperties`, `RequiredDisenchantSkill`, `ArmorDamageModifier`, `duration`, `ItemLimitCategory`, `HolidayId`, `ScriptName`, `DisenchantID`, `FoodType`, `minMoneyLoot`, `maxMoneyLoot`, `flagsCustom`) VALUES (700517, 12, 0, 'Seidener Anhaenger', 7339, 5, 8, 0, 0, 0, 0, 0, 2047, 1791, 1, 80, 0, 0, 0, 0, 0, 1770, 0, 1, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1,'Sie ist weich und flauschig.', 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 4);
 
 
 
 DELETE FROM `item_template` WHERE `entry` = 700518;
 REPLACE INTO `item_template` (`entry`, `class`, `subclass`, `name`, `displayid`, `Quality`, `Flags`, `FlagsExtra`, `BuyCount`, `BuyPrice`, `SellPrice`, `InventoryType`, `AllowableClass`, `AllowableRace`, `ItemLevel`, `RequiredLevel`, `RequiredSkill`, `RequiredSkillRank`, `requiredspell`, `requiredhonorrank`, `RequiredCityRank`, `RequiredReputationFaction`, `RequiredReputationRank`, `maxcount`, `stackable`, `ContainerSlots`, `StatsCount`, `stat_type1`, `stat_value1`, `stat_type2`, `stat_value2`, `stat_type3`, `stat_value3`, `stat_type4`, `stat_value4`, `stat_type5`, `stat_value5`, `stat_type6`, `stat_value6`, `stat_type7`, `stat_value7`, `stat_type8`, `stat_value8`, `stat_type9`, `stat_value9`, `stat_type10`, `stat_value10`, `ScalingStatDistribution`, `ScalingStatValue`, `dmg_min1`, `dmg_max1`, `dmg_type1`, `dmg_min2`, `dmg_max2`, `dmg_type2`, `armor`, `holy_res`, `fire_res`, `nature_res`, `frost_res`, `shadow_res`, `arcane_res`, `delay`, `ammo_type`, `RangedModRange`, `spellid_1`, `spelltrigger_1`, `spellcharges_1`, `spellppmRate_1`, `spellcooldown_1`, `spellcategory_1`, `spellcategorycooldown_1`, `spellid_2`, `spelltrigger_2`, `spellcharges_2`, `spellppmRate_2`, `spellcooldown_2`, `spellcategory_2`, `spellcategorycooldown_2`, `spellid_3`, `spelltrigger_3`, `spellcharges_3`, `spellppmRate_3`, `spellcooldown_3`, `spellcategory_3`, `spellcategorycooldown_3`, `spellid_4`, `spelltrigger_4`, `spellcharges_4`, `spellppmRate_4`, `spellcooldown_4`, `spellcategory_4`, `spellcategorycooldown_4`, `spellid_5`, `spelltrigger_5`, `spellcharges_5`, `spellppmRate_5`, `spellcooldown_5`, `spellcategory_5`, `spellcategorycooldown_5`, `bonding`, `description`, `PageText`, `LanguageID`, `PageMaterial`, `startquest`, `lockid`, `Material`, `sheath`, `RandomProperty`, `RandomSuffix`, `block`, `itemset`, `MaxDurability`, `area`, `Map`, `BagFamily`, `TotemCategory`, `socketColor_1`, `socketContent_1`, `socketColor_2`, `socketContent_2`, `socketColor_3`, `socketContent_3`, `socketBonus`, `GemProperties`, `RequiredDisenchantSkill`, `ArmorDamageModifier`, `duration`, `ItemLimitCategory`, `HolidayId`, `ScriptName`, `DisenchantID`, `FoodType`, `minMoneyLoot`, `maxMoneyLoot`, `flagsCustom`) 
-VALUES (700518, 12, 0, 'Abzeichen von Darkshadow', 7339, 2, 2147483904, 0, 0, 0, 0, 0, 2047, 1791, 80, 80, 0, 0, 0, 0, 0, 1770, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 'Eigentum des Königshauses', 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, '', 0, 0, 0, 0, 0);
+VALUES (700518, 12, 0, 'Abzeichen von Darkshadow', 7339, 2, 2147483904, 0, 0, 0, 0, 0, 2047, 1791, 80, 80, 0, 0, 0, 0, 0, 1770, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 'Eigentum des Koenigshauses', 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, '', 0, 0, 0, 0, 0);
 UPDATE `item_template` SET `stackable`='100' WHERE `entry`='700518';
 
 
@@ -29556,7 +29556,7 @@ VALUES ('14458', '700519', '0', '5', '0', '1', '0', '1', '1');
 
 DELETE FROM `item_template` WHERE `entry` = 700519;
 REPLACE INTO `item_template` (`entry`, `class`, `subclass`, `name`, `displayid`, `Quality`, `Flags`, `FlagsExtra`, `BuyCount`, `BuyPrice`, `SellPrice`, `InventoryType`, `AllowableClass`, `AllowableRace`, `ItemLevel`, `RequiredLevel`, `RequiredSkill`, `RequiredSkillRank`, `requiredspell`, `requiredhonorrank`, `RequiredCityRank`, `RequiredReputationFaction`, `RequiredReputationRank`, `maxcount`, `stackable`, `ContainerSlots`, `StatsCount`, `stat_type1`, `stat_value1`, `stat_type2`, `stat_value2`, `stat_type3`, `stat_value3`, `stat_type4`, `stat_value4`, `stat_type5`, `stat_value5`, `stat_type6`, `stat_value6`, `stat_type7`, `stat_value7`, `stat_type8`, `stat_value8`, `stat_type9`, `stat_value9`, `stat_type10`, `stat_value10`, `ScalingStatDistribution`, `ScalingStatValue`, `dmg_min1`, `dmg_max1`, `dmg_type1`, `dmg_min2`, `dmg_max2`, `dmg_type2`, `armor`, `holy_res`, `fire_res`, `nature_res`, `frost_res`, `shadow_res`, `arcane_res`, `delay`, `ammo_type`, `RangedModRange`, `spellid_1`, `spelltrigger_1`, `spellcharges_1`, `spellppmRate_1`, `spellcooldown_1`, `spellcategory_1`, `spellcategorycooldown_1`, `spellid_2`, `spelltrigger_2`, `spellcharges_2`, `spellppmRate_2`, `spellcooldown_2`, `spellcategory_2`, `spellcategorycooldown_2`, `spellid_3`, `spelltrigger_3`, `spellcharges_3`, `spellppmRate_3`, `spellcooldown_3`, `spellcategory_3`, `spellcategorycooldown_3`, `spellid_4`, `spelltrigger_4`, `spellcharges_4`, `spellppmRate_4`, `spellcooldown_4`, `spellcategory_4`, `spellcategorycooldown_4`, `spellid_5`, `spelltrigger_5`, `spellcharges_5`, `spellppmRate_5`, `spellcooldown_5`, `spellcategory_5`, `spellcategorycooldown_5`, `bonding`, `description`, `PageText`, `LanguageID`, `PageMaterial`, `startquest`, `lockid`, `Material`, `sheath`, `RandomProperty`, `RandomSuffix`, `block`, `itemset`, `MaxDurability`, `area`, `Map`, `BagFamily`, `TotemCategory`, `socketColor_1`, `socketContent_1`, `socketColor_2`, `socketContent_2`, `socketColor_3`, `socketContent_3`, `socketBonus`, `GemProperties`, `RequiredDisenchantSkill`, `ArmorDamageModifier`, `duration`, `ItemLimitCategory`, `HolidayId`, `ScriptName`, `DisenchantID`, `FoodType`, `minMoneyLoot`, `maxMoneyLoot`, `flagsCustom`) 
-VALUES (700519, 12, 0, 'Waffen der Unterstützer', 55276, 2, 2147483904, 0, 0, 0, 0, 0, 2047, 1791, 80, 80, 0, 0, 0, 0, 0, 1770, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 'Das Königshaus sucht nach diesen Waffen', 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, '', 0, 0, 0, 0, 0);
+VALUES (700519, 12, 0, 'Waffen der Unterstuetzer', 55276, 2, 2147483904, 0, 0, 0, 0, 0, 2047, 1791, 80, 80, 0, 0, 0, 0, 0, 1770, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 'Das Koenigshaus sucht nach diesen Waffen', 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, '', 0, 0, 0, 0, 0);
 UPDATE `item_template` SET `stackable`='100' WHERE `entry`='700519';
 
 
