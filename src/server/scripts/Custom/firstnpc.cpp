@@ -204,10 +204,7 @@ class npc_first_char : public CreatureScript
 								QueryResult guildmember = CharacterDatabase.PQuery("SELECT count(guid) FROM guild_member WHERE guildid = %u", guildidint);
 								uint32 guildmemberint = (*guildmember)[0].GetUInt32();
 
-								/*Gildenerstelldatum*/
-								QueryResult guildcreate = CharacterDatabase.PQuery("SELECT createdate FROM guild WHERE guildid = %u", guildidint);
-								uint32 guildcreateint = (*guildcreate)[0].GetUInt32();
-
+								
 								QueryResult onechar = CharacterDatabase.PQuery("Select count(guid) From first_char where guid = '%u'", guid);
 								uint32 onecharint = (*onechar)[0].GetUInt32();
 
@@ -228,8 +225,7 @@ class npc_first_char : public CreatureScript
 								time_t seconds;
 								seconds = time(NULL);
 								uint32 zeit = seconds;
-								uint32 zeitraum = zeit - guildcreateint;
-																
+																								
 								
 								/*Acccountanzahl zählen*/
 								QueryResult accountanz = CharacterDatabase.PQuery("SELECT account FROM characters WHERE guid = %u", guid);
@@ -237,7 +233,7 @@ class npc_first_char : public CreatureScript
 								QueryResult accountgesanz = CharacterDatabase.PQuery("SELECT count(account) FROM first_char WHERE account = '%u'", accountanzint);
 								uint32 accountanzgesint = (*accountgesanz)[0].GetUInt32();
 
-								if (guildmemberint >= 10 && guildmemberint < 25 && zeitraum <1209600 && charresultint == 1 && ipadrcountint == 1 && onecharint != 1 && accountanzgesint <= 1){
+								if (guildmemberint >= 10 && guildmemberint < 25 && charresultint == 1 && ipadrcountint == 1 && onecharint != 1 && accountanzgesint <= 1){
 									pPlayer->SetLevel(80);
 									pPlayer->LearnDefaultSkill(762, 3);
 									pPlayer->TeleportTo(0, -795.73, 1495.50, 104.54, 1.05, 0);
@@ -297,10 +293,7 @@ class npc_first_char : public CreatureScript
 							QueryResult guildmember = CharacterDatabase.PQuery("SELECT count(guid) FROM guild_member WHERE guildid = %u", guildidint);
 							uint32 guildmemberint = (*guildmember)[0].GetUInt32();
 
-							/*Gildenerstelldatum*/
-							QueryResult guildcreate = CharacterDatabase.PQuery("SELECT createdate FROM guild WHERE guildid = %u", guildidint);
-							uint32 guildcreateint = (*guildcreate)[0].GetUInt32();
-
+						
 							QueryResult onechar = CharacterDatabase.PQuery("Select count(guid) From first_char where guid = '%u'", guid);
 							uint32 onecharint = (*onechar)[0].GetUInt32();
 
@@ -328,11 +321,9 @@ class npc_first_char : public CreatureScript
 							time_t seconds;
 							seconds = time(NULL);
 							uint32 zeit = seconds;
-							uint32 zeitraum = zeit - guildcreateint;
-
 							
 
-							if (guildmemberint > 25 && zeitraum <1209600 && charresultint == 1 && ipadrcountint == 1 && onecharint != 1 && accountanzgesint <= 1){
+							if (guildmemberint > 25  && charresultint == 1 && ipadrcountint == 1 && onecharint != 1 && accountanzgesint <= 1){
 								pPlayer->SetLevel(80);
 								pPlayer->LearnDefaultSkill(762, 4);
 								pPlayer->TeleportTo(0, -795.73, 1495.50, 104.54, 1.05, 0);
