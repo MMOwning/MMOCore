@@ -3546,8 +3546,8 @@ REPLACE INTO `quest_template` (`ID`, `Method`, `QuestLevel`, `MinLevel`, `QuestS
  /*  PointX  */ 0,
  /*  PointY  */ 0,
  /*  PointOption  */ 0,
- /*  LogTitle  */ 'Exitares Event',
- /*  LogDescription  */  'Hey du. Wir kennen uns ja bereits. Na dann wollen wir mal starten.',
+ /*  LogTitle  */ 'Ein neues Volk',
+ /*  LogDescription  */  'Hey du. Wir kennen uns ja bereits. Ich denke es wird Zeit euch einem besonderem Volk vorzustellen. Geht zu Eowyn und sprecht mit ihr.',
  /*  QuestDescription   */ 'Hallo $N, na wir sehen uns aber oft. Na dann schicke ich Euch zu eurem ersten Autraggeber. Geht zu Eowyn und gebt die Quest ab.',
  /*  EndText   */  '',
  /*  OfferRewardText  */  'Gut das ihr es geschafft habt.',
@@ -3664,16 +3664,16 @@ REPLACE INTO `quest_template` (`ID`, `Method`, `QuestLevel`, `MinLevel`, `QuestS
  /*  RewardHonor  */ 0,
  /*  RewardHonorMultiplier  */ 0,
  /*  SourceItemId  */ 0,
- /*  Flags  */ 4096,
+ /*  Flags  */ 0,
  /*  RewardTitle  */ 0,
  /*  RequiredPlayerKills  */ 0,
  /*  RewardTalents  */ 0,
  /*  RewardArenaPoints  */ 0,
- /*  RewardIten    */ 47241,
+ /*  RewardIten    */ 0,
  /*  RewardItem2   */ 0,
  /*  RewardItem3   */ 0,
  /*  RewardItem4   */ 0,
- /*  RewardAmount1 */ 2,
+ /*  RewardAmount1 */ 0,
  /*  RewardAmount2 */ 0,
  /*  RewardAmount3 */ 0,
  /*  RewardAmount4 */ 0,
@@ -3708,9 +3708,9 @@ REPLACE INTO `quest_template` (`ID`, `Method`, `QuestLevel`, `MinLevel`, `QuestS
  /*  PointX  */ 0,
  /*  PointY  */ 0,
  /*  PointOption  */ 0,
- /*  LogTitle  */ 'Zucker!',
- /*  LogDescription  */  'Hey du. Ich brauche was Suesses. Bringt mir 10 suesse Kartoffelbrote.',
- /*  QuestDescription   */ 'Hallo $N, ich verkaufe immer meine Waren und bekommen nur Gold dafuer. Jetzt will ich was Suesses. Bringt mir die Brote!',
+ /*  LogTitle  */ 'Das Wandervolk!',
+ /*  LogDescription  */  'Das Wandervolk ist ein interessantes Volk. Um das Volk kennenzulernen braucht ihr 2 Auktionspapiere und 100 Feine Gewuerze',
+ /*  QuestDescription   */ 'Hallo $N, das Wandervolk ist ein interessantes Volk, welches im Dunkel der Welten haußt. Erfuellt die Quest und ihr steht in ihrer Gunst.',
  /*  EndText   */  '',
  /*  OfferRewardText  */  'Gut das ihr es geschafft habt.',
  /*  RequestItemsText  */ 'Habt ihr alles?',
@@ -3731,14 +3731,14 @@ REPLACE INTO `quest_template` (`ID`, `Method`, `QuestLevel`, `MinLevel`, `QuestS
  /*  RequiredSourceItemCount2  */ 0,
  /*  RequiredSourceItemCount3  */ 0,
  /*  RequiredSourceItemCount4  */ 0,
- /*  RequiredItemId1  */ 35950,
- /*  RequiredItemId2  */ 0,
+ /*  RequiredItemId1  */ 21140,
+ /*  RequiredItemId2  */ 3713,
  /*  RequiredItemId3  */ 0,
  /*  RequiredItemId4  */ 0,
  /*  RequiredItemId5  */ 0,
  /*  RequiredItemId6  */ 0,
- /*  RequiredItemCount1  */ 10,
- /*  RequiredItemCount2  */ 0,
+ /*  RequiredItemCount1  */ 2,
+ /*  RequiredItemCount2  */ 100,
  /*  RequiredItemCount3  */ 0,
  /*  RequiredItemCount4  */ 0,
  /*  RequiredItemCount5  */ 0,
@@ -3792,6 +3792,7 @@ REPLACE INTO `quest_template_addon` (`ID`, `MaxLevel`, `AllowableClasses`, `Sour
 
 REPLACE INTO `creature_questender` (`id`, `quest`) VALUES
 (800027, 900801);
+
 
 
 
@@ -23230,15 +23231,6 @@ VALUES (800041, 700519, 0, 25, 0, 1, 3, 9, 25);
 REPLACE INTO `creature_loot_template` (`Entry`,`Item`,`Reference`, `Chance`, `QuestRequired`, `LootMode`, `GroupId`, `MinCount`, `MaxCount`)
 VALUES (800041, 45226, 0, 25, 0, 3, 3, 1, 1); 
 
-REPLACE INTO `creature_loot_template` (`Entry`,`Item`,`Reference`, `Chance`, `QuestRequired`, `LootMode`, `GroupId`, `MinCount`, `MaxCount`)
-VALUES (800041, 47200, 0, 25, 0, 1, 4, 1, 1); 
-REPLACE INTO `creature_loot_template` (`Entry`,`Item`,`Reference`, `Chance`, `QuestRequired`, `LootMode`, `GroupId`, `MinCount`, `MaxCount`)
-VALUES (800041, 47503, 0, 25, 0, 1, 4, 1, 1); 
-REPLACE INTO `creature_loot_template` (`Entry`,`Item`,`Reference`, `Chance`, `QuestRequired`, `LootMode`, `GroupId`, `MinCount`, `MaxCount`)
-VALUES (800041, 47509, 0, 25, 0, 1, 4, 1, 1); 
-REPLACE INTO `creature_loot_template` (`Entry`,`Item`,`Reference`, `Chance`, `QuestRequired`, `LootMode`, `GroupId`, `MinCount`, `MaxCount`)
-VALUES (800041, 47181, 0, 25, 0, 3, 4, 1, 1); 
-
 
 DELETE FROM `creature` WHERE `guid` = 800041;
 REPLACE INTO `creature` (`guid`,`id`,`map`,`spawnMask`,`phaseMask`,`modelid`,`equipment_id`,`position_x`,`position_y`,`position_z`,`orientation`,`spawntimesecs`,`spawndist`,`currentwaypoint`,`curhealth`,`curmana`,`MovementType`) VALUES 
@@ -23315,7 +23307,7 @@ VALUES ( /*  ID */ 800041,
   /*  flags_extra` */0, 
   /*  Scriptname  */'');
 
-UPDATE `creature_template` SET `HealthModifier`=450, `ArmorModifier`=50, `DamageModifier`=50 WHERE `entry`=800041;
+UPDATE `creature_template` SET `HealthModifier`=500, `ArmorModifier`=50, `DamageModifier`=50 WHERE `entry`=800041;
 
 
 DELETE FROM `creature_text` WHERE `entry` = 800041;
