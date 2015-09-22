@@ -1,0 +1,11 @@
+UPDATE `quest_template` SET `Flags`='65664' WHERE `ID`='128';
+UPDATE `quest_template` SET `Flags`='65664' WHERE `ID`='128';
+UPDATE `quest_template` SET `Flags`='65664' WHERE `ID`='128';
+UPDATE `quest_template` SET `Flags`='65664' WHERE `ID`='128';
+UPDATE `quest_template` SET `Flags`='65664' WHERE `ID`='128';
+UPDATE `quest_template` SET `Flags`='65664' WHERE `ID`='128';
+UPDATE `quest_template` SET `Flags`='65664' WHERE `ID`='128';
+UPDATE `quest_template` SET `Flags`='65664' WHERE `ID`='128';
+UPDATE `quest_template` SET `Flags`='65664' WHERE `ID`='128';
+UPDATE `quest_template` SET `Flags`='65664' WHERE `ID`='128';
+UPDATE `quest_template` SET `Flags`='65664' WHERE `ID`='128';
