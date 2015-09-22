@@ -27615,7 +27615,7 @@ REPLACE INTO `quest_template` (`ID`, `Method`, `QuestLevel`, `MinLevel`, `QuestS
  /*  PointOption  */ 0,
  /*  LogTitle  */ 'Folgt der Spur',
  /*  LogDescription  */  'Folgt der Spur die Exitares Frau hinterlassen hat.',
- /*  QuestDescription   */ 'Hallo $N,zum Glueck seid ihr zurueckgekommen. Sucht nach einem weiteren Anhaltspunkt zum Verschwinden von Exitares Frau. Ich weiﬂ das sie einen Zwischenstopp in der Gegend zwischen Granitquell und der Venturebucht machen wollten. Aber aus Sicherheitsgruenden wurde mir der genaue Ort verschwiegen.',
+ /*  QuestDescription   */ 'Hallo $N,zum Glueck seid ihr zurueckgekommen. Sucht nach einem weiteren Anhaltspunkt zum Verschwinden von Exitares Frau. Ich weiss das sie einen Zwischenstopp in der Gegend zwischen Granitquell und der Venturebucht machen wollten. Aber aus Sicherheitsgruenden wurde mir der genaue Ort verschwiegen.',
  /*  EndText   */  '',
  /*  OfferRewardText  */  'Seid ihr fertig?',
  /*  RequestItemsText  */ 'Folgt der Spur die Exitares Frau hinterlassen hat.',
