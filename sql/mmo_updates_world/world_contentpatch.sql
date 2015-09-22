@@ -547,8 +547,8 @@ VALUES ( /*  ID */ 800070,
   /*  flags_extra` */0, 
   /* Scriptname  */'wandervolk');
   
-  DELETE FROM `creature` WHERE `id` = 800070;
-  REPLACE INTO `creature` (`guid`,`id`,`map`,`spawnMask`,`phaseMask`,`modelid`,`equipment_id`,`position_x`,`position_y`,`position_z`,`orientation`,`spawntimesecs`,`spawndist`,`currentwaypoint`,`curhealth`,`curmana`,`MovementType`) VALUES 
+DELETE FROM `creature` WHERE `id` = 800070;
+REPLACE INTO `creature` (`guid`,`id`,`map`,`spawnMask`,`phaseMask`,`modelid`,`equipment_id`,`position_x`,`position_y`,`position_z`,`orientation`,`spawntimesecs`,`spawndist`,`currentwaypoint`,`curhealth`,`curmana`,`MovementType`) VALUES 
 ('800070','800070','0','1','1','2641','0','-9749.89','2154.28','10.54','5.93','25','0','0','1000000','250000','0');DELETE FROM `quest_template` WHERE  `id` = 802038;
 DELETE FROM `quest_template_addon` WHERE `id` = 802038;
 DELETE FROM `creature_questender` WHERE `id` = 27990   AND `quest` = 802038;
