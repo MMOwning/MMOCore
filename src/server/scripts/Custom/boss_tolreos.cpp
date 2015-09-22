@@ -2,6 +2,38 @@
 #include "ScriptMgr.h"
 #include "ScriptedCreature.h"
 #include "Player.h"
+#include "ScriptMgr.h"
+#include "AccountMgr.h"
+#include "time.h"
+#include <stdio.h>
+#include <stdlib.h>
+#include "GameEventMgr.h"
+#include "AccountMgr.h"
+#include "time.h"
+#include <stdio.h>
+#include "Bag.h"
+#include "Common.h"
+#include "Config.h"
+#include "DatabaseEnv.h"
+#include "DBCStructure.h"
+#include "Define.h"
+#include "Field.h"
+#include "GameEventMgr.h"
+#include "Item.h"
+#include "ItemPrototype.h"
+#include "Language.h"
+#include "Log.h"
+#include "ObjectGuid.h"
+#include "ObjectMgr.h"
+#include "Player.h"
+#include "QueryResult.h"
+#include "ScriptMgr.h"
+#include "SharedDefines.h"
+#include "Transaction.h"
+#include "WorldSession.h"
+#include <sstream>
+#include <string>
+#include <stdlib.h>
 
 enum Spells
 {
@@ -30,8 +62,6 @@ enum Events
 	EVENT_PSYCHOSIS = 8,
 	EVENT_ARCANE_DEVASTION = 9,
 	EVENT_ARMY_OF_DEAD = 10
-
-
 
 };
 
@@ -68,6 +98,7 @@ public:
 
 		void Reset() override
 		{
+			
 			_events.Reset();
 			Summons.DespawnAll();
 		}
@@ -79,7 +110,7 @@ public:
 			_events.ScheduleEvent(EVENT_CURRUPTION, 8000);
 			_events.ScheduleEvent(EVENT_CRIPPLE, 10000);
 			_events.ScheduleEvent(EVENT_ARCANE_BARRAGE, 8000);
-			_events.ScheduleEvent(EVENT_DOMINATE_MIND, 15000);
+			
 
 		}
 
@@ -100,42 +131,17 @@ public:
 				_events.SetPhase(PHASE_THREE);
 				_events.ScheduleEvent(EVENT_ARMY_OF_DEAD, 5000);
 				_events.ScheduleEvent(EVENT_CURRUPTION, 6000);
-				_events.ScheduleEvent(EVENT_DOMINATE_MIND, 15000);
 				_events.ScheduleEvent(EVENT_ENRAGE, 25000);
 				_events.ScheduleEvent(EVENT_HEX, 12000);
 			}
 		}
 
-		void JustSummoned(Creature* summon) override
-		{
-			Summons.Summon(summon);
-
-			switch (summon->GetEntry())
-			{
-			case NPC_PUSTELIGER_SCHRECKEN:
-				if (Unit* target = SelectTarget(SELECT_TARGET_RANDOM, 0, 300.0f))
-					summon->AI()->AttackStart(target); // I think it means the Tank !
-				break;
-			}
-		}
-
+		
 		void JustDied(Unit* pPlayer)
 		{
 			char msg[250];
-			snprintf(msg, 250, "|cffff0000[Boss System]|r Boss|cffff6060 Tolreos|r wurde getoetet! Respawn in 4h 33min.");
+			snprintf(msg, 250, "|cffff0000[Boss System]|r Boss|cffff6060 Tolreos|r wurde getoetet! Respawn in 5h 33min.");
 			sWorld->SendGlobalText(msg, NULL);
-		}
-
-
-		void SpellHit(Unit* caster, SpellInfo const* spell)
-		{
-			
-			if (caster == me)
-				return;
-			uint32 id = spell->Id;
-			if (id == 355){
-				DoCastToAllHostilePlayers(SPELL_ARMY_OF_DEAD);
-			}
 		}
 
 
@@ -169,16 +175,11 @@ public:
 					DoCastToAllHostilePlayers(SPELL_ARCANE_BARRAGE);
 					_events.ScheduleEvent(EVENT_ARCANE_BARRAGE, 5000);
 					break;
-				case EVENT_DOMINATE_MIND:
-					Talk(SAY_BERSERK);
-					if (Unit* target = SelectTarget(SELECT_TARGET_TOPAGGRO,0)){
-						DoCastVictim(SPELL_DOMINATE_MIND);
-					}
-					_events.ScheduleEvent(EVENT_DOMINATE_MIND, 25000);
-					break;
 				case EVENT_EARTH:
 					Talk(SAY_ENRAGE);
-					DoCastAOE(SPELL_EARTH);
+					if (Unit* target = SelectTarget(SELECT_TARGET_TOPAGGRO, 0)){
+						DoCastAOE(SPELL_EARTH);
+					}
 					_events.ScheduleEvent(EVENT_EARTH, 10000);
 					break;
 				case EVENT_PSYCHOSIS:

@@ -4,7 +4,7 @@ DELETE FROM `creature_loot_template` WHERE `Entry` = 800025;
 REPLACE INTO `creature_loot_template` (`Entry`,`Item`,`Reference`, `Chance`, `QuestRequired`, `LootMode`, `GroupId`, `MinCount`, `MaxCount`)
 VALUES (800025, 52006, 0, 1, 0, 1, 0, 1, 1); 
 REPLACE INTO `creature_loot_template` (`Entry`,`Item`,`Reference`, `Chance`, `QuestRequired`, `LootMode`, `GroupId`, `MinCount`, `MaxCount`)
-VALUES (800030, 38186, 0, 1, 0, 1, 0, 5, 20);
+VALUES (800025, 38186, 0, 1, 0, 1, 0, 5, 20);
 
 
 REPLACE INTO `creature_loot_template` (`Entry`,`Item`,`Reference`, `Chance`, `QuestRequired`, `LootMode`, `GroupId`, `MinCount`, `MaxCount`)
@@ -107,7 +107,7 @@ UPDATE `creature_template` SET `HealthModifier`='1800', `ArmorModifier`='350', `
 
   
   
-  /*Böser Orig */
+  /*Boeser Orig */
 
 DELETE FROM `creature_loot_template` WHERE `entry` = 800010;
 REPLACE INTO `creature_loot_template` (`Entry`,`Item`,`Reference`, `Chance`, `QuestRequired`, `LootMode`, `GroupId`, `MinCount`, `MaxCount`)
@@ -217,15 +217,15 @@ VALUES ( /*  ID */ 800010,
   /*  mechanic_immune_mask` */617299839, 
   /*  flags_extra` */0, 
   /* Scriptname  */'orrig');
-UPDATE `creature_template` SET `HealthModifier`='400', `ArmorModifier`='450', `DamageModifier`='160' WHERE `entry`='800010';
+UPDATE `creature_template` SET `HealthModifier`='400', `ArmorModifier`='150', `DamageModifier`='110' WHERE `entry`='800010';
 
   
   
 DELETE FROM `creature_text` WHERE `entry`=800010;
-REPLACE INTO `creature_text` (`entry`,`groupid`,`id`,`text`,`type`,`language`,`probability`,`emote`,`duration`,`sound`,`comment`) VALUES (800010,1,0,'Ihr Verräter. Exitare sollte getötet werden und nicht ich! Ich werde mich rächen!',14,0,100,1,0,17457,'Comment');
-REPLACE INTO `creature_text` (`entry`,`groupid`,`id`,`text`,`type`,`language`,`probability`,`emote`,`duration`,`sound`,`comment`) VALUES (800010,2,0,'Ich bin unbesiebar. Niemand wird mich töten. Flieht vor Furcht!!',14,0,100,1,0,17458,'Comment');
+REPLACE INTO `creature_text` (`entry`,`groupid`,`id`,`text`,`type`,`language`,`probability`,`emote`,`duration`,`sound`,`comment`) VALUES (800010,1,0,'Ihr Verraeter. Exitare sollte getoetet werden und nicht ich! Ich werde mich raechen!',14,0,100,1,0,17457,'Comment');
+REPLACE INTO `creature_text` (`entry`,`groupid`,`id`,`text`,`type`,`language`,`probability`,`emote`,`duration`,`sound`,`comment`) VALUES (800010,2,0,'Ich bin unbesiebar. Niemand wird mich toeten. Flieht vor Furcht!!',14,0,100,1,0,17458,'Comment');
 REPLACE INTO `creature_text` (`entry`,`groupid`,`id`,`text`,`type`,`language`,`probability`,`emote`,`duration`,`sound`,`comment`) VALUES (800010,3,0,'Ihr werdet es bereuen!',14,0,100,1,0,17459,'Comment');
-REPLACE INTO `creature_text` (`entry`,`groupid`,`id`,`text`,`type`,`language`,`probability`,`emote`,`duration`,`sound`,`comment`) VALUES (800010,4,0,'Es wird nicht reichen mich zu töten!',14,0,100,1,0,17460,'Comment');
+REPLACE INTO `creature_text` (`entry`,`groupid`,`id`,`text`,`type`,`language`,`probability`,`emote`,`duration`,`sound`,`comment`) VALUES (800010,4,0,'Es wird nicht reichen mich zu toeten!',14,0,100,1,0,17460,'Comment');
 REPLACE INTO `creature_text` (`entry`,`groupid`,`id`,`text`,`type`,`language`,`probability`,`emote`,`duration`,`sound`,`comment`) VALUES (800010,7,0,'Ich .... kann ...nicht tot sein. Arrgh Ich komme wieder!',14,0,100,1,0,17460,'Comment');
 REPLACE INTO `creature_text` (`entry`,`groupid`,`id`,`text`,`type`,`language`,`probability`,`emote`,`duration`,`sound`,`comment`) VALUES (800010,5,0,'Phase 1',41,0,100,1,0,0,'Comment');
 REPLACE INTO `creature_text` (`entry`,`groupid`,`id`,`text`,`type`,`language`,`probability`,`emote`,`duration`,`sound`,`comment`) VALUES (800010,6,0,'Phase 2',41,0,100,1,0,0,'Comment');

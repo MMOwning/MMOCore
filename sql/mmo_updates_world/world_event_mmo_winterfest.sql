@@ -17,17 +17,20 @@ SET @startGameobjectGuid := 6500000; -- Start guid to use in the gameobject tabl
 SET @newGameobjectEntry := 650001; -- Id to use for a new gameobject. Make sure it does not yet exist in gameobject_template.
 
 SET @eventId := 70; -- Id to use for the event. Make sure this id does not yet exist in game_event.
-SET @eventDescription := 'MMOwning Winterfest. DIFFICULTY: easy, LENGTH: long.'; -- Description of the event. Might be announced in-game depending on your server configuration.
+SET @eventDescription := 'MMOwning Winterfest.'; -- Description of the event. Might be announced in-game depending on your server configuration.
 
 
 
 -- DO NOT EDIT BELOW --
+DELETE FROM `game_event` WHERE `eventEntry` = 70;
 INSERT INTO `game_event` (`eventEntry`, `start_time`, `end_time`, `occurence`, `length`, `holiday`, `description`, `world_event`)
     VALUES (@eventId, '0000-00-00 00:00:00', '0000-00-00 00:00:00', '9999999', '2592000', '0', @eventDescription, '0');
 
+DELETE FROM `gameobject_template` WHERE `entry` = @newGameobjectEntry;
 INSERT INTO `gameobject_template` (`entry`, `type`, `displayId`, `name`, `size`, `data0`, `data1`, `data6`)
     VALUES (@newGameobjectEntry, 5, 1569, 'Log2', 0.68, 2, 1, 0);
 
+DELETE FROM `gameobject` WHERE @startGameobjectGuid BETWEEN @startGameobjectGuid + 1 AND @startGameobjectGuid + 5417;
 INSERT INTO `gameobject` (`guid`, `id`, `map`, `spawnMask`, `phaseMask`, `position_x`, `position_y`, `position_z`, `orientation`, `rotation0`, `rotation1`, `rotation2`, `rotation3`, `spawntimesecs`, `animprogress`, `state`) VALUES
     ((@startGameobjectGuid + 1), 180373, 1, 1, 1, 16252, 16330.8, 177.923, 1.89674, 0, 0, 0.812467, 0.583008, 300, 0, 1),
     ((@startGameobjectGuid + 2), 180373, 1, 1, 1, 16253.9, 16360.7, 177.942, 0.39663, 0, 0, 0.197018, 0.9804, 300, 0, 1),
@@ -10865,3 +10868,4 @@ INSERT INTO `game_event_gameobject` (`eventEntry`, `guid`) VALUES
     (@eventId, (@startGameobjectGuid + 5415)),
     (@eventId, (@startGameobjectGuid + 5416)),
     (@eventId, (@startGameobjectGuid + 5417));
+

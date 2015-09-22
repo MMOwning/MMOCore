@@ -20,6 +20,7 @@ public: dark2() : CreatureScript("dark2"){ }
 			return true;
 		}
 
+
 		bool OnGossipSelect(Player * pPlayer, Creature * pCreature, uint32 /*uiSender*/, uint32 uiAction)
 		{
 			switch (uiAction)
@@ -31,6 +32,7 @@ public: dark2() : CreatureScript("dark2"){ }
 					pPlayer->DestroyItemCount(700518, 4, true);
 					pCreature->SummonCreature(800061, -7193.60, -4314.26, 264.06, 6.22, TEMPSUMMON_TIMED_OR_CORPSE_DESPAWN, 120000);
 					pPlayer->PlayerTalkClass->SendCloseGossip();
+
 				}
 
 				else{

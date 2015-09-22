@@ -145,7 +145,7 @@ public:
 					break;
 				case EVENT_MANA_DESTRUCTION:
 					Talk(SAY_RANDOM);
-					DoCastVictim(SPELL_MANA_DESTRUCTION);
+					DoCast(SPELL_MANA_DESTRUCTION);
 					_events.ScheduleEvent(EVENT_MANA_DESTRUCTION, 1000);
 					break;
 				case EVENT_CRYSTAL_CHAINS:

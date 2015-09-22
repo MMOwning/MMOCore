@@ -1,9 +1,3 @@
-#include "ScriptMgr.h"
-#include "AccountMgr.h"
-#include "time.h"
-#include <stdio.h>
-#include <stdlib.h>
-#include "GameEventMgr.h"
 #include "AccountMgr.h"
 #include "time.h"
 #include <stdio.h>
@@ -32,20 +26,30 @@
 #include <stdlib.h>
 
 
-class port_item : public ItemScript
+class Announce_NewPlayer : public PlayerScript
 {
-	public:
-		port_item() : ItemScript("teleportitem"){}
+public:
+	Announce_NewPlayer() : PlayerScript("Announce_NewPlayer") {}
 
-		bool Onuse(Player * player, Item *, SpellCastTargets const&)
+	void OnLogin(Player * player, bool online)
+	{
+		std::ostringstream ss;
+		
+		
+		if (player->GetTotalPlayedTime() < 5)
 		{
-			player->TeleportTo(0, -9773.22, 2125.16, 15.49, 3.47, 0.0f);
-			return true;
+
+			ss << "|cff54b5ffWir heißen unseren neuen Mitspieler|r " << ChatHandler(player->GetSession()).GetNameLink() << " |cff54b5ff willkommen!|r";
+			sWorld->SendServerMessage(SERVER_MSG_STRING, ss.str().c_str());
+			return;
 		}
+		else
+		{
+		}
+	}
+
 };
-
-
-void AddSC_port_item()
+void AddSC_Announce_NewPlayer()
 {
-	new port_item;
+	new Announce_NewPlayer;
 }

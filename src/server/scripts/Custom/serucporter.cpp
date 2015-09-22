@@ -3,6 +3,32 @@
 #include "time.h"
 #include <stdio.h>
 #include <stdlib.h>
+#include "AccountMgr.h"
+#include "time.h"
+#include <stdio.h>
+#include "Bag.h"
+#include "Common.h"
+#include "Config.h"
+#include "DatabaseEnv.h"
+#include "DBCStructure.h"
+#include "Define.h"
+#include "Field.h"
+#include "GameEventMgr.h"
+#include "Item.h"
+#include "ItemPrototype.h"
+#include "Language.h"
+#include "Log.h"
+#include "ObjectGuid.h"
+#include "ObjectMgr.h"
+#include "Player.h"
+#include "QueryResult.h"
+#include "ScriptMgr.h"
+#include "SharedDefines.h"
+#include "Transaction.h"
+#include "WorldSession.h"
+#include <sstream>
+#include <string>
+#include <stdlib.h>
 
 class seruc : public CreatureScript
 {
@@ -12,8 +38,8 @@ public: seruc() : CreatureScript("seruc"){ }
 
 		bool OnGossipHello(Player *pPlayer, Creature* _creature)
 		{
-			pPlayer->ADD_GOSSIP_ITEM(7, "Raid [Gesperrt]", GOSSIP_SENDER_MAIN, 0);
-			pPlayer->ADD_GOSSIP_ITEM(7, "Instanz [Gesperrt]", GOSSIP_SENDER_MAIN, 13);
+			pPlayer->ADD_GOSSIP_ITEM(7, "Raid [Gesperrt] 20.000 Goldkosten", GOSSIP_SENDER_MAIN, 0);
+			pPlayer->ADD_GOSSIP_ITEM(7, "Instanz [Gesperrt] 20.000 Goldkosten", GOSSIP_SENDER_MAIN, 13);
 			pPlayer->ADD_GOSSIP_ITEM(7, "Teleport zum PVP Areal [500 Wertung]", GOSSIP_SENDER_MAIN, 1);
 			pPlayer->ADD_GOSSIP_ITEM(7, "Teleport zur Insel ", GOSSIP_SENDER_MAIN, 2);
 			pPlayer->ADD_GOSSIP_ITEM(7, "Teleport zu Yasio ", GOSSIP_SENDER_MAIN, 3);
@@ -29,9 +55,13 @@ public: seruc() : CreatureScript("seruc"){ }
 			{
 				/*RAID*/
 			case 0: {
+				std::ostringstream ss;
 				pPlayer->GetGUID();
 				pPlayer->TeleportTo(169, -393.26, 2972.93, 92.85, 5.94);
-				pPlayer->ModifyMoney(-200000);
+				pPlayer->ModifyMoney(-200000000);
+				ss << "|cff54b5ff|r " << ChatHandler(pPlayer->GetSession()).GetNameLink() << "|cff54b5ff hat sich in den gesperrten Raid geportet. Ihm/Ihr wurden 20.000 Gold abgezogen, welche nicht erstattet werden|r |cff54b5ff!|r";
+				sWorld->SendServerMessage(SERVER_MSG_STRING, ss.str().c_str());
+				
 				return true;
 			}break;
 
@@ -44,7 +74,7 @@ public: seruc() : CreatureScript("seruc"){ }
 				pPlayer->ADD_GOSSIP_ITEM(7, "Boss: Exitares Schatten [7-15]", GOSSIP_SENDER_MAIN, 5);
 				pPlayer->ADD_GOSSIP_ITEM(7, "Boss: Die gequälte Seele [5-15]", GOSSIP_SENDER_MAIN, 6);
 				pPlayer->ADD_GOSSIP_ITEM(7, "Boss: Kayoula [25-40]", GOSSIP_SENDER_MAIN, 7);
-				pPlayer->ADD_GOSSIP_ITEM(7, "Boss: Tempus [15-25]", GOSSIP_SENDER_MAIN, 8);
+				pPlayer->ADD_GOSSIP_ITEM(7, "Boss: Therakin [15-25]", GOSSIP_SENDER_MAIN, 8);
 				pPlayer->ADD_GOSSIP_ITEM(7, "Boss: Arcturus [5-10] ", GOSSIP_SENDER_MAIN, 9);
 				pPlayer->ADD_GOSSIP_ITEM(7, "Boss: Moon [25-40]", GOSSIP_SENDER_MAIN, 10);
 				pPlayer->ADD_GOSSIP_ITEM(7, "Boss: Maltyriun [5-10]", GOSSIP_SENDER_MAIN, 11);
@@ -57,6 +87,7 @@ public: seruc() : CreatureScript("seruc"){ }
 				/*PVP*/
 			case 1: {
 				pPlayer->GetGUID();
+				
 				uint32 rating = pPlayer->GetArenaPersonalRating(1);
 					if (rating >= 500){
 						pPlayer->ModifyHonorPoints(-500, NULL);
@@ -139,7 +170,7 @@ public: seruc() : CreatureScript("seruc"){ }
 
 
 
-						/*TEMPUIS*/
+						/*Theriakin*/
 				case 8: {
 					pPlayer->GetGUID();
 					pPlayer->TeleportTo(1, -8041.57, 1603.90, 14.58,3.19);
@@ -168,7 +199,7 @@ public: seruc() : CreatureScript("seruc"){ }
 				}break;
 
 
-						 /*MALTYRiun*/
+						 /*MALTYRIUN*/
 				case 11: {
 					pPlayer->GetGUID();
 					pPlayer->TeleportTo(0,-11764.75,-3560.32,86.50,5.31);
@@ -186,11 +217,14 @@ public: seruc() : CreatureScript("seruc"){ }
 					return true;
 				}break;
 
-					/*RAID*/
+					/*INSTANZ*/
 				case 13: {
+					std::ostringstream ss;
 					pPlayer->GetGUID();
 					pPlayer->TeleportTo(169, -393.26, 2972.93, 92.85, 5.94);
-					pPlayer->ModifyMoney(-200000);
+					pPlayer->ModifyMoney(-20000000);
+					ss << "|cff54b5ff|r " << ChatHandler(pPlayer->GetSession()).GetNameLink() << "|cff54b5ff hat sich in die gesperrte Instanz geportet. Ihm/Ihr wurden 20.000 Gold abgezogen, welche nicht erstattet werden|r |cff54b5ff!|r";
+					sWorld->SendServerMessage(SERVER_MSG_STRING, ss.str().c_str());
 					return true;
 				}break;
 
