@@ -1,4 +1,3 @@
-
 DELETE FROM `creature_template` WHERE `entry` = 800064;
 REPLACE INTO `creature_template` (`entry`, `difficulty_entry_1`, `difficulty_entry_2`, `difficulty_entry_3`, `KillCredit1`, `KillCredit2`, `modelid1`, `modelid2`, `modelid3`, `modelid4`, `name`, `subname`, `IconName`, `gossip_menu_id`, `minlevel`, `maxlevel`, `exp`, `faction`,`npcflag`, `speed_walk`, `speed_run`, `scale`, `rank`, `dmgschool`, `BaseAttackTime`, `RangeAttackTime`, `unit_class`, `unit_flags`, `unit_flags2`, `dynamicflags`, `family`, `trainer_type`, `trainer_spell`, `trainer_class`, `trainer_race`, `type`, `type_flags`, `lootid`, `pickpocketloot`, `skinloot`, `resistance1`, `resistance2`, `resistance3`, `resistance4`, `resistance5`, `resistance6`, `spell1`, `spell2`, `spell3`, `spell4`, `spell5`, `spell6`, `spell7`, `spell8`, `PetSpellDataId`, `VehicleId`, `mingold`, `maxgold`, `AIName`, `MovementType`, `InhabitType`, `HoverHeight`, `RacialLeader`, `movementId`, `RegenHealth`, `mechanic_immune_mask`, `flags_extra`, `ScriptName`) 
 
@@ -476,8 +475,7 @@ VALUES ( /*  ID */ 800069,
   
   DELETE FROM `creature` WHERE `id` = 800069;
   REPLACE INTO `creature` (`guid`,`id`,`map`,`spawnMask`,`phaseMask`,`modelid`,`equipment_id`,`position_x`,`position_y`,`position_z`,`orientation`,`spawntimesecs`,`spawndist`,`currentwaypoint`,`curhealth`,`curmana`,`MovementType`) VALUES 
-('800069','800069','0','1','1','21822','0','-9738.21','2155.10','9.53','2.15','25','0','0','1000000','250000','0');
-DELETE FROM `creature_template` WHERE `entry` = 800070;
+('800069','800069','0','1','1','21822','0','-9738.21','2155.10','9.53','2.15','25','0','0','1000000','250000','0');DELETE FROM `creature_template` WHERE `entry` = 800070;
 REPLACE INTO `creature_template` (`entry`, `difficulty_entry_1`, `difficulty_entry_2`, `difficulty_entry_3`, `KillCredit1`, `KillCredit2`, `modelid1`, `modelid2`, `modelid3`, `modelid4`, `name`, `subname`, `IconName`, `gossip_menu_id`, `minlevel`, `maxlevel`, `exp`, `faction`,`npcflag`, `speed_walk`, `speed_run`, `scale`, `rank`, `dmgschool`, `BaseAttackTime`, `RangeAttackTime`, `unit_class`, `unit_flags`, `unit_flags2`, `dynamicflags`, `family`, `trainer_type`, `trainer_spell`, `trainer_class`, `trainer_race`, `type`, `type_flags`, `lootid`, `pickpocketloot`, `skinloot`, `resistance1`, `resistance2`, `resistance3`, `resistance4`, `resistance5`, `resistance6`, `spell1`, `spell2`, `spell3`, `spell4`, `spell5`, `spell6`, `spell7`, `spell8`, `PetSpellDataId`, `VehicleId`, `mingold`, `maxgold`, `AIName`, `MovementType`, `InhabitType`, `HoverHeight`, `RacialLeader`, `movementId`, `RegenHealth`, `mechanic_immune_mask`, `flags_extra`, `ScriptName`) 
 
 VALUES ( /*  ID */ 800070,
@@ -17877,7 +17875,7 @@ REPLACE INTO `quest_template` (`ID`, `Method`, `QuestLevel`, `MinLevel`, `QuestS
 (800002, 2, 80, 80, -1, 0, 1, 0, 1791, 0, 0, 0, 0, 800003, 150, 5000000, 7500000, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 49426, 0, 0, 0, 2, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 571, 3465.48, -3226.91, 0, 'Die erste Pruefung', 'Bringt mir 20 Abgeworfene Echsenhaeute, 20 Gorillafangzaehne,30 Seidenstoffe.', 'Dies ist Eure erste Pruefung. Es wird eine leichte Aufgabe sein. Bringt mir 20 Abgeworfene Echsenhaeute, 20 Gorillafangzaehne,30 Seidenstoffe. Wir muessen ein Zeichen setzen, dass trotz unserer aktuellen Lage mit uns zu rechnen ist.', 'Ich danke Euch. Wir werden sehen wie lange euer Ehrgeiz anhalten wird.', 'Ihr habt die erste Pruefung gemeistert. Lasst uns die Naechste beginnen.', 'Bringt mir 20 Abgeworfene Echsenhaeute, 20 Gorillafangzaehne,30 Seidenstoffe.', 'Kehrt zu Extator Magista zurueck um Eure Belohnung zu erhalten.', 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 5128, 2799, 4306, 0, 0, 0, 20, 20, 30, 0, 0, 0, 0, '', '', '', '', 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1),
 (800003, 2, 80, 80, -1, 0, 1, 0, 1791, 0, 0, 0, 0, 800004, 250, 1000000, 1000000, 0, 0, 3000, 2, 0, 0, 0, 10, 0, 0, 49908, 0, 0, 0, 5, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 'Die zweite Pruefung', 'Toetet 10 gegnerische Spieler', 'Bei der zweiten Pruefung wird Eure Kampffaehigkeit gegen ebenbuertige Gegner auf die Probe gestellt. Tretet gegen 10 Spieler an um die Pruefung abzuschliessen.', 'Ich danke Euch. Wir werden sehen wie lange euer Ehrgeiz anhalten wird.', 'Ihr naehert Euch langsam dem Ziel.', 'Toetet 10 gegnerische Spieler, sonst braucht Ihr Euch erst gar nicht mehr hertrauen!', 'Kehrt zurueck um die Pruefung abzuschliessen.', 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, '0', '0', '0', '0', 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1),
 (800004, 2, 80, 80, -1, 0, 1, 0, 1791, 0, 0, 0, 0, 800005, 250, 100000, 100000, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 43102, 0, 0, 0, 2, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 'Die dritte Pruefung', 'Bringt mir 10 boreanische Leder und 10 Wollverbaende um mich zu unterstuetzen.', 'Mein Volk muss leiden, bringt mir daher die benoetigten Materialien, damit ich diese zu meinem Volk bringen kann.', '', 'Ich danke Euch.', 'Bringt mir 10 boreanische Leder und 10 Wollverbaende um mich zu unterstuetzen.', 'Kehrt zurueck um Eure Belohnung abzuholen.', 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 33568, 3530, 0, 0, 0, 0, 10, 10, 0, 0, 0, 0, 0, '', '', '', '', 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1),
-(800005, 2, 80, 80, -1, 62, 1, 0, 1791, 0, 0, 0, 0, 800006, 250, 5000000, 5000000, 0, 0, 0, 0, 44680, 32968, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 19364, 19363, 19360, 19356, 0, 0, 1, 1, 1, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 'Die Aufnahme', 'Bringt die Schriftensammlung zu Destro MMOwning. Toetet zusaetzlich Geisselfuerst Tyrannus, Den Verschlinger der Seelen sowie Sartharion.', 'Bringt die Schriftensammlung zu Destro MMOwning. Ihr findet Ihn an der Kueste von Westfall. Aus seiner Sicht gesehen schaut er auf ein Schriffswrack. Meist hoert er im Wind die Schreie von Murlockreaturen. Zusaetzlich muesst ihr Geisselfuerst Tyrannus und den Verschlinger der Seelen toeten.', '', 'Ich danke Euch.', 'Bringt die Schriftensammlung zu Destro Mowning.', 'Destro Mowning ist erfreut Euch zu sehen. Toetet zusaetzlich Geisselfuerst Tyrannus, Den Verschlinger der Seelen sowie Sartharion.', 36502, 36658, 0, 0, 1, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 44680, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, '', '', '', '', 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 21, 0, 0, 0, 1000, 0, 0, 0, 1);
+(800005, 2, 80, 80, -1, 62, 1, 0, 1791, 0, 0, 0, 0, 800006, 250, 5000000, 5000000, 0, 0, 0, 0, 44680, 32968, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 19364, 19363, 19360, 19356, 0, 0, 1, 1, 1, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 'Die Aufnahme', 'Bringt die Schriftensammlung zu Destro MMOwning. Toetet zusaetzlich Geisselfuerst Tyrannus, Den Verschlinger der Seelen sowie Sartharion.', 'Bringt die Schriftensammlung zu Destro MMOwning. Ihr findet Ihn an der Kueste von Westfall. Aus seiner Sicht gesehen schaut er auf ein Schriffswrack. Meist hoert er im Wind die Schreie von Murlockreaturen. Zusaetzlich muesst ihr Geisselfuerst Tyrannus, Den Verschlinger der Seelen sowie Sartharion toeten.', '', 'Ich danke Euch.', 'Bringt die Schriftensammlung zu Destro Mowning.', 'Destro Mowning ist erfreut Euch zu sehen. Toetet zusaetzlich Geisselfuerst Tyrannus, Den Verschlinger der Seelen sowie Sartharion.', 36502, 28860, 36658, 0, 1, 1, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 44680, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, '', '', '', '', 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 21, 0, 0, 0, 1000, 0, 0, 0, 1);
 
 -- --------------------------------------------------------
 
@@ -23232,6 +23230,15 @@ VALUES (800041, 700519, 0, 25, 0, 1, 3, 9, 25);
 REPLACE INTO `creature_loot_template` (`Entry`,`Item`,`Reference`, `Chance`, `QuestRequired`, `LootMode`, `GroupId`, `MinCount`, `MaxCount`)
 VALUES (800041, 45226, 0, 25, 0, 3, 3, 1, 1); 
 
+REPLACE INTO `creature_loot_template` (`Entry`,`Item`,`Reference`, `Chance`, `QuestRequired`, `LootMode`, `GroupId`, `MinCount`, `MaxCount`)
+VALUES (800041, 47200, 0, 25, 0, 1, 4, 1, 1); 
+REPLACE INTO `creature_loot_template` (`Entry`,`Item`,`Reference`, `Chance`, `QuestRequired`, `LootMode`, `GroupId`, `MinCount`, `MaxCount`)
+VALUES (800041, 47503, 0, 25, 0, 1, 4, 1, 1); 
+REPLACE INTO `creature_loot_template` (`Entry`,`Item`,`Reference`, `Chance`, `QuestRequired`, `LootMode`, `GroupId`, `MinCount`, `MaxCount`)
+VALUES (800041, 47509, 0, 25, 0, 1, 4, 1, 1); 
+REPLACE INTO `creature_loot_template` (`Entry`,`Item`,`Reference`, `Chance`, `QuestRequired`, `LootMode`, `GroupId`, `MinCount`, `MaxCount`)
+VALUES (800041, 47181, 0, 25, 0, 3, 4, 1, 1); 
+
 
 DELETE FROM `creature` WHERE `guid` = 800041;
 REPLACE INTO `creature` (`guid`,`id`,`map`,`spawnMask`,`phaseMask`,`modelid`,`equipment_id`,`position_x`,`position_y`,`position_z`,`orientation`,`spawntimesecs`,`spawndist`,`currentwaypoint`,`curhealth`,`curmana`,`MovementType`) VALUES 
@@ -23308,7 +23315,7 @@ VALUES ( /*  ID */ 800041,
   /*  flags_extra` */0, 
   /*  Scriptname  */'');
 
-UPDATE `creature_template` SET `HealthModifier`=500, `ArmorModifier`=50, `DamageModifier`=50 WHERE `entry`=800041;
+UPDATE `creature_template` SET `HealthModifier`=450, `ArmorModifier`=50, `DamageModifier`=50 WHERE `entry`=800041;
 
 
 DELETE FROM `creature_text` WHERE `entry` = 800041;
