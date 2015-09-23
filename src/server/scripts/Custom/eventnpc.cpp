@@ -45,7 +45,7 @@ public: eventnpc() : CreatureScript("eventnpc"){ }
 			pPlayer->ADD_GOSSIP_ITEM(7, "Was tut dieser NPC?", GOSSIP_SENDER_MAIN, 0);
 			pPlayer->ADD_GOSSIP_ITEM(7, "MMOwning Weihnachtsevent.", GOSSIP_SENDER_MAIN, 1);
 			pPlayer->ADD_GOSSIP_ITEM(7, "MMOwning Halloweenevent. 21.10. - 11.11.", GOSSIP_SENDER_MAIN, 2);
-			pPlayer->ADD_GOSSIP_ITEM(7, "Exitares Spassevent", GOSSIP_SENDER_MAIN, 3);
+			pPlayer->ADD_GOSSIP_ITEM(7, "Das Wandervolk", GOSSIP_SENDER_MAIN, 3);
 			pPlayer->PlayerTalkClass->SendGossipMenu(907, _creature->GetGUID());
 			return true;
 		}
@@ -93,6 +93,7 @@ public: eventnpc() : CreatureScript("eventnpc"){ }
 					bool active = ae.find(71) != ae.end();
 					if (active = true){
 						pPlayer->GetGUID();
+						pPlayer->TeleportTo(0, -9776.95, 2103.02, 11.58, 2.75);
 						ChatHandler(pPlayer->GetSession()).PSendSysMessage("Viel Spass beim Halloweenevent wuenscht dir Exitare und das gesammte MMOwning Team.",
 							pPlayer->GetName());
 						pPlayer->PlayerTalkClass->SendCloseGossip();
