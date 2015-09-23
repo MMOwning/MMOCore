@@ -29,7 +29,7 @@ INSERT INTO `command` (`name`, `permission`, `help`) VALUES ('roulette', 195, 'S
 REPLACE INTO `command` (`name`,`permission`,`help`) VALUES ('elite debuff',194,'Syntax: .elite debuff - removes Resurrection Sickness and Deserter debuffs from owner');
 REPLACE INTO `command` (`name`,`permission`,`help`) VALUES ('elite map', 195, 'Syntax: .elite map - reveals all maps to owner');
 REPLACE INTO `command` (`name`,`permission`,`help`) VALUES ('elite bank', 195, 'Syntax: .elite bank - Show your bank inventory.');
-REPLACE INTO `command` (`name`,`permission`,`help`) VALUES ('elite repair', 194, 'Syntax: .elite repair - repair all your items.');
+REPLACE INTO `command` (`name`,`permission`,`help`) VALUES ('elite repair', 195, 'Syntax: .elite repair - repair all your items.');
 REPLACE INTO `command` (`name`,`permission`,`help`) VALUES ('elite resettalents', 195, 'Syntax: .elite resettalents - reset talents to your character.');
 REPLACE INTO `command` (`name`,`permission`,`help`) VALUES ('elite whispers', 194, 'Syntax: .elite whispers - Enable/disable accepting whispers by elite accounts from players.');
 REPLACE INTO `command` (`name`,`permission`,`help`) VALUES ('elite taxi', 195, 'Syntax: .elite taxi - reveals all taxipaths to owner');
