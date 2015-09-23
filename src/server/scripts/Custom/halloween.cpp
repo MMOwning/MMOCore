@@ -51,8 +51,7 @@ public:
 	}
 
 	bool OnQuestAccept(Player* player, Creature* creature, Quest const* quest){
-		
-		return true;
+			return true;
 	}
 
 };
