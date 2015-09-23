@@ -84,9 +84,9 @@ public:
 			{
 				_events.SetPhase(PHASE_TWO);
 				_events.ScheduleEvent(EVENT_POISON_SHOCK, 10000);
-				_events.ScheduleEvent(EVENT_ACID_BLAST, 8000);
-				_events.ScheduleEvent(EVENT_CHAIN_LIGHTNING, 12000);
-				_events.ScheduleEvent(EVENT_FEAR, 10000);
+				_events.ScheduleEvent(EVENT_ACID_BLAST, 15000);
+				_events.ScheduleEvent(EVENT_CHAIN_LIGHTNING, 30000);
+				_events.ScheduleEvent(EVENT_FEAR, 45000);
 
 			}
 
@@ -94,10 +94,10 @@ public:
 			{
 				_events.SetPhase(PHASE_THREE);
 				_events.ScheduleEvent(EVENT_ARCANE_BOMB, 5000);
-				_events.ScheduleEvent(EVENT_ENRAGE, 15000);
+				_events.ScheduleEvent(EVENT_ENRAGE, 100000);
 				_events.ScheduleEvent(EVENT_ACID_BLAST, 16000);
-				_events.ScheduleEvent(EVENT_ENRAGE, 20000);
-				_events.ScheduleEvent(EVENT_BLIZZARD, 30000);
+				_events.ScheduleEvent(EVENT_ENRAGE, 200000);
+				_events.ScheduleEvent(EVENT_BLIZZARD, 45000);
 			}
 		}
 
