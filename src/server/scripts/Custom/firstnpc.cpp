@@ -150,7 +150,7 @@ class npc_first_char : public CreatureScript
 					case 6:
 					{
 						pPlayer->GetGUID();
-						ChatHandler(pPlayer->GetSession()).PSendSysMessage("[Aufwertungs System]\nEine Gildenaufwertung funktioniert praktisch wie eine Einzelaufwertung.Zusätzlich bekommt ihr jedoch den Reitskill bis zu Schnellem Reiten hochgesetzt. Ihr muesst jedoch in einer Gilde sein und duerft keine Einzelaufwertung beantragt haben. Solltet ihr das getan haben, einfach den Charakter loeschen und neu machen. Ihr muesst die Gilde schon gegruendet haben und Euch auch schon in dieser befinden. Waehlt dann die entsprechende Groesse aus um die Aufwertung zu bekommen.",
+						ChatHandler(pPlayer->GetSession()).PSendSysMessage("[Aufwertungs System]\nEine Gildenaufwertung funktioniert praktisch wie eine Einzelaufwertung.Zusaetzlich bekommt ihr jedoch den Reitskill bis zu Schnellem Reiten hochgesetzt. Ihr muesst jedoch in einer Gilde sein und duerft keine Einzelaufwertung beantragt haben. Solltet ihr das getan haben, einfach den Charakter loeschen und neu machen. Ihr muesst die Gilde schon gegruendet haben und Euch auch schon in dieser befinden. Waehlt dann die entsprechende Groesse aus um die Aufwertung zu bekommen.",
 							pPlayer->GetName());
 						pPlayer->PlayerTalkClass->SendCloseGossip();
 						return true;
