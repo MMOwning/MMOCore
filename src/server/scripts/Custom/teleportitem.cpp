@@ -30,6 +30,10 @@
 #include <sstream>
 #include <string>
 #include <stdlib.h>
+#include "ScriptMgr.h"
+#include "ScriptedCreature.h"
+#include "Spell.h"
+#include "Player.h"
 
 
 class port_item : public ItemScript
