@@ -72,7 +72,7 @@ public: seruc() : CreatureScript("seruc"){ }
 				pPlayer->PlayerTalkClass->ClearMenus();
 				pPlayer->ADD_GOSSIP_ITEM(7, "Boss: Orrig [5-10] ", GOSSIP_SENDER_MAIN, 4);
 				pPlayer->ADD_GOSSIP_ITEM(7, "Boss: Exitares Schatten [7-15]", GOSSIP_SENDER_MAIN, 5);
-				pPlayer->ADD_GOSSIP_ITEM(7, "Boss: Die gequälte Seele [5-15]", GOSSIP_SENDER_MAIN, 6);
+				pPlayer->ADD_GOSSIP_ITEM(7, "Boss: Die gequaelte Seele [5-15]", GOSSIP_SENDER_MAIN, 6);
 				pPlayer->ADD_GOSSIP_ITEM(7, "Boss: Kayoula [25-40]", GOSSIP_SENDER_MAIN, 7);
 				pPlayer->ADD_GOSSIP_ITEM(7, "Boss: Therakin [15-25]", GOSSIP_SENDER_MAIN, 8);
 				pPlayer->ADD_GOSSIP_ITEM(7, "Boss: Arcturus [5-10] ", GOSSIP_SENDER_MAIN, 9);

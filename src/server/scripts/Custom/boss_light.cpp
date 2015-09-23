@@ -2,6 +2,37 @@
 #include "ScriptMgr.h"
 #include "ScriptedCreature.h"
 #include "Player.h"
+#include "ScriptMgr.h"
+#include "AccountMgr.h"
+#include "time.h"
+#include <stdio.h>
+#include <stdlib.h>
+#include "AccountMgr.h"
+#include "time.h"
+#include <stdio.h>
+#include "Bag.h"
+#include "Common.h"
+#include "Config.h"
+#include "DatabaseEnv.h"
+#include "DBCStructure.h"
+#include "Define.h"
+#include "Field.h"
+#include "GameEventMgr.h"
+#include "Item.h"
+#include "ItemPrototype.h"
+#include "Language.h"
+#include "Log.h"
+#include "ObjectGuid.h"
+#include "ObjectMgr.h"
+#include "Player.h"
+#include "QueryResult.h"
+#include "ScriptMgr.h"
+#include "SharedDefines.h"
+#include "Transaction.h"
+#include "WorldSession.h"
+#include <sstream>
+#include <string>
+#include <stdlib.h>
 
 enum Spells
 {
@@ -83,6 +114,7 @@ public:
 		{
 			_events.Reset();
 			Summons.DespawnAll();
+			playerdie = 0;
 		}
 
 	
@@ -180,9 +212,11 @@ public:
 		void JustDied(Unit* pPlayer)
 		{
 			Talk(SAY_DEAD);
-			/*char msg[250];
+			char msg[250];
 			snprintf(msg, 250, "|cffff0000[Boss System]|r Boss|cffff6060 Lightshadow|r wurde getoetet! Respawn in 4h 33min. Darkshadow ist nun der rechtmaessige Prinz! %u",playerdie, pPlayer->GetName());
-			sWorld->SendGlobalText(msg, NULL);*/
+			sWorld->SendGlobalText(msg, NULL);
+
+		
 			Map::PlayerList const &PlList = pPlayer->GetMap()->GetPlayers();
 			if (PlList.isEmpty())
 				return;
@@ -217,7 +251,7 @@ public:
 			DoCast(SPELL_SEUCHENBOMBE);
 			DoCast(SPELL_BLISTERING_COLD);
 			++playerdie;
-			snprintf(msg, 250, "|cffff0000[Boss System]|r |cffff6060 Lightshadow|r hat einen Mitstreiter Darkshadows getoetet! Was fuer eine Schmach! Killcounter steht bei: %u", playerdie);
+			snprintf(msg, 250, "|cffff0000[Boss System]|r |cffff6060 Lightshadow|r hat einen Mitstreiter Darkshadows getoetet! Was fuer eine Schmach. Der Killcounter steht bei : %u", playerdie);
 			sWorld->SendGlobalText(msg, NULL);
 		}
 

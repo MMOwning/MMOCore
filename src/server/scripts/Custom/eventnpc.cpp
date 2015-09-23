@@ -91,7 +91,7 @@ public: eventnpc() : CreatureScript("eventnpc"){ }
 				{
 					GameEventMgr::ActiveEvents const& ae = sGameEventMgr->GetActiveEventList();
 					bool active = ae.find(71) != ae.end();
-					if (active = true){
+					if (active == true){
 						pPlayer->GetGUID();
 						pPlayer->TeleportTo(0, -9776.95, 2103.02, 11.58, 2.75);
 						ChatHandler(pPlayer->GetSession()).PSendSysMessage("Viel Spass beim Halloweenevent wuenscht dir Exitare und das gesammte MMOwning Team.",
