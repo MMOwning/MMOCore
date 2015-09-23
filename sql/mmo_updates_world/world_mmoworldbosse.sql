@@ -240,7 +240,7 @@ VALUES ( /*  ID */ 800010,
   /*  mechanic_immune_mask` */617299839, 
   /*  flags_extra` */0, 
   /* Scriptname  */'orrig');
-UPDATE `creature_template` SET `HealthModifier`='400', `ArmorModifier`='150', `DamageModifier`='110' WHERE `entry`='800010';
+UPDATE `creature_template` SET `HealthModifier`='300', `ArmorModifier`='110', `DamageModifier`='80' WHERE `entry`='800010';
 
   
   
