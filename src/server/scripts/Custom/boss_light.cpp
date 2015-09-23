@@ -114,7 +114,7 @@ public:
 		{
 			_events.Reset();
 			Summons.DespawnAll();
-			playerdie = 0;
+			//playerdie = 0;
 		}
 
 	
