@@ -10,3 +10,7 @@ INSERT INTO `creature_loot_template` (`Entry`, `Item`, `Reference`, `Chance`, `Q
 UPDATE `creature_loot_template` SET `LootMode`='5' WHERE `Entry`='800063' and`Item`='50300';
 
 --Ende
+
+-- Bitty Frostschleuder FLAGGER
+UPDATE `creature_template` SET `npcflag`='3' WHERE `entry`='32690';
+
