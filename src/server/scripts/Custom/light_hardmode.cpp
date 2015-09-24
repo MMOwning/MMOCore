@@ -43,7 +43,9 @@ enum Events
 	EVENT_SEUCHENBOMBE = 13,
 	EVENT_TOXIC_WASTE = 14,
 	EVENT_SPALTEN = 15,
-	EVENT_ARMY_OF_DEAD = 16
+	EVENT_ARMY_OF_DEAD = 16,
+	EVENT_SUMMONS_HARD = 17,
+	EVENT_SUMMONS = 18
 };
 
 enum Phases
@@ -55,7 +57,7 @@ enum Phases
 
 enum Summons
 {
-	NPC_PUSTELIGER_SCHRECKEN = 31139
+	NPC_SCHMORSCHUPPEN = 40417
 };
 
 enum Texts
@@ -88,6 +90,7 @@ public:
 		{
 			_events.Reset();
 			Summons.DespawnAll();
+			playerdie = 0;
 		}
 
 
@@ -156,6 +159,7 @@ public:
 				_events.ScheduleEvent(EVENT_EISBLITZ, 25000);
 				_events.ScheduleEvent(EVENT_ERNEUERUNG, 20000);
 				_events.ScheduleEvent(EVENT_SEUCHENBOMBE, 30000);
+				_events.ScheduleEvent(EVENT_SUMMONS, 60000);
 				_events.ScheduleEvent(EVENT_TOXIC_WASTE, 15000);
 				_events.ScheduleEvent(EVENT_SPALTEN, 10000);
 			}
@@ -169,6 +173,7 @@ public:
 				_events.ScheduleEvent(EVENT_ARKANE_AUFLADUNG, 10000);
 				_events.ScheduleEvent(EVENT_ENRAGE, 120000);
 				_events.ScheduleEvent(EVENT_TOXIC_WASTE, 15000);
+				_events.ScheduleEvent(EVENT_SUMMONS_HARD, 60000);
 				_events.ScheduleEvent(EVENT_SPALTEN, 10000);
 			}
 		}
@@ -179,7 +184,7 @@ public:
 
 			switch (summon->GetEntry())
 			{
-			case NPC_PUSTELIGER_SCHRECKEN:
+			case NPC_SCHMORSCHUPPEN:
 				if (Unit* target = SelectTarget(SELECT_TARGET_RANDOM, 0, 300.0f))
 					summon->AI()->AttackStart(target);
 				break;
@@ -203,7 +208,7 @@ public:
 			Map::PlayerList const &PlList = pPlayer->GetMap()->GetPlayers();
 			if (PlList.isEmpty())
 				return;
-			
+			Lootchange(playerdie);
 			for (Map::PlayerList::const_iterator i = PlList.begin(); i != PlList.end(); ++i)
 			{
 				if (Player* player = i->GetSource())
@@ -216,10 +221,11 @@ public:
 						player->RemoveAllAuras();
 						if (player->hasQuest(899000) && playerdie == 0){
 							Questcomplete();
+							
 						}
 						else {
 							player->SendQuestFailed(899000,EQUIP_ERR_OK);
-							
+														
 						}
 					
 					}
@@ -321,6 +327,14 @@ public:
 				case EVENT_ARMY_OF_DEAD:
 					DoCast(SPELL_ARMY_OF_DEAD);
 					break;
+				case EVENT_SUMMONS_HARD:
+					me->SummonCreature(NPC_SCHMORSCHUPPEN, me->GetPositionX() + 5, me->GetPositionY(), me->GetPositionZ() + 5, 0, TEMPSUMMON_CORPSE_DESPAWN, 600000);
+					me->SummonCreature(NPC_SCHMORSCHUPPEN, me->GetPositionX() + 5, me->GetPositionY(), me->GetPositionZ() + 5, 0, TEMPSUMMON_CORPSE_DESPAWN, 600000);
+					break;
+				case EVENT_SUMMONS:
+					me->SummonCreature(NPC_SCHMORSCHUPPEN, me->GetPositionX() + 5, me->GetPositionY(), me->GetPositionZ() + 5, 0, TEMPSUMMON_CORPSE_DESPAWN, 600000);
+					break;
+
 				default:
 					break;
 				}
