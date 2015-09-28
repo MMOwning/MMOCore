@@ -124,9 +124,10 @@ public:
 			char msg[250];
 			snprintf(msg, 250, "|cffff0000[Boss System]|r Boss|cffff6060 Exitares Schatten|r wurde getoetet! Respawn in 6h 33min.");
 			sWorld->SendGlobalText(msg, NULL);
+			
 		}
 
-		
+				
 
 		void UpdateAI(uint32 diff) override
 		{
@@ -153,7 +154,6 @@ public:
 				case EVENT_RAIN_OF_FIRE:
 					DoCastToAllHostilePlayers(SPELL_RAIN_OF_FIRE);
 					_events.ScheduleEvent(EVENT_RAIN_OF_FIRE, 15000);
-					me->setFaction(21);
 					break;
 				case EVENT_FLAME_BURST:
 					Talk(SAY_BERSERK);
@@ -166,11 +166,10 @@ public:
 					me->SummonCreature(NPC_PUSTELIGER_SCHRECKEN, me->GetPositionX() + 5, me->GetPositionY(), me->GetPositionZ() + 5, 0, TEMPSUMMON_CORPSE_DESPAWN, 12000);
 					me->SummonCreature(NPC_PUSTELIGER_SCHRECKEN, me->GetPositionX() + 5, me->GetPositionY(), me->GetPositionZ() + 5, 0, TEMPSUMMON_CORPSE_DESPAWN, 12000);
 					_events.ScheduleEvent(EVENT_SUMMONS, 60000);
-					me->setFaction(35);
 					break;
 				case EVENT_ARCANE_BOMB:
 					Talk(SAY_ENRAGE);
-					DoCast(me, SPELL_ARCANE_BOMB);
+					DoCastToAllHostilePlayers(SPELL_ARCANE_BOMB);
 					_events.ScheduleEvent(EVENT_ARCANE_BOMB, 10000);
 					break;
 				case EVENT_LIGHT_VORTEX:
@@ -186,7 +185,8 @@ public:
 					_events.ScheduleEvent(EVENT_SPALTEN, 20000);
 					break;
 				case SPELL_BURN:
-					DoCastToAllHostilePlayers(SPELL_BURN);
+					me->SelectNearestTarget();
+					DoCast(SPELL_BURN);
 					_events.ScheduleEvent(SPELL_BURN, 5000);
 					break;
 
