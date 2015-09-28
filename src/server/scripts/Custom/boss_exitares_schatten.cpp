@@ -178,7 +178,7 @@ public:
 					_events.ScheduleEvent(EVENT_MOONFIRE, 10000);
 					break;
 				case EVENT_SPALTEN:
-					DoCastVictim(SPELL_SPALTEN);
+					DoCastToAllHostilePlayers(SPELL_SPALTEN);
 					_events.ScheduleEvent(EVENT_SPALTEN, 20000);
 					break;
 				case SPELL_BURN:
