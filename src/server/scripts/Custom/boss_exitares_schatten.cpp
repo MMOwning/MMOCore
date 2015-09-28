@@ -185,8 +185,8 @@ public:
 					_events.ScheduleEvent(EVENT_SPALTEN, 20000);
 					break;
 				case SPELL_BURN:
-					me->SelectNearestTarget();
-					DoCast(SPELL_BURN);
+					me->SelectNearestTarget(2.5f);
+					DoCastVictim(SPELL_BURN);
 					_events.ScheduleEvent(SPELL_BURN, 5000);
 					break;
 
