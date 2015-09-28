@@ -88,10 +88,10 @@ public:
 			if (me->HealthBelowPctDamaged(75, damage) && _events.IsInPhase(PHASE_ONE))
 			{
 				_events.SetPhase(PHASE_TWO);
-				_events.ScheduleEvent(EVENT_LIGHT_VORTEX, 200000);
+				_events.ScheduleEvent(EVENT_LIGHT_VORTEX, 60000);
 				_events.ScheduleEvent(EVENT_RAIN_OF_FIRE, 8000);
 				_events.ScheduleEvent(EVENT_FLAME_BURST, 12000);
-				_events.ScheduleEvent(EVENT_SUMMONS, 150000);
+				_events.ScheduleEvent(EVENT_SUMMONS, 45000);
 
 			}
 
@@ -101,7 +101,7 @@ public:
 				_events.ScheduleEvent(EVENT_ARCANE_BOMB, 5000);
 				_events.ScheduleEvent(EVENT_POISON_NOVA, 60000);
 				_events.ScheduleEvent(EVENT_TOXIC_WASTE, 45000);
-				_events.ScheduleEvent(EVENT_ENRAGE, 500000);
+				_events.ScheduleEvent(EVENT_ENRAGE, 120000);
 				_events.ScheduleEvent(EVENT_SPALTEN, 12000);
 			}
 		}
@@ -153,6 +153,7 @@ public:
 				case EVENT_RAIN_OF_FIRE:
 					DoCastToAllHostilePlayers(SPELL_RAIN_OF_FIRE);
 					_events.ScheduleEvent(EVENT_RAIN_OF_FIRE, 15000);
+					me->setFaction(21);
 					break;
 				case EVENT_FLAME_BURST:
 					Talk(SAY_BERSERK);
@@ -162,7 +163,10 @@ public:
 				case EVENT_SUMMONS:
 					Talk(SAY_HELP);
 					me->SummonCreature(NPC_PUSTELIGER_SCHRECKEN, me->GetPositionX() + 5, me->GetPositionY(), me->GetPositionZ() + 5, 0, TEMPSUMMON_CORPSE_DESPAWN, 12000);
+					me->SummonCreature(NPC_PUSTELIGER_SCHRECKEN, me->GetPositionX() + 5, me->GetPositionY(), me->GetPositionZ() + 5, 0, TEMPSUMMON_CORPSE_DESPAWN, 12000);
+					me->SummonCreature(NPC_PUSTELIGER_SCHRECKEN, me->GetPositionX() + 5, me->GetPositionY(), me->GetPositionZ() + 5, 0, TEMPSUMMON_CORPSE_DESPAWN, 12000);
 					_events.ScheduleEvent(EVENT_SUMMONS, 60000);
+					me->setFaction(35);
 					break;
 				case EVENT_ARCANE_BOMB:
 					Talk(SAY_ENRAGE);
@@ -170,7 +174,7 @@ public:
 					_events.ScheduleEvent(EVENT_ARCANE_BOMB, 10000);
 					break;
 				case EVENT_LIGHT_VORTEX:
-					DoCast(me, SPELL_LIGHT_VORTEX);
+					DoCastAOE(SPELL_LIGHT_VORTEX, false);
 					_events.ScheduleEvent(EVENT_LIGHT_VORTEX, 45000);
 					break;
 				case EVENT_MOONFIRE:
