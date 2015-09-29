@@ -40,7 +40,7 @@ public: seruc() : CreatureScript("seruc"){ }
 		{
 			pPlayer->ADD_GOSSIP_ITEM(7, "Raid [Gesperrt] 20.000 Goldkosten", GOSSIP_SENDER_MAIN, 0);
 			pPlayer->ADD_GOSSIP_ITEM(7, "Instanz [Gesperrt] 20.000 Goldkosten", GOSSIP_SENDER_MAIN, 13);
-			pPlayer->ADD_GOSSIP_ITEM(7, "Teleport zum PVP Areal [500 Wertung]", GOSSIP_SENDER_MAIN, 1);
+			pPlayer->ADD_GOSSIP_ITEM(7, "Teleport zum PVP Areal", GOSSIP_SENDER_MAIN, 1);
 			pPlayer->ADD_GOSSIP_ITEM(7, "Teleport zur Insel ", GOSSIP_SENDER_MAIN, 2);
 			pPlayer->ADD_GOSSIP_ITEM(7, "Teleport zu Yasio ", GOSSIP_SENDER_MAIN, 3);
 			pPlayer->ADD_GOSSIP_ITEM(7, "MMOwning Worldbosse", GOSSIP_SENDER_MAIN, 15);
@@ -89,21 +89,12 @@ public: seruc() : CreatureScript("seruc"){ }
 				pPlayer->GetGUID();
 				
 				uint32 rating = pPlayer->GetArenaPersonalRating(1);
-					if (rating >= 500){
+					
 						pPlayer->ModifyHonorPoints(-500, NULL);
 						pPlayer->TeleportTo(0, -793.67,1565.25,19.88,3.25);
 						pPlayer->ModifyMoney(-200000);
 						return true;
-					}
 					
-					else{
-						pPlayer->GetGUID();
-						ChatHandler(pPlayer->GetSession()).PSendSysMessage("Deine persönliche Wertung ist zu gering. Sie muss mindestens 500 betragen.",
-							pPlayer->GetName());
-						pPlayer->PlayerTalkClass->SendCloseGossip();
-						return true;
-					}
-					return true;
 			}break;
 				
 				

@@ -485,7 +485,7 @@ public:
 				{
 					pPlayer->GetGUID();
 
-					
+					pPlayer->AddAura();
 					pPlayer->CompleteQuest(24563);
 					ChatHandler(pPlayer->GetSession()).PSendSysMessage("Die Quest 'Thalorien Morgensucher' wurde abgeschlossen.", pPlayer->GetName());
 					pPlayer->PlayerTalkClass->SendCloseGossip();
