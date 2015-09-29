@@ -140,7 +140,7 @@ public:
 		void JustDied(Unit* pPlayer)
 		{
 			char msg[250];
-			snprintf(msg, 250, "|cffff0000[Boss System]|r Boss|cffff6060 Tolreos|r wurde getoetet! Respawn in 5h 33min.");
+			snprintf(msg, 250, "|cffff0000[Boss System]|r Boss|cffff6060 Tolreos|r wurde getoetet! Respawn in 5h.");
 			sWorld->SendGlobalText(msg, NULL);
 		}
 

@@ -15,3 +15,5 @@ UPDATE `creature_loot_template` SET `LootMode`='5' WHERE `Entry`='800063' and`It
 -- Bitty Frostschleuder FLAGGER
 UPDATE `creature_template` SET `npcflag`='3' WHERE `entry`='32690';
 
+--Kupferpulver Quest Itemcountanpassung
+UPDATE `quest_template` SET `RequiredItemCount1`='30' WHERE `ID`='800513';

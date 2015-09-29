@@ -119,6 +119,7 @@ public:
 					QuestStatus reise = pPlayer->GetQuestStatus(24562);
 					QuestStatus reise2 = pPlayer->GetQuestStatus(24522);
 					QuestStatus thalorien = pPlayer->GetQuestStatus(24563);
+					QuestStatus thalorien2 = pPlayer->GetQuestStatus(24535);
 					QuestStatus reinigung = pPlayer->GetQuestStatus(24553);
 					QuestStatus reinigung2 = pPlayer->GetQuestStatus(24594);
 					QuestStatus reinigung3 = pPlayer->GetQuestStatus(24598);
@@ -209,6 +210,10 @@ public:
 
 					if (reise2 == QUEST_STATUS_INCOMPLETE){
 						pPlayer->ADD_GOSSIP_ITEM(GOSSIP_ICON_CHAT, "Reise zum Sonnenbrunnen", GOSSIP_SENDER_MAIN, 27);
+					}
+
+					if (thalorien2 == QUEST_STATUS_INCOMPLETE){
+						pPlayer->ADD_GOSSIP_ITEM(GOSSIP_ICON_CHAT, "Reise zum Sonnenbrunnen", GOSSIP_SENDER_MAIN, 28);
 					}
 
 					pPlayer->ADD_GOSSIP_ITEM(GOSSIP_ICON_CHAT, "Ein Witz zum Test", GOSSIP_SENDER_MAIN, 100);
@@ -471,6 +476,18 @@ public:
 					pPlayer->GetGUID();
 					pPlayer->CompleteQuest(24522);
 					ChatHandler(pPlayer->GetSession()).PSendSysMessage("Die Quest 'Reise zum Sonnenbrunnen' wurde abgeschlossen.", pPlayer->GetName());
+					pPlayer->PlayerTalkClass->SendCloseGossip();
+					return true;
+				}
+
+				//Thalorien2
+				case 28:
+				{
+					pPlayer->GetGUID();
+
+					
+					pPlayer->CompleteQuest(24563);
+					ChatHandler(pPlayer->GetSession()).PSendSysMessage("Die Quest 'Thalorien Morgensucher' wurde abgeschlossen.", pPlayer->GetName());
 					pPlayer->PlayerTalkClass->SendCloseGossip();
 					return true;
 				}
