@@ -91,6 +91,7 @@ public:
 				_events.ScheduleEvent(EVENT_LIGHT_VORTEX, 60000);
 				_events.ScheduleEvent(EVENT_RAIN_OF_FIRE, 8000);
 				_events.ScheduleEvent(EVENT_FLAME_BURST, 12000);
+				_events.ScheduleEvent(EVENT_BURN, 25000);
 				_events.ScheduleEvent(EVENT_SUMMONS, 45000);
 
 			}

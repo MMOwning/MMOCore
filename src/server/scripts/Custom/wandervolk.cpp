@@ -52,7 +52,7 @@ public:
 		case 0: {
 
 			pPlayer->GetGUID();
-			pPlayer->TeleportTo(0, 3129.77, -6284.07, 140.13, 1.41);
+			pPlayer->TeleportTo(0, 3129.77, -6284.07, 140.95, 1.53);
 			return true;
 		}break;
 

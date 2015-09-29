@@ -35,6 +35,7 @@ public:
 		player->ADD_GOSSIP_ITEM(GOSSIP_ICON_CHAT, "Ich habe einen Fehler gefunden. Was tun?", GOSSIP_SENDER_MAIN, 3);
 		player->ADD_GOSSIP_ITEM(GOSSIP_ICON_CHAT, "Gibt es hier Crossfaction?", GOSSIP_SENDER_MAIN, 4);
 		player->ADD_GOSSIP_ITEM(GOSSIP_ICON_CHAT, "Wie schreibe ich im Worldchat?", GOSSIP_SENDER_MAIN, 5);
+		player->ADD_GOSSIP_ITEM(GOSSIP_ICON_CHAT, "Hilf mir bei meinen Quests", GOSSIP_SENDER_MAIN, 6);
 		player->PlayerTalkClass->SendGossipMenu(1, creature->GetGUID());
 		return true;
 	}
@@ -95,6 +96,28 @@ public:
 					ChatHandler(pPlayer->GetSession()).PSendSysMessage("Oeffne dein Chatfenster und schreibe .w gefolgt von deinem gewuenschten Text. Bsp: .w hallo.", pPlayer->GetName());
 					pPlayer->PlayerTalkClass->SendCloseGossip();
 					pPlayer->GetSession()->SendAreaTriggerMessage("Oeffne dein Chatfenster un tippe .w gefolgt von deinem Text.");
+					return true;
+				}
+
+				case 6:
+				{
+					pPlayer->GetGUID();
+					const Quest* quest;
+					if (pPlayer->IsActiveQuest(24498)){
+						player->ADD_GOSSIP_ITEM(GOSSIP_ICON_CHAT, "Der Pfad zur Zitadelle", GOSSIP_SENDER_MAIN, 7);
+					}
+					
+					return true;
+				}
+
+
+				//Der Pfad zur Zitadelle Allianz
+				case 7:
+				{
+					pPlayer->GetGUID();
+					pPlayer->SendQuestComplete(24498);
+					ChatHandler(pPlayer->GetSession()).PSendSysMessage("Die Quest 'Der Pfad zur Zitadelle' wurde abgeschlossen.", pPlayer->GetName());
+					pPlayer->PlayerTalkClass->SendCloseGossip();
 					return true;
 				}
 
