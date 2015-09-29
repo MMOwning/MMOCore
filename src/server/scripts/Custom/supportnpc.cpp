@@ -102,6 +102,7 @@ public:
 				case 6:
 				{
 					pPlayer->GetGUID();
+					pPlayer->PlayerTalkClass->ClearMenus();
 					const Quest* quest;
 					if (pPlayer->IsActiveQuest(24498)){
 						pPlayer->ADD_GOSSIP_ITEM(GOSSIP_ICON_CHAT, "Der Pfad zur Zitadelle", GOSSIP_SENDER_MAIN, 7);
