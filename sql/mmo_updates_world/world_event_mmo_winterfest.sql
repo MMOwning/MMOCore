@@ -10869,3 +10869,6 @@ INSERT INTO `game_event_gameobject` (`eventEntry`, `guid`) VALUES
     (@eventId, (@startGameobjectGuid + 5416)),
     (@eventId, (@startGameobjectGuid + 5417));
 
+DELETE FROM `game_event_creature` WHERE `eventEntry` = 70;
+INSERT INTO `game_event_creature` (`eventEntry`, `guid`) VALUES ('70', '800065');
+INSERT INTO `game_event_creature` (`eventEntry`, `guid`) VALUES ('70', '800066');
