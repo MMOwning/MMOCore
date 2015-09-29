@@ -141,7 +141,8 @@ public:
 				case 8:
 				{
 					pPlayer->GetGUID();
-					pPlayer->CanCompleteQuest(8325);
+					
+					pPlayer->CompleteQuest(8325);
 					ChatHandler(pPlayer->GetSession()).PSendSysMessage("Die Quest 'Der Pfad zur Zitadelle' wurde abgeschlossen.", pPlayer->GetName());
 					pPlayer->PlayerTalkClass->SendCloseGossip();
 					return true;
