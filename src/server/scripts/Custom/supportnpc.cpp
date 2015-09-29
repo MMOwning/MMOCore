@@ -105,13 +105,13 @@ public:
 					pPlayer->PlayerTalkClass->ClearMenus();
 					
 					QuestStatus pfad = pPlayer->GetQuestStatus(24498);
-					QuestStatus rueck = pPlayer->GetQuestStatus(8325);
+					QuestStatus rueck = pPlayer->GetQuestStatus(800005);
 					if (pfad == QUEST_STATUS_INCOMPLETE){
 						pPlayer->ADD_GOSSIP_ITEM(GOSSIP_ICON_CHAT, "Der Pfad zur Zitadelle", GOSSIP_SENDER_MAIN, 7);
 					}
 
 					if (rueck == QUEST_STATUS_INCOMPLETE){
-						pPlayer->ADD_GOSSIP_ITEM(GOSSIP_ICON_CHAT, "Rueckeroberung", GOSSIP_SENDER_MAIN, 8);
+						pPlayer->ADD_GOSSIP_ITEM(GOSSIP_ICON_CHAT, "Anfang", GOSSIP_SENDER_MAIN, 8);
 					}
 					
 
@@ -142,7 +142,7 @@ public:
 				{
 					pPlayer->GetGUID();
 					
-					pPlayer->CompleteQuest(8325);
+					pPlayer->CompleteQuest(800005);
 					ChatHandler(pPlayer->GetSession()).PSendSysMessage("Die Quest 'Der Pfad zur Zitadelle' wurde abgeschlossen.", pPlayer->GetName());
 					pPlayer->PlayerTalkClass->SendCloseGossip();
 					return true;
