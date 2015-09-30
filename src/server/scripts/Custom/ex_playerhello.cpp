@@ -39,7 +39,7 @@ public:
 		if (player->GetTotalPlayedTime() < 5)
 		{
 
-			ss << "|cff54b5ffWir heißen unseren neuen Mitspieler|r " << ChatHandler(player->GetSession()).GetNameLink() << " |cff54b5ff willkommen!|r";
+			ss << "|cff54b5ffWir heissen unseren neuen Mitspieler|r " << ChatHandler(player->GetSession()).GetNameLink() << " |cff54b5ff willkommen!|r";
 			sWorld->SendServerMessage(SERVER_MSG_STRING, ss.str().c_str());
 			return;
 		}
