@@ -132,7 +132,8 @@ void AddSC_halloween();
 void AddSC_port_item();
 //wandervolk
 void AddSC_wandervolk();
-
+//leandaria
+void AddSC_leandaria();
 
 #ifdef SCRIPTS
 //world
@@ -880,6 +881,8 @@ void AddCommandScripts()
 	AddSC_port_item();
 	//wandervolk
 	AddSC_wandervolk();
+	//leandaria
+	AddSC_leandaria();
 }
 
 void AddWorldScripts()

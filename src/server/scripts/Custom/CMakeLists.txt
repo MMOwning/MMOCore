@@ -37,6 +37,7 @@ set(scripts_STAT_SRCS
   Custom/halloween.cpp 
   Custom/wandervolk.cpp
   Custom/teleportitem.cpp
+  Custom/leandaria.cpp
   ${scripts_STAT_SRCS}
 #  ${sources_Custom}
   Custom/Transmog/Transmogrification.h
