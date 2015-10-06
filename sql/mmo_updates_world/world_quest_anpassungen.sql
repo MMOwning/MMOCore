@@ -52,5 +52,7 @@ REPLACE INTO `creature_loot_template` (`Entry`, `Item`, `Reference`, `Chance`, `
 REPLACE INTO `creature_loot_template` (`Entry`, `Item`, `Reference`, `Chance`, `QuestRequired`, `LootMode`, `GroupId`, `MinCount`, `MaxCount`) VALUES ('800058', '49426', '0', '100', '0', '1', '0', '2', '2');
 
 
+/* Wandervolk Baum*/
+UPDATE `creature_template` SET `scale`='2' WHERE `entry`='800072';
 
 

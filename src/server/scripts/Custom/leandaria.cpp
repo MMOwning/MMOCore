@@ -47,11 +47,8 @@ public:
 		{
 
 		case 0: {
-		
 			pPlayer->GetGUID();
-			pPlayer->ADD_GOSSIP_ITEM(7, "Ja", GOSSIP_SENDER_MAIN, 1);
-			pPlayer->ADD_GOSSIP_ITEM(7, "Nein", GOSSIP_SENDER_MAIN, 2);
-			ChatHandler(pPlayer->GetSession()).PSendSysMessage("Hallo, ich bin Leandaria. Wollt ihr in meiner Gunst stehen? Wenn ja klickt auf Ja.",
+			ChatHandler(pPlayer->GetSession()).PSendSysMessage("Hallo, ich bin Leandaria. Ihr muesst erst in meiner Gunst stehen um bei mir etwas zu bekommen.",
 				pPlayer->GetName());
 			pPlayer->PlayerTalkClass->SendCloseGossip();
 			return true;
@@ -59,20 +56,8 @@ public:
 
 
 		case 1: {
-			pPlayer->GetGUID();
-			ChatHandler(pPlayer->GetSession()).PSendSysMessage("Dann gehts mal los",
-				pPlayer->GetName());
-			pPlayer->PlayerTalkClass->SendCloseGossip();
-			return true;
-		}break;
-
-		case 2: {
-			pPlayer->GetGUID();
-			ChatHandler(pPlayer->GetSession()).PSendSysMessage("Schade, aber es ist eure Entscheidung.",
-				pPlayer->GetName());
-			pPlayer->PlayerTalkClass->SendCloseGossip();
-			return true;
-		}
+			pPlayer->GetGUID()
+				pPlayer->TeleportTo(0, 3174.49, -6000.48, 203.88, 0.27);
 			return true;
 		}
 		return true;
