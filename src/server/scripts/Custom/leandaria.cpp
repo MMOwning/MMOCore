@@ -38,6 +38,7 @@ public:
 	{
 		
 		pPlayer->ADD_GOSSIP_ITEM(7, "Hallo", GOSSIP_SENDER_MAIN, 0);
+		pPlayer->PlayerTalkClass->SendGossipMenu(907, _creature->GetGUID());
 		return true;
 	}
 
@@ -59,9 +60,11 @@ public:
 			pPlayer->GetGUID();
 				pPlayer->TeleportTo(0, 3174.49, -6000.48, 203.88, 0.27);
 			return true;
+		}break;
+
+		return true;
 		}
-				return true;
-		}
+	return true;
 	};
 };
 
