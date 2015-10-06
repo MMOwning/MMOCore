@@ -123,7 +123,7 @@ public: eventnpc() : CreatureScript("eventnpc"){ }
 
 					else{
 						pPlayer->GetGUID();
-						ChatHandler(pPlayer->GetSession()).PSendSysMessage("Das Wandervolk ist alle 3 Wochen verfuegbar. Ihr koennt die Vorbereitungen fuer das Event bei Exitare starten.",
+						ChatHandler(pPlayer->GetSession()).PSendSysMessage("Das Wandervolk ist alle 3 Tage verfuegbar. Ihr koennt die Vorbereitungen fuer das Event bei Exitare starten.",
 							pPlayer->GetName());
 						pPlayer->PlayerTalkClass->SendCloseGossip();
 						return true;

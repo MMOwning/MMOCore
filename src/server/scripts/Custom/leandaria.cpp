@@ -38,6 +38,12 @@ public:
 	{
 		
 		pPlayer->ADD_GOSSIP_ITEM(7, "Hallo", GOSSIP_SENDER_MAIN, 0);
+		bool status = pPlayer->GetQuestRewardStatus(900811);
+		if (status){
+			pPlayer->ADD_GOSSIP_ITEM(7, "Beam mich hoch!", GOSSIP_SENDER_MAIN, 1);
+		}
+
+		
 		pPlayer->PlayerTalkClass->SendGossipMenu(907, _creature->GetGUID());
 		return true;
 	}
@@ -58,7 +64,7 @@ public:
 
 		case 1: {
 			pPlayer->GetGUID();
-				pPlayer->TeleportTo(0, 3174.49, -6000.48, 203.88, 0.27);
+			pPlayer->TeleportTo(0, 3174.49, -6000.48, 203.88, 0.27);
 			return true;
 		}break;
 

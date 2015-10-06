@@ -47,7 +47,7 @@ public:
 
 			
 
-			ss << "|cff54b5ffWir heissen unseren neuen Mitspieler|r " << ChatHandler(player->GetSession()).GetNameLink() << " |cff54b5ff willkommen!|r";
+			ss << "|cff54b5ffWir heissen einen neuen Mitspieler|r " << ChatHandler(player->GetSession()).GetNameLink() << " |cff54b5ff auf MMOwning willkommen!|r";
 			sWorld->SendServerMessage(SERVER_MSG_STRING, ss.str().c_str());
 			return;
 		}
