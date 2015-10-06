@@ -56,7 +56,7 @@ public:
 
 
 		case 1: {
-			pPlayer->GetGUID()
+			pPlayer->GetGUID();
 				pPlayer->TeleportTo(0, 3174.49, -6000.48, 203.88, 0.27);
 			return true;
 		}
