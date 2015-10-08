@@ -155,7 +155,7 @@ public: seruc() : CreatureScript("seruc"){ }
 						/*KAYOULA*/
 				case 7: {
 					pPlayer->GetGUID();
-					pPlayer->TeleportTo(169, -1198.63,-2389.94, 109.86, 2.83);
+					pPlayer->TeleportTo(169, -1289.57, -2422.06, 111.52, 0.67);
 					pPlayer->ModifyMoney(-200000);
 					return true;
 				}break;
