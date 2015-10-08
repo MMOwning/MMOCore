@@ -148,7 +148,7 @@ public: eventnpc() : CreatureScript("eventnpc"){ }
 
 					else{
 						pPlayer->GetGUID();
-						ChatHandler(pPlayer->GetSession()).PSendSysMessage("Das Jumpevent ist alle 2 Wochen fuer 7 Tage aktiv.",
+						ChatHandler(pPlayer->GetSession()).PSendSysMessage("Das Jumpevent ist alle 2 Wochen fuer 7 Tage aktiv. Aktuell ist es nicht aktiv.",
 							pPlayer->GetName());
 						pPlayer->PlayerTalkClass->SendCloseGossip();
 						return true;
@@ -172,7 +172,7 @@ public: eventnpc() : CreatureScript("eventnpc"){ }
 
 					else{
 						pPlayer->GetGUID();
-						ChatHandler(pPlayer->GetSession()).PSendSysMessage("Das Event 'Das Portal' ist alle 14 Tage fuer 7 Tage aktiv.",
+						ChatHandler(pPlayer->GetSession()).PSendSysMessage("Das Event 'Das Portal' ist alle 14 Tage fuer 7 Tage aktiv.  Aktuell ist es nicht aktiv.",
 							pPlayer->GetName());
 						pPlayer->PlayerTalkClass->SendCloseGossip();
 						return true;
