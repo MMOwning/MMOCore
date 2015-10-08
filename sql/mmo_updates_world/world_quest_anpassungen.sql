@@ -62,6 +62,101 @@ UPDATE `creature_template` SET `npcflag`='4227' WHERE `entry`='800027';
 /*Lok Regual */
 UPDATE `creature_template` SET `name`='Lok Regual', `npcflag`='3', `trainer_race`='0', `type`='0' WHERE `entry`='800009';
 
+/* PVP Vendor ANpassungen */
+UPDATE  `npc_vendor` SET `ExtendedCost`='0' WHERE `entry`='800019' and`item`='40787' and`ExtendedCost`='2411';
+UPDATE  `npc_vendor` SET `ExtendedCost`='0' WHERE `entry`='800019' and`item`='40788' and`ExtendedCost`='2411';
+UPDATE  `npc_vendor` SET `ExtendedCost`='0' WHERE `entry`='800019' and`item`='40789' and`ExtendedCost`='2411';
+UPDATE  `npc_vendor` SET `ExtendedCost`='0' WHERE `entry`='800019' and`item`='40807' and`ExtendedCost`='2411';
+UPDATE  `npc_vendor` SET `ExtendedCost`='0' WHERE `entry`='800019' and`item`='40808' and`ExtendedCost`='2411';
+UPDATE  `npc_vendor` SET `ExtendedCost`='0' WHERE `entry`='800019' and`item`='40809' and`ExtendedCost`='2411';
+UPDATE  `npc_vendor` SET `ExtendedCost`='0' WHERE `entry`='800019' and`item`='40826' and`ExtendedCost`='2411';
+UPDATE  `npc_vendor` SET `ExtendedCost`='0' WHERE `entry`='800019' and`item`='40827' and`ExtendedCost`='2411';
+UPDATE  `npc_vendor` SET `ExtendedCost`='0' WHERE `entry`='800019' and`item`='40828' and`ExtendedCost`='2411';
+UPDATE  `npc_vendor` SET `ExtendedCost`='0' WHERE `entry`='800019' and`item`='40847' and`ExtendedCost`='2411';
+UPDATE  `npc_vendor` SET `ExtendedCost`='0' WHERE `entry`='800019' and`item`='40848' and`ExtendedCost`='2411';
+UPDATE  `npc_vendor` SET `ExtendedCost`='0' WHERE `entry`='800019' and`item`='40849' and`ExtendedCost`='2411';
+UPDATE  `npc_vendor` SET `ExtendedCost`='0' WHERE `entry`='800019' and`item`='40866' and`ExtendedCost`='2411';
+UPDATE  `npc_vendor` SET `ExtendedCost`='0' WHERE `entry`='800019' and`item`='40868' and`ExtendedCost`='2411';
+UPDATE  `npc_vendor` SET `ExtendedCost`='0' WHERE `entry`='800019' and`item`='40869' and`ExtendedCost`='2411';
+UPDATE  `npc_vendor` SET `ExtendedCost`='0' WHERE `entry`='800019' and`item`='40907' and`ExtendedCost`='2411';
+UPDATE  `npc_vendor` SET `ExtendedCost`='0' WHERE `entry`='800019' and`item`='40927' and`ExtendedCost`='2411';
+UPDATE  `npc_vendor` SET `ExtendedCost`='0' WHERE `entry`='800019' and`item`='40933' and`ExtendedCost`='2411';
+UPDATE  `npc_vendor` SET `ExtendedCost`='0' WHERE `entry`='800019' and`item`='40939' and`ExtendedCost`='2411';
+UPDATE  `npc_vendor` SET `ExtendedCost`='0' WHERE `entry`='800019' and`item`='40963' and`ExtendedCost`='2411';
+UPDATE  `npc_vendor` SET `ExtendedCost`='0' WHERE `entry`='800019' and`item`='40992' and`ExtendedCost`='2411';
+UPDATE  `npc_vendor` SET `ExtendedCost`='0' WHERE `entry`='800019' and`item`='40993' and`ExtendedCost`='2411';
+UPDATE  `npc_vendor` SET `ExtendedCost`='0' WHERE `entry`='800019' and`item`='41001' and`ExtendedCost`='2411';
+UPDATE  `npc_vendor` SET `ExtendedCost`='0' WHERE `entry`='800019' and`item`='41007' and`ExtendedCost`='2411';
+UPDATE  `npc_vendor` SET `ExtendedCost`='0' WHERE `entry`='800019' and`item`='41013' and`ExtendedCost`='2411';
+UPDATE  `npc_vendor` SET `ExtendedCost`='0' WHERE `entry`='800019' and`item`='41019' and`ExtendedCost`='2411';
+UPDATE  `npc_vendor` SET `ExtendedCost`='0' WHERE `entry`='800019' and`item`='41027' and`ExtendedCost`='2411';
+UPDATE  `npc_vendor` SET `ExtendedCost`='0' WHERE `entry`='800019' and`item`='41033' and`ExtendedCost`='2411';
+UPDATE  `npc_vendor` SET `ExtendedCost`='0' WHERE `entry`='800019' and`item`='41038' and`ExtendedCost`='2411';
+UPDATE  `npc_vendor` SET `ExtendedCost`='0' WHERE `entry`='800019' and`item`='41044' and`ExtendedCost`='2411';
+UPDATE  `npc_vendor` SET `ExtendedCost`='0' WHERE `entry`='800019' and`item`='41081' and`ExtendedCost`='2411';
+UPDATE  `npc_vendor` SET `ExtendedCost`='0' WHERE `entry`='800019' and`item`='41087' and`ExtendedCost`='2411';
+UPDATE  `npc_vendor` SET `ExtendedCost`='0' WHERE `entry`='800019' and`item`='41137' and`ExtendedCost`='2411';
+UPDATE  `npc_vendor` SET `ExtendedCost`='0' WHERE `entry`='800019' and`item`='41143' and`ExtendedCost`='2411';
+UPDATE  `npc_vendor` SET `ExtendedCost`='0' WHERE `entry`='800019' and`item`='41151' and`ExtendedCost`='2411';
+UPDATE  `npc_vendor` SET `ExtendedCost`='0' WHERE `entry`='800019' and`item`='41157' and`ExtendedCost`='2411';
+UPDATE  `npc_vendor` SET `ExtendedCost`='0' WHERE `entry`='800019' and`item`='41199' and`ExtendedCost`='2411';
+UPDATE  `npc_vendor` SET `ExtendedCost`='0' WHERE `entry`='800019' and`item`='41205' and`ExtendedCost`='2411';
+UPDATE  `npc_vendor` SET `ExtendedCost`='0' WHERE `entry`='800019' and`item`='41211' and`ExtendedCost`='2411';
+UPDATE  `npc_vendor` SET `ExtendedCost`='0' WHERE `entry`='800019' and`item`='41217' and`ExtendedCost`='2411';
+UPDATE  `npc_vendor` SET `ExtendedCost`='0' WHERE `entry`='800019' and`item`='41275' and`ExtendedCost`='2411';
+UPDATE  `npc_vendor` SET `ExtendedCost`='0' WHERE `entry`='800019' and`item`='41281' and`ExtendedCost`='2411';
+UPDATE  `npc_vendor` SET `ExtendedCost`='0' WHERE `entry`='800019' and`item`='41287' and`ExtendedCost`='2411';
+UPDATE  `npc_vendor` SET `ExtendedCost`='0' WHERE `entry`='800019' and`item`='41293' and`ExtendedCost`='2411';
+UPDATE  `npc_vendor` SET `ExtendedCost`='0' WHERE `entry`='800019' and`item`='41298' and`ExtendedCost`='2411';
+UPDATE  `npc_vendor` SET `ExtendedCost`='0' WHERE `entry`='800019' and`item`='41304' and`ExtendedCost`='2411';
+UPDATE  `npc_vendor` SET `ExtendedCost`='0' WHERE `entry`='800019' and`item`='41310' and`ExtendedCost`='2411';
+UPDATE  `npc_vendor` SET `ExtendedCost`='0' WHERE `entry`='800019' and`item`='41316' and`ExtendedCost`='2411';
+UPDATE  `npc_vendor` SET `ExtendedCost`='0' WHERE `entry`='800019' and`item`='41321' and`ExtendedCost`='2411';
+UPDATE  `npc_vendor` SET `ExtendedCost`='0' WHERE `entry`='800019' and`item`='41327' and`ExtendedCost`='2411';
+UPDATE  `npc_vendor` SET `ExtendedCost`='0' WHERE `entry`='800019' and`item`='41650' and`ExtendedCost`='2411';
+UPDATE  `npc_vendor` SET `ExtendedCost`='0' WHERE `entry`='800019' and`item`='41655' and`ExtendedCost`='2411';
+UPDATE  `npc_vendor` SET `ExtendedCost`='0' WHERE `entry`='800019' and`item`='41661' and`ExtendedCost`='2411';
+UPDATE  `npc_vendor` SET `ExtendedCost`='0' WHERE `entry`='800019' and`item`='41667' and`ExtendedCost`='2411';
+UPDATE  `npc_vendor` SET `ExtendedCost`='0' WHERE `entry`='800019' and`item`='41672' and`ExtendedCost`='2411';
+UPDATE  `npc_vendor` SET `ExtendedCost`='0' WHERE `entry`='800019' and`item`='41678' and`ExtendedCost`='2411';
+UPDATE  `npc_vendor` SET `ExtendedCost`='0' WHERE `entry`='800019' and`item`='41683' and`ExtendedCost`='2411';
+UPDATE  `npc_vendor` SET `ExtendedCost`='0' WHERE `entry`='800019' and`item`='41715' and`ExtendedCost`='2411';
+UPDATE  `npc_vendor` SET `ExtendedCost`='0' WHERE `entry`='800019' and`item`='41767' and`ExtendedCost`='2411';
+UPDATE  `npc_vendor` SET `ExtendedCost`='0' WHERE `entry`='800019' and`item`='41773' and`ExtendedCost`='2411';
+UPDATE  `npc_vendor` SET `ExtendedCost`='0' WHERE `entry`='800019' and`item`='41854' and`ExtendedCost`='2411';
+UPDATE  `npc_vendor` SET `ExtendedCost`='0' WHERE `entry`='800019' and`item`='41859' and`ExtendedCost`='2411';
+UPDATE  `npc_vendor` SET `ExtendedCost`='0' WHERE `entry`='800019' and`item`='41864' and`ExtendedCost`='2411';
+UPDATE  `npc_vendor` SET `ExtendedCost`='0' WHERE `entry`='800019' and`item`='41869' and`ExtendedCost`='2411';
+UPDATE  `npc_vendor` SET `ExtendedCost`='0' WHERE `entry`='800019' and`item`='41874' and`ExtendedCost`='2411';
+UPDATE  `npc_vendor` SET `ExtendedCost`='0' WHERE `entry`='800019' and`item`='41915' and`ExtendedCost`='2411';
+UPDATE  `npc_vendor` SET `ExtendedCost`='0' WHERE `entry`='800019' and`item`='41921' and`ExtendedCost`='2411';
+UPDATE  `npc_vendor` SET `ExtendedCost`='0' WHERE `entry`='800019' and`item`='41927' and`ExtendedCost`='2411';
+UPDATE  `npc_vendor` SET `ExtendedCost`='0' WHERE `entry`='800019' and`item`='41934' and`ExtendedCost`='2411';
+UPDATE  `npc_vendor` SET `ExtendedCost`='0' WHERE `entry`='800019' and`item`='41940' and`ExtendedCost`='2411';
+UPDATE  `npc_vendor` SET `ExtendedCost`='0' WHERE `entry`='800019' and`item`='41946' and`ExtendedCost`='2411';
+UPDATE  `npc_vendor` SET `ExtendedCost`='0' WHERE `entry`='800019' and`item`='41953' and`ExtendedCost`='2411';
+UPDATE  `npc_vendor` SET `ExtendedCost`='0' WHERE `entry`='800019' and`item`='41959' and`ExtendedCost`='2411';
+UPDATE  `npc_vendor` SET `ExtendedCost`='0' WHERE `entry`='800019' and`item`='41965' and`ExtendedCost`='2411';
+UPDATE  `npc_vendor` SET `ExtendedCost`='0' WHERE `entry`='800019' and`item`='41971' and`ExtendedCost`='2411';
+UPDATE  `npc_vendor` SET `ExtendedCost`='0' WHERE `entry`='800019' and`item`='41993' and`ExtendedCost`='2411';
+UPDATE  `npc_vendor` SET `ExtendedCost`='0' WHERE `entry`='800019' and`item`='41998' and`ExtendedCost`='2411';
+UPDATE  `npc_vendor` SET `ExtendedCost`='0' WHERE `entry`='800019' and`item`='42005' and`ExtendedCost`='2411';
+UPDATE  `npc_vendor` SET `ExtendedCost`='0' WHERE `entry`='800019' and`item`='42011' and`ExtendedCost`='2411';
+UPDATE  `npc_vendor` SET `ExtendedCost`='0' WHERE `entry`='800019' and`item`='42017' and`ExtendedCost`='2411';
+
+
+
+/*Boss Spawn Anpassungen */
+UPDATE `creature` SET `map`='169', `position_x`='-313.07', `position_y`='3084.26', `position_z`='100.08', `orientation`='0.17' WHERE `guid`='800030';
+UPDATE `creature` SET `map`='169', `position_x`='3514.63', `position_y`='4012.01', `position_z`='92.0083', `orientation`='0.384703' WHERE `guid`='800038';
+UPDATE `creature` SET `map`='169', `position_x`='-1199.58', `position_y`='-2390.67', `position_z`='109.692', `orientation`='3.71644' WHERE `guid`='800037';
+UPDATE `creature` SET `map`='169', `position_x`='-1784.85', `position_y`='-780.503', `position_z`='121.452', `orientation`='5.25372' WHERE `guid`='800035';
+UPDATE `creature` SET `map`='169', `position_x`='-2902.88', `position_y`='-1368.75', `position_z`='125.728', `orientation`='5.71264' WHERE `guid`='800039';
+UPDATE `creature` SET `map`='169', `position_x`='-2660.49', `position_y`='-2700.24', `position_z`='130.028', `orientation`='3.79707' WHERE `guid`='800041';
+UPDATE `creature` SET `map`='169', `position_x`='-4313.12', `position_y`='-1465.59', `position_z`='92.007', `orientation`='3.22764' WHERE `guid`='800050';
+UPDATE `creature` SET `map`='169', `position_x`='-4338.46', `position_y`='-719.724', `position_z`='127.903', `orientation`='4.24175' WHERE `guid`='800040';
+UPDATE `creature` SET `map`='169', `position_x`='-3694.01', `position_y`='-1061.39', `position_z`='126.757', `orientation`='0.243516' WHERE `guid`='800058';
+
 
 
 

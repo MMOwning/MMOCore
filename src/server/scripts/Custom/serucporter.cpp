@@ -122,7 +122,7 @@ public: seruc() : CreatureScript("seruc"){ }
 						/*ORRIG*/
 				case 4: {
 					pPlayer->GetGUID();
-					pPlayer->TeleportTo(0, -12556.57,-1366.97,41.56,1.024);
+					pPlayer->TeleportTo(169, 3233.93,1585.00,24.33,4.80);
 					pPlayer->ModifyMoney(-200000);
 					return true;
 
@@ -134,7 +134,7 @@ public: seruc() : CreatureScript("seruc"){ }
 						/*EXI*/
 				case 5: {
 					pPlayer->GetGUID();
-					pPlayer->TeleportTo(0, -7440.66,-2029.63,313.72,6.28);
+					pPlayer->TeleportTo(169, -480.42,3326.65,286.07, 4.69);
 					pPlayer->ModifyMoney(-200000);
 					return true;
 				}break;
@@ -146,7 +146,7 @@ public: seruc() : CreatureScript("seruc"){ }
 						/*GEQUÄLTE*/
 				case 6: {
 					pPlayer->GetGUID();
-					pPlayer->TeleportTo(0,-12978.69, -1774.43, 137.11,3.5);
+					pPlayer->TeleportTo(169, -250.27, 3081.07, 96.45,3.10);
 					pPlayer->ModifyMoney(-200000);
 					return true;
 				}break;
@@ -155,7 +155,7 @@ public: seruc() : CreatureScript("seruc"){ }
 						/*KAYOULA*/
 				case 7: {
 					pPlayer->GetGUID();
-					pPlayer->TeleportTo(530, -2793.37,493.29,-25.33,0.42);
+					pPlayer->TeleportTo(169, -1198.63,-2389.94, 109.86, 2.83);
 					pPlayer->ModifyMoney(-200000);
 					return true;
 				}break;
@@ -165,7 +165,7 @@ public: seruc() : CreatureScript("seruc"){ }
 						/*Theriakin*/
 				case 8: {
 					pPlayer->GetGUID();
-					pPlayer->TeleportTo(1, -8041.57, 1603.90, 14.58,3.19);
+					pPlayer->TeleportTo(169, 3617.89, 4050.67, 92.00,3.50);
 					pPlayer->ModifyMoney(-200000);
 					return true;
 				}break;
@@ -175,7 +175,7 @@ public: seruc() : CreatureScript("seruc"){ }
 						/*ARC*/
 				case 9: {
 					pPlayer->GetGUID();
-					pPlayer->TeleportTo(571,2973.87,-5825.54,262.95,1.6);
+					pPlayer->TeleportTo(169, -1767.40, -813.13 ,118.23,2.01);
 					pPlayer->ModifyMoney(-200000);
 					return true;
 				}break;
@@ -185,7 +185,7 @@ public: seruc() : CreatureScript("seruc"){ }
 						/*MOON*/
 				case 10: {
 					pPlayer->GetGUID();
-					pPlayer->TeleportTo(0,-12474.73,-2688.13,89.61,3.05);
+					pPlayer->TeleportTo(169,-2902.87,-1368.75,125.73,5.71);
 					pPlayer->ModifyMoney(-200000);
 					return true;
 				}break;
@@ -194,7 +194,7 @@ public: seruc() : CreatureScript("seruc"){ }
 						 /*MALTYRIUN*/
 				case 11: {
 					pPlayer->GetGUID();
-					pPlayer->TeleportTo(0,-11764.75,-3560.32,86.50,5.31);
+					pPlayer->TeleportTo(169,-4338.46,-719.72,127.90,4.24);
 					return true;
 				}break;
 
@@ -204,7 +204,7 @@ public: seruc() : CreatureScript("seruc"){ }
 						 /*LORDOFDOOM*/
 				case 12: {
 					pPlayer->GetGUID();
-					pPlayer->TeleportTo(0,-6362.47,-2324.61,390.93,0.55);
+					pPlayer->TeleportTo(169, -2660.48,-2700.24,130.02,3.80);
 					pPlayer->ModifyMoney(-200000);
 					return true;
 				}break;
@@ -223,7 +223,7 @@ public: seruc() : CreatureScript("seruc"){ }
 					/*Tyranium*/
 				case 14: {
 					pPlayer->GetGUID();
-					pPlayer->TeleportTo(0, -4698.80, -2045.90, 521.12, 1.4);
+					pPlayer->TeleportTo(169, -4367.24, -1477.58, 92.00, 0.21);
 					pPlayer->ModifyMoney(-200000);
 					return true;
 				}break;
@@ -231,7 +231,7 @@ public: seruc() : CreatureScript("seruc"){ }
 					/*Tolreos*/
 				case 16: {
 					pPlayer->GetGUID();
-					pPlayer->TeleportTo(530, -1281.67, 1375.05, 6.75, 1.04);
+					pPlayer->TeleportTo(169, -3694.01, -1061.39, 126.76, 0.24);
 					pPlayer->ModifyMoney(-200000);
 					return true;
 				}break;
