@@ -56,3 +56,13 @@ REPLACE INTO `creature_loot_template` (`Entry`, `Item`, `Reference`, `Chance`, `
 UPDATE `creature_template` SET `scale`='2' WHERE `entry`='800072';
 
 
+/* Eowyn */
+UPDATE `creature_template` SET `npcflag`='4227' WHERE `entry`='800027';
+
+/*Lok Regual */
+UPDATE `creature_template` SET `name`='Lok Regual', `npcflag`='3', `trainer_race`='0', `type`='0' WHERE `entry`='800009';
+
+
+
+
+

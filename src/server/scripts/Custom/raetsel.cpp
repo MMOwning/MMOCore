@@ -26,24 +26,19 @@
 #include <stdlib.h>
 
 
-class leandaria : public CreatureScript
+class raetsel : public CreatureScript
 {
 
 public:
-	leandaria() : CreatureScript("leandaria") { }
-
-	
+	raetsel() : CreatureScript("raetsel") { }
 
 	bool OnGossipHello(Player *pPlayer, Creature* _creature)
 	{
-		
-		pPlayer->ADD_GOSSIP_ITEM(7, "Hallo", GOSSIP_SENDER_MAIN, 0);
-		bool status = pPlayer->GetQuestRewardStatus(900811);
+		bool status = pPlayer->GetQuestRewardStatus(802015);
 		if (status){
-			pPlayer->ADD_GOSSIP_ITEM(7, "Beam mich hoch!", GOSSIP_SENDER_MAIN, 1);
+			pPlayer->ADD_GOSSIP_ITEM(7, "Das zweite Raetsel", GOSSIP_SENDER_MAIN, 0);
 		}
-
-		
+		pPlayer->ADD_GOSSIP_ITEM(7, "Was tust du hier?", GOSSIP_SENDER_MAIN, 1);
 		pPlayer->PlayerTalkClass->SendGossipMenu(907, _creature->GetGUID());
 		return true;
 	}
@@ -54,30 +49,31 @@ public:
 		{
 
 		case 0: {
+
 			pPlayer->GetGUID();
-			ChatHandler(pPlayer->GetSession()).PSendSysMessage("Hallo, ich bin Leandaria. Ihr muesst erst in meiner Gunst stehen um bei mir etwas zu bekommen.",
+			ChatHandler(pPlayer->GetSession()).PSendSysMessage("DEvent bekommst du entweder eine Erklaerung, oder wirst bei aktivem Event direkt dorthin geportet. ",
 				pPlayer->GetName());
 			pPlayer->PlayerTalkClass->SendCloseGossip();
 			return true;
 		}break;
 
-
 		case 1: {
+
 			pPlayer->GetGUID();
-			pPlayer->TeleportTo(0, 3174.49, -6000.48, 203.88, 0.27);
+			ChatHandler(pPlayer->GetSession()).PSendSysMessage("Hier kann man die lukrativen Raetselquestreihen abschliessen. Werden dir keine Quests angezeigt, hast du nicht die erforderlichen Vorquests abgeschlossen.",
+				pPlayer->GetName());
+			pPlayer->PlayerTalkClass->SendCloseGossip();
 			return true;
 		}break;
 
-		return true;
+			return true;
 		}
-	return true;
+		return true;
 	};
-
-	
 };
 
 
-void AddSC_leandaria()
+void AddSC_raetsel()
 {
-	new leandaria();
+	new raetsel();
 }

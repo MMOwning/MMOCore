@@ -24,7 +24,7 @@ SET @eventDescription := 'MMOwning Winterfest.'; -- Description of the event. Mi
 -- DO NOT EDIT BELOW --
 DELETE FROM `game_event` WHERE `eventEntry` = 70;
 INSERT INTO `game_event` (`eventEntry`, `start_time`, `end_time`, `occurence`, `length`, `holiday`, `description`, `world_event`)
-    VALUES (@eventId, '0000-00-00 00:00:00', '0000-00-00 00:00:00', '9999999', '2592000', '0', @eventDescription, '0');
+    VALUES (@eventId, '2014-12-12 18:00:00', '2030-12-24 18:00:00', '525600', '44640', '0', @eventDescription, '0');
 
 DELETE FROM `gameobject_template` WHERE `entry` = @newGameobjectEntry;
 INSERT INTO `gameobject_template` (`entry`, `type`, `displayId`, `name`, `size`, `data0`, `data1`, `data6`)
