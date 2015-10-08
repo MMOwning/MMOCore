@@ -143,6 +143,7 @@ UPDATE  `npc_vendor` SET `ExtendedCost`='0' WHERE `entry`='800019' and`item`='41
 UPDATE  `npc_vendor` SET `ExtendedCost`='0' WHERE `entry`='800019' and`item`='42005' and`ExtendedCost`='2411';
 UPDATE  `npc_vendor` SET `ExtendedCost`='0' WHERE `entry`='800019' and`item`='42011' and`ExtendedCost`='2411';
 UPDATE  `npc_vendor` SET `ExtendedCost`='0' WHERE `entry`='800019' and`item`='42017' and`ExtendedCost`='2411';
+UPDATE    `creature` SET `position_x`='-823.926', `position_y`='1502.19', `position_z`='104.552', `orientation`='5.73852' WHERE `guid`='800019';
 
 
 
