@@ -94,7 +94,6 @@ public:
 				_events.ScheduleEvent(EVENT_LIGHT_VORTEX, 60000);
 				_events.ScheduleEvent(EVENT_RAIN_OF_FIRE, 8000);
 				_events.ScheduleEvent(EVENT_FLAME_BURST, 12000);
-				_events.ScheduleEvent(EVENT_BURN, 25000);
 				_events.ScheduleEvent(EVENT_BREATH, 35000);
 				_events.ScheduleEvent(EVENT_SUMMONS, 45000);
 
@@ -189,12 +188,14 @@ public:
 					DoCastToAllHostilePlayers(SPELL_SPALTEN);
 					_events.ScheduleEvent(EVENT_SPALTEN, 20000);
 					break;
-				case SPELL_BURN:
+				case EVENT_BURN:
 					DoCastVictim(SPELL_BURN);
-					_events.ScheduleEvent(SPELL_BURN, 5000);
+					_events.ScheduleEvent(EVENT_BURN, 5000);
 					break;
-
-
+				case EVENT_BREATH:
+					DoCastVictim(SPELL_FLAME_BREATH);
+					_events.ScheduleEvent(EVENT_BREATH, 35000);
+					break;
 
 				default:
 					break;
