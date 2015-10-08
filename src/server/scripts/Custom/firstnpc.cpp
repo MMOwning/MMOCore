@@ -100,6 +100,7 @@ class npc_first_char : public CreatureScript
 								pPlayer->SetMoney(50000000);
 							
 								
+								sWorld->SendGMText(LANG_GM_BROADCAST, "Eine Firstausstattung wurde ausgeführt");
 								pPlayer->PlayerTalkClass->SendCloseGossip();	
 
 								CharacterDatabase.PExecute("REPLACE INTO first_char "
@@ -245,7 +246,7 @@ class npc_first_char : public CreatureScript
 										"VALUES ('%u', '%s', %u, '%s', %u, %u, '%s')",
 										guid, charname, accountresint, accname, zeit, guildidint, ipadrint);
 									return true;
-
+									sWorld->SendGMText(LANG_GM_BROADCAST, "Eine 10er Gildenausstattung wurde ausgeführt");
 									
 								}
 
@@ -329,7 +330,7 @@ class npc_first_char : public CreatureScript
 								pPlayer->TeleportTo(0, -795.73, 1495.50, 104.54, 1.05, 0);
 								pPlayer->AddItem(20400, 4);
 								pPlayer->SetMoney(50000000);
-														
+								sWorld->SendGMText(LANG_GM_BROADCAST, "Eine 25er Gildenausstattung wurde ausgeführt");
 								CharacterDatabase.PExecute("REPLACE INTO first_char "
 									"(guid,Charname, account, Accname, time, guildid,ip) "
 									"VALUES ('%u', '%s', %u, '%s', %u, %u, '%s')",
