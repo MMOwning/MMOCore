@@ -122,7 +122,7 @@ public: seruc() : CreatureScript("seruc"){ }
 						/*ORRIG*/
 				case 4: {
 					pPlayer->GetGUID();
-					pPlayer->TeleportTo(169, 3233.93,1585.00,24.33,4.80);
+					pPlayer->TeleportTo(169, -2902.55,-1259.97,121.88,3.28);
 					pPlayer->ModifyMoney(-200000);
 					return true;
 
