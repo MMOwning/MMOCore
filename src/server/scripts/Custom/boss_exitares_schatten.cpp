@@ -81,7 +81,7 @@ public:
 			_events.ScheduleEvent(EVENT_TOXIC_WASTE, 20000);
 			_events.ScheduleEvent(EVENT_POISON_NOVA, 40000);
 			_events.ScheduleEvent(EVENT_MOONFIRE, 8000);
-			_events.ScheduleEvent(EVENT_SPALTEN, 15000);
+			_events.ScheduleEvent(EVENT_SPALTEN, 120000);
 			_events.ScheduleEvent(EVENT_BREATH, 35000);
 
 		}
@@ -106,7 +106,7 @@ public:
 				_events.ScheduleEvent(EVENT_POISON_NOVA, 60000);
 				_events.ScheduleEvent(EVENT_TOXIC_WASTE, 45000);
 				_events.ScheduleEvent(EVENT_ENRAGE, 120000);
-				_events.ScheduleEvent(EVENT_SPALTEN, 12000);
+				_events.ScheduleEvent(EVENT_SPALTEN, 120000);
 			}
 		}
 

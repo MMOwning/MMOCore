@@ -160,5 +160,22 @@ UPDATE `creature` SET `map`='169', `position_x`='-3694.01', `position_y`='-1061.
 
 
 
+/* Ein holpriger Ritt 12536 */
+UPDATE `quest_template` SET `StartItem`='38512' WHERE `ID`='12536';
 
 
+/* Amphitheater */
+UPDATE `quest_template` SET `RequiredNpcOrGo1`='30014', `RequiredNpcOrGoCount1`='1' WHERE `ID`='12932';
+UPDATE `quest_template` SET `RequiredNpcOrGo1`='30017', `RequiredNpcOrGoCount1`='1' WHERE `ID`='12933';
+UPDATE `quest_template` SET `RequiredNpcOrGo1`='30025', `RequiredNpcOrGoCount1`='1' WHERE `ID`='12934';
+UPDATE `quest_template` SET `RequiredNpcOrGo1`='30020', `RequiredNpcOrGoCount1`='1' WHERE `ID`='12935';
+UPDATE `quest_template` SET `RequiredNpcOrGo1`='30023', `RequiredNpcOrGoCount1`='1' WHERE `ID`='12936';
+
+
+/* Killohertz*/
+REPLACE INTO `creature` (`guid`,`id`,`map`,`spawnMask`,`phaseMask`,`modelid`,`equipment_id`,`position_x`,`position_y`,`position_z`,`orientation`,`spawntimesecs`,`spawndist`,`currentwaypoint`,`curhealth`,`curmana`,`MovementType`) VALUES 
+('1600001','32444','571','1','1','28023','0','7640.14','2062.06','600.25','3.34','21600','0','0','1000000','250000','0');
+
+
+/* Die Aufnahme */
+UPDATE `quest_template` SET `LogDescription`='Bringt die Schriftensammlung zu Destro MMOwning. Toetet zusaetzlich Geisselfuerst Tyrannus und den den Verschlinger der Seelen.', `QuestDescription`='Bringt die Schriftensammlung zu Destro MMOwning. Ihr findet Ihn an der Kueste von Westfall. Aus seiner Sicht gesehen schaut er auf ein Schriffswrack. Meist hoert er im Wind die Schreie von Murlockreaturen. Zusaetzlich muesst ihr Geisselfuerst Tyrannus und den Verschlinger der Seelen zu toeten.' WHERE `ID`='800005';
