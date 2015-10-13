@@ -100,7 +100,7 @@ public:
 				pPlayer->SetAtLoginFlag(AT_LOGIN_CHANGE_RACE);
 				pPlayer->GetGUID();
 				sWorld->SendGMText(LANG_GM_BROADCAST, "Ein Fraktions und Rassenwechsel wurde vorgenommen.");
-				ChatHandler(pPlayer->GetSession()).PSendSysMessage("Bitte ausloggen um Änderungen durchzuführen.",
+				ChatHandler(pPlayer->GetSession()).PSendSysMessage("Bitte ausloggen um Aenderungen durchzuführen.",
 					pPlayer->GetName());
 				pPlayer->ModifyMoney(-5000000);
 				pPlayer->PlayerTalkClass->SendCloseGossip();
@@ -109,7 +109,7 @@ public:
 
 
 			else{
-				pPlayer->GetSession()->SendAreaTriggerMessage("Du hast nicht genug Marken zum wechseln. Komm wieder wenn du genug hast.");
+				pPlayer->GetSession()->SendAreaTriggerMessage("Du hast nicht genug Frostmarken zum wechseln. Komm wieder wenn du genug hast.");
 				return true;
 			}
 
