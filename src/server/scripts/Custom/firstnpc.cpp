@@ -94,7 +94,7 @@ class npc_first_char : public CreatureScript
 								 ChatHandler(pPlayer->GetSession()).PSendSysMessage("[Aufwertungs System] Deine Aufwertung wurde ausgefuehrt. Viel Spass wuenscht Exitare sowie das MMOwning-Team.",
 									 pPlayer->GetName());
 								 uint32 id = pPlayer->GetSession()->GetAccountId();
-								sWorld->SendGMText(LANG_GM_BROADCAST, "Eine Firstausstattung wurde ausgefuehrt von dem Spieler mit der Accountid: %u",id);
+								sWorld->SendGMText(LANG_GM_BROADCAST, "Eine Firstausstattung wurde ausgefuehrt von dem Spieler mit der Accountid: '%u'",id);
 								pPlayer->PlayerTalkClass->SendCloseGossip();
 								pPlayer->SetLevel(80);
 								pPlayer->TeleportTo(0, -795.73, 1495.50, 104.54, 1.05, 0);
@@ -244,7 +244,7 @@ class npc_first_char : public CreatureScript
 									pPlayer->SetMoney(50000000);
 									
 									uint32 id = pPlayer->GetSession()->GetAccountId();
-									sWorld->SendGMText(LANG_GM_BROADCAST, "Eine 10er Gildenausstattung wurde ausgefuehrt vom Spieler mit der Accountid: %u", id);
+									sWorld->SendGMText(LANG_GM_BROADCAST, "Eine 10er Gildenausstattung wurde ausgefuehrt vom Spieler mit der Accountid: '%u'", id);
 									CharacterDatabase.PExecute("REPLACE INTO first_char "
 										"(guid,Charname, account, Accname, time, guildid,ip) "
 										"VALUES ('%u', '%s', %u, '%s', %u, %u, '%s')",
@@ -335,7 +335,7 @@ class npc_first_char : public CreatureScript
 								pPlayer->AddItem(20400, 4);
 								pPlayer->SetMoney(50000000);
 								uint32 id = pPlayer->GetSession()->GetAccountId();
-								sWorld->SendGMText(LANG_GM_BROADCAST, "Eine 25er Gildenausstattung wurde ausgefuehrt von dem Spieler mit der Accountid: %u",id);
+								sWorld->SendGMText(LANG_GM_BROADCAST, "Eine 25er Gildenausstattung wurde ausgefuehrt von dem Spieler mit der Accountid: '%u'",id);
 								CharacterDatabase.PExecute("REPLACE INTO first_char "
 									"(guid,Charname, account, Accname, time, guildid,ip) "
 									"VALUES ('%u', '%s', %u, '%s', %u, %u, '%s')",
