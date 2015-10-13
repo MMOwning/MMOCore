@@ -15,7 +15,8 @@ enum Spells
 	SPELL_BLOOD_MIRROR_DAMAGE = 70821,
 	SPELL_ANNOYING_YIPPING = 31015,
 	SPELL_SARGERAS = 28342,
-	SPELL_BURN = 46218
+	SPELL_BURN = 46218,
+	SPELL_TAIL_LASH = 56910
 };
 
 enum Events
@@ -30,7 +31,8 @@ enum Events
 	EVENT_BLOOD_MIRROR_DAMAGE = 8,
 	EVENT_ANNOYING_YIPPING = 9,
 	EVENT_SARGERAS = 10,
-	EVENT_BURN = 11
+	EVENT_BURN = 11,
+	EVENT_TAIL_LASH = 12
 
 };
 
@@ -76,9 +78,10 @@ public:
 			Talk(SAY_AGGRO);
 			_events.SetPhase(PHASE_ONE);
 			_events.ScheduleEvent(EVENT_MANA_DESTRUCTION, 1000);
-			_events.ScheduleEvent(EVENT_BRAIN_LINK_DAMAGE, 10000);
+			_events.ScheduleEvent(EVENT_BRAIN_LINK_DAMAGE, 60000);
 			_events.ScheduleEvent(EVENT_MANGLING_SLASH, 8000);
-			_events.ScheduleEvent(EVENT_SARGERAS, 5000);
+			_events.ScheduleEvent(EVENT_SARGERAS, 10000);
+			_events.ScheduleEvent(EVENT_TAIL_LASH, 5000);
 
 		}
 
@@ -91,6 +94,7 @@ public:
 				_events.ScheduleEvent(EVENT_PIERCING_SLASH, 20000);
 				_events.ScheduleEvent(EVENT_BRAIN_LINK_DAMAGE, 10000);
 				_events.ScheduleEvent(EVENT_BLOOD_MIRROR_DAMAGE, 10000);
+				_events.ScheduleEvent(EVENT_TAIL_LASH, 5000);
 
 			}
 
@@ -102,6 +106,7 @@ public:
 				_events.ScheduleEvent(EVENT_NECROTIC_POISON, 12000); 
 				_events.ScheduleEvent(EVENT_ANNOYING_YIPPING, 25000);
 				_events.ScheduleEvent(EVENT_BURN, 35000);
+				_events.ScheduleEvent(EVENT_TAIL_LASH, 5000);
 			}
 		}
 
@@ -181,6 +186,10 @@ public:
 				case EVENT_BURN:
 					DoCastToAllHostilePlayers(SPELL_BURN);
 					_events.ScheduleEvent(EVENT_BURN, 35000);
+					break;
+				case EVENT_TAIL_LASH:
+					DoCast(SPELL_TAIL_LASH);
+					_events.ScheduleEvent(EVENT_BURN, 5000);
 					break;
 
 

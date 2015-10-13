@@ -80,7 +80,7 @@ public:
 			_events.SetPhase(PHASE_ONE);
 			_events.ScheduleEvent(EVENT_TOXIC_WASTE, 20000);
 			_events.ScheduleEvent(EVENT_POISON_NOVA, 40000);
-			_events.ScheduleEvent(EVENT_SPALTEN, 120000);
+			_events.ScheduleEvent(EVENT_SPALTEN, 30000);
 			_events.ScheduleEvent(EVENT_BREATH, 35000);
 
 		}
@@ -105,7 +105,7 @@ public:
 				_events.ScheduleEvent(EVENT_POISON_NOVA, 60000);
 				_events.ScheduleEvent(EVENT_TOXIC_WASTE, 45000);
 				_events.ScheduleEvent(EVENT_ENRAGE, 120000);
-				_events.ScheduleEvent(EVENT_SPALTEN, 120000);
+				_events.ScheduleEvent(EVENT_SPALTEN, 30000);
 			}
 		}
 
@@ -179,12 +179,11 @@ public:
 				case EVENT_LIGHT_VORTEX:
 					me->FinishSpell(CURRENT_CHANNELED_SPELL, true);
 					DoCastAOE(SPELL_LIGHT_VORTEX, false);
-					me->FinishSpell(CURRENT_CHANNELED_SPELL, true);
-					_events.ScheduleEvent(EVENT_LIGHT_VORTEX, 60000);
+					_events.ScheduleEvent(EVENT_LIGHT_VORTEX, 45000);
 					break;
 				case EVENT_SPALTEN:
 					DoCastToAllHostilePlayers(SPELL_SPALTEN);
-					_events.ScheduleEvent(EVENT_SPALTEN, 20000);
+					_events.ScheduleEvent(EVENT_SPALTEN, 30000);
 					break;
 				case EVENT_BURN:
 					DoCastVictim(SPELL_BURN);
