@@ -42,7 +42,7 @@ public:
 		QueryResult charresult = CharacterDatabase.PQuery("Select count(guid) From characters where account = '%u'", accountresint);
 		uint32 charresultint = (*charresult)[0].GetUInt32();
 		
-		if (player->GetTotalPlayedTime() < 5 && charresultint == 1)
+		if (player->GetTotalPlayedTime() < 1 && charresultint == 1)
 		{
 			ss << "|cff54b5ffWir heissen unseren neuesten Mitspieler|r " << ChatHandler(player->GetSession()).GetNameLink() << " |cff54b5ff auf MMOwning willkommen!|r";
 			sWorld->SendServerMessage(SERVER_MSG_STRING, ss.str().c_str());

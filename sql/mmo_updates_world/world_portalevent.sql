@@ -18,6 +18,10 @@ SET @startGameobjectEntry := 660000; -- Start id to use for the new gameobjects.
 SET @eventId := 74; -- Id to use for the event. Make sure this id does not yet exist in game_event.
 SET @eventDescription := 'Portalevent'; -- Description of the event. Might be announced in-game depending on your server configuration.
 
+DELETE FROM `game_event_creature` WHERE `eventEntry` = 74;
+INSERT INTO `game_event_creature` (`eventEntry`, `guid`) VALUES 
+('74', '800091'),
+('74', '800092');
 
 
 -- DO NOT EDIT BELOW
