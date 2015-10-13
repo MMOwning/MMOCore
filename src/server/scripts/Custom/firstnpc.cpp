@@ -243,8 +243,8 @@ class npc_first_char : public CreatureScript
 									pPlayer->SetMoney(50000000);
 									
 									uint32 id = pPlayer->GetSession()->GetAccountId();
-									std::string name = pPlayer->GetSession()->GetPlayerName();
-									sWorld->SendGMText(LANG_GM_BROADCAST, "Eine 10er Gildenausstattung wurde ausgefuehrt vom Spieler: %s, mit der Accountid: %u", name, id);
+									
+									sWorld->SendGMText(LANG_GM_BROADCAST, "Eine 10er Gildenausstattung wurde ausgefuehrt vom Spieler mit der Accountid: %u", id);
 									CharacterDatabase.PExecute("REPLACE INTO first_char "
 										"(guid,Charname, account, Accname, time, guildid,ip) "
 										"VALUES ('%u', '%s', %u, '%s', %u, %u, '%s')",
