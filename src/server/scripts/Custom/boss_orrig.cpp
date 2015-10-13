@@ -132,7 +132,7 @@ public:
 			char msg[250];
 			
 			++kills;
-			snprintf(msg, 250, "|cffff0000[Boss System]|r |cffff6060 Orrig|r hat einen Spieler getoetet! Was fuer eine Schmach. Insgesamt steht der Killcounter bei: %u", kills);
+			snprintf(msg, 250, "|cffff0000[Boss System]|r |cffff6060 Orrig|r hat einen Spieler getoetet! Was fuer eine Schmach. Insgesamt steht der Killcounter seit dem letzten Restart bei: %u", kills);
 			sWorld->SendGlobalText(msg, NULL);
 		}
 		

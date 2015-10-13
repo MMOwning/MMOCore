@@ -13,7 +13,7 @@ enum Spells
 	SPELL_ARCANE_BOMB = 56431,
 	SPELL_LIGHT_VORTEX = 66046,
 	SPELL_MOONFIRE = 48463,
-	SPELL_SPALTEN = 20691,
+	SPELL_SPALTEN = 56909,
 	SPELL_SARGERAS = 28342,
 	SPELL_BURN = 46218,
 	SPELL_FLAME_BREATH = 56908
@@ -80,7 +80,6 @@ public:
 			_events.SetPhase(PHASE_ONE);
 			_events.ScheduleEvent(EVENT_TOXIC_WASTE, 20000);
 			_events.ScheduleEvent(EVENT_POISON_NOVA, 40000);
-			_events.ScheduleEvent(EVENT_MOONFIRE, 8000);
 			_events.ScheduleEvent(EVENT_SPALTEN, 120000);
 			_events.ScheduleEvent(EVENT_BREATH, 35000);
 
@@ -156,6 +155,7 @@ public:
 					DoCast(SPELL_ENRAGE);
 					break;
 				case EVENT_RAIN_OF_FIRE:
+					me->FinishSpell(CURRENT_CHANNELED_SPELL, true);
 					DoCastToAllHostilePlayers(SPELL_RAIN_OF_FIRE);
 					_events.ScheduleEvent(EVENT_RAIN_OF_FIRE, 10000);
 					break;
@@ -174,15 +174,13 @@ public:
 				case EVENT_ARCANE_BOMB:
 					Talk(SAY_ENRAGE);
 					DoCastToAllHostilePlayers(SPELL_ARCANE_BOMB);
-					_events.ScheduleEvent(EVENT_ARCANE_BOMB, 25000);
+					_events.ScheduleEvent(EVENT_ARCANE_BOMB, 10000);
 					break;
 				case EVENT_LIGHT_VORTEX:
+					me->FinishSpell(CURRENT_CHANNELED_SPELL, true);
 					DoCastAOE(SPELL_LIGHT_VORTEX, false);
+					me->FinishSpell(CURRENT_CHANNELED_SPELL, true);
 					_events.ScheduleEvent(EVENT_LIGHT_VORTEX, 60000);
-					break;
-				case EVENT_MOONFIRE:
-					DoCastToAllHostilePlayers(SPELL_MOONFIRE);
-					_events.ScheduleEvent(EVENT_MOONFIRE, 10000);
 					break;
 				case EVENT_SPALTEN:
 					DoCastToAllHostilePlayers(SPELL_SPALTEN);

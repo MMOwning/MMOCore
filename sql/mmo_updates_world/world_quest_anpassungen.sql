@@ -172,10 +172,128 @@ UPDATE `quest_template` SET `RequiredNpcOrGo1`='30020', `RequiredNpcOrGoCount1`=
 UPDATE `quest_template` SET `RequiredNpcOrGo1`='30023', `RequiredNpcOrGoCount1`='1' WHERE `ID`='12936';
 
 
-/* Killohertz*/
-REPLACE INTO `creature` (`guid`,`id`,`map`,`spawnMask`,`phaseMask`,`modelid`,`equipment_id`,`position_x`,`position_y`,`position_z`,`orientation`,`spawntimesecs`,`spawndist`,`currentwaypoint`,`curhealth`,`curmana`,`MovementType`) VALUES 
-('1600001','32444','571','1','1','28023','0','7640.14','2062.06','600.25','3.34','21600','0','0','1000000','250000','0');
+
 
 
 /* Die Aufnahme */
 UPDATE `quest_template` SET `LogDescription`='Bringt die Schriftensammlung zu Destro MMOwning. Toetet zusaetzlich Geisselfuerst Tyrannus und den den Verschlinger der Seelen.', `QuestDescription`='Bringt die Schriftensammlung zu Destro MMOwning. Ihr findet Ihn an der Kueste von Westfall. Aus seiner Sicht gesehen schaut er auf ein Schriffswrack. Meist hoert er im Wind die Schreie von Murlockreaturen. Zusaetzlich muesst ihr Geisselfuerst Tyrannus und den Verschlinger der Seelen zu toeten.' WHERE `ID`='800005';
+
+/* Therakin */
+UPDATE `creature_loot_template` SET `Chance`='1' WHERE `Entry`='800038' and`Item`='21176';
+UPDATE `creature_loot_template` SET `Chance`='1' WHERE `Entry`='800038' and`Item`='56806';
+
+
+/* Arcturus */
+DELETE FROM `creature_loot_template` WHERE `Entry`='800035' and`Item`='37255';
+DELETE FROM `creature_loot_template` WHERE `Entry`='800035' and`Item`='37256';
+DELETE FROM `creature_loot_template` WHERE `Entry`='800035' and`Item`='37257';
+DELETE FROM `creature_loot_template` WHERE `Entry`='800035' and`Item`='37258';
+DELETE FROM `creature_loot_template` WHERE `Entry`='800035' and`Item`='37363';
+DELETE FROM `creature_loot_template` WHERE `Entry`='800035' and`Item`='37260';
+DELETE FROM `creature_loot_template` WHERE `Entry`='800035' and`Item`='37261';
+DELETE FROM `creature_loot_template` WHERE `Entry`='800035' and`Item`='37262';
+DELETE FROM `creature_loot_template` WHERE `Entry`='800035' and`Item`='37263';
+DELETE FROM `creature_loot_template` WHERE `Entry`='800035' and`Item`='37361';
+DELETE FROM `creature_loot_template` WHERE `Entry`='800035' and`Item`='37360';
+DELETE FROM `creature_loot_template` WHERE `Entry`='800035' and`Item`='37362';
+DELETE FROM `creature_loot_template` WHERE `Entry`='800035' and`Item`='37364';
+REPLACE INTO `creature_loot_template` (`Entry`, `Item`, `Reference`, `Chance`, `QuestRequired`, `LootMode`, `GroupId`, `MinCount`, `MaxCount`) VALUES ('800035 ', '50290', '0', '20', '0', '1', '1', '1', '1');
+REPLACE INTO `creature_loot_template` (`Entry`, `Item`, `Reference`, `Chance`, `QuestRequired`, `LootMode`, `GroupId`, `MinCount`, `MaxCount`) VALUES ('800035', '50292', '0', '20', '0', '1', '1', '1', '1');
+REPLACE INTO `creature_loot_template` (`Entry`, `Item`, `Reference`, `Chance`, `QuestRequired`, `LootMode`, `GroupId`, `MinCount`, `MaxCount`) VALUES ('800035', '50293', '0', '20', '0', '1', '1', '1', '1');
+REPLACE INTO `creature_loot_template` (`Entry`, `Item`, `Reference`, `Chance`, `QuestRequired`, `LootMode`, `GroupId`, `MinCount`, `MaxCount`) VALUES ('800035', '50295', '0', '20', '0', '1', '1', '1', '1');
+REPLACE INTO `creature_loot_template` (`Entry`, `Item`, `Reference`, `Chance`, `QuestRequired`, `LootMode`, `GroupId`, `MinCount`, `MaxCount`) VALUES ('800035', '50294', '0', '20', '0', '1', '1', '1', '1');
+REPLACE INTO `creature_loot_template` (`Entry`, `Item`, `Reference`, `Chance`, `QuestRequired`, `LootMode`, `GroupId`, `MinCount`, `MaxCount`) VALUES ('800035', '50298', '0', '20', '0', '1', '2', '1', '1');
+REPLACE INTO `creature_loot_template` (`Entry`, `Item`, `Reference`, `Chance`, `QuestRequired`, `LootMode`, `GroupId`, `MinCount`, `MaxCount`) VALUES ('800035', '50300', '0', '20', '0', '1', '2', '1', '1');
+REPLACE INTO `creature_loot_template` (`Entry`, `Item`, `Reference`, `Chance`, `QuestRequired`, `LootMode`, `GroupId`, `MinCount`, `MaxCount`) VALUES ('800035', '50260', '0', '20', '0', '1', '2', '1', '1');
+REPLACE INTO `creature_loot_template` (`Entry`, `Item`, `Reference`, `Chance`, `QuestRequired`, `LootMode`, `GroupId`, `MinCount`, `MaxCount`) VALUES ('800035', '50296', '0', '20', '0', '1', '2', '1', '1');
+REPLACE INTO `creature_loot_template` (`Entry`, `Item`, `Reference`, `Chance`, `QuestRequired`, `LootMode`, `GroupId`, `MinCount`, `MaxCount`) VALUES ('800035', '50303', '0', '20', '0', '1', '2', '1', '1');
+REPLACE INTO `creature_loot_template` (`Entry`, `Item`, `Reference`, `Chance`, `QuestRequired`, `LootMode`, `GroupId`, `MinCount`, `MaxCount`) VALUES ('800035', '50314', '0', '20', '0', '1', '3', '1', '1');
+REPLACE INTO `creature_loot_template` (`Entry`, `Item`, `Reference`, `Chance`, `QuestRequired`, `LootMode`, `GroupId`, `MinCount`, `MaxCount`) VALUES ('800035', '50304', '0', '20', '0', '1', '3', '1', '1');
+REPLACE INTO `creature_loot_template` (`Entry`, `Item`, `Reference`, `Chance`, `QuestRequired`, `LootMode`, `GroupId`, `MinCount`, `MaxCount`) VALUES ('800035', '50311', '0', '20', '0', '1', '3', '1', '1');
+REPLACE INTO `creature_loot_template` (`Entry`, `Item`, `Reference`, `Chance`, `QuestRequired`, `LootMode`, `GroupId`, `MinCount`, `MaxCount`) VALUES ('800035', '50305', '0', '20', '0', '1', '3', '1', '1');
+REPLACE INTO `creature_loot_template` (`Entry`, `Item`, `Reference`, `Chance`, `QuestRequired`, `LootMode`, `GroupId`, `MinCount`, `MaxCount`) VALUES ('800035', '50313', '0', '20', '0', '1', '3', '1', '1');
+REPLACE INTO `creature_loot_template` (`Entry`, `Item`, `Reference`, `Chance`, `QuestRequired`, `LootMode`, `GroupId`, `MinCount`, `MaxCount`) VALUES ('800035', '50310', '0', '20', '0', '1', '4', '1', '1');
+REPLACE INTO `creature_loot_template` (`Entry`, `Item`, `Reference`, `Chance`, `QuestRequired`, `LootMode`, `GroupId`, `MinCount`, `MaxCount`) VALUES ('800035', '50309', '0', '20', '0', '1', '4', '1', '1');
+REPLACE INTO `creature_loot_template` (`Entry`, `Item`, `Reference`, `Chance`, `QuestRequired`, `LootMode`, `GroupId`, `MinCount`, `MaxCount`) VALUES ('800035', '49844', '0', '20', '0', '1', '4', '1', '1');
+REPLACE INTO `creature_loot_template` (`Entry`, `Item`, `Reference`, `Chance`, `QuestRequired`, `LootMode`, `GroupId`, `MinCount`, `MaxCount`) VALUES ('800035', '49849', '0', '20', '0', '1', '4', '1', '1');
+REPLACE INTO `creature_loot_template` (`Entry`, `Item`, `Reference`, `Chance`, `QuestRequired`, `LootMode`, `GroupId`, `MinCount`, `MaxCount`) VALUES ('800035', '49841', '0', '20', '0', '1', '4', '1', '1');
+UPDATE `creature_loot_template` SET `Chance`='33.3', `MinCount`='5', `MaxCount`='10' WHERE `Entry`='800035' and`Item`='38186';
+
+
+/*PVP QUEST */
+UPDATE `quest_template` SET `QuestType`='62' WHERE `ID`='800505';
+UPDATE `quest_template` SET `QuestType`='62' WHERE `ID`='800508';
+UPDATE `quest_template` SET `QuestType`='62' WHERE `ID`='800506';
+UPDATE `quest_template` SET `QuestType`='62' WHERE `ID`='800504';
+UPDATE `quest_template` SET `QuestType`='62' WHERE `ID`='803900';
+UPDATE `quest_template` SET `QuestType`='62' WHERE `ID`='803903';
+UPDATE `quest_template` SET `QuestType`='62' WHERE `ID`='803902';
+UPDATE `quest_template` SET `QuestType`='62' WHERE `ID`='803901';
+
+UPDATE `quest_template` SET `QuestType`='62' WHERE `ID`='800514';
+UPDATE `quest_template` SET `QuestType`='62' WHERE `ID`='800515';
+UPDATE `quest_template` SET `QuestType`='62' WHERE `ID`='800517';
+UPDATE `quest_template` SET `QuestType`='62' WHERE `ID`='800518';
+UPDATE `quest_template` SET `QuestType`='62' WHERE `ID`='800519';
+UPDATE `quest_template` SET `QuestType`='62' WHERE `ID`='800520';
+UPDATE `quest_template` SET `QuestType`='62' WHERE `ID`='800521';
+UPDATE `quest_template` SET `QuestType`='62' WHERE `ID`='800522';
+UPDATE `quest_template` SET `QuestType`='62' WHERE `ID`='800523';
+UPDATE `quest_template` SET `QuestType`='62' WHERE `ID`='800525';
+UPDATE `quest_template` SET `QuestType`='62' WHERE `ID`='800526';
+UPDATE `quest_template` SET `QuestType`='62' WHERE `ID`='800527';
+UPDATE `quest_template` SET `QuestType`='62' WHERE `ID`='800528';
+UPDATE `quest_template` SET `QuestType`='62' WHERE `ID`='800529';
+UPDATE `quest_template` SET `QuestType`='62' WHERE `ID`='800530';
+UPDATE `quest_template` SET `QuestType`='62' WHERE `ID`='800531';
+UPDATE `quest_template` SET `QuestType`='62' WHERE `ID`='800532';
+UPDATE `quest_template` SET `QuestType`='62' WHERE `ID`='800533';
+UPDATE `quest_template` SET `QuestType`='62' WHERE `ID`='800534';
+UPDATE `quest_template` SET `QuestType`='62' WHERE `ID`='800535';
+UPDATE `quest_template` SET `QuestType`='62' WHERE `ID`='800544';
+UPDATE `quest_template` SET `QuestType`='62' WHERE `ID`='800545';
+UPDATE `quest_template` SET `QuestType`='62' WHERE `ID`='800546';
+UPDATE `quest_template` SET `QuestType`='62' WHERE `ID`='800547';
+UPDATE `quest_template` SET `QuestType`='62' WHERE `ID`='800551';
+UPDATE `quest_template` SET `QuestType`='62' WHERE `ID`='800552';
+
+
+/* WAndervolk 900801 */
+UPDATE `quest_template` SET `LogDescription`='Das Wandervolk ist ein interessantes Volk. Um das Volk kennenzulernen braucht ihr 2 Auktionspapiere und 50 Feine Gewuerze', `QuestDescription`='Hallo $N, das Wandervolk ist ein interessantes Volk, welches im Dunkel der Welten hausst. Erfuellt die Quest und ihr steht in ihrer Gunst.', `RequiredItemCount2`='50' WHERE `ID`='900801';
+
+/* MEHR HILFE FUER DAS VOLK 800500 */
+UPDATE `quest_template` SET `Flags`='32768' WHERE `ID`='800500';
+
+
+/* RENAME TYRANIUM */
+UPDATE `creature_template` SET `name`='Eonar' WHERE `entry`='800050';
+
+
+/* BOSSLOOT TOLREOS */
+UPDATE `creature_loot_template` SET `MinCount`='2', `MaxCount`='2' WHERE `Entry`='800058' and`Item`='47241';
+DELETE FROM `creature_loot_template` WHERE `Entry`='800058' and`Item`='47248';
+DELETE FROM `creature_loot_template` WHERE `Entry`='800058' and`Item`='47249';
+DELETE FROM `creature_loot_template` WHERE `Entry`='800058' and`Item`='47468';
+DELETE FROM `creature_loot_template` WHERE `Entry`='800058' and`Item`='47495';
+DELETE FROM `creature_loot_template` WHERE `Entry`='800058' and`Item`='47498';
+DELETE FROM `creature_loot_template` WHERE `Entry`='800058' and`Item`='47510';
+DELETE FROM `creature_loot_template` WHERE `Entry`='800058' and`Item`='47512';
+DELETE FROM `creature_loot_template` WHERE `Entry`='800058' and`Item`='47522';
+DELETE FROM `creature_loot_template` WHERE `Entry`='800058' and`Item`='47561';
+REPLACE INTO `creature_loot_template` (`Entry`, `Item`, `Reference`, `Chance`, `QuestRequired`, `LootMode`, `GroupId`, `MinCount`, `MaxCount`) VALUES ('800058', '45110', '0', '6.25', '0', '1', '1', '1', '1');
+REPLACE INTO `creature_loot_template` (`Entry`, `Item`, `Reference`, `Chance`, `QuestRequired`, `LootMode`, `GroupId`, `MinCount`, `MaxCount`) VALUES ('800058', '45142', '0', '6.25', '0', '1', '1', '1', '1');
+REPLACE INTO `creature_loot_template` (`Entry`, `Item`, `Reference`, `Chance`, `QuestRequired`, `LootMode`, `GroupId`, `MinCount`, `MaxCount`) VALUES ('800058', '45147', '0', '6.25', '0', '1', '1', '1', '1');
+REPLACE INTO `creature_loot_template` (`Entry`, `Item`, `Reference`, `Chance`, `QuestRequired`, `LootMode`, `GroupId`, `MinCount`, `MaxCount`) VALUES ('800058', '45170', '0', '6.25', '0', '1', '1', '1', '1');
+REPLACE INTO `creature_loot_template` (`Entry`, `Item`, `Reference`, `Chance`, `QuestRequired`, `LootMode`, `GroupId`, `MinCount`, `MaxCount`) VALUES ('800058', '45171', '0', '6.25', '0', '1', '1', '1', '1');
+REPLACE INTO `creature_loot_template` (`Entry`, `Item`, `Reference`, `Chance`, `QuestRequired`, `LootMode`, `GroupId`, `MinCount`, `MaxCount`) VALUES ('800058', '45165', '0', '6.25', '0', '1', '1', '1', '1');
+REPLACE INTO `creature_loot_template` (`Entry`, `Item`, `Reference`, `Chance`, `QuestRequired`, `LootMode`, `GroupId`, `MinCount`, `MaxCount`) VALUES ('800058', '45246', '0', '6.25', '0', '1', '1', '1', '1');
+REPLACE INTO `creature_loot_template` (`Entry`, `Item`, `Reference`, `Chance`, `QuestRequired`, `LootMode`, `GroupId`, `MinCount`, `MaxCount`) VALUES ('800058', '45256', '0', '6.25', '0', '1', '1', '1', '1');
+REPLACE INTO `creature_loot_template` (`Entry`, `Item`, `Reference`, `Chance`, `QuestRequired`, `LootMode`, `GroupId`, `MinCount`, `MaxCount`) VALUES ('800058', '45257', '0', '6.25', '0', '1', '1', '1', '1');
+REPLACE INTO `creature_loot_template` (`Entry`, `Item`, `Reference`, `Chance`, `QuestRequired`, `LootMode`, `GroupId`, `MinCount`, `MaxCount`) VALUES ('800058', '45233', '0', '6.25', '0', '1', '1', '1', '1');
+REPLACE INTO `creature_loot_template` (`Entry`, `Item`, `Reference`, `Chance`, `QuestRequired`, `LootMode`, `GroupId`, `MinCount`, `MaxCount`) VALUES ('800058', '45234', '0', '6.25', '0', '1', '1', '1', '1');
+REPLACE INTO `creature_loot_template` (`Entry`, `Item`, `Reference`, `Chance`, `QuestRequired`, `LootMode`, `GroupId`, `MinCount`, `MaxCount`) VALUES ('800058', '45261', '0', '6.25', '0', '1', '1', '1', '1');
+REPLACE INTO `creature_loot_template` (`Entry`, `Item`, `Reference`, `Chance`, `QuestRequired`, `LootMode`, `GroupId`, `MinCount`, `MaxCount`) VALUES ('800058', '45587', '0', '6.25', '0', '1', '1', '1', '1');
+REPLACE INTO `creature_loot_template` (`Entry`, `Item`, `Reference`, `Chance`, `QuestRequired`, `LootMode`, `GroupId`, `MinCount`, `MaxCount`) VALUES ('800058', '23713', '0', '5', '0', '1', '2', '1', '1');
+REPLACE INTO `creature_loot_template` (`Entry`, `Item`, `Reference`, `Chance`, `QuestRequired`, `LootMode`, `GroupId`, `MinCount`, `MaxCount`) VALUES ('800058', '49287', '0', '5', '0', '1', '2', '1', '1');
+UPDATE `creature_loot_template` SET `Chance`='5', `MinCount`='1', `MaxCount`='4' WHERE `Entry`='800058' and`Item`='38186';
+

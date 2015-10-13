@@ -80,7 +80,7 @@ public: seruc() : CreatureScript("seruc"){ }
 				pPlayer->ADD_GOSSIP_ITEM(7, "Boss: Moon [25-40]", GOSSIP_SENDER_MAIN, 10);
 				pPlayer->ADD_GOSSIP_ITEM(7, "Boss: Maltyriun [5-10]", GOSSIP_SENDER_MAIN, 11);
 				pPlayer->ADD_GOSSIP_ITEM(7, "Boss: LORDofDOOM [7-15]", GOSSIP_SENDER_MAIN, 12);
-				pPlayer->ADD_GOSSIP_ITEM(7, "Boss: Tyranium [5-10]", GOSSIP_SENDER_MAIN, 14);
+				pPlayer->ADD_GOSSIP_ITEM(7, "Boss: Eonar [5-10]", GOSSIP_SENDER_MAIN, 14);
 				pPlayer->ADD_GOSSIP_ITEM(7, "Boss: Tolreos [5-10]", GOSSIP_SENDER_MAIN, 16);
 				pPlayer->PlayerTalkClass->SendGossipMenu(907, pCreature->GetGUID());
 				return true;

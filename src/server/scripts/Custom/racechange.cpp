@@ -58,6 +58,7 @@ public:
 				pPlayer->DestroyItemCount(49426, 2, true, false);
 				pPlayer->SetAtLoginFlag(AT_LOGIN_CHANGE_RACE);
 				pPlayer->GetGUID();
+				sWorld->SendGMText(LANG_GM_BROADCAST, "Ein Rassenwechsel wurde vorgenommen.");
 				ChatHandler(pPlayer->GetSession()).PSendSysMessage("Bitte ausloggen um Aenderungen durchzufuehren.",
 					pPlayer->GetName());
 				pPlayer->ModifyMoney(-5000000);
@@ -77,6 +78,7 @@ public:
 				pPlayer->DestroyItemCount(49426, 2, true);
 				pPlayer->SetAtLoginFlag(AT_LOGIN_CHANGE_FACTION);
 				pPlayer->GetGUID();
+				sWorld->SendGMText(LANG_GM_BROADCAST, "Ein Franktionswechsel wurde vorgenommen.");
 				ChatHandler(pPlayer->GetSession()).PSendSysMessage("Bitte ausloggen um Aenderungen durchzufuehren.",
 					pPlayer->GetName());
 				pPlayer->ModifyMoney(-5000000);
@@ -97,6 +99,7 @@ public:
 				pPlayer->SetAtLoginFlag(AT_LOGIN_CHANGE_FACTION);
 				pPlayer->SetAtLoginFlag(AT_LOGIN_CHANGE_RACE);
 				pPlayer->GetGUID();
+				sWorld->SendGMText(LANG_GM_BROADCAST, "Ein Fraktions und Rassenwechsel wurde vorgenommen.");
 				ChatHandler(pPlayer->GetSession()).PSendSysMessage("Bitte ausloggen um Änderungen durchzuführen.",
 					pPlayer->GetName());
 				pPlayer->ModifyMoney(-5000000);

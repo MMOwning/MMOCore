@@ -23,6 +23,12 @@ SET @eventDescription := 'Jumpevent'; -- Description of the event. Might be anno
 REPLACE INTO `game_event` (`eventEntry`, `start_time`, `end_time`, `occurence`, `length`, `holiday`, `description`, `world_event`)
     VALUES (@eventId, '2015-08-10 20:00:00', '2030-10-08 20:00:00', '20160', '10080', '0', @eventDescription, '0');
 
+DELETE FROM `game_event_creature` WHERE `eventEntry` = 73;
+INSERT INTO `game_event_creature` (`eventEntry`, `guid`) VALUES 
+('73', '800089'),
+('73', '800090');
+	
+	
 REPLACE INTO `gameobject` (`guid`, `id`, `map`, `spawnMask`, `phaseMask`, `position_x`, `position_y`, `position_z`, `orientation`, `rotation0`, `rotation1`, `rotation2`, `rotation3`, `spawntimesecs`, `animprogress`, `state`) VALUES
 	((@startGameobjectGuid + 1), 186937, 1, 1, 1, 7380.8, -1539.75, 152.786, 2.19455, 0, 0, 0.889967, 0.456025, 300, 0, 1),
 	((@startGameobjectGuid + 2), 186937, 1, 1, 1, 7380.21, -1538.94, 152.991, 2.05106, 0, 0, 0.854989, 0.518645, 300, 0, 1),
@@ -5096,3 +5102,8 @@ REPLACE INTO `game_event_gameobject` (`eventEntry`, `guid`) VALUES
     (@eventId, (@startGameobjectGuid + 2533)),
     (@eventId, (@startGameobjectGuid + 2534)),
     (@eventId, (@startGameobjectGuid + 2535));
+	
+	
+DELETE FROM `game_event_creature` WHERE `eventEntry` = 73;
+INSERT INTO `game_event_creature` (`eventEntry`, `guid`) VALUES ('73', '800090');
+INSERT INTO `game_event_creature` (`eventEntry`, `guid`) VALUES ('73', '800089');

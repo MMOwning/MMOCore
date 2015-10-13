@@ -19,7 +19,6 @@
 -- Table structure for table `creature_loot_template`
 --
 
-DELETE FROM `creature_loot_template` WHERE `entry` BETWEEN 750000 AND 9999999;
 --
 -- Dumping data for table `creature_loot_template`
 --
