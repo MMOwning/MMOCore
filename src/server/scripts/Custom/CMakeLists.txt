@@ -13,7 +13,6 @@
 set(scripts_STAT_SRCS
   Custom/npc_vip.cpp 
   Custom/cs_fake.cpp  
-  Custom/cs_worldchannel.cpp  
   Custom/Congrats_on_Level.cpp
   Custom/firstnpc.cpp
   Custom/serucporter.cpp

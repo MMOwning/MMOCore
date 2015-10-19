@@ -190,7 +190,10 @@ public:
 					_events.ScheduleEvent(EVENT_BURN, 5000);
 					break;
 				case EVENT_BREATH:
-					DoCastVictim(SPELL_FLAME_BREATH);
+					if (Unit* target = SelectTarget(SELECT_TARGET_TOPAGGRO,0)){
+						DoCastVictim(SPELL_FLAME_BREATH);
+					}
+					
 					_events.ScheduleEvent(EVENT_BREATH, 35000);
 					break;
 

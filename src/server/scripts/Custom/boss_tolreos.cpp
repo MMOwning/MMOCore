@@ -135,7 +135,14 @@ public:
 				_events.ScheduleEvent(EVENT_HEX, 12000);
 			}
 		}
-
+		uint32 hit = 0;
+		void SpellHit(Unit* caster, SpellInfo const* spell){
+			++hit;
+			if (hit >= 100){
+				me->SelectNearestPlayer();
+				DoCastVictim(SPELL_DOMINATE_MIND);
+			}
+		}
 		
 		void JustDied(Unit* pPlayer)
 		{
@@ -195,6 +202,7 @@ public:
 					_events.ScheduleEvent(EVENT_ARCANE_DEVASTION, 12000);
 					break;
 				case EVENT_ARMY_OF_DEAD:
+					
 					DoCastToAllHostilePlayers(SPELL_ARMY_OF_DEAD);
 					_events.ScheduleEvent(EVENT_ARMY_OF_DEAD, 20000);
 					break;
