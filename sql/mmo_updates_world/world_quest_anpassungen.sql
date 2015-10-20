@@ -222,6 +222,7 @@ UPDATE `creature_loot_template` SET `Chance`='33.3', `MinCount`='5', `MaxCount`=
 
 /*PVP QUEST */
 UPDATE `quest_template` SET `QuestType`='62' WHERE `ID`='800505';
+UPDATE `quest_template` SET `QuestType`='62' WHERE `ID`='800507';
 UPDATE `quest_template` SET `QuestType`='62' WHERE `ID`='800508';
 UPDATE `quest_template` SET `QuestType`='62' WHERE `ID`='800506';
 UPDATE `quest_template` SET `QuestType`='62' WHERE `ID`='800504';

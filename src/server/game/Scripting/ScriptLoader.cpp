@@ -89,7 +89,7 @@ void AddSC_npc_teleport();
 // Fake Players
 void AddSC_fake_commandscript();
 // WorldChat
-void AddSC_cs_world_chat();
+//void AddSC_cs_world_chat();
 // Congrats on Level
 void AddSC_custom_CongratsOnLevel();
 //welcome_npc
@@ -840,7 +840,7 @@ void AddCommandScripts()
     // Fake Players
     AddSC_fake_commandscript();		
 	//WorldChat
-	AddSC_cs_world_chat();	
+	//AddSC_cs_world_chat();	
     // Congrats on Level
     AddSC_custom_CongratsOnLevel();	
 	//firstnpc

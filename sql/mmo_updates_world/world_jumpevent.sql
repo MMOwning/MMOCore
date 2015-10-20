@@ -21,7 +21,7 @@ SET @eventDescription := 'Jumpevent'; -- Description of the event. Might be anno
 
 -- DO NOT EDIT BELOW --
 REPLACE INTO `game_event` (`eventEntry`, `start_time`, `end_time`, `occurence`, `length`, `holiday`, `description`, `world_event`)
-    VALUES (@eventId, '2015-08-10 20:00:00', '2030-10-08 20:00:00', '20160', '10080', '0', @eventDescription, '0');
+    VALUES (@eventId, '2015-08-10 20:00:00', '2030-10-08 20:00:00', '20160', '7200', '0', @eventDescription, '0');
 
 DELETE FROM `game_event_creature` WHERE `eventEntry` = 73;
 INSERT INTO `game_event_creature` (`eventEntry`, `guid`) VALUES 
