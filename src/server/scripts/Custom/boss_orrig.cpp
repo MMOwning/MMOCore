@@ -67,6 +67,7 @@ public:
 		{
 			_events.Reset();
 			Summons.DespawnAll();
+			me->SetReactState(REACT_PASSIVE);
 		}
 
 		void EnterCombat(Unit* /*who*/) override
@@ -160,7 +161,9 @@ public:
 					DoCast(SPELL_ENRAGE);
 					break;
 				case EVENT_BLIZZARD:
-					DoCastVictim(SPELL_BLIZZARD);
+					if (Unit* target = SelectTarget(SELECT_TARGET_RANDOM, 0)){
+						DoCastVictim(SPELL_BLIZZARD);
+					}
 					_events.ScheduleEvent(EVENT_BLIZZARD, 15000);
 					break;
 				case EVENT_POISON_SHOCK:

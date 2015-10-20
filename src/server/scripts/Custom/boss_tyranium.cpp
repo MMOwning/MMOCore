@@ -110,18 +110,6 @@ public:
 			}
 		}
 
-		void JustSummoned(Creature* summon) override
-		{
-			Summons.Summon(summon);
-
-			switch (summon->GetEntry())
-			{
-			case NPC_SCHMORRSCHUPPEN:
-				if (Unit* target = SelectTarget(SELECT_TARGET_RANDOM, 0, 300.0f))
-					summon->AI()->AttackStart(target); // I think it means the Tank !
-				break;
-			}
-		}
 
 		void JustDied(Unit* )
 		{
@@ -142,7 +130,7 @@ public:
 				switch (eventId)
 				{
 				case EVENT_NECROTIC_AURA:
-					DoCast(me, SPELL_NECROTIC_AURA);
+					DoCast(me->GetVictim(), SPELL_NECROTIC_AURA);
 					break;
 				case EVENT_BRAIN_LINK_DAMAGE:
 					DoCastVictim(SPELL_BRAIN_LINK_DAMAGE);
@@ -159,7 +147,7 @@ public:
 					break;
 				case EVENT_NECROTIC_POISON:
 					Talk(SAY_BERSERK);
-					DoCast(me, SPELL_NECROTIC_POISON);
+					DoCast(me->GetVictim(), SPELL_NECROTIC_POISON);
 					_events.ScheduleEvent(EVENT_NECROTIC_POISON, 120000);
 					break;
 				case EVENT_MANGLING_SLASH:
@@ -172,7 +160,7 @@ public:
 					_events.ScheduleEvent(EVENT_PIERCING_SLASH, 15000);
 					break;
 				case EVENT_BLOOD_MIRROR_DAMAGE:
-					DoCast(SPELL_BLOOD_MIRROR_DAMAGE);
+					DoCast(me->GetVictim(), SPELL_BLOOD_MIRROR_DAMAGE);
 					_events.ScheduleEvent(EVENT_BLOOD_MIRROR_DAMAGE, 18000);
 					break;
 				case EVENT_ANNOYING_YIPPING:
@@ -188,7 +176,7 @@ public:
 					_events.ScheduleEvent(EVENT_BURN, 35000);
 					break;
 				case EVENT_TAIL_LASH:
-					DoCast(SPELL_TAIL_LASH);
+					DoCast(me->GetVictim(),SPELL_TAIL_LASH);
 					_events.ScheduleEvent(EVENT_BURN, 5000);
 					break;
 
