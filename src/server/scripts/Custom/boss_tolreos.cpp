@@ -139,19 +139,15 @@ public:
 		
 		void SpellHit(Unit* caster, SpellInfo const* spell) override
 		{
-			if (spell->Id == 61391){
+			if (spell->Id == 61391 || spell->Id == 53223 || spell->Id == 53225 || spell->Id == 53226 || spell->Id == 53227 || spell->Id == 61384 || spell->Id == 61387 || spell->Id == 61388 || spell->Id == 61391){
 				me->setFaction(35);
+				me->SetFlag(UNIT_FIELD_FLAGS,UNIT_FLAG_NOT_ATTACKABLE_1);
 				char msg[250];
 				snprintf(msg, 250, "|cffff0000[Boss System]|r Boss|cffff6060 Tolreos|r sagt: Taifune haben hier nichts zu suchen.");
 				sWorld->SendGlobalText(msg, NULL);
 			}
 
-			if (spell->Id == 642){
-				me->SetHealth(9000000);
-				char msg[250];
-				snprintf(msg, 250, "|cffff0000[Boss System]|r Boss|cffff6060 Tolreos|r sagt: Gottessschild macht mich stärker.");
-				sWorld->SendGlobalText(msg, NULL); 
-			}
+			
 			
 		}
 		
