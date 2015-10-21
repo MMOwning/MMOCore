@@ -118,7 +118,7 @@ VALUES ( /*  ID */ 800025,
   /*  mechanic_immune_mask` */617299839, 
   /*  flags_extra` */0, 
   /* Scriptname  */'exitare');
-UPDATE `creature_template` SET `HealthModifier`='1800', `ArmorModifier`='350', `DamageModifier`='120' WHERE `entry`='800025';
+UPDATE `creature_template` SET `HealthModifier`='1800', `ArmorModifier`='50', `DamageModifier`='120' WHERE `entry`='800025';
 
   
   

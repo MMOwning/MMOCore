@@ -67,7 +67,7 @@ public:
 		{
 			_events.Reset();
 			Summons.DespawnAll();
-			me->SetReactState(REACT_PASSIVE);
+			
 		}
 
 		void EnterCombat(Unit* /*who*/) override

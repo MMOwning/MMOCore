@@ -95,12 +95,13 @@ public:
 	struct tolreosAI : public ScriptedAI
 	{
 		tolreosAI(Creature* creature) : ScriptedAI(creature), Summons(me) { }
-
+		uint32 kills = 0;
 		void Reset() override
 		{
 			
 			_events.Reset();
 			Summons.DespawnAll();
+			me->setFaction(21);
 		}
 
 		void EnterCombat(Unit* ) override
@@ -135,13 +136,23 @@ public:
 				_events.ScheduleEvent(EVENT_HEX, 12000);
 			}
 		}
-		uint32 hit = 0;
-		void SpellHit(Unit* caster, SpellInfo const* spell){
-			++hit;
-			if (hit >= 100){
-				me->SelectNearestPlayer();
-				DoCastVictim(SPELL_DOMINATE_MIND);
+		
+		void SpellHit(Unit* caster, SpellInfo const* spell) override
+		{
+			if (spell->Id == 61391){
+				me->setFaction(35);
+				char msg[250];
+				snprintf(msg, 250, "|cffff0000[Boss System]|r Boss|cffff6060 Tolreos|r sagt: Taifune haben hier nichts zu suchen.");
+				sWorld->SendGlobalText(msg, NULL);
 			}
+
+			if (spell->Id == 642){
+				me->SetHealth(9000000);
+				char msg[250];
+				snprintf(msg, 250, "|cffff0000[Boss System]|r Boss|cffff6060 Tolreos|r sagt: Gottessschild macht mich stärker.");
+				sWorld->SendGlobalText(msg, NULL); 
+			}
+			
 		}
 		
 		void JustDied(Unit* pPlayer)
@@ -151,6 +162,19 @@ public:
 			sWorld->SendGlobalText(msg, NULL);
 		}
 
+
+		void KilledUnit(Unit* victim) override
+		{
+			
+
+			if (victim->GetTypeId() != TYPEID_PLAYER)
+				return;
+			char msg[250];
+
+			++kills;
+			snprintf(msg, 250, "|cffff0000[Boss System]|r |cffff6060 Tolreos|r hat einen Spieler getoetet! Was fuer eine Schmach. Insgesamt steht der Killcounter seit dem letzten Restart bei: %u", kills);
+			sWorld->SendGlobalText(msg, NULL);
+		}
 
 
 		void UpdateAI(uint32 diff) override

@@ -46,7 +46,7 @@ REPLACE INTO `gameobject_template` (`entry`, `type`, `displayId`, `name`, `IconN
 	(500114, 10, 8196, 'Klick mich an!', '', '', '', 0, 0, 0.6,  0, 0, 0, 0, 0, 0, -1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 'SmartGameObjectAI', '', 1);
     
 REPLACE INTO `game_event` (`eventEntry`, `start_time`, `end_time`, `occurence`, `length`, `holiday`, `description`, `world_event`) VALUES
-	(@eventId, '2015-10-15 20:00:00', '2030-10-08 20:00:00', 20160, 7200, 0, @eventDescription, 0);
+	(@eventId, '2015-10-12 20:00:00', '2030-10-08 20:00:00', 20160, 7200, 0, @eventDescription, 0);
     
 REPLACE INTO `smart_scripts` (`entryorguid`, `source_type`, `id`, `link`, `event_type`, `event_phase_mask`, `event_chance`, `event_flags`, `event_param1`, `event_param2`, `event_param3`, `event_param4`, `action_type`, `action_param1`, `action_param2`, `action_param3`, `action_param4`, `action_param5`, `action_param6`, `target_type`, `target_param1`, `target_param2`, `target_param3`, `target_x`, `target_y`, `target_z`, `target_o`, `comment`) VALUES
 	(500100, 1, 0, 0, 64, 0, 100, 0, 0, 0, 0, 0, 62, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 7393.46, -1516.87, 250.431, 2.21754, 'Portal Event 89-Start - On click - Teleport'),
