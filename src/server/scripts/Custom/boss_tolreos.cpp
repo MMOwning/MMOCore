@@ -190,7 +190,7 @@ public:
 				{
 				case EVENT_CURRUPTION:
 					if (Unit* target = SelectTarget(SELECT_TARGET_RANDOM, 1)){
-						DoCastVictim(SPELL_CORRUPTION);		
+						DoCast(target,SPELL_CORRUPTION);		
 					}
 					_events.ScheduleEvent(EVENT_CURRUPTION, 10000);
 					break;
@@ -209,12 +209,15 @@ public:
 				case EVENT_EARTH:
 					Talk(SAY_ENRAGE);
 					if (Unit* target = SelectTarget(SELECT_TARGET_TOPAGGRO, 0)){
-						DoCastAOE(SPELL_EARTH);
+						DoCast(target,SPELL_EARTH);
 					}
 					_events.ScheduleEvent(EVENT_EARTH, 10000);
 					break;
 				case EVENT_PSYCHOSIS:
-					DoCast(me, SPELL_PSYCHOSIS);
+					if (Unit* target = SelectTarget(SELECT_TARGET_TOPAGGRO, 0)){
+						DoCast(target, SPELL_PSYCHOSIS);
+					}
+					
 					_events.ScheduleEvent(EVENT_PSYCHOSIS, 18000);
 					break;
 				case EVENT_HEX:
