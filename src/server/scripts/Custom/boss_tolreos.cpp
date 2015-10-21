@@ -46,7 +46,8 @@ enum Spells
 	SPELL_HEX = 66054,
 	SPELL_PSYCHOSIS = 63795,
 	SPELL_ARCANE_DEVASTION = 34799,
-	SPELL_ARMY_OF_DEAD = 67761
+	SPELL_ARMY_OF_DEAD = 67761,
+	SPELL_ANTIMAGIC = 48707
 	
 };
 
@@ -96,12 +97,14 @@ public:
 	{
 		tolreosAI(Creature* creature) : ScriptedAI(creature), Summons(me) { }
 		uint32 kills = 0;
+		uint32 hits = 0;
 		void Reset() override
 		{
 			
 			_events.Reset();
 			Summons.DespawnAll();
 			me->setFaction(21);
+			uint32 hits = 0;
 		}
 
 		void EnterCombat(Unit* ) override
@@ -148,7 +151,10 @@ public:
 
 			if (spell->Id == 47964){
 				me->SelectNearestTarget();
-				me->KnockbackFrom(-3691.80, -1094.11,1,1);
+				hits++;
+				if (hits >= 100){
+					DoCastVictim(SPELL_ANTIMAGIC);
+				}
 			}
 			
 		}
