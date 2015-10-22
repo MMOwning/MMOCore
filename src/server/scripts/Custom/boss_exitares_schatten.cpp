@@ -101,10 +101,9 @@ public:
 			if (me->HealthBelowPctDamaged(35, damage) && _events.IsInPhase(PHASE_TWO))
 			{
 				_events.SetPhase(PHASE_THREE);
-				_events.ScheduleEvent(EVENT_ARCANE_BOMB, 25000);
 				_events.ScheduleEvent(EVENT_POISON_NOVA, 60000);
 				_events.ScheduleEvent(EVENT_TOXIC_WASTE, 45000);
-				_events.ScheduleEvent(EVENT_ENRAGE, 120000);
+				_events.ScheduleEvent(EVENT_ENRAGE, 440000);
 				_events.ScheduleEvent(EVENT_SPALTEN, 30000);
 			}
 		}
@@ -117,7 +116,7 @@ public:
 			{
 			case NPC_PUSTELIGER_SCHRECKEN:
 				if (Unit* target = SelectTarget(SELECT_TARGET_RANDOM, 0, 300.0f))
-					summon->AI()->AttackStart(target); // I think it means the Tank !
+					summon->AI()->AttackStart(target); 
 				break;
 			}
 		}

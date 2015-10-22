@@ -89,6 +89,7 @@ public:
 			_events.ScheduleEvent(EVENT_MANGLING_SLASH, 8000);
 			_events.ScheduleEvent(EVENT_SARGERAS, 10000);
 			_events.ScheduleEvent(EVENT_TAIL_LASH, 5000);
+			_events.ScheduleEvent(EVENT_SUMMONS, 30000);
 
 		}
 
