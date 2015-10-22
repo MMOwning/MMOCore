@@ -217,7 +217,7 @@ public:
 
 				case EVENT_SUMMONS:
 					Talk(SAY_HELP);
-					me->SummonCreature(NPC_TOLREOSADD, me->GetPositionX() + 5, me->GetPositionY(), me->GetPositionZ() + 5, 0, TEMPSUMMON_TIMED_OR_CORPSE_DESPAWN, 60000);
+					me->SummonCreature(NPC_TOLREOSADD, me->GetPositionX() + 5, me->GetPositionY() + 5, me->GetPositionZ(), 0, TEMPSUMMON_TIMED_OR_CORPSE_DESPAWN, 60000);
 					_events.ScheduleEvent(EVENT_SUMMONS, 30000);
 					break;
 				case EVENT_ARCANE_BARRAGE:
@@ -291,7 +291,7 @@ public:
 
 		void Reset() override
 		{
-
+			me->SetReact(REACT_PASSIVE);
 			_events.Reset();
 		}
 
@@ -324,9 +324,7 @@ public:
 					break;
 
 				case EVENT_ANTIMAGIC:
-					if (Unit* target = SelectTarget(SELECT_TARGET_RANDOM, 0)){
-						DoCast(target, SPELL_ANTIMAGIC);
-					}
+					DoCast(me, SPELL_ANTIMAGIC);
 					_events.ScheduleEvent(EVENT_ANTIMAGIC, 3000);
 					break;
 				case EVENT_SCHATTENFALLE:
