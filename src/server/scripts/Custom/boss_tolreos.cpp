@@ -290,7 +290,7 @@ public: tolreosadd() : CreatureScript("tolreosadd") { }
 
 		void Reset() override
 		{
-			me->SetReactState(REACT_PASSIVE);
+			me->SetReactState(REACT_AGGRESSIVE);
 			_events.Reset();
 		}
 
@@ -317,7 +317,7 @@ public: tolreosadd() : CreatureScript("tolreosadd") { }
 				{
 				case EVENT_MANABURN:
 					if (Unit* target = SelectTarget(SELECT_TARGET_RANDOM, 4)){
-						DoCast(target, SPELL_MANABURN);
+						DoCastToAllHostilePlayers(SPELL_MANABURN);
 					}
 					_events.ScheduleEvent(EVENT_MANABURN, 5000);
 					break;

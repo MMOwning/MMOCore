@@ -32,7 +32,8 @@ enum Events
 	EVENT_ANNOYING_YIPPING = 9,
 	EVENT_SARGERAS = 10,
 	EVENT_BURN = 11,
-	EVENT_TAIL_LASH = 12
+	EVENT_TAIL_LASH = 12,
+	EVENT_SUMMONS = 13
 
 };
 
@@ -45,7 +46,7 @@ enum Phases
 
 enum Summons
 {
-	NPC_SCHMORRSCHUPPEN = 40421
+	NPC_ADD = 800094
 };
 
 enum Texts
@@ -57,6 +58,9 @@ enum Texts
 	SAY_ENRAGE = 4,
 	SAY_DEAD = 5
 };
+
+uint32 killedadds = 0;
+uint32 addsspawn = 0;
 
 class tyranium : public CreatureScript
 {
@@ -71,6 +75,9 @@ public:
 		{
 			_events.Reset();
 			Summons.DespawnAll();
+			killedadds = 0;
+			addsspawn = 0;
+			
 		}
 
 		void EnterCombat(Unit* /*who*/) override
@@ -113,9 +120,14 @@ public:
 
 		void JustDied(Unit* )
 		{
+			if (addsspawn == 10 && killedadds < 10){
+				me->SetFullHealth();
+			}
+
 			char msg[250];
 			snprintf(msg, 250, "|cffff0000[Boss System]|r Boss|cffff6060 Tyranium|r wurde getoetet! Respawn in 4h 30min.");
 			sWorld->SendGlobalText(msg, NULL);
+			
 		}
 
 		void UpdateAI(uint32 diff) override
@@ -129,6 +141,16 @@ public:
 			{
 				switch (eventId)
 				{
+
+				case EVENT_SUMMONS:
+					Talk(SAY_HELP);
+					me->SummonCreature(NPC_ADD, me->GetPositionX() + 5, me->GetPositionY() + 5, me->GetPositionZ(), 0, TEMPSUMMON_TIMED_OR_CORPSE_DESPAWN, 60000);
+					addsspawn++;
+					if (addsspawn == 10){
+						addsspawn = 0;
+					}
+					_events.ScheduleEvent(EVENT_SUMMONS, 30000);
+					break;
 				case EVENT_NECROTIC_AURA:
 					DoCast(me->GetVictim(), SPELL_NECROTIC_AURA);
 					break;
@@ -203,7 +225,73 @@ public:
 
 };
 
+
+class tyraniumadd : public CreatureScript
+{
+public: tyraniumadd() : CreatureScript("tyraniumadd") { }
+
+		struct tyraniumaddAI : public ScriptedAI
+		{
+			tyraniumaddAI(Creature* creature) : ScriptedAI(creature), Summons(me) { }
+
+			void Reset() override
+			{
+				me->SetReactState(REACT_AGGRESSIVE);
+				_events.Reset();
+			}
+
+			void EnterCombat(Unit*) override
+			{
+				Talk(SAY_AGGRO);
+				_events.SetPhase(PHASE_ONE);
+			
+			}
+
+
+			void JustDied(Unit* pPlayer)
+			{
+				killedadds++;
+				char msg[250];
+				snprintf(msg, 250, "|cffff0000[Boss System]|r Boss|cffff6060 Tolreos|r wurde getoetet! Respawn in 5h.");
+				sWorld->SendGlobalText(msg, NULL);
+			}
+
+			void UpdateAI(uint32 diff) override
+			{
+				if (!UpdateVictim())
+					return;
+
+				_events.Update(diff);
+
+				while (uint32 eventId = _events.ExecuteEvent())
+				{
+					switch (eventId)
+					{
+
+
+					default:
+						break;
+					}
+				}
+
+				DoMeleeAttackIfReady();
+			}
+
+		private:
+			EventMap _events;
+			SummonList Summons;
+		};
+
+		CreatureAI* GetAI(Creature* creature) const override
+		{
+			return new tyraniumaddAI(creature);
+		}
+
+};
+
+
 void AddSC_tyranium()
 {
 	new tyranium();
+	new tyraniumadd();
 }

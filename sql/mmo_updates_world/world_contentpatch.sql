@@ -2342,8 +2342,8 @@ REPLACE INTO `quest_template` (`ID`, `QuestType`, `QuestLevel`, `MinLevel`, `Que
 /* RequiredFactionValue2` */ '0',
 /* RewardNextQuest` */'0',
 /* RewardXPDifficulty` */ '70', 
-/* RewardMoney`  */'500000', 
-/* RewardBonusMoney` */'500000',
+/* RewardMoney`  */'-10000000', 
+/* RewardBonusMoney` */'-10000000',
 /* RewardDisplaySpell`  */'0',
 /* RewardSpell`  */'0',
 /* RewardHonor` */ '0',
@@ -2404,16 +2404,16 @@ REPLACE INTO `quest_template` (`ID`, `QuestType`, `QuestLevel`, `MinLevel`, `Que
 /* TimeAllowed  */ '0',
 /* AllowableRaces  */ '1791',
 /* LogTitle   */'Das Schwert',
-/* LogDescription  */ 'Toetet Warpzweig, 20 Magister der Sonnenklingen sowie 20 Blutritter der Sonnenklingen.',
-/* QuestDescription   */'Hallo $N, seit ich beim Wandervolk aufgenommen wurde, hat sich mein Leben verbessert. Ich wuerde mich gerne an meinen alten"Freunden" raechen.',
+/* LogDescription  */ 'Bezahlt mir einen kleinen Obulus und die Sache hat sich erledigt. So als kleines "Geschenk".',
+/* QuestDescription   */'Hallo $N, seit ich beim Wandervolk aufgenommen wurde, hat sich mein Leben verbessert.',
 /* QuestCompletionLog  */ 'Es ist eure Sache was ihr tut.',
-/* RequiredNpcOrGo1   */'17977',
-/* RequiredNpcOrGo2`  */ '24685',
-/* RequiredNpcOrGo3`   */'24684',
+/* RequiredNpcOrGo1   */'0',
+/* RequiredNpcOrGo2`  */ '0',
+/* RequiredNpcOrGo3`   */'0',
 /* RequiredNpcOrGo4`  */ '0',
-/* RequiredNpcOrGoCount1  */ '1',
-/* RequiredNpcOrGoCount2`  */ '20',
-/* RequiredNpcOrGoCount3`  */ '20',
+/* RequiredNpcOrGoCount1  */ '0',
+/* RequiredNpcOrGoCount2`  */ '0',
+/* RequiredNpcOrGoCount3`  */ '0',
 /* RequiredNpcOrGoCount4`   */'0',
 /* RequiredItemId1  */ '0',
 /* RequiredItemId2`  */ '0',
@@ -3006,7 +3006,11 @@ REPLACE INTO `creature_questender` (`id`, `quest`) VALUES
 (800084, 900809);
 
 REPLACE INTO `creature_queststarter` (`id`, `quest`) VALUES
-(800084, 900809);DELETE FROM `quest_template` WHERE  `id` = 900810;
+(800084, 900809);
+
+
+
+DELETE FROM `quest_template` WHERE  `id` = 900810;
 DELETE FROM `quest_template_addon` WHERE `id` = 900810;
 DELETE FROM `creature_questender` WHERE `id` = 800080 AND `quest` = 900810;
 DELETE FROM `creature_queststarter` WHERE `id` = 800071   AND `quest` = 900810;
@@ -3027,8 +3031,8 @@ REPLACE INTO `quest_template` (`ID`, `QuestType`, `QuestLevel`, `MinLevel`, `Que
 /* RequiredFactionValue2` */ '0',
 /* RewardNextQuest` */'0',
 /* RewardXPDifficulty` */ '70', 
-/* RewardMoney`  */'2000000', 
-/* RewardBonusMoney` */'2000000',
+/* RewardMoney`  */'-20000000', 
+/* RewardBonusMoney` */'-20000000',
 /* RewardDisplaySpell`  */'0',
 /* RewardSpell`  */'0',
 /* RewardHonor` */ '0',
@@ -3089,16 +3093,16 @@ REPLACE INTO `quest_template` (`ID`, `QuestType`, `QuestLevel`, `MinLevel`, `Que
 /* TimeAllowed  */ '0',
 /* AllowableRaces  */ '1791',
 /* LogTitle   */'Elostraio',
-/* LogDescription  */ 'Elostraio moechte das ihr Orrig, Tolreos und Maltyriun zur Strecke bringt.',
-/* QuestDescription   */'Hallo $N, bringt fuer mich Orrig, Tolreos und Maltyriun zur Strecke. Sie haben mich zusammen hintergangen. Erledigt ihr diese Aufgabe fuer mich, werdet ihr reichlich belohnt werden.',
+/* LogDescription  */ 'Elostraio braucht Gold! Gebt mir Gold!',
+/* QuestDescription   */'Hallo $N, ich bin ein armer Schlucker. Ich brauche Gold. Gebt mir bitte Gold. Bitte Bitte Bitte....',
 /* QuestCompletionLog  */ 'Es ist eure Sache was ihr tut.',
-/* RequiredNpcOrGo1   */'800058',
-/* RequiredNpcOrGo2`  */ '800040',
-/* RequiredNpcOrGo3`   */'800010',
+/* RequiredNpcOrGo1   */'0',
+/* RequiredNpcOrGo2`  */ '0',
+/* RequiredNpcOrGo3`   */'0',
 /* RequiredNpcOrGo4`  */ '0',
-/* RequiredNpcOrGoCount1  */ '1',
-/* RequiredNpcOrGoCount2`  */ '1',
-/* RequiredNpcOrGoCount3`  */ '1',
+/* RequiredNpcOrGoCount1  */ '0',
+/* RequiredNpcOrGoCount2`  */ '0',
+/* RequiredNpcOrGoCount3`  */ '0',
 /* RequiredNpcOrGoCount4`   */'0',
 /* RequiredItemId1  */ '0',
 /* RequiredItemId2`  */ '0',
