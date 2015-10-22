@@ -11,7 +11,6 @@ enum Spells
 	SPELL_RAIN_OF_FIRE = 59971,
 	SPELL_FLAME_BURST = 41131,
 	SPELL_ARCANE_BOMB = 56431,
-	SPELL_LIGHT_VORTEX = 66046,
 	SPELL_MOONFIRE = 48463,
 	SPELL_SPALTEN = 56909,
 	SPELL_SARGERAS = 28342,
@@ -27,7 +26,6 @@ enum Events
 	EVENT_RAIN_OF_FIRE = 4,
 	EVENT_FLAME_BURST = 5,
 	EVENT_ARCANE_BOMB = 6,
-	EVENT_LIGHT_VORTEX = 7,
 	EVENT_MOONFIRE = 8,
 	EVENT_SUMMONS = 9,
 	EVENT_SPALTEN= 10,
@@ -90,7 +88,6 @@ public:
 			if (me->HealthBelowPctDamaged(75, damage) && _events.IsInPhase(PHASE_ONE))
 			{
 				_events.SetPhase(PHASE_TWO);
-				_events.ScheduleEvent(EVENT_LIGHT_VORTEX, 60000);
 				_events.ScheduleEvent(EVENT_RAIN_OF_FIRE, 8000);
 				_events.ScheduleEvent(EVENT_FLAME_BURST, 12000);
 				_events.ScheduleEvent(EVENT_BREATH, 35000);
@@ -144,6 +141,7 @@ public:
 				{
 				case EVENT_POISON_NOVA:
 					DoCastAOE(SPELL_POISON_NOVA);
+					_events.ScheduleEvent(EVENT_TOXIC_WASTE, 30000);
 					break;
 				case EVENT_TOXIC_WASTE:
 					DoCastToAllHostilePlayers(SPELL_TOXIC_WASTE);
@@ -173,12 +171,7 @@ public:
 				case EVENT_ARCANE_BOMB:
 					Talk(SAY_ENRAGE);
 					DoCastToAllHostilePlayers(SPELL_ARCANE_BOMB);
-					_events.ScheduleEvent(EVENT_ARCANE_BOMB, 10000);
-					break;
-				case EVENT_LIGHT_VORTEX:
-					me->FinishSpell(CURRENT_CHANNELED_SPELL, true);
-					DoCastAOE(SPELL_LIGHT_VORTEX, false);
-					_events.ScheduleEvent(EVENT_LIGHT_VORTEX, 45000);
+					_events.ScheduleEvent(EVENT_ARCANE_BOMB, 15000);
 					break;
 				case EVENT_SPALTEN:
 					DoCastToAllHostilePlayers(SPELL_SPALTEN);
@@ -190,7 +183,7 @@ public:
 					break;
 				case EVENT_BREATH:
 					if (Unit* target = SelectTarget(SELECT_TARGET_TOPAGGRO,0)){
-						DoCastVictim(SPELL_FLAME_BREATH);
+						DoCast(target,SPELL_FLAME_BREATH);
 					}
 					
 					_events.ScheduleEvent(EVENT_BREATH, 35000);

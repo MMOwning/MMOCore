@@ -16,7 +16,8 @@ enum Spells
 	SPELL_ANNOYING_YIPPING = 31015,
 	SPELL_SARGERAS = 28342,
 	SPELL_BURN = 46218,
-	SPELL_TAIL_LASH = 56910
+	SPELL_TAIL_LASH = 56910,
+	SPELL_EISBLOCK = 27619
 };
 
 enum Events
@@ -33,7 +34,8 @@ enum Events
 	EVENT_SARGERAS = 10,
 	EVENT_BURN = 11,
 	EVENT_TAIL_LASH = 12,
-	EVENT_SUMMONS = 13
+	EVENT_SUMMONS = 13,
+	EVENT_EISBLOCK = 14 
 
 };
 
@@ -46,7 +48,8 @@ enum Phases
 
 enum Summons
 {
-	NPC_ADD = 800094
+	NPC_ADD = 800094,
+	NPC_
 };
 
 enum Texts
@@ -59,8 +62,7 @@ enum Texts
 	SAY_DEAD = 5
 };
 
-uint32 killedadds = 0;
-uint32 addsspawn = 0;
+uint32 kills = 0;
 
 class tyranium : public CreatureScript
 {
@@ -73,10 +75,10 @@ public:
 
 		void Reset() override
 		{
+			kills = 0;
 			_events.Reset();
 			Summons.DespawnAll();
-			killedadds = 0;
-			addsspawn = 0;
+			
 			
 		}
 
@@ -95,7 +97,7 @@ public:
 
 		void DamageTaken(Unit* /*attacker*/, uint32& damage) override
 		{
-			if (me->HealthBelowPctDamaged(75, damage) && _events.IsInPhase(PHASE_ONE))
+			if (me->HealthBelowPctDamaged(65, damage) && _events.IsInPhase(PHASE_ONE))
 			{
 				_events.SetPhase(PHASE_TWO);
 				_events.ScheduleEvent(EVENT_MANA_DESTRUCTION, 10000);
@@ -106,7 +108,7 @@ public:
 
 			}
 
-			if (me->HealthBelowPctDamaged(35, damage) && _events.IsInPhase(PHASE_TWO))
+			if (me->HealthBelowPctDamaged(25, damage) && _events.IsInPhase(PHASE_TWO))
 			{
 				_events.SetPhase(PHASE_THREE);
 				_events.ScheduleEvent(EVENT_CRYSTAL_CHAINS, 5000);
@@ -121,15 +123,37 @@ public:
 
 		void JustDied(Unit* )
 		{
-			if (addsspawn == 10 && killedadds < 10){
-				me->SetFullHealth();
-			}
-
+	
 			char msg[250];
 			snprintf(msg, 250, "|cffff0000[Boss System]|r Boss|cffff6060 Tyranium|r wurde getoetet! Respawn in 4h 30min.");
 			sWorld->SendGlobalText(msg, NULL);
 			
 		}
+
+
+		void SpellHit(Unit* caster, SpellInfo const* spell) override
+		{
+			
+			if (spell->Id == 35395){
+				me->SelectNearestTarget();
+				me->SetDisplayId(27971);
+				me->SetInCombatWith(caster);
+			}
+
+		}
+
+		void KilledUnit(Unit* victim) override
+		{
+
+			if (victim->GetTypeId() != TYPEID_PLAYER)
+				return;
+			char msg[250];
+
+			++kills;
+			snprintf(msg, 250, "|cffff0000[Boss System]|r |cffff6060 Eonar|r hat einen Spieler getoetet! Was fuer eine Schmach. Insgesamt steht der Killcounter seit dem letzten Restart bei: %u", kills);
+			sWorld->SendGlobalText(msg, NULL);
+		}
+
 
 		void UpdateAI(uint32 diff) override
 		{
@@ -146,10 +170,6 @@ public:
 				case EVENT_SUMMONS:
 					Talk(SAY_HELP);
 					me->SummonCreature(NPC_ADD, me->GetPositionX() + 5, me->GetPositionY() + 5, me->GetPositionZ(), 0, TEMPSUMMON_TIMED_OR_CORPSE_DESPAWN, 60000);
-					addsspawn++;
-					if (addsspawn == 10){
-						addsspawn = 0;
-					}
 					_events.ScheduleEvent(EVENT_SUMMONS, 30000);
 					break;
 				case EVENT_NECROTIC_AURA:
@@ -245,17 +265,10 @@ public: tyraniumadd() : CreatureScript("tyraniumadd") { }
 			{
 				Talk(SAY_AGGRO);
 				_events.SetPhase(PHASE_ONE);
+				_events.ScheduleEvent(EVENT_EISBLOCK, 30000);
 			
 			}
 
-
-			void JustDied(Unit* pPlayer)
-			{
-				killedadds++;
-				char msg[250];
-				snprintf(msg, 250, "|cffff0000[Boss System]|r Boss|cffff6060 Tolreos|r wurde getoetet! Respawn in 5h.");
-				sWorld->SendGlobalText(msg, NULL);
-			}
 
 			void UpdateAI(uint32 diff) override
 			{
@@ -268,7 +281,10 @@ public: tyraniumadd() : CreatureScript("tyraniumadd") { }
 				{
 					switch (eventId)
 					{
-
+					case EVENT_EISBLOCK:
+						DoCastToAllHostilePlayers(SPELL_EISBLOCK);
+						_events.ScheduleEvent(EVENT_EISBLOCK, 30000);
+						break;
 
 					default:
 						break;

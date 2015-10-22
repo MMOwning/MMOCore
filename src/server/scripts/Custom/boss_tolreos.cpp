@@ -160,10 +160,7 @@ public:
 
 			if (spell->Id == 47964){
 				me->SelectNearestTarget();
-				hits++;
-				if (hits >= 1){
-					DoCastVictim(SPELL_ANTIMAGIC);
-				}
+				DoCast(me, SPELL_ANTIMAGIC);
 			}
 			
 		}
@@ -217,7 +214,7 @@ public:
 
 				case EVENT_SUMMONS:
 					Talk(SAY_HELP);
-					me->SummonCreature(NPC_TOLREOSADD, me->GetPositionX() + 5, me->GetPositionY() + 5, me->GetPositionZ(), 0, TEMPSUMMON_TIMED_OR_CORPSE_DESPAWN, 60000);
+					me->SummonCreature(NPC_TOLREOSADD, me->GetPositionX() + 5, me->GetPositionY() + 5, me->GetPositionZ(), 0, TEMPSUMMON_TIMED_OR_CORPSE_DESPAWN, 120000);
 					_events.ScheduleEvent(EVENT_SUMMONS, 30000);
 					break;
 				case EVENT_ARCANE_BARRAGE:
@@ -302,6 +299,9 @@ public: tolreosadd() : CreatureScript("tolreosadd") { }
 			_events.ScheduleEvent(EVENT_ANTIMAGIC, 25000);
 			_events.ScheduleEvent(EVENT_SCHATTENFALLE, 27000);
 		}
+
+
+
 
 
 		void UpdateAI(uint32 diff) override
