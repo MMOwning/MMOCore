@@ -152,7 +152,7 @@ public:
 		{
 			if (spell->Id == 61391 || spell->Id == 53223 || spell->Id == 53225 || spell->Id == 53226 || spell->Id == 53227 || spell->Id == 61384 || spell->Id == 61387 || spell->Id == 61388 || spell->Id == 61391){
 				me->setFaction(35);
-				Reset();
+				me->SetFullHealth();
 				char msg[250];
 				snprintf(msg, 250, "|cffff0000[Boss System]|r Boss|cffff6060 Tolreos|r sagt: Taifune haben hier nichts zu suchen.");
 				sWorld->SendGlobalText(msg, NULL);
@@ -282,8 +282,7 @@ public:
 
 class tolreosadd : public CreatureScript
 {
-public:
-	tolreosadd() : CreatureScript("tolreosadd") { }
+public: tolreosadd() : CreatureScript("tolreosadd") { }
 
 	struct tolreosaddAI : public ScriptedAI
 	{
@@ -291,7 +290,7 @@ public:
 
 		void Reset() override
 		{
-			me->SetReact(REACT_PASSIVE);
+			me->SetReactState(REACT_PASSIVE);
 			_events.Reset();
 		}
 
