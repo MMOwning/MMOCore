@@ -213,7 +213,7 @@ public:
 
 				case EVENT_SUMMONS:
 					Talk(SAY_HELP);
-					me->SummonCreature(NPC_TOLREOSADD, me->GetPositionX() + 5, me->GetPositionY(), me->GetPositionZ() + 5, 0, TEMPSUMMON_CORPSE_DESPAWN, 60000);
+					me->SummonCreature(NPC_TOLREOSADD, me->GetPositionX() + 5, me->GetPositionY(), me->GetPositionZ() + 5, 0, TEMPSUMMON_TIMED_OR_CORPSE_DESPAWN, 60000);
 					_events.ScheduleEvent(EVENT_SUMMONS, 30000);
 					break;
 				case EVENT_ARCANE_BARRAGE:
@@ -284,8 +284,7 @@ public:
 	struct tolreosaddAI : public ScriptedAI
 	{
 		tolreosaddAI(Creature* creature) : ScriptedAI(creature), Summons(me) { }
-		uint32 kills = 0;
-		uint32 hits = 0;
+
 		void Reset() override
 		{
 
@@ -297,6 +296,7 @@ public:
 			Talk(SAY_AGGRO);
 			_events.SetPhase(PHASE_ONE);
 			_events.ScheduleEvent(EVENT_KILL, 15000);
+			_events.ScheduleEvent(EVENT_EARTH, 1000);
 			
 
 		}
@@ -319,7 +319,13 @@ public:
 					}
 					_events.ScheduleEvent(EVENT_KILL, 15000);
 					break;
-				
+				case EVENT_EARTH:
+					if (Unit* target = SelectTarget(SELECT_TARGET_RANDOM, 0)){
+						DoCast(target, SPELL_EARTH);
+					}
+					_events.ScheduleEvent(EVENT_EARTH,1000);
+					break;
+
 
 				default:
 					break;
@@ -347,4 +353,5 @@ public:
 void AddSC_tolreos()
 {
 	new tolreos();
+	new tolreosadd();
 }
