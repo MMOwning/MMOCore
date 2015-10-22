@@ -297,3 +297,8 @@ REPLACE INTO `creature_loot_template` (`Entry`, `Item`, `Reference`, `Chance`, `
 REPLACE INTO `creature_loot_template` (`Entry`, `Item`, `Reference`, `Chance`, `QuestRequired`, `LootMode`, `GroupId`, `MinCount`, `MaxCount`) VALUES ('800058', '49287', '0', '5', '0', '1', '2', '1', '1');
 UPDATE `creature_loot_template` SET `Chance`='5', `MinCount`='1', `MaxCount`='4' WHERE `Entry`='800058' and`Item`='38186';
 
+
+
+/* Kuerbissoldaten lootid und loot */
+UPDATE `creature_template` SET `lootid`='27936' WHERE `entry`='27936';
+REPLACE INTO `creature_loot_template` (`Entry`, `Item`, `Reference`, `Chance`, `QuestRequired`, `LootMode`, `GroupId`, `MinCount`, `MaxCount`, `Comment`) VALUES ('27936', '700520', '0', '25', '0', '1', '0', '1', '13', 'Halloweenabzeichen');

@@ -62,7 +62,9 @@ enum Events
 	EVENT_HEX = 7,
 	EVENT_PSYCHOSIS = 8,
 	EVENT_ARCANE_DEVASTION = 9,
-	EVENT_ARMY_OF_DEAD = 10
+	EVENT_ARMY_OF_DEAD = 10,
+	EVENT_SUMMONS = 11,
+	EVENT_KILL = 12
 
 };
 
@@ -75,7 +77,7 @@ enum Phases
 
 enum Summons
 {
-	NPC_PUSTELIGER_SCHRECKEN = 31139
+	NPC_TOLREOSADD = 800093
 };
 
 enum Texts
@@ -114,7 +116,7 @@ public:
 			_events.ScheduleEvent(EVENT_CURRUPTION, 8000);
 			_events.ScheduleEvent(EVENT_CRIPPLE, 10000);
 			_events.ScheduleEvent(EVENT_ARCANE_BARRAGE, 8000);
-			
+			_events.ScheduleEvent(EVENT_SUMMONS, 30000);
 
 		}
 
@@ -127,6 +129,7 @@ public:
 				_events.ScheduleEvent(EVENT_HEX, 8000);
 				_events.ScheduleEvent(EVENT_ARCANE_DEVASTION, 12000);
 				_events.ScheduleEvent(EVENT_PSYCHOSIS, 10000);
+				_events.ScheduleEvent(EVENT_SUMMONS, 30000);
 
 			}
 
@@ -137,6 +140,7 @@ public:
 				_events.ScheduleEvent(EVENT_CURRUPTION, 6000);
 				_events.ScheduleEvent(EVENT_ENRAGE, 25000);
 				_events.ScheduleEvent(EVENT_HEX, 12000);
+				_events.ScheduleEvent(EVENT_SUMMONS, 30000);
 			}
 		}
 		
@@ -144,6 +148,7 @@ public:
 		{
 			if (spell->Id == 61391 || spell->Id == 53223 || spell->Id == 53225 || spell->Id == 53226 || spell->Id == 53227 || spell->Id == 61384 || spell->Id == 61387 || spell->Id == 61388 || spell->Id == 61391){
 				me->setFaction(35);
+				Reset();
 				char msg[250];
 				snprintf(msg, 250, "|cffff0000[Boss System]|r Boss|cffff6060 Tolreos|r sagt: Taifune haben hier nichts zu suchen.");
 				sWorld->SendGlobalText(msg, NULL);
@@ -152,7 +157,7 @@ public:
 			if (spell->Id == 47964){
 				me->SelectNearestTarget();
 				hits++;
-				if (hits >= 100){
+				if (hits >= 1){
 					DoCastVictim(SPELL_ANTIMAGIC);
 				}
 			}
@@ -170,7 +175,6 @@ public:
 		void KilledUnit(Unit* victim) override
 		{
 			
-
 			if (victim->GetTypeId() != TYPEID_PLAYER)
 				return;
 			char msg[250];
@@ -206,6 +210,12 @@ public:
 					DoCastToAllHostilePlayers(SPELL_CRIPPLE);
 					_events.ScheduleEvent(EVENT_CRIPPLE, 25000);
 					break;
+
+				case EVENT_SUMMONS:
+					Talk(SAY_HELP);
+					me->SummonCreature(NPC_TOLREOSADD, me->GetPositionX() + 5, me->GetPositionY(), me->GetPositionZ() + 5, 0, TEMPSUMMON_CORPSE_DESPAWN, 60000);
+					_events.ScheduleEvent(EVENT_SUMMONS, 30000);
+					break;
 				case EVENT_ARCANE_BARRAGE:
 					DoCastToAllHostilePlayers(SPELL_ARCANE_BARRAGE);
 					_events.ScheduleEvent(EVENT_ARCANE_BARRAGE, 5000);
@@ -233,7 +243,6 @@ public:
 					_events.ScheduleEvent(EVENT_ARCANE_DEVASTION, 12000);
 					break;
 				case EVENT_ARMY_OF_DEAD:
-					
 					DoCastToAllHostilePlayers(SPELL_ARMY_OF_DEAD);
 					_events.ScheduleEvent(EVENT_ARMY_OF_DEAD, 20000);
 					break;
@@ -264,6 +273,76 @@ public:
 
 
 };
+
+
+
+class tolreosadd : public CreatureScript
+{
+public:
+	tolreosadd() : CreatureScript("tolreosadd") { }
+
+	struct tolreosaddAI : public ScriptedAI
+	{
+		tolreosaddAI(Creature* creature) : ScriptedAI(creature), Summons(me) { }
+		uint32 kills = 0;
+		uint32 hits = 0;
+		void Reset() override
+		{
+
+			_events.Reset();
+		}
+
+		void EnterCombat(Unit*) override
+		{
+			Talk(SAY_AGGRO);
+			_events.SetPhase(PHASE_ONE);
+			_events.ScheduleEvent(EVENT_KILL, 15000);
+			
+
+		}
+
+
+		void UpdateAI(uint32 diff) override
+		{
+			if (!UpdateVictim())
+				return;
+
+			_events.Update(diff);
+
+			while (uint32 eventId = _events.ExecuteEvent())
+			{
+				switch (eventId)
+				{
+				case EVENT_KILL:
+					if (Unit* target = SelectTarget(SELECT_TARGET_RANDOM, 0)){
+						me->Kill(target, true);
+					}
+					_events.ScheduleEvent(EVENT_KILL, 15000);
+					break;
+				
+
+				default:
+					break;
+				}
+			}
+
+			DoMeleeAttackIfReady();
+		}
+
+	private:
+		EventMap _events;
+		SummonList Summons;
+	};
+
+	CreatureAI* GetAI(Creature* creature) const override
+	{
+		return new tolreosaddAI(creature);
+	}
+
+};
+
+
+
 
 void AddSC_tolreos()
 {
