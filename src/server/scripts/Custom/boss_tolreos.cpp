@@ -47,7 +47,9 @@ enum Spells
 	SPELL_PSYCHOSIS = 63795,
 	SPELL_ARCANE_DEVASTION = 34799,
 	SPELL_ARMY_OF_DEAD = 67761,
-	SPELL_ANTIMAGIC = 48707
+	SPELL_ANTIMAGIC = 48707,
+	SPELL_MANABURN = 22936,
+	SPELL_SCHATTENFALLE =73529
 	
 };
 
@@ -64,7 +66,9 @@ enum Events
 	EVENT_ARCANE_DEVASTION = 9,
 	EVENT_ARMY_OF_DEAD = 10,
 	EVENT_SUMMONS = 11,
-	EVENT_KILL = 12
+	EVENT_MANABURN = 12,
+	EVENT_ANTIMAGIC = 13,
+	EVENT_SCHATTENFALLE = 14
 
 };
 
@@ -295,10 +299,9 @@ public:
 		{
 			Talk(SAY_AGGRO);
 			_events.SetPhase(PHASE_ONE);
-			_events.ScheduleEvent(EVENT_KILL, 15000);
-			_events.ScheduleEvent(EVENT_EARTH, 1000);
-			
-
+			_events.ScheduleEvent(EVENT_MANABURN, 26000);
+			_events.ScheduleEvent(EVENT_ANTIMAGIC, 25000);
+			_events.ScheduleEvent(EVENT_SCHATTENFALLE, 27000);
 		}
 
 
@@ -313,17 +316,24 @@ public:
 			{
 				switch (eventId)
 				{
-				case EVENT_KILL:
-					if (Unit* target = SelectTarget(SELECT_TARGET_RANDOM, 0)){
-						me->Kill(target, true);
+				case EVENT_MANABURN:
+					if (Unit* target = SelectTarget(SELECT_TARGET_RANDOM, 4)){
+						DoCast(target, SPELL_MANABURN);
 					}
-					_events.ScheduleEvent(EVENT_KILL, 15000);
+					_events.ScheduleEvent(EVENT_MANABURN, 5000);
 					break;
-				case EVENT_EARTH:
+
+				case EVENT_ANTIMAGIC:
 					if (Unit* target = SelectTarget(SELECT_TARGET_RANDOM, 0)){
-						DoCast(target, SPELL_EARTH);
+						DoCast(target, SPELL_ANTIMAGIC);
 					}
-					_events.ScheduleEvent(EVENT_EARTH,1000);
+					_events.ScheduleEvent(EVENT_ANTIMAGIC, 3000);
+					break;
+				case EVENT_SCHATTENFALLE:
+					if (Unit* target = SelectTarget(SELECT_TARGET_RANDOM, 0)){
+						DoCast(target, SPELL_SCHATTENFALLE);
+					}
+					_events.ScheduleEvent(EVENT_SCHATTENFALLE, 4000);
 					break;
 
 
