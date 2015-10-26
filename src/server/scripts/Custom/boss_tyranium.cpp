@@ -140,6 +140,8 @@ public:
 				me->SetInCombatWith(caster);
 			}
 
+
+
 		}
 
 		void KilledUnit(Unit* victim) override

@@ -158,6 +158,17 @@ UPDATE `creature` SET `map`='169', `position_x`='-4313.12', `position_y`='-1465.
 UPDATE `creature` SET `map`='169', `position_x`='-4338.46', `position_y`='-719.724', `position_z`='127.903', `orientation`='4.24175' WHERE `guid`='800040';
 UPDATE `creature` SET `map`='169', `position_x`='-3694.01', `position_y`='-1061.39', `position_z`='126.757', `orientation`='0.243516' WHERE `guid`='800058';
 
+/*BOSSZEICHEN TYPEFLAGS */
+UPDATE `creature_template` SET `type_flags`='4' WHERE `entry`='800010';
+UPDATE `creature_template` SET `type_flags`='4' WHERE `entry`='800030';
+UPDATE `creature_template` SET `type_flags`='4' WHERE `entry`='800025';
+UPDATE `creature_template` SET `type_flags`='4' WHERE `entry`='800038';
+UPDATE `creature_template` SET `type_flags`='4' WHERE `entry`='800037';
+UPDATE `creature_template` SET `type_flags`='4' WHERE `entry`='800039';
+UPDATE `creature_template` SET `type_flags`='4' WHERE `entry`='800041';
+UPDATE `creature_template` SET `type_flags`='4' WHERE `entry`='800050';
+UPDATE `creature_template` SET `type_flags`='4' WHERE `entry`='800040';
+UPDATE `creature_template` SET `type_flags`='4' WHERE `entry`='800058';
 
 
 /* Ein holpriger Ritt 12536 */
