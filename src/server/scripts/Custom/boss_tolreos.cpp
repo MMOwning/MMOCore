@@ -46,10 +46,7 @@ enum Spells
 	SPELL_HEX = 66054,
 	SPELL_PSYCHOSIS = 63795,
 	SPELL_ARCANE_DEVASTION = 34799,
-	SPELL_ARMY_OF_DEAD = 67761,
-	SPELL_ANTIMAGIC = 48707,
-	SPELL_MANABURN = 22936,
-	SPELL_SCHATTENFALLE =73529
+	SPELL_ARMY_OF_DEAD = 67761
 	
 };
 
@@ -64,11 +61,7 @@ enum Events
 	EVENT_HEX = 7,
 	EVENT_PSYCHOSIS = 8,
 	EVENT_ARCANE_DEVASTION = 9,
-	EVENT_ARMY_OF_DEAD = 10,
-	EVENT_SUMMONS = 11,
-	EVENT_MANABURN = 12,
-	EVENT_ANTIMAGIC = 13,
-	EVENT_SCHATTENFALLE = 14
+	EVENT_ARMY_OF_DEAD = 10
 
 };
 
@@ -81,7 +74,7 @@ enum Phases
 
 enum Summons
 {
-	NPC_TOLREOSADD = 800093
+	NPC_PUSTELIGER_SCHRECKEN = 31139
 };
 
 enum Texts
@@ -102,15 +95,12 @@ public:
 	struct tolreosAI : public ScriptedAI
 	{
 		tolreosAI(Creature* creature) : ScriptedAI(creature), Summons(me) { }
-		uint32 kills = 0;
-		uint32 hits = 0;
+
 		void Reset() override
 		{
 			
 			_events.Reset();
 			Summons.DespawnAll();
-			me->setFaction(21);
-			uint32 hits = 0;
 		}
 
 		void EnterCombat(Unit* ) override
@@ -120,7 +110,7 @@ public:
 			_events.ScheduleEvent(EVENT_CURRUPTION, 8000);
 			_events.ScheduleEvent(EVENT_CRIPPLE, 10000);
 			_events.ScheduleEvent(EVENT_ARCANE_BARRAGE, 8000);
-			_events.ScheduleEvent(EVENT_SUMMONS, 30000);
+			
 
 		}
 
@@ -133,7 +123,6 @@ public:
 				_events.ScheduleEvent(EVENT_HEX, 8000);
 				_events.ScheduleEvent(EVENT_ARCANE_DEVASTION, 12000);
 				_events.ScheduleEvent(EVENT_PSYCHOSIS, 10000);
-				_events.ScheduleEvent(EVENT_SUMMONS, 30000);
 
 			}
 
@@ -144,26 +133,9 @@ public:
 				_events.ScheduleEvent(EVENT_CURRUPTION, 6000);
 				_events.ScheduleEvent(EVENT_ENRAGE, 25000);
 				_events.ScheduleEvent(EVENT_HEX, 12000);
-				_events.ScheduleEvent(EVENT_SUMMONS, 30000);
 			}
 		}
-		
-		void SpellHit(Unit* caster, SpellInfo const* spell) override
-		{
-			if (spell->Id == 61391 || spell->Id == 53223 || spell->Id == 53225 || spell->Id == 53226 || spell->Id == 53227 || spell->Id == 61384 || spell->Id == 61387 || spell->Id == 61388 || spell->Id == 61391){
-				me->setFaction(35);
-				me->SetFullHealth();
-				char msg[250];
-				snprintf(msg, 250, "|cffff0000[Boss System]|r Boss|cffff6060 Tolreos|r sagt: Taifune haben hier nichts zu suchen.");
-				sWorld->SendGlobalText(msg, NULL);
-			}
 
-			if (spell->Id == 47964){
-				me->SelectNearestTarget();
-				DoCast(me, SPELL_ANTIMAGIC);
-			}
-			
-		}
 		
 		void JustDied(Unit* pPlayer)
 		{
@@ -172,18 +144,6 @@ public:
 			sWorld->SendGlobalText(msg, NULL);
 		}
 
-
-		void KilledUnit(Unit* victim) override
-		{
-			
-			if (victim->GetTypeId() != TYPEID_PLAYER)
-				return;
-			char msg[250];
-
-			++kills;
-			snprintf(msg, 250, "|cffff0000[Boss System]|r |cffff6060 Tolreos|r hat einen Spieler getoetet! Was fuer eine Schmach. Insgesamt steht der Killcounter seit dem letzten Restart bei: %u", kills);
-			sWorld->SendGlobalText(msg, NULL);
-		}
 
 
 		void UpdateAI(uint32 diff) override
@@ -199,7 +159,7 @@ public:
 				{
 				case EVENT_CURRUPTION:
 					if (Unit* target = SelectTarget(SELECT_TARGET_RANDOM, 1)){
-						DoCast(target,SPELL_CORRUPTION);		
+						DoCastVictim(SPELL_CORRUPTION);		
 					}
 					_events.ScheduleEvent(EVENT_CURRUPTION, 10000);
 					break;
@@ -211,12 +171,6 @@ public:
 					DoCastToAllHostilePlayers(SPELL_CRIPPLE);
 					_events.ScheduleEvent(EVENT_CRIPPLE, 25000);
 					break;
-
-				case EVENT_SUMMONS:
-					Talk(SAY_HELP);
-					me->SummonCreature(NPC_TOLREOSADD, me->GetPositionX() + 5, me->GetPositionY() + 5, me->GetPositionZ(), 0, TEMPSUMMON_TIMED_OR_CORPSE_DESPAWN, 120000);
-					_events.ScheduleEvent(EVENT_SUMMONS, 30000);
-					break;
 				case EVENT_ARCANE_BARRAGE:
 					DoCastToAllHostilePlayers(SPELL_ARCANE_BARRAGE);
 					_events.ScheduleEvent(EVENT_ARCANE_BARRAGE, 5000);
@@ -224,15 +178,12 @@ public:
 				case EVENT_EARTH:
 					Talk(SAY_ENRAGE);
 					if (Unit* target = SelectTarget(SELECT_TARGET_TOPAGGRO, 0)){
-						DoCast(target,SPELL_EARTH);
+						DoCast(target, SPELL_EARTH);
 					}
 					_events.ScheduleEvent(EVENT_EARTH, 10000);
 					break;
 				case EVENT_PSYCHOSIS:
-					if (Unit* target = SelectTarget(SELECT_TARGET_TOPAGGRO, 0)){
-						DoCast(target, SPELL_PSYCHOSIS);
-					}
-					
+					DoCast(me, SPELL_PSYCHOSIS);
 					_events.ScheduleEvent(EVENT_PSYCHOSIS, 18000);
 					break;
 				case EVENT_HEX:
@@ -275,90 +226,7 @@ public:
 
 };
 
-
-
-class tolreosadd : public CreatureScript
-{
-public: tolreosadd() : CreatureScript("tolreosadd") { }
-
-	struct tolreosaddAI : public ScriptedAI
-	{
-		tolreosaddAI(Creature* creature) : ScriptedAI(creature), Summons(me) { }
-
-		void Reset() override
-		{
-			me->SetReactState(REACT_AGGRESSIVE);
-			_events.Reset();
-		}
-
-		void EnterCombat(Unit*) override
-		{
-			Talk(SAY_AGGRO);
-			_events.SetPhase(PHASE_ONE);
-			_events.ScheduleEvent(EVENT_MANABURN, 26000);
-			_events.ScheduleEvent(EVENT_ANTIMAGIC, 25000);
-			_events.ScheduleEvent(EVENT_SCHATTENFALLE, 27000);
-		}
-
-
-
-
-
-		void UpdateAI(uint32 diff) override
-		{
-			if (!UpdateVictim())
-				return;
-
-			_events.Update(diff);
-
-			while (uint32 eventId = _events.ExecuteEvent())
-			{
-				switch (eventId)
-				{
-				case EVENT_MANABURN:
-					if (Unit* target = SelectTarget(SELECT_TARGET_RANDOM, 4)){
-						DoCastToAllHostilePlayers(SPELL_MANABURN);
-					}
-					_events.ScheduleEvent(EVENT_MANABURN, 5000);
-					break;
-
-				case EVENT_ANTIMAGIC:
-					DoCast(me, SPELL_ANTIMAGIC);
-					_events.ScheduleEvent(EVENT_ANTIMAGIC, 3000);
-					break;
-				case EVENT_SCHATTENFALLE:
-					if (Unit* target = SelectTarget(SELECT_TARGET_RANDOM, 0)){
-						DoCast(target, SPELL_SCHATTENFALLE);
-					}
-					_events.ScheduleEvent(EVENT_SCHATTENFALLE, 4000);
-					break;
-
-
-				default:
-					break;
-				}
-			}
-
-			DoMeleeAttackIfReady();
-		}
-
-	private:
-		EventMap _events;
-		SummonList Summons;
-	};
-
-	CreatureAI* GetAI(Creature* creature) const override
-	{
-		return new tolreosaddAI(creature);
-	}
-
-};
-
-
-
-
 void AddSC_tolreos()
 {
 	new tolreos();
-	new tolreosadd();
 }
