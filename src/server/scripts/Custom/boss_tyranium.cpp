@@ -267,7 +267,7 @@ public: tyraniumadd() : CreatureScript("tyraniumadd") { }
 			{
 				Talk(SAY_AGGRO);
 				_events.SetPhase(PHASE_ONE);
-				_events.ScheduleEvent(EVENT_EISBLOCK, 30000);
+				_events.ScheduleEvent(EVENT_EISBLOCK, 10000);
 			
 			}
 
@@ -284,10 +284,10 @@ public: tyraniumadd() : CreatureScript("tyraniumadd") { }
 					switch (eventId)
 					{
 					case EVENT_EISBLOCK:
-						if (Unit* target = SelectTarget(SELECT_TARGET_RANDOM, 1)){
+						if (Unit* target = SelectTarget(SELECT_TARGET_RANDOM, 0)){
 							DoCast(target, SPELL_EISBLOCK);
 						}
-						_events.ScheduleEvent(EVENT_EISBLOCK, 30000);
+						_events.ScheduleEvent(EVENT_EISBLOCK, 3000);
 						break;
 
 					default:
