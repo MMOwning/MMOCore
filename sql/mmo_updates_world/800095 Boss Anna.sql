@@ -111,4 +111,5 @@ DELETE FROM `creature` WHERE `guid` = 800095;
 REPLACE INTO `creature` (`guid`,`id`,`map`,`spawnMask`,`phaseMask`,`modelid`,`equipment_id`,`position_x`,`position_y`,`position_z`,`orientation`,`spawntimesecs`,`spawndist`,`currentwaypoint`,`curhealth`,`curmana`,`MovementType`) VALUES 
 ('800095','800095','169','1','1','29791','367','3077.28','-3097.19','99.93','3.98','14400','0','0','1000000','250000','0');
 
-REPLACE INTO `creature_equip_template` (`entry`, `id`, `itemEntry1`, `itemEntry2`, `itemEntry3`) VALUES ('800095', '1', '50731', '1859', '0');
+DELETE FROM `creature_equip_template` where `CreatureID` = 800095;
+REPLACE INTO `creature_equip_template` (`CreatureID`, `id`, `ItemID1`, `ItemID2`, `ItemID3`) VALUES ('800095', '1', '50731', '1859', '0');
