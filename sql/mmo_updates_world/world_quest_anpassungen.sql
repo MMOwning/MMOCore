@@ -175,13 +175,6 @@ UPDATE `creature_template` SET `type_flags`='4' WHERE `entry`='800058';
 UPDATE `quest_template` SET `StartItem`='38512' WHERE `ID`='12536';
 
 
-/* Amphitheater */
-UPDATE `quest_template` SET `RequiredNpcOrGo1`='30014', `RequiredNpcOrGoCount1`='1' WHERE `ID`='12932';
-UPDATE `quest_template` SET `RequiredNpcOrGo1`='30017', `RequiredNpcOrGoCount1`='1' WHERE `ID`='12933';
-UPDATE `quest_template` SET `RequiredNpcOrGo1`='30025', `RequiredNpcOrGoCount1`='1' WHERE `ID`='12934';
-UPDATE `quest_template` SET `RequiredNpcOrGo1`='30020', `RequiredNpcOrGoCount1`='1' WHERE `ID`='12935';
-UPDATE `quest_template` SET `RequiredNpcOrGo1`='30023', `RequiredNpcOrGoCount1`='1' WHERE `ID`='12936';
-
 
 
 
@@ -312,4 +305,9 @@ UPDATE `creature_loot_template` SET `Chance`='5', `MinCount`='1', `MaxCount`='4'
 
 /* Kuerbissoldaten lootid und loot */
 UPDATE `creature_template` SET `lootid`='27936' WHERE `entry`='27936';
-REPLACE INTO `creature_loot_template` (`Entry`, `Item`, `Reference`, `Chance`, `QuestRequired`, `LootMode`, `GroupId`, `MinCount`, `MaxCount`, `Comment`) VALUES ('27936', '700520', '0', '25', '0', '1', '0', '1', '13', 'Halloweenabzeichen');
+REPLACE INTO `creature_loot_template` (`Entry`, `Item`, `Reference`, `Chance`, `QuestRequired`, `LootMode`, `GroupId`, `MinCount`, `MaxCount`, `Comment`) VALUES ('27936', '700520', '0', '50', '0', '1', '0', '1', '13', 'Halloweenabzeichen');
+
+
+/* ARGENTUMGRUNZLING */
+UPDATE `creature_template` SET `type_flags`='1216348160' WHERE `entry`='33239';
+UPDATE `creature_template` SET `type_flags`='1216348160' WHERE `entry`='33238';
