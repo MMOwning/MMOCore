@@ -318,4 +318,5 @@ public:
 void AddSC_tolreos()
 {
 	new tolreos();
+	new tolreosadd();
 }
