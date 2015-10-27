@@ -193,7 +193,7 @@ public:
 					break;
 				case EVENT_SUMMONS:
 					Talk(SAY_HELP);
-					me->SummonCreature(NPC_TOLREOSADD, me->GetPositionX() + 5, me->GetPositionY(), me->GetPositionZ() + 5, 0, TEMPSUMMON_CORPSE_DESPAWN, 60000);
+					me->SummonCreature(NPC_TOLREOSADD, me->GetPositionX() + 5, me->GetPositionY(), me->GetPositionZ() + 5, 0, TEMPSUMMON_TIMED_OR_CORPSE_DESPAWN, 60000);
 					_events.ScheduleEvent(EVENT_SUMMONS, 30000);
 					break;
 				case EVENT_EARTH:
@@ -244,69 +244,76 @@ public:
 
 };
 
+
 class tolreosadd : public CreatureScript
-	 {
-	public:
-		tolreosadd() : CreatureScript("tolreosadd") { }
+{
+public:
+	tolreosadd() : CreatureScript("tolreosadd") { }
+
+	struct tolreosaddAI : public ScriptedAI
+	{
+		tolreosaddAI(Creature* creature) : ScriptedAI(creature), Summons(me) { }
+		uint32 kills = 0;
+		void Reset() override
+		{
+
+			_events.Reset();
+			Summons.DespawnAll();
+		}
+
+		void EnterCombat(Unit*) override
+		{
+			Talk(SAY_AGGRO);
+			_events.SetPhase(PHASE_ONE);
+			_events.ScheduleEvent(EVENT_SCHATTENFALLE, 27000);
+			
+
+		}
+
+
+
 		
-			struct tolreosaddAI : public ScriptedAI
-			 {
-			tolreosaddAI(Creature* creature) : ScriptedAI(creature), Summons(me) { }
-			uint32 kills = 0;
-			uint32 hits = 0;
-			void Reset() override
-				 {
-				
-					_events.Reset();
-				}
-			
-				void EnterCombat(Unit*) override
-				 {
-				Talk(SAY_AGGRO);
-				_events.SetPhase(PHASE_ONE);
-				_events.ScheduleEvent(EVENT_SCHATTENFALLE, 27000);
-					
-					}
-			
-				
-				void UpdateAI(uint32 diff) override
+		void UpdateAI(uint32 diff) override
+		{
+			if (!UpdateVictim())
+				return;
+
+			_events.Update(diff);
+
+			while (uint32 eventId = _events.ExecuteEvent())
+			{
+				switch (eventId)
 				{
-				if (!UpdateVictim())
-					 return;
+				case EVENT_SCHATTENFALLE:
+					
+					DoCast(SPELL_SCHATTENFALLE);
+					_events.ScheduleEvent(EVENT_SCHATTENFALLE, 10000);
+					break;
 				
-					_events.Update(diff);
-				
-					while (uint32 eventId = _events.ExecuteEvent())
-					{
-						switch (eventId)
-						{
-
-						case EVENT_SCHATTENFALLE:
-							DoCast(me, SPELL_SCHATTENFALLE);
-							_events.ScheduleEvent(EVENT_SCHATTENFALLE, 10000);
-							break;
 
 
-
-						default:
-							break;
-						}
-					}
-				
-					DoMeleeAttackIfReady();
+				default:
+					break;
 				}
-			
-				private:
-					EventMap _events;
-					SummonList Summons;
-			};
-		
-			CreatureAI* GetAI(Creature* creature) const override
-			 {
-			return new tolreosaddAI(creature);
 			}
-		
+
+			DoMeleeAttackIfReady();
+		}
+
+	private:
+		EventMap _events;
+		SummonList Summons;
+	};
+
+	CreatureAI* GetAI(Creature* creature) const override
+	{
+		return new tolreosaddAI(creature);
+	}
+
+
+
 };
+
 
 void AddSC_tolreos()
 {
