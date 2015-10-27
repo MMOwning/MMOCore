@@ -217,7 +217,7 @@ public:
 					_events.ScheduleEvent(EVENT_SARGERAS, 5000);
 					break;
 				case EVENT_BURN:
-					DoCastToAllHostilePlayers(SPELL_BURN);
+					DoCastVictim(SPELL_BURN);
 					_events.ScheduleEvent(EVENT_BURN, 35000);
 					break;
 				case EVENT_TAIL_LASH:
@@ -284,7 +284,9 @@ public: tyraniumadd() : CreatureScript("tyraniumadd") { }
 					switch (eventId)
 					{
 					case EVENT_EISBLOCK:
-						DoCastToAllHostilePlayers(SPELL_EISBLOCK);
+						if (Unit* target = SelectTarget(SELECT_TARGET_RANDOM, 1)){
+							DoCast(target, SPELL_EISBLOCK);
+						}
 						_events.ScheduleEvent(EVENT_EISBLOCK, 30000);
 						break;
 

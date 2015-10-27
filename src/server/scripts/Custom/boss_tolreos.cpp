@@ -277,21 +277,21 @@ class tolreosadd : public CreatureScript
 					_events.Update(diff);
 				
 					while (uint32 eventId = _events.ExecuteEvent())
-					 {
-						 switch (eventId)
-						 {
+					{
+						switch (eventId)
+						{
 
-						 case EVENT_SCHATTENFALLE:
-							 DoCast(me, SPELL_SCHATTENFALLE);
-							 _events.ScheduleEvent(EVENT_SCHATTENFALLE, 10000);
-							 break;
-						 }
-				
+						case EVENT_SCHATTENFALLE:
+							DoCast(me, SPELL_SCHATTENFALLE);
+							_events.ScheduleEvent(EVENT_SCHATTENFALLE, 10000);
+							break;
 
-					default:
-						break;
+
+
+						default:
+							break;
+						}
 					}
-				
 				
 					DoMeleeAttackIfReady();
 				}
