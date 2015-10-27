@@ -194,7 +194,7 @@ public:
 				case EVENT_SUMMONS:
 					Talk(SAY_HELP);
 					me->SummonCreature(NPC_TOLREOSADD, me->GetPositionX() + 5, me->GetPositionY(), me->GetPositionZ() + 5, 0, TEMPSUMMON_TIMED_OR_CORPSE_DESPAWN, 60000);
-					_events.ScheduleEvent(EVENT_SUMMONS, 30000);
+					_events.ScheduleEvent(EVENT_SUMMONS, 45000);
 					break;
 				case EVENT_EARTH:
 					Talk(SAY_ENRAGE);
@@ -270,6 +270,23 @@ public:
 
 		}
 
+		void DamageTaken(Unit* /*attacker*/, uint32& damage) override
+		{
+			if (me->HealthBelowPctDamaged(100, damage) && _events.IsInPhase(PHASE_ONE))
+			{
+				_events.SetPhase(PHASE_TWO);
+				_events.ScheduleEvent(EVENT_SCHATTENFALLE, 27000);
+
+
+			}
+
+			if (me->HealthBelowPctDamaged(50, damage) && _events.IsInPhase(PHASE_TWO))
+			{
+				_events.SetPhase(PHASE_THREE);
+				_events.ScheduleEvent(EVENT_SCHATTENFALLE, 1000);
+
+			}
+		}
 
 
 		
@@ -284,8 +301,7 @@ public:
 			{
 				switch (eventId)
 				{
-				case EVENT_SCHATTENFALLE:
-					
+				case EVENT_SCHATTENFALLE:	
 					DoCast(SPELL_SCHATTENFALLE);
 					_events.ScheduleEvent(EVENT_SCHATTENFALLE, 10000);
 					break;
