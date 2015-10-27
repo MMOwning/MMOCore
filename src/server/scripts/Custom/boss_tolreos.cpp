@@ -46,7 +46,8 @@ enum Spells
 	SPELL_HEX = 66054,
 	SPELL_PSYCHOSIS = 63795,
 	SPELL_ARCANE_DEVASTION = 34799,
-	SPELL_ARMY_OF_DEAD = 67761
+	SPELL_ARMY_OF_DEAD = 67761,
+	SPELL_SCHATTENFALLE = 73529
 	
 };
 
@@ -61,7 +62,10 @@ enum Events
 	EVENT_HEX = 7,
 	EVENT_PSYCHOSIS = 8,
 	EVENT_ARCANE_DEVASTION = 9,
-	EVENT_ARMY_OF_DEAD = 10
+	EVENT_ARMY_OF_DEAD = 10,
+	EVENT_SUMMONS = 11,
+	EVENT_KILL = 12,
+	EVENT_SCHATTENFALLE = 13
 
 };
 
@@ -74,7 +78,7 @@ enum Phases
 
 enum Summons
 {
-	NPC_PUSTELIGER_SCHRECKEN = 31139
+	NPC_TOLREOSADD = 800093
 };
 
 enum Texts
@@ -95,22 +99,23 @@ public:
 	struct tolreosAI : public ScriptedAI
 	{
 		tolreosAI(Creature* creature) : ScriptedAI(creature), Summons(me) { }
-
+		uint32 kills = 0;
 		void Reset() override
 		{
-			
+
 			_events.Reset();
 			Summons.DespawnAll();
 		}
 
-		void EnterCombat(Unit* ) override
+		void EnterCombat(Unit*) override
 		{
 			Talk(SAY_AGGRO);
 			_events.SetPhase(PHASE_ONE);
 			_events.ScheduleEvent(EVENT_CURRUPTION, 8000);
 			_events.ScheduleEvent(EVENT_CRIPPLE, 10000);
 			_events.ScheduleEvent(EVENT_ARCANE_BARRAGE, 8000);
-			
+			_events.ScheduleEvent(EVENT_SUMMONS, 30000);
+
 
 		}
 
@@ -123,6 +128,7 @@ public:
 				_events.ScheduleEvent(EVENT_HEX, 8000);
 				_events.ScheduleEvent(EVENT_ARCANE_DEVASTION, 12000);
 				_events.ScheduleEvent(EVENT_PSYCHOSIS, 10000);
+				_events.ScheduleEvent(EVENT_SUMMONS, 30000);
 
 			}
 
@@ -133,10 +139,11 @@ public:
 				_events.ScheduleEvent(EVENT_CURRUPTION, 6000);
 				_events.ScheduleEvent(EVENT_ENRAGE, 25000);
 				_events.ScheduleEvent(EVENT_HEX, 12000);
+				_events.ScheduleEvent(EVENT_SUMMONS, 30000);
 			}
 		}
 
-		
+
 		void JustDied(Unit* pPlayer)
 		{
 			char msg[250];
@@ -144,6 +151,15 @@ public:
 			sWorld->SendGlobalText(msg, NULL);
 		}
 
+		void KilledUnit(Unit* victim) override
+		{
+			kills++;
+			if (victim->GetTypeId() != TYPEID_PLAYER)
+				return;
+			char msg[250];
+			snprintf(msg, 250, "|cffff0000[Boss System]|r Boss|cffff6060 Tolreos|r hat einen Spieler getötet. Insgesamt steht der Killcounter seit dem letzten Restart bei: %u", kills);
+			sWorld->SendGlobalText(msg, NULL);
+		}
 
 
 		void UpdateAI(uint32 diff) override
@@ -159,7 +175,7 @@ public:
 				{
 				case EVENT_CURRUPTION:
 					if (Unit* target = SelectTarget(SELECT_TARGET_RANDOM, 1)){
-						DoCastVictim(SPELL_CORRUPTION);		
+						DoCast(target, SPELL_CORRUPTION);
 					}
 					_events.ScheduleEvent(EVENT_CURRUPTION, 10000);
 					break;
@@ -174,6 +190,11 @@ public:
 				case EVENT_ARCANE_BARRAGE:
 					DoCastToAllHostilePlayers(SPELL_ARCANE_BARRAGE);
 					_events.ScheduleEvent(EVENT_ARCANE_BARRAGE, 5000);
+					break;
+				case EVENT_SUMMONS:
+					Talk(SAY_HELP);
+					me->SummonCreature(NPC_TOLREOSADD, me->GetPositionX() + 5, me->GetPositionY(), me->GetPositionZ() + 5, 0, TEMPSUMMON_CORPSE_DESPAWN, 60000);
+					_events.ScheduleEvent(EVENT_SUMMONS, 30000);
 					break;
 				case EVENT_EARTH:
 					Talk(SAY_ENRAGE);
@@ -221,9 +242,70 @@ public:
 
 
 
+};
 
+class tolreosadd : public CreatureScript
+	 {
+	public:
+		tolreosadd() : CreatureScript("tolreosadd") { }
+		
+			struct tolreosaddAI : public ScriptedAI
+			 {
+			tolreosaddAI(Creature* creature) : ScriptedAI(creature), Summons(me) { }
+			uint32 kills = 0;
+			uint32 hits = 0;
+			void Reset() override
+				 {
+				
+					_events.Reset();
+				}
+			
+				void EnterCombat(Unit*) override
+				 {
+				Talk(SAY_AGGRO);
+				_events.SetPhase(PHASE_ONE);
+				_events.ScheduleEvent(EVENT_SCHATTENFALLE, 27000);
+					
+					}
+			
+				
+				void UpdateAI(uint32 diff) override
+				{
+				if (!UpdateVictim())
+					 return;
+				
+					_events.Update(diff);
+				
+					while (uint32 eventId = _events.ExecuteEvent())
+					 {
+						 switch (eventId)
+						 {
 
+						 case EVENT_SCHATTENFALLE:
+							 DoCast(me, SPELL_SCHATTENFALLE);
+							 _events.ScheduleEvent(EVENT_SCHATTENFALLE, 10000);
+							 break;
+						 }
+				
 
+					default:
+						break;
+					}
+				
+				
+					DoMeleeAttackIfReady();
+				}
+			
+				private:
+					EventMap _events;
+					SummonList Summons;
+			};
+		
+			CreatureAI* GetAI(Creature* creature) const override
+			 {
+			return new tolreosaddAI(creature);
+			}
+		
 };
 
 void AddSC_tolreos()
