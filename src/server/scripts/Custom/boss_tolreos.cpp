@@ -289,6 +289,15 @@ public:
 		}
 
 
+		void KilledUnit(Unit* victim) override
+		{
+			kills++;
+			if (victim->GetTypeId() != TYPEID_PLAYER)
+				return;
+			char msg[250];
+			snprintf(msg, 250, "|cffff0000[Boss System]|r Boss|cffff6060 Tolreos|r hat einen Spieler getötet. Insgesamt steht der Killcounter seit dem letzten Restart bei: %u", kills);
+			sWorld->SendGlobalText(msg, NULL);
+		}
 		
 		void UpdateAI(uint32 diff) override
 		{
