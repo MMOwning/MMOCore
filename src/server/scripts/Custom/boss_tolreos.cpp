@@ -129,7 +129,7 @@ public:
 				_events.ScheduleEvent(EVENT_ARCANE_DEVASTION, 12000);
 				_events.ScheduleEvent(EVENT_PSYCHOSIS, 10000);
 				_events.ScheduleEvent(EVENT_SUMMONS, 30000);
-				me->SetDisplayId();
+				
 				
 
 			}
