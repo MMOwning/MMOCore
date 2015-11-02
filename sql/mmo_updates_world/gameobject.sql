@@ -20,7 +20,7 @@
 --
 
 
-DELETE FROM `gameobject` WHERE `id` BETWEEN 750000 AND 9999999;
+
 --
 -- Dumping data for table `gameobject`
 --

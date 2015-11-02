@@ -38,7 +38,7 @@ public:
 	{
 		
 		pPlayer->ADD_GOSSIP_ITEM(7, "Hallo", GOSSIP_SENDER_MAIN, 0);
-		bool status = pPlayer->GetQuestRewardStatus(900811);
+		bool status = pPlayer->GetQuestRewardStatus(900810);
 		if (status){
 			pPlayer->ADD_GOSSIP_ITEM(7, "Beam mich hoch!", GOSSIP_SENDER_MAIN, 1);
 		}

@@ -173,11 +173,11 @@ public:
 					break;
 				case EVENT_ARCANE_BOMB:
 					Talk(SAY_ENRAGE);
-					DoCast(me, SPELL_ARCANE_BOMB);
+					DoCast(SPELL_ARCANE_BOMB);
 					_events.ScheduleEvent(EVENT_ARCANE_BOMB, 10000);
 					break;
 				case EVENT_ACID_BLAST:
-					DoCast(me, SPELL_ACID_BLAST);
+					DoCastVictim( SPELL_ACID_BLAST);
 					_events.ScheduleEvent(EVENT_ACID_BLAST, 15000);
 					break;
 				case EVENT_CHAIN_LIGHTNING:
