@@ -79,6 +79,11 @@ public:
 				sWorld->SendServerMessage(SERVER_MSG_STRING, ss.str().c_str());
 			}
 
+			else if (accountid == 1){
+				ss << "|cff54b5ffMMOwning Administrator|r " << ChatHandler(player->GetSession()).GetNameLink() << " |cff54b5ff ist jetzt online!|r";
+				sWorld->SendServerMessage(SERVER_MSG_STRING, ss.str().c_str());
+			}
+
 			else{
 				ss << "|cff54b5ffMMOwning Teammitglied|r " << ChatHandler(player->GetSession()).GetNameLink() << " |cff54b5ff ist jetzt online!|r";
 				sWorld->SendServerMessage(SERVER_MSG_STRING, ss.str().c_str());
