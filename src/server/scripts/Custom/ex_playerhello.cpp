@@ -53,12 +53,12 @@ public:
 			return;
 		}
 
-		else if (player->IsGameMaster && player->GetSession()->GetSecurity() == security){
+		else if (player->IsGameMaster() && player->GetSession()->GetSecurity() == 2){
 			ss << "|cff54b5ffGM|r " << ChatHandler(player->GetSession()).GetNameLink() << " |cff54b5ff ist jetzt online!|r";
 			sWorld->SendServerMessage(SERVER_MSG_STRING, ss.str().c_str());
 		}
 
-		else if (player->IsGameMaster && player->GetSession()->GetSecurity() == 3){
+		else if (player->IsGameMaster() && player->GetSession()->GetSecurity() == 3){
 			if (accountid == 52252){
 				ss << "|cff54b5ffMMOwning Administrator|r " << ChatHandler(player->GetSession()).GetNameLink() << " |cff54b5ff ist jetzt online!|r";
 				sWorld->SendServerMessage(SERVER_MSG_STRING, ss.str().c_str());
