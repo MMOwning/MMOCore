@@ -38,7 +38,7 @@ public:
 		
 		uint32 guid = player->GetGUID();
 		uint32 accountid = player->GetSession()->GetAccountId();
-		
+		uint32 security = 2;
 
 		QueryResult accountres = CharacterDatabase.PQuery("SELECT account FROM characters WHERE guid = %u", guid);
 		uint32 accountresint = (*accountres)[0].GetUInt32();
@@ -53,7 +53,7 @@ public:
 			return;
 		}
 
-		else if (player->IsGameMaster && player->GetSession()->GetSecurity() == 2){
+		else if (player->IsGameMaster && player->GetSession()->GetSecurity() == security){
 			ss << "|cff54b5ffGM|r " << ChatHandler(player->GetSession()).GetNameLink() << " |cff54b5ff ist jetzt online!|r";
 			sWorld->SendServerMessage(SERVER_MSG_STRING, ss.str().c_str());
 		}
