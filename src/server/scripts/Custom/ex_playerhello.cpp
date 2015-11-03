@@ -78,7 +78,7 @@ public:
 			}
 
 			else if (accountid == 52239){ //Pihaar
-				ss << "|cff54b5ffSuper Admin|r " << ChatHandler(player->GetSession()).GetNameLink() << " |cff54b5ff ist jetzt online!|r";
+				ss << "|cff54b5ffEntwickler|r " << ChatHandler(player->GetSession()).GetNameLink() << " |cff54b5ff ist jetzt online!|r";
 				sWorld->SendServerMessage(SERVER_MSG_STRING, ss.str().c_str());
 			}
 

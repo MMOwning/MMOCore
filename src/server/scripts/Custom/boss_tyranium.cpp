@@ -137,23 +137,23 @@ public:
 		void SpellHit(Unit* caster, SpellInfo const* spell) override
 		{
 			
-			if (spell->Id == 35395){
+			if (spell->Id == 48638){
 				me->Yell("Eure Kreuzfahrerstoesse werden Euch nicht retten.", LANG_UNIVERSAL, nullptr);
 				me->SetInCombatWith(caster);
 				me->SetDisplayId(27971);
 			}
 
 			
-			if (spell->Id == 45462){
+			if (spell->Id == 49921 || spell->Id == 66992){
 				armor = me->GetArmor();
 				Player* target;
 				me->SetName("Eonar der Alte");
 				me->SetObjectScale(2);
-				me->Whisper("Eure Seuchen. Bitte fuehrt sie weiter aus. Dient mir als Sklave wenn ich Euch unterwerfe.", LANG_UNIVERSAL, target, false);
+				me->Whisper("Eure Seuchen. Bitte fuehrt sie weiter aus. Dient mir als Sklave wenn ich Euch unterwerfe.", LANG_UNIVERSAL, target, true);
 				me->CombatStop(true);
 				armor = armor + 10;
 				me->SetArmor(armor);
-				me->Yell("Eure Seuchen werden mich nicht aufhalten. Meine Ruestung wird immer haerter!", LANG_UNIVERSAL, nullptr);
+				me->Yell("Eure Seuchen werden mich nicht aufhalten. Meine Ruestung wird immer haerter! Sie ist aktuell bei: " + armor, LANG_UNIVERSAL, nullptr);
 
 			}
 

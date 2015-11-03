@@ -296,11 +296,8 @@ public:
 			if (me->HealthBelowPctDamaged(50, damage) && _events.IsInPhase(PHASE_TWO))
 			{
 				_events.SetPhase(PHASE_THREE);
-<<<<<<< HEAD
-				_events.ScheduleEvent(EVENT_SCHATTENFALLE, 27000);
-=======
 				_events.ScheduleEvent(EVENT_SCHATTENFALLE, 30000);
->>>>>>> 015c5fc899bf9e6b150bdd84b408d420efe1dd36
+
 
 			}
 		}
