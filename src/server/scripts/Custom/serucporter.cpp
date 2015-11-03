@@ -38,8 +38,8 @@ public: seruc() : CreatureScript("seruc"){ }
 
 		bool OnGossipHello(Player *pPlayer, Creature* _creature)
 		{
-			pPlayer->ADD_GOSSIP_ITEM(7, "Raid [Gesperrt] 20.000 Goldkosten", GOSSIP_SENDER_MAIN, 0);
-			pPlayer->ADD_GOSSIP_ITEM(7, "Instanz [Gesperrt] 20.000 Goldkosten", GOSSIP_SENDER_MAIN, 13);
+			pPlayer->ADD_GOSSIP_ITEM(7, "Raid: Der Fall des verlorenen Herrschers", GOSSIP_SENDER_MAIN, 0);
+			pPlayer->ADD_GOSSIP_ITEM(7, "Instanz", GOSSIP_SENDER_MAIN, 13);
 			pPlayer->ADD_GOSSIP_ITEM(7, "Teleport zum PVP Areal", GOSSIP_SENDER_MAIN, 1);
 			pPlayer->ADD_GOSSIP_ITEM(7, "Teleport zur Insel ", GOSSIP_SENDER_MAIN, 2);
 			pPlayer->ADD_GOSSIP_ITEM(7, "Teleport zu Yasio ", GOSSIP_SENDER_MAIN, 3);
@@ -55,12 +55,20 @@ public: seruc() : CreatureScript("seruc"){ }
 			{
 				/*RAID*/
 			case 0: {
-				std::ostringstream ss;
-				pPlayer->GetGUID();
-				pPlayer->TeleportTo(169, -393.26, 2972.93, 92.85, 5.94);
-				pPlayer->ModifyMoney(-200000000);
-				ss << "|cff54b5ff|r " << ChatHandler(pPlayer->GetSession()).GetNameLink() << "|cff54b5ff hat sich in den gesperrten Raid geportet. Ihm/Ihr wurden 20.000 Gold abgezogen, welche nicht erstattet werden|r |cff54b5ff!|r";
-				sWorld->SendServerMessage(SERVER_MSG_STRING, ss.str().c_str());
+				if (pPlayer->GetSession()->GetSecurity() == 3){
+					pPlayer->TeleportTo(169, -393.26, 2972.93, 92.85, 5.94);
+					return true;
+				}
+
+				else {
+					std::ostringstream ss;
+					pPlayer->GetGUID();
+					pPlayer->Whisper("Wende dich bitte an die Entwickler wenn du mehr Informationen haben moechtest.", LANG_UNIVERSAL, pPlayer, true);
+					ss << "|cff54b5ff|r " << ChatHandler(pPlayer->GetSession()).GetNameLink() << "|cff54b5ff hat sich in den gesperrten Raid geportet. Der Raid ist noch geschlossen. Wenn ihr mehr Informationen erhalten wollt, wendet Euch bitte an den zustaendigen Entwickler|r |cff54b5ff!|r";
+					sWorld->SendServerMessage(SERVER_MSG_STRING, ss.str().c_str());
+					return true;
+				}
+				
 				
 				return true;
 			}break;
@@ -69,32 +77,36 @@ public: seruc() : CreatureScript("seruc"){ }
 			{
 				uint32 guid = pPlayer->GetGUID();
 
+
 				pPlayer->PlayerTalkClass->ClearMenus();
 				pPlayer->ADD_GOSSIP_ITEM(7, "Was sind die MMO Bosse?", GOSSIP_SENDER_MAIN, 17);
-				pPlayer->ADD_GOSSIP_ITEM(7, "Boss: Orrig [5-10] ", GOSSIP_SENDER_MAIN, 4);
-				pPlayer->ADD_GOSSIP_ITEM(7, "Boss: Exitares Schatten [7-15]", GOSSIP_SENDER_MAIN, 5);
-				pPlayer->ADD_GOSSIP_ITEM(7, "Boss: Die gequaelte Seele [5-15]", GOSSIP_SENDER_MAIN, 6);
-				pPlayer->ADD_GOSSIP_ITEM(7, "Boss: Kayoula [25-40]", GOSSIP_SENDER_MAIN, 7);
-				pPlayer->ADD_GOSSIP_ITEM(7, "Boss: Therakin [15-25]", GOSSIP_SENDER_MAIN, 8);
-				pPlayer->ADD_GOSSIP_ITEM(7, "Boss: Arcturus [5-10] ", GOSSIP_SENDER_MAIN, 9);
-				pPlayer->ADD_GOSSIP_ITEM(7, "Boss: Moon [25-40]", GOSSIP_SENDER_MAIN, 10);
-				pPlayer->ADD_GOSSIP_ITEM(7, "Boss: Maltyriun [5-10]", GOSSIP_SENDER_MAIN, 11);
-				pPlayer->ADD_GOSSIP_ITEM(7, "Boss: LORDofDOOM [7-15]", GOSSIP_SENDER_MAIN, 12);
-				pPlayer->ADD_GOSSIP_ITEM(7, "Boss: Eonar [5-10]", GOSSIP_SENDER_MAIN, 14);
-				pPlayer->ADD_GOSSIP_ITEM(7, "Boss: Tolreos [5-10]", GOSSIP_SENDER_MAIN, 16);
+				pPlayer->ADD_GOSSIP_ITEM(7, "Boss: Orrig [5-10 Spieler] ", GOSSIP_SENDER_MAIN, 4);
+				pPlayer->ADD_GOSSIP_ITEM(7, "Boss: Exitares Schatten [7-15 Spieler] Nicht empfohlen!", GOSSIP_SENDER_MAIN, 5);
+				pPlayer->ADD_GOSSIP_ITEM(7, "Boss: Die gequaelte Seele [5-15 Spieler]", GOSSIP_SENDER_MAIN, 6);
+				pPlayer->ADD_GOSSIP_ITEM(7, "Boss: Kayoula [25-40 Spieler]", GOSSIP_SENDER_MAIN, 7);
+				pPlayer->ADD_GOSSIP_ITEM(7, "Boss: Therakin [10-15 Spieler]", GOSSIP_SENDER_MAIN, 8);
+				pPlayer->ADD_GOSSIP_ITEM(7, "Boss: Arcturus [5-10 Spieler] ", GOSSIP_SENDER_MAIN, 9);
+				pPlayer->ADD_GOSSIP_ITEM(7, "Boss: Moon [25-40 Spieler]", GOSSIP_SENDER_MAIN, 10);
+				pPlayer->ADD_GOSSIP_ITEM(7, "Boss: Maltyriun [5-10 Spieler]", GOSSIP_SENDER_MAIN, 11);
+				pPlayer->ADD_GOSSIP_ITEM(7, "Boss: LORDofDOOM [7-15 Spieler]", GOSSIP_SENDER_MAIN, 12);
+				pPlayer->ADD_GOSSIP_ITEM(7, "Boss: Eonar [8-15 Spieler] Rework!", GOSSIP_SENDER_MAIN, 14);
+				pPlayer->ADD_GOSSIP_ITEM(7, "Boss: Tolreos [8-15 Spieler] Rework!", GOSSIP_SENDER_MAIN, 16);
+
+				if (pPlayer->GetSession()->GetSecurity() >= 2){
+					pPlayer->ADD_GOSSIP_ITEM(7, "Boss: Anna [Testphase]", GOSSIP_SENDER_MAIN, 17);
+					pPlayer->ADD_GOSSIP_ITEM(7, "Boss: Galadriel", GOSSIP_SENDER_MAIN, 18);
+				}
+
 				pPlayer->PlayerTalkClass->SendGossipMenu(907, pCreature->GetGUID());
 				return true;
 			}
 				/*PVP*/
 			case 1: {
 				pPlayer->GetGUID();
-				
-				uint32 rating = pPlayer->GetArenaPersonalRating(1);
-					
-						pPlayer->ModifyHonorPoints(-500, NULL);
-						pPlayer->TeleportTo(0, -793.67,1565.25,19.88,3.25);
-						pPlayer->ModifyMoney(-200000);
-						return true;
+				pPlayer->ModifyHonorPoints(-500, NULL);
+				pPlayer->TeleportTo(0, -793.67,1565.25,19.88,3.25);
+				pPlayer->ModifyMoney(-200000);
+				return true;
 					
 			}break;
 				
@@ -211,12 +223,17 @@ public: seruc() : CreatureScript("seruc"){ }
 
 					/*INSTANZ*/
 				case 13: {
-					std::ostringstream ss;
-					pPlayer->GetGUID();
-					pPlayer->TeleportTo(169, -393.26, 2972.93, 92.85, 5.94);
-					pPlayer->ModifyMoney(-20000000);
-					ss << "|cff54b5ff|r " << ChatHandler(pPlayer->GetSession()).GetNameLink() << "|cff54b5ff hat sich in die gesperrte Instanz geportet. Ihm/Ihr wurden 20.000 Gold abgezogen, welche nicht erstattet werden|r |cff54b5ff!|r";
-					sWorld->SendServerMessage(SERVER_MSG_STRING, ss.str().c_str());
+					if (pPlayer->GetSession()->GetSecurity() == 3){
+						pPlayer->TeleportTo(169, -393.26, 2972.93, 92.85, 5.94);
+						return true;
+					}
+					else {
+						std::ostringstream ss;
+						pPlayer->GetGUID();
+						ss << "|cff54b5ff|r " << ChatHandler(pPlayer->GetSession()).GetNameLink() << "|cff54b5ff hat sich in die gesperrte Instanz geportet. Diese ist noch geschlossen. Wenn ihr mehr Informationen erhalten wollt, wendet Euch bitte an den zustaendigen Entwickler|r |cff54b5ff!|r";
+						sWorld->SendServerMessage(SERVER_MSG_STRING, ss.str().c_str());
+						return true;
+					}
 					return true;
 				}break;
 

@@ -72,13 +72,16 @@ public:
 	struct tyraniumAI : public ScriptedAI
 	{
 		tyraniumAI(Creature* creature) : ScriptedAI(creature), Summons(me) { }
-
+		uint32 armor = 0;
 		void Reset() override
 		{
 			kills = 0;
 			_events.Reset();
+			me->SetReactState(REACT_DEFENSIVE);
 			Summons.DespawnAll();
-			
+			armor = me->GetArmor();
+			me->SetObjectScale(1);
+			me->SetArmor(20);
 			
 		}
 
@@ -125,7 +128,7 @@ public:
 		{
 	
 			char msg[250];
-			snprintf(msg, 250, "|cffff0000[Boss System]|r Boss|cffff6060 Tyranium|r wurde getoetet! Respawn in 4h 30min.");
+			snprintf(msg, 250, "|cffff0000[Boss System]|r Boss|cffff6060 Eonar|r wurde getoetet! Respawn in 4h 30min.");
 			sWorld->SendGlobalText(msg, NULL);
 			
 		}
@@ -135,9 +138,23 @@ public:
 		{
 			
 			if (spell->Id == 35395){
-				me->SelectNearestTarget();
-				me->SetDisplayId(27971);
+				me->Yell("Eure Kreuzfahrerstoesse werden Euch nicht retten.", LANG_UNIVERSAL, nullptr);
 				me->SetInCombatWith(caster);
+				me->SetDisplayId(27971);
+			}
+
+			
+			if (spell->Id == 45462){
+				armor = me->GetArmor();
+				Player* target;
+				me->SetName("Eonar der Alte");
+				me->SetObjectScale(2);
+				me->Whisper("Eure Seuchen. Bitte fuehrt sie weiter aus. Dient mir als Sklave wenn ich Euch unterwerfe.", LANG_UNIVERSAL, target, false);
+				me->CombatStop(true);
+				armor = armor + 10;
+				me->SetArmor(armor);
+				me->Yell("Eure Seuchen werden mich nicht aufhalten. Meine Ruestung wird immer haerter!", LANG_UNIVERSAL, nullptr);
+
 			}
 
 
@@ -253,14 +270,31 @@ class tyraniumadd : public CreatureScript
 {
 public: tyraniumadd() : CreatureScript("tyraniumadd") { }
 
+		
 		struct tyraniumaddAI : public ScriptedAI
 		{
 			tyraniumaddAI(Creature* creature) : ScriptedAI(creature), Summons(me) { }
-
+			bool deathstate = false;
 			void Reset() override
 			{
 				me->SetReactState(REACT_AGGRESSIVE);
 				_events.Reset();
+				deathstate = false;
+			}
+
+			void SpellHit(Unit* caster, SpellInfo const* spell) override
+			{
+
+				if (spell->Id == 1752){
+					me->Yell("Spuert meine Macht!", LANG_UNIVERSAL, nullptr);
+					me->SelectNearestHostileUnitInAggroRange(false);
+					me->DealHeal(me, 20000);
+					me->SetObjectScale(3);
+					me->AddAura(45438,caster);
+					deathstate = true;
+				}
+
+
 			}
 
 			void EnterCombat(Unit*) override
@@ -269,6 +303,27 @@ public: tyraniumadd() : CreatureScript("tyraniumadd") { }
 				_events.SetPhase(PHASE_ONE);
 				_events.ScheduleEvent(EVENT_EISBLOCK, 10000);
 			
+			}
+
+			void DamageTaken(Unit* /*attacker*/, uint32& damage) override
+			{
+				if (me->HealthBelowPctDamaged(100, damage) && _events.IsInPhase(PHASE_ONE))
+				{
+					
+					_events.ScheduleEvent(EVENT_EISBLOCK, 15000);
+				}
+
+				if (me->HealthBelowPct(2) && _events.IsInPhase(PHASE_ONE))
+				{
+					if (!deathstate){
+						me->SetFullHealth();
+					}
+
+					else{
+						me->DespawnOrUnsummon(1);
+					}
+				}
+
 			}
 
 
@@ -287,7 +342,7 @@ public: tyraniumadd() : CreatureScript("tyraniumadd") { }
 						if (Unit* target = SelectTarget(SELECT_TARGET_RANDOM, 0)){
 							DoCast(target, SPELL_EISBLOCK);
 						}
-						_events.ScheduleEvent(EVENT_EISBLOCK, 3000);
+						_events.ScheduleEvent(EVENT_EISBLOCK, 10000);
 						break;
 
 					default:

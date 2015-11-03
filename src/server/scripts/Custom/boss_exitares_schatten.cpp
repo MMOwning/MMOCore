@@ -68,12 +68,16 @@ public:
 
 		void Reset() override
 		{
+			me->setFaction(21);
 			_events.Reset();
 			Summons.DespawnAll();
 		}
 
 		void EnterCombat(Unit* /*who*/) override
 		{
+			me->Yell("Ich bin gerade auf Kaffee bei Kayoula. Bitte versucht es spaeter noch einmal!", LANG_UNIVERSAL, nullptr);
+			me->setFaction(35);
+			Reset();
 			Talk(SAY_AGGRO);
 			_events.SetPhase(PHASE_ONE);
 			_events.ScheduleEvent(EVENT_TOXIC_WASTE, 20000);
