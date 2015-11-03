@@ -38,7 +38,7 @@ public:
 		
 		uint32 guid = player->GetGUID();
 		uint32 accountid = player->GetSession()->GetAccountId();
-		uint32 security = 2;
+		
 
 		QueryResult accountres = CharacterDatabase.PQuery("SELECT account FROM characters WHERE guid = %u", guid);
 		uint32 accountresint = (*accountres)[0].GetUInt32();
