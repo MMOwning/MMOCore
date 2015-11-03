@@ -42,29 +42,13 @@ public: eventnpc() : CreatureScript("eventnpc"){ }
 		{
 			
 			pPlayer->GetGUID();
-			GameEventMgr::ActiveEvents const& ae = sGameEventMgr->GetActiveEventList();
-			bool active = ae.find(73) != ae.end();
-			if (active == true){
-				pPlayer->ADD_GOSSIP_ITEM(7, "Jumpevent [aktiv]", GOSSIP_SENDER_MAIN, 4);
-			}
-
-			else{
-				pPlayer->ADD_GOSSIP_ITEM(7, "Jumpevent", GOSSIP_SENDER_MAIN, 4);
-			}
-
-			bool active = ae.find(74) != ae.end();
-			if (active == true){
-				pPlayer->ADD_GOSSIP_ITEM(7, "Das Portal [aktiv]", GOSSIP_SENDER_MAIN, 5);
-			}
-
-			else{
-				pPlayer->ADD_GOSSIP_ITEM(7, "Das Portal", GOSSIP_SENDER_MAIN, 5);
-			}
-
+		
 			pPlayer->ADD_GOSSIP_ITEM(7, "Was tut dieser NPC?", GOSSIP_SENDER_MAIN, 0);
 			pPlayer->ADD_GOSSIP_ITEM(7, "MMOwning Weihnachtsevent. Informationen folgen bald.", GOSSIP_SENDER_MAIN, 1);
 			pPlayer->ADD_GOSSIP_ITEM(7, "MMOwning Halloweenevent. 21.10. - 11.11.", GOSSIP_SENDER_MAIN, 2);
 			pPlayer->ADD_GOSSIP_ITEM(7, "Das Wandervolk", GOSSIP_SENDER_MAIN, 3);
+			pPlayer->ADD_GOSSIP_ITEM(7, "Jumpevent", GOSSIP_SENDER_MAIN, 4);
+			pPlayer->ADD_GOSSIP_ITEM(7, "Das Portal", GOSSIP_SENDER_MAIN, 5);
 			pPlayer->PlayerTalkClass->SendGossipMenu(907, _creature->GetGUID());
 			return true;
 		}
