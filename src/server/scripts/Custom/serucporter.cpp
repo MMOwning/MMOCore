@@ -92,7 +92,7 @@ public: seruc() : CreatureScript("seruc"){ }
 				pPlayer->ADD_GOSSIP_ITEM(7, "Boss: Eonar [8-15 Spieler] Rework!", GOSSIP_SENDER_MAIN, 14);
 				pPlayer->ADD_GOSSIP_ITEM(7, "Boss: Tolreos [8-15 Spieler] Rework!", GOSSIP_SENDER_MAIN, 16);
 
-				if (pPlayer->GetSession()->GetSecurity >= 2){
+				if (pPlayer->GetSession()->GetSecurity() >= 2){
 					pPlayer->ADD_GOSSIP_ITEM(7, "Boss: Anna [Testphase]", GOSSIP_SENDER_MAIN, 17);
 					pPlayer->ADD_GOSSIP_ITEM(7, "Boss: Galadriel", GOSSIP_SENDER_MAIN, 18);
 				}
