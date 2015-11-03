@@ -38,7 +38,6 @@ public:
 		
 		uint32 guid = player->GetGUID();
 		uint32 accountid = player->GetSession()->GetAccountId();
-		uint32 security = 2;
 
 		QueryResult accountres = CharacterDatabase.PQuery("SELECT account FROM characters WHERE guid = %u", guid);
 		uint32 accountresint = (*accountres)[0].GetUInt32();
@@ -59,28 +58,28 @@ public:
 		}
 
 		else if (player->IsGameMaster() && player->GetSession()->GetSecurity() == 3){
-			if (accountid == 52252){
+			if (accountid == 52252){ //Exitare
 				ss << "|cff54b5ffMMOwning Administrator|r " << ChatHandler(player->GetSession()).GetNameLink() << " |cff54b5ff ist jetzt online!|r";
 				sWorld->SendServerMessage(SERVER_MSG_STRING, ss.str().c_str());
 			}
 
-			else if (accountid == 52806){
+			else if (accountid == 52806){ //Sturm
 				ss << "|cff54b5ffHead GM|r " << ChatHandler(player->GetSession()).GetNameLink() << " |cff54b5ff ist jetzt online!|r";
 				sWorld->SendServerMessage(SERVER_MSG_STRING, ss.str().c_str());
 			}
 
-			else if (accountid == 6){
+			else if (accountid == 6){ //Thiemo
 				ss << "|cff54b5ffGruender|r " << ChatHandler(player->GetSession()).GetNameLink() << " |cff54b5ff ist jetzt online!|r";
 				sWorld->SendServerMessage(SERVER_MSG_STRING, ss.str().c_str());
 			}
 
-			else if (accountid == 16296){
-				ss << "|cff54b5ffEntwickler|r " << ChatHandler(player->GetSession()).GetNameLink() << " |cff54b5ff ist jetzt online!|r";
+			else if (accountid == 52239){ //Pihaar
+				ss << "|cff54b5ffSuper Admin|r " << ChatHandler(player->GetSession()).GetNameLink() << " |cff54b5ff ist jetzt online!|r";
 				sWorld->SendServerMessage(SERVER_MSG_STRING, ss.str().c_str());
 			}
 
-			else if (accountid == 1){
-				ss << "|cff54b5ffMMOwning Administrator|r " << ChatHandler(player->GetSession()).GetNameLink() << " |cff54b5ff ist jetzt online!|r";
+			else if (accountid == 16296){ //Rumu
+				ss << "|cff54b5ffEntwickler|r " << ChatHandler(player->GetSession()).GetNameLink() << " |cff54b5ff ist jetzt online!|r";
 				sWorld->SendServerMessage(SERVER_MSG_STRING, ss.str().c_str());
 			}
 

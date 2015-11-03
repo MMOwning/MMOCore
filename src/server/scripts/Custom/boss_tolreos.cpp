@@ -102,7 +102,7 @@ public:
 		uint32 kills = 0;
 		void Reset() override
 		{
-
+			me->SetReactState(REACT_DEFENSIVE);
 			_events.Reset();
 			Summons.DespawnAll();
 		}
