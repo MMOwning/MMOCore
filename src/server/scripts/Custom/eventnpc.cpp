@@ -42,12 +42,29 @@ public: eventnpc() : CreatureScript("eventnpc"){ }
 		{
 			
 			pPlayer->GetGUID();
+			GameEventMgr::ActiveEvents const& ae = sGameEventMgr->GetActiveEventList();
+			bool active = ae.find(73) != ae.end();
+			if (active == true){
+				pPlayer->ADD_GOSSIP_ITEM(7, "Jumpevent [aktiv]", GOSSIP_SENDER_MAIN, 4);
+			}
+
+			else{
+				pPlayer->ADD_GOSSIP_ITEM(7, "Jumpevent", GOSSIP_SENDER_MAIN, 4);
+			}
+
+			bool active = ae.find(74) != ae.end();
+			if (active == true){
+				pPlayer->ADD_GOSSIP_ITEM(7, "Das Portal [aktiv]", GOSSIP_SENDER_MAIN, 5);
+			}
+
+			else{
+				pPlayer->ADD_GOSSIP_ITEM(7, "Das Portal", GOSSIP_SENDER_MAIN, 5);
+			}
+
 			pPlayer->ADD_GOSSIP_ITEM(7, "Was tut dieser NPC?", GOSSIP_SENDER_MAIN, 0);
-			pPlayer->ADD_GOSSIP_ITEM(7, "MMOwning Weihnachtsevent.", GOSSIP_SENDER_MAIN, 1);
+			pPlayer->ADD_GOSSIP_ITEM(7, "MMOwning Weihnachtsevent. Informationen folgen bald.", GOSSIP_SENDER_MAIN, 1);
 			pPlayer->ADD_GOSSIP_ITEM(7, "MMOwning Halloweenevent. 21.10. - 11.11.", GOSSIP_SENDER_MAIN, 2);
 			pPlayer->ADD_GOSSIP_ITEM(7, "Das Wandervolk", GOSSIP_SENDER_MAIN, 3);
-			pPlayer->ADD_GOSSIP_ITEM(7, "Jumpevent", GOSSIP_SENDER_MAIN, 4);
-			pPlayer->ADD_GOSSIP_ITEM(7, "Das Portal", GOSSIP_SENDER_MAIN, 5);
 			pPlayer->PlayerTalkClass->SendGossipMenu(907, _creature->GetGUID());
 			return true;
 		}
@@ -119,7 +136,7 @@ public: eventnpc() : CreatureScript("eventnpc"){ }
 					bool active = ae.find(72) != ae.end();
 					if (active == true){
 						pPlayer->GetGUID();
-						ChatHandler(pPlayer->GetSession()).PSendSysMessage("Das Event ist aktuell aktiv. Der Start ist bei Exitare auf der Insel. Wir wuenschen viel Spass.",
+						ChatHandler(pPlayer->GetSession()).PSendSysMessage("Das Event ist aktuell aktiv. Bitte lies dir die Questtexte aufmerksam durch oder frage deine Mitspieler wenn du nicht weiterkommst. Wir wuenschen viel Spass.",
 							pPlayer->GetName());
 						pPlayer->PlayerTalkClass->SendCloseGossip();
 						return true;
@@ -127,7 +144,7 @@ public: eventnpc() : CreatureScript("eventnpc"){ }
 
 					else{
 						pPlayer->GetGUID();
-						ChatHandler(pPlayer->GetSession()).PSendSysMessage("Das Wandervolk ist alle 3 Tage verfuegbar. Ihr koennt die Vorbereitungen fuer das Event bei Exitare starten.",
+						ChatHandler(pPlayer->GetSession()).PSendSysMessage("Das Wandervolk ist alle 3 Tage fuer 16 Stunden verfuegbar. Ihr koennt die Prequests, welche Euch fuer das Event qualifizieren, bei Exitare starten.",
 							pPlayer->GetName());
 						pPlayer->PlayerTalkClass->SendCloseGossip();
 						return true;

@@ -80,6 +80,7 @@ public:
 			me->SetReactState(REACT_DEFENSIVE);
 			Summons.DespawnAll();
 			armor = me->GetArmor();
+			me->SetObjectScale(1);
 			me->SetArmor(20);
 			
 		}

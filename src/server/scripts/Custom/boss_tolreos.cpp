@@ -102,9 +102,11 @@ public:
 		uint32 kills = 0;
 		void Reset() override
 		{
+			me->SetObjectScale(1);
 			me->SetReactState(REACT_DEFENSIVE);
 			_events.Reset();
 			Summons.DespawnAll();
+			me->SetCurrentEquipmentId(2193);
 		}
 
 		void EnterCombat(Unit*) override
@@ -123,6 +125,9 @@ public:
 		{
 			if (me->HealthBelowPctDamaged(75, damage) && _events.IsInPhase(PHASE_ONE))
 			{
+				me->Yell("Meine Wut wird groesser!", LANG_UNIVERSAL, nullptr);
+				me->SetCurrentEquipmentId(2214);
+				me->SetObjectScale(2);
 				_events.SetPhase(PHASE_TWO);
 				_events.ScheduleEvent(EVENT_EARTH, 10000);
 				_events.ScheduleEvent(EVENT_HEX, 8000);
@@ -206,11 +211,15 @@ public:
 					_events.ScheduleEvent(EVENT_EARTH, 10000);
 					break;
 				case EVENT_PSYCHOSIS:
-					DoCast(me, SPELL_PSYCHOSIS);
+					if (Unit* target = SelectTarget(SELECT_TARGET_BOTTOMAGGRO,0)){
+						DoCast(target, SPELL_PSYCHOSIS);
+					}	
 					_events.ScheduleEvent(EVENT_PSYCHOSIS, 18000);
 					break;
 				case EVENT_HEX:
-					DoCast(SPELL_HEX);
+					if (Unit* target = SelectTarget(SELECT_TARGET_FARTHEST, 0)){
+						DoCast(target,SPELL_HEX);
+					}
 					_events.ScheduleEvent(EVENT_HEX, 10000);
 					break;
 				case EVENT_ARCANE_DEVASTION:
