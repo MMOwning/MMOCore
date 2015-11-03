@@ -111,7 +111,7 @@ public:
 
 		void EnterCombat(Unit*) override
 		{
-			Talk(SAY_AGGRO);
+			me->Yell("Ein kleiner Mensch stirbt nur zum Schein! Wollt ihr ganz alleine sein?", LANG_UNIVERSAL, nullptr);
 			_events.SetPhase(PHASE_ONE);
 			_events.ScheduleEvent(EVENT_CURRUPTION, 8000);
 			_events.ScheduleEvent(EVENT_CRIPPLE, 10000);
@@ -125,7 +125,7 @@ public:
 		{
 			if (me->HealthBelowPctDamaged(75, damage) && _events.IsInPhase(PHASE_ONE))
 			{
-				me->Yell("Meine Wut wird groesser!", LANG_UNIVERSAL, nullptr);
+				me->Yell("Euer kleines Herz wird still fuer Stunden! So wird man Euch fuer Tod befinden.", LANG_UNIVERSAL, nullptr);
 				me->SetCurrentEquipmentId(2214);
 				me->SetObjectScale(2);
 				_events.SetPhase(PHASE_TWO);
@@ -141,6 +141,7 @@ public:
 
 			if (me->HealthBelowPctDamaged(35, damage) && _events.IsInPhase(PHASE_TWO))
 			{
+				me->Yell("Werdet verschart in nassem Sand. Habt Exi`s Spieluhr in der Hand.", LANG_UNIVERSAL, nullptr);
 				_events.SetPhase(PHASE_THREE);
 				_events.ScheduleEvent(EVENT_ARMY_OF_DEAD, 5000);
 				_events.ScheduleEvent(EVENT_CURRUPTION, 6000);
@@ -164,7 +165,7 @@ public:
 			if (victim->GetTypeId() != TYPEID_PLAYER)
 				return;
 			char msg[250];
-			snprintf(msg, 250, "|cffff0000[Boss System]|r Boss|cffff6060 Tolreos|r hat einen Spieler getötet. Insgesamt steht der Killcounter seit dem letzten Restart bei: %u", kills);
+			snprintf(msg, 250, "|cffff0000[Boss System]|r Boss|cffff6060 Tolreos|r hat einen Spieler getoetet. Insgesamt steht der Killcounter seit dem letzten Restart bei: %u", kills);
 			sWorld->SendGlobalText(msg, NULL);
 		}
 
@@ -227,6 +228,7 @@ public:
 					_events.ScheduleEvent(EVENT_ARCANE_DEVASTION, 12000);
 					break;
 				case EVENT_ARMY_OF_DEAD:
+					me->Yell("Hilfe meine Diener. Kommt mir zur Hilfe!", LANG_UNIVERSAL, nullptr);
 					DoCastToAllHostilePlayers(SPELL_ARMY_OF_DEAD);
 					_events.ScheduleEvent(EVENT_ARMY_OF_DEAD, 20000);
 					break;
@@ -274,9 +276,9 @@ public:
 
 		void EnterCombat(Unit*) override
 		{
-			Talk(SAY_AGGRO);
+			me->Yell("In 30 Sekunden seid ihr Tod Abschaum", LANG_UNIVERSAL, nullptr);
 			_events.SetPhase(PHASE_ONE);
-			_events.ScheduleEvent(EVENT_SCHATTENFALLE, 27000);
+			_events.ScheduleEvent(EVENT_SCHATTENFALLE, 30000);
 			
 
 		}
@@ -286,7 +288,7 @@ public:
 			if (me->HealthBelowPctDamaged(100, damage) && _events.IsInPhase(PHASE_ONE))
 			{
 				_events.SetPhase(PHASE_TWO);
-				_events.ScheduleEvent(EVENT_SCHATTENFALLE, 27000);
+				_events.ScheduleEvent(EVENT_SCHATTENFALLE, 30000);
 
 
 			}
@@ -294,7 +296,7 @@ public:
 			if (me->HealthBelowPctDamaged(50, damage) && _events.IsInPhase(PHASE_TWO))
 			{
 				_events.SetPhase(PHASE_THREE);
-				_events.ScheduleEvent(EVENT_SCHATTENFALLE, 1000);
+				_events.ScheduleEvent(EVENT_SCHATTENFALLE, 30000);
 
 			}
 		}
@@ -306,7 +308,7 @@ public:
 			if (victim->GetTypeId() != TYPEID_PLAYER)
 				return;
 			char msg[250];
-			snprintf(msg, 250, "|cffff0000[Boss System]|r Boss|cffff6060 Tolreos|r hat einen Spieler getötet. Insgesamt steht der Killcounter seit dem letzten Restart bei: %u", kills);
+			snprintf(msg, 250, "|cffff0000[Boss System]|r Boss|cffff6060 Tolreos|r hat einen Spieler getoetet. Insgesamt steht der Killcounter seit dem letzten Restart bei: %u", kills);
 			sWorld->SendGlobalText(msg, NULL);
 		}
 		
