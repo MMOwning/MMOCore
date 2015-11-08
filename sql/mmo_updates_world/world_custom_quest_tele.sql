@@ -1,5 +1,5 @@
 
-DELETE FROM `game_tele` WHERE `id` BETWEEN 5000 AND 5013;
+DELETE FROM `game_tele` WHERE `id` BETWEEN 5000 AND 5014;
 
 REPLACE INTO `game_tele` (`id`, `position_x`, `position_y`, `position_z`, `orientation`, `map`, `name`) 
 VALUES 
@@ -16,4 +16,5 @@ VALUES
 ('5010', '76.13', '-330.50', '91.46', '1.54', '229', 'solakar'),
 ('5011', '5342.16', '4865.83', '-186.68', '5.93', '571', 'moon'),
 ('5012', '3129.77', '-6284.06', '140.13', '0.55', '0', 'wandervolk'),
-('5013', '7413.79', '-1598.41', '174.96', '5.15', '1', 'events');
+('5013', '7413.79', '-1598.41', '174.96', '5.15', '1', 'events'),
+('5014', '4203.02', '2769.60', '351.17', '0.036', '631', 'events');

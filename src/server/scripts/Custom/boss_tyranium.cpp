@@ -87,7 +87,6 @@ public:
 
 		void EnterCombat(Unit* /*who*/) override
 		{
-			Talk(SAY_AGGRO);
 			_events.SetPhase(PHASE_ONE);
 			_events.ScheduleEvent(EVENT_MANA_DESTRUCTION, 1000);
 			_events.ScheduleEvent(EVENT_BRAIN_LINK_DAMAGE, 60000);
