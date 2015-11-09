@@ -87,7 +87,6 @@ public:
 
 		void EnterCombat(Unit* /*who*/) override
 		{
-			Talk(SAY_AGGRO);
 			_events.SetPhase(PHASE_ONE);
 			_events.ScheduleEvent(EVENT_MANA_DESTRUCTION, 1000);
 			_events.ScheduleEvent(EVENT_BRAIN_LINK_DAMAGE, 60000);
@@ -137,22 +136,26 @@ public:
 		void SpellHit(Unit* caster, SpellInfo const* spell) override
 		{
 			
-			if (spell->Id == 35395){
+			if (spell->Id == 48638){
 				me->Yell("Eure Kreuzfahrerstoesse werden Euch nicht retten.", LANG_UNIVERSAL, nullptr);
 				me->SetInCombatWith(caster);
 				me->SetDisplayId(27971);
 			}
 
 			
-			if (spell->Id == 45462){
+			if (spell->Id == 49921 || spell->Id == 66992){
 				armor = me->GetArmor();
 				me->SetName("Eonar der Alte");
 				me->SetObjectScale(2);
+<<<<<<< HEAD
 				me->Whisper("Eure Seuchen. Bitte fuehrt sie weiter aus. Dient mir als Sklave wenn ich Euch unterwerfe.", LANG_UNIVERSAL, caster, false);
+=======
+				me->Whisper("Eure Seuchen. Bitte fuehrt sie weiter aus. Dient mir als Sklave wenn ich Euch unterwerfe.", LANG_UNIVERSAL, target, true);
+>>>>>>> f44fc8cf4c98ad6079101070622f7c5380905fcc
 				me->CombatStop(true);
 				armor = armor + 10;
 				me->SetArmor(armor);
-				me->Yell("Eure Seuchen werden mich nicht aufhalten. Meine Ruestung wird immer haerter!", LANG_UNIVERSAL, nullptr);
+				me->Yell("Eure Seuchen werden mich nicht aufhalten. Meine Ruestung wird immer haerter! Sie ist aktuell bei: " + armor, LANG_UNIVERSAL, nullptr);
 
 			}
 

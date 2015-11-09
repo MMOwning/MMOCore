@@ -39,6 +39,7 @@ public:
 		uint32 guid = player->GetGUID();
 		uint32 accountid = player->GetSession()->GetAccountId();
 
+
 		QueryResult accountres = CharacterDatabase.PQuery("SELECT account FROM characters WHERE guid = %u", guid);
 		uint32 accountresint = (*accountres)[0].GetUInt32();
 		QueryResult charresult = CharacterDatabase.PQuery("Select count(guid) From characters where account = '%u'", accountresint);
@@ -74,7 +75,7 @@ public:
 			}
 
 			else if (accountid == 52239){ //Pihaar
-				ss << "|cff54b5ffSuper Admin|r " << ChatHandler(player->GetSession()).GetNameLink() << " |cff54b5ff ist jetzt online!|r";
+				ss << "|cff54b5ffEntwickler|r " << ChatHandler(player->GetSession()).GetNameLink() << " |cff54b5ff ist jetzt online!|r";
 				sWorld->SendServerMessage(SERVER_MSG_STRING, ss.str().c_str());
 			}
 

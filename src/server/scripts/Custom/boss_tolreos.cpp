@@ -298,6 +298,7 @@ public:
 				_events.SetPhase(PHASE_THREE);
 				_events.ScheduleEvent(EVENT_SCHATTENFALLE, 30000);
 
+
 			}
 		}
 

@@ -331,3 +331,18 @@ REPLACE INTO `creature_loot_template` (`Entry`, `Item`, `Reference`, `Chance`, `
 /* ARGENTUMGRUNZLING */
 UPDATE `creature_template` SET `type_flags`='1216348160' WHERE `entry`='33239';
 UPDATE `creature_template` SET `type_flags`='1216348160' WHERE `entry`='33238';
+
+
+/* QUEst ID 802306 */
+UPDATE `creature_questender` SET `id`='800004' WHERE `id`='800034' and`quest`='802306';
+UPDATE `creature_queststarter` SET `id`='800004' WHERE `id`='800034' and`quest`='802307';
+UPDATE `quest_template` SET `LogDescription`='Bringt die geheime Nachricht zu Destro MMOwning', `QuestDescription`='Bringt die geheime Nachricht zu Destro MMOwning. Ich moechte das ihr mir beweist, das ihr zu eurem Wort steht. Bringt Destro MMOwning die Nachricht. Geht jetzt Landratten!' WHERE `ID`='802306';
+
+/* Quest Bootybay follow */
+UPDATE `quest_template_addon` SET `NextQuestID`='802300' WHERE `ID`='802006';
+
+/* Torvan der Pirat */
+UPDATE `quest_template` SET `RewardMoney`='-300000000', `RewardBonusMoney`='250000000' WHERE `ID`='802308';
+
+/* QUEST LEANDARIA */
+UPDATE `creature_questender` SET `id`='800071' WHERE `id`='800086' and`quest`='900803';

@@ -3432,7 +3432,7 @@ VALUES ( /*  ID */ 800094,
   /* Scriptname  */'tyraniumadd');
   
 
-UPDATE `creature_template` SET `HealthModifier`='20', `ArmorModifier`='20', `DamageModifier`='40' WHERE `entry`='800094';/* die ganz nette Anna, selbiger Loot wie bei Tolreos momentan*/
+UPDATE `creature_template` SET `HealthModifier`='20', `ArmorModifier`='20', `DamageModifier`='3' WHERE `entry`='800094';/* die ganz nette Anna, selbiger Loot wie bei Tolreos momentan*/
 
 DELETE FROM `creature_loot_template` WHERE `Entry` = 800095;
 
