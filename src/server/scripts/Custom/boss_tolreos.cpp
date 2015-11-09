@@ -157,6 +157,7 @@ public:
 			char msg[250];
 			snprintf(msg, 250, "|cffff0000[Boss System]|r Boss|cffff6060 Tolreos|r wurde getoetet! Respawn in 5h.");
 			sWorld->SendGlobalText(msg, NULL);
+			Summons.DespawnAll();
 		}
 
 		void KilledUnit(Unit* victim) override

@@ -45,6 +45,12 @@ public:
 
 	bool OnGossipSelect(Player * pPlayer, Creature * pCreature, uint32 /*uiSender*/, uint32 uiAction)
 	{
+		
+	};
+
+
+	bool OnGossipSelectCode(Player* player, Creature* creature, uint32 /*sender*/, uint32 uiAction, const char* code)
+	{
 		switch (uiAction)
 		{
 
@@ -69,7 +75,8 @@ public:
 			return true;
 		}
 		return true;
-	};
+	}
+	
 };
 
 

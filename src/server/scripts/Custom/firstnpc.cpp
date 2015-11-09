@@ -93,7 +93,7 @@ class npc_first_char : public CreatureScript
 								 pPlayer->GetGUID();
 								 ChatHandler(pPlayer->GetSession()).PSendSysMessage("[Aufwertungs System] Deine Aufwertung wurde ausgefuehrt. Viel Spass wuenscht Exitare sowie das MMOwning-Team.",
 									 pPlayer->GetName());
-								sWorld->SendGMText(LANG_GM_BROADCAST, "Eine Firstausstattung wurde ausgefuehrt");
+								sWorld->SendGMText(LANG_GM_BROADCAST, "Eine Firstausstattung wurde ausgefuehrt von:" + accname);
 								pPlayer->PlayerTalkClass->SendCloseGossip();
 								pPlayer->SetLevel(80);
 								pPlayer->TeleportTo(0, -795.73, 1495.50, 104.54, 1.05, 0);
@@ -133,8 +133,8 @@ class npc_first_char : public CreatureScript
 							pPlayer->ADD_GOSSIP_ITEM(7, "Einzelausstattung. Wer/Was/Wie?", GOSSIP_SENDER_MAIN, 5);
 							pPlayer->ADD_GOSSIP_ITEM(7, "Gildentransfer Wer/Was/Wie?", GOSSIP_SENDER_MAIN, 6); 
 							pPlayer->ADD_GOSSIP_ITEM(7, "Meine Aufwertung wurde abgelehnt! Was tun?", GOSSIP_SENDER_MAIN, 7);
-							pPlayer->ADD_GOSSIP_ITEM(7, "Ich möchte einen anderen Charakter ausstatten lassen.", GOSSIP_SENDER_MAIN, 8);
-							pPlayer->ADD_GOSSIP_ITEM(7, "Ein Spieler mit der selben IP möchte eine Charakteraufwertung! Wie geht das?", GOSSIP_SENDER_MAIN, 9);
+							pPlayer->ADD_GOSSIP_ITEM(7, "Ich moechte einen anderen Charakter ausstatten lassen.", GOSSIP_SENDER_MAIN, 8);
+							pPlayer->ADD_GOSSIP_ITEM(7, "Ein Spieler mit der selben IP moechte eine Charakteraufwertung! Wie geht das?", GOSSIP_SENDER_MAIN, 9);
 							pPlayer->PlayerTalkClass->SendGossipMenu(907, pCreature->GetGUID());
 							return true;
 						}break;
