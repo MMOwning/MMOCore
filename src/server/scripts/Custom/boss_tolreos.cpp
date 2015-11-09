@@ -141,7 +141,7 @@ public:
 
 			if (me->HealthBelowPctDamaged(35, damage) && _events.IsInPhase(PHASE_TWO))
 			{
-				me->Yell("Werdet verschart in nassem Sand. Habt Exi`s Spieluhr in der Hand.", LANG_UNIVERSAL, nullptr);
+				me->Yell("Werdet verschart in nassem Sand. Habt eine Spieluhr in der Hand.", LANG_UNIVERSAL, nullptr);
 				_events.SetPhase(PHASE_THREE);
 				_events.ScheduleEvent(EVENT_ARMY_OF_DEAD, 5000);
 				_events.ScheduleEvent(EVENT_CURRUPTION, 6000);

@@ -146,10 +146,9 @@ public:
 			
 			if (spell->Id == 45462){
 				armor = me->GetArmor();
-				Player* target;
 				me->SetName("Eonar der Alte");
 				me->SetObjectScale(2);
-				me->Whisper("Eure Seuchen. Bitte fuehrt sie weiter aus. Dient mir als Sklave wenn ich Euch unterwerfe.", LANG_UNIVERSAL, target, false);
+				me->Whisper("Eure Seuchen. Bitte fuehrt sie weiter aus. Dient mir als Sklave wenn ich Euch unterwerfe.", LANG_UNIVERSAL, caster, false);
 				me->CombatStop(true);
 				armor = armor + 10;
 				me->SetArmor(armor);
