@@ -346,3 +346,9 @@ UPDATE `quest_template` SET `RewardMoney`='-300000000', `RewardBonusMoney`='2500
 
 /* QUEST LEANDARIA */
 UPDATE `creature_questender` SET `id`='800071' WHERE `id`='800086' and`quest`='900803';
+
+/*GOBJECT DEL */
+DELETE FROM gameobject WHERE `GUID` = 269628;
+DELETE FROM gameobject WHERE `GUID` = 269631;
+DELETE FROM gameobject WHERE `GUID` = 800032;
+DELETE FROM gameobject WHERE `GUID` = 800475;
