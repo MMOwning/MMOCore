@@ -321,11 +321,11 @@ REPLACE INTO `creature_loot_template` (`Entry`, `Item`, `Reference`, `Chance`, `
 REPLACE INTO `creature_loot_template` (`Entry`, `Item`, `Reference`, `Chance`, `QuestRequired`, `LootMode`, `GroupId`, `MinCount`, `MaxCount`, `Comment`) VALUES ('800040', '700520', '0', '50', '0', '1', '0', '1', '13', 'Halloweenabzeichen');
 REPLACE INTO `creature_loot_template` (`Entry`, `Item`, `Reference`, `Chance`, `QuestRequired`, `LootMode`, `GroupId`, `MinCount`, `MaxCount`, `Comment`) VALUES ('800050', '700520', '0', '50', '0', '1', '0', '1', '13', 'Halloweenabzeichen');
 REPLACE INTO `creature_loot_template` (`Entry`, `Item`, `Reference`, `Chance`, `QuestRequired`, `LootMode`, `GroupId`, `MinCount`, `MaxCount`, `Comment`) VALUES ('800037', '700520', '0', '50', '0', '1', '0', '1', '13', 'Halloweenabzeichen');
-DELETE FROM `creature_loot_template` WHERE `ENTRY` = 800010 AND `ITEM = 700520; 
-DELETE FROM `creature_loot_template` WHERE `ENTRY` = 800058 AND `ITEM = 700520; 
-DELETE FROM `creature_loot_template` WHERE `ENTRY` = 800040 AND `ITEM = 700520; 
-DELETE FROM `creature_loot_template` WHERE `ENTRY` = 800050 AND `ITEM = 700520; 
-DELETE FROM `creature_loot_template` WHERE `ENTRY` = 800037 AND `ITEM = 700520; 
+DELETE FROM `creature_loot_template` WHERE `ENTRY` = 800010 AND `ITEM` = 700520; 
+DELETE FROM `creature_loot_template` WHERE `ENTRY` = 800058 AND `ITEM` = 700520; 
+DELETE FROM `creature_loot_template` WHERE `ENTRY` = 800040 AND `ITEM` = 700520; 
+DELETE FROM `creature_loot_template` WHERE `ENTRY` = 800050 AND `ITEM` = 700520; 
+DELETE FROM `creature_loot_template` WHERE `ENTRY` = 800037 AND `ITEM` = 700520; 
 
 
 /* ARGENTUMGRUNZLING */
