@@ -124,7 +124,7 @@ public:
 		}
 
 
-		void JustDied(Unit* player )
+		void JustDied(Unit* player)
 		{
 	
 			char msg[250];
@@ -138,7 +138,7 @@ public:
 		void SpellHit(Unit* caster, SpellInfo const* spell) override
 		{
 			
-			if (spell->Id == 48638){
+			if (spell->Id == 35395){
 				me->Yell("Eure Kreuzfahrerstoesse werden Euch nicht retten.", LANG_UNIVERSAL, nullptr);
 				me->SetInCombatWith(caster);
 				me->SetDisplayId(27971);
@@ -284,7 +284,7 @@ public: tyraniumadd() : CreatureScript("tyraniumadd") { }
 			void SpellHit(Unit* caster, SpellInfo const* spell) override
 			{
 
-				if (spell->Id == 1752){
+				if (spell->Id == 48638){
 					me->Yell("Spuert meine Macht!", LANG_UNIVERSAL, nullptr);
 					me->SelectNearestHostileUnitInAggroRange(false);
 					me->DealHeal(me, 20000);

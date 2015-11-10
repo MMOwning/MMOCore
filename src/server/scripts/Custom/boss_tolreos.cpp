@@ -229,7 +229,7 @@ public:
 					_events.ScheduleEvent(EVENT_ARCANE_DEVASTION, 12000);
 					break;
 				case EVENT_ARMY_OF_DEAD:
-					me->Yell("Hilfe meine Diener. Kommt mir zur Hilfe!", LANG_UNIVERSAL, nullptr);
+					me->Yell("Kommt mir zur Hilfe!", LANG_UNIVERSAL, nullptr);
 					DoCastToAllHostilePlayers(SPELL_ARMY_OF_DEAD);
 					_events.ScheduleEvent(EVENT_ARMY_OF_DEAD, 20000);
 					break;
@@ -277,7 +277,7 @@ public:
 
 		void EnterCombat(Unit*) override
 		{
-			me->Yell("In 30 Sekunden seid ihr Tod Abschaum", LANG_UNIVERSAL, nullptr);
+			me->Yell("In 30 Sekunden seid ihr Tod Abschaum!", LANG_UNIVERSAL, nullptr);
 			_events.SetPhase(PHASE_ONE);
 			_events.ScheduleEvent(EVENT_SCHATTENFALLE, 30000);
 			

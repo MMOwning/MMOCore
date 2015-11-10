@@ -92,7 +92,29 @@ public:
 	}
 
 };
+
+class DoupleXP : public PlayerScript
+{
+public:
+	DoupleXP() : PlayerScript("DoupleXP"){}
+
+	void OnGiveXP(Player* player, uint32& amount, Unit* /*victim*/)
+	{
+		boost::gregorian::date date(boost::gregorian::day_clock::local_day());
+		auto day = date.day_of_week();
+		if (day == boost::date_time::Friday){
+			ChatHandler(pPlayer->GetSession()).PSendSysMessage("Double XP Bonus.",
+				pPlayer->GetName()); 
+			amount = amount * 2;
+		}
+
+	}
+
+
+};
+
 void AddSC_Announce_NewPlayer()
 {
 	new Announce_NewPlayer;
+	new DoupleXP;
 }

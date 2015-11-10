@@ -313,7 +313,7 @@ UPDATE `creature_loot_template` SET `Chance`='5', `MinCount`='1', `MaxCount`='4'
 
 
 
-/* Kuerbissoldaten lootid und loot */
+/* Kuerbissoldaten lootid und loot  Halloweenevent*/
 UPDATE `creature_template` SET `lootid`='27936' WHERE `entry`='27936';
 REPLACE INTO `creature_loot_template` (`Entry`, `Item`, `Reference`, `Chance`, `QuestRequired`, `LootMode`, `GroupId`, `MinCount`, `MaxCount`, `Comment`) VALUES ('27936', '700520', '0', '50', '0', '1', '0', '1', '13', 'Halloweenabzeichen');
 REPLACE INTO `creature_loot_template` (`Entry`, `Item`, `Reference`, `Chance`, `QuestRequired`, `LootMode`, `GroupId`, `MinCount`, `MaxCount`, `Comment`) VALUES ('800010', '700520', '0', '50', '0', '1', '0', '1', '13', 'Halloweenabzeichen');
@@ -321,11 +321,11 @@ REPLACE INTO `creature_loot_template` (`Entry`, `Item`, `Reference`, `Chance`, `
 REPLACE INTO `creature_loot_template` (`Entry`, `Item`, `Reference`, `Chance`, `QuestRequired`, `LootMode`, `GroupId`, `MinCount`, `MaxCount`, `Comment`) VALUES ('800040', '700520', '0', '50', '0', '1', '0', '1', '13', 'Halloweenabzeichen');
 REPLACE INTO `creature_loot_template` (`Entry`, `Item`, `Reference`, `Chance`, `QuestRequired`, `LootMode`, `GroupId`, `MinCount`, `MaxCount`, `Comment`) VALUES ('800050', '700520', '0', '50', '0', '1', '0', '1', '13', 'Halloweenabzeichen');
 REPLACE INTO `creature_loot_template` (`Entry`, `Item`, `Reference`, `Chance`, `QuestRequired`, `LootMode`, `GroupId`, `MinCount`, `MaxCount`, `Comment`) VALUES ('800037', '700520', '0', '50', '0', '1', '0', '1', '13', 'Halloweenabzeichen');
-/* DELETE FROM `creature_loot_template` WHERE `ENTRY` = 800010 AND `ITEM = 700520; */
-/* DELETE FROM `creature_loot_template` WHERE `ENTRY` = 800058 AND `ITEM = 700520; */
-/* DELETE FROM `creature_loot_template` WHERE `ENTRY` = 800040 AND `ITEM = 700520; */
-/* DELETE FROM `creature_loot_template` WHERE `ENTRY` = 800050 AND `ITEM = 700520; */
-/* DELETE FROM `creature_loot_template` WHERE `ENTRY` = 800037 AND `ITEM = 700520; */
+DELETE FROM `creature_loot_template` WHERE `ENTRY` = 800010 AND `ITEM = 700520; 
+DELETE FROM `creature_loot_template` WHERE `ENTRY` = 800058 AND `ITEM = 700520; 
+DELETE FROM `creature_loot_template` WHERE `ENTRY` = 800040 AND `ITEM = 700520; 
+DELETE FROM `creature_loot_template` WHERE `ENTRY` = 800050 AND `ITEM = 700520; 
+DELETE FROM `creature_loot_template` WHERE `ENTRY` = 800037 AND `ITEM = 700520; 
 
 
 /* ARGENTUMGRUNZLING */
@@ -352,3 +352,10 @@ DELETE FROM gameobject WHERE `GUID` = 269628;
 DELETE FROM gameobject WHERE `GUID` = 269631;
 DELETE FROM gameobject WHERE `GUID` = 800032;
 DELETE FROM gameobject WHERE `GUID` = 800475;
+
+/*Titan Relic ursprunglich 48 */
+UPDATE `main_realm`.`gameobject_template` SET `flags`='0' WHERE `entry`='194082';
+UPDATE `main_realm`.`gameobject_template` SET `flags`='0' WHERE `entry`='194083';
+UPDATE `main_realm`.`gameobject_template` SET `flags`='0' WHERE `entry`='192834';
+UPDATE `main_realm`.`gameobject_template` SET `flags`='0' WHERE `entry`='192829';
+
