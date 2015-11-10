@@ -102,7 +102,7 @@ public:
 	{
 		boost::gregorian::date date(boost::gregorian::day_clock::local_day());
 		auto day = date.day_of_week();
-		if (day == boost::date_time::Friday){
+		if (day == boost::date_time::Tuesday){
 			ChatHandler(player->GetSession()).PSendSysMessage("Double XP Bonus.",
 				player->GetName()); 
 			amount = amount * 2;
