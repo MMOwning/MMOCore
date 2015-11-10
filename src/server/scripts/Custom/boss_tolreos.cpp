@@ -159,7 +159,7 @@ public:
 			sWorld->SendGlobalText(msg, NULL);
 			Summons.DespawnAll();
 		}
-
+		 
 		void KilledUnit(Unit* victim) override
 		{
 			kills++;
