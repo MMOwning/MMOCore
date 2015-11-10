@@ -149,7 +149,6 @@ public:
 				armor = me->GetArmor();
 				me->SetName("Eonar der Alte");
 				me->SetObjectScale(2);
-				me->Whisper("Eure Seuchen. Bitte fuehrt sie weiter aus. Dient mir als Sklave wenn ich Euch unterwerfe.", LANG_UNIVERSAL, target, true);
 				me->CombatStop(true);
 				armor = armor + 10;
 				me->SetArmor(armor);
