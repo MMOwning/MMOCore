@@ -135,6 +135,11 @@ public:
 		if (active == true){
 			int amount = player->GetHonorPoints();
 			amount = amount + 25;
+			char msg[250];
+			snprintf(msg, 250, "Dir wurden %u Ehre gutgeschrieben.", 25);
+
+			ChatHandler(player->GetSession()).PSendSysMessage(msg,
+				player->GetName());
 		}
 
 	}
