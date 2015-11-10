@@ -353,9 +353,5 @@ DELETE FROM gameobject WHERE `GUID` = 269631;
 DELETE FROM gameobject WHERE `GUID` = 800032;
 DELETE FROM gameobject WHERE `GUID` = 800475;
 
-/*Titan Relic ursprunglich 48 */
-UPDATE `main_realm`.`gameobject_template` SET `flags`='0' WHERE `entry`='194082';
-UPDATE `main_realm`.`gameobject_template` SET `flags`='0' WHERE `entry`='194083';
-UPDATE `main_realm`.`gameobject_template` SET `flags`='0' WHERE `entry`='192834';
-UPDATE `main_realm`.`gameobject_template` SET `flags`='0' WHERE `entry`='192829';
+
 

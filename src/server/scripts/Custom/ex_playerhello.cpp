@@ -100,12 +100,41 @@ public:
 
 	void OnGiveXP(Player* player, uint32& amount, Unit* /*victim*/)
 	{
-		boost::gregorian::date date(boost::gregorian::day_clock::local_day());
-		auto day = date.day_of_week();
-		if (day == boost::date_time::Tuesday){
-			ChatHandler(player->GetSession()).PSendSysMessage("Double XP Bonus.",
-				player->GetName()); 
-			amount = amount * 2;
+
+		GameEventMgr::ActiveEvents const& ae = sGameEventMgr->GetActiveEventList();
+		bool active = ae.find(75) != ae.end();
+		if (active == true){
+			bool premium = player->GetSession()->IsPremium();
+			if (!premium){
+				char msg[250];
+				snprintf(msg, 250, "Dir wurden %u EP gutgeschrieben.", amount);
+								
+				ChatHandler(player->GetSession()).PSendSysMessage(msg,
+					player->GetName());
+				amount = amount * 2;
+			}
+		}
+
+	}
+
+
+};
+
+
+
+class DoublePVP : public PlayerScript
+{
+public:
+	DoublePVP() : PlayerScript("DoublePVP"){}
+
+	void OnPVPKill(Player* player, Player* pPlayer /*killed*/)
+	{
+
+		GameEventMgr::ActiveEvents const& ae = sGameEventMgr->GetActiveEventList();
+		bool active = ae.find(76) != ae.end();
+		if (active == true){
+			int amount = player->GetHonorPoints();
+			amount = amount + 25;
 		}
 
 	}
@@ -117,4 +146,5 @@ void AddSC_Announce_NewPlayer()
 {
 	new Announce_NewPlayer;
 	new DoupleXP;
+	new DoublePVP;
 }
