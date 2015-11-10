@@ -113,6 +113,15 @@ public:
 					player->GetName());
 				amount = amount * 2;
 			}
+
+			else {
+				char msg[250];
+				snprintf(msg, 250, "Dir wurden %u EP gutgeschrieben.", amount);
+
+				ChatHandler(player->GetSession()).PSendSysMessage(msg,
+					player->GetName());
+				amount = amount * 1,25;
+			}
 		}
 
 	}
