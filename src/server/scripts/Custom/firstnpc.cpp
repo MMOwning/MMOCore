@@ -93,7 +93,7 @@ class npc_first_char : public CreatureScript
 								 pPlayer->GetGUID();
 								 ChatHandler(pPlayer->GetSession()).PSendSysMessage("[Aufwertungs System] Deine Aufwertung wurde ausgefuehrt. Viel Spass wuenscht Exitare sowie das MMOwning-Team.",
 									 pPlayer->GetName());
-								sWorld->SendGMText(LANG_GM_BROADCAST, "Eine Firstausstattung wurde ausgefuehrt von:" + accname);
+								sWorld->SendGMText(LANG_GM_BROADCAST, "Eine Firstausstattung wurde ausgefuehrt von");
 								pPlayer->PlayerTalkClass->SendCloseGossip();
 								pPlayer->SetLevel(80);
 								pPlayer->TeleportTo(0, -795.73, 1495.50, 104.54, 1.05, 0);
