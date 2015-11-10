@@ -146,10 +146,12 @@ public:
 
 	void OnPVPKill(Player* player, Player* pPlayer /*killed*/)
 	{
-
-		GameEventMgr::ActiveEvents const& ae = sGameEventMgr->GetActiveEventList();
-		bool active = ae.find(76) != ae.end();
-		if (active == true){
+		boost::gregorian::date date(boost::gregorian::day_clock::local_day());
+		if (date.day_of_week() == boost::date_time::Friday ||
+			date.day_of_week() == boost::date_time::Saturday ||
+			date.day_of_week() == boost::date_time::Sunday || 
+			date.day_of_week() == boost::date_time::Monday ||
+			date.day_of_week() == boost::date_time::Wednesday) {
 			int amount = player->GetHonorPoints();
 			uint32 bonus = 25;
 			amount = amount + bonus;
