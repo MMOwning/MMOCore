@@ -123,7 +123,7 @@ public:
 					amount = amount * 1.25;
 				}
 			}
-
+	
 			else if (date.day_of_week() == boost::date_time::Monday ||
 				date.day_of_week() == boost::date_time::Tuesday ||
 				date.day_of_week() == boost::date_time::Wednesday ||
@@ -160,6 +160,9 @@ public:
 
 			ChatHandler(player->GetSession()).PSendSysMessage(msg,
 				player->GetName());
+
+
+			player->ModifyHonorPoints(amount, nullptr);
 		}
 
 	}
@@ -167,9 +170,56 @@ public:
 
 };
 
+
+class DuelLog : public PlayerScript
+{
+public:
+	DuelLog() : PlayerScript("DuelLog"){}
+
+	std::ostringstream ss;
+
+	void OnDuelStart(Player* player, Player* pPlayer){
+		ss << "|cff54b5ffDuel wurde gestartet mit den Teilnehmern: |r " << ChatHandler(player->GetSession()).GetNameLink() << " |cff54b5ff und|r" << ChatHandler(pPlayer->GetSession()).GetNameLink();
+		sWorld->SendGMText(LANG_GM_BROADCAST, ss.str().c_str());
+
+	}
+};
+
+
+class Shutdown : public WorldScript
+{
+public:
+	Shutdown() : WorldScript("Shutdown"){}
+
+	std::ostringstream ss;
+	std::ostringstream tt;
+	std::ostringstream uu;
+
+
+	void OnShutdown(){
+		ss << "|cff54b5ffDer Server wird fuer den ueblichen Dienstagspatch heruntergefahren. Wir sind bald wieder erreichbar. Weitere Informationen koennen auf der Homepage eingesehen werden.|r";
+		sWorld->SendServerMessage(SERVER_MSG_STRING, ss.str().c_str());
+
+		tt << "|cff54b5ffDer Shutdown wurde von|r " << ChatHandler(player->GetSession()).GetNameLink() << " |cff54b5ff eingeleitet.|r";
+		sWorld->SendGMText(LANG_GM_BROADCAST, tt.str().c_str());
+		
+	}
+
+	void OnStartup(){
+		uu << "Willkommen auf MMOwning World.";
+		sWorld->SetMotd(uu.str().c_str());
+
+	}
+
+};
+
+
+
 void AddSC_Announce_NewPlayer()
 {
 	new Announce_NewPlayer;
 	new DoupleXP;
 	new DoublePVP;
+	new Shutdown;
+	new DuelLog;
 }
