@@ -197,10 +197,11 @@ public:
 
 
 	void OnShutdown(){
+		
 		ss << "|cff54b5ffDer Server wird fuer den ueblichen Dienstagspatch heruntergefahren. Wir sind bald wieder erreichbar. Weitere Informationen koennen auf der Homepage eingesehen werden.|r";
 		sWorld->SendServerMessage(SERVER_MSG_STRING, ss.str().c_str());
 
-		tt << "|cff54b5ffDer Shutdown wurde von|r " << ChatHandler(player->GetSession()).GetNameLink() << " |cff54b5ff eingeleitet.|r";
+		tt << "|cff54b5ffDer Shutdown wurde eingeleitet.|r";
 		sWorld->SendGMText(LANG_GM_BROADCAST, tt.str().c_str());
 		
 	}
