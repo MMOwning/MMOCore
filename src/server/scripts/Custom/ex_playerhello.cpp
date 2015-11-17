@@ -179,7 +179,7 @@ public:
 	std::ostringstream ss;
 
 	void OnDuelStart(Player* player, Player* pPlayer){
-		ss << "|cff54b5ffDuel wurde gestartet mit den Teilnehmern: |r " << ChatHandler(player->GetSession()).GetNameLink() << " |cff54b5ff und|r" << ChatHandler(pPlayer->GetSession()).GetNameLink();
+		ss << "|cff54b5ffDuel wurde gestartet mit den Teilnehmern: |r " << ChatHandler(player->GetSession()).GetNameLink() << " |cff54b5ff und |r" << ChatHandler(pPlayer->GetSession()).GetNameLink();
 		sWorld->SendGMText(LANG_GM_BROADCAST, ss.str().c_str());
 
 	}
@@ -196,7 +196,7 @@ public:
 	std::ostringstream uu;
 
 
-	void OnShutdown(){
+	void OnShutdownInitiate(ShutdownExitCode /*code*/, ShutdownMask /*mask*/){
 		
 		ss << "|cff54b5ffDer Server wird fuer den ueblichen Dienstagspatch heruntergefahren. Wir sind bald wieder erreichbar. Weitere Informationen koennen auf der Homepage eingesehen werden.|r";
 		sWorld->SendServerMessage(SERVER_MSG_STRING, ss.str().c_str());
