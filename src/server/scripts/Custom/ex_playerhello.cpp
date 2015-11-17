@@ -209,7 +209,7 @@ public:
 	void OnStartup(){
 		uu << "Willkommen auf MMOwning World.";
 		sWorld->SetMotd(uu.str().c_str());
-
+		
 	}
 
 };
@@ -218,9 +218,9 @@ public:
 
 void AddSC_Announce_NewPlayer()
 {
-	new Announce_NewPlayer;
-	new DoupleXP;
-	new DoublePVP;
-	new Shutdown;
-	new DuelLog;
+	new Announce_NewPlayer();
+	new DoupleXP();
+	new DoublePVP();
+	new Shutdown();
+	new DuelLog();
 }

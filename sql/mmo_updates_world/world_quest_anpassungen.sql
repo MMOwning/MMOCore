@@ -354,4 +354,6 @@ DELETE FROM gameobject WHERE `GUID` = 800032;
 DELETE FROM gameobject WHERE `GUID` = 800475;
 
 
+/* WAndervolk Script Janarius */
+UPDATE `creature_template` SET `ScriptName`='janarius' WHERE `entry`='800085';
 

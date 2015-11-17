@@ -135,6 +135,7 @@ class cs_world_chat : public CommandScript
                 }
                        
                 msg += args;
+
                 if (FACTION_SPECIFIC)
                 {
                         SessionMap sessions = sWorld->GetAllSessions();

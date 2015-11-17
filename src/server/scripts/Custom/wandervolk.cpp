@@ -71,7 +71,20 @@ public:
 };
 
 
+class janarius : public CreatureScript
+{
+
+public:
+	janarius() : CreatureScript("janarius") { }
+
+	bool OnQuestAccept(Player* player, Creature* creature, Quest const* quest) {}
+	
+	bool OnQuestReward(Player* player, Creature* creature, Quest const* quest, uint32 /*opt*/){ }
+};
+
+
 void AddSC_wandervolk()
 {
 	new wandervolk();
+	
 }

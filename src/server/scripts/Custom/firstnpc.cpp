@@ -85,7 +85,7 @@ class npc_first_char : public CreatureScript
 							QueryResult accountgesanz = CharacterDatabase.PQuery("SELECT count(account) FROM first_char WHERE account = '%u'", accountanzint);
 							uint32 accountanzgesint = (*accountgesanz)[0].GetUInt32();
 
-						
+							
 
 							if (charresultint == 1 && ipadrcountint == 1 && onecharint != 1 && accountanzgesint <= 1){
 								
