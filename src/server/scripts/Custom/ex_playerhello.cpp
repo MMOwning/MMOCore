@@ -138,6 +138,25 @@ public:
 };
 
 
+class Lob : public PlayerScript
+{
+public:
+	Lob() : PlayerScript("Lob") {}
+
+	void OnLogin(Player * player, bool online){
+		uint32 time = player->GetTotalPlayedTime();
+		Mail* mail;
+		mail->receiver(player);
+		mail->body("Wir als MMO-Team möchten uns bei euch bedanken");
+		mail->sender("Exitare");
+		mail->subject("Ein Dankeschön von MMO-Team");
+		
+
+		if (time == 1440){
+			player->AddMail(mail);
+		}
+	}
+};
 
 class DoublePVP : public PlayerScript
 {
@@ -213,6 +232,8 @@ public:
 	}
 
 };
+
+
 
 
 
