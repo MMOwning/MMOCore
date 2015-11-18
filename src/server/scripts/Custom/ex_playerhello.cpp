@@ -198,7 +198,7 @@ public:
 
 	void OnShutdownInitiate(ShutdownExitCode /*code*/, ShutdownMask /*mask*/){
 		
-		ss << "|cff54b5ffDer Server wird fuer den ueblichen Dienstagspatch heruntergefahren. Wir sind bald wieder erreichbar. Weitere Informationen koennen auf der Homepage eingesehen werden.|r";
+		ss << "|cff54b5ffDer Server wird fuer Updates heruntergefahren. Wir sind bald wieder erreichbar. Weitere Informationen koennen auf der Homepage eingesehen werden.|r";
 		sWorld->SendServerMessage(SERVER_MSG_STRING, ss.str().c_str());
 
 		tt << "|cff54b5ffDer Shutdown wurde eingeleitet.|r";
