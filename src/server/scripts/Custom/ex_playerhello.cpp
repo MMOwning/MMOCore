@@ -2,6 +2,7 @@
 #include "time.h"
 #include <stdio.h>
 #include "Bag.h"
+#include "Mail.h"
 #include "Common.h"
 #include "Config.h"
 #include "DatabaseEnv.h"
