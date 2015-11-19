@@ -148,15 +148,10 @@ public:
 		GameEventMgr::ActiveEvents const& ae = sGameEventMgr->GetActiveEventList();
 		bool active = ae.find(70) != ae.end();
 
-		if (newzone == 876 && newarea == 876 && active == true && player->GetSession()->GetSecurity() == 0){
-			return;
-		}
-
-		else {
+		if (newzone == 876 && newarea == 876 && active == false && player->GetSession()->GetSecurity() == 0){
 			player->GetSession()->KickPlayer();
 		}
 
-	
 
 	}
 };
