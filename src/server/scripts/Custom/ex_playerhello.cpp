@@ -138,6 +138,29 @@ public:
 
 };
 
+class GMIsland : public PlayerScript
+{
+public:
+	GMIsland() : PlayerScript("GMIsland"){}
+
+	void OnUpdateZone(Player* player, uint32 newzone, uint32 newarea){
+		
+		GameEventMgr::ActiveEvents const& ae = sGameEventMgr->GetActiveEventList();
+		bool active = ae.find(70) != ae.end();
+
+		if (newzone == 876 && newarea == 876 && active == true && player->GetSession()->GetSecurity() == 0){
+			return;
+		}
+
+		else {
+			player->GetSession()->KickPlayer();
+		}
+
+	
+
+	}
+};
+
 
 class Lob : public PlayerScript
 {
@@ -232,6 +255,8 @@ public:
 		
 	}
 
+
+
 };
 
 
@@ -245,4 +270,6 @@ void AddSC_Announce_NewPlayer()
 	new DoublePVP();
 	new Shutdown();
 	new DuelLog();
+	new GMIsland();
+	
 }
