@@ -146,15 +146,14 @@ public:
 
 	void OnLogin(Player * player, bool online){
 		uint32 time = player->GetTotalPlayedTime();
-		Mail* mail;
-		mail->receiver(player);
-		mail->body("Wir als MMO-Team möchten uns bei euch bedanken");
-		mail->sender("Exitare");
-		mail->subject("Ein Dankeschön von MMO-Team");
+		
 		
 
 		if (time == 1440){
-			player->AddMail(mail);
+			SQLTransaction trans = CharacterDatabase.BeginTransaction();
+			int16 deliverDelay = 20;
+			MailDraft("Test","Test").SendMailTo(trans, MailReceiver(player), MailSender(player));
+			CharacterDatabase.CommitTransaction(trans);
 		}
 	}
 };
