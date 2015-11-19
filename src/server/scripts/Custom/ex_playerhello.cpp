@@ -149,11 +149,12 @@ public:
 		
 		
 
-		if (time == 1440){
-			SQLTransaction trans = CharacterDatabase.BeginTransaction();
-			int16 deliverDelay = 20;
-			MailDraft("Test","Test").SendMailTo(trans, MailReceiver(player), MailSender(player));
-			CharacterDatabase.CommitTransaction(trans);
+		if (time >= 1){
+			char msg[250];
+			snprintf(msg, 250, "MMOwning dankt dir fuer deine Spielzeit von: %u", time);
+			ChatHandler(player->GetSession()).PSendSysMessage(msg,
+				player->GetName());
+			
 		}
 	}
 };
