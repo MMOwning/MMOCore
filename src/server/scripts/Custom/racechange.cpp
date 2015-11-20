@@ -54,7 +54,7 @@ public:
 				return true;
 			break;
 		case  1:
-			if (pPlayer->HasItemCount(49426, 2)){
+			if (pPlayer->HasItemCount(49426, 2) && pPlayer->HasEnoughMoney(5000000)){
 				pPlayer->DestroyItemCount(49426, 2, true, false);
 				pPlayer->SetAtLoginFlag(AT_LOGIN_CHANGE_RACE);
 				pPlayer->GetGUID();
@@ -67,14 +67,14 @@ public:
 			}
 
 			else{
-				pPlayer->GetSession()->SendAreaTriggerMessage("Du hast nicht genug Marken zum wechseln. Komm wieder wenn du genug hast.");
+				pPlayer->GetSession()->SendAreaTriggerMessage("Du hast nicht genug Frostmarken zum Wechseln. Komm wieder wenn du genug hast.");
 				return true;
 			}
 
 			break;
 		case  2:
 
-			if (pPlayer->HasItemCount(49426, 2)){
+			if (pPlayer->HasItemCount(49426, 2) && pPlayer->HasEnoughMoney(5000000)){
 				pPlayer->DestroyItemCount(49426, 2, true);
 				pPlayer->SetAtLoginFlag(AT_LOGIN_CHANGE_FACTION);
 				pPlayer->GetGUID();
@@ -88,13 +88,13 @@ public:
 
 
 		else{
-			pPlayer->GetSession()->SendAreaTriggerMessage("Du hast nicht genug Marken zum wechseln. Komm wieder wenn du genug hast.");
+			pPlayer->GetSession()->SendAreaTriggerMessage("Du hast nicht genug Frostmarken zum Wechseln. Komm wieder wenn du genug hast.");
 			return true;
 		}
 
 			break;
 		case 3:
-			if (pPlayer->HasItemCount(49426, 2)){
+			if (pPlayer->HasItemCount(49426, 2) && pPlayer->HasEnoughMoney(5000000)){
 				pPlayer->DestroyItemCount(49426, 2, true, false);
 				pPlayer->SetAtLoginFlag(AT_LOGIN_CHANGE_FACTION);
 				pPlayer->SetAtLoginFlag(AT_LOGIN_CHANGE_RACE);
@@ -110,7 +110,7 @@ public:
 
 
 			else{
-				pPlayer->GetSession()->SendAreaTriggerMessage("Du hast nicht genug Frostmarken zum wechseln. Komm wieder wenn du genug hast.");
+				pPlayer->GetSession()->SendAreaTriggerMessage("Du hast nicht genug Frostmarken zum Wechseln. Komm wieder wenn du genug hast.");
 				return true;
 			}
 

@@ -149,7 +149,7 @@ public:
 		bool active = ae.find(70) != ae.end();
 
 		if (newzone == 876 && newarea == 876 && active == false && player->GetSession()->GetSecurity() == 0){
-			player->GetSession()->KickPlayer();
+			player->TeleportTo(0, -9773, 2126.72, 15.40, 3.88);
 		}
 
 
