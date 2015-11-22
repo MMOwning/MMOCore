@@ -48,3 +48,6 @@ REPLACE INTO `trinity_string` VALUES (11781, 'Dir stehen folgende Kommandos zur 
 
 -- Not working need full rewrite AuctionHouse system :(
 -- REPLACE INTO `command` (`name`,`security`,`help`) VALUES ('elite auction', 1, 'Syntax: .elite auction - opens auctionhouse window to character.');
+
+/*gm ingame command*/
+UPDATE `command` SET `permission`='195' WHERE `name`='gm ingame';

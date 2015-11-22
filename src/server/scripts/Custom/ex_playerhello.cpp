@@ -54,7 +54,7 @@ public:
 			return;
 		}
 
-		else if (player->IsGameMaster() && player->GetSession()->GetSecurity() == 2){
+		/*else if (player->IsGameMaster() && player->GetSession()->GetSecurity() == 2){
 			ss << "|cff54b5ffGM|r " << ChatHandler(player->GetSession()).GetNameLink() << " |cff54b5ff ist jetzt online!|r";
 			sWorld->SendServerMessage(SERVER_MSG_STRING, ss.str().c_str());
 		}
@@ -80,7 +80,7 @@ public:
 				sWorld->SendServerMessage(SERVER_MSG_STRING, ss.str().c_str());
 			}
 
-			else if (accountid == 16296){ //Rumu
+			else if (accountid == 53103){ //Rumu
 				ss << "|cff54b5ffEntwickler|r " << ChatHandler(player->GetSession()).GetNameLink() << " |cff54b5ff ist jetzt online!|r";
 				sWorld->SendServerMessage(SERVER_MSG_STRING, ss.str().c_str());
 			}
@@ -89,7 +89,7 @@ public:
 				ss << "|cff54b5ffMMOwning Teammitglied|r " << ChatHandler(player->GetSession()).GetNameLink() << " |cff54b5ff ist jetzt online!|r";
 				sWorld->SendServerMessage(SERVER_MSG_STRING, ss.str().c_str());
 			}
-		}
+		}*/
 	}
 
 };

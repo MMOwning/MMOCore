@@ -231,7 +231,7 @@ class npc_first_char : public CreatureScript
 								time_t seconds;
 								seconds = time(NULL);
 								uint32 zeit = seconds;
-																								
+								
 								
 								/*Acccountanzahl zählen*/
 								QueryResult accountanz = CharacterDatabase.PQuery("SELECT account FROM characters WHERE guid = %u", guid);
