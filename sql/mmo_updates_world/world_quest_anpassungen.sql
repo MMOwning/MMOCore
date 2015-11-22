@@ -357,3 +357,11 @@ DELETE FROM gameobject WHERE `GUID` = 800475;
 /* WAndervolk Script Janarius */
 UPDATE `creature_template` SET `ScriptName`='janarius' WHERE `entry`='800085';
 
+
+/* Firstausttattungs npc Umstellung */
+UPDATE `creature` SET `map`='169', `position_x`='-3799.51', `position_y`='-4111.92', `position_z`='365.14', `orientation`='4.89' WHERE `guid`='800019';
+UPDATE `creature` SET `map`='169', `position_x`='-3804.90', `position_y`='-4112.93', `position_z`='365.14', `orientation`='5.13' WHERE `guid`='800046';
+UPDATE `creature` SET `map`='169', `position_x`='-3812.43', `position_y`='-4115.85', `position_z`='365.14', `orientation`='5.19' WHERE `guid`='800043';
+UPDATE `creature` SET `map`='169', `position_x`='-3818.72', `position_y`='-4119.36', `position_z`='365.14', `orientation`='5.49' WHERE `guid`='800042';
+
+

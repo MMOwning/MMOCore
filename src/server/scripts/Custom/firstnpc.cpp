@@ -100,7 +100,7 @@ class npc_first_char : public CreatureScript
 								sWorld->SendGMText(LANG_GM_BROADCAST, ss.str().c_str());
 								pPlayer->PlayerTalkClass->SendCloseGossip();
 								pPlayer->SetLevel(80);
-								pPlayer->TeleportTo(0, -795.73, 1495.50, 104.54, 1.05, 0);
+								pPlayer->TeleportTo(169, -3800.23,-4135.12, 364.08, 2.01, 0);
 								pPlayer->AddItem(20400, 4);
 								pPlayer->SetMoney(50000000);
 							
@@ -242,7 +242,7 @@ class npc_first_char : public CreatureScript
 								if (guildmemberint >= 10 && guildmemberint < 25 && charresultint == 1 && ipadrcountint == 1 && onecharint != 1 && accountanzgesint <= 1){
 									pPlayer->SetLevel(80);
 									pPlayer->LearnDefaultSkill(762, 3);
-									pPlayer->TeleportTo(0, -795.73, 1495.50, 104.54, 1.05, 0);
+									pPlayer->TeleportTo(169, -3800.23, -4135.12, 364.08, 2.01, 0);
 									pPlayer->AddItem(20400, 4);
 									pPlayer->SetMoney(50000000);
 									
@@ -335,7 +335,7 @@ class npc_first_char : public CreatureScript
 							if (guildmemberint > 25  && charresultint == 1 && ipadrcountint == 1 && onecharint != 1 && accountanzgesint <= 1){
 								pPlayer->SetLevel(80);
 								pPlayer->LearnDefaultSkill(762, 4);
-								pPlayer->TeleportTo(0, -795.73, 1495.50, 104.54, 1.05, 0);
+								pPlayer->TeleportTo(169, -3800.23, -4135.12, 364.08, 2.01, 0);
 								pPlayer->AddItem(20400, 4);
 								pPlayer->SetMoney(50000000);
 
