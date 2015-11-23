@@ -71,7 +71,7 @@ public: codenpc() : CreatureScript("codenpc"){ }
 					"VALUES ('%s', %u)",
 					player, genutzt);
 
-				return true;
+				
 				char msg[250];
 				snprintf(msg, 250, "Dein Code wurde akzeptiert. Deine Belohnung wurde dir gutgeschrieben.");
 				ChatHandler(player->GetSession()).PSendSysMessage(msg,
@@ -81,6 +81,7 @@ public: codenpc() : CreatureScript("codenpc"){ }
 
 				ss << "|cff54b5ffEin Code wurde eingeloest von |r " << ChatHandler(player->GetSession()).GetNameLink();
 				sWorld->SendGMText(LANG_GM_BROADCAST, ss.str().c_str());
+				return true;
 
 			}
 
