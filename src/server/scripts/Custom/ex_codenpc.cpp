@@ -30,97 +30,77 @@
 #include <sstream>
 #include <string>
 #include <stdlib.h>
+enum eEnums
+{
+	SPELL_POLYMORPH = 12826,
+	SPELL_MARK_OF_THE_WILD = 26990,
+
+	SAY_NOT_INTERESTED = -1999922,
+	SAY_WRONG = -1999923,
+	SAY_CORRECT = -1999924
+};
 
 #define GOSSIP_ITEM_1       "A quiz: what's your name?"
 #define GOSSIP_ITEM_2       "I'm not interested"
 
-
 class codenpc : public CreatureScript
 {
-public: codenpc() : CreatureScript("codenpc"){ }
-		std::ostringstream ss;
+public:
 
+	codenpc()
+		: CreatureScript("codenpc")
+	{
+	}
 
-		bool OnGossipHello(Player* pPlayer, Creature* pCreature)
+	bool OnGossipHello(Player* pPlayer, Creature* pCreature)
+	{
+		pPlayer->ADD_GOSSIP_ITEM_EXTENDED(0, GOSSIP_ITEM_1, GOSSIP_SENDER_MAIN, GOSSIP_ACTION_INFO_DEF + 1, "", 0, true);
+		pPlayer->ADD_GOSSIP_ITEM(GOSSIP_ICON_CHAT, GOSSIP_ITEM_2, GOSSIP_SENDER_MAIN, GOSSIP_ACTION_INFO_DEF + 2);
+
+		pPlayer->PlayerTalkClass->SendGossipMenu(907, pCreature->GetGUID());
+
+		return true;
+	}
+
+	bool OnGossipSelect(Player* pPlayer, Creature* pCreature, uint32 /*uiSender*/, uint32 uiAction)
+	{
+		pPlayer->PlayerTalkClass->ClearMenus();
+		if (uiAction == GOSSIP_ACTION_INFO_DEF + 2)
 		{
-			pPlayer->ADD_GOSSIP_ITEM_EXTENDED(0, GOSSIP_ITEM_1, GOSSIP_SENDER_MAIN, 1, "", 0, true);
-			pPlayer->ADD_GOSSIP_ITEM(GOSSIP_ICON_CHAT, GOSSIP_ITEM_2, GOSSIP_SENDER_MAIN,  2);
-
-			pPlayer->PlayerTalkClass->SendGossipMenu(907, pCreature->GetGUID());
-
-			return true;
+			DoScriptText(SAY_NOT_INTERESTED, pCreature);
+			pPlayer->CLOSE_GOSSIP_MENU();
 		}
 
+		return true;
+	}
 
-		bool OnGossipSelectCode(Player* player, GameObject* /*go*/, uint32 /*sender*/, uint32 action, const char* code){
-		
-			
-			switch (action)
+	bool OnGossipSelectCode(Player* pPlayer, Creature* pCreature, uint32 uiSender, uint32 uiAction, const char* code)
+	{
+		pPlayer->PlayerTalkClass->ClearMenus();
+		if (uiSender == GOSSIP_SENDER_MAIN)
+		{
+			switch (uiAction)
 			{
-			case 1:
-			
-				
-					uint32 spieler = player->GetGUID();
-					std::string codes = code;
-
-					if (!*code){
-						char msg[250];
-						snprintf(msg, 250, "Es wurde kein Code eingetragen.");
-						ChatHandler(player->GetSession()).PSendSysMessage(msg,
-							player->GetName());
-						return false;
-					}
-
-
-					QueryResult coderesult = CharacterDatabase.PQuery("SELECT * FROM codes WHERE Code = %s", codes);
-					std::string codedb = (*coderesult)[0].GetString();
-					uint32 genutzt = (*coderesult)[3].GetUInt32();
-
-					if (codedb == ""){
-						char msg[250];
-						snprintf(msg, 250, "Dein Code wurde nicht akzeptiert.");
-						ChatHandler(player->GetSession()).PSendSysMessage(msg,
-							player->GetName());
-						return false;
-					}
-
-
-					if (genutzt == 0){
-						genutzt = 1;
-						CharacterDatabase.PExecute("UPDATE CODES set Spieler = %s, genutzt = %u WHERE Code = %s"
-							"(Spieler,genutzt) "
-							"VALUES ('%s', '%u')",
-							spieler, genutzt, codes);
-
-
-						char msg[250];
-						snprintf(msg, 250, "Dein Code wurde akzeptiert. Deine Belohnung wurde dir gutgeschrieben.");
-						ChatHandler(player->GetSession()).PSendSysMessage(msg,
-							player->GetName());
-
-
-
-						ss << "|cff54b5ffEin Code wurde eingeloest von |r " << ChatHandler(player->GetSession()).GetNameLink();
-						sWorld->SendGMText(LANG_GM_BROADCAST, ss.str().c_str());
-						return true;
-		
+			case GOSSIP_ACTION_INFO_DEF + 1:
+				if (std::strcmp(code, pPlayer->GetName()) != 0)
+				{
+					DoScriptText(SAY_WRONG, pCreature);
+					pCreature->CastSpell(pPlayer, SPELL_POLYMORPH, true);
 				}
-				
-				player->CLOSE_GOSSIP_MENU();
+				else
+				{
+					DoScriptText(SAY_CORRECT, pCreature);
+					pCreature->CastSpell(pPlayer, SPELL_MARK_OF_THE_WILD, true);
+				}
+				pPlayer->CLOSE_GOSSIP_MENU();
 
 				return true;
-			
+			}
 		}
 
 		return false;
-
-		
-
-			}
-		
-
+	}
 };
-
 
 
 void AddSC_codenpc()
