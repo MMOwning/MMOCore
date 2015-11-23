@@ -63,8 +63,10 @@ public: codenpc() : CreatureScript("codenpc"){ }
 
 			QueryResult result = CharacterDatabase.PQuery("SELECT `code`, `genutzt` FROM `codes` WHERE `code` = %u", itemCode);
 
-			if (action == 1)
+			switch (action)
 			{
+			case 1:
+
 				if (result)
 				{
 					Field* fields = result->Fetch();
@@ -96,6 +98,7 @@ public: codenpc() : CreatureScript("codenpc"){ }
 							snprintf(msg, 250, "Dein Code wurde akzeptiert. Deine Belohnung wurde dir gutgeschrieben.");
 							ChatHandler(player->GetSession()).PSendSysMessage(msg,
 								player->GetName());
+							return true;
 
 						}
 						else{
@@ -116,10 +119,11 @@ public: codenpc() : CreatureScript("codenpc"){ }
 						return false;
 					}
 				}
-					
-			}
 
-			if (action == 10){
+
+
+			case 10:
+			{
 				char msg[250];
 				snprintf(msg, 250, "10 wurde gedruekct!");
 				ChatHandler(player->GetSession()).PSendSysMessage(msg,
@@ -130,6 +134,7 @@ public: codenpc() : CreatureScript("codenpc"){ }
 			player->CLOSE_GOSSIP_MENU();
 
 			return true;
+			}
 		}
 };
 
