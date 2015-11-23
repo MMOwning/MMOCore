@@ -37,8 +37,14 @@ class codenpc : public CreatureScript
 public: codenpc() : CreatureScript("codenpc"){ }
 		std::ostringstream ss;
 
-		bool OnGossipSelectCode(Player* player, GameObject* /*go*/, uint32 /*sender*/, uint32 action , const char* code){
-			
+		bool OnGossipSelectCode(Player* player, GameObject* /*go*/, uint32 /*sender*/, uint32 action, const char* code){
+
+			player->SEND_GOSSIP_MENU(DEFAULT_GOSSIP_MESSAGE, pCreature->GetGUID());
+			player->PlayerTalkClass->ClearMenus();
+			player->ADD_GOSSIP_ITEM(7, "Code", GOSSIP_SENDER_MAIN, 5);
+			player->ADD_GOSSIP_ITEM_EXTENDED(1, 7, "std::string const& message vorne", GOSSIP_SENDER_MAIN, 1, "std::string const& boxMessage", 0 /*uint32 boxMoney*/, true);
+			return true;
+		
 			uint32 spieler = player->GetGUID();	
 			std::string codes = code;
 
