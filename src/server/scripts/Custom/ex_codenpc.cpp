@@ -83,7 +83,7 @@ public: codenpc() : CreatureScript("codenpc"){ }
 				sWorld->SendGMText(LANG_GM_BROADCAST, ss.str().c_str());
 				return true;
 
-
+			}
 		
 
 		}
