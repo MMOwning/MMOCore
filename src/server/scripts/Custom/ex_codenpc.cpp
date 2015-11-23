@@ -31,19 +31,28 @@
 #include <string>
 #include <stdlib.h>
 
+#define GOSSIP_ITEM_1       "A quiz: what's your name?"
+#define GOSSIP_ITEM_2       "I'm not interested"
+
 
 class codenpc : public CreatureScript
 {
 public: codenpc() : CreatureScript("codenpc"){ }
 		std::ostringstream ss;
 
-		bool OnGossipSelectCode(Player* player, GameObject* /*go*/, uint32 /*sender*/, uint32 action, const char* code){
 
-			player->SEND_GOSSIP_MENU(DEFAULT_GOSSIP_MESSAGE, pCreature->GetGUID());
-			player->PlayerTalkClass->ClearMenus();
-			player->ADD_GOSSIP_ITEM(7, "Code", GOSSIP_SENDER_MAIN, 5);
-			player->ADD_GOSSIP_ITEM_EXTENDED(1, "std::string const& message vorne", GOSSIP_SENDER_MAIN, 1, "std::string const& boxMessage", 0 /*uint32 boxMoney*/, true);
+		bool OnGossipHello(Player* pPlayer, Creature* pCreature)
+		{
+			pPlayer->ADD_GOSSIP_ITEM_EXTENDED(0, GOSSIP_ITEM_1, GOSSIP_SENDER_MAIN, 1, "", 0, true);
+			pPlayer->ADD_GOSSIP_ITEM(GOSSIP_ICON_CHAT, GOSSIP_ITEM_2, GOSSIP_SENDER_MAIN,  2);
+
+			pPlayer->PlayerTalkClass->SendGossipMenu(907, pCreature->GetGUID());
+
 			return true;
+		}
+
+
+		bool OnGossipSelectCode(Player* player, GameObject* /*go*/, uint32 /*sender*/, uint32 action, const char* code){
 		
 			uint32 spieler = player->GetGUID();	
 			std::string codes = code;
