@@ -77,43 +77,44 @@ public: codenpc() : CreatureScript("codenpc"){ }
 					uint32 belohnung = 49426;
 					uint32 anzahl = 2;
 
-					
-					
-					if (genutzt == 0)
-					{
-						Item* item = Item::CreateItem(belohnung, anzahl);
 
-						SQLTransaction trans = CharacterDatabase.BeginTransaction();
-						item->SaveToDB(trans);
-						MailDraft("Geschenkcode", "Dein Code wurde erfolgreich eingelöst.").AddItem(item)
-							.SendMailTo(trans, MailReceiver(player, player->GetGUID()), MailSender(MAIL_NORMAL, 0, MAIL_STATIONERY_GM));
-						CharacterDatabase.CommitTransaction(trans);
+					if (code == itemCode) {
+						if (genutzt == 0)
+						{
+							Item* item = Item::CreateItem(belohnung, anzahl);
 
-						CharacterDatabase.PExecute("UPDATE codes SET spieler = '%s' WHERE code = %u", player->GetName().c_str(), itemCode);
-						CharacterDatabase.PExecute("UPDATE codes SET genutzt = 1 WHERE code = %u", itemCode);
+							SQLTransaction trans = CharacterDatabase.BeginTransaction();
+							item->SaveToDB(trans);
+							MailDraft("Geschenkcode", "Dein Code wurde erfolgreich eingelöst.").AddItem(item)
+								.SendMailTo(trans, MailReceiver(player, player->GetGUID()), MailSender(MAIL_NORMAL, 0, MAIL_STATIONERY_GM));
+							CharacterDatabase.CommitTransaction(trans);
 
-						char msg[250];
-						snprintf(msg, 250, "Dein Code wurde akzeptiert. Deine Belohnung wurde dir gutgeschrieben.");
-						ChatHandler(player->GetSession()).PSendSysMessage(msg,
-							player->GetName());
-						
+							CharacterDatabase.PExecute("UPDATE codes SET spieler = '%s' WHERE code = %u", player->GetName().c_str(), itemCode);
+							CharacterDatabase.PExecute("UPDATE codes SET genutzt = 1 WHERE code = %u", itemCode);
+
+							char msg[250];
+							snprintf(msg, 250, "Dein Code wurde akzeptiert. Deine Belohnung wurde dir gutgeschrieben.");
+							ChatHandler(player->GetSession()).PSendSysMessage(msg,
+								player->GetName());
+
+						}
+						else{
+							char msg[250];
+							snprintf(msg, 250, "Dein Code wurde bereits verwendet");
+							ChatHandler(player->GetSession()).PSendSysMessage(msg,
+								player->GetName());
+							return false;
+						}
+
 					}
-					else{
+					else
+					{
 						char msg[250];
-						snprintf(msg, 250, "Dein Code wurde bereits verwendet");
+						snprintf(msg, 250, "Dein Code wurde nicht akzeptiert.");
 						ChatHandler(player->GetSession()).PSendSysMessage(msg,
 							player->GetName());
 						return false;
 					}
-						
-				}
-				else
-				{
-					char msg[250];
-					snprintf(msg, 250, "Dein Code wurde nicht akzeptiert.");
-					ChatHandler(player->GetSession()).PSendSysMessage(msg,
-						player->GetName());
-					return false;
 				}
 					
 			}
