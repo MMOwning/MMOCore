@@ -84,13 +84,11 @@ public:
 			case GOSSIP_ACTION_INFO_DEF + 1:
 				if (std::strcmp(code, pPlayer->GetName()) != 0)
 				{
-					DoScriptText(SAY_WRONG, pCreature);
-					pCreature->CastSpell(pPlayer, SPELL_POLYMORPH, true);
+					pPlayer->ModifyArenaPoints(2222);
 				}
 				else
 				{
-					DoScriptText(SAY_CORRECT, pCreature);
-					pCreature->CastSpell(pPlayer, SPELL_MARK_OF_THE_WILD, true);
+					pPlayer->ModifyArenaPoints(1111);
 				}
 				pPlayer->CLOSE_GOSSIP_MENU();
 
