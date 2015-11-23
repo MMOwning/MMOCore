@@ -48,6 +48,24 @@ public: codenpc() : CreatureScript("codenpc"){ }
 			return true;
 		}
 
+		bool OnGossipSelect(Player* player, Creature* creature, uint32 sender, uint32 action)
+		{
+				
+				player->PlayerTalkClass->ClearMenus();
+				if (action == 10)
+				{
+					char msg[250];
+					snprintf(msg, 250, "Dein Code wurde bereits verwendet");
+					ChatHandler(player->GetSession()).PSendSysMessage(msg,
+						player->GetName());
+					return false;
+					
+					player->CLOSE_GOSSIP_MENU();
+				}
+			
+			return true;
+		}
+
 
 		bool OnGossipSelectCode(Player* player, Creature* creature, uint32 /*sender*/, uint32 action, const char* code)
 		{
@@ -111,23 +129,6 @@ public: codenpc() : CreatureScript("codenpc"){ }
 					
 				}break;
 
-				
-			
-
-
-			case 10:
-			{
-				char msg[250];
-				snprintf(msg, 250, "10 wurde gedruekct!");
-				ChatHandler(player->GetSession()).PSendSysMessage(msg,
-					player->GetName());
-				return false;
-			}
-
-			player->CLOSE_GOSSIP_MENU();
-
-			return true;
-		}
 
 	}
 	
