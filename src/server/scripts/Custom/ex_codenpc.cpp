@@ -67,7 +67,7 @@ public:
 		pPlayer->PlayerTalkClass->ClearMenus();
 		if (uiAction == GOSSIP_ACTION_INFO_DEF + 2)
 		{
-			DoScriptText(SAY_NOT_INTERESTED, pCreature);
+			
 			pPlayer->CLOSE_GOSSIP_MENU();
 		}
 
