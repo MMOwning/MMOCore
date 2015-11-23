@@ -39,51 +39,15 @@ public: codenpc() : CreatureScript("codenpc"){ }
 
 		bool OnGossipSelectCode(Player* player, GameObject* /*go*/, uint32 /*sender*/, uint32 action , const char* code){
 			
-			player->GetGUID();	
+			uint32 spieler = player->GetGUID();	
 			
 
-			if (!*code){
-				char msg[250];
-				snprintf(msg, 250, "Es wurde kein Code eingetragen.");
-				ChatHandler(player->GetSession()).PSendSysMessage(msg,
-					player->GetName());
-				return false;
-			}
-	
+			QueryResult accountres = CharacterDatabase.PQuery("SELECT account FROM characters WHERE guid = %u", guid);
+			uint32 accountresint = (*accountres)[0].GetUInt32();
+			QueryResult charresult = CharacterDatabase.PQuery("Select count(guid) From characters where account = '%u'", accountresint);
+			uint32 charresultint = (*charresult)[0].GetUInt32();
 
-			QueryResult coderesult = CharacterDatabase.PQuery("SELECT * FROM CODES WHERE Code = %s", code);
-			std::string codedb = (*coderesult)[0].GetString();
-			uint32 genutzt = (*coderesult)[3].GetUInt32();
-
-			if (codedb == ""){
-				char msg[250];
-				snprintf(msg, 250, "Dein Code wurde nicht akzeptiert.");
-				ChatHandler(player->GetSession()).PSendSysMessage(msg,
-					player->GetName());
-				return false;
-			}
-
-
-			if (genutzt == 0){
-				genutzt = genutzt + 1;
-				CharacterDatabase.PExecute("REPLACE INTO CODES "
-					"(Spieler,genutzt) "
-					"VALUES ('%s', %u)",
-					player, genutzt);
-
-				
-				char msg[250];
-				snprintf(msg, 250, "Dein Code wurde akzeptiert. Deine Belohnung wurde dir gutgeschrieben.");
-				ChatHandler(player->GetSession()).PSendSysMessage(msg,
-					player->GetName());
-
-
-
-				ss << "|cff54b5ffEin Code wurde eingeloest von |r " << ChatHandler(player->GetSession()).GetNameLink();
-				sWorld->SendGMText(LANG_GM_BROADCAST, ss.str().c_str());
-				return true;
-
-			}
+		
 
 		}
 
