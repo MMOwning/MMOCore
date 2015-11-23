@@ -80,9 +80,7 @@ public: codenpc() : CreatureScript("codenpc"){ }
 					uint32 anzahl = 2;
 
 
-					if (code == itemCode) {
-						if (genutzt == 0)
-						{
+					if (code == itemCode && genutzt == 0) {
 							Item* item = Item::CreateItem(belohnung, anzahl);
 
 							SQLTransaction trans = CharacterDatabase.BeginTransaction();
@@ -109,7 +107,7 @@ public: codenpc() : CreatureScript("codenpc"){ }
 							return false;
 						}
 
-					}
+					
 					else
 					{
 						char msg[250];
@@ -135,8 +133,8 @@ public: codenpc() : CreatureScript("codenpc"){ }
 
 			return true;
 			}
-		}
-};
+		};
+
 
 
 
