@@ -66,12 +66,12 @@ public: codenpc() : CreatureScript("codenpc"){ }
 
 			if (genutzt == 0){
 				genutzt = 1;
-				CharacterDatabase.PExecute("REPLACE INTO CODES"
+				CharacterDatabase.PExecute("UPDATE CODES set Spieler = %s, genutzt = %u WHERE Code = %s"
 					"(Spieler,genutzt) "
 					"VALUES ('%s', '%u')",
-					spieler, genutzt);
+					spieler, genutzt,codes);
 
-
+			
 				char msg[250];
 				snprintf(msg, 250, "Dein Code wurde akzeptiert. Deine Belohnung wurde dir gutgeschrieben.");
 				ChatHandler(player->GetSession()).PSendSysMessage(msg,
