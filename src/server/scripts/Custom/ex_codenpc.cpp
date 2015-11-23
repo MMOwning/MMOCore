@@ -69,11 +69,17 @@ public: codenpc() : CreatureScript("codenpc"){ }
 				{
 					Field* fields = result->Fetch();
 					uint32 code = fields[0].GetUInt32();
-					uint8 benutzt = fields[2].GetUInt8();
+					char msg[250];
+					snprintf(msg, 250, "Code fetch");
+					ChatHandler(player->GetSession()).PSendSysMessage(msg,
+						player->GetName());
+					uint8 genutzt = fields[2].GetUInt8();
 					uint32 belohnung = 49426;
 					uint32 anzahl = 2;
+
 					
-					if (benutzt == 0)
+					
+					if (genutzt == 0)
 					{
 						Item* item = Item::CreateItem(belohnung, anzahl);
 
@@ -90,7 +96,7 @@ public: codenpc() : CreatureScript("codenpc"){ }
 						snprintf(msg, 250, "Dein Code wurde akzeptiert. Deine Belohnung wurde dir gutgeschrieben.");
 						ChatHandler(player->GetSession()).PSendSysMessage(msg,
 							player->GetName());
-						TC_LOG_INFO("entities.player.character", "Spieler %s hat Code(%u) eingelöst.", player->GetName().c_str(), itemCode);
+						
 					}
 					else{
 						char msg[250];
