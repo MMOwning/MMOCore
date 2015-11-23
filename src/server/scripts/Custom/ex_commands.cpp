@@ -38,7 +38,7 @@ public:
 	static bool HandleTestingCommand(ChatHandler* handler, const char* args)
 	{
 		Player *player = handler->GetSession()->GetPlayer();
-		if (player->GetSession()->GetSecurity < 2){
+		if (player->GetSession()->GetSecurity() < 2){
 			return false;
 		}
 		player->ResurrectPlayer(100, false);
