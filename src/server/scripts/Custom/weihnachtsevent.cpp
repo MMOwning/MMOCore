@@ -71,13 +71,14 @@ public:
 		if (quest->GetQuestId() == 900000){   //Erste Quest
 			player->AddAura(155,player);  //Weihnachtswichtel
 		}
+		return true;
 	}
 
 	bool OnQuestAccept(Player* player, Creature* /*creature*/, Quest const* quest)
 	{
 		if (quest->GetQuestId() == 0) //Nächste Quest
 		{
-
+			return true;
 		}
 	}
 };

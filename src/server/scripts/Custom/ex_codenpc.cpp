@@ -30,75 +30,94 @@
 #include <sstream>
 #include <string>
 #include <stdlib.h>
-enum eEnums
-{
-	SPELL_POLYMORPH = 12826,
-	SPELL_MARK_OF_THE_WILD = 26990,
 
-	SAY_NOT_INTERESTED = -1999922,
-	SAY_WRONG = -1999923,
-	SAY_CORRECT = -1999924
-};
+ 
 
-#define GOSSIP_ITEM_1       "A quiz: what's your name?"
-#define GOSSIP_ITEM_2       "I'm not interested"
 
 class codenpc : public CreatureScript
 {
-public:
+public: codenpc() : CreatureScript("codenpc"){ }
+		std::ostringstream ss;
 
-	codenpc()
-		: CreatureScript("codenpc")
-	{
-	}
 
-	bool OnGossipHello(Player* pPlayer, Creature* pCreature)
-	{
-		pPlayer->ADD_GOSSIP_ITEM_EXTENDED(0, GOSSIP_ITEM_1, GOSSIP_SENDER_MAIN, GOSSIP_ACTION_INFO_DEF + 1, "", 0, true);
-		pPlayer->ADD_GOSSIP_ITEM(GOSSIP_ICON_CHAT, GOSSIP_ITEM_2, GOSSIP_SENDER_MAIN, GOSSIP_ACTION_INFO_DEF + 2);
-
-		pPlayer->PlayerTalkClass->SendGossipMenu(907, pCreature->GetGUID());
-
-		return true;
-	}
-
-	bool OnGossipSelect(Player* pPlayer, Creature* pCreature, uint32 /*uiSender*/, uint32 uiAction)
-	{
-		pPlayer->PlayerTalkClass->ClearMenus();
-		if (uiAction == GOSSIP_ACTION_INFO_DEF + 2)
+		bool OnGossipHello(Player* player, Creature* creature)
 		{
-			
-			pPlayer->CLOSE_GOSSIP_MENU();
+			player->ADD_GOSSIP_ITEM_EXTENDED(0, "Code eingeben", GOSSIP_SENDER_MAIN, 1, "Itemcode eingeben", 0, true);
+			player->ADD_GOSSIP_ITEM(7, "Bis bald", GOSSIP_SENDER_MAIN, 10);
+			player->SEND_GOSSIP_MENU(1, creature->GetGUID());
+			return true;
 		}
 
-		return true;
-	}
 
-	bool OnGossipSelectCode(Player* pPlayer, Creature* pCreature, uint32 uiSender, uint32 uiAction, const char* code)
-	{
-		pPlayer->PlayerTalkClass->ClearMenus();
-		if (uiSender == GOSSIP_SENDER_MAIN)
+		bool OnGossipSelectCode(Player* player, Creature* creature, uint32 /*sender*/, uint32 action, const char* code)
 		{
-			switch (uiAction)
+			player->PlayerTalkClass->ClearMenus();
+			uint32 itemCode = atoi((char*)code);
+
+			if (!itemCode)
 			{
-			case GOSSIP_ACTION_INFO_DEF + 1:
-				if (std::strcmp(code, pPlayer->GetName()) != 0)
+				player->CLOSE_GOSSIP_MENU();
+				player->GetSession()->SendNotification("You must enter a value!");
+				return false;
+			}
+
+			QueryResult result = CharacterDatabase.PQuery("SELECT `code`, `genutzt` FROM `codes` WHERE `code` = %u", itemCode);
+
+			if (action == 1)
+			{
+				if (result)
 				{
-					pPlayer->ModifyArenaPoints(2222);
+					Field* fields = result->Fetch();
+					uint32 code = fields[0].GetUInt32();
+					uint8 benutzt = fields[2].GetUInt8();
+					uint32 belohnung = 49426;
+					uint32 anzahl = 2;
+					
+					if (benutzt == 0)
+					{
+						Item* item = Item::CreateItem(belohnung, anzahl);
+
+						SQLTransaction trans = CharacterDatabase.BeginTransaction();
+						item->SaveToDB(trans);
+						MailDraft("Geschenkcode", "Dein Code wurde erfolgreich eingelöst.").AddItem(item)
+							.SendMailTo(trans, MailReceiver(player, player->GetGUID()), MailSender(MAIL_NORMAL, 0, MAIL_STATIONERY_GM));
+						CharacterDatabase.CommitTransaction(trans);
+
+						CharacterDatabase.PExecute("UPDATE codes SET spieler = '%s' WHERE code = %u", player->GetName().c_str(), itemCode);
+						CharacterDatabase.PExecute("UPDATE codes SET genutzt = 1 WHERE code = %u", itemCode);
+
+						char msg[250];
+						snprintf(msg, 250, "Dein Code wurde akzeptiert. Deine Belohnung wurde dir gutgeschrieben.");
+						ChatHandler(player->GetSession()).PSendSysMessage(msg,
+							player->GetName());
+						TC_LOG_INFO("entities.player.character", "Spieler %s hat Code(%u) eingelöst.", player->GetName().c_str(), itemCode);
+					}
+					else{
+						char msg[250];
+						snprintf(msg, 250, "Dein Code wurde bereits verwendet");
+						ChatHandler(player->GetSession()).PSendSysMessage(msg,
+							player->GetName());
+						return false;
+					}
+						
 				}
 				else
 				{
-					pPlayer->ModifyArenaPoints(1111);
+					char msg[250];
+					snprintf(msg, 250, "Dein Code wurde nicht akzeptiert.");
+					ChatHandler(player->GetSession()).PSendSysMessage(msg,
+						player->GetName());
+					return false;
 				}
-				pPlayer->CLOSE_GOSSIP_MENU();
-
-				return true;
+					
 			}
-		}
 
-		return false;
-	}
+			player->CLOSE_GOSSIP_MENU();
+
+			return true;
+		}
 };
+
 
 
 void AddSC_codenpc()
