@@ -79,26 +79,20 @@ public: codenpc() : CreatureScript("codenpc"){ }
 				return false;
 			}
 
-			QueryResult result = CharacterDatabase.PQuery("SELECT `code`, `genutzt` FROM `codes` WHERE `code` = %u", itemCode);
+			QueryResult result = WorldDatabase.PQuery("SELECT `code`, `belohnung`, `anzahl`, `benutzt`FROM `item_codes` WHERE `code` = %u", itemCode);
 
 			if (action == 1)
 			{
-			
-
 				if (result)
 				{
 					Field* fields = result->Fetch();
 					uint32 code = fields[0].GetUInt32();
-					char msg[250];
-					snprintf(msg, 250, "Code fetch");
-					ChatHandler(player->GetSession()).PSendSysMessage(msg,
-						player->GetName());
-					uint8 genutzt = fields[2].GetUInt8();
-					uint32 belohnung = 49426;
-					uint32 anzahl = 2;
+					uint32 belohnung = fields[1].GetUInt32();
+					uint32 anzahl = fields[2].GetUInt32();
+					uint8 benutzt = fields[3].GetUInt8();
 
-
-					if (code == itemCode && genutzt == 0) {
+					if (benutzt == 0)
+					{
 						Item* item = Item::CreateItem(belohnung, anzahl);
 
 						SQLTransaction trans = CharacterDatabase.BeginTransaction();
@@ -107,30 +101,36 @@ public: codenpc() : CreatureScript("codenpc"){ }
 							.SendMailTo(trans, MailReceiver(player, player->GetGUID()), MailSender(MAIL_NORMAL, 0, MAIL_STATIONERY_GM));
 						CharacterDatabase.CommitTransaction(trans);
 
-						CharacterDatabase.PExecute("UPDATE codes SET spieler = '%s' WHERE code = %u", player->GetName().c_str(), itemCode);
-						CharacterDatabase.PExecute("UPDATE codes SET genutzt = 1 WHERE code = %u", itemCode);
+						WorldDatabase.PExecute("UPDATE item_codes SET name = '%s' WHERE code = %u", player->GetName().c_str(), itemCode);
+						WorldDatabase.PExecute("UPDATE item_codes SET benutzt = 1 WHERE code = %u", itemCode);
 
-						char msg[250];
-						snprintf(msg, 250, "Dein Code wurde akzeptiert. Deine Belohnung wurde dir gutgeschrieben.");
-						ChatHandler(player->GetSession()).PSendSysMessage(msg,
-							player->GetName());
-						return true;
+						
+						TC_LOG_INFO("entities.player.character", "Spieler %s hat Code(%u) eingelöst.", player->GetName().c_str(), itemCode);
 					}
-
-
-					else {
+					else{
 						char msg[250];
 						snprintf(msg, 250, "Dein Code wurde bereits verwendet");
 						ChatHandler(player->GetSession()).PSendSysMessage(msg,
 							player->GetName());
 						return false;
 					}
-
-
+						
 				}
-
+				else{
+					char msg[250];
+					snprintf(msg, 250, "Dein Code wurde bereits verwendet");
+					ChatHandler(player->GetSession()).PSendSysMessage(msg,
+						player->GetName());
+					return false;
+				}
+					
 			}
+
+			player->CLOSE_GOSSIP_MENU();
+
+			return true;
 		}
+		
 	
 	
 };
