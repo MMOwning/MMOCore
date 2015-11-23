@@ -48,7 +48,7 @@ public:
 		
 		if (player->GetTotalPlayedTime() < 1 && charresultint == 1)
 		{
-			ss << "|cff54b5ffWir heissen unseren neuesten Mitspieler|r " << ChatHandler(player->GetSession()).GetNameLink() << " |cff54b5ff auf MMOwning willkommen!|r";
+			ss << "|cff54b5ffHerzlich willkommen auf MMOwning: |r " << ChatHandler(player->GetSession()).GetNameLink();
 			sWorld->SendServerMessage(SERVER_MSG_STRING, ss.str().c_str());
 			sWorld->SendGMText(LANG_GM_BROADCAST,"Ein neuer Spieler ist auf MMO online gegangen.");
 			return;

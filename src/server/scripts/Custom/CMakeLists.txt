@@ -14,16 +14,16 @@ set(scripts_STAT_SRCS
   Custom/npc_vip.cpp 
   Custom/cs_fake.cpp  
   Custom/Congrats_on_Level.cpp
-  Custom/firstnpc.cpp
-  Custom/serucporter.cpp
-  Custom/eventnpc.cpp
+  Custom/ex_firstnpc.cpp
+  Custom/ex_serucporter.cpp
+  Custom/ex_eventnpc.cpp
   Custom/boss_galadriel.cpp
   Custom/boss_tyranium.cpp
   Custom/boss_anna.cpp
-  Custom/racechange.cpp
+  Custom/ex_racechange.cpp
   Custom/Allianzboss.cpp
   Custom/hordeboss.cpp
-  Custom/supportnpc.cpp
+  Custom/ex_supportnpc.cpp
   Custom/boss_orrig.cpp
   Custom/boss_tolreos.cpp
   Custom/boss_exitares_schatten.cpp
@@ -33,12 +33,14 @@ set(scripts_STAT_SRCS
   Custom/light_hardmode.cpp
   Custom/dark2.cpp
   Custom/ex_playerhello.cpp
-  Custom/halloween.cpp 
-  Custom/wandervolk.cpp
+  Custom/ex_halloween.cpp 
+  Custom/ex_wandervolk.cpp
   Custom/teleportitem.cpp
   Custom/leandaria.cpp
   Custom/raetsel.cpp
   Custom/weihnachtsevent.cpp
+  Custom/ex_commands.cpp
+  Custom/ex_codenpc.cpp
   ${scripts_STAT_SRCS}
 #  ${sources_Custom}
   Custom/Transmog/Transmogrification.h

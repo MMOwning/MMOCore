@@ -56,6 +56,7 @@ public:
         //item = ITEMID;
         //item2 = ITEMID2;
         //spell = SPELLID;
+
         break;
             case 20:
 		//10G
@@ -118,7 +119,6 @@ public:
         //ss2 << "Du wurdest mit " << money << " gold und Items belohnt!";
 		ss2 << "Du wurdest mit " << money << " Gold belohnt!";
         player->GetSession()->SendNotification(ss2.str().c_str());
-
         player->ModifyMoney(money*GOLD);
 		//player->AddItem(item, 1);
         //player->AddItem(item2, 1);

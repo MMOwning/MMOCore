@@ -133,9 +133,12 @@ void AddSC_port_item();
 //wandervolk
 void AddSC_wandervolk();
 //leandaria
-void AddSC_leandaria();
+//void AddSC_leandaria();
 //raetsel
-void AddSC_raetsel();
+//void AddSC_raetsel();
+
+//CodeNpc
+void AddSC_codenpc();
 
 #ifdef SCRIPTS
 //world
@@ -884,10 +887,14 @@ void AddCommandScripts()
 	//wandervolk
 	AddSC_wandervolk();
 	//leandaria
-	AddSC_leandaria();
+	//AddSC_leandaria();
 	//raetsel
-	AddSC_raetsel();
+	//AddSC_raetsel();
+
+	//CodeNPC
+	AddSC_codenpc();
 }
+
 
 void AddWorldScripts()
 {
