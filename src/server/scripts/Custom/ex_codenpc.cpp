@@ -69,6 +69,7 @@ public: codenpc() : CreatureScript("codenpc"){ }
 
 		bool OnGossipSelectCode(Player* player, Creature* creature, uint32 /*sender*/, uint32 action, const char* code)
 		{
+			TC_LOG_INFO("entities.player.character", "1");
 			player->PlayerTalkClass->ClearMenus();
 			uint32 itemCode = atoi((char*)code);
 
@@ -77,14 +78,17 @@ public: codenpc() : CreatureScript("codenpc"){ }
 				player->CLOSE_GOSSIP_MENU();
 				player->GetSession()->SendNotification("You must enter a value!");
 				return false;
+				TC_LOG_INFO("entities.player.character", "Spieler hat nichts eingetrage ausgewaehlt");
 			}
 
 			QueryResult result = WorldDatabase.PQuery("SELECT `code`, `belohnung`, `anzahl`, `benutzt`FROM `item_codes` WHERE `code` = %u", itemCode);
-
+			TC_LOG_INFO("entities.player.character", "2");
 			if (action == 1)
 			{
+				TC_LOG_INFO("entities.player.character", "3");
 				if (result)
 				{
+					TC_LOG_INFO("entities.player.character", "4");
 					Field* fields = result->Fetch();
 					uint32 code = fields[0].GetUInt32();
 					uint32 belohnung = fields[1].GetUInt32();
@@ -93,6 +97,7 @@ public: codenpc() : CreatureScript("codenpc"){ }
 
 					if (benutzt == 0)
 					{
+						TC_LOG_INFO("entities.player.character", "5");
 						Item* item = Item::CreateItem(belohnung, anzahl);
 
 						SQLTransaction trans = CharacterDatabase.BeginTransaction();
@@ -108,6 +113,7 @@ public: codenpc() : CreatureScript("codenpc"){ }
 						TC_LOG_INFO("entities.player.character", "Spieler %s hat Code(%u) eingelöst.", player->GetName().c_str(), itemCode);
 					}
 					else{
+						TC_LOG_INFO("entities.player.character", "6");
 						char msg[250];
 						snprintf(msg, 250, "Dein Code wurde bereits verwendet");
 						ChatHandler(player->GetSession()).PSendSysMessage(msg,
