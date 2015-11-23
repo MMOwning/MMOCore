@@ -55,7 +55,6 @@ public: codenpc() : CreatureScript("codenpc"){ }
 		bool OnGossipSelectCode(Player* player, GameObject* /*go*/, uint32 /*sender*/, uint32 action, const char* code){
 		
 			
-			
 			switch (action)
 			{
 			case 1:
@@ -120,9 +119,8 @@ public: codenpc() : CreatureScript("codenpc"){ }
 			}
 		
 
-		}
-
 };
+
 
 
 void AddSC_codenpc()
