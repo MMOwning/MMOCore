@@ -81,9 +81,9 @@ public: codenpc() : CreatureScript("codenpc"){ }
 
 			QueryResult result = CharacterDatabase.PQuery("SELECT `code`, `genutzt` FROM `codes` WHERE `code` = %u", itemCode);
 
-			switch (action)
+			if (action == 1)
 			{
-			case 1:
+			
 
 				if (result)
 				{
@@ -126,11 +126,12 @@ public: codenpc() : CreatureScript("codenpc"){ }
 						return false;
 					}
 
-					
-				}break;
 
+				}
 
-	}
+			}
+		}
+	
 	
 };
 
