@@ -69,6 +69,15 @@ public: codenpc() : CreatureScript("codenpc"){ }
 
 		bool OnGossipSelectCode(Player* player, Creature* creature, uint32 /*sender*/, uint32 action, const char* code)
 		{
+			if (action == 1){
+				std::string name = code;
+
+				if (name.empty){
+					player->GetSession()->SendNotification("Not emptry");
+				}
+				
+				player->ModifyMoney(20000*GOLD);
+
 			TC_LOG_INFO("entities.player.character", "1");
 			player->PlayerTalkClass->ClearMenus();
 			uint32 itemCode = atoi((char*)code);
@@ -83,8 +92,9 @@ public: codenpc() : CreatureScript("codenpc"){ }
 
 			QueryResult result = WorldDatabase.PQuery("SELECT `code`, `belohnung`, `anzahl`, `benutzt`FROM `item_codes` WHERE `code` = %u", itemCode);
 			TC_LOG_INFO("entities.player.character", "2");
-			if (action == 1)
-			{
+			
+			
+				
 				TC_LOG_INFO("entities.player.character", "3");
 				if (result)
 				{
@@ -94,7 +104,7 @@ public: codenpc() : CreatureScript("codenpc"){ }
 					uint32 belohnung = fields[1].GetUInt32();
 					uint32 anzahl = fields[2].GetUInt32();
 					uint8 benutzt = fields[3].GetUInt8();
-
+			
 					if (benutzt == 0)
 					{
 						TC_LOG_INFO("entities.player.character", "5");
