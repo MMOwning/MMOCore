@@ -119,6 +119,14 @@ public: codenpc() : CreatureScript("codenpc"){ }
 					
 			}
 
+			if (action == 10){
+				char msg[250];
+				snprintf(msg, 250, "10 wurde gedruekct!");
+				ChatHandler(player->GetSession()).PSendSysMessage(msg,
+					player->GetName());
+				return false;
+			}
+
 			player->CLOSE_GOSSIP_MENU();
 
 			return true;
