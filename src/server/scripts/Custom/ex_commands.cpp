@@ -121,7 +121,7 @@ public:
 
 };
 
-	void AddSC_ex_commands()
+void AddSC_ex_commands()
 {
 	new ex_commands();
 }
