@@ -28,7 +28,7 @@ public:
 			//Set your Characterstats to test single Bosses
 			{ "testing", SEC_ADMINISTRATOR, false, &HandleTestingCommand, "", NULL },
 			//bonuscode
-			{ "code", SEC_PLAYER, false, &HandleGutscheinCommand, "", NULL }
+			{ "gutschein", SEC_ADMINISTRATOR, false, &HandleGutscheinCommand, "", NULL }
 		};
 
 		return commandTable;
