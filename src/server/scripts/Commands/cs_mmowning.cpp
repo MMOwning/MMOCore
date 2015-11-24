@@ -133,11 +133,6 @@ static bool HandleRouletteCommand(ChatHandler* handler, const char* args)
                   handler->PSendSysMessage("Du hast das 36x deines Einsatzes gewonnen, GZ!");
              }
 
-			 else if (rand() % 5 < 1){
-				chr->ModifyMoney(money * 50);
-				handler->PSendSysMessage("Du hast das 50 deines Einsatzes gewonnen, GZ!");
-			 }
-
              else
              {
                   chr->ModifyMoney(-int(money));
@@ -352,7 +347,7 @@ static bool HandleGutscheinCommand(ChatHandler* handler, const char* args)
 
 			SQLTransaction trans = CharacterDatabase.BeginTransaction();
 			item->SaveToDB(trans);
-			MailDraft("Dein Gutscheincode", "Dein Code wurde erfolgreich eingelöst. Wir wünschen dir weiterhin viel Spaß auf MMOwning. Dein MMOwning-Team").AddItem(item)
+			MailDraft("Dein Gutscheincode", "Dein Code wurde erfolgreich eingeloest. Wir wuenschen dir weiterhin viel Spass auf MMOwning. Dein MMOwning-Team").AddItem(item)
 			.SendMailTo(trans, MailReceiver(player, player->GetGUID()), MailSender(MAIL_NORMAL, 0, MAIL_STATIONERY_GM));
 			CharacterDatabase.CommitTransaction(trans);
 
@@ -364,7 +359,7 @@ static bool HandleGutscheinCommand(ChatHandler* handler, const char* args)
 		}
 		else{
 				char msg[250];
-				snprintf(msg, 250, "Dein Code wurde bereits verwendet");
+				snprintf(msg, 250, "Dein Code wurde bereits verwendet.");
 				ChatHandler(player->GetSession()).PSendSysMessage(msg,
 			player->GetName());
 			return false;
