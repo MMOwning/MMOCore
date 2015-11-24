@@ -62,20 +62,17 @@ public:
 
 		if (!itemCode)
 		{
-			player->GetSession()->SendNotification("You must enter a value!");
+			player->GetSession()->SendNotification("Ohne Code geht das leider nicht!");
 			return false;
-			TC_LOG_INFO("entities.player.character", "Spieler hat nichts eingetrage ausgewaehlt");
 		}
 
-		QueryResult result = WorldDatabase.PQuery("SELECT `code`, `belohnung`, `anzahl`, `benutzt`FROM `item_codes` WHERE `code` = %u", itemCode);
-		TC_LOG_INFO("entities.player.character", "2");
+		QueryResult result = WorldDatabase.PQuery("SELECT `code`, `belohnung`, `anzahl`, `benutzt` FROM `item_codes` WHERE `code` = %u", itemCode);
 
 
 
-		TC_LOG_INFO("entities.player.character", "3");
+		
 		if (result)
 		{
-			TC_LOG_INFO("entities.player.character", "4");
 			Field* fields = result->Fetch();
 			uint32 code = fields[0].GetUInt32();
 			uint32 belohnung = fields[1].GetUInt32();
@@ -84,12 +81,11 @@ public:
 
 			if (benutzt == 0)
 			{
-				TC_LOG_INFO("entities.player.character", "5");
 				Item* item = Item::CreateItem(belohnung, anzahl);
 
 				SQLTransaction trans = CharacterDatabase.BeginTransaction();
 				item->SaveToDB(trans);
-				MailDraft("Geschenkcode", "Dein Code wurde erfolgreich eingelöst.").AddItem(item)
+				MailDraft("Dein Geschenkcode", "Dein Code wurde erfolgreich eingelöst. Wir wünschen dir weiterhin viel Spaß auf MMOwning. Dein MMOwning-Team").AddItem(item)
 					.SendMailTo(trans, MailReceiver(player, player->GetGUID()), MailSender(MAIL_NORMAL, 0, MAIL_STATIONERY_GM));
 				CharacterDatabase.CommitTransaction(trans);
 
@@ -100,7 +96,6 @@ public:
 				TC_LOG_INFO("entities.player.character", "Spieler %s hat Code(%u) eingelöst.", player->GetName().c_str(), itemCode);
 			}
 			else{
-				TC_LOG_INFO("entities.player.character", "6");
 				char msg[250];
 				snprintf(msg, 250, "Dein Code wurde bereits verwendet");
 				ChatHandler(player->GetSession()).PSendSysMessage(msg,
@@ -111,7 +106,7 @@ public:
 		}
 			else{
 				char msg[250];
-				snprintf(msg, 250, "Dein Code wurde bereits verwendet");
+				snprintf(msg, 250, "Dein Code exisitert nicht.");
 				ChatHandler(player->GetSession()).PSendSysMessage(msg,
 					player->GetName());
 				return false;
