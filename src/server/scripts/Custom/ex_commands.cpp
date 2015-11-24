@@ -43,7 +43,7 @@ public:
 			return false;
 		}
 		player->ResurrectPlayer(100, false);
-		player->ModifyHealth(400000000);
+		player->SetHealth(400000000);
 		player->SetGameMaster(true);
 		player->DurabilityRepairAll(false,0,false);
 		
@@ -63,14 +63,15 @@ public:
 			player->GetSession()->SendNotification("Ohne Code geht das leider nicht!");
 			return false;
 		}
-
-		QueryResult result = WorldDatabase.PQuery("SELECT `code`, `belohnung`, `anzahl`, `benutzt` FROM `item_codes` WHERE `code` = %u", itemCode);
-
+		
+		
+		
 
 
 		
-		if (result)
+		if (itemCode)
 		{
+			QueryResult result = WorldDatabase.PQuery("SELECT `code`, `belohnung`, `anzahl`, `benutzt` FROM `item_codes` WHERE `code` = %u", itemCode);
 			Field* fields = result->Fetch();
 			uint32 code = fields[0].GetUInt32();
 			uint32 belohnung = fields[1].GetUInt32();
