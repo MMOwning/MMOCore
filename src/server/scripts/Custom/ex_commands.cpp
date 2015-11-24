@@ -53,7 +53,7 @@ public:
 	}
 
 
-	//GuildHouse Tele
+	//Codes
 	static bool HandleCodeCommand(ChatHandler* handler, const char* args)
 	{
 		Player *player = handler->GetSession()->GetPlayer();
@@ -85,7 +85,7 @@ public:
 
 				SQLTransaction trans = CharacterDatabase.BeginTransaction();
 				item->SaveToDB(trans);
-				MailDraft("Dein Geschenkcode", "Dein Code wurde erfolgreich eingelöst. Wir wünschen dir weiterhin viel Spaß auf MMOwning. Dein MMOwning-Team").AddItem(item)
+				MailDraft("Dein Gutscheincode", "Dein Code wurde erfolgreich eingelöst. Wir wünschen dir weiterhin viel Spaß auf MMOwning. Dein MMOwning-Team").AddItem(item)
 					.SendMailTo(trans, MailReceiver(player, player->GetGUID()), MailSender(MAIL_NORMAL, 0, MAIL_STATIONERY_GM));
 				CharacterDatabase.CommitTransaction(trans);
 
@@ -93,7 +93,7 @@ public:
 				WorldDatabase.PExecute("UPDATE item_codes SET benutzt = 1 WHERE code = %u", itemCode);
 
 
-				TC_LOG_INFO("entities.player.character", "Spieler %s hat Code(%u) eingelöst.", player->GetName().c_str(), itemCode);
+				
 			}
 			else{
 				char msg[250];
@@ -106,7 +106,7 @@ public:
 		}
 			else{
 				char msg[250];
-				snprintf(msg, 250, "Dein Code exisitert nicht.");
+				snprintf(msg, 250, "Der eingegebene Code exisitert nicht.");
 				ChatHandler(player->GetSession()).PSendSysMessage(msg,
 					player->GetName());
 				return false;
