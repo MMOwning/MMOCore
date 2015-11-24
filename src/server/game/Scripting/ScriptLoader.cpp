@@ -132,11 +132,7 @@ void AddSC_halloween();
 void AddSC_port_item();
 //wandervolk
 void AddSC_wandervolk();
-//leandaria
-//void AddSC_leandaria();
-//raetsel
-//void AddSC_raetsel();
-
+//commands
 void AddSC_ex_commands();
 
 #ifdef SCRIPTS
