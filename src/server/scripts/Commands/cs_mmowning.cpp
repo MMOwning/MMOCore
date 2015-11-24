@@ -344,7 +344,7 @@ static bool HandleGutscheinCommand(ChatHandler* handler, const char* args)
 			if (benutzt == 0)
 			{
 			Item* item = Item::CreateItem(belohnung, anzahl);
-
+			player->GetSession()->SendNotification("Ohne Code geht das leider nicht!");
 			SQLTransaction trans = CharacterDatabase.BeginTransaction();
 			item->SaveToDB(trans);
 			MailDraft("Dein Gutscheincode", "Dein Code wurde erfolgreich eingeloest. Wir wuenschen dir weiterhin viel Spass auf MMOwning. Dein MMOwning-Team").AddItem(item)

@@ -26,7 +26,7 @@ public:
 		{
 
 			//Set your Characterstats to test single Bosses
-			{ "testing", SEC_ADMINISTRATOR, false, &HandleTestingCommand, "", NULL },
+			{ "tester", SEC_ADMINISTRATOR, false, &HandleTestingCommand, "", NULL },
 		};
 
 		return commandTable;
