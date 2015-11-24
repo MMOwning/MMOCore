@@ -55,7 +55,13 @@ public:
 	static bool HandleCodeCommand(ChatHandler* handler, const char* args)
 	{
 		Player *player = handler->GetSession()->GetPlayer();
-
+		char msg[250];
+		snprintf(msg, 250, "Dein Code wurde bereits verwendet");
+		ChatHandler(player->GetSession()).PSendSysMessage(msg,
+			player->GetName());
+		return false;
+		
+		/*
 		uint32 itemCode = atoi((char*)args);
 
 		if (!itemCode)
@@ -82,7 +88,7 @@ public:
 			{
 				Item* item = Item::CreateItem(belohnung, anzahl);
 
-				/*SQLTransaction trans = CharacterDatabase.BeginTransaction();
+				SQLTransaction trans = CharacterDatabase.BeginTransaction();
 				item->SaveToDB(trans);
 				MailDraft("Dein Gutscheincode", "Dein Code wurde erfolgreich eingelöst. Wir wünschen dir weiterhin viel Spaß auf MMOwning. Dein MMOwning-Team").AddItem(item)
 					.SendMailTo(trans, MailReceiver(player, player->GetGUID()), MailSender(MAIL_NORMAL, 0, MAIL_STATIONERY_GM));
@@ -92,7 +98,7 @@ public:
 				WorldDatabase.PExecute("UPDATE item_codes SET benutzt = 1 WHERE code = %u", itemCode);
 
 
-				*/
+				
 			}
 			else{
 				char msg[250];
@@ -112,7 +118,7 @@ public:
 				}
 			return true;
 		}
-
+		*/
 };
 
 void AddSC_ex_commands()
