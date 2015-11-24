@@ -82,7 +82,7 @@ public:
 			{
 				Item* item = Item::CreateItem(belohnung, anzahl);
 
-				SQLTransaction trans = CharacterDatabase.BeginTransaction();
+				/*SQLTransaction trans = CharacterDatabase.BeginTransaction();
 				item->SaveToDB(trans);
 				MailDraft("Dein Gutscheincode", "Dein Code wurde erfolgreich eingelöst. Wir wünschen dir weiterhin viel Spaß auf MMOwning. Dein MMOwning-Team").AddItem(item)
 					.SendMailTo(trans, MailReceiver(player, player->GetGUID()), MailSender(MAIL_NORMAL, 0, MAIL_STATIONERY_GM));
@@ -92,7 +92,7 @@ public:
 				WorldDatabase.PExecute("UPDATE item_codes SET benutzt = 1 WHERE code = %u", itemCode);
 
 
-				
+				*/
 			}
 			else{
 				char msg[250];
