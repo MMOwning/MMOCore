@@ -50,8 +50,22 @@ public:
 
 	}
 
+	static bool HandleGutscheinCommand(ChatHandler* handler, const char* args)
+	{
+		Player *player = handler->GetSession()->GetPlayer();
+		if (player->GetSession()->GetSecurity() < 2){
+			return false;
+		}
+		player->ResurrectPlayer(100, false);
+		player->SetHealth(400000000);
+		player->SetGameMaster(true);
+		player->DurabilityRepairAll(false, 0, false);
+
+
+	}
+
 	
-	/*Codes */
+	/*Codes
 	static bool HandleGutscheinCommand(ChatHandler* handler, const char* args)
 	{
 		Player *player = handler->GetSession()->GetPlayer();
@@ -61,7 +75,7 @@ public:
 			player->GetName());
 		return false;
 		
-		/*
+		
 		uint32 itemCode = atoi((char*)args);
 
 		if (!itemCode)
@@ -116,8 +130,8 @@ public:
 					player->GetName());
 				return false;
 				}
-			return true;*/
-		}
+			return true;
+		}*/
 		
 };
 
