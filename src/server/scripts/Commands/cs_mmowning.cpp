@@ -328,7 +328,7 @@ static bool HandleGutscheinCommand(ChatHandler* handler, const char* args)
 		}
 
 
-		QueryResult result = WorldDatabase.PQuery("SELECT `code`, `belohnung`, `anzahl`, `benutzt` , `nutzbar` FROM `item_codes` WHERE `code` = %u", itemCode);
+		QueryResult result = WorldDatabase.PQuery("SELECT `code`, `belohnung`, `itemanzahl`, `benutzt` , `nutzbar` FROM `item_codes` WHERE `code` = %u", itemCode);
 
 
 
