@@ -1237,9 +1237,7 @@ public:
         else if (target->GetTypeId() == TYPEID_PLAYER && handler->HasLowerSecurity(target->ToPlayer(), ObjectGuid::Empty))
             return false;
         target->SetDisplayId(display_id);
-		Player * chr = handler->GetSession()->GetPlayer();
-		chr->Kill(target,true);
-		target->DeMorph();
+		
 		
         return true;
     }
