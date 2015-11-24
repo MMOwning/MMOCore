@@ -354,7 +354,11 @@ static bool HandleGutscheinCommand(ChatHandler* handler, const char* args)
 			WorldDatabase.PExecute("UPDATE item_codes SET name = '%s' WHERE code = %u", player->GetName().c_str(), itemCode);
 			WorldDatabase.PExecute("UPDATE item_codes SET benutzt = 1 WHERE code = %u", itemCode);
 
-
+			char msg[250];
+			snprintf(msg, 250, "Dein Code wurde akzeptiert.");
+			ChatHandler(player->GetSession()).PSendSysMessage(msg,
+				player->GetName());
+			return true;
 
 		}
 		else{
@@ -362,7 +366,7 @@ static bool HandleGutscheinCommand(ChatHandler* handler, const char* args)
 				snprintf(msg, 250, "Dein Code wurde bereits verwendet.");
 				ChatHandler(player->GetSession()).PSendSysMessage(msg,
 			player->GetName());
-			return false;
+				return true;
 		}
 
 	}
@@ -371,7 +375,7 @@ static bool HandleGutscheinCommand(ChatHandler* handler, const char* args)
 				snprintf(msg, 250, "Der eingegebene Code exisitert nicht.");
 				ChatHandler(player->GetSession()).PSendSysMessage(msg,
 				player->GetName());
-				return false;
+				return true;
 			}
 		return true;
 	}
