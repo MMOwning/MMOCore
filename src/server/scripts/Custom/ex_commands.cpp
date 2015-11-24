@@ -116,9 +116,9 @@ public:
 					player->GetName());
 				return false;
 				}
-			return true;
+			return true;*/
 		}
-		*/
+		
 };
 
 void AddSC_ex_commands()
