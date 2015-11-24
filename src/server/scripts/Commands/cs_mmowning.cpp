@@ -328,7 +328,7 @@ static bool HandleGutscheinCommand(ChatHandler* handler, const char* args)
 		}
 
 
-		QueryResult result = WorldDatabase.PQuery("SELECT `code`, `belohnung`, `anzahl`, `benutzt` FROM `item_codes` WHERE `code` = %u", itemCode);
+		QueryResult result = WorldDatabase.PQuery("SELECT `code`, `belohnung`, `anzahl`, `benutzt` , `nutzbar` FROM `item_codes` WHERE `code` = %u", itemCode);
 
 
 
@@ -340,8 +340,9 @@ static bool HandleGutscheinCommand(ChatHandler* handler, const char* args)
 			uint32 belohnung = fields[1].GetUInt32();
 			uint32 anzahl = fields[2].GetUInt32();
 			uint8 benutzt = fields[3].GetUInt8();
+			uint32 nutzbar = fields[5].GetUInt32();
 
-			if (benutzt == 0)
+			if (benutzt < nutzbar)
 			{
 			Item* item = Item::CreateItem(belohnung, anzahl);
 
@@ -351,8 +352,9 @@ static bool HandleGutscheinCommand(ChatHandler* handler, const char* args)
 			.SendMailTo(trans, MailReceiver(player, player->GetGUID()), MailSender(MAIL_NORMAL, 0, MAIL_STATIONERY_GM));
 			CharacterDatabase.CommitTransaction(trans);
 
+			benutzt = benutzt + 1;
 			WorldDatabase.PExecute("UPDATE item_codes SET name = '%s' WHERE code = %u", player->GetName().c_str(), itemCode);
-			WorldDatabase.PExecute("UPDATE item_codes SET benutzt = 1 WHERE code = %u", itemCode);
+			WorldDatabase.PExecute("UPDATE item_codes SET benutzt = '%u' WHERE code = %u", benutzt, itemCode);
 
 
 

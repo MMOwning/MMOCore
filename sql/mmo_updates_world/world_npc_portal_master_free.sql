@@ -1,20 +1,20 @@
-﻿-- -----------------------------------------------------------------------------------------------------------------------------
--- # Defining what the entries and numbers are. Change if something overwrites something in your database
+﻿/* 
+ # Defining what the entries and numbers are. Change if something overwrites something in your database */
 
 SET @TELENPC := 300005; -- # (1)
 
--- -----------------------------------------------------------------------------------------------------------------------------
--- # Delete code (For re running)
+
+/* # Delete code (For re running) */
 
 DELETE FROM creature_template WHERE entry=@TELENPC;
+/*
 
--- -----------------------------------------------------------------------------------------------------------------------------
--- # TeleNPC
+ # TeleNPC */
 
 INSERT INTO `creature_template` (`entry`, `difficulty_entry_1`, `difficulty_entry_2`, `difficulty_entry_3`, `KillCredit1`, `KillCredit2`, `modelid1`, `modelid2`, `modelid3`, `modelid4`, `name`, `subname`, `IconName`, `gossip_menu_id`, `minlevel`, `maxlevel`, `exp`, `faction`, `npcflag`, `speed_walk`, `speed_run`, `scale`, `rank`, `dmgschool`, `BaseAttackTime`, `RangeAttackTime`, `BaseVariance`, `RangeVariance`, `unit_class`, `unit_flags`, `unit_flags2`, `dynamicflags`, `family`, `trainer_type`, `trainer_spell`, `trainer_class`, `trainer_race`, `type`, `type_flags`, `lootid`, `pickpocketloot`, `skinloot`, `resistance1`, `resistance2`, `resistance3`, `resistance4`, `resistance5`, `resistance6`, `spell1`, `spell2`, `spell3`, `spell4`, `spell5`, `spell6`, `spell7`, `spell8`, `PetSpellDataId`, `VehicleId`, `mingold`, `maxgold`, `AIName`, `MovementType`, `InhabitType`, `HoverHeight`, `HealthModifier`, `ManaModifier`, `ArmorModifier`, `DamageModifier`, `ExperienceModifier`, `RacialLeader`, `movementId`, `RegenHealth`, `mechanic_immune_mask`, `flags_extra`, `ScriptName`, `VerifiedBuild`) VALUES
 (300005, 0, 0, 0, 0, 0, 21572, 0, 0, 0, 'MMOwning Teleporter', '', 'Directions', 0, 83, 83, 0, 35, 3, 1, 1.14286, 1.25, 1, 0, 0, 0, 1, 1, 1, 2, 0, 0, 0, 0, 0, 0, 0, 7, 138936390, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, '', 0, 3, 1, 1, 1, 1, 1, 1, 0, 0, 1, 0, 2, 'npc_teleport', 0);
--- -----------------------------------------------------------------------------------------------------------------------------
--- # TeleNPC spawns
+
+/* # TeleNPC spawns */
 
 SET @TELENPC := 300005; -- # Must be the same NPC ID!
 DELETE FROM creature WHERE ID = @TELENPC ;
@@ -33,8 +33,8 @@ VALUES (@TELENPC,0,1,1,0,-13180.5,342.503,43.1936,4.32977,25,0,13700,6540),
 (@TELENPC,0,1,1,0,-14279.8,555.014,8.90011,3.97606,25,0,13700,6540),
 (@TELENPC,530,1,1,0,-1888.65,5355.88,-12.4279,1.25883,25,0,13700,6540);
 
--- -----------------------------------------------------------------------------------------------------------------------------
--- # Rune circle spawns
+
+/* # Rune circle spawns */
 
 SET @RUNE := 194394; -- # GO ID
 DELETE FROM gameobject WHERE ID=@RUNE and guid>'199999';
@@ -53,21 +53,21 @@ VALUES (@RUNE,1,1,1,1601.08,-4378.69,9.9846,2.14362,0.878068,0.478536,25,1),
 (@RUNE,0,1,1,-13181.8,339.356,42.9805,1.18013,0.556415,0.830904,25,1),
 (@RUNE,1,1,1,-1274.45,71.8601,128.159,2.80623,0.985974,0.166898,25,1);
 
--- -----------------------------------------------------------------------------------------------------------------------------
--- # Summon effect
--- # If you want the npc to *cast* the spell, use these as values: VALUES (@TELENPC,0,0,0,0,0,'30540 0');
+
+/* # Summon effect
+ # If you want the npc to *cast* the spell, use these as values: VALUES (@TELENPC,0,0,0,0,0,'30540 0'); */
 
 DELETE FROM creature_template_addon WHERE Entry = @TELENPC ;
 INSERT INTO creature_template_addon (entry,mount,bytes1,bytes2,emote,path_id,auras) 
 VALUES (@TELENPC,0,0,0,0,0,'35766 0');
 
--- -----------------------------------------------------------------------------------------------------------------------------
--- # TeleNPC Tables
+
+/* # TeleNPC Tables */
 
 DROP TABLE IF EXISTS `custom_npc_tele_category`;
--- ----------------------------
--- Table structure for custom_npc_tele_category
--- ----------------------------
+
+/*Table structure for custom_npc_tele_category */
+
 CREATE TABLE `custom_npc_tele_category` (
   `id` int(6) unsigned NOT NULL default '0',
   `name` varchar(255) NOT NULL default '',
@@ -88,15 +88,15 @@ INSERT INTO `custom_npc_tele_category` VALUES ('5', '4. Instanzen 70-80', '0', '
 INSERT INTO `custom_npc_tele_category` VALUES ('6', '5. Raids', '0', '0', '0');
 INSERT INTO `custom_npc_tele_category` VALUES ('7', '6. Areana', '0', '0', '0');
 INSERT INTO `custom_npc_tele_category` VALUES ('8', '7. Shopping', '0', '0', '0');
--- INSERT INTO `custom_npc_tele_category` VALUES ('9', '8. Shopping', '2', '3', '0');
+/* INSERT INTO `custom_npc_tele_category` VALUES ('9', '8. Shopping', '2', '3', '0'); */
 
 
 
 
 DROP TABLE IF EXISTS `custom_npc_tele_destination`;
--- ----------------------------
--- Table structure for custom_npc_tele_destination
--- ----------------------------
+
+/* Table structure for custom_npc_tele_destination */
+
 CREATE TABLE `custom_npc_tele_destination` (
   `id` int(6) unsigned NOT NULL auto_increment,
   `name` char(100) NOT NULL default '',
@@ -112,18 +112,17 @@ CREATE TABLE `custom_npc_tele_destination` (
 
 
 DROP TABLE IF EXISTS `custom_npc_tele_association`;
--- ----------------------------
--- Table structure for custom_npc_tele_association
--- ----------------------------
+
+/* Table structure for custom_npc_tele_association */
+
 CREATE TABLE `custom_npc_tele_association` (
   `cat_id` int(6) unsigned NOT NULL default '0',
   `dest_id` int(6) unsigned NOT NULL default '0',
   PRIMARY KEY  (`cat_id`,`dest_id`)
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8;
 
--- ----------------------------
--- Records 
--- ----------------------------
+
+/* Records  */
 
 INSERT INTO `custom_npc_tele_destination` VALUES ('1', '01. Flammenschlund (15-16)', '1810.38', '-4408.05', '-18.8377', '1', '5.18594', '8', '0');
 INSERT INTO `custom_npc_tele_association` VALUES ('3', '1');
@@ -299,14 +298,14 @@ INSERT INTO `custom_npc_tele_destination` VALUES ('87', '4. Silbermond', '9738.2
 INSERT INTO `custom_npc_tele_association` VALUES ('2', '87');
 INSERT INTO `custom_npc_tele_destination` VALUES ('88', '5. Shattrath', '-1887.62', '5359.09', '-12.4279', '530', '3.40391', '0', '0');
 INSERT INTO `custom_npc_tele_association` VALUES ('1', '88');
--- INSERT INTO `custom_npc_tele_destination` VALUES ('89', '6. Insel von Quel\'Danas', '12947.4', '-6893.31', '5.68398', '530', '3.09154', '0', '0');
--- INSERT INTO `custom_npc_tele_association` VALUES ('1', '89');
+/* INSERT INTO `custom_npc_tele_destination` VALUES ('89', '6. Insel von Quel\'Danas', '12947.4', '-6893.31', '5.68398', '530', '3.09154', '0', '0');
+INSERT INTO `custom_npc_tele_association` VALUES ('1', '89'); */
 INSERT INTO `custom_npc_tele_destination` VALUES ('90', '7. Dalaran', '5809.55', '503.975', '657.526', '571', '1.70185', '0', '0');
 INSERT INTO `custom_npc_tele_association` VALUES ('1', '90');
 INSERT INTO `custom_npc_tele_destination` VALUES ('91', '5. Shattrath', '-1887.62', '5359.09', '-12.4279', '530', '3.40391', '0', '0');
 INSERT INTO `custom_npc_tele_association` VALUES ('2', '91');
--- INSERT INTO `custom_npc_tele_destination` VALUES ('92', '6. Insel von Quel\'Danas', '12947.4', '-6893.31', '5.68398', '530', '3.09154', '0', '0');
--- INSERT INTO `custom_npc_tele_association` VALUES ('2', '92');
+/* INSERT INTO `custom_npc_tele_destination` VALUES ('92', '6. Insel von Quel\'Danas', '12947.4', '-6893.31', '5.68398', '530', '3.09154', '0', '0');
+-- INSERT INTO `custom_npc_tele_association` VALUES ('2', '92'); */
 INSERT INTO `custom_npc_tele_destination` VALUES ('93', '7. Dalaran', '5809.55', '503.975', '657.526', '571', '1.70185', '0', '0');
 INSERT INTO `custom_npc_tele_association` VALUES ('2', '93');
 INSERT INTO `custom_npc_tele_destination` VALUES ('94', 'Halle der Händler', '-2677.91', '2907.24', '178.69', '1', '5.69152', '0', '0');
@@ -325,7 +324,7 @@ INSERT INTO `custom_npc_tele_association` VALUES ('1', '99');
 INSERT INTO `custom_npc_tele_destination` VALUES ('100', '8. Beutebucht', '-14281.9', '552.564', '8.90422', '0', '1.70185', '0', '50000');
 INSERT INTO `custom_npc_tele_association` VALUES ('2', '100');
 
--- Cataclysm
+/*Cataclysm
 -- INSERT INTO `custom_npc_tele_destination` VALUES ('100', 'Tol Barad', '-707', '1183', '106', '732', '2', '0', '0');
 -- INSERT INTO `custom_npc_tele_association` VALUES ('8', '100');
 
@@ -363,8 +362,7 @@ INSERT INTO `custom_npc_tele_association` VALUES ('2', '100');
 -- INSERT INTO `custom_npc_tele_association` VALUES ('8', '111');
 
 -- INSERT INTO `custom_npc_tele_destination` VALUES ('112', 'Der Mahlstrom', '848', '1052', '-6', '730', '5', '0', '0');
--- INSERT INTO `custom_npc_tele_association` VALUES ('8', '112');
-
+-- INSERT INTO `custom_npc_tele_association` VALUES ('8', '112'); */
 
 
 
