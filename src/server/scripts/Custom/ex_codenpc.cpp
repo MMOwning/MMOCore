@@ -33,7 +33,7 @@
 
  
 
-
+/*
 class codenpc : public CreatureScript
 {
 public: codenpc() : CreatureScript("codenpc"){ }
@@ -67,16 +67,10 @@ public: codenpc() : CreatureScript("codenpc"){ }
 		}
 
 
-		bool OnGossipSelectCode(Player* player, Creature* creature, uint32 /*sender*/, uint32 action, const char* code)
+		bool OnGossipSelectCode(Player* player, Creature* creature, uint32 /*sender, uint32 action, const char* code)
 		{
 			if (action == 1){
-				std::string name = code;
-
-				if (name.empty){
-					player->GetSession()->SendNotification("Not emptry");
-				}
-				
-				player->ModifyMoney(20000*GOLD);
+			
 
 			TC_LOG_INFO("entities.player.character", "1");
 			player->PlayerTalkClass->ClearMenus();
@@ -151,8 +145,7 @@ public: codenpc() : CreatureScript("codenpc"){ }
 	
 };
 
-
-
+*/
 
 
 void AddSC_codenpc()
