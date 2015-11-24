@@ -110,9 +110,9 @@ public:
 				return false;
 				}
 			return true;
-		}
+		}*/
 
-};*/
+};
 
 void AddSC_ex_commands()
 {
