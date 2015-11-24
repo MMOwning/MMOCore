@@ -28,7 +28,7 @@ public:
 			//Set your Characterstats to test single Bosses
 			{ "testing", SEC_ADMINISTRATOR, false, &HandleTestingCommand, "", NULL },
 			//bonuscode
-			{ "code", SEC_PLAYER, false, &HandleCodeCommand, "", NULL }
+			{ "code", SEC_PLAYER, false, &HandleGutscheinCommand, "", NULL }
 		};
 
 		return commandTable;
@@ -52,7 +52,7 @@ public:
 
 	
 	/*Codes */
-	static bool HandleCodeCommand(ChatHandler* handler, const char* args)
+	static bool HandleGutscheinCommand(ChatHandler* handler, const char* args)
 	{
 		Player *player = handler->GetSession()->GetPlayer();
 		char msg[250];
