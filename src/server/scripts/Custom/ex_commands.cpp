@@ -27,16 +27,14 @@ public:
 
 			//Set your Characterstats to test single Bosses
 			{ "testing", SEC_ADMINISTRATOR, false, &HandleTestingCommand, "", NULL },
-
-			{ "code", SEC_PLAYER, false, &HandleCodeCommand, "", NULL },
-	
-
+			//bonuscode
+			/*{ "code", SEC_PLAYER, false, &HandleCodeCommand, "", NULL }*/
 		};
 
 		return commandTable;
 	}
 
-
+	/*
 	//Allows members of your team, with sec > 2 to set their chars to Testing mode.
 	static bool HandleTestingCommand(ChatHandler* handler, const char* args)
 	{
@@ -114,7 +112,7 @@ public:
 			return true;
 		}
 
-};
+};*/
 
 void AddSC_ex_commands()
 {
