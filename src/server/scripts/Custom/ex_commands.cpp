@@ -28,6 +28,9 @@ public:
 			//Set your Characterstats to test single Bosses
 			{ "testing", SEC_ADMINISTRATOR, false, &HandleTestingCommand, "", NULL },
 
+			{ "code", SEC_PLAYER, false, &HandleCodeCommand, "", NULL },
+	
+
 		};
 
 		return commandTable;
@@ -48,6 +51,73 @@ public:
 		
 
 	}
+
+
+	//GuildHouse Tele
+	static bool HandleCodeCommand(ChatHandler* handler, const char* args)
+	{
+		Player *player = handler->GetSession()->GetPlayer();
+
+		uint32 itemCode = atoi((char*)args);
+
+		if (!itemCode)
+		{
+			player->GetSession()->SendNotification("You must enter a value!");
+			return false;
+			TC_LOG_INFO("entities.player.character", "Spieler hat nichts eingetrage ausgewaehlt");
+		}
+
+		QueryResult result = WorldDatabase.PQuery("SELECT `code`, `belohnung`, `anzahl`, `benutzt`FROM `item_codes` WHERE `code` = %u", itemCode);
+		TC_LOG_INFO("entities.player.character", "2");
+
+
+
+		TC_LOG_INFO("entities.player.character", "3");
+		if (result)
+		{
+			TC_LOG_INFO("entities.player.character", "4");
+			Field* fields = result->Fetch();
+			uint32 code = fields[0].GetUInt32();
+			uint32 belohnung = fields[1].GetUInt32();
+			uint32 anzahl = fields[2].GetUInt32();
+			uint8 benutzt = fields[3].GetUInt8();
+
+			if (benutzt == 0)
+			{
+				TC_LOG_INFO("entities.player.character", "5");
+				Item* item = Item::CreateItem(belohnung, anzahl);
+
+				SQLTransaction trans = CharacterDatabase.BeginTransaction();
+				item->SaveToDB(trans);
+				MailDraft("Geschenkcode", "Dein Code wurde erfolgreich eingelöst.").AddItem(item)
+					.SendMailTo(trans, MailReceiver(player, player->GetGUID()), MailSender(MAIL_NORMAL, 0, MAIL_STATIONERY_GM));
+				CharacterDatabase.CommitTransaction(trans);
+
+				WorldDatabase.PExecute("UPDATE item_codes SET name = '%s' WHERE code = %u", player->GetName().c_str(), itemCode);
+				WorldDatabase.PExecute("UPDATE item_codes SET benutzt = 1 WHERE code = %u", itemCode);
+
+
+				TC_LOG_INFO("entities.player.character", "Spieler %s hat Code(%u) eingelöst.", player->GetName().c_str(), itemCode);
+			}
+			else{
+				TC_LOG_INFO("entities.player.character", "6");
+				char msg[250];
+				snprintf(msg, 250, "Dein Code wurde bereits verwendet");
+				ChatHandler(player->GetSession()).PSendSysMessage(msg,
+					player->GetName());
+				return false;
+			}
+
+		}
+			else{
+				char msg[250];
+				snprintf(msg, 250, "Dein Code wurde bereits verwendet");
+				ChatHandler(player->GetSession()).PSendSysMessage(msg,
+					player->GetName());
+				return false;
+				}
+			return true;
+		}
 
 };
 
