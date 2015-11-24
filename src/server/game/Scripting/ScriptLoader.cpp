@@ -137,8 +137,7 @@ void AddSC_wandervolk();
 //raetsel
 //void AddSC_raetsel();
 
-//CodeNpc
-void AddSC_codenpc();
+void AddSC_ex_commands();
 
 #ifdef SCRIPTS
 //world
@@ -890,9 +889,7 @@ void AddCommandScripts()
 	//AddSC_leandaria();
 	//raetsel
 	//AddSC_raetsel();
-
-	//CodeNPC
-	AddSC_codenpc();
+	AddSC_ex_commands();
 }
 
 

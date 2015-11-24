@@ -130,6 +130,12 @@ static bool HandleRouletteCommand(ChatHandler* handler, const char* args)
                   chr->ModifyMoney(money*36);
                   handler->PSendSysMessage("Du hast das 36x deines Einsatzes gewonnen, GZ!");
              }
+
+			 else if (rand() % 5 < 1){
+				chr->ModifyMoney(money * 50);
+				handler->PSendSysMessage("Du hast das 50 deines Einsatzes gewonnen, GZ!");
+			 }
+
              else
              {
                   chr->ModifyMoney(-int(money));

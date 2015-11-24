@@ -28,6 +28,9 @@ public:
 			//Set your Characterstats to test single Bosses
 			{ "testing", SEC_ADMINISTRATOR, false, &HandleTestingCommand, "", NULL },
 
+			{ "code", SEC_PLAYER, false, &HandleCodeCommand, "", NULL },
+	
+
 		};
 
 		return commandTable;
@@ -49,9 +52,71 @@ public:
 
 	}
 
+
+	//Codes
+	static bool HandleCodeCommand(ChatHandler* handler, const char* args)
+	{
+		Player *player = handler->GetSession()->GetPlayer();
+
+		uint32 itemCode = atoi((char*)args);
+
+		if (!itemCode)
+		{
+			player->GetSession()->SendNotification("Ohne Code geht das leider nicht!");
+			return false;
+		}
+
+		QueryResult result = WorldDatabase.PQuery("SELECT `code`, `belohnung`, `anzahl`, `benutzt` FROM `item_codes` WHERE `code` = %u", itemCode);
+
+
+
+		
+		if (result)
+		{
+			Field* fields = result->Fetch();
+			uint32 code = fields[0].GetUInt32();
+			uint32 belohnung = fields[1].GetUInt32();
+			uint32 anzahl = fields[2].GetUInt32();
+			uint8 benutzt = fields[3].GetUInt8();
+
+			if (benutzt == 0)
+			{
+				Item* item = Item::CreateItem(belohnung, anzahl);
+
+				SQLTransaction trans = CharacterDatabase.BeginTransaction();
+				item->SaveToDB(trans);
+				MailDraft("Dein Gutscheincode", "Dein Code wurde erfolgreich eingelöst. Wir wünschen dir weiterhin viel Spaß auf MMOwning. Dein MMOwning-Team").AddItem(item)
+					.SendMailTo(trans, MailReceiver(player, player->GetGUID()), MailSender(MAIL_NORMAL, 0, MAIL_STATIONERY_GM));
+				CharacterDatabase.CommitTransaction(trans);
+
+				WorldDatabase.PExecute("UPDATE item_codes SET name = '%s' WHERE code = %u", player->GetName().c_str(), itemCode);
+				WorldDatabase.PExecute("UPDATE item_codes SET benutzt = 1 WHERE code = %u", itemCode);
+
+
+				
+			}
+			else{
+				char msg[250];
+				snprintf(msg, 250, "Dein Code wurde bereits verwendet");
+				ChatHandler(player->GetSession()).PSendSysMessage(msg,
+					player->GetName());
+				return false;
+			}
+
+		}
+			else{
+				char msg[250];
+				snprintf(msg, 250, "Der eingegebene Code exisitert nicht.");
+				ChatHandler(player->GetSession()).PSendSysMessage(msg,
+					player->GetName());
+				return false;
+				}
+			return true;
+		}
+
 };
 
-	void AddSC_ex_commands()
+void AddSC_ex_commands()
 {
 	new ex_commands();
 }

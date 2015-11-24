@@ -33,7 +33,7 @@
 
  
 
-
+/*
 class codenpc : public CreatureScript
 {
 public: codenpc() : CreatureScript("codenpc"){ }
@@ -67,10 +67,14 @@ public: codenpc() : CreatureScript("codenpc"){ }
 		}
 
 
-		bool OnGossipSelectCode(Player* player, Creature* creature, uint32 /*sender*/, uint32 action, const char* code)
+		bool OnGossipSelectCode(Player* player, Creature* creature, uint32 /*sender, uint32 action, const char* code)
 		{
 			if (action == 1){
+<<<<<<< HEAD
 		
+=======
+			
+>>>>>>> 54429ec821761979cefcd7160e4d8258cbab3319
 
 			TC_LOG_INFO("entities.player.character", "1");
 			player->PlayerTalkClass->ClearMenus();
@@ -145,8 +149,7 @@ public: codenpc() : CreatureScript("codenpc"){ }
 	
 };
 
-
-
+*/
 
 
 void AddSC_codenpc()

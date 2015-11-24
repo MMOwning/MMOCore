@@ -51,3 +51,12 @@ REPLACE INTO `trinity_string` VALUES (11781, 'Dir stehen folgende Kommandos zur 
 
 /*gm ingame command*/
 UPDATE `command` SET `permission`='195' WHERE `name`='gm ingame';
+
+
+/* ex-commands */
+
+DELETE FROM command WHERE `name`='testing';
+INSERT INTO `command` (`name`, `permission`, `help`) VALUES ('testing', 193, 'Syntax: .testing. Bereitet deinen Char auf einen Test vor.');   
+
+DELETE FROM command WHERE `name`='code';
+INSERT INTO `command` (`name`, `permission`, `help`) VALUES ('code', 195, 'Syntax: .code BSP: .code 1111. Wenn dein Code richtig ist bekommst du eine Nachricht zugesendet.');   
