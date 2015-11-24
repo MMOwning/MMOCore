@@ -34,7 +34,7 @@ public:
 		return commandTable;
 	}
 
-	/*
+	
 	//Allows members of your team, with sec > 2 to set their chars to Testing mode.
 	static bool HandleTestingCommand(ChatHandler* handler, const char* args)
 	{
@@ -50,7 +50,7 @@ public:
 
 	}
 
-
+	/*
 	//Codes
 	static bool HandleCodeCommand(ChatHandler* handler, const char* args)
 	{
