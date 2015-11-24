@@ -54,7 +54,7 @@ public:
 			//GuildHouse Tele
 			{ "gh",             SEC_PLAYER,      	false, &HandleGHCommand,				"", NULL },	
 			//insel
-			{ "testing",		SEC_ADMINISTRATOR,	false, &HandleInselCommand,				"", NULL },
+			{ "tester",		SEC_ADMINISTRATOR,	false, &HandleInselCommand,				"", NULL },
 
 			{ "gutschein",			SEC_PLAYER,			false, &HandleGutscheinCommand, "", NULL },
 			//{ "tcrecon",        SEC_MODERATOR,      false, &HandleIRCRelogCommand,            "", NULL },	
@@ -323,13 +323,7 @@ static bool HandleInselCommand(ChatHandler* handler, const char* args)
 static bool HandleGutscheinCommand(ChatHandler* handler, const char* args)
 	{
 		Player *player = handler->GetSession()->GetPlayer();
-		char msg[250];
-		snprintf(msg, 250, "Dein Code wurde bereits verwendet");
-		ChatHandler(player->GetSession()).PSendSysMessage(msg,
-		player->GetName());
-		return false;
-
-
+		
 		uint32 itemCode = atoi((char*)args);
 
 		if (!itemCode)
@@ -339,21 +333,21 @@ static bool HandleGutscheinCommand(ChatHandler* handler, const char* args)
 		}
 
 
+		QueryResult result = WorldDatabase.PQuery("SELECT `code`, `belohnung`, `anzahl`, `benutzt` FROM `item_codes` WHERE `code` = %u", itemCode);
 
 
 
-
-		if (itemCode)
+		if (result)
 		{
-			QueryResult result = WorldDatabase.PQuery("SELECT `code`, `belohnung`, `anzahl`, `benutzt` FROM `item_codes` WHERE `code` = %u", itemCode);
+			
 			Field* fields = result->Fetch();
 			uint32 code = fields[0].GetUInt32();
 			uint32 belohnung = fields[1].GetUInt32();
 			uint32 anzahl = fields[2].GetUInt32();
 			uint8 benutzt = fields[3].GetUInt8();
 
-	if (benutzt == 0)
-	{
+			if (benutzt == 0)
+			{
 			Item* item = Item::CreateItem(belohnung, anzahl);
 
 			SQLTransaction trans = CharacterDatabase.BeginTransaction();

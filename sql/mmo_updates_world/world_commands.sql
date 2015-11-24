@@ -55,8 +55,8 @@ UPDATE `command` SET `permission`='195' WHERE `name`='gm ingame';
 
 /* ex-commands */
 
-DELETE FROM command WHERE `name`='testing';
-INSERT INTO `command` (`name`, `permission`, `help`) VALUES ('testing', 193, 'Syntax: .testing. Bereitet deinen Char auf einen Test vor.');   
+DELETE FROM command WHERE `name`='tester';
+INSERT INTO `command` (`name`, `permission`, `help`) VALUES ('tester', 193, 'Syntax: .testing. Bereitet deinen Char auf einen Test vor.');   
 
 DELETE FROM command WHERE `name`='gutschein';
 INSERT INTO `command` (`name`, `permission`, `help`) VALUES ('gutschein', 195, 'Syntax: .gutschein BSP: .gutschein 1111. Wenn dein gutschein richtig ist bekommst du eine Nachricht zugesendet.');   
