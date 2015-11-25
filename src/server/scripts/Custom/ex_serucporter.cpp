@@ -102,30 +102,55 @@ public: seruc() : CreatureScript("seruc"){ }
 			}
 				/*PVP*/
 			case 1: {
-				pPlayer->GetGUID();
-				pPlayer->ModifyHonorPoints(-500, NULL);
-				pPlayer->TeleportTo(0, -793.67,1565.25,19.88,3.25);
-				pPlayer->ModifyMoney(-200000);
-				return true;
+				if (pPlayer->GetMoney() == 200000){
+					pPlayer->GetGUID();
+					pPlayer->TeleportTo(0, -793.67, 1565.25, 19.88, 3.25);
+					pPlayer->ModifyMoney(-200000);
+					return true;
+				}
+				else {
+					pPlayer->GetGUID();
+					ChatHandler(pPlayer->GetSession()).PSendSysMessage("Du hast zu wenig Gold um dich zu porten!", pPlayer->GetName());
+					pPlayer->PlayerTalkClass->SendCloseGossip();
+					return true;
+				}
 					
 			}break;
 				
 				
 				/*INSEL*/
 				case 2: {
-					pPlayer->GetGUID();
-					pPlayer->TeleportTo(0,-9773,2126.72,15.40,3.88);
-					pPlayer->ModifyMoney(-200000);
-					return true;
+					if (pPlayer->GetMoney() == 200000){
+						pPlayer->GetGUID();
+						pPlayer->TeleportTo(0, -9773, 2126.72, 15.40, 3.88);
+						pPlayer->ModifyMoney(-200000);
+						return true;
+					}
+
+					else {
+						pPlayer->GetGUID();
+						ChatHandler(pPlayer->GetSession()).PSendSysMessage("Du hast zu wenig Gold um dich zu porten!", pPlayer->GetName());
+						pPlayer->PlayerTalkClass->SendCloseGossip();
+						return true;
+					}
 				}break;
 
 			    
 						/*YASIO*/
 				case 3: {
-					pPlayer->GetGUID();
-					pPlayer->TeleportTo(571,5728.79,608.62,618.59,5.60);
-					pPlayer->ModifyMoney(-200000);
-					return true;
+					if (pPlayer->GetMoney() == 200000){
+						pPlayer->GetGUID();
+						pPlayer->TeleportTo(571, 5728.79, 608.62, 618.59, 5.60);
+						pPlayer->ModifyMoney(-200000);
+						return true;
+					}
+
+					else {
+						pPlayer->GetGUID();
+						ChatHandler(pPlayer->GetSession()).PSendSysMessage("Du hast zu wenig Gold um dich zu porten!", pPlayer->GetName());
+						pPlayer->PlayerTalkClass->SendCloseGossip();
+						return true;
+					}
 				}break;
 
 
@@ -133,10 +158,19 @@ public: seruc() : CreatureScript("seruc"){ }
 
 						/*ORRIG*/
 				case 4: {
-					pPlayer->GetGUID();
-					pPlayer->TeleportTo(169, -2902.55,-1259.97,121.88,3.28);
-					pPlayer->ModifyMoney(-200000);
-					return true;
+					if (pPlayer->GetMoney() == 200000){
+						pPlayer->GetGUID();
+						pPlayer->TeleportTo(169, -2902.55, -1259.97, 121.88, 3.28);
+						pPlayer->ModifyMoney(-200000);
+						return true;
+					}
+
+					else {
+						pPlayer->GetGUID();
+						ChatHandler(pPlayer->GetSession()).PSendSysMessage("Du hast zu wenig Gold um dich zu porten!", pPlayer->GetName());
+						pPlayer->PlayerTalkClass->SendCloseGossip();
+						return true;
+					}
 
 				}break;
 
@@ -145,10 +179,19 @@ public: seruc() : CreatureScript("seruc"){ }
 
 						/*EXI*/
 				case 5: {
-					pPlayer->GetGUID();
-					pPlayer->TeleportTo(169, -480.42,3326.65,286.07, 4.69);
-					pPlayer->ModifyMoney(-200000);
-					return true;
+					if (pPlayer->GetMoney() == 200000){
+						pPlayer->GetGUID();
+						pPlayer->TeleportTo(169, -480.42, 3326.65, 286.07, 4.69);
+						pPlayer->ModifyMoney(-200000);
+						return true;
+					}
+
+					else {
+						pPlayer->GetGUID();
+						ChatHandler(pPlayer->GetSession()).PSendSysMessage("Du hast zu wenig Gold um dich zu porten!", pPlayer->GetName());
+						pPlayer->PlayerTalkClass->SendCloseGossip();
+						return true;
+					}
 				}break;
 
 
@@ -157,57 +200,111 @@ public: seruc() : CreatureScript("seruc"){ }
 
 						/*GEQUÄLTE*/
 				case 6: {
-					pPlayer->GetGUID();
-					pPlayer->TeleportTo(169, -250.27, 3081.07, 96.45,3.10);
-					pPlayer->ModifyMoney(-200000);
-					return true;
+					if (pPlayer->GetMoney() == 200000){
+						pPlayer->GetGUID();
+						pPlayer->TeleportTo(169, -250.27, 3081.07, 96.45, 3.10);
+						pPlayer->ModifyMoney(-200000);
+						return true;
+					}
+
+					else {
+						pPlayer->GetGUID();
+						ChatHandler(pPlayer->GetSession()).PSendSysMessage("Du hast zu wenig Gold um dich zu porten!", pPlayer->GetName());
+						pPlayer->PlayerTalkClass->SendCloseGossip();
+						return true;
+					}
 				}break;
 
 
 						/*KAYOULA*/
 				case 7: {
-					pPlayer->GetGUID();
-					pPlayer->TeleportTo(169, -1221.52, -2432.34, 112.95, 1.00);
-					pPlayer->ModifyMoney(-200000);
-					return true;
+					if (pPlayer->GetMoney() == 200000){
+						pPlayer->GetGUID();
+						pPlayer->TeleportTo(169, -1221.52, -2432.34, 112.95, 1.00);
+						pPlayer->ModifyMoney(-200000);
+						return true;
+					}
+
+					else {
+						pPlayer->GetGUID();
+						ChatHandler(pPlayer->GetSession()).PSendSysMessage("Du hast zu wenig Gold um dich zu porten!", pPlayer->GetName());
+						pPlayer->PlayerTalkClass->SendCloseGossip();
+						return true;
+					}
 				}break;
 
 
 
 						/*Theriakin*/
 				case 8: {
-					pPlayer->GetGUID();
-					pPlayer->TeleportTo(169, 3617.89, 4050.67, 92.00,3.50);
-					pPlayer->ModifyMoney(-200000);
-					return true;
+					if (pPlayer->GetMoney() == 200000){
+						pPlayer->GetGUID();
+						pPlayer->TeleportTo(169, 3617.89, 4050.67, 92.00, 3.50);
+						pPlayer->ModifyMoney(-200000);
+						return true;
+					}
+
+					else {
+						pPlayer->GetGUID();
+						ChatHandler(pPlayer->GetSession()).PSendSysMessage("Du hast zu wenig Gold um dich zu porten!", pPlayer->GetName());
+						pPlayer->PlayerTalkClass->SendCloseGossip();
+						return true;
+					}
 				}break;
 
 
 
 						/*ARC*/
 				case 9: {
-					pPlayer->GetGUID();
-					pPlayer->TeleportTo(169, -1743.87, -854.50 ,121.70,2.06);
-					pPlayer->ModifyMoney(-200000);
-					return true;
+					if (pPlayer->GetMoney() == 200000){
+						pPlayer->GetGUID();
+						pPlayer->TeleportTo(169, -1743.87, -854.50, 121.70, 2.06);
+						pPlayer->ModifyMoney(-200000);
+						return true;
+					}
+
+					else {
+						pPlayer->GetGUID();
+						ChatHandler(pPlayer->GetSession()).PSendSysMessage("Du hast zu wenig Gold um dich zu porten!", pPlayer->GetName());
+						pPlayer->PlayerTalkClass->SendCloseGossip();
+						return true;
+					}
 				}break;
 
 
 
 						/*MOON*/
 				case 10: {
-					pPlayer->GetGUID();
-					pPlayer->TeleportTo(169,-2872.38,-1386.17,118.51,2.60);
-					pPlayer->ModifyMoney(-200000);
-					return true;
+					if (pPlayer->GetMoney() == 200000){
+						pPlayer->GetGUID();
+						pPlayer->TeleportTo(169, -2872.38, -1386.17, 118.51, 2.60);
+						pPlayer->ModifyMoney(-200000);
+						return true;
+					}
+
+					else {
+						pPlayer->GetGUID();
+						ChatHandler(pPlayer->GetSession()).PSendSysMessage("Du hast zu wenig Gold um dich zu porten!", pPlayer->GetName());
+						pPlayer->PlayerTalkClass->SendCloseGossip();
+						return true;
+					}
 				}break;
 
 
 						 /*MALTYRIUN*/
 				case 11: {
-					pPlayer->GetGUID();
-					pPlayer->TeleportTo(169,-4385.68,-754.82,120.89,0.63);
-					return true;
+					if (pPlayer->GetMoney() == 200000){
+						pPlayer->GetGUID();
+						pPlayer->TeleportTo(169, -4385.68, -754.82, 120.89, 0.63);
+						return true;
+					}
+
+					else {
+						pPlayer->GetGUID();
+						ChatHandler(pPlayer->GetSession()).PSendSysMessage("Du hast zu wenig Gold um dich zu porten!", pPlayer->GetName());
+						pPlayer->PlayerTalkClass->SendCloseGossip();
+						return true;
+					}
 				}break;
 
 
@@ -215,10 +312,19 @@ public: seruc() : CreatureScript("seruc"){ }
 
 						 /*LORDOFDOOM*/
 				case 12: {
-					pPlayer->GetGUID();
-					pPlayer->TeleportTo(169, -2710.73, -2722.46,127.87,0.42);
-					pPlayer->ModifyMoney(-200000);
-					return true;
+					if (pPlayer->GetMoney() == 200000){
+						pPlayer->GetGUID();
+						pPlayer->TeleportTo(169, -2710.73, -2722.46, 127.87, 0.42);
+						pPlayer->ModifyMoney(-200000);
+						return true;
+					}
+
+					else {
+						pPlayer->GetGUID();
+						ChatHandler(pPlayer->GetSession()).PSendSysMessage("Du hast zu wenig Gold um dich zu porten!", pPlayer->GetName());
+						pPlayer->PlayerTalkClass->SendCloseGossip();
+						return true;
+					}
 				}break;
 
 					/*INSTANZ*/
@@ -239,18 +345,36 @@ public: seruc() : CreatureScript("seruc"){ }
 
 					/*Tyranium*/
 				case 14: {
+					if (pPlayer->GetMoney() == 200000){
 					pPlayer->GetGUID();
 					pPlayer->TeleportTo(169, -4367.24, -1477.58, 92.00, 0.21);
 					pPlayer->ModifyMoney(-200000);
 					return true;
+					}
+
+					else {
+						pPlayer->GetGUID();
+						ChatHandler(pPlayer->GetSession()).PSendSysMessage("Du hast zu wenig Gold um dich zu porten!", pPlayer->GetName());
+						pPlayer->PlayerTalkClass->SendCloseGossip();
+						return true;
+					}
 				}break;
 
 					/*Tolreos*/
 				case 16: {
-					pPlayer->GetGUID();
-					pPlayer->TeleportTo(169, -3655.76, -1052.01, 126.75, 3.38);
-					pPlayer->ModifyMoney(-200000);
-					return true;
+					if (pPlayer->GetMoney() == 200000){
+						pPlayer->GetGUID();
+						pPlayer->TeleportTo(169, -3655.76, -1052.01, 126.75, 3.38);
+						pPlayer->ModifyMoney(-200000);
+						return true;
+					}
+
+					else {
+						pPlayer->GetGUID();
+						ChatHandler(pPlayer->GetSession()).PSendSysMessage("Du hast zu wenig Gold um dich zu porten!", pPlayer->GetName());
+						pPlayer->PlayerTalkClass->SendCloseGossip();
+						return true;
+					}
 				}break;
 
 				case 17: {

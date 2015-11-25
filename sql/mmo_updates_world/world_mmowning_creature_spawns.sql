@@ -38,3 +38,33 @@ REPLACE INTO `creature` (`guid`,`id`,`map`,`spawnMask`,`phaseMask`,`modelid`,`eq
 DELETE FROM `creature` WHERE `guid` = 2000005;
 REPLACE INTO `creature` (`guid`,`id`,`map`,`spawnMask`,`phaseMask`,`modelid`,`equipment_id`,`position_x`,`position_y`,`position_z`,`orientation`,`spawntimesecs`,`spawndist`,`currentwaypoint`,`curhealth`,`curmana`,`MovementType`) VALUES
 ('2000005', '99321', '1', '0', '0', '564', '0', '1620.94', '-4384.38', '12.5493', '0.919256', '25', '0', '0', '1000000', '250000', '0');
+
+
+/* Astraler Händler */
+/* Orgrimmar */
+DELETE FROM `creature` WHERE `guid` = 2000006;
+REPLACE INTO `creature` (`guid`,`id`,`map`,`spawnMask`,`phaseMask`,`modelid`,`equipment_id`,`position_x`,`position_y`,`position_z`,`orientation`,`spawntimesecs`,`spawndist`,`currentwaypoint`,`curhealth`,`curmana`,`MovementType`) VALUES
+('2000006', '600900', '1', '0', '0', '1460', '0', '1623.25', '-4393.99', '11.59', '4.35', '25', '0', '0', '1000000', '250000', '0');
+
+/* Sturmwind */
+DELETE FROM `creature` WHERE `guid` = 2000007;
+REPLACE INTO `creature` (`guid`,`id`,`map`,`spawnMask`,`phaseMask`,`modelid`,`equipment_id`,`position_x`,`position_y`,`position_z`,`orientation`,`spawntimesecs`,`spawndist`,`currentwaypoint`,`curhealth`,`curmana`,`MovementType`) VALUES
+('2000007', '600900', '0', '0', '0', '1460', '0', '-8823.08', '609.23', '95.37', '1.02', '25', '0', '0', '1000000', '250000', '0');
+
+
+/* Lehrer */
+/* Sturmwind */
+DELETE FROM `creature` WHERE `guid` = 2000008;
+REPLACE INTO `creature` (`guid`,`id`,`map`,`spawnMask`,`phaseMask`,`modelid`,`equipment_id`,`position_x`,`position_y`,`position_z`,`orientation`,`spawntimesecs`,`spawndist`,`currentwaypoint`,`curhealth`,`curmana`,`MovementType`) VALUES
+('2000008', '90001', '0', '0', '0', '22931', '0', '-8844.05', '625.09', '94.29', '0.36', '25', '0', '0', '1000000', '250000', '0');
+
+
+/* Orgrimmar */
+DELETE FROM `creature` WHERE `guid` = 2000009;
+REPLACE INTO `creature` (`guid`,`id`,`map`,`spawnMask`,`phaseMask`,`modelid`,`equipment_id`,`position_x`,`position_y`,`position_z`,`orientation`,`spawntimesecs`,`spawndist`,`currentwaypoint`,`curhealth`,`curmana`,`MovementType`) VALUES
+('2000009', '90001', '1', '0', '0', '22931', '0', '1654.76', '-4433.08', '17.52', '1.90', '25', '0', '0', '1000000', '250000', '0');
+
+/* Firstausstattung */
+DELETE FROM `creature` WHERE `guid` = 2000010;
+REPLACE INTO `creature` (`guid`,`id`,`map`,`spawnMask`,`phaseMask`,`modelid`,`equipment_id`,`position_x`,`position_y`,`position_z`,`orientation`,`spawntimesecs`,`spawndist`,`currentwaypoint`,`curhealth`,`curmana`,`MovementType`) VALUES
+('2000010', '90001', '0', '0', '0', '22931', '0', '-778.28', '-1587.12', '142.28', '4.06', '25', '0', '0', '1000000', '250000', '0');

@@ -14,13 +14,13 @@ INSERT INTO `creature_template` (`entry`, `difficulty_entry_1`, `difficulty_entr
 ('15011147', @ENTRY, '0', '1', '1', '0', '0', '-8847.52', '631.239', '95.1379', '0.358493', '300', '0', '0', '1', '0', '0', '0', '0', '0');*/
 
 REPLACE INTO `npc_vendor` (`entry`, `slot`, `item`, `maxcount`, `incrtime`, `ExtendedCost`) VALUES 
- (@ENTRY, '0', '51955', '0', '0', @PRICE_1000), -- 1000 marks Zügel des eisbeschlagenen Frostbrutbezwingers
+ /*(@ENTRY, '0', '51955', '0', '0', @PRICE_1000), -- 1000 marks Zügel des eisbeschlagenen Frostbrutbezwingers
  (@ENTRY, '0', '51954', '0', '0', @PRICE_1000), -- 1000 marks Zügel des blutgebadeten Frostbrutbezwingers
- (@ENTRY, '0', '45802', '0', '0', @PRICE_1000), -- 1000 marks Zügel des rostigen Protodrachen
+ (@ENTRY, '0', '45802', '0', '0', @PRICE_1000), -- 1000 marks Zügel des rostigen Protodrachen */
  (@ENTRY, '0', '34092', '0', '0', @PRICE_1000), -- 1000 marks Netherdrache des Erbarmungslosen 
- (@ENTRY, '0', '32458', '0', '0', @PRICE_1000), -- 1000 marks Al\'ars Asche
+/* (@ENTRY, '0', '32458', '0', '0', @PRICE_1000), -- 1000 marks Al\'ars Asche */
  (@ENTRY, '0', '43516', '0', '0', @PRICE_1000), -- 1000 marks Brutaler Netherdrache
- (@ENTRY, '0', '54811', '0', '0', @PRICE_1000), -- 1000 marks Himmelsross 
+ /*(@ENTRY, '0', '54811', '0', '0', @PRICE_1000), -- 1000 marks Himmelsross  */
  (@ENTRY, '0', '21176', '0', '0', @PRICE_1000), -- 1000 marks Schwarzer Qirajiresonanzkristall 
  (@ENTRY, '0', '37676', '0', '0', @PRICE_1000), -- 1000 marks Rachsüchtiger Netherdrache 
  (@ENTRY, '0', '54860', '0', '0', @PRICE_500), -- 500 marks X-53 Reiserakete 
@@ -28,10 +28,10 @@ REPLACE INTO `npc_vendor` (`entry`, `slot`, `item`, `maxcount`, `incrtime`, `Ext
  (@ENTRY, '0', '50250', '0', '0', @PRICE_500), -- 500 marks Große Liebesrakete
  (@ENTRY, '0', '45725', '0', '0', @PRICE_500), -- 500 marks Argentumhippogryph
  (@ENTRY, '0', '33809', '0', '0', @PRICE_500), -- 500 marks Kriegsbär der Amani
- (@ENTRY, '0', '49636', '0', '0', @PRICE_500), -- 500 marks Zügel des Drachen von Onyxia
- (@ENTRY, '0', '49286', '0', '0', @PRICE_500), -- 500 marks X-51 Netherrakete X-TREM
+ /*(@ENTRY, '0', '49636', '0', '0', @PRICE_500), -- 500 marks Zügel des Drachen von Onyxia */
+/* (@ENTRY, '0', '49286', '0', '0', @PRICE_500), -- 500 marks X-51 Netherrakete X-TREM */
  (@ENTRY, '0', '32768', '0', '0', @PRICE_500), -- 500 marks Zügel des Rabenfürsten 
- (@ENTRY, '0', '45693', '0', '0', @PRICE_500), -- 500 marks Mimirons Kopf 
+ /*(@ENTRY, '0', '45693', '0', '0', @PRICE_500), -- 500 marks Mimirons Kopf  */
  (@ENTRY, '0', '34493', '0', '0', @PRICE_250), -- 250 marks Papierdrachen
  (@ENTRY, '0', '35227', '0', '0', @PRICE_250), -- 250 marks Wunschwettermaschine - Prototyp 01-B
  (@ENTRY, '0', '23713', '0', '0', @PRICE_250), -- 250 marks Hippogryphenjunges
@@ -61,4 +61,5 @@ REPLACE INTO `npc_vendor` (`entry`, `slot`, `item`, `maxcount`, `incrtime`, `Ext
  (@ENTRY, '0', '13583', '0', '0', @PRICE_50), -- 50 marks Pandahalsband
  (@ENTRY, '0', '49663', '0', '0', @PRICE_50), -- 50 marks Windreiterjunges
  (@ENTRY, '0', '23162', '0', '0', @PRICE_100), -- 100 marks Forors Kiste der endlosen Widerstandsausstattung
+ (@ENTRY, '0', '38186', '0', '0', 0), 
  (@ENTRY, '0', '200000', '0', '0', @PRICE_50); -- 50 Gildenhaus Token 

@@ -277,6 +277,7 @@ UPDATE `quest_template` SET `LogDescription`='Das Wandervolk ist ein interessant
 
 /* MEHR HILFE FUER DAS VOLK 800500 */
 UPDATE `quest_template` SET `Flags`='32768' WHERE `ID`='800500';
+UPDATE `quest_template` SET `RequiredItemCount1`='150', `RequiredItemCount2`='100' WHERE `ID`='800500';
 
 
 /* RENAME TYRANIUM */
@@ -359,9 +360,14 @@ UPDATE `creature_template` SET `ScriptName`='janarius' WHERE `entry`='800085';
 
 
 /* Firstausttattungs npc Umstellung */
-UPDATE `creature` SET `map`='169', `position_x`='-3799.51', `position_y`='-4111.92', `position_z`='365.14', `orientation`='4.89' WHERE `guid`='800019';
-UPDATE `creature` SET `map`='169', `position_x`='-3804.90', `position_y`='-4112.93', `position_z`='365.14', `orientation`='5.13' WHERE `guid`='800046';
-UPDATE `creature` SET `map`='169', `position_x`='-3812.43', `position_y`='-4115.85', `position_z`='365.14', `orientation`='5.19' WHERE `guid`='800043';
-UPDATE `creature` SET `map`='169', `position_x`='-3818.72', `position_y`='-4119.36', `position_z`='365.14', `orientation`='5.49' WHERE `guid`='800042';
+UPDATE `creature` SET `position_x`='-804.55', `position_y`='-1630.96', `position_z`='142.30', `orientation`='0.74' WHERE `guid`='800019';
+UPDATE `creature` SET `position_x`='-815.51', `position_y`='-1624.39', `position_z`='142.29', `orientation`='0.96' WHERE `guid`='800046';
+UPDATE `creature` SET `position_x`='-813.94', `position_y`='-1609.57', `position_z`='142.15', `orientation`='5.52' WHERE `guid`='800043';
+UPDATE `creature` SET `position_x`='-806.18', `position_y`='-1600.75', `position_z`='142.17', `orientation`='5.60' WHERE `guid`='800042';
+
+
+/* AStraler Kredit Goldkosten */
+UPDATE `item_template` SET `BuyPrice`='500000000' WHERE `entry`='38186';
+
 
 
