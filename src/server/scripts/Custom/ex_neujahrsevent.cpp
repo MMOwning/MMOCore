@@ -55,13 +55,13 @@ public:
 				player->GetGUID();
 				ChatHandler(pPlayer->GetSession()).PSendSysMessage("Wenn ihr die nachfolgenden Quests abgeschlossen habt, koennt ihr euch zu verschiedenen Punkten im Event porten um euren Fortschritt sozusagen zu speichern.",
 					pPlayer->GetName());
-			
+
 			}
 
 			case 1:
 			{
 				player->GetGUID();
-				player->TeleportTo(1,-8646.00, -1316.99 ,8.87 ,3.10, 0);
+				player->TeleportTo(1, -8646.00, -1316.99, 8.87, 3.10, 0);
 			}
 
 			case 2:
@@ -70,6 +70,7 @@ public:
 				player->TeleportTo(1, -8790.68, -1339.47, 8.87, 3.16, 0);
 			}
 		}
+	}
 };
 
 void AddSC_neujahrsevent()
