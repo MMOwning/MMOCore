@@ -53,8 +53,8 @@ public:
 			{
 
 				player->GetGUID();
-				ChatHandler(pPlayer->GetSession()).PSendSysMessage("Wenn ihr die nachfolgenden Quests abgeschlossen habt, koennt ihr euch zu verschiedenen Punkten im Event porten um euren Fortschritt sozusagen zu speichern.",
-					pPlayer->GetName());
+				ChatHandler(player->GetSession()).PSendSysMessage("Wenn ihr die nachfolgenden Quests abgeschlossen habt, koennt ihr euch zu verschiedenen Punkten im Event porten um euren Fortschritt sozusagen zu speichern.",
+					player->GetName());
 
 			}
 
