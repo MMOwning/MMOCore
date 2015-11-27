@@ -147,9 +147,15 @@ public:
 		
 		GameEventMgr::ActiveEvents const& ae = sGameEventMgr->GetActiveEventList();
 		bool active = ae.find(70) != ae.end();
+		
+		if (active == true){
+			return;
+		}
 
-		if (newzone == 876 && newarea == 876 && active == false && player->GetSession()->GetSecurity() == 0){
-			player->TeleportTo(0, -9773, 2126.72, 15.40, 3.88);
+		else{
+			if (newzone == 876 && newarea == 876 && active == false && player->GetSession()->GetSecurity() == 0){
+				player->TeleportTo(0, -9773, 2126.72, 15.40, 3.88);
+			}
 		}
 
 
@@ -236,7 +242,7 @@ public:
 
 	void OnShutdownInitiate(ShutdownExitCode /*code*/, ShutdownMask /*mask*/){
 		
-		ss << "|cff54b5ffDer Server wird fuer Updates heruntergefahren. Wir sind bald wieder erreichbar. Weitere Informationen koennen auf der Homepage eingesehen werden.|r";
+		ss << "|cff54b5ffDer Server wird bald fuer Updates heruntergefahren. Weitere Informationen koennen auf der Homepage eingesehen werden.|r";
 		sWorld->SendServerMessage(SERVER_MSG_STRING, ss.str().c_str());
 
 		tt << "|cff54b5ffDer Shutdown wurde eingeleitet.|r";

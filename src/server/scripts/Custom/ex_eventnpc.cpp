@@ -49,10 +49,8 @@ public: eventnpc() : CreatureScript("eventnpc"){ }
 			pPlayer->ADD_GOSSIP_ITEM(7, "Das Wandervolk", GOSSIP_SENDER_MAIN, 3);
 			pPlayer->ADD_GOSSIP_ITEM(7, "Jumpevent", GOSSIP_SENDER_MAIN, 4);
 			pPlayer->ADD_GOSSIP_ITEM(7, "Das Portal", GOSSIP_SENDER_MAIN, 5);
+			pPlayer->ADD_GOSSIP_ITEM(7, "Neujahrsevent", GOSSIP_SENDER_MAIN, 6);
 			
-			if (pPlayer->IsGameMaster()){
-				pPlayer->ADD_GOSSIP_ITEM(7, "Labyrinth Name ausstehend", GOSSIP_SENDER_MAIN, 6);
-			}
 			pPlayer->PlayerTalkClass->SendGossipMenu(907, _creature->GetGUID());
 			return true;
 		}
@@ -181,6 +179,31 @@ public: eventnpc() : CreatureScript("eventnpc"){ }
 					else{
 						pPlayer->GetGUID();
 						ChatHandler(pPlayer->GetSession()).PSendSysMessage("Das Event 'Das Portal' ist alle 14 Tage fuer 7 Tage aktiv.  Aktuell ist es nicht aktiv.",
+							pPlayer->GetName());
+						pPlayer->PlayerTalkClass->SendCloseGossip();
+						return true;
+					}
+					return true;
+				}break;
+
+
+				//Neujahrsevent
+				case 6:
+				{
+					GameEventMgr::ActiveEvents const& ae = sGameEventMgr->GetActiveEventList();
+					bool active = ae.find(75) != ae.end();
+					if (active == true){
+						pPlayer->GetGUID();
+						pPlayer->TeleportTo(1, -8455.62, -1321.31, 8.87, 3.29);
+						ChatHandler(pPlayer->GetSession()).PSendSysMessage("Das Event ist aktuell aktiv. Viel Spaß beim Erreichen des Ziels.",
+							pPlayer->GetName());
+						pPlayer->PlayerTalkClass->SendCloseGossip();
+						return true;
+					}
+
+					else{
+						pPlayer->GetGUID();
+						ChatHandler(pPlayer->GetSession()).PSendSysMessage("Das Event 'Neujahrsevent' ist ab 1.01. verfuegbar.  Aktuell ist es nicht aktiv.",
 							pPlayer->GetName());
 						pPlayer->PlayerTalkClass->SendCloseGossip();
 						return true;

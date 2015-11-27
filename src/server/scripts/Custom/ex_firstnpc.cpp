@@ -103,6 +103,7 @@ class npc_first_char : public CreatureScript
 								pPlayer->TeleportTo(0, -792.84,-1607.55, 142.30, 2.33, 0);
 								pPlayer->AddItem(20400, 4);
 								pPlayer->SetMoney(50000000);
+								
 							
 								
 								

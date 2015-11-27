@@ -526,10 +526,13 @@ static bool HandleInselCommand(ChatHandler* handler, const char* /*args*/)
 		return false;
 	}
 
-	chr->ResurrectPlayer(0.5, false);
+	if (chr->getLevel() == 80){
+		chr->TeleportTo(0, -9771.67, 2127.04, 15.07, 3.75);    // Insel Coords
+	}
 
-	chr->TeleportTo(0, -9771.67, 2127.04, 15.07, 3.75);    // Insel Coords
-
+	else {
+		handler->PSendSysMessage("Du hast keinen Elite Account.");
+	}
 	return true;
 }
 

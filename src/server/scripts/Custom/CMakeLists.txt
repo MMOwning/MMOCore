@@ -40,6 +40,7 @@ set(scripts_STAT_SRCS
   Custom/raetsel.cpp
   Custom/weihnachtsevent.cpp
   Custom/ex_commands.cpp
+  Custom/ex_neujahrsevent.cpp
   ${scripts_STAT_SRCS}
 #  ${sources_Custom}
   Custom/Transmog/Transmogrification.h

@@ -58,7 +58,9 @@ public:
 				pPlayer->DestroyItemCount(49426, 2, true, false);
 				pPlayer->SetAtLoginFlag(AT_LOGIN_CHANGE_RACE);
 				pPlayer->GetGUID();
-				sWorld->SendGMText(LANG_GM_BROADCAST, "Ein Rassenwechsel wurde vorgenommen.");
+				std::ostringstream ss;
+				ss << "|cff54b5ffEin Rassenwechsel wurde durchgefuehrt von: |r " << ChatHandler(pPlayer->GetSession()).GetNameLink();
+				sWorld->SendGMText(LANG_GM_BROADCAST, ss.str().c_str());
 				ChatHandler(pPlayer->GetSession()).PSendSysMessage("Bitte ausloggen um Aenderungen durchzufuehren.",
 					pPlayer->GetName());
 				pPlayer->ModifyMoney(-500*GOLD);
@@ -78,7 +80,9 @@ public:
 				pPlayer->DestroyItemCount(49426, 2, true);
 				pPlayer->SetAtLoginFlag(AT_LOGIN_CHANGE_FACTION);
 				pPlayer->GetGUID();
-				sWorld->SendGMText(LANG_GM_BROADCAST, "Ein Franktionswechsel wurde vorgenommen.");
+				std::ostringstream ss;
+				ss << "|cff54b5ffEin Fraktionswechsel wurde durchgefuehrt von: |r " << ChatHandler(pPlayer->GetSession()).GetNameLink();
+				sWorld->SendGMText(LANG_GM_BROADCAST, ss.str().c_str());
 				ChatHandler(pPlayer->GetSession()).PSendSysMessage("Bitte ausloggen um Aenderungen durchzufuehren.",
 					pPlayer->GetName());
 				pPlayer->ModifyMoney(-500 * GOLD);
@@ -102,7 +106,9 @@ public:
 				pPlayer->SetAtLoginFlag(AT_LOGIN_CHANGE_RACE);
 				
 				pPlayer->GetGUID();
-				sWorld->SendGMText(LANG_GM_BROADCAST, "Ein Fraktions und Rassenwechsel wurde vorgenommen.");
+				std::ostringstream ss;
+				ss << "|cff54b5ffEin Rassen und Fraktionswechsel wurde durchgefuehrt von: |r " << ChatHandler(pPlayer->GetSession()).GetNameLink();
+				sWorld->SendGMText(LANG_GM_BROADCAST, ss.str().c_str());
 				ChatHandler(pPlayer->GetSession()).PSendSysMessage("Bitte ausloggen um Aenderungen durchzuführen.",
 					pPlayer->GetName());
 				pPlayer->ModifyMoney(-1000 * GOLD);

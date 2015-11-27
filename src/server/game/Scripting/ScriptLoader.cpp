@@ -135,6 +135,9 @@ void AddSC_wandervolk();
 //commands
 void AddSC_ex_commands();
 
+//Neujahrsevent
+AddSC_neujahrsevent();
+
 #ifdef SCRIPTS
 //world
 void AddSC_areatrigger_scripts();
@@ -886,6 +889,9 @@ void AddCommandScripts()
 	//raetsel
 	//AddSC_raetsel();
 	AddSC_ex_commands();
+
+	//Neujahrsevent
+	AddSC_neujahrsevent();
 }
 
 
