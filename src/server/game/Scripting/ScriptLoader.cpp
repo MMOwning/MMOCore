@@ -136,7 +136,7 @@ void AddSC_wandervolk();
 void AddSC_ex_commands();
 
 //Neujahrsevent
-AddSC_neujahrsevent();
+void AddSC_neujahrsevent();
 
 #ifdef SCRIPTS
 //world
