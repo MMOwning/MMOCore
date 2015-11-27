@@ -47,7 +47,7 @@ public:
 	}
 	
 	bool OnGossipSelect(Player* player, Creature* creature, uint32 sender, uint32 action){
-		switch (uiAction)
+		switch (action)
 		{
 			case 0:
 			{
