@@ -892,10 +892,8 @@ void AddCommandScripts()
 	//raetsel
 	//AddSC_raetsel();
 	AddSC_ex_commands();
-
 	//Neujahrsevent
 	AddSC_neujahrsevent();
-
 	//boss therakin
 	AddSC_therakin();
 }

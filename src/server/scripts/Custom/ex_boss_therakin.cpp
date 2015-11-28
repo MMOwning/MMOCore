@@ -158,7 +158,7 @@ public:
 					break;
 				case EVENT_SPALTEN:
 					DoCastToAllHostilePlayers(SPELL_SPALTEN);
-					_events.ScheduleEvent(EVENT_SPALTEN, 8000);
+					_events.ScheduleEvent(EVENT_SPALTEN, 10000);
 					break;
 				case EVENT_ENRAGE:
 					Talk(SAY_RANDOM);
@@ -177,7 +177,7 @@ public:
 				case EVENT_BLISTERING_COLD:
 					Talk(SAY_BERSERK);
 					DoCastVictim(SPELL_BLISTERING_COLD);
-					_events.ScheduleEvent(EVENT_BLISTERING_COLD, 12000);
+					_events.ScheduleEvent(EVENT_BLISTERING_COLD, 20000);
 					break;
 				case EVENT_CORRUPTED_FLESH:
 					DoCastVictim(SPELL_CORRUPTED_FLESH);
@@ -185,7 +185,7 @@ public:
 					break;
 				case EVENT_GOTTESSCHILD:
 					DoCastToAllHostilePlayers(SPELL_GOTTESSCHILD);
-					_events.ScheduleEvent(EVENT_GOTTESSCHILD, 20000);
+					_events.ScheduleEvent(EVENT_GOTTESSCHILD, 25000);
 					break;
 
 
@@ -233,7 +233,7 @@ public:
 		{
 			Talk(SAY_AGGRO);
 			_events.SetPhase(PHASE_ONE);
-			_events.ScheduleEvent(EVENT_FLEISCH_EINAESCHERN, 1000);
+			_events.ScheduleEvent(EVENT_FLEISCH_EINAESCHERN, 45000);
 			
 
 		}
@@ -243,14 +243,14 @@ public:
 			if (me->HealthBelowPctDamaged(75, damage) && _events.IsInPhase(PHASE_ONE))
 			{
 				_events.SetPhase(PHASE_TWO);
-				_events.ScheduleEvent(EVENT_FLEISCH_EINAESCHERN, 30000);
+				_events.ScheduleEvent(EVENT_FLEISCH_EINAESCHERN, 45000);
 
 			}
 
 			if (me->HealthBelowPctDamaged(35, damage) && _events.IsInPhase(PHASE_TWO))
 			{
 				_events.SetPhase(PHASE_THREE);
-				_events.ScheduleEvent(EVENT_FLEISCH_EINAESCHERN, 30000);
+				_events.ScheduleEvent(EVENT_FLEISCH_EINAESCHERN, 45000);
 		
 			}
 		}
@@ -259,9 +259,7 @@ public:
 
 		void JustDied(Unit* pPlayer)
 		{
-			char msg[250];
-			snprintf(msg, 250, "|cffff0000[Boss System]|r Boss|cffff6060 Therakin|r wurde getoetet! Respawn in 6h 33min.");
-			sWorld->SendGlobalText(msg, NULL);
+			
 		}
 
 

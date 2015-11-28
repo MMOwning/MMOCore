@@ -70,7 +70,8 @@ public:
 				player->GetGUID();
 				player->TeleportTo(1, -8790.68, -1339.47, 8.87, 3.16, 0);
 			}break;
-		}
+
+		}return true;
 	}
 };
 

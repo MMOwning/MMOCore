@@ -35,7 +35,8 @@ class npc_first_char : public CreatureScript
 					pPlayer->ADD_GOSSIP_ITEM(7, "Firstausstattung beantragen", GOSSIP_SENDER_MAIN, 1);
 					pPlayer->ADD_GOSSIP_ITEM(7, "Gildenaufwertung 10er", GOSSIP_SENDER_MAIN, 2);
 					pPlayer->ADD_GOSSIP_ITEM(7, "Gildenaufwertung 25er", GOSSIP_SENDER_MAIN, 3);
-					
+					pPlayer->ADD_GOSSIP_ITEM(7, "Level 80 Equipment", GOSSIP_SENDER_MAIN, 10);
+
 					if (pPlayer->IsGameMaster()){
 						pPlayer->ADD_GOSSIP_ITEM(7, "Aufwertungen einsehen", GOSSIP_SENDER_MAIN, 4);
 					}
@@ -140,6 +141,7 @@ class npc_first_char : public CreatureScript
 							pPlayer->ADD_GOSSIP_ITEM(7, "Meine Aufwertung wurde abgelehnt! Was tun?", GOSSIP_SENDER_MAIN, 7);
 							pPlayer->ADD_GOSSIP_ITEM(7, "Ich moechte einen anderen Charakter ausstatten lassen.", GOSSIP_SENDER_MAIN, 8);
 							pPlayer->ADD_GOSSIP_ITEM(7, "Ein Spieler mit der selben IP moechte eine Charakteraufwertung! Wie geht das?", GOSSIP_SENDER_MAIN, 9);
+							pPlayer->ADD_GOSSIP_ITEM(7, "Was bedeutet Level 80 Equipment?", GOSSIP_SENDER_MAIN, 11);
 							pPlayer->PlayerTalkClass->SendGossipMenu(907, pCreature->GetGUID());
 							return true;
 						}break;
@@ -185,6 +187,15 @@ class npc_first_char : public CreatureScript
 					{
 						pPlayer->GetGUID();
 						ChatHandler(pPlayer->GetSession()).PSendSysMessage("[Aufwertungs System]\nUm eine Austattung ueber die gleiche IP vornehmen zu lassen muesst ihr euch BEIDE ins TS begeben. Fragt dort nach einem GM, dieser wird ueberpruefen ob alles für eine Ausstattung erfuellt ist und diese dann durchfuehren.",
+							pPlayer->GetName());
+						pPlayer->PlayerTalkClass->SendCloseGossip();
+						return true;
+					}
+
+					case 11:
+					{
+						pPlayer->GetGUID();
+						ChatHandler(pPlayer->GetSession()).PSendSysMessage("[Aufwertungs System]\nLevel 80 Equipment bedeutet, dass ihr Euch fuer 2000 Gold Level 80 Equipment kaufen koennt. Dies kann mit jedem Character benutzt werden.",
 							pPlayer->GetName());
 						pPlayer->PlayerTalkClass->SendCloseGossip();
 						return true;
@@ -379,16 +390,38 @@ class npc_first_char : public CreatureScript
 							
 						return true;
 	      				
-						}break;
+					}break;
+
+
+
+					case 10:
+					{
+
+						uint32 guid = pPlayer->GetGUID();
+		
+						if (pPlayer->GetMoney() == 2000*GOLD){
+							time_t sek;
+							time(&sek);
+							uint32 zeit = time(&sek);
+							pPlayer->GetGUID();
+							ChatHandler(pPlayer->GetSession()).PSendSysMessage("[Aufwertungs System] Deine Aufwertung wurde ausgefuehrt. Viel Spass wuenscht Exitare sowie das MMOwning-Team.",
+								pPlayer->GetName());
+
+							ss << "|cff54b5ffEine 2t Ausstattung wurde von |r " << ChatHandler(pPlayer->GetSession()).GetNameLink() << " |cff54b5ff in Anspruch genommen!|r";
+							sWorld->SendGMText(LANG_GM_BROADCAST, ss.str().c_str());
+							pPlayer->PlayerTalkClass->SendCloseGossip();		
+							pPlayer->TeleportTo(0, -792.84, -1607.55, 142.30, 2.33, 0);
+							pPlayer->PlayerTalkClass->SendCloseGossip();
+							pPlayer->ModifyMoney(-2000*GOLD);
+							return true;
+						}
 
 					
 						return true;
 					}
 
-					
-
-
-					return true;
+				}
+				return true;
 
 			}
 					
