@@ -36,6 +36,7 @@ public:
 		player->ADD_GOSSIP_ITEM(GOSSIP_ICON_CHAT, "Rassenwechsel Kosten: 500 Gold & 2 Frostmarken", GOSSIP_SENDER_MAIN,1);
 		player->ADD_GOSSIP_ITEM(GOSSIP_ICON_CHAT, "Fraktionswechsel Kosten: 500 Gold & 2 Frostmarken", GOSSIP_SENDER_MAIN, 2);
 		player->ADD_GOSSIP_ITEM(GOSSIP_ICON_CHAT, "Fraktions & Rassenwechsel Kosten: 1000 Gold & 4 Frostmarken.", GOSSIP_SENDER_MAIN,3);
+		player->ADD_GOSSIP_ITEM(GOSSIP_ICON_CHAT, "Rename Kosten: 500 Gold", GOSSIP_SENDER_MAIN, 4);
 		player->PlayerTalkClass->SendGossipMenu(1, creature->GetGUID());
 		return true;
 	}
@@ -120,10 +121,27 @@ public:
 			else{
 				pPlayer->GetSession()->SendAreaTriggerMessage("Du hast nicht genug Frostmarken oder nicht Gold zum Wechseln. Komm wieder wenn du genug hast.");
 				return true;
+			}break;
+
+
+		case 4:
+			if (pPlayer->HasEnoughMoney(500 * GOLD)){
+				pPlayer->SetAtLoginFlag(AT_LOGIN_RENAME);
+				pPlayer->ModifyMoney(-500 * GOLD);
+				std::ostringstream ss;
+				ss << "|cff54b5ffEine Namensaenderung wurde durchgefuehrt von : |r " << ChatHandler(pPlayer->GetSession()).GetNameLink();
+				sWorld->SendGMText(LANG_GM_BROADCAST, ss.str().c_str());
+				ChatHandler(pPlayer->GetSession()).PSendSysMessage("Bitte ausloggen um Aenderungen durchzuführen.",
+					pPlayer->GetName());
+				return true;
+
 			}
 
+			else{
+				pPlayer->GetSession()->SendAreaTriggerMessage("Du hast nicht genug Gold um deinen Namen zu aendern. Komm wieder wenn du genug hast.");
+				return true;
+			}break;
 
-			break;
 		}
 		return true;
 	}

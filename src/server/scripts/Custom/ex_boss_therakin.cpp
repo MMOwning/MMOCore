@@ -154,7 +154,7 @@ public:
 				{
 				case EVENT_APOKALYPSE:
 					DoCastAOE(SPELL_APOKALYPSE);
-					_events.ScheduleEvent(EVENT_APOKALYPSE, 60000);
+					_events.ScheduleEvent(EVENT_APOKALYPSE, 75000);
 					break;
 				case EVENT_SPALTEN:
 					DoCastToAllHostilePlayers(SPELL_SPALTEN);

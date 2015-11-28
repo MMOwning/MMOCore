@@ -84,7 +84,7 @@ public: seruc() : CreatureScript("seruc"){ }
 				pPlayer->ADD_GOSSIP_ITEM(7, "Boss: Exitares Schatten [7-15 Spieler] Nicht empfohlen!", GOSSIP_SENDER_MAIN, 5);
 				pPlayer->ADD_GOSSIP_ITEM(7, "Boss: Die gequaelte Seele [5-15 Spieler]", GOSSIP_SENDER_MAIN, 6);
 				pPlayer->ADD_GOSSIP_ITEM(7, "Boss: Kayoula [25-40 Spieler]", GOSSIP_SENDER_MAIN, 7);
-				pPlayer->ADD_GOSSIP_ITEM(7, "Boss: Therakin [10-15 Spieler]", GOSSIP_SENDER_MAIN, 8);
+				pPlayer->ADD_GOSSIP_ITEM(7, "Boss: Therakin [10-15 Spieler] Rework!", GOSSIP_SENDER_MAIN, 8);
 				pPlayer->ADD_GOSSIP_ITEM(7, "Boss: Arcturus [5-10 Spieler] ", GOSSIP_SENDER_MAIN, 9);
 				pPlayer->ADD_GOSSIP_ITEM(7, "Boss: Moon [25-40 Spieler]", GOSSIP_SENDER_MAIN, 10);
 				pPlayer->ADD_GOSSIP_ITEM(7, "Boss: Maltyriun [5-10 Spieler]", GOSSIP_SENDER_MAIN, 11);
