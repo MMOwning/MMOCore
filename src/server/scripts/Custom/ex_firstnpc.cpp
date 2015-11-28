@@ -400,7 +400,7 @@ class npc_first_char : public CreatureScript
 						uint32 guid = pPlayer->GetGUID();
 						
 						uint32 money = pPlayer->GetMoney();
-						if (money == 20000000){
+						if (money >= 20000000){
 							time_t sek;
 							time(&sek);
 							uint32 zeit = time(&sek);
