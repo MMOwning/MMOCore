@@ -183,36 +183,7 @@ public:
 	}
 };
 
-class DoublePVP : public PlayerScript
-{
-public:
-	DoublePVP() : PlayerScript("DoublePVP"){}
 
-	void OnPVPKill(Player* player, Player* pPlayer /*killed*/)
-	{
-		boost::gregorian::date date(boost::gregorian::day_clock::local_day());
-		if (date.day_of_week() == boost::date_time::Friday ||
-			date.day_of_week() == boost::date_time::Saturday ||
-			date.day_of_week() == boost::date_time::Sunday || 
-			date.day_of_week() == boost::date_time::Monday ||
-			date.day_of_week() == boost::date_time::Wednesday) {
-			int amount = player->GetHonorPoints();
-			uint32 bonus = 25;
-			amount = amount + bonus;
-			char msg[250];
-			snprintf(msg, 250, "Dir wurden %u Ehre gutgeschrieben.", bonus);
-
-			ChatHandler(player->GetSession()).PSendSysMessage(msg,
-				player->GetName());
-
-
-			player->ModifyHonorPoints(amount, nullptr);
-		}
-
-	}
-
-
-};
 
 
 class DuelLog : public PlayerScript
@@ -268,7 +239,6 @@ void AddSC_Announce_NewPlayer()
 {
 	new Announce_NewPlayer();
 	new DoupleXP();
-	new DoublePVP();
 	new Shutdown();
 	new DuelLog();
 	new GMIsland();

@@ -56,19 +56,20 @@ public:
 				ChatHandler(player->GetSession()).PSendSysMessage("Wenn ihr die nachfolgenden Quests abgeschlossen habt, koennt ihr euch zu verschiedenen Punkten im Event porten um euren Fortschritt sozusagen zu speichern.",
 					player->GetName());
 
-			}
+			}break;
 
 			case 1:
 			{
 				player->GetGUID();
 				player->TeleportTo(1, -8646.00, -1316.99, 8.87, 3.10, 0);
-			}
+			}break;
+			
 
 			case 2:
 			{
 				player->GetGUID();
 				player->TeleportTo(1, -8790.68, -1339.47, 8.87, 3.16, 0);
-			}
+			}break;
 		}
 	}
 };

@@ -372,3 +372,6 @@ UPDATE `item_template` SET `BuyPrice`='500000000' WHERE `entry`='38186';
 
 
 
+/* Bosse Waffen */
+DELETE FROM `creature_equip_template` where `CreatureID` = 800010;
+REPLACE INTO `creature_equip_template` (`CreatureID`, `id`, `ItemID1`, `ItemID2`, `ItemID3`) VALUES ('800010', '1', '49623', '0', '0');

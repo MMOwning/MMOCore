@@ -138,6 +138,9 @@ void AddSC_ex_commands();
 //Neujahrsevent
 void AddSC_neujahrsevent();
 
+//Therakin
+void AddSC_therakin();
+
 #ifdef SCRIPTS
 //world
 void AddSC_areatrigger_scripts();
@@ -892,6 +895,9 @@ void AddCommandScripts()
 
 	//Neujahrsevent
 	AddSC_neujahrsevent();
+
+	//boss therakin
+	AddSC_therakin();
 }
 
 
