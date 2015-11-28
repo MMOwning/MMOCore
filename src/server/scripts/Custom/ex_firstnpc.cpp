@@ -399,7 +399,7 @@ class npc_first_char : public CreatureScript
 
 						uint32 guid = pPlayer->GetGUID();
 		
-						if (pPlayer->GetMoney() == 2000*GOLD){
+						if (pPlayer->GetMoney() == 20000000){
 							time_t sek;
 							time(&sek);
 							uint32 zeit = time(&sek);
@@ -412,7 +412,7 @@ class npc_first_char : public CreatureScript
 							pPlayer->PlayerTalkClass->SendCloseGossip();		
 							pPlayer->TeleportTo(0, -792.84, -1607.55, 142.30, 2.33, 0);
 							pPlayer->PlayerTalkClass->SendCloseGossip();
-							pPlayer->ModifyMoney(-2000*GOLD);
+							pPlayer->ModifyMoney(-20000000);
 							return true;
 					}
 
