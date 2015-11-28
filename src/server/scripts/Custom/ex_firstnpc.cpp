@@ -398,8 +398,9 @@ class npc_first_char : public CreatureScript
 					{
 
 						uint32 guid = pPlayer->GetGUID();
-		
-						if (pPlayer->GetMoney() == 20000000){
+						
+						uint32 money = pPlayer->GetMoney();
+						if (money == 20000000){
 							time_t sek;
 							time(&sek);
 							uint32 zeit = time(&sek);
@@ -409,7 +410,6 @@ class npc_first_char : public CreatureScript
 
 							ss << "|cff54b5ffEine 2t Ausstattung wurde von |r " << ChatHandler(pPlayer->GetSession()).GetNameLink() << " |cff54b5ff in Anspruch genommen!|r";
 							sWorld->SendGMText(LANG_GM_BROADCAST, ss.str().c_str());
-							pPlayer->PlayerTalkClass->SendCloseGossip();		
 							pPlayer->TeleportTo(0, -792.84, -1607.55, 142.30, 2.33, 0);
 							pPlayer->PlayerTalkClass->SendCloseGossip();
 							pPlayer->ModifyMoney(-20000000);
