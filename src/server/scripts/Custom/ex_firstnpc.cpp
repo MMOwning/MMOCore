@@ -35,7 +35,7 @@ class npc_first_char : public CreatureScript
 					pPlayer->ADD_GOSSIP_ITEM(7, "Firstausstattung beantragen", GOSSIP_SENDER_MAIN, 1);
 					pPlayer->ADD_GOSSIP_ITEM(7, "Gildenaufwertung 10er", GOSSIP_SENDER_MAIN, 2);
 					pPlayer->ADD_GOSSIP_ITEM(7, "Gildenaufwertung 25er", GOSSIP_SENDER_MAIN, 3);
-					pPlayer->ADD_GOSSIP_ITEM(7, "Level 80 Equipment", GOSSIP_SENDER_MAIN, 10);
+					pPlayer->ADD_GOSSIP_ITEM(7, "Level 80 Equipment. [Kosten: 2000G]", GOSSIP_SENDER_MAIN, 10);
 
 					if (pPlayer->IsGameMaster()){
 						pPlayer->ADD_GOSSIP_ITEM(7, "Aufwertungen einsehen", GOSSIP_SENDER_MAIN, 4);
@@ -414,11 +414,17 @@ class npc_first_char : public CreatureScript
 							pPlayer->PlayerTalkClass->SendCloseGossip();
 							pPlayer->ModifyMoney(-2000*GOLD);
 							return true;
+					}
+
+						else {
+							ChatHandler(pPlayer->GetSession()).PSendSysMessage("[Aufwertungs System] Du hast nicht genug Gold. Du brauchst 2000 Gold um dir dein Equipment zu kaufen.",
+								pPlayer->GetName());
+
 						}
 
 					
 						return true;
-					}
+					}break;
 
 				}
 				return true;
