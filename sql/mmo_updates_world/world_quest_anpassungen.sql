@@ -368,7 +368,7 @@ UPDATE `creature` SET `position_x`='-806.18', `position_y`='-1600.75', `position
 
 
 /* AStraler Kredit Goldkosten */
-UPDATE `item_template` SET `BuyPrice`='500000000' WHERE `entry`='38186';
+UPDATE `item_template` SET `BuyPrice`='150000000' WHERE `entry`='38186';
 
 
 
@@ -376,7 +376,8 @@ UPDATE `item_template` SET `BuyPrice`='500000000' WHERE `entry`='38186';
 DELETE FROM `creature_equip_template` where `CreatureID` = 800010;
 REPLACE INTO `creature_equip_template` (`CreatureID`, `id`, `ItemID1`, `ItemID2`, `ItemID3`) VALUES ('800010', '1', '49623', '0', '0');
 
-
+DELETE FROM `creature_equip_template` where `CreatureID` = 800039;
+REPLACE INTO `creature_equip_template` (`CreatureID`, `id`, `ItemID1`, `ItemID2`, `ItemID3`) VALUES ('800039', '1', '50760', '0', '0');
 
 /*RENAME FIRST AUSSTATTER */
 UPDATE `creature_template` SET `name`='MMOwning Ausstatter' WHERE `entry`='800044';

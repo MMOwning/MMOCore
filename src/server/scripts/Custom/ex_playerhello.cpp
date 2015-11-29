@@ -102,13 +102,14 @@ public:
 	void OnGiveXP(Player* player, uint32& amount, Unit* /*victim*/)
 	{
 
-			bool premium = player->GetSession()->IsPremium();
-			boost::gregorian::date date(boost::gregorian::day_clock::local_day());
-			if (date.day_of_week() == boost::date_time::Friday ||
-				date.day_of_week() == boost::date_time::Saturday ||
-				date.day_of_week() == boost::date_time::Sunday){
+		bool premium = player->GetSession()->IsPremium();
+		boost::gregorian::date date(boost::gregorian::day_clock::local_day());
+		if (date.day_of_week() == boost::date_time::Friday ||
+			date.day_of_week() == boost::date_time::Saturday ||
+			date.day_of_week() == boost::date_time::Sunday){
+			if (player->getLevel() < 80){
 				if (!premium){
-					
+
 					char msg[250];
 					snprintf(msg, 250, "Dir wurden %u EP gutgeschrieben.", amount);
 					ChatHandler(player->GetSession()).PSendSysMessage(msg,
@@ -124,7 +125,8 @@ public:
 					amount = amount * 1.25;
 				}
 			}
-	
+		} 
+
 			else if (date.day_of_week() == boost::date_time::Monday ||
 				date.day_of_week() == boost::date_time::Tuesday ||
 				date.day_of_week() == boost::date_time::Wednesday ||
@@ -132,11 +134,9 @@ public:
 				amount = amount * 0.75;
 			}
 		
-
 	}
-
-
 };
+
 
 class GMIsland : public PlayerScript
 {
@@ -232,9 +232,6 @@ public:
 };
 
 
-
-
-
 void AddSC_Announce_NewPlayer()
 {
 	new Announce_NewPlayer();
@@ -242,5 +239,4 @@ void AddSC_Announce_NewPlayer()
 	new Shutdown();
 	new DuelLog();
 	new GMIsland();
-	
 }
