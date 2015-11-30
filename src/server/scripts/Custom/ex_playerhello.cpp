@@ -28,9 +28,10 @@
 
 
 void Belohnungsfunktion(uint32 zeit,std::string spieler){
-
-	QueryResult result = WorldDatabase.PQuery("SELECT `id`, `zeit`, `spieler`, `benutzt` FROM `lob` WHERE `zeit` = '%u' AND `spieler`= '%s'", zeit, spieler);
 	Player* player;
+	QueryResult result = WorldDatabase.PQuery("SELECT `id`, `zeit`, `spieler`, `benutzt` FROM `lob` WHERE `zeit` = '%u' AND `spieler`= '%s'", zeit, spieler);
+	
+	player->GetGUID();
 	if (!result){
 		char msg[250];
 		snprintf(msg, 250, "MMOwning dankt dir fuer deine Spielzeit von ueber 10 Stunden.");
@@ -90,7 +91,7 @@ public:
 		uint32 time = player->GetTotalPlayedTime();
 		//10h
 
-		if (time >= 36000 && time <= 71999){
+		if (time >= 1 && time <= 71999){
 			Belohnungsfunktion(10,player->GetName());
 			
 
