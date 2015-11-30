@@ -173,7 +173,7 @@ public:
 		uint32 time = player->GetTotalPlayedTime();
 		
 
-		if (time >= 600 && time <= 1199){
+		if (time >= 1 && time <= 1199){
 			QueryResult result = WorldDatabase.PQuery("SELECT `id`, `zeit`, `spieler`, `benutzt` FROM `lob` WHERE `zeit` = '%u' AND `spieler`= '%s'", 600, player->GetName());
 			
 			if (!result){

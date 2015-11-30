@@ -1,4 +1,4 @@
-INSERT INTO `creature` (`guid`,`id`,`map`,`spawnMask`,`phaseMask`,`modelid`,`equipment_id`,`position_x`,`position_y`,`position_z`,`orientation`,`spawntimesecs`,`spawndist`,`currentwaypoint`,`curhealth`,`curmana`,`MovementType`) VALUES 
+REPLACE INTO `creature` (`guid`,`id`,`map`,`spawnMask`,`phaseMask`,`modelid`,`equipment_id`,`position_x`,`position_y`,`position_z`,`orientation`,`spawntimesecs`,`spawndist`,`currentwaypoint`,`curhealth`,`curmana`,`MovementType`) VALUES 
 ('15000150','95001','1','1','1','0','0','16239','16293.7','13.1752','1.46258','25','0','0','1000000','250000','0'),
 ('15000151','95002','1','1','1','0','0','16253.4','16299.9','13.1759','4.31827','25','0','0','1000000','250000','0'),
 ('15000152','95003','1','1','1','0','0','16239.4','16301.1','13.1752','4.61203','25','0','0','1000000','250000','0'),
