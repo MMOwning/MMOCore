@@ -402,9 +402,6 @@ class npc_first_char : public CreatureScript
 
 
 						if (pPlayer->HasEnoughMoney(2000 * GOLD)){
-							time_t sek;
-							time(&sek);
-							uint32 zeit = time(&sek);
 							pPlayer->GetGUID();
 							ChatHandler(pPlayer->GetSession()).PSendSysMessage("[Aufwertungs System] Deine Aufwertung wurde ausgefuehrt. Viel Spass wuenscht Exitare sowie das MMOwning-Team.",
 								pPlayer->GetName());

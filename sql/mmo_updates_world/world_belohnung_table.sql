@@ -1,0 +1,6 @@
+CREATE TABLE `lob` (
+  `id` INT NOT NULL AUTO_INCREMENT COMMENT '',
+  `zeit` INT(45) NULL COMMENT '',
+  `spieler` VARCHAR(45) NULL COMMENT '',
+  `benutzt` INT NULL COMMENT '',
+  PRIMARY KEY (`id`)  COMMENT '');
