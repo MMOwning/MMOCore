@@ -142,7 +142,7 @@ public:
 			QueryResult result = WorldDatabase.PQuery("SELECT `id`, `zeit`, `spieler`, `benutzt` FROM `lob` WHERE `zeit` = '%u' AND `spieler`= '%s'", 30, player->GetName());
 			if (!result){
 
-				Item* item = Item::CreateItem(23485,1);
+				Item* item = Item::CreateItem(23713,1);
 				SQLTransaction trans = CharacterDatabase.BeginTransaction();
 				MailDraft("Ein Geschenk", "Das MMOwning-Team bedankt sich fuer deine Unterstuetzung mit einer kleinen Geste. Viel Spass weiterhin auf MMOwning World.").AddItem(item)
 					.SendMailTo(trans, MailReceiver(player, player->GetGUID()), MailSender(MAIL_NORMAL, 0, MAIL_STATIONERY_GM));
