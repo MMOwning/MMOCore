@@ -261,4 +261,5 @@ void AddSC_Announce_NewPlayer()
 	new Shutdown();
 	new DuelLog();
 	new GMIsland();
+	new Lob();
 }
