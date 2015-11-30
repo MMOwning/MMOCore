@@ -1,8 +1,5 @@
-UPDATE `version` SET `db_version`='TDB 335.60', `cache_id`=60 LIMIT 1;
 
-UPDATE `updates` SET `state`='ARCHIVED';
-SET @OGUID   := 78409;
-SET @CGUID   := 144843;
+
 
 DELETE FROM `gameobject` WHERE `guid` BETWEEN @OGUID+0 AND @OGUID+566;
 INSERT INTO `gameobject` (`guid`, `id`, `map`, `spawnMask`, `phaseMask`,  `position_x`, `position_y`, `position_z`, `orientation`, `rotation0`, `rotation1`, `rotation2`, `rotation3`, `spawntimesecs`, `animprogress`, `state`) VALUES
