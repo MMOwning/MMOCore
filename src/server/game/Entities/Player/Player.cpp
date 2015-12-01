@@ -5446,7 +5446,9 @@ bool Player::CanJoinConstantChannelInZone(ChatChannelsEntry const* channel, Area
     if (channel->flags & CHANNEL_DBC_FLAG_ZONE_DEP && zone->flags & AREA_FLAG_ARENA_INSTANCE)
         return false;
 
-    if ((channel->flags & CHANNEL_DBC_FLAG_CITY_ONLY) && (!(zone->flags & AREA_FLAG_SLAVE_CAPITAL)))
+
+	//if ((channel->flags & CHANNEL_DBC_FLAG_CITY_ONLY) && (!(zone->flags & AREA_FLAG_SLAVE_CAPITAL)))
+	if ((channel->flags & CHANNEL_DBC_FLAG_CITY_ONLY) && (!(zone->mapid == 0 || zone->mapid == 1 || zone->mapid == 571 || zone->mapid == 530)))
         return false;
 
     if ((channel->flags & CHANNEL_DBC_FLAG_GUILD_REQ) && GetGuildId())

@@ -105,6 +105,7 @@ class npc_first_char : public CreatureScript
 							pPlayer->TeleportTo(0, -792.84, -1607.55, 142.30, 2.33, 0);
 							pPlayer->AddItem(20400, 4);
 							pPlayer->SetMoney(50000000);
+							pPlayer->UpdateSkillsToMaxSkillsForLevel();
 
 
 
@@ -258,6 +259,7 @@ class npc_first_char : public CreatureScript
 								pPlayer->TeleportTo(0, -792.84, -1607.55, 142.30, 2.33, 0);
 								pPlayer->AddItem(20400, 4);
 								pPlayer->SetMoney(50000000);
+								pPlayer->UpdateSkillsToMaxSkillsForLevel();
 
 								ss << "|cff54b5ffEine 10er Gildenfirstausstattung wurde von |r " << ChatHandler(pPlayer->GetSession()).GetNameLink() << " |cff54b5ff in Anspruch genommen!|r";
 								sWorld->SendGMText(LANG_GM_BROADCAST, ss.str().c_str());
@@ -351,6 +353,7 @@ class npc_first_char : public CreatureScript
 								pPlayer->TeleportTo(0, -792.84, -1607.55, 142.30, 2.33, 0);
 								pPlayer->AddItem(20400, 4);
 								pPlayer->SetMoney(50000000);
+								pPlayer->UpdateSkillsToMaxSkillsForLevel();
 
 
 								ss << "|cff54b5ffEine 25er Gildenfirstausstattung wurde von |r " << ChatHandler(pPlayer->GetSession()).GetNameLink() << " |cff54b5ff in Anspruch genommen!|r";
