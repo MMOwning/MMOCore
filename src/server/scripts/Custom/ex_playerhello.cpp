@@ -413,7 +413,7 @@ public:
 
 
 		QueryResult result = WorldDatabase.PQuery("SELECT `id`, `zeit`, `spieler`,`uid` `benutzt` FROM `lob` WHERE `zeit` = '%u' AND `uid`= '%u'", 100, player->GetGUID());
-		if (time >= 720000 && !result){
+		 if (time >= 720000 && !result){
 			uint32 uid = player->GetGUID();
 
 			Item* item = Item::CreateItem(46802, 1);
