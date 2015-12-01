@@ -36,28 +36,7 @@ public:
 	Announce_NewPlayer() : PlayerScript("Announce_NewPlayer") {}
 
 	
-	void Belohnungsfunktion(uint32 zeit, std::string spieler){
-
-		QueryResult result = WorldDatabase.PQuery("SELECT `id`, `zeit`, `spieler`, `benutzt` FROM `lob` WHERE `zeit` = '%u' AND `spieler`= '%s'", zeit, spieler);
-		Player* player;
-		if (!result){
-			char msg[250];
-			snprintf(msg, 250, "MMOwning dankt dir fuer deine Spielzeit von ueber 10 Stunden.");
-			ChatHandler(player->GetSession()).PSendSysMessage(msg,
-				player->GetName());
-			player->GetSession()->SendNotification("Dein Code wurde akzeptiert!");
-
-			SQLTransaction trans = CharacterDatabase.BeginTransaction();
-			MailDraft("Ein Geschenk", "Das MMOwning-Team bedankt sich fuer deine Unterstuetzung mit einer kleinen Geste. Viel Spass weiterhin auf MMOwning World.").AddMoney(100 * GOLD)
-				.SendMailTo(trans, MailReceiver(player, player->GetGUID()), MailSender(MAIL_NORMAL, 0, MAIL_STATIONERY_GM));
-			CharacterDatabase.CommitTransaction(trans);
-
-			WorldDatabase.PExecute("INSERT INTO lob (zeit,spieler,benutzt) Values ('%u','%s','%u')", zeit, player->GetName().c_str(), 1);
-
-
-		}
-
-	}
+	
 
 
 
@@ -65,7 +44,7 @@ public:
 	{
 		std::ostringstream ss;
 		
-
+		
 
 		
 
@@ -94,11 +73,8 @@ public:
 		
 		//10h
 		if (time >= 1 && time <= 71999){
-			player->GetSession()->SendNotification("1");
-			Belohnungsfunktion(10, player->GetName());
-			player->GetSession()->SendNotification("2");
-
-		/*QueryResult result = WorldDatabase.PQuery("SELECT `id`, `zeit`, `spieler`, `benutzt` FROM `lob` WHERE `zeit` = '%u' AND `spieler`= '%s'", 10, player->GetName());
+		
+		QueryResult result = WorldDatabase.PQuery("SELECT `id`, `zeit`, `spieler`, `benutzt` FROM `lob` WHERE `zeit` = '%u' AND `spieler`= '%s'", 10, player->GetName());
 		if (!result){
 				
 				
@@ -109,7 +85,7 @@ public:
 
 				WorldDatabase.PExecute("INSERT INTO lob (zeit,spieler,benutzt) Values ('%u','%s','%u')", 10, player->GetName().c_str(), 1);
 
-			}*/
+			}
 		}
 
 		//20h
