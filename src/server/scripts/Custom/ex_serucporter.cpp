@@ -102,7 +102,7 @@ public: seruc() : CreatureScript("seruc"){ }
 			}
 				/*PVP*/
 			case 1: {
-				if (pPlayer->GetMoney() == 200000){
+				if (pPlayer->HasEnoughMoney(200000)){
 					pPlayer->GetGUID();
 					pPlayer->TeleportTo(0, -793.67, 1565.25, 19.88, 3.25);
 					pPlayer->ModifyMoney(-200000);
@@ -120,7 +120,7 @@ public: seruc() : CreatureScript("seruc"){ }
 				
 				/*INSEL*/
 				case 2: {
-					if (pPlayer->GetMoney() == 200000){
+					if (pPlayer->HasEnoughMoney(200000)){
 						pPlayer->GetGUID();
 						pPlayer->TeleportTo(0, -9773, 2126.72, 15.40, 3.88);
 						pPlayer->ModifyMoney(-200000);
@@ -138,7 +138,7 @@ public: seruc() : CreatureScript("seruc"){ }
 			    
 						/*YASIO*/
 				case 3: {
-					if (pPlayer->GetMoney() == 200000){
+					if (pPlayer->HasEnoughMoney(200000)){
 						pPlayer->GetGUID();
 						pPlayer->TeleportTo(571, 5728.79, 608.62, 618.59, 5.60);
 						pPlayer->ModifyMoney(-200000);
@@ -158,7 +158,7 @@ public: seruc() : CreatureScript("seruc"){ }
 
 						/*ORRIG*/
 				case 4: {
-					if (pPlayer->GetMoney() == 200000){
+					if (pPlayer->HasEnoughMoney(200000)){
 						pPlayer->GetGUID();
 						pPlayer->TeleportTo(169, -2902.55, -1259.97, 121.88, 3.28);
 						pPlayer->ModifyMoney(-200000);
@@ -179,7 +179,7 @@ public: seruc() : CreatureScript("seruc"){ }
 
 						/*EXI*/
 				case 5: {
-					if (pPlayer->GetMoney() == 200000){
+					if (pPlayer->HasEnoughMoney(200000)){
 						pPlayer->GetGUID();
 						pPlayer->TeleportTo(169, -480.42, 3326.65, 286.07, 4.69);
 						pPlayer->ModifyMoney(-200000);
@@ -200,7 +200,7 @@ public: seruc() : CreatureScript("seruc"){ }
 
 						/*GEQUÄLTE*/
 				case 6: {
-					if (pPlayer->GetMoney() == 200000){
+					if (pPlayer->HasEnoughMoney(200000)){
 						pPlayer->GetGUID();
 						pPlayer->TeleportTo(169, -250.27, 3081.07, 96.45, 3.10);
 						pPlayer->ModifyMoney(-200000);
@@ -218,7 +218,7 @@ public: seruc() : CreatureScript("seruc"){ }
 
 						/*KAYOULA*/
 				case 7: {
-					if (pPlayer->GetMoney() == 200000){
+					if (pPlayer->HasEnoughMoney(200000)){
 						pPlayer->GetGUID();
 						pPlayer->TeleportTo(169, -1221.52, -2432.34, 112.95, 1.00);
 						pPlayer->ModifyMoney(-200000);
@@ -237,7 +237,7 @@ public: seruc() : CreatureScript("seruc"){ }
 
 						/*Theriakin*/
 				case 8: {
-					if (pPlayer->GetMoney() == 200000){
+					if (pPlayer->HasEnoughMoney(200000)){
 						pPlayer->GetGUID();
 						pPlayer->TeleportTo(169, 3617.89, 4050.67, 92.00, 3.50);
 						pPlayer->ModifyMoney(-200000);
@@ -256,7 +256,7 @@ public: seruc() : CreatureScript("seruc"){ }
 
 						/*ARC*/
 				case 9: {
-					if (pPlayer->GetMoney() == 200000){
+					if (pPlayer->HasEnoughMoney(200000)){
 						pPlayer->GetGUID();
 						pPlayer->TeleportTo(169, -1743.87, -854.50, 121.70, 2.06);
 						pPlayer->ModifyMoney(-200000);
@@ -275,7 +275,7 @@ public: seruc() : CreatureScript("seruc"){ }
 
 						/*MOON*/
 				case 10: {
-					if (pPlayer->GetMoney() == 200000){
+					if (pPlayer->HasEnoughMoney(200000)){
 						pPlayer->GetGUID();
 						pPlayer->TeleportTo(169, -2872.38, -1386.17, 118.51, 2.60);
 						pPlayer->ModifyMoney(-200000);
@@ -293,7 +293,7 @@ public: seruc() : CreatureScript("seruc"){ }
 
 						 /*MALTYRIUN*/
 				case 11: {
-					if (pPlayer->GetMoney() == 200000){
+					if (pPlayer->HasEnoughMoney(200000)){
 						pPlayer->GetGUID();
 						pPlayer->TeleportTo(169, -4385.68, -754.82, 120.89, 0.63);
 						return true;
@@ -312,7 +312,7 @@ public: seruc() : CreatureScript("seruc"){ }
 
 						 /*LORDOFDOOM*/
 				case 12: {
-					if (pPlayer->GetMoney() == 200000){
+					if (pPlayer->HasEnoughMoney(200000)){
 						pPlayer->GetGUID();
 						pPlayer->TeleportTo(169, -2710.73, -2722.46, 127.87, 0.42);
 						pPlayer->ModifyMoney(-200000);
@@ -345,7 +345,7 @@ public: seruc() : CreatureScript("seruc"){ }
 
 					/*Tyranium*/
 				case 14: {
-					if (pPlayer->GetMoney() == 200000){
+					if (pPlayer->HasEnoughMoney(200000)){
 					pPlayer->GetGUID();
 					pPlayer->TeleportTo(169, -4367.24, -1477.58, 92.00, 0.21);
 					pPlayer->ModifyMoney(-200000);
@@ -362,7 +362,7 @@ public: seruc() : CreatureScript("seruc"){ }
 
 					/*Tolreos*/
 				case 16: {
-					if (pPlayer->GetMoney() == 200000){
+					if (pPlayer->HasEnoughMoney(200000)){
 						pPlayer->GetGUID();
 						pPlayer->TeleportTo(169, -3655.76, -1052.01, 126.75, 3.38);
 						pPlayer->ModifyMoney(-200000);
