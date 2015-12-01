@@ -435,18 +435,25 @@ class npc_first_char : public CreatureScript
 						pPlayer->ADD_GOSSIP_ITEM(7, "Bergbau", GOSSIP_SENDER_MAIN, 13);
 						pPlayer->ADD_GOSSIP_ITEM(7, "Schneiderei", GOSSIP_SENDER_MAIN, 14);
 						pPlayer->ADD_GOSSIP_ITEM(7, "Schmiedekunst", GOSSIP_SENDER_MAIN, 15);
+						pPlayer->ADD_GOSSIP_ITEM(7, "Kraeuterkunde", GOSSIP_SENDER_MAIN, 16);
+						pPlayer->ADD_GOSSIP_ITEM(7, "Kuerschner", GOSSIP_SENDER_MAIN, 17);
+						pPlayer->ADD_GOSSIP_ITEM(7, "Lederer", GOSSIP_SENDER_MAIN, 18);
+						pPlayer->ADD_GOSSIP_ITEM(7, "Juwelierskunst", GOSSIP_SENDER_MAIN, 19);
+						pPlayer->ADD_GOSSIP_ITEM(7, "Alchemie", GOSSIP_SENDER_MAIN, 20);
+						pPlayer->ADD_GOSSIP_ITEM(7, "Verzauberkunst", GOSSIP_SENDER_MAIN, 21);
+						
 
 						pPlayer->PlayerTalkClass->SendGossipMenu(907, pCreature->GetGUID());
 						return true;
 
 					}break;
 
-
+					//Bergbau
 					case 13:
 					{
 
-						if (pPlayer->GetSkillValue(186)){
-							pPlayer->LearnDefaultSkill(186, 4);
+						if (pPlayer->GetSkillValue(186) && pPlayer->HasEnoughMoney(3000* GOLD)){
+							pPlayer->LearnDefaultSkill(186, 6);
 							
 							ChatHandler(pPlayer->GetSession()).PSendSysMessage("[Aufwertungs System] dein beruf wurde hochgesetzr.",
 								pPlayer->GetName());
@@ -457,7 +464,159 @@ class npc_first_char : public CreatureScript
 								pPlayer->GetName());
 						}
 
-					}
+					}break;
+
+					//Schneiderei
+					case 14:
+					{
+
+						if (pPlayer->GetSkillValue(197) && pPlayer->HasEnoughMoney(3000 * GOLD)){
+							pPlayer->LearnDefaultSkill(197, 6);
+
+							ChatHandler(pPlayer->GetSession()).PSendSysMessage("[Aufwertungs System] dein beruf wurde hochgesetzr.",
+								pPlayer->GetName());
+						}
+
+						else {
+							ChatHandler(pPlayer->GetSession()).PSendSysMessage("[Aufwertungs System] Nihcts Beruf.",
+								pPlayer->GetName());
+						}
+
+					}break;
+
+
+					//Schmiedekunst
+					case 15:
+					{
+
+						if (pPlayer->GetSkillValue(164) && pPlayer->HasEnoughMoney(3000 * GOLD)){
+							pPlayer->LearnDefaultSkill(164, 6);
+
+							ChatHandler(pPlayer->GetSession()).PSendSysMessage("[Aufwertungs System] dein beruf wurde hochgesetzr.",
+								pPlayer->GetName());
+						}
+
+						else {
+							ChatHandler(pPlayer->GetSession()).PSendSysMessage("[Aufwertungs System] Nihcts Beruf.",
+								pPlayer->GetName());
+						}
+
+					}break;
+
+
+					//Kraeuterkunde
+					case 16:
+					{
+
+						if (pPlayer->GetSkillValue(182) && pPlayer->HasEnoughMoney(3000 * GOLD)){
+							pPlayer->LearnDefaultSkill(182, 6);
+
+							ChatHandler(pPlayer->GetSession()).PSendSysMessage("[Aufwertungs System] dein beruf wurde hochgesetzr.",
+								pPlayer->GetName());
+						}
+
+						else {
+							ChatHandler(pPlayer->GetSession()).PSendSysMessage("[Aufwertungs System] Nihcts Beruf.",
+								pPlayer->GetName());
+						}
+
+					}break;
+
+
+					//Kürschner
+					case 17:
+					{
+
+						if (pPlayer->GetSkillValue(393) && pPlayer->HasEnoughMoney(3000 * GOLD)){
+							pPlayer->LearnDefaultSkill(393,6);
+
+							ChatHandler(pPlayer->GetSession()).PSendSysMessage("[Aufwertungs System] dein beruf wurde hochgesetzr.",
+								pPlayer->GetName());
+						}
+
+						else {
+							ChatHandler(pPlayer->GetSession()).PSendSysMessage("[Aufwertungs System] Nihcts Beruf.",
+								pPlayer->GetName());
+						}
+
+					}break;
+
+
+					//Lederer
+					case 18:
+					{
+
+						if (pPlayer->GetSkillValue(165) && pPlayer->HasEnoughMoney(3000 * GOLD)){
+							pPlayer->LearnDefaultSkill(165, 6);
+
+							ChatHandler(pPlayer->GetSession()).PSendSysMessage("[Aufwertungs System] dein beruf wurde hochgesetzr.",
+								pPlayer->GetName());
+						}
+
+						else {
+							ChatHandler(pPlayer->GetSession()).PSendSysMessage("[Aufwertungs System] Nihcts Beruf.",
+								pPlayer->GetName());
+						}
+
+					}break;
+
+
+					//Juwe
+					case 19:
+					{
+
+						if (pPlayer->GetSkillValue(755) && pPlayer->HasEnoughMoney(3000 * GOLD)){
+							pPlayer->LearnDefaultSkill(755, 6);
+
+							ChatHandler(pPlayer->GetSession()).PSendSysMessage("[Aufwertungs System] dein beruf wurde hochgesetzr.",
+								pPlayer->GetName());
+						}
+
+						else {
+							ChatHandler(pPlayer->GetSession()).PSendSysMessage("[Aufwertungs System] Nihcts Beruf.",
+								pPlayer->GetName());
+						}
+
+					}break;
+
+
+
+					//Alchemie
+					case 20:
+					{
+
+						if (pPlayer->GetSkillValue(171) && pPlayer->HasEnoughMoney(3000 * GOLD)){
+							pPlayer->LearnDefaultSkill(171, 6);
+
+							ChatHandler(pPlayer->GetSession()).PSendSysMessage("[Aufwertungs System] dein beruf wurde hochgesetzr.",
+								pPlayer->GetName());
+						}
+
+						else {
+							ChatHandler(pPlayer->GetSession()).PSendSysMessage("[Aufwertungs System] Nihcts Beruf.",
+								pPlayer->GetName());
+						}
+
+					}break;
+
+
+					//VZ
+					case 21:
+					{
+
+						if (pPlayer->GetSkillValue(333) && pPlayer->HasEnoughMoney(3000 * GOLD)){
+							pPlayer->LearnDefaultSkill(333, 6);
+
+							ChatHandler(pPlayer->GetSession()).PSendSysMessage("[Aufwertungs System] dein beruf wurde hochgesetzr.",
+								pPlayer->GetName());
+						}
+
+						else {
+							ChatHandler(pPlayer->GetSession()).PSendSysMessage("[Aufwertungs System] Nihcts Beruf.",
+								pPlayer->GetName());
+						}
+
+					}break;
 
 					}
 					return true;
