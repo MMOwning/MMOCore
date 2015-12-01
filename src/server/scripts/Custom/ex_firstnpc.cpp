@@ -433,6 +433,8 @@ class npc_first_char : public CreatureScript
 						pPlayer->PlayerTalkClass->ClearMenus();
 
 						pPlayer->ADD_GOSSIP_ITEM(7, "Bergbau", GOSSIP_SENDER_MAIN, 13);
+						pPlayer->ADD_GOSSIP_ITEM(7, "Schneiderei", GOSSIP_SENDER_MAIN, 14);
+						pPlayer->ADD_GOSSIP_ITEM(7, "Schmiedekunst", GOSSIP_SENDER_MAIN, 15);
 
 						pPlayer->PlayerTalkClass->SendGossipMenu(907, pCreature->GetGUID());
 						return true;
@@ -444,7 +446,8 @@ class npc_first_char : public CreatureScript
 					{
 
 						if (pPlayer->GetSkillValue(186)){
-							pPlayer->ModifySkillBonus(186, 450,false);
+							pPlayer->LearnDefaultSkill(186, 4);
+							
 							ChatHandler(pPlayer->GetSession()).PSendSysMessage("[Aufwertungs System] dein beruf wurde hochgesetzr.",
 								pPlayer->GetName());
 						}
