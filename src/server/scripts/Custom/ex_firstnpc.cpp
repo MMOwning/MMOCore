@@ -460,6 +460,7 @@ class npc_first_char : public CreatureScript
 							uint32 skill = pPlayer->GetSkillValue(186);
 							pPlayer->SetSkill(186, pPlayer->GetSkillStep(186), skill,450);
 							pPlayer->UpdateSkillsForLevel();
+							pPlayer->UpdateSkillEnchantments(186, pPlayer->GetSkillValue(186), 450);
 
 							
 							
