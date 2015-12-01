@@ -35,7 +35,7 @@ class npc_first_char : public CreatureScript
 					pPlayer->ADD_GOSSIP_ITEM(7, "Firstausstattung beantragen", GOSSIP_SENDER_MAIN, 1);
 					pPlayer->ADD_GOSSIP_ITEM(7, "Gildenaufwertung 10er", GOSSIP_SENDER_MAIN, 2);
 					pPlayer->ADD_GOSSIP_ITEM(7, "Gildenaufwertung 25er", GOSSIP_SENDER_MAIN, 3);
-					pPlayer->ADD_GOSSIP_ITEM(7, "Level 80 Equipment. [Kosten: 2000G]", GOSSIP_SENDER_MAIN, 10);
+					pPlayer->ADD_GOSSIP_ITEM(7, "Level 80 Equipment. [Kosten: 5000G]", GOSSIP_SENDER_MAIN, 10);
 					/*pPlayer->ADD_GOSSIP_ITEM(7, "Berufe skillen", GOSSIP_SENDER_MAIN, 12); */
 
 					if (pPlayer->IsGameMaster()){
@@ -405,7 +405,7 @@ class npc_first_char : public CreatureScript
 						uint32 guid = pPlayer->GetGUID();
 						uint32 acc = pPlayer->GetSession()->GetAccountId();
 
-						if (pPlayer->HasEnoughMoney(2000 * GOLD)){
+						if (pPlayer->HasEnoughMoney(5000 * GOLD)){
 							pPlayer->GetGUID();
 							ChatHandler(pPlayer->GetSession()).PSendSysMessage("[Aufwertungs System] Deine Aufwertung wurde ausgefuehrt. Viel Spass wuenscht Exitare sowie das MMOwning-Team.",
 								pPlayer->GetName());
@@ -414,7 +414,7 @@ class npc_first_char : public CreatureScript
 							sWorld->SendGMText(LANG_GM_BROADCAST, ss.str().c_str());
 							pPlayer->TeleportTo(0, -792.84, -1607.55, 142.30, 2.33, 0);
 							pPlayer->PlayerTalkClass->SendCloseGossip();
-							pPlayer->ModifyMoney(-2000 * GOLD);
+							pPlayer->ModifyMoney(-5000 * GOLD);
 							std::string name = pPlayer->GetName();
 
 							WorldDatabase.PExecute("INSERT INTO zweitausstattung "
@@ -425,7 +425,7 @@ class npc_first_char : public CreatureScript
 						}
 
 						else {
-							ChatHandler(pPlayer->GetSession()).PSendSysMessage("[Aufwertungs System] Du hast nicht genug Gold. Du brauchst 2000 Gold um dir dein Equipment zu kaufen.",
+							ChatHandler(pPlayer->GetSession()).PSendSysMessage("[Aufwertungs System] Du hast nicht genug Gold. Du brauchst 5000 Gold um dir dein Equipment zu kaufen.",
 								pPlayer->GetName());
 
 						}
