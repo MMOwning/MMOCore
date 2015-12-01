@@ -36,6 +36,7 @@ class npc_first_char : public CreatureScript
 					pPlayer->ADD_GOSSIP_ITEM(7, "Gildenaufwertung 10er", GOSSIP_SENDER_MAIN, 2);
 					pPlayer->ADD_GOSSIP_ITEM(7, "Gildenaufwertung 25er", GOSSIP_SENDER_MAIN, 3);
 					pPlayer->ADD_GOSSIP_ITEM(7, "Level 80 Equipment. [Kosten: 2000G]", GOSSIP_SENDER_MAIN, 10);
+					pPlayer->ADD_GOSSIP_ITEM(7, "Berufe skillen", GOSSIP_SENDER_MAIN, 12);
 
 					if (pPlayer->IsGameMaster()){
 						pPlayer->ADD_GOSSIP_ITEM(7, "Aufwertungen einsehen", GOSSIP_SENDER_MAIN, 4);
@@ -422,6 +423,38 @@ class npc_first_char : public CreatureScript
 
 						return true;
 					}break;
+
+
+					case 12:
+					{
+
+
+						pPlayer->SEND_GOSSIP_MENU(DEFAULT_GOSSIP_MESSAGE, pCreature->GetGUID());
+						pPlayer->PlayerTalkClass->ClearMenus();
+
+						pPlayer->ADD_GOSSIP_ITEM(7, "Bergbau", GOSSIP_SENDER_MAIN, 13);
+
+						pPlayer->PlayerTalkClass->SendGossipMenu(907, pCreature->GetGUID());
+						return true;
+
+					}break;
+
+
+					case 13:
+					{
+
+						if (pPlayer->GetSkillValue(186)){
+							pPlayer->ModifySkillBonus(186, 450,false);
+							ChatHandler(pPlayer->GetSession()).PSendSysMessage("[Aufwertungs System] dein beruf wurde hochgesetzr.",
+								pPlayer->GetName());
+						}
+
+						else {
+							ChatHandler(pPlayer->GetSession()).PSendSysMessage("[Aufwertungs System] Nihcts Beruf.",
+								pPlayer->GetName());
+						}
+
+					}
 
 					}
 					return true;
