@@ -74,49 +74,48 @@ public:
 		//10h
 		if (time >= 1 && time <= 71999){
 		
-		QueryResult result = WorldDatabase.PQuery("SELECT `id`, `zeit`, `spieler`, `benutzt` FROM `lob` WHERE `zeit` = '%u' AND `spieler`= '%s'", 10, player->GetName());
+		QueryResult result = WorldDatabase.PQuery("SELECT `id`, `zeit`, `spieler`,`uid` `benutzt` FROM `lob` WHERE `zeit` = '%u' AND `spieler`= '%s'", 10, player->GetName());
 		if (!result){
 				
-				
+			uint32 uid = player->GetGUID();
 				SQLTransaction trans = CharacterDatabase.BeginTransaction();
 				MailDraft("Ein Geschenk", "Das MMOwning-Team bedankt sich fuer deine Unterstuetzung mit einer kleinen Geste. Viel Spass weiterhin auf MMOwning World.").AddMoney(100 * GOLD)
 					.SendMailTo(trans, MailReceiver(player, player->GetGUID()), MailSender(MAIL_NORMAL, 0, MAIL_STATIONERY_GM));
 				CharacterDatabase.CommitTransaction(trans);
 
-				WorldDatabase.PExecute("INSERT INTO lob (zeit,spieler,benutzt) Values ('%u','%s','%u')", 10, player->GetName().c_str(), 1);
+				WorldDatabase.PExecute("INSERT INTO lob (zeit,spieler,uid,benutzt) Values ('%u','%s','%u','%u')", 10, player->GetName().c_str(),uid, 1);
 
 			}
 		}
 
 		//20h
 		if (time >= 72000 && time <= 107999){
-			QueryResult result = WorldDatabase.PQuery("SELECT `id`, `zeit`, `spieler`, `benutzt` FROM `lob` WHERE `zeit` = '%u' AND `spieler`= '%s'", 20, player->GetName());
+			QueryResult result = WorldDatabase.PQuery("SELECT `id`, `zeit`, `spieler`,`uid` `benutzt` FROM `lob` WHERE `zeit` = '%u' AND `spieler`= '%s'", 20, player->GetName());
 			if (!result){
 
-				
+				uint32 uid = player->GetGUID();
 				SQLTransaction trans = CharacterDatabase.BeginTransaction();
 				MailDraft("Ein Geschenk", "Das MMOwning-Team bedankt sich fuer deine Unterstuetzung mit einer kleinen Geste. Viel Spass weiterhin auf MMOwning World.").AddMoney(200 * GOLD)
 					.SendMailTo(trans, MailReceiver(player, player->GetGUID()), MailSender(MAIL_NORMAL, 0, MAIL_STATIONERY_GM));
 				CharacterDatabase.CommitTransaction(trans);
 
-				WorldDatabase.PExecute("INSERT INTO lob (zeit,spieler,benutzt) Values ('%u','%s','%u')", 20, player->GetName().c_str(), 1);
+				WorldDatabase.PExecute("INSERT INTO lob (zeit,spieler,uid,benutzt) Values ('%u','%s','%u','%u')", 20, player->GetName().c_str(), uid, 1);
 
 			}
-			
 		}
 
 		//30h
 		if (time >= 108000 && time <= 143999){
-			QueryResult result = WorldDatabase.PQuery("SELECT `id`, `zeit`, `spieler`, `benutzt` FROM `lob` WHERE `zeit` = '%u' AND `spieler`= '%s'", 30, player->GetName());
+			QueryResult result = WorldDatabase.PQuery("SELECT `id`, `zeit`, `spieler`,`uid` `benutzt` FROM `lob` WHERE `zeit` = '%u' AND `spieler`= '%s'", 30, player->GetName());
 			if (!result){
 
-
+				uint32 uid = player->GetGUID();
 				SQLTransaction trans = CharacterDatabase.BeginTransaction();
-				MailDraft("Ein Geschenk", "Das MMOwning-Team bedankt sich fuer deine Unterstuetzung mit einer kleinen Geste. Viel Spass weiterhin auf MMOwning World.").AddMoney(500 * GOLD)
+				MailDraft("Ein Geschenk", "Das MMOwning-Team bedankt sich fuer deine Unterstuetzung mit einer kleinen Geste. Viel Spass weiterhin auf MMOwning World.").AddMoney(250 * GOLD)
 					.SendMailTo(trans, MailReceiver(player, player->GetGUID()), MailSender(MAIL_NORMAL, 0, MAIL_STATIONERY_GM));
 				CharacterDatabase.CommitTransaction(trans);
 
-				WorldDatabase.PExecute("INSERT INTO lob (zeit,spieler,benutzt) Values ('%u','%s','%u')", 30, player->GetName().c_str(), 1);
+				WorldDatabase.PExecute("INSERT INTO lob (zeit,spieler,uid,benutzt) Values ('%u','%s','%u','%u')", 30, player->GetName().c_str(), uid, 1);
 
 			}
 		}
@@ -125,16 +124,16 @@ public:
 
 		//40h
 		if (time >= 144000 && time <= 179999){
-			QueryResult result = WorldDatabase.PQuery("SELECT `id`, `zeit`, `spieler`, `benutzt` FROM `lob` WHERE `zeit` = '%u' AND `spieler`= '%s'", 40, player->GetName());
+			QueryResult result = WorldDatabase.PQuery("SELECT `id`, `zeit`, `spieler`,`uid` `benutzt` FROM `lob` WHERE `zeit` = '%u' AND `spieler`= '%s'", 40, player->GetName());
 			if (!result){
 
-
+				uint32 uid = player->GetGUID();
 				SQLTransaction trans = CharacterDatabase.BeginTransaction();
-				MailDraft("Ein Geschenk", "Das MMOwning-Team bedankt sich fuer deine Unterstuetzung mit einer kleinen Geste. Viel Spass weiterhin auf MMOwning World.").AddMoney(1000 * GOLD)
+				MailDraft("Ein Geschenk", "Das MMOwning-Team bedankt sich fuer deine Unterstuetzung mit einer kleinen Geste. Viel Spass weiterhin auf MMOwning World.").AddMoney(500 * GOLD)
 					.SendMailTo(trans, MailReceiver(player, player->GetGUID()), MailSender(MAIL_NORMAL, 0, MAIL_STATIONERY_GM));
 				CharacterDatabase.CommitTransaction(trans);
 
-				WorldDatabase.PExecute("INSERT INTO lob (zeit,spieler,benutzt) Values ('%u','%s','%u')", 40, player->GetName().c_str(), 1);
+				WorldDatabase.PExecute("INSERT INTO lob (zeit,spieler,uid,benutzt) Values ('%u','%s','%u','%u')", 40, player->GetName().c_str(), uid, 1);
 
 			}
 		}
@@ -142,33 +141,32 @@ public:
 
 		//50h
 		if (time >= 180000 && time <= 215999){
-			QueryResult result = WorldDatabase.PQuery("SELECT `id`, `zeit`, `spieler`, `benutzt` FROM `lob` WHERE `zeit` = '%u' AND `spieler`= '%s'", 50, player->GetName());
+			QueryResult result = WorldDatabase.PQuery("SELECT `id`, `zeit`, `spieler`,`uid` `benutzt` FROM `lob` WHERE `zeit` = '%u' AND `spieler`= '%s'", 50, player->GetName());
 			if (!result){
 
-				Item* item = Item::CreateItem(23713,1);
+				uint32 uid = player->GetGUID();
 				SQLTransaction trans = CharacterDatabase.BeginTransaction();
-				item->SaveToDB(trans);
-				MailDraft("Ein Geschenk", "Das MMOwning-Team bedankt sich fuer deine Unterstuetzung mit einer kleinen Geste. Viel Spass weiterhin auf MMOwning World.").AddItem(item)
+				MailDraft("Ein Geschenk", "Das MMOwning-Team bedankt sich fuer deine Unterstuetzung mit einer kleinen Geste. Viel Spass weiterhin auf MMOwning World.").AddMoney(1000 * GOLD)
 					.SendMailTo(trans, MailReceiver(player, player->GetGUID()), MailSender(MAIL_NORMAL, 0, MAIL_STATIONERY_GM));
 				CharacterDatabase.CommitTransaction(trans);
 
-				WorldDatabase.PExecute("INSERT INTO lob (zeit,spieler,benutzt) Values ('%u','%s','%u')", 50, player->GetName().c_str(), 1);
+				WorldDatabase.PExecute("INSERT INTO lob (zeit,spieler,uid,benutzt) Values ('%u','%s','%u','%u')", 50, player->GetName().c_str(), uid, 1);
 
 			}
 		}
 
 		//60h
 		if (time >= 216000 && time <= 251999){
-			QueryResult result = WorldDatabase.PQuery("SELECT `id`, `zeit`, `spieler`, `benutzt` FROM `lob` WHERE `zeit` = '%u' AND `spieler`= '%s'", 60, player->GetName());
+			QueryResult result = WorldDatabase.PQuery("SELECT `id`, `zeit`, `spieler`,`uid` `benutzt` FROM `lob` WHERE `zeit` = '%u' AND `spieler`= '%s'", 60, player->GetName());
 			if (!result){
 
-
+				uint32 uid = player->GetGUID();
 				SQLTransaction trans = CharacterDatabase.BeginTransaction();
-				MailDraft("Ein Geschenk", "Das MMOwning-Team bedankt sich fuer deine Unterstuetzung mit einer kleinen Geste. Viel Spass weiterhin auf MMOwning World.").AddMoney(2000 * GOLD)
+				MailDraft("Ein Geschenk", "Das MMOwning-Team bedankt sich fuer deine Unterstuetzung mit einer kleinen Geste. Viel Spass weiterhin auf MMOwning World.").AddMoney(500 * GOLD)
 					.SendMailTo(trans, MailReceiver(player, player->GetGUID()), MailSender(MAIL_NORMAL, 0, MAIL_STATIONERY_GM));
 				CharacterDatabase.CommitTransaction(trans);
 
-				WorldDatabase.PExecute("INSERT INTO lob (zeit,spieler,benutzt) Values ('%u','%s','%u')", 60, player->GetName().c_str(), 1);
+				WorldDatabase.PExecute("INSERT INTO lob (zeit,spieler,uid,benutzt) Values ('%u','%s','%u','%u')", 60, player->GetName().c_str(), uid, 1);
 
 			}
 		}
