@@ -452,9 +452,9 @@ class npc_first_char : public CreatureScript
 					case 13:
 					{
 
-						if (pPlayer->GetSkillValue(186) && pPlayer->HasEnoughMoney(3000* GOLD)){
+						if (pPlayer->HasSkill(186) && pPlayer->HasEnoughMoney(3000* GOLD)){
 							pPlayer->LearnDefaultSkill(186, 6);
-							pPlayer->ModifySkillBonus(186, 450, false);
+							pPlayer->SetSkill(186, 450, pPlayer->GetSkillValue, 450);
 							
 							ChatHandler(pPlayer->GetSession()).PSendSysMessage("[Aufwertungs System] dein beruf wurde hochgesetzr.",
 								pPlayer->GetName());
@@ -471,9 +471,9 @@ class npc_first_char : public CreatureScript
 					case 14:
 					{
 
-						if (pPlayer->GetSkillValue(197) && pPlayer->HasEnoughMoney(3000 * GOLD)){
+						if (pPlayer->HasSkill(197) && pPlayer->HasEnoughMoney(3000 * GOLD)){
 							pPlayer->LearnDefaultSkill(197, 6);
-							pPlayer->ModifySkillBonus(197, 450, false);
+							pPlayer->SetSkill(197, 450, pPlayer->GetSkillValue, 450);
 
 							ChatHandler(pPlayer->GetSession()).PSendSysMessage("[Aufwertungs System] dein beruf wurde hochgesetzr.",
 								pPlayer->GetName());
@@ -491,7 +491,7 @@ class npc_first_char : public CreatureScript
 					case 15:
 					{
 
-						if (pPlayer->GetSkillValue(164) && pPlayer->HasEnoughMoney(3000 * GOLD)){
+						if (pPlayer->HasSkill(164) && pPlayer->HasEnoughMoney(3000 * GOLD)){
 							pPlayer->LearnDefaultSkill(164, 6);
 
 							ChatHandler(pPlayer->GetSession()).PSendSysMessage("[Aufwertungs System] dein beruf wurde hochgesetzr.",
@@ -510,7 +510,7 @@ class npc_first_char : public CreatureScript
 					case 16:
 					{
 
-						if (pPlayer->GetSkillValue(182) && pPlayer->HasEnoughMoney(3000 * GOLD)){
+						if (pPlayer->HasSkill(182) && pPlayer->HasEnoughMoney(3000 * GOLD)){
 							pPlayer->LearnDefaultSkill(182, 6);
 
 							ChatHandler(pPlayer->GetSession()).PSendSysMessage("[Aufwertungs System] dein beruf wurde hochgesetzr.",
@@ -529,7 +529,7 @@ class npc_first_char : public CreatureScript
 					case 17:
 					{
 
-						if (pPlayer->GetSkillValue(393) && pPlayer->HasEnoughMoney(3000 * GOLD)){
+						if (pPlayer->HasSkill(393) && pPlayer->HasEnoughMoney(3000 * GOLD)){
 							pPlayer->LearnDefaultSkill(393,6);
 
 							ChatHandler(pPlayer->GetSession()).PSendSysMessage("[Aufwertungs System] dein beruf wurde hochgesetzr.",
@@ -548,7 +548,7 @@ class npc_first_char : public CreatureScript
 					case 18:
 					{
 
-						if (pPlayer->GetSkillValue(165) && pPlayer->HasEnoughMoney(3000 * GOLD)){
+						if (pPlayer->HasSkill(165) && pPlayer->HasEnoughMoney(3000 * GOLD)){
 							pPlayer->LearnDefaultSkill(165, 6);
 
 							ChatHandler(pPlayer->GetSession()).PSendSysMessage("[Aufwertungs System] dein beruf wurde hochgesetzr.",
@@ -567,9 +567,9 @@ class npc_first_char : public CreatureScript
 					case 19:
 					{
 
-						if (pPlayer->GetSkillValue(755) && pPlayer->HasEnoughMoney(3000 * GOLD)){
+						if (pPlayer->HasSkill(755) && pPlayer->HasEnoughMoney(3000 * GOLD)){
 							pPlayer->LearnDefaultSkill(755, 6);
-							pPlayer->ModifySkillBonus(755, 450, false);
+							pPlayer->SetSkill(755, 450, pPlayer->GetSkillValue, 450);
 
 							ChatHandler(pPlayer->GetSession()).PSendSysMessage("[Aufwertungs System] dein beruf wurde hochgesetzr.",
 								pPlayer->GetName());
@@ -588,7 +588,7 @@ class npc_first_char : public CreatureScript
 					case 20:
 					{
 
-						if (pPlayer->GetSkillValue(171) && pPlayer->HasEnoughMoney(3000 * GOLD)){
+						if (pPlayer->HasSkill(171) && pPlayer->HasEnoughMoney(3000 * GOLD)){
 							pPlayer->LearnDefaultSkill(171, 6);
 
 							ChatHandler(pPlayer->GetSession()).PSendSysMessage("[Aufwertungs System] dein beruf wurde hochgesetzr.",
@@ -607,7 +607,7 @@ class npc_first_char : public CreatureScript
 					case 21:
 					{
 
-						if (pPlayer->GetSkillValue(333) && pPlayer->HasEnoughMoney(3000 * GOLD)){
+						if (pPlayer->HasSkill(333) && pPlayer->HasEnoughMoney(3000 * GOLD)){
 							pPlayer->LearnDefaultSkill(333, 6);
 
 							ChatHandler(pPlayer->GetSession()).PSendSysMessage("[Aufwertungs System] dein beruf wurde hochgesetzr.",
