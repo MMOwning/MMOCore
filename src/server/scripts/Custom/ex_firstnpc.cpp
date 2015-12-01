@@ -459,6 +459,8 @@ class npc_first_char : public CreatureScript
 							pPlayer->LearnDefaultSkill(186, 6);
 							uint32 skill = pPlayer->GetSkillValue(186);
 							pPlayer->SetSkill(186, pPlayer->GetSkillStep(186), skill,450);
+							pPlayer->UpdateSkillsForLevel;
+
 							
 							
 							ChatHandler(pPlayer->GetSession()).PSendSysMessage("[Aufwertungs System] dein beruf wurde hochgesetzr.",

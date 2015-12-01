@@ -281,41 +281,14 @@ public:
 };
 
 
-class Belohnung : public PlayerScript
+class Gold : public PlayerScript
 {
 public:
-	Belohnung() : PlayerScript("Belohnung") {}
+	Gold() : PlayerScript("Gold") {}
 
-	void OnLogin(Player * player, bool online){
-		uint32 time = player->GetTotalPlayedTime();	
-
-		if (time >= 1 && time <= 1199){
-			QueryResult result = WorldDatabase.PQuery("SELECT `id`, `zeit`, `spieler`, `benutzt` FROM `lob` WHERE `zeit` = '%u' AND `spieler`= '%s'", 600, player->GetName());
+	void OnMoneyChanged(Player* player, int32& amount) { 
+	
 			
-			if (!result){
-				
-
-				char msg[250];
-				snprintf(msg, 250, "MMOwning dankt dir fuer deine Spielzeit von ueber 600 Minuten.");
-				ChatHandler(player->GetSession()).PSendSysMessage(msg,
-					player->GetName());
-
-				player->GetSession()->SendNotification("Dein Code wurde akzeptiert!");
-				SQLTransaction trans = CharacterDatabase.BeginTransaction();
-				MailDraft("Ein Geschenk", "Das MMOwning-Team bedankt sich fuer deine Unterstuetzung mit einer kleinen Geste. Viel Spass weiterhin auf MMOwning World.").AddMoney(100 * GOLD)
-					.SendMailTo(trans, MailReceiver(player, player->GetGUID()), MailSender(MAIL_NORMAL, 0, MAIL_STATIONERY_GM));
-				CharacterDatabase.CommitTransaction(trans);
-
-				WorldDatabase.PExecute("INSERT INTO lob (zeit,spieler,benutzt) Values ('%u','%s','%u' ", 600, player->GetName().c_str(), 1);
-
-			}
-
-			else {
-				player->GetSession()->SendNotification("Belohnung wurde schon durchgefuehrt!");
-			}
-			
-		}
-
 	}
 };
 
