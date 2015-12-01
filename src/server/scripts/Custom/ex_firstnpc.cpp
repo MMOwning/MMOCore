@@ -36,7 +36,7 @@ class npc_first_char : public CreatureScript
 					pPlayer->ADD_GOSSIP_ITEM(7, "Gildenaufwertung 10er", GOSSIP_SENDER_MAIN, 2);
 					pPlayer->ADD_GOSSIP_ITEM(7, "Gildenaufwertung 25er", GOSSIP_SENDER_MAIN, 3);
 					pPlayer->ADD_GOSSIP_ITEM(7, "Level 80 Equipment. [Kosten: 2000G]", GOSSIP_SENDER_MAIN, 10);
-					pPlayer->ADD_GOSSIP_ITEM(7, "Berufe skillen", GOSSIP_SENDER_MAIN, 12);
+					/*pPlayer->ADD_GOSSIP_ITEM(7, "Berufe skillen", GOSSIP_SENDER_MAIN, 12); */
 
 					if (pPlayer->IsGameMaster()){
 						pPlayer->ADD_GOSSIP_ITEM(7, "Aufwertungen einsehen", GOSSIP_SENDER_MAIN, 4);
@@ -459,17 +459,15 @@ class npc_first_char : public CreatureScript
 							pPlayer->LearnDefaultSkill(186, 6);
 							uint32 skill = pPlayer->GetSkillValue(186);
 							pPlayer->SetSkill(186, pPlayer->GetSkillStep(186), skill,450);
-							pPlayer->UpdateSkillsForLevel();
-							pPlayer->UpdateSkillEnchantments(186, pPlayer->GetSkillValue(186), 450);
-
+							pPlayer->Skill
 							
 							
-							ChatHandler(pPlayer->GetSession()).PSendSysMessage("[Aufwertungs System] dein beruf wurde hochgesetzr.",
+							ChatHandler(pPlayer->GetSession()).PSendSysMessage("[Aufwertungs System] Dein Beruf wurde hochgesetzt.",
 								pPlayer->GetName());
 						}
 
 						else {
-							ChatHandler(pPlayer->GetSession()).PSendSysMessage("[Aufwertungs System] Nihcts Beruf.",
+							ChatHandler(pPlayer->GetSession()).PSendSysMessage("[Aufwertungs System] Du hast diesen Beruf leider nicht erlernt.",
 								pPlayer->GetName());
 						}
 
@@ -483,12 +481,12 @@ class npc_first_char : public CreatureScript
 							pPlayer->LearnDefaultSkill(197, 6);
 							pPlayer->UpdateSkillsToMaxSkillsForLevel();
 
-							ChatHandler(pPlayer->GetSession()).PSendSysMessage("[Aufwertungs System] dein beruf wurde hochgesetzr.",
+							ChatHandler(pPlayer->GetSession()).PSendSysMessage("[Aufwertungs System] Dein Beruf wurde hochgesetzt.",
 								pPlayer->GetName());
 						}
 
 						else {
-							ChatHandler(pPlayer->GetSession()).PSendSysMessage("[Aufwertungs System] Nihcts Beruf.",
+							ChatHandler(pPlayer->GetSession()).PSendSysMessage("[Aufwertungs System] Du hast diesen Beruf leider nicht erlernt.",
 								pPlayer->GetName());
 						}
 
@@ -502,12 +500,12 @@ class npc_first_char : public CreatureScript
 						if (pPlayer->HasSkill(164) && pPlayer->HasEnoughMoney(3000 * GOLD)){
 							pPlayer->LearnDefaultSkill(164, 6);
 
-							ChatHandler(pPlayer->GetSession()).PSendSysMessage("[Aufwertungs System] dein beruf wurde hochgesetzr.",
+							ChatHandler(pPlayer->GetSession()).PSendSysMessage("[Aufwertungs System] Dein Beruf wurde hochgesetzt.",
 								pPlayer->GetName());
 						}
 
 						else {
-							ChatHandler(pPlayer->GetSession()).PSendSysMessage("[Aufwertungs System] Nihcts Beruf.",
+							ChatHandler(pPlayer->GetSession()).PSendSysMessage("[Aufwertungs System] Du hast diesen Beruf leider nicht erlernt.",
 								pPlayer->GetName());
 						}
 
@@ -521,12 +519,12 @@ class npc_first_char : public CreatureScript
 						if (pPlayer->HasSkill(182) && pPlayer->HasEnoughMoney(3000 * GOLD)){
 							pPlayer->LearnDefaultSkill(182, 6);
 
-							ChatHandler(pPlayer->GetSession()).PSendSysMessage("[Aufwertungs System] dein beruf wurde hochgesetzr.",
+							ChatHandler(pPlayer->GetSession()).PSendSysMessage("[Aufwertungs System] Dein Beruf wurde hochgesetzt.",
 								pPlayer->GetName());
 						}
 
 						else {
-							ChatHandler(pPlayer->GetSession()).PSendSysMessage("[Aufwertungs System] Nihcts Beruf.",
+							ChatHandler(pPlayer->GetSession()).PSendSysMessage("[Aufwertungs System] Du hast diesen Beruf leider nicht erlernt.",
 								pPlayer->GetName());
 						}
 
@@ -540,12 +538,12 @@ class npc_first_char : public CreatureScript
 						if (pPlayer->HasSkill(393) && pPlayer->HasEnoughMoney(3000 * GOLD)){
 							pPlayer->LearnDefaultSkill(393,6);
 
-							ChatHandler(pPlayer->GetSession()).PSendSysMessage("[Aufwertungs System] dein beruf wurde hochgesetzr.",
+							ChatHandler(pPlayer->GetSession()).PSendSysMessage("[Aufwertungs System] Dein Beruf wurde hochgesetzt.",
 								pPlayer->GetName());
 						}
 
 						else {
-							ChatHandler(pPlayer->GetSession()).PSendSysMessage("[Aufwertungs System] Nihcts Beruf.",
+							ChatHandler(pPlayer->GetSession()).PSendSysMessage("[Aufwertungs System] Du hast diesen Beruf leider nicht erlernt.",
 								pPlayer->GetName());
 						}
 
@@ -559,12 +557,12 @@ class npc_first_char : public CreatureScript
 						if (pPlayer->HasSkill(165) && pPlayer->HasEnoughMoney(3000 * GOLD)){
 							pPlayer->LearnDefaultSkill(165, 6);
 
-							ChatHandler(pPlayer->GetSession()).PSendSysMessage("[Aufwertungs System] dein beruf wurde hochgesetzr.",
+							ChatHandler(pPlayer->GetSession()).PSendSysMessage("[Aufwertungs System] Dein Beruf wurde hochgesetzt.",
 								pPlayer->GetName());
 						}
 
 						else {
-							ChatHandler(pPlayer->GetSession()).PSendSysMessage("[Aufwertungs System] Nihcts Beruf.",
+							ChatHandler(pPlayer->GetSession()).PSendSysMessage("[Aufwertungs System] Du hast diesen Beruf leider nicht erlernt.",
 								pPlayer->GetName());
 						}
 
@@ -582,12 +580,12 @@ class npc_first_char : public CreatureScript
 							
 
 
-							ChatHandler(pPlayer->GetSession()).PSendSysMessage("[Aufwertungs System] dein beruf wurde hochgesetzr.",
+							ChatHandler(pPlayer->GetSession()).PSendSysMessage("[Aufwertungs System] Dein Beruf wurde hochgesetzt.",
 								pPlayer->GetName());
 						}
 
 						else {
-							ChatHandler(pPlayer->GetSession()).PSendSysMessage("[Aufwertungs System] Nihcts Beruf.",
+							ChatHandler(pPlayer->GetSession()).PSendSysMessage("[Aufwertungs System] Du hast diesen Beruf leider nicht erlernt.",
 								pPlayer->GetName());
 						}
 
@@ -602,12 +600,12 @@ class npc_first_char : public CreatureScript
 						if (pPlayer->HasSkill(171) && pPlayer->HasEnoughMoney(3000 * GOLD)){
 							pPlayer->LearnDefaultSkill(171, 6);
 
-							ChatHandler(pPlayer->GetSession()).PSendSysMessage("[Aufwertungs System] dein beruf wurde hochgesetzr.",
+							ChatHandler(pPlayer->GetSession()).PSendSysMessage("[Aufwertungs System] Dein Beruf wurde hochgesetzt.",
 								pPlayer->GetName());
 						}
 
 						else {
-							ChatHandler(pPlayer->GetSession()).PSendSysMessage("[Aufwertungs System] Nihcts Beruf.",
+							ChatHandler(pPlayer->GetSession()).PSendSysMessage("[Aufwertungs System] Du hast diesen Beruf leider nicht erlernt.",
 								pPlayer->GetName());
 						}
 
@@ -621,12 +619,12 @@ class npc_first_char : public CreatureScript
 						if (pPlayer->HasSkill(333) && pPlayer->HasEnoughMoney(3000 * GOLD)){
 							pPlayer->LearnDefaultSkill(333, 6);
 
-							ChatHandler(pPlayer->GetSession()).PSendSysMessage("[Aufwertungs System] dein beruf wurde hochgesetzr.",
+							ChatHandler(pPlayer->GetSession()).PSendSysMessage("[Aufwertungs System] Dein Beruf wurde hochgesetzt.",
 								pPlayer->GetName());
 						}
 
 						else {
-							ChatHandler(pPlayer->GetSession()).PSendSysMessage("[Aufwertungs System] Nihcts Beruf.",
+							ChatHandler(pPlayer->GetSession()).PSendSysMessage("[Aufwertungs System] Du hast diesen Beruf leider nicht erlernt.",
 								pPlayer->GetName());
 						}
 
