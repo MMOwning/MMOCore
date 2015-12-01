@@ -73,8 +73,7 @@ public:
 		
 		//10h
 		if (time >= 1 && time <= 71999){
-		
-		QueryResult result = WorldDatabase.PQuery("SELECT `id`, `zeit`, `spieler`,`uid` `benutzt` FROM `lob` WHERE `zeit` = '%u' AND `spieler`= '%s'", 10, player->GetName());
+		QueryResult result = WorldDatabase.PQuery("SELECT `id`, `zeit`, `spieler`,`uid` `benutzt` FROM `lob` WHERE `zeit` = '%u' AND `uid`= '%u'", 10, player->GetGUID());
 		if (!result){
 				
 			uint32 uid = player->GetGUID();
@@ -90,7 +89,7 @@ public:
 
 		//20h
 		if (time >= 72000 && time <= 107999){
-			QueryResult result = WorldDatabase.PQuery("SELECT `id`, `zeit`, `spieler`,`uid` `benutzt` FROM `lob` WHERE `zeit` = '%u' AND `spieler`= '%s'", 20, player->GetName());
+			QueryResult result = WorldDatabase.PQuery("SELECT `id`, `zeit`, `spieler`,`uid` `benutzt` FROM `lob` WHERE `zeit` = '%u' AND `uid`= '%u'", 20, player->GetGUID());
 			if (!result){
 
 				uint32 uid = player->GetGUID();
@@ -106,7 +105,7 @@ public:
 
 		//30h
 		if (time >= 108000 && time <= 143999){
-			QueryResult result = WorldDatabase.PQuery("SELECT `id`, `zeit`, `spieler`,`uid` `benutzt` FROM `lob` WHERE `zeit` = '%u' AND `spieler`= '%s'", 30, player->GetName());
+			QueryResult result = WorldDatabase.PQuery("SELECT `id`, `zeit`, `spieler`,`uid` `benutzt` FROM `lob` WHERE `zeit` = '%u' AND `uid`= '%u'", 30, player->GetGUID());
 			if (!result){
 
 				uint32 uid = player->GetGUID();
@@ -124,7 +123,7 @@ public:
 
 		//40h
 		if (time >= 144000 && time <= 179999){
-			QueryResult result = WorldDatabase.PQuery("SELECT `id`, `zeit`, `spieler`,`uid` `benutzt` FROM `lob` WHERE `zeit` = '%u' AND `spieler`= '%s'", 40, player->GetName());
+			QueryResult result = WorldDatabase.PQuery("SELECT `id`, `zeit`, `spieler`,`uid` `benutzt` FROM `lob` WHERE `zeit` = '%u' AND `uid`= '%u'", 40, player->GetGUID());
 			if (!result){
 
 				uint32 uid = player->GetGUID();
@@ -141,7 +140,7 @@ public:
 
 		//50h
 		if (time >= 180000 && time <= 215999){
-			QueryResult result = WorldDatabase.PQuery("SELECT `id`, `zeit`, `spieler`,`uid` `benutzt` FROM `lob` WHERE `zeit` = '%u' AND `spieler`= '%s'", 50, player->GetName());
+			QueryResult result = WorldDatabase.PQuery("SELECT `id`, `zeit`, `spieler`,`uid` `benutzt` FROM `lob` WHERE `zeit` = '%u' AND `uid`= '%u'", 50, player->GetGUID());
 			if (!result){
 
 				uint32 uid = player->GetGUID();
@@ -157,7 +156,7 @@ public:
 
 		//60h
 		if (time >= 216000 && time <= 251999){
-			QueryResult result = WorldDatabase.PQuery("SELECT `id`, `zeit`, `spieler`,`uid` `benutzt` FROM `lob` WHERE `zeit` = '%u' AND `spieler`= '%s'", 60, player->GetName());
+			QueryResult result = WorldDatabase.PQuery("SELECT `id`, `zeit`, `spieler`,`uid` `benutzt` FROM `lob` WHERE `zeit` = '%u' AND `uid`= '%u'", 60, player->GetGUID());
 			if (!result){
 
 				uint32 uid = player->GetGUID();
