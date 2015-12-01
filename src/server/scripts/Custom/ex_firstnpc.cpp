@@ -403,7 +403,7 @@ class npc_first_char : public CreatureScript
 					{
 
 						uint32 guid = pPlayer->GetGUID();
-
+						uint32 acc = pPlayer->GetSession()->GetAccountId();
 
 						if (pPlayer->HasEnoughMoney(2000 * GOLD)){
 							pPlayer->GetGUID();
@@ -415,6 +415,12 @@ class npc_first_char : public CreatureScript
 							pPlayer->TeleportTo(0, -792.84, -1607.55, 142.30, 2.33, 0);
 							pPlayer->PlayerTalkClass->SendCloseGossip();
 							pPlayer->ModifyMoney(-2000 * GOLD);
+							std::string name = pPlayer->GetName();
+
+							WorldDatabase.PExecute("INSERT INTO zweitausstattung "
+								"(uid,spieler, account) "
+								"VALUES ('%u', '%s', '%u')",
+								guid, name, acc);
 							return true;
 						}
 
