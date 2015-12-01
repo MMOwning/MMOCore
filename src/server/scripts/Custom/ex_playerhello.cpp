@@ -73,7 +73,7 @@ public:
 #pragma region
 
 		//10h
-		if (time >= 1 && time <= 71999){
+		if (time >= 36000 && time <= 71999){
 		QueryResult result = WorldDatabase.PQuery("SELECT `id`, `zeit`, `spieler`,`uid` `benutzt` FROM `lob` WHERE `zeit` = '%u' AND `uid`= '%u'", 10, player->GetGUID());
 		if (!result){
 				
