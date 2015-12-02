@@ -25,6 +25,7 @@
 #include <sstream>
 #include <string>
 #include <stdlib.h>
+#include "Guild.h"
 
 
 
@@ -549,7 +550,9 @@ public:
 	Gold() : PlayerScript("Gold") {}
 
 	void OnMoneyChanged(Player* player, int32& amount) { 
-	
+		Guild* guild;
+		
+		
 			
 	}
 };
@@ -600,6 +603,7 @@ public:
 		sWorld->setRate(RATE_REPAIRCOST, 3);
 		sWorld->setRate(RATE_DROP_ITEM_EPIC, 1);
 		sWorld->setRate(RATE_DROP_ITEM_UNCOMMON, 3);
+	 
 	}
 
 
