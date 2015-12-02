@@ -37,7 +37,7 @@ class npc_first_char : public CreatureScript
 					pPlayer->ADD_GOSSIP_ITEM(7, "Gildenaufwertung 25er", GOSSIP_SENDER_MAIN, 3);
 					pPlayer->ADD_GOSSIP_ITEM(7, "Level 80 Equipment. [Kosten: 5000G]", GOSSIP_SENDER_MAIN, 10);
 					/*pPlayer->ADD_GOSSIP_ITEM(7, "Berufe skillen", GOSSIP_SENDER_MAIN, 12); */
-					pPlayer->ADD_GOSSIP_ITEM(7, "XP Boost [Kosten: 5000G]", GOSSIP_SENDER_MAIN, 13);
+					pPlayer->ADD_GOSSIP_ITEM(7, "XP Boost [Kosten: 5000G]", GOSSIP_SENDER_MAIN, 22);
 					
 
 					if (pPlayer->IsGameMaster()){
@@ -636,6 +636,38 @@ class npc_first_char : public CreatureScript
 								pPlayer->GetName());
 						}
 
+					}break;
+
+
+					case 22:
+					{
+						uint32 guid = pPlayer->GetGUID();
+
+						pPlayer->SEND_GOSSIP_MENU(DEFAULT_GOSSIP_MESSAGE, pCreature->GetGUID());
+						pPlayer->PlayerTalkClass->ClearMenus();
+						pPlayer->ADD_GOSSIP_ITEM(7, "XP Boost: 1 Stunde Kosten: 500 Gold", GOSSIP_SENDER_MAIN, 23);
+						
+						pPlayer->PlayerTalkClass->SendGossipMenu(907, pCreature->GetGUID());
+						return true;
+
+					}break;
+
+
+					case 23:
+					{
+						uint32 guid = pPlayer->GetGUID();
+						uint32 acc = pPlayer->GetSession()->GetAccountId();
+						uint32 playtime = pPlayer->GetTotalPlayedTime();
+
+						if (pPlayer->HasEnoughMoney(500 * GOLD)){
+							pPlayer->ModifyMoney(-500 * GOLD);
+
+							WorldDatabase.PExecute("INSERT INTO xp_boost "
+								"(uid, spieler, account,spielzeit) "
+								"VALUES ('%u', '%s', '%u')",
+								guid, pPlayer->GetName(),acc,playtime);
+							
+						}
 					}break;
 
 					}

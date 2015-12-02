@@ -5,3 +5,6 @@ CREATE TABLE `item_codes` (
   `benutzt` INT NULL COMMENT '',
   `name` VARCHAR(45) NULL COMMENT '',
   PRIMARY KEY (`code`)  COMMENT '');
+
+  
+ ALTER TABLE item_codes MODIFY COLUMN code VARCHAR (255);

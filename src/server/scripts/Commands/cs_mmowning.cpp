@@ -25,10 +25,26 @@
 #include "SpellAuras.h"
 #include "World.h"
 
+#include <iostream>
+#include <iterator>
+#include <vector>
+#include <random>
+#include <algorithm>
+
 #include "ScriptMgr.h"
 #include "ObjectMgr.h"
 #include "Chat.h"
 #include "SocialMgr.h"
+
+
+enum Belohnungen
+{
+	ASTRALER_KREDIT = 38186,
+	FROSTMARKEN = ,
+	TRIUMPHMARKEN = 
+
+};
+
 
 class mmowning_commandscript : public CommandScript
 {
@@ -319,16 +335,46 @@ static bool HandleGutscheinCommand(ChatHandler* handler, const char* args)
 	{
 		Player *player = handler->GetSession()->GetPlayer();
 		
-		uint32 itemCode = atoi((char*)args);
+		std::string itemCode = std::string((char*)args);
 
-		if (!itemCode)
+		if (itemCode == "")
 		{
 			player->GetSession()->SendNotification("Ohne Code geht das leider nicht!");
-			return false;
+			return true;
 		}
 
 
-		QueryResult result = WorldDatabase.PQuery("SELECT `code`, `belohnung`, `anzahl`, `benutzt` FROM `item_codes` WHERE `code` = %u", itemCode);
+		if (itemCode == "50000"){
+			player->ModifyMoney(-50000 * GOLD);
+			uint32 length = 10;
+			srand(time(NULL));  //generate a seed by using the current time
+			char str[length];
+
+			str[length - 1] = '\0';
+			size_t i = 0;
+			int r;
+
+			for (i = 0; i < length - 1; ++i) {
+				for (;;) {
+					r = rand() % 57 + 65; //interval between 65 ('A') and 65+57=122 ('z')
+					if ((r >= 65 && r <= 90) || (r >= 97 && r <= 122)) { // exclude '[' to '`'
+						str[i] = (char)r;
+						break;
+					}
+				}
+			}
+
+			return string(str);
+			srand(time(NULL));
+			int r = rand();
+			if (r % 5 == 1){
+				WorldDatabase.PExecute("INSERT INTO item_codes (code,belohnung,anzahl,benutzt,name) Values ('%s','%u','%u','%s')", 170, ASTRALER_KREDIT, 5, 0, player->GetName());
+			}
+
+		}
+
+
+		QueryResult result = WorldDatabase.PQuery("SELECT `code`, `belohnung`, `anzahl`, `benutzt` FROM `item_codes` WHERE `code` = %s", itemCode);
 
 
 
@@ -336,7 +382,7 @@ static bool HandleGutscheinCommand(ChatHandler* handler, const char* args)
 		{
 			
 			Field* fields = result->Fetch();
-			uint32 code = fields[0].GetUInt32();
+			std::string code = fields[0].GetCString();
 			uint32 belohnung = fields[1].GetUInt32();
 			uint32 anzahl = fields[2].GetUInt32();
 			uint8 benutzt = fields[3].GetUInt8();
@@ -351,8 +397,8 @@ static bool HandleGutscheinCommand(ChatHandler* handler, const char* args)
 			.SendMailTo(trans, MailReceiver(player, player->GetGUID()), MailSender(MAIL_NORMAL, 0, MAIL_STATIONERY_GM));
 			CharacterDatabase.CommitTransaction(trans);
 
-			WorldDatabase.PExecute("UPDATE item_codes SET name = '%s' WHERE code = %u", player->GetName().c_str(), itemCode);
-			WorldDatabase.PExecute("UPDATE item_codes SET benutzt = 1 WHERE code = %u", itemCode);
+			WorldDatabase.PExecute("UPDATE item_codes SET name = '%s' WHERE code = %s", player->GetName().c_str(), itemCode);
+			WorldDatabase.PExecute("UPDATE item_codes SET benutzt = 1 WHERE code = %s", itemCode);
 
 			char msg[250];
 			snprintf(msg, 250, "Dein Code wurde akzeptiert.");
