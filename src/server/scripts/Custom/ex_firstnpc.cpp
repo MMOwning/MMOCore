@@ -665,22 +665,23 @@ class npc_first_char : public CreatureScript
 
 					case 23:
 					{
-						pPlayer->ModifyMoney(-50000 * GOLD);
-						srand(time(NULL));
-						int r = rand();
+						if (pPlayer->HasEnoughMoney(5000 * GOLD)){
+							pPlayer->ModifyMoney(-50000 * GOLD);
+							srand(time(NULL));
+							int r = rand();
 
-						std::string grund = "Gutschein";
-						//if (r % 5 == 1){
-							WorldDatabase.PExecute("INSERT INTO item_codes (code,belohnung,anzahl,benutzt,name) Values ('%s','%u','%u','%u','%s')", grund, ASTRALER_KREDIT, 5, 1, pPlayer->GetName());
-							Item* item = Item::CreateItem(ASTRALER_KREDIT, 5);
-							pPlayer->GetSession()->SendNotification("Dein Code wurde akzeptiert!");
-							SQLTransaction trans = CharacterDatabase.BeginTransaction();
-							item->SaveToDB(trans);
-							MailDraft("Dein Gutscheincode", "Dein Code wurde erfolgreich eingeloest. Wir wuenschen dir weiterhin viel Spass auf MMOwning. Dein MMOwning-Team").AddItem(item)
-								.SendMailTo(trans, MailReceiver(pPlayer, pPlayer->GetGUID()), MailSender(MAIL_NORMAL, 0, MAIL_STATIONERY_GM));
-							CharacterDatabase.CommitTransaction(trans);
-						//}
-
+							std::string grund = "Gutschein";
+							(r % 5 == 1){
+								WorldDatabase.PExecute("INSERT INTO item_codes (code,belohnung,anzahl,benutzt,name) Values ('%s','%u','%u','%u','%s')", grund, ASTRALER_KREDIT, 5, 1, pPlayer->GetName());
+								Item* item = Item::CreateItem(ASTRALER_KREDIT, 5);
+								pPlayer->GetSession()->SendNotification("Dein Code wurde generiert und die Belohnung zugesendet!");
+								SQLTransaction trans = CharacterDatabase.BeginTransaction();
+								item->SaveToDB(trans);
+								MailDraft("Dein Gutscheincode", "Dein Code wurde erfolgreich eingeloest. Wir wuenschen dir weiterhin viel Spass auf MMOwning. Dein MMOwning-Team").AddItem(item)
+									.SendMailTo(trans, MailReceiver(pPlayer, pPlayer->GetGUID()), MailSender(MAIL_NORMAL, 0, MAIL_STATIONERY_GM));
+								CharacterDatabase.CommitTransaction(trans);
+							}
+						}
 
 
 					}break;
