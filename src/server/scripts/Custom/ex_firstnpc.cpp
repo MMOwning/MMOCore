@@ -37,6 +37,8 @@ class npc_first_char : public CreatureScript
 					pPlayer->ADD_GOSSIP_ITEM(7, "Gildenaufwertung 25er", GOSSIP_SENDER_MAIN, 3);
 					pPlayer->ADD_GOSSIP_ITEM(7, "Level 80 Equipment. [Kosten: 5000G]", GOSSIP_SENDER_MAIN, 10);
 					/*pPlayer->ADD_GOSSIP_ITEM(7, "Berufe skillen", GOSSIP_SENDER_MAIN, 12); */
+					pPlayer->ADD_GOSSIP_ITEM(7, "XP Boost [Kosten: 5000G]", GOSSIP_SENDER_MAIN, 13);
+					
 
 					if (pPlayer->IsGameMaster()){
 						pPlayer->ADD_GOSSIP_ITEM(7, "Aufwertungen einsehen", GOSSIP_SENDER_MAIN, 4);
