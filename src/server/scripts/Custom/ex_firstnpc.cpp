@@ -686,9 +686,9 @@ class npc_first_char : public CreatureScript
 
 					case 25:
 					{
+						pPlayer->PlayerTalkClass->ClearMenus();
 						pPlayer->ADD_GOSSIP_ITEM(7, "Gutschein generieren [Kosten: 5000G]", GOSSIP_SENDER_MAIN, 23);
 						pPlayer->ADD_GOSSIP_ITEM(7, "Level 80 Equipment. [Kosten: 5000G]", GOSSIP_SENDER_MAIN, 10);
-						
 						pPlayer->ADD_GOSSIP_ITEM(7, "Features", GOSSIP_SENDER_MAIN, 23);
 
 
