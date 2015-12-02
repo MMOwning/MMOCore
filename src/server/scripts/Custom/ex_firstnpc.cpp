@@ -697,7 +697,7 @@ class npc_first_char : public CreatureScript
 							pPlayer->ADD_GOSSIP_ITEM(7, "Berufe skillen [Nicht aktiv, geht nicht!]", GOSSIP_SENDER_MAIN, 12);
 						}
 
-						pPlayer->PlayerTalkClass->SendGossipMenu(907, _creature->GetGUID());
+						pPlayer->PlayerTalkClass->SendGossipMenu(907, pCreature->GetGUID());
 						return true;
 					}
 
