@@ -60,3 +60,6 @@ INSERT INTO `command` (`name`, `permission`, `help`) VALUES ('tester', 193, 'Syn
 
 DELETE FROM command WHERE `name`='gutschein';
 INSERT INTO `command` (`name`, `permission`, `help`) VALUES ('gutschein', 195, '');   
+
+DELETE FROM command WHERE `name`='generate';
+INSERT INTO `command` (`name`, `permission`, `help`) VALUES ('generate', 195, '');   

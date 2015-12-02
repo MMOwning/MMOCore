@@ -37,13 +37,6 @@
 #include "SocialMgr.h"
 
 
-enum Belohnungen
-{
-	ASTRALER_KREDIT = 38186,
-	FROSTMARKEN = 49426,
-	TRIUMPHMARKEN = 47241
-
-};
 
 
 class mmowning_commandscript : public CommandScript
@@ -73,6 +66,7 @@ public:
 			{ "tester",		SEC_ADMINISTRATOR,	false, &HandleInselCommand,				"", NULL },
 
 			{ "gutschein",			SEC_PLAYER,			false, &HandleGutscheinCommand, "", NULL },
+
 			//{ "tcrecon",        SEC_MODERATOR,      false, &HandleIRCRelogCommand,            "", NULL },	
 			{ NULL,             0,                  false,  NULL,                            "", NULL }
         };
@@ -344,17 +338,7 @@ static bool HandleGutscheinCommand(ChatHandler* handler, const char* args)
 		}
 
 
-		if (itemCode == "50000"){
-			player->ModifyMoney(-50000 * GOLD);
-			
-
-			srand(time(NULL));
-			int r = rand();
-			if (r % 5 == 1){
-				WorldDatabase.PExecute("INSERT INTO item_codes (code,belohnung,anzahl,benutzt,name) Values ('%s','%u','%u','%s')", "Gutschein", ASTRALER_KREDIT, 5, 1, player->GetName());
-			}
-
-		}
+		
 
 
 		QueryResult result = WorldDatabase.PQuery("SELECT `code`, `belohnung`, `anzahl`, `benutzt` FROM `item_codes` WHERE `code` = %s", itemCode);

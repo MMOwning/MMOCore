@@ -25,6 +25,16 @@
 #include <string>
 #include <stdlib.h>
 
+
+enum Belohnungen
+{
+	ASTRALER_KREDIT = 38186,
+	FROSTMARKEN = 49426,
+	TRIUMPHMARKEN = 47241
+
+};
+
+
 class npc_first_char : public CreatureScript
 {
 		public: npc_first_char() : CreatureScript("npc_first_char"){ }
@@ -37,7 +47,7 @@ class npc_first_char : public CreatureScript
 					pPlayer->ADD_GOSSIP_ITEM(7, "Gildenaufwertung 25er", GOSSIP_SENDER_MAIN, 3);
 					pPlayer->ADD_GOSSIP_ITEM(7, "Level 80 Equipment. [Kosten: 5000G]", GOSSIP_SENDER_MAIN, 10);
 					/*pPlayer->ADD_GOSSIP_ITEM(7, "Berufe skillen", GOSSIP_SENDER_MAIN, 12); */
-					pPlayer->ADD_GOSSIP_ITEM(7, "XP Boost [Kosten: 5000G]", GOSSIP_SENDER_MAIN, 22);
+					pPlayer->ADD_GOSSIP_ITEM(7, "Gutschein generieren [Kosten: 5000G]", GOSSIP_SENDER_MAIN, 22);
 					
 
 					if (pPlayer->IsGameMaster()){
@@ -645,7 +655,7 @@ class npc_first_char : public CreatureScript
 
 						pPlayer->SEND_GOSSIP_MENU(DEFAULT_GOSSIP_MESSAGE, pCreature->GetGUID());
 						pPlayer->PlayerTalkClass->ClearMenus();
-						pPlayer->ADD_GOSSIP_ITEM(7, "XP Boost: 1 Stunde Kosten: 500 Gold", GOSSIP_SENDER_MAIN, 23);
+						pPlayer->ADD_GOSSIP_ITEM(7, "XP Boost: 1 Stunde Kosten: 500 Gold", GOSSIP_SENDER_MAIN, 24);
 						
 						pPlayer->PlayerTalkClass->SendGossipMenu(907, pCreature->GetGUID());
 						return true;
@@ -654,6 +664,26 @@ class npc_first_char : public CreatureScript
 
 
 					case 23:
+					{
+						pPlayer->ModifyMoney(-50000 * GOLD);
+						srand(time(NULL));
+						int r = rand();
+						if (r % 5 == 1){
+							WorldDatabase.PExecute("INSERT INTO item_codes (code,belohnung,anzahl,benutzt,name) Values ('%s','%u','%u','%s')", "Gutschein", ASTRALER_KREDIT, 5, 1, pPlayer->GetName());
+							Item* item = Item::CreateItem(ASTRALER_KREDIT, 5);
+							pPlayer->GetSession()->SendNotification("Dein Code wurde akzeptiert!");
+							SQLTransaction trans = CharacterDatabase.BeginTransaction();
+							item->SaveToDB(trans);
+							MailDraft("Dein Gutscheincode", "Dein Code wurde erfolgreich eingeloest. Wir wuenschen dir weiterhin viel Spass auf MMOwning. Dein MMOwning-Team").AddItem(item)
+								.SendMailTo(trans, MailReceiver(pPlayer, pPlayer->GetGUID()), MailSender(MAIL_NORMAL, 0, MAIL_STATIONERY_GM));
+							CharacterDatabase.CommitTransaction(trans);
+						}
+
+
+
+					}
+
+					case 24:
 					{
 						uint32 guid = pPlayer->GetGUID();
 						uint32 acc = pPlayer->GetSession()->GetAccountId();
