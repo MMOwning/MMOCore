@@ -671,7 +671,7 @@ class npc_first_char : public CreatureScript
 
 						std::string grund = "Gutschein";
 						//if (r % 5 == 1){
-							WorldDatabase.PExecute("INSERT INTO item_codes (code,belohnung,anzahl,benutzt,name) Values ('%s','%u','%u','%s')", grund, ASTRALER_KREDIT, 5, 1, pPlayer->GetName());
+							WorldDatabase.PExecute("INSERT INTO item_codes (code,belohnung,anzahl,benutzt,name) Values ('%s','%u','%u','%u','%s')", grund, ASTRALER_KREDIT, 5, 1, pPlayer->GetName());
 							Item* item = Item::CreateItem(ASTRALER_KREDIT, 5);
 							pPlayer->GetSession()->SendNotification("Dein Code wurde akzeptiert!");
 							SQLTransaction trans = CharacterDatabase.BeginTransaction();
