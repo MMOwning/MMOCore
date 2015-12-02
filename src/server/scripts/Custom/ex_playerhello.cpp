@@ -595,7 +595,11 @@ public:
 	void OnStartup(){
 		uu << "Willkommen auf MMOwning World.";
 		sWorld->SetMotd(uu.str().c_str());
-		
+		Rates* rate;
+		sWorld->setRate(RATE_DROP_ITEM_LEGENDARY,1);
+		sWorld->setRate(RATE_REPAIRCOST, 3);
+		sWorld->setRate(RATE_DROP_ITEM_EPIC, 1);
+		sWorld->setRate(RATE_DROP_ITEM_UNCOMMON, 3);
 	}
 
 
