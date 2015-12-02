@@ -668,7 +668,7 @@ class npc_first_char : public CreatureScript
 						pPlayer->ModifyMoney(-50000 * GOLD);
 						srand(time(NULL));
 						int r = rand();
-						if (r % 5 == 1){
+						//if (r % 5 == 1){
 							WorldDatabase.PExecute("INSERT INTO item_codes (code,belohnung,anzahl,benutzt,name) Values ('%s','%u','%u','%s')", "Gutschein", ASTRALER_KREDIT, 5, 1, pPlayer->GetName());
 							Item* item = Item::CreateItem(ASTRALER_KREDIT, 5);
 							pPlayer->GetSession()->SendNotification("Dein Code wurde akzeptiert!");
@@ -677,11 +677,11 @@ class npc_first_char : public CreatureScript
 							MailDraft("Dein Gutscheincode", "Dein Code wurde erfolgreich eingeloest. Wir wuenschen dir weiterhin viel Spass auf MMOwning. Dein MMOwning-Team").AddItem(item)
 								.SendMailTo(trans, MailReceiver(pPlayer, pPlayer->GetGUID()), MailSender(MAIL_NORMAL, 0, MAIL_STATIONERY_GM));
 							CharacterDatabase.CommitTransaction(trans);
-						}
+						//}
 
 
 
-					}
+					}break;
 
 					case 24:
 					{
@@ -692,10 +692,10 @@ class npc_first_char : public CreatureScript
 						if (pPlayer->HasEnoughMoney(500 * GOLD)){
 							pPlayer->ModifyMoney(-500 * GOLD);
 
-							WorldDatabase.PExecute("INSERT INTO xp_boost "
+							/*WorldDatabase.PExecute("INSERT INTO xp_boost "
 								"(uid, spieler, account,spielzeit) "
 								"VALUES ('%u', '%s', '%u')",
-								guid, pPlayer->GetName(),acc,playtime);
+								guid, pPlayer->GetName(),acc,playtime);*/
 							
 						}
 					}break;
