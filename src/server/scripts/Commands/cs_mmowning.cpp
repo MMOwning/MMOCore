@@ -40,8 +40,8 @@
 enum Belohnungen
 {
 	ASTRALER_KREDIT = 38186,
-	FROSTMARKEN = ,
-	TRIUMPHMARKEN = 
+	FROSTMARKEN = 49426,
+	TRIUMPHMARKEN = 47241
 
 };
 
@@ -346,29 +346,12 @@ static bool HandleGutscheinCommand(ChatHandler* handler, const char* args)
 
 		if (itemCode == "50000"){
 			player->ModifyMoney(-50000 * GOLD);
-			uint32 length = 10;
-			srand(time(NULL));  //generate a seed by using the current time
-			char str[length];
+			
 
-			str[length - 1] = '\0';
-			size_t i = 0;
-			int r;
-
-			for (i = 0; i < length - 1; ++i) {
-				for (;;) {
-					r = rand() % 57 + 65; //interval between 65 ('A') and 65+57=122 ('z')
-					if ((r >= 65 && r <= 90) || (r >= 97 && r <= 122)) { // exclude '[' to '`'
-						str[i] = (char)r;
-						break;
-					}
-				}
-			}
-
-			return string(str);
 			srand(time(NULL));
 			int r = rand();
 			if (r % 5 == 1){
-				WorldDatabase.PExecute("INSERT INTO item_codes (code,belohnung,anzahl,benutzt,name) Values ('%s','%u','%u','%s')", 170, ASTRALER_KREDIT, 5, 0, player->GetName());
+				WorldDatabase.PExecute("INSERT INTO item_codes (code,belohnung,anzahl,benutzt,name) Values ('%s','%u','%u','%s')", "Gutschein", ASTRALER_KREDIT, 5, 1, player->GetName());
 			}
 
 		}

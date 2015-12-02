@@ -1,10 +1,10 @@
+DROP TABLE if EXISTS item_codes;
+
 CREATE TABLE `item_codes` (
-  `code` INT NOT NULL COMMENT '',
+  `ID` INT NOT NULL AUTO_INCREMENT COMMENT '',
+  `code` VARCHAR(45) NOT NULL COMMENT '',
   `belohnung` INT NULL COMMENT '',
   `anzahl` INT NULL COMMENT '',
   `benutzt` INT NULL COMMENT '',
   `name` VARCHAR(45) NULL COMMENT '',
-  PRIMARY KEY (`code`)  COMMENT '');
-
-  
- ALTER TABLE item_codes MODIFY COLUMN code VARCHAR (255);
+  PRIMARY KEY (`ID`)  COMMENT '');

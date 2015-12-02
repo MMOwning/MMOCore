@@ -433,3 +433,9 @@ REPLACE INTO `creature_loot_template` (`Entry`, `Item`, `Reference`, `Chance`, `
 VALUES ('800039', '47456', '0', '5', '0', '1', '3', '1', '1');
 REPLACE INTO `creature_loot_template` (`Entry`, `Item`, `Reference`, `Chance`, `QuestRequired`, `LootMode`, `GroupId`, `MinCount`, `MaxCount`) 
 VALUES ('800039', '38186', '0', '70', '0', '1', '3', '1', '7');
+
+
+/* Kristallfragmente Loottable */
+DELETE FROM `creature_loot_template` WHERE `entry` = 22275 AND `item` = 24189;
+INSERT INTO `creature_loot_template` (`Entry`, `Item`, `Reference`, `Chance`, `QuestRequired`, `LootMode`, `GroupId`, `MinCount`, `MaxCount`, `Comment`) VALUES ('22275', '24189', '0', '100', '0', '1', '0', '1', '1', 'Apexiswächter');
+
