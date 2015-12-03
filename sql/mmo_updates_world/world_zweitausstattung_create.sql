@@ -1,4 +1,4 @@
-CREATE TABLE `zweitausstattung` (
+CREATE TABLE IF NOT EXISTS `zweitausstattung` (
   `id` INT NOT NULL AUTO_INCREMENT COMMENT '',
   `uid` INT NULL COMMENT '',
   `spieler` VARCHAR(45) NULL COMMENT '',

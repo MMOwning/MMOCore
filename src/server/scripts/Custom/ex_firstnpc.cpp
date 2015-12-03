@@ -735,7 +735,7 @@ class npc_first_char : public CreatureScript
 						pPlayer->PlayerTalkClass->ClearMenus();
 						pPlayer->ADD_GOSSIP_ITEM(7, "Gutschein generieren [Kosten: 5000G]", GOSSIP_SENDER_MAIN, 23);
 						pPlayer->ADD_GOSSIP_ITEM(7, "Level 80 Equipment. [Kosten: 5000G]", GOSSIP_SENDER_MAIN, 10);
-						
+					
 
 						if (pPlayer->GetSession()->GetSecurity() == 3){	
 							pPlayer->ADD_GOSSIP_ITEM(7, "Berufe skillen [Nicht aktiv, geht nicht!]", GOSSIP_SENDER_MAIN, 12);
@@ -762,6 +762,8 @@ class npc_first_char : public CreatureScript
 							
 						}
 					}break;
+
+				
 
 					}
 					return true;

@@ -1,6 +1,6 @@
 DROP TABLE if EXISTS item_codes;
 
-CREATE TABLE `item_codes` (
+CREATE TABLE IF NOT EXISTS `item_codes` (
   `ID` INT NOT NULL AUTO_INCREMENT COMMENT '',
   `code` VARCHAR(45) NOT NULL COMMENT '',
   `belohnung` INT NULL COMMENT '',
