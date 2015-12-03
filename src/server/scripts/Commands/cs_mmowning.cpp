@@ -173,8 +173,8 @@ static bool HandleMallCommand(ChatHandler* handler, const char* /*args*/)
         //SetSentErrorMessage(true);
         return false;
         }
-
-        chr->ResurrectPlayer(0.5, false);
+        //Comment because of using it afk killing and buy Things at Vendor
+        //chr->ResurrectPlayer(0.5, false);
 
         switch(chr->GetTeam())
    {
