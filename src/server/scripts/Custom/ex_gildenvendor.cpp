@@ -142,6 +142,7 @@ public: gildenvendor() : CreatureScript("gildenvendor"){ }
 
 				if (!result){
 					player->GetSession()->SendNotification("Deine Gilde besitzt kein Gildenhaus.");
+					return true;
 				}
 
 
