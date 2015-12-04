@@ -70,8 +70,15 @@ public: gildenvendor() : CreatureScript("gildenvendor"){ }
 
 		bool OnGossipHello(Player *player, Creature* _creature)
 		{
-			bool gildmaster = player->IsGuildMaster();
-			if (gildmaster){
+			QueryResult result;
+			result = CharacterDatabase.PQuery("Select leaderguid from `guild` where `guildid` = '%u'", player->GetGuildId());
+
+			Field *fields = result->Fetch();
+			uint32 leaderid = fields[0].GetUInt32();
+
+			uint32 guid = player->GetGUID();
+
+			if (guid == leaderid){
 				player->ADD_GOSSIP_ITEM(7, "Gildenhaeuser kaufen", GOSSIP_SENDER_MAIN, 0);
 				player->ADD_GOSSIP_ITEM(7, "Gildenhaeuser verkaufen", GOSSIP_SENDER_MAIN, 1);
 			}
