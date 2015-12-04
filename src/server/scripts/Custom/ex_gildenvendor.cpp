@@ -73,26 +73,30 @@ public: gildenvendor() : CreatureScript("gildenvendor"){ }
 
 		bool OnGossipHello(Player *player, Creature* _creature)
 		{
-			QueryResult result;
-			result = CharacterDatabase.PQuery("Select leaderguid from `guild` where `guildid` = '%u'", player->GetGuildId());
+			uint32 test = player->GetGuildId();
+			if (test != 0){
+				QueryResult result;
+				result = CharacterDatabase.PQuery("Select leaderguid from `guild` where `guildid` = '%u'", player->GetGuildId());
 
-			Field *fields = result->Fetch();
-			uint32 leaderid = fields[0].GetUInt32();
+				Field *fields = result->Fetch();
+				uint32 leaderid = fields[0].GetUInt32();
 
-			uint32 guid = player->GetGUID();
+				uint32 guid = player->GetGUID();
 
-			if (guid == leaderid){
-				player->ADD_GOSSIP_ITEM(7, "Gildenhaeuser kaufen", GOSSIP_SENDER_MAIN, 0);
-				player->ADD_GOSSIP_ITEM(7, "Gildenhaeuser verkaufen", GOSSIP_SENDER_MAIN, 1);
-				player->PlayerTalkClass->SendGossipMenu(907, _creature->GetGUID());
-				return true;
+				if (guid == leaderid){
+					player->ADD_GOSSIP_ITEM(7, "Gildenhaeuser kaufen", GOSSIP_SENDER_MAIN, 0);
+					player->ADD_GOSSIP_ITEM(7, "Gildenhaeuser verkaufen", GOSSIP_SENDER_MAIN, 1);
+					player->PlayerTalkClass->SendGossipMenu(907, _creature->GetGUID());
+
+					return true;
+				}
+
 			}
 
 			else{
 				player->GetSession()->SendNotification("Du bist kein nicht der Leiter deiner Gilde.");
 				return true;
 			}
-
 			
 			return true;
 
@@ -137,7 +141,7 @@ public: gildenvendor() : CreatureScript("gildenvendor"){ }
 				}
 
 				if (player->IsGuildMaster()){
-					CharacterDatabase.PExecute("UPDATE guildhouses SET guildid = '%u' WHERE guildid = '%u'", platzhalter, gilde);
+					CharacterDatabase.PExecute("UPDATE guildhouses SET guildid = '%u' WHERE id = '%u'", platzhalter, gildenaktuell);
 					player->GetSession()->SendNotification("Das Gildenhaus wurde verkauft.");
 					return true;
 				}
@@ -153,7 +157,8 @@ public: gildenvendor() : CreatureScript("gildenvendor"){ }
 			case 2:
 			{
 				uint32 gildenid = player->GetGuildId();
-				Gildenhauszuordnung(gildenid, 2, 30, player->GetSession()->GetPlayer());			
+				Gildenhauszuordnung(gildenid, 2, 30, player->GetSession()->GetPlayer());	
+				player->PlayerTalkClass->SendCloseGossip();
 			}break;
 
 
@@ -163,6 +168,7 @@ public: gildenvendor() : CreatureScript("gildenvendor"){ }
 				uint32 gildenid = player->GetGuildId();
 				// 1: gildenID , 2: GildenhausID ,	3: Kosten ,   4: Playerarray
 				Gildenhauszuordnung(gildenid, 3, 30, player->GetSession()->GetPlayer());
+				player->PlayerTalkClass->SendCloseGossip();
 			}break;
 
 
