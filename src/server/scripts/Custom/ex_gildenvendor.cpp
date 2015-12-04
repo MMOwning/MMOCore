@@ -84,6 +84,7 @@ public: gildenvendor() : CreatureScript("gildenvendor"){ }
 			if (guid == leaderid){
 				player->ADD_GOSSIP_ITEM(7, "Gildenhaeuser kaufen", GOSSIP_SENDER_MAIN, 0);
 				player->ADD_GOSSIP_ITEM(7, "Gildenhaeuser verkaufen", GOSSIP_SENDER_MAIN, 1);
+				player->PlayerTalkClass->SendGossipMenu(907, _creature->GetGUID());
 				return true;
 			}
 
@@ -92,7 +93,7 @@ public: gildenvendor() : CreatureScript("gildenvendor"){ }
 				return true;
 			}
 
-			player->PlayerTalkClass->SendGossipMenu(907, _creature->GetGUID());
+			
 			return true;
 
 
