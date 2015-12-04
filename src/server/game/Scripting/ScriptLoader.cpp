@@ -142,7 +142,7 @@ void AddSC_neujahrsevent();
 void AddSC_therakin();
 
 //gildenhausvendor
-void AddSC_gildenvnendor();
+void AddSC_gildenvendor();
 
 #ifdef SCRIPTS
 //world
@@ -901,7 +901,7 @@ void AddCommandScripts()
 	AddSC_therakin();
 
 	//gildenhausvendor
-	AddSC_gildenvnendor();
+	AddSC_gildenvendor();
 }
 
 

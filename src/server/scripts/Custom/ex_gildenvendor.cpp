@@ -28,9 +28,9 @@
 
 
 
-class gildenvnendor : public CreatureScript
+class gildenvendor : public CreatureScript
 {
-public: gildenvnendor() : CreatureScript("gildenvnendor"){ }
+public: gildenvendor() : CreatureScript("gildenvendor"){ }
 
 
 		void Gildenhauszuordnung(uint32 gildenidneu, uint32 hausid, uint32 kosten, Player* player){
@@ -149,7 +149,7 @@ public: gildenvnendor() : CreatureScript("gildenvnendor"){ }
 
 
 
-void AddSC_gildenvnendor()
+void AddSC_gildenvendor()
 {
-	new gildenvnendor();
+	new gildenvendor();
 }
