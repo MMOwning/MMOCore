@@ -56,7 +56,7 @@ public: gildenvendor() : CreatureScript("gildenvendor"){ }
 					CharacterDatabase.PExecute("UPDATE guildhouses SET `guildid` = '%u' WHERE `id` = '%u'", gildenidneu, hausid);
 				}
 				else{
-					player->GetSession()->SendNotification("Du hast nicht genug Gildenhaustoken um die dieses Gildenhaus leisten zu kaufen.");
+					player->GetSession()->SendNotification("Du hast nicht genug Gildenhaustoken um dir dieses Gildenhaus zu kaufen.");
 					return;
 				}
 			}
@@ -71,10 +71,10 @@ public: gildenvendor() : CreatureScript("gildenvendor"){ }
 		bool OnGossipHello(Player *player, Creature* _creature)
 		{
 						
-			
+			if (player->IsGuildMaster()){
 				player->ADD_GOSSIP_ITEM(7, "Gildenhaeuser kaufen", GOSSIP_SENDER_MAIN, 0);
 				player->ADD_GOSSIP_ITEM(7, "Gildenhaeuser verkaufen", GOSSIP_SENDER_MAIN, 1);
-			
+			}
 
 			player->PlayerTalkClass->SendGossipMenu(907, _creature->GetGUID());
 			return true;
@@ -114,15 +114,16 @@ public: gildenvendor() : CreatureScript("gildenvendor"){ }
 				Field *fields = result->Fetch();
 				uint32 gildenaktuell = fields[0].GetUInt32();
 
-				
-				if (player->IsGuildMaster() && result){
+				if (!result){
+					player->GetSession()->SendNotification("Man kann kein Gildenhaus verkaufen, wenn man keines hat.");
+				}
+
+				if (player->IsGuildMaster()){
 					CharacterDatabase.PExecute("UPDATE guildhouses SET guildid = '%u' WHERE guildid = '%u'", platzhalter, gilde);
 					player->GetSession()->SendNotification("Das Gildenhaus wurde verkauft.");
 				}
 
-				else{
-					player->GetSession()->SendNotification("Man kann kein Gildenhaus verkaufen, wenn man keines hat.");
-				}
+				
 
 			}break;
 
