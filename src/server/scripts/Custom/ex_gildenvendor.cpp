@@ -140,7 +140,15 @@ public: gildenvendor() : CreatureScript("gildenvendor"){ }
 					return false;
 				}
 
-				if (player->IsGuildMaster()){
+				QueryResult result;
+				result = CharacterDatabase.PQuery("Select leaderguid from `guild` where `guildid` = '%u'", player->GetGuildId());
+
+				Field *fields = result->Fetch();
+				uint32 leaderid = fields[0].GetUInt32();
+
+				uint32 guid = player->GetGUID();
+
+				if (guid == leaderid){
 					CharacterDatabase.PExecute("UPDATE guildhouses SET guildid = '%u' WHERE id = '%u'", platzhalter, gildenaktuell);
 					player->GetSession()->SendNotification("Das Gildenhaus wurde verkauft.");
 					return true;
