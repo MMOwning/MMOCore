@@ -37,16 +37,19 @@ public: gildenvendor() : CreatureScript("gildenvendor"){ }
 			
 			QueryResult result;
 			result = CharacterDatabase.PQuery("SELECT guildid FROM `guildhouses` WHERE `id` = %u", hausid);
+			
 
 			Field *fields = result->Fetch();
 			uint32 gildenidalt = fields[0].GetUInt32();
 			
 			QueryResult ergebnis;
-			ergebnis = CharacterDatabase.PQuery("Select count(guildid) from `gildhouses` where `guildid` = '%u'", gildenidneu);
+			ergebnis = CharacterDatabase.PQuery("Select count(guildid) from `guildhouses` where `guildid` = '%u'", gildenidneu);
+
+			uint32 gildeplayer = player->GetGuildId();
 
 			Field *feld = ergebnis->Fetch();
 			uint32 anzahl = feld[0].GetUInt32();
-			if (gildenidalt == 0 && anzahl == 0){
+			if (gildenidalt == 0 && anzahl == 0 && gildeplayer != 0){
 
 				if (player->HasItemCount(200000, kosten)){
 					player->DestroyItemCount(200000, kosten, true, false);;
