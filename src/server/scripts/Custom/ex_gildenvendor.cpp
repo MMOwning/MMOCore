@@ -116,7 +116,7 @@ public: gildenvendor() : CreatureScript("gildenvendor"){ }
 				uint32 gilde = player->GetGuildId();
 
 				QueryResult result;
-				result = CharacterDatabase.PQuery("SELECT id FROM `guildhouses` WHERE `guildid` = %u", gilde);
+				result = CharacterDatabase.PQuery("SELECT id FROM `guildhouses` WHERE `guildid` = '%u'", gilde);
 
 				Field *fields = result->Fetch();
 				uint32 gildenaktuell = fields[0].GetUInt32();
