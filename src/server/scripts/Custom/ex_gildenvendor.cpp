@@ -132,12 +132,13 @@ public: gildenvendor() : CreatureScript("gildenvendor"){ }
 
 				if (gilde == 0){
 					player->GetSession()->SendNotification("Du bist in keiner Gilde");
-					return;
+					return false;
 				}
 
 				if (player->IsGuildMaster()){
 					CharacterDatabase.PExecute("UPDATE guildhouses SET guildid = '%u' WHERE guildid = '%u'", platzhalter, gilde);
 					player->GetSession()->SendNotification("Das Gildenhaus wurde verkauft.");
+					return true;
 				}
 				
 			
