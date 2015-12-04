@@ -140,6 +140,11 @@ public: gildenvendor() : CreatureScript("gildenvendor"){ }
 					return false;
 				}
 
+				if (!result){
+					player->GetSession()->SendNotification("Deine Gilde besitzt kein Gildenhaus.");
+				}
+
+
 				QueryResult ergebnis;
 				ergebnis = CharacterDatabase.PQuery("Select leaderguid from `guild` where `guildid` = '%u'", player->GetGuildId());
 
