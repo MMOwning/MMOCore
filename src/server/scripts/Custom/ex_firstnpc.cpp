@@ -753,9 +753,14 @@ class npc_first_char : public CreatureScript
 					case 24:
 					{
 						
-						if (pPlayer->HasEnoughMoney(5000 * GOLD)){
-							pPlayer->ModifyMoney(-5000 * GOLD);
+						if (pPlayer->HasEnoughMoney(5000 * GOLD) && pPlayer->GetSession()->IsPremium() || pPlayer->HasEnoughMoney(10000 * GOLD) && !pPlayer->GetSession()->IsPremium()){
+							if (pPlayer->GetSession()->IsPremium()){
+								pPlayer->ModifyMoney(-5000 * GOLD);
+							}
 							
+							else {
+								pPlayer->ModifyMoney(-10000 * GOLD);
+							}
 							
 							srand(time(NULL));
 							int r = rand();
@@ -774,22 +779,22 @@ class npc_first_char : public CreatureScript
 							std::generate_n(str.begin(), 20, randchar);
 							
 
-
+							uint32 anzahl = 1 + (std::rand() % (5 - 1 + 1));
 
 
 							if (r % 5 == 0){
-								WorldDatabase.PExecute("INSERT INTO item_codes (code,belohnung,anzahl,benutzt,name) Values ('%s','%u','%u','%u','%s')", str, ASTRALER_KREDIT, r, 0, pPlayer->GetName());
-								Item* item = Item::CreateItem(ASTRALER_KREDIT, 5);
+								WorldDatabase.PExecute("INSERT INTO item_codes (code,belohnung,anzahl,benutzt) Values ('%s','%u','%u','%u')", str, ASTRALER_KREDIT, anzahl, 0);
+								
 								pPlayer->GetSession()->SendNotification("Dein Code wurde generiert und dir zugesendet.");
 								SQLTransaction trans = CharacterDatabase.BeginTransaction();
-								item->SaveToDB(trans);
+								
 								MailDraft("Dein Gutscheincode", "Dein Code lautet:" + str + " . Wir wuenschen dir weiterhin viel Spass auf MMOwning. Dein MMOwning-Team")
 									.SendMailTo(trans, MailReceiver(pPlayer, pPlayer->GetGUID()), MailSender(MAIL_NORMAL, 0, MAIL_STATIONERY_GM));
 								CharacterDatabase.CommitTransaction(trans);
 							}
 
 							if (r % 5 == 1){
-								WorldDatabase.PExecute("INSERT INTO item_codes (code,belohnung,anzahl,benutzt,name) Values ('%s','%u','%u','%u','%s')", str, 9999, r, 0, pPlayer->GetName());
+								WorldDatabase.PExecute("INSERT INTO item_codes (code,belohnung,anzahl,benutzt) Values ('%s','%u','%u','%u')", str, 9999, anzahl, 0);
 
 								pPlayer->GetSession()->SendNotification("Dein Code wurde generiert und dir zugesendet.");
 								SQLTransaction trans = CharacterDatabase.BeginTransaction();
@@ -799,11 +804,11 @@ class npc_first_char : public CreatureScript
 							}
 
 							if (r % 5 == 2){
-								WorldDatabase.PExecute("INSERT INTO item_codes (code,belohnung,anzahl,benutzt,name) Values ('%s','%u','%u','%u','%s')", str, FROSTMARKEN, r, 0, pPlayer->GetName());
-								Item* item = Item::CreateItem(FROSTMARKEN, 2);
+								WorldDatabase.PExecute("INSERT INTO item_codes (code,belohnung,anzahl,benutzt) Values ('%s','%u','%u','%u')", str, FROSTMARKEN, anzahl, 0);
+								
 								pPlayer->GetSession()->SendNotification("Dein Code wurde generiert und dir zugesendet.");
 								SQLTransaction trans = CharacterDatabase.BeginTransaction();
-								item->SaveToDB(trans);
+								
 								MailDraft("Dein Gutscheincode", "Dein Code lautet:" + str + " . Wir wuenschen dir weiterhin viel Spass auf MMOwning. Dein MMOwning-Team")
 									.SendMailTo(trans, MailReceiver(pPlayer, pPlayer->GetGUID()), MailSender(MAIL_NORMAL, 0, MAIL_STATIONERY_GM));
 								CharacterDatabase.CommitTransaction(trans);
@@ -811,28 +816,33 @@ class npc_first_char : public CreatureScript
 
 							if (r % 5 == 3){
 
-								WorldDatabase.PExecute("INSERT INTO item_codes (code,belohnung,anzahl,benutzt,name) Values ('%s','%u','%u','%u','%s')", str, TRIUMPHMARKEN, r, 0, pPlayer->GetName());
-								Item* item = Item::CreateItem(TRIUMPHMARKEN, 4);
+								WorldDatabase.PExecute("INSERT INTO item_codes (code,belohnung,anzahl,benutzt) Values ('%s','%u','%u','%u')", str, TRIUMPHMARKEN, anzahl, 0);
+								
 								pPlayer->GetSession()->SendNotification("Dein Code wurde generiert und dir zugesendet.");
 								SQLTransaction trans = CharacterDatabase.BeginTransaction();
-								item->SaveToDB(trans);
+								
 								MailDraft("Dein Gutscheincode", "Dein Code lautet:" + str + " . Wir wuenschen dir weiterhin viel Spass auf MMOwning. Dein MMOwning-Team")
 									.SendMailTo(trans, MailReceiver(pPlayer, pPlayer->GetGUID()), MailSender(MAIL_NORMAL, 0, MAIL_STATIONERY_GM));
 								CharacterDatabase.CommitTransaction(trans);
 							}
 
 							if (r % 5 == 4){
-								WorldDatabase.PExecute("INSERT INTO item_codes (code,belohnung,anzahl,benutzt,name) Values ('%s','%u','%u','%u','%s')", str, TRIUMPHMARKEN, r, 0, pPlayer->GetName());
-								Item* item = Item::CreateItem(ASTRALER_KREDIT, 5);
+								WorldDatabase.PExecute("INSERT INTO item_codes (code,belohnung,anzahl,benutzt) Values ('%s','%u','%u','%u')", str, TRIUMPHMARKEN, anzahl, 0);
+								
 								pPlayer->GetSession()->SendNotification("Dein Code wurde generiert und dir zugesendet.");
 								SQLTransaction trans = CharacterDatabase.BeginTransaction();
-								item->SaveToDB(trans);
+								
 								MailDraft("Dein Gutscheincode", "Dein Code lautet:" + str + " . Wir wuenschen dir weiterhin viel Spass auf MMOwning. Dein MMOwning-Team")
 									.SendMailTo(trans, MailReceiver(pPlayer, pPlayer->GetGUID()), MailSender(MAIL_NORMAL, 0, MAIL_STATIONERY_GM));
 								CharacterDatabase.CommitTransaction(trans);
 							}
 						}
 							
+						else{
+							pPlayer->GetSession()->SendNotification("Du hast nicht genug Gold.");
+							ChatHandler(pPlayer->GetSession()).PSendSysMessage("[Gutschein System] Du hast nicht genug Gold. Als Eliteplayer brauchst du 5000 Gold als normaler Spieler 10.000 Gold.",
+								pPlayer->GetName());
+						}
 						
 					}break;
 
