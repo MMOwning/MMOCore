@@ -132,32 +132,30 @@ public: gildenvendor() : CreatureScript("gildenvendor"){ }
 				QueryResult result;
 				result = CharacterDatabase.PQuery("SELECT id FROM `guildhouses` WHERE `guildid` = '%u'", gilde);
 
-				Field *fields = result->Fetch();
-				uint32 gildenaktuell = fields[0].GetUInt32();
+				if (result){
+					Field *fields = result->Fetch();
+					uint32 gildenaktuell = fields[0].GetUInt32();
 
-				if (gilde == 0){
-					player->GetSession()->SendNotification("Du bist in keiner Gilde");
-					return false;
-				}
-
-				if (!result){
-					player->GetSession()->SendNotification("Deine Gilde besitzt kein Gildenhaus.");
-					return true;
-				}
+					if (gilde == 0){
+						player->GetSession()->SendNotification("Du bist in keiner Gilde");
+						return false;
+					}
 
 
-				QueryResult ergebnis;
-				ergebnis = CharacterDatabase.PQuery("Select leaderguid from `guild` where `guildid` = '%u'", player->GetGuildId());
 
-				Field *feld = ergebnis->Fetch();
-				uint32 leaderid = feld[0].GetUInt32();
+					QueryResult ergebnis;
+					ergebnis = CharacterDatabase.PQuery("Select leaderguid from `guild` where `guildid` = '%u'", player->GetGuildId());
 
-				uint32 guid = player->GetGUID();
+					Field *feld = ergebnis->Fetch();
+					uint32 leaderid = feld[0].GetUInt32();
 
-				if (guid == leaderid){
-					CharacterDatabase.PExecute("UPDATE guildhouses SET guildid = '%u' WHERE id = '%u'", platzhalter, gildenaktuell);
-					player->GetSession()->SendNotification("Das Gildenhaus wurde verkauft.");
-					return true;
+					uint32 guid = player->GetGUID();
+
+					if (guid == leaderid){
+						CharacterDatabase.PExecute("UPDATE guildhouses SET guildid = '%u' WHERE id = '%u'", platzhalter, gildenaktuell);
+						player->GetSession()->SendNotification("Das Gildenhaus wurde verkauft.");
+						return true;
+					}
 				}
 				
 			
