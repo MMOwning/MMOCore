@@ -100,9 +100,9 @@ static bool HandleGambleCommand(ChatHandler* handler, const char* args)
              //if (rand()%100 < 50)
 			 if (rand()%100 < 40)
              {
-				  chr->ModifyMoney(money);	
+				  chr->ModifyMoney(money-(money/10));	
                   //chr->ModifyMoney(money*2);
-                  handler->PSendSysMessage("Du hast gewonnen und einen Einsatz verdoppelt");
+                  handler->PSendSysMessage("Du hast gewonnen und deinen Einsatz verdoppelt");
              }
              else
              {
@@ -219,7 +219,7 @@ static bool HandleDalaCommand(ChatHandler* handler, const char* /*args*/)
 //Buffer
 static bool HandleBuffsCommand(ChatHandler* handler, const char* /*args*/)              
 {
-                                Player *chr = handler->GetSession()->GetPlayer();
+        Player *chr = handler->GetSession()->GetPlayer();
                                 
         if (chr->IsInCombat())
         {

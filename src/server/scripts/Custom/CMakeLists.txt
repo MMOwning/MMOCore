@@ -42,6 +42,7 @@ set(scripts_STAT_SRCS
   Custom/ex_commands.cpp
   Custom/ex_neujahrsevent.cpp
   Custom/ex_boss_therakin.cpp
+  Custom/ex_gildenvendor.cpp
   ${scripts_STAT_SRCS}
 #  ${sources_Custom}
   Custom/Transmog/Transmogrification.h

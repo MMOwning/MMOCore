@@ -141,6 +141,9 @@ void AddSC_neujahrsevent();
 //Therakin
 void AddSC_therakin();
 
+//gildenhausvendor
+void AddSC_gildenvnendor();
+
 #ifdef SCRIPTS
 //world
 void AddSC_areatrigger_scripts();
@@ -896,6 +899,9 @@ void AddCommandScripts()
 	AddSC_neujahrsevent();
 	//boss therakin
 	AddSC_therakin();
+
+	//gildenhausvendor
+	AddSC_gildenvnendor();
 }
 
 

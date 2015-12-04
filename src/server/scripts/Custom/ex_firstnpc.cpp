@@ -840,7 +840,7 @@ class npc_first_char : public CreatureScript
 							
 						else{
 							pPlayer->GetSession()->SendNotification("Du hast nicht genug Gold.");
-							ChatHandler(pPlayer->GetSession()).PSendSysMessage("[Gutschein System] Du hast nicht genug Gold. Als Eliteplayer brauchst du 5000 Gold als normaler Spieler 10.000 Gold.",
+							ChatHandler(pPlayer->GetSession()).PSendSysMessage("[Gutschein System] Du hast nicht genug Gold. Als Elitespieler brauchst du 5000 Gold als normaler Spieler 10.000 Gold.",
 								pPlayer->GetName());
 						}
 						
