@@ -70,8 +70,8 @@ public: gildenvendor() : CreatureScript("gildenvendor"){ }
 
 		bool OnGossipHello(Player *player, Creature* _creature)
 		{
-						
-			if (player->IsGuildMaster()){
+			bool gildmaster = player->IsGuildMaster();
+			if (gildmaster){
 				player->ADD_GOSSIP_ITEM(7, "Gildenhaeuser kaufen", GOSSIP_SENDER_MAIN, 0);
 				player->ADD_GOSSIP_ITEM(7, "Gildenhaeuser verkaufen", GOSSIP_SENDER_MAIN, 1);
 			}
