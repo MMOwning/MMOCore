@@ -54,6 +54,8 @@ public: gildenvendor() : CreatureScript("gildenvendor"){ }
 				if (player->HasItemCount(200000, kosten)){
 					player->DestroyItemCount(200000, kosten, true, false);;
 					CharacterDatabase.PExecute("UPDATE guildhouses SET `guildid` = '%u' WHERE `id` = '%u'", gildenidneu, hausid);
+					player->GetSession()->SendNotification("Du hast das Gildenhaus gekauft.");
+					return;
 				}
 				else{
 					player->GetSession()->SendNotification("Du hast nicht genug Gildenhaustoken um dir dieses Gildenhaus zu kaufen.");
@@ -63,6 +65,7 @@ public: gildenvendor() : CreatureScript("gildenvendor"){ }
 
 			else {
 				player->GetSession()->SendNotification("Das Gildenhaus ist belegt oder deine Gilde besitzt schon ein Gildenhaus.");
+				return;
 			}
 
 		}
@@ -121,14 +124,17 @@ public: gildenvendor() : CreatureScript("gildenvendor"){ }
 				Field *fields = result->Fetch();
 				uint32 gildenaktuell = fields[0].GetUInt32();
 
-				if (!result){
-					player->GetSession()->SendNotification("Man kann kein Gildenhaus verkaufen, wenn man keines hat.");
+				if (gilde == 0){
+					player->GetSession()->SendNotification("Du bist in keiner Gilde");
+					return;
 				}
 
 				if (player->IsGuildMaster()){
 					CharacterDatabase.PExecute("UPDATE guildhouses SET guildid = '%u' WHERE guildid = '%u'", platzhalter, gilde);
 					player->GetSession()->SendNotification("Das Gildenhaus wurde verkauft.");
 				}
+				
+			
 
 				
 
