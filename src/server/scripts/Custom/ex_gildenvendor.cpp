@@ -140,11 +140,11 @@ public: gildenvendor() : CreatureScript("gildenvendor"){ }
 					return false;
 				}
 
-				QueryResult result;
-				result = CharacterDatabase.PQuery("Select leaderguid from `guild` where `guildid` = '%u'", player->GetGuildId());
+				QueryResult ergebnis;
+				ergebnis = CharacterDatabase.PQuery("Select leaderguid from `guild` where `guildid` = '%u'", player->GetGuildId());
 
-				Field *fields = result->Fetch();
-				uint32 leaderid = fields[0].GetUInt32();
+				Field *feld = ergebnis->Fetch();
+				uint32 leaderid = feld[0].GetUInt32();
 
 				uint32 guid = player->GetGUID();
 
