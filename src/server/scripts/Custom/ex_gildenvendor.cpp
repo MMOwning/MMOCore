@@ -84,6 +84,12 @@ public: gildenvendor() : CreatureScript("gildenvendor"){ }
 			if (guid == leaderid){
 				player->ADD_GOSSIP_ITEM(7, "Gildenhaeuser kaufen", GOSSIP_SENDER_MAIN, 0);
 				player->ADD_GOSSIP_ITEM(7, "Gildenhaeuser verkaufen", GOSSIP_SENDER_MAIN, 1);
+				return true;
+			}
+
+			else{
+				player->GetSession()->SendNotification("Du bist kein nicht der Leiter deiner Gilde.");
+				return true;
 			}
 
 			player->PlayerTalkClass->SendGossipMenu(907, _creature->GetGUID());
