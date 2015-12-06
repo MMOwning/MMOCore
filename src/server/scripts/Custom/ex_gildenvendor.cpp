@@ -148,9 +148,9 @@ public: gildenvendor() : CreatureScript("gildenvendor"){ }
 				uint32 guid = player->GetGUID();
 
 				if (guid == leaderid){
-					player->ADD_GOSSIP_ITEM(7, "Gildenhaeuser kaufen", GOSSIP_SENDER_MAIN, 0);
-					player->ADD_GOSSIP_ITEM(7, "Gildenhaeuser verkaufen", GOSSIP_SENDER_MAIN, 1);
-					player->ADD_GOSSIP_ITEM(7, "Gildenhaeuser ansehen", GOSSIP_SENDER_MAIN, 38);
+					player->ADD_GOSSIP_ITEM(7, "Gildenhaus kaufen", GOSSIP_SENDER_MAIN, 0);
+					player->ADD_GOSSIP_ITEM(7, "Gildenhaus verkaufen", GOSSIP_SENDER_MAIN, 1);
+					player->ADD_GOSSIP_ITEM(7, "Gildenhaus ansehen", GOSSIP_SENDER_MAIN, 38);
 					player->PlayerTalkClass->SendGossipMenu(907, _creature->GetGUID());
 
 					return true;
@@ -182,6 +182,7 @@ public: gildenvendor() : CreatureScript("gildenvendor"){ }
 				player->ADD_GOSSIP_ITEM(7, "Fishing outside an Nortshire Abbey", GOSSIP_SENDER_MAIN, 3);
 				player->ADD_GOSSIP_ITEM(7, "Troll Village in mountains", GOSSIP_SENDER_MAIN, 4);
 				player->ADD_GOSSIP_ITEM(7, "Dwarven village outside Ironforge", GOSSIP_SENDER_MAIN, 5);
+				player->ADD_GOSSIP_ITEM(7, "Dwarven village (Arathi Highlands, Forbidding Sea)", GOSSIP_SENDER_MAIN, 80);
 				player->ADD_GOSSIP_ITEM(7, "Taruen Camp (Mulgore)", GOSSIP_SENDER_MAIN, 6);
 				player->ADD_GOSSIP_ITEM(7, "Shadowfang Keep an outside instance ", GOSSIP_SENDER_MAIN, 7);
 				player->ADD_GOSSIP_ITEM(7, "Harbor house outside Stormwind (Elwynn Forest)", GOSSIP_SENDER_MAIN, 8);
@@ -346,6 +347,8 @@ public: gildenvendor() : CreatureScript("gildenvendor"){ }
 				result = CharacterDatabase.PQuery("SELECT guildid FROM `guildhouses` WHERE `id` = %u", 2);
 				Field *fields = result->Fetch();
 				uint32 gilde = fields[0].GetUInt32();
+
+
 				if (gilde == 0){
 					Gildenhausport(2, player->GetSession()->GetPlayer());
 					player->GetSession()->SendNotification("Du schaust dir nun das Gildenhaus an.");
@@ -411,11 +414,11 @@ public: gildenvendor() : CreatureScript("gildenvendor"){ }
 			case 43:
 			{
 				QueryResult result;
-				result = CharacterDatabase.PQuery("SELECT guildid FROM `guildhouses` WHERE `id` = %u", 6);
+				result = CharacterDatabase.PQuery("SELECT guildid FROM `guildhouses` WHERE `id` = %u", 7);
 				Field *fields = result->Fetch();
 				uint32 gilde = fields[0].GetUInt32();
 				if (gilde == 0){
-					Gildenhausport(6, player->GetSession()->GetPlayer());
+					Gildenhausport(7, player->GetSession()->GetPlayer());
 					player->GetSession()->SendNotification("Du schaust dir nun das Gildenhaus an.");
 				}
 
@@ -427,23 +430,6 @@ public: gildenvendor() : CreatureScript("gildenvendor"){ }
 			}break;
 
 			case 44:
-			{
-				QueryResult result;
-				result = CharacterDatabase.PQuery("SELECT guildid FROM `guildhouses` WHERE `id` = %u", 7);
-				Field *fields = result->Fetch();
-				uint32 gilde = fields[0].GetUInt32();
-				if (gilde == 0){
-					Gildenhausport(7, player->GetSession()->GetPlayer());
-					player->GetSession()->SendNotification("Du schaust dir nun das Gildenhaus an.");
-				}
-
-				else {
-					player->GetSession()->SendNotification("Du bist in einer Gilde bzw das Gildenhaus ist schon belegt.");
-					return true;
-				}
-			}break;
-
-			case 45:
 			{
 				QueryResult result;
 				result = CharacterDatabase.PQuery("SELECT guildid FROM `guildhouses` WHERE `id` = %u", 8);
@@ -460,7 +446,7 @@ public: gildenvendor() : CreatureScript("gildenvendor"){ }
 				}
 			}break;
 
-			case 46:
+			case 45:
 			{
 				QueryResult result;
 				result = CharacterDatabase.PQuery("SELECT guildid FROM `guildhouses` WHERE `id` = %u", 9);
@@ -477,7 +463,7 @@ public: gildenvendor() : CreatureScript("gildenvendor"){ }
 				}
 			}break;
 
-			case 47:
+			case 46:
 			{
 				QueryResult result;
 				result = CharacterDatabase.PQuery("SELECT guildid FROM `guildhouses` WHERE `id` = %u", 10);
@@ -494,7 +480,7 @@ public: gildenvendor() : CreatureScript("gildenvendor"){ }
 				}
 			}break;
 
-			case 48:
+			case 47:
 			{
 				QueryResult result;
 				result = CharacterDatabase.PQuery("SELECT guildid FROM `guildhouses` WHERE `id` = %u", 11);
@@ -505,14 +491,13 @@ public: gildenvendor() : CreatureScript("gildenvendor"){ }
 					player->GetSession()->SendNotification("Du schaust dir nun das Gildenhaus an.");
 				}
 
-
 				else {
 					player->GetSession()->SendNotification("Du bist in einer Gilde bzw das Gildenhaus ist schon belegt.");
 					return true;
 				}
 			}break;
 
-			case 49:
+			case 48:
 			{
 				QueryResult result;
 				result = CharacterDatabase.PQuery("SELECT guildid FROM `guildhouses` WHERE `id` = %u", 12);
@@ -530,7 +515,7 @@ public: gildenvendor() : CreatureScript("gildenvendor"){ }
 				}
 			}break;
 
-			case 50:
+			case 49:
 			{
 				QueryResult result;
 				result = CharacterDatabase.PQuery("SELECT guildid FROM `guildhouses` WHERE `id` = %u", 13);
@@ -548,10 +533,10 @@ public: gildenvendor() : CreatureScript("gildenvendor"){ }
 				}
 			}break;
 
-			case 51:
+			case 50:
 			{
 				QueryResult result;
-				result = CharacterDatabase.PQuery("SELECT guildid FROM `guildhouses` WHERE `id` = %u",14);
+				result = CharacterDatabase.PQuery("SELECT guildid FROM `guildhouses` WHERE `id` = %u", 14);
 				Field *fields = result->Fetch();
 				uint32 gilde = fields[0].GetUInt32();
 				if (gilde == 0){
@@ -566,10 +551,10 @@ public: gildenvendor() : CreatureScript("gildenvendor"){ }
 				}
 			}break;
 
-			case 52:
+			case 51:
 			{
 				QueryResult result;
-				result = CharacterDatabase.PQuery("SELECT guildid FROM `guildhouses` WHERE `id` = %u", 15);
+				result = CharacterDatabase.PQuery("SELECT guildid FROM `guildhouses` WHERE `id` = %u",15);
 				Field *fields = result->Fetch();
 				uint32 gilde = fields[0].GetUInt32();
 				if (gilde == 0){
@@ -584,7 +569,7 @@ public: gildenvendor() : CreatureScript("gildenvendor"){ }
 				}
 			}break;
 
-			case 53:
+			case 52:
 			{
 				QueryResult result;
 				result = CharacterDatabase.PQuery("SELECT guildid FROM `guildhouses` WHERE `id` = %u", 16);
@@ -602,14 +587,14 @@ public: gildenvendor() : CreatureScript("gildenvendor"){ }
 				}
 			}break;
 
-			case 54:
+			case 53:
 			{
 				QueryResult result;
 				result = CharacterDatabase.PQuery("SELECT guildid FROM `guildhouses` WHERE `id` = %u", 17);
 				Field *fields = result->Fetch();
 				uint32 gilde = fields[0].GetUInt32();
 				if (gilde == 0){
-					Gildenhausport(17, player->GetSession()->GetPlayer());
+					Gildenhausport(18, player->GetSession()->GetPlayer());
 					player->GetSession()->SendNotification("Du schaust dir nun das Gildenhaus an.");
 				}
 
@@ -620,7 +605,7 @@ public: gildenvendor() : CreatureScript("gildenvendor"){ }
 				}
 			}break;
 
-			case 55:
+			case 54:
 			{
 				QueryResult result;
 				result = CharacterDatabase.PQuery("SELECT guildid FROM `guildhouses` WHERE `id` = %u", 18);
@@ -638,7 +623,7 @@ public: gildenvendor() : CreatureScript("gildenvendor"){ }
 				}
 			}break;
 
-			case 56:
+			case 55:
 			{
 				QueryResult result;
 				result = CharacterDatabase.PQuery("SELECT guildid FROM `guildhouses` WHERE `id` = %u", 19);
@@ -656,7 +641,7 @@ public: gildenvendor() : CreatureScript("gildenvendor"){ }
 				}
 			}break;
 
-			case 57:
+			case 56:
 			{
 				QueryResult result;
 				result = CharacterDatabase.PQuery("SELECT guildid FROM `guildhouses` WHERE `id` = %u", 20);
@@ -674,7 +659,7 @@ public: gildenvendor() : CreatureScript("gildenvendor"){ }
 				}
 			}break;
 
-			case 58:
+			case 57:
 			{
 				QueryResult result;
 				result = CharacterDatabase.PQuery("SELECT guildid FROM `guildhouses` WHERE `id` = %u", 21);
@@ -692,7 +677,7 @@ public: gildenvendor() : CreatureScript("gildenvendor"){ }
 				}
 			}break;
 
-			case 59:
+			case 58:
 			{
 				QueryResult result;
 				result = CharacterDatabase.PQuery("SELECT guildid FROM `guildhouses` WHERE `id` = %u", 22);
@@ -710,7 +695,7 @@ public: gildenvendor() : CreatureScript("gildenvendor"){ }
 				}
 			}break;
 
-			case 60:
+			case 59:
 			{
 				QueryResult result;
 				result = CharacterDatabase.PQuery("SELECT guildid FROM `guildhouses` WHERE `id` = %u", 23);
@@ -728,7 +713,7 @@ public: gildenvendor() : CreatureScript("gildenvendor"){ }
 				}
 			}break;
 
-			case 61:
+			case 60:
 			{
 				QueryResult result;
 				result = CharacterDatabase.PQuery("SELECT guildid FROM `guildhouses` WHERE `id` = %u", 24);
@@ -746,7 +731,7 @@ public: gildenvendor() : CreatureScript("gildenvendor"){ }
 				}
 			}break;
 
-			case 62:
+			case 61:
 			{
 				QueryResult result;
 				result = CharacterDatabase.PQuery("SELECT guildid FROM `guildhouses` WHERE `id` = %u", 25);
@@ -764,7 +749,7 @@ public: gildenvendor() : CreatureScript("gildenvendor"){ }
 				}
 			}break;
 
-			case 63:
+			case 62:
 			{
 				QueryResult result;
 				result = CharacterDatabase.PQuery("SELECT guildid FROM `guildhouses` WHERE `id` = %u", 26);
@@ -782,7 +767,7 @@ public: gildenvendor() : CreatureScript("gildenvendor"){ }
 				}
 			}break;
 
-			case 64:
+			case 63:
 			{
 				QueryResult result;
 				result = CharacterDatabase.PQuery("SELECT guildid FROM `guildhouses` WHERE `id` = %u", 27);
@@ -800,7 +785,7 @@ public: gildenvendor() : CreatureScript("gildenvendor"){ }
 				}
 			}break;
 
-			case 65:
+			case 64:
 			{
 				QueryResult result;
 				result = CharacterDatabase.PQuery("SELECT guildid FROM `guildhouses` WHERE `id` = %u", 28);
@@ -818,7 +803,7 @@ public: gildenvendor() : CreatureScript("gildenvendor"){ }
 				}
 			}break;
 
-			case 66:
+			case 65:
 			{
 				QueryResult result;
 				result = CharacterDatabase.PQuery("SELECT guildid FROM `guildhouses` WHERE `id` = %u", 29);
@@ -836,7 +821,7 @@ public: gildenvendor() : CreatureScript("gildenvendor"){ }
 				}
 			}break;
 
-			case 67:
+			case 66:
 			{
 				QueryResult result;
 				result = CharacterDatabase.PQuery("SELECT guildid FROM `guildhouses` WHERE `id` = %u", 30);
@@ -854,7 +839,7 @@ public: gildenvendor() : CreatureScript("gildenvendor"){ }
 				}
 			}break;
 
-			case 68:
+			case 67:
 			{
 				QueryResult result;
 				result = CharacterDatabase.PQuery("SELECT guildid FROM `guildhouses` WHERE `id` = %u", 31);
@@ -872,7 +857,7 @@ public: gildenvendor() : CreatureScript("gildenvendor"){ }
 				}
 			}break;
 
-			case 69:
+			case 68:
 			{
 				QueryResult result;
 				result = CharacterDatabase.PQuery("SELECT guildid FROM `guildhouses` WHERE `id` = %u", 32);
@@ -890,7 +875,7 @@ public: gildenvendor() : CreatureScript("gildenvendor"){ }
 				}
 			}break;
 
-			case 70:
+			case 69:
 			{
 				QueryResult result;
 				result = CharacterDatabase.PQuery("SELECT guildid FROM `guildhouses` WHERE `id` = %u", 33);
@@ -908,10 +893,10 @@ public: gildenvendor() : CreatureScript("gildenvendor"){ }
 				}
 			}break;
 
-			case 71:
+			case 70:
 			{
 				QueryResult result;
-				result = CharacterDatabase.PQuery("SELECT guildid FROM `guildhouses` WHERE `id` = %u",34);
+				result = CharacterDatabase.PQuery("SELECT guildid FROM `guildhouses` WHERE `id` = %u", 34);
 				Field *fields = result->Fetch();
 				uint32 gilde = fields[0].GetUInt32();
 				if (gilde == 0){
@@ -926,10 +911,10 @@ public: gildenvendor() : CreatureScript("gildenvendor"){ }
 				}
 			}break;
 
-			case 72:
+			case 71:
 			{
 				QueryResult result;
-				result = CharacterDatabase.PQuery("SELECT guildid FROM `guildhouses` WHERE `id` = %u", 35);
+				result = CharacterDatabase.PQuery("SELECT guildid FROM `guildhouses` WHERE `id` = %u",35);
 				Field *fields = result->Fetch();
 				uint32 gilde = fields[0].GetUInt32();
 				if (gilde == 0){
@@ -943,8 +928,8 @@ public: gildenvendor() : CreatureScript("gildenvendor"){ }
 					return true;
 				}
 			}break;
-			
-			case 73:
+
+			case 72:
 			{
 				QueryResult result;
 				result = CharacterDatabase.PQuery("SELECT guildid FROM `guildhouses` WHERE `id` = %u", 36);
@@ -961,8 +946,8 @@ public: gildenvendor() : CreatureScript("gildenvendor"){ }
 					return true;
 				}
 			}break;
-
-			case 74:
+			
+			case 73:
 			{
 				QueryResult result;
 				result = CharacterDatabase.PQuery("SELECT guildid FROM `guildhouses` WHERE `id` = %u", 37);
@@ -970,6 +955,42 @@ public: gildenvendor() : CreatureScript("gildenvendor"){ }
 				uint32 gilde = fields[0].GetUInt32();
 				if (gilde == 0){
 					Gildenhausport(37, player->GetSession()->GetPlayer());
+					player->GetSession()->SendNotification("Du schaust dir nun das Gildenhaus an.");
+				}
+
+
+				else {
+					player->GetSession()->SendNotification("Du bist in einer Gilde bzw das Gildenhaus ist schon belegt.");
+					return true;
+				}
+			}break;
+
+			case 74:
+			{
+				QueryResult result;
+				result = CharacterDatabase.PQuery("SELECT guildid FROM `guildhouses` WHERE `id` = %u", 38);
+				Field *fields = result->Fetch();
+				uint32 gilde = fields[0].GetUInt32();
+				if (gilde == 0){
+					Gildenhausport(38, player->GetSession()->GetPlayer());
+					player->GetSession()->SendNotification("Du schaust dir nun das Gildenhaus an.");
+				}
+
+
+				else {
+					player->GetSession()->SendNotification("Du bist in einer Gilde bzw das Gildenhaus ist schon belegt.");
+					return true;
+				}
+			}break;
+
+			case 80:
+			{
+				QueryResult result;
+				result = CharacterDatabase.PQuery("SELECT guildid FROM `guildhouses` WHERE `id` = %u", 6);
+				Field *fields = result->Fetch();
+				uint32 gilde = fields[0].GetUInt32();
+				if (gilde == 0){
+					Gildenhausport(6, player->GetSession()->GetPlayer());
 					player->GetSession()->SendNotification("Du schaust dir nun das Gildenhaus an.");
 				}
 
