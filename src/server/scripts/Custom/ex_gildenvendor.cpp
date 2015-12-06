@@ -203,6 +203,7 @@ public: gildenvendor() : CreatureScript("gildenvendor"){ }
 
 			case 78:
 			{
+				player->PlayerTalkClass->ClearMenus();
 				player->ADD_GOSSIP_ITEM(7, "Crashed gnome airplane ", GOSSIP_SENDER_MAIN, 15);
 				player->ADD_GOSSIP_ITEM(7, "Zul'Gurub an outside instance ", GOSSIP_SENDER_MAIN, 16);
 				player->ADD_GOSSIP_ITEM(7, "Goblin village (Tanaris, South Seas)", GOSSIP_SENDER_MAIN, 17);
@@ -215,11 +216,16 @@ public: gildenvendor() : CreatureScript("gildenvendor"){ }
 				player->ADD_GOSSIP_ITEM(7, "Teldrassil Furbold camp", GOSSIP_SENDER_MAIN, 24);
 				player->ADD_GOSSIP_ITEM(7, "Wetlands mountain camp", GOSSIP_SENDER_MAIN, 25);
 				player->ADD_GOSSIP_ITEM(7, "Ortell's Hideout", GOSSIP_SENDER_MAIN, 26);
+
+				player->PlayerTalkClass->SendGossipMenu(907, creature->GetGUID());
+				return true;
 			}break;
 
 
 			case 79:
 			{
+
+				player->PlayerTalkClass->ClearMenus();
 				player->ADD_GOSSIP_ITEM(7, "Stranglethorn Secret Cave", GOSSIP_SENDER_MAIN, 27);
 				player->ADD_GOSSIP_ITEM(7, "Karazhan Smiley", GOSSIP_SENDER_MAIN, 28);
 				player->ADD_GOSSIP_ITEM(7, "Well of the Forgotten", GOSSIP_SENDER_MAIN, 29);
@@ -231,6 +237,9 @@ public: gildenvendor() : CreatureScript("gildenvendor"){ }
 				player->ADD_GOSSIP_ITEM(7, "Outland Netherstorm: Nova's Shrine", GOSSIP_SENDER_MAIN, 35);
 				player->ADD_GOSSIP_ITEM(7, "Wald von Elwynn", GOSSIP_SENDER_MAIN, 36);
 				player->ADD_GOSSIP_ITEM(7, "Troll Village in mountains 2 (Darkshore)", GOSSIP_SENDER_MAIN, 37);
+
+				player->PlayerTalkClass->SendGossipMenu(907, creature->GetGUID());
+				return true;
 			}break;
 
 			case 38:
@@ -262,6 +271,8 @@ public: gildenvendor() : CreatureScript("gildenvendor"){ }
 
 			case 75:
 			{
+
+				player->PlayerTalkClass->ClearMenus();
 				player->ADD_GOSSIP_ITEM(7, "Azshara Crater instance (Horde entrance)", GOSSIP_SENDER_MAIN, 50);
 				player->ADD_GOSSIP_ITEM(7, "Quel'Thalas Tower", GOSSIP_SENDER_MAIN, 51);
 				player->ADD_GOSSIP_ITEM(7, "Crashed gnome airplane ", GOSSIP_SENDER_MAIN, 52);
@@ -271,11 +282,15 @@ public: gildenvendor() : CreatureScript("gildenvendor"){ }
 				player->ADD_GOSSIP_ITEM(7, "Stratholm an outside instance", GOSSIP_SENDER_MAIN, 56);
 				player->ADD_GOSSIP_ITEM(7, "Kalimdor Hyjal", GOSSIP_SENDER_MAIN, 57);
 				player->ADD_GOSSIP_ITEM(7, "The Ring of Valor", GOSSIP_SENDER_MAIN, 58);
+
+				player->PlayerTalkClass->SendGossipMenu(907, creature->GetGUID());
+				return true;
 			}break;
 
 
 			case 76:
 			{
+				player->PlayerTalkClass->ClearMenus();
 				player->ADD_GOSSIP_ITEM(7, "Stonetalon Logging Camp", GOSSIP_SENDER_MAIN, 59);
 				player->ADD_GOSSIP_ITEM(7, "Stonetalon Ruins", GOSSIP_SENDER_MAIN, 60);
 				player->ADD_GOSSIP_ITEM(7, "Teldrassil Furbold camp", GOSSIP_SENDER_MAIN, 61);
@@ -287,15 +302,23 @@ public: gildenvendor() : CreatureScript("gildenvendor"){ }
 				player->ADD_GOSSIP_ITEM(7, "Undercity Top Tier", GOSSIP_SENDER_MAIN, 67);
 				player->ADD_GOSSIP_ITEM(7, "Stormwind Cut-Throat Alley", GOSSIP_SENDER_MAIN, 68);
 				player->ADD_GOSSIP_ITEM(7, "Forgotten gnome camp", GOSSIP_SENDER_MAIN, 69);
+
+				player->PlayerTalkClass->SendGossipMenu(907, creature->GetGUID());
+				return true;
 			}
 
 			case 77:
 			{
+
+				player->PlayerTalkClass->ClearMenus();
 				player->ADD_GOSSIP_ITEM(7, "Outland Nagrand : Tomb", GOSSIP_SENDER_MAIN, 70);
 				player->ADD_GOSSIP_ITEM(7, "Outland Nagrand: Challe's Home for Little Tykes", GOSSIP_SENDER_MAIN, 71);
 				player->ADD_GOSSIP_ITEM(7, "Outland Netherstorm: Nova's Shrine", GOSSIP_SENDER_MAIN, 72);
 				player->ADD_GOSSIP_ITEM(7, "Wald von Elwynn", GOSSIP_SENDER_MAIN, 73);
 				player->ADD_GOSSIP_ITEM(7, "Troll Village in mountains 2 (Darkshore)", GOSSIP_SENDER_MAIN, 74);
+
+				player->PlayerTalkClass->SendGossipMenu(907, creature->GetGUID());
+				return true;
 			}break;
 			
 
