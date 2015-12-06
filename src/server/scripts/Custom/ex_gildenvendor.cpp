@@ -33,40 +33,49 @@ class gildenvendor : public CreatureScript
 public: gildenvendor() : CreatureScript("gildenvendor"){ }
 
 
-		void Gildenhauszuordnung(uint32 gildenidneu, uint32 hausid, uint32 kosten, Player* player){
+		void Gildenhauszuordnung(uint32 gildenidneu, uint32 hausid, uint32 groesse, uint32 kosten, Player* player){
 			
 			QueryResult result;
 			result = CharacterDatabase.PQuery("SELECT guildid FROM `guildhouses` WHERE `id` = %u", hausid);
-			
-
 			Field *fields = result->Fetch();
 			uint32 gildenidalt = fields[0].GetUInt32();
+
+
+			QueryResult gildenanzahl;
+			gildenanzahl = CharacterDatabase.PQuery("SELECT count(guid) FROM guild_member WHERE guildid = %u", gildenidneu);
+			Field *felder = gildenanzahl->Fetch();
+			uint32 memberanzahlsql = felder[0].GetUInt32();
+
 			
 			QueryResult ergebnis;
 			ergebnis = CharacterDatabase.PQuery("Select count(guildid) from `guildhouses` where `guildid` = '%u'", gildenidneu);
-
 			uint32 gildeplayer = player->GetGuildId();
+
+			uint32 memberanzahllimit = groesse;
 
 			Field *feld = ergebnis->Fetch();
 			uint32 anzahl = feld[0].GetUInt32();
-			if (gildenidalt == 0 && anzahl == 0 && gildeplayer != 0){
 
-				if (player->HasItemCount(200000, kosten)){
-					player->DestroyItemCount(200000, kosten, true, false);;
-					CharacterDatabase.PExecute("UPDATE guildhouses SET `guildid` = '%u' WHERE `id` = '%u'", gildenidneu, hausid);
-					player->GetSession()->SendNotification("Du hast das Gildenhaus gekauft.");
+		
+				if (gildenidalt == 0 && anzahl == 0 && gildeplayer != 0 && groesse >= memberanzahlsql){
+
+					if (player->HasItemCount(200000, kosten)){
+						player->DestroyItemCount(200000, kosten, true, false);;
+						CharacterDatabase.PExecute("UPDATE guildhouses SET `guildid` = '%u' WHERE `id` = '%u'", gildenidneu, hausid);
+						player->GetSession()->SendNotification("Du hast das Gildenhaus gekauft.");
+						return;
+					}
+					else{
+						player->GetSession()->SendNotification("Du hast nicht genug Gildenhaustoken um dir dieses Gildenhaus zu kaufen.");
+						return;
+					}
+				}
+
+				else {
+					player->GetSession()->SendNotification("Das Gildenhaus ist belegt, deine Gilde zu klein oder deine Gilde besitzt schon ein Gildenhaus");
 					return;
 				}
-				else{
-					player->GetSession()->SendNotification("Du hast nicht genug Gildenhaustoken um dir dieses Gildenhaus zu kaufen.");
-					return;
-				}
-			}
-
-			else {
-				player->GetSession()->SendNotification("Das Gildenhaus ist belegt oder deine Gilde besitzt schon ein Gildenhaus.");
-				return;
-			}
+			
 
 		}
 
@@ -169,7 +178,7 @@ public: gildenvendor() : CreatureScript("gildenvendor"){ }
 			case 2:
 			{
 				uint32 gildenid = player->GetGuildId();
-				Gildenhauszuordnung(gildenid, 2, 30, player->GetSession()->GetPlayer());	
+				Gildenhauszuordnung(gildenid, 2, 10 , 30,player->GetSession()->GetPlayer());	
 				player->PlayerTalkClass->SendCloseGossip();
 			}break;
 
@@ -178,11 +187,34 @@ public: gildenvendor() : CreatureScript("gildenvendor"){ }
 			case 3:
 			{
 				uint32 gildenid = player->GetGuildId();
-				// 1: gildenID , 2: GildenhausID ,	3: Kosten ,   4: Playerarray
-				Gildenhauszuordnung(gildenid, 3, 30, player->GetSession()->GetPlayer());
+				// 1: gildenID , 2: GildenhausID ,	3: Groesse , 4:Kosten  5: Playerarray
+				Gildenhauszuordnung(gildenid, 3, 10 ,30, player->GetSession()->GetPlayer());
 				player->PlayerTalkClass->SendCloseGossip();
 			}break;
 
+			//Trollvillage in mountains
+			case 4:
+			{
+				uint32 gildenid = player->GetGuildId();
+				// 1: gildenID , 2: GildenhausID ,	3: Kosten ,   4: Playerarray
+				Gildenhauszuordnung(gildenid, 4, 10 ,30, player->GetSession()->GetPlayer());
+				player->PlayerTalkClass->SendCloseGossip();
+			}break;
+
+			//Dwarven Village
+			case 5:
+			{
+				uint32 gildenid = player->GetGuildId();
+				// 1: gildenID , 2: GildenhausID ,	3: Kosten ,   4: Playerarray
+				Gildenhauszuordnung(gildenid,5, 10 , 30, player->GetSession()->GetPlayer());
+				player->PlayerTalkClass->SendCloseGossip();
+			}break;
+
+
+			case 6:
+			{
+
+			}
 
 			}
 
