@@ -343,7 +343,7 @@ public: gildenvendor() : CreatureScript("gildenvendor"){ }
 			case 39:
 			{
 				QueryResult result;
-				result = CharacterDatabase.PQuery("SELECT guildid FROM `guildhouses` WHERE `guildid` = %u", player->GetGuildId());
+				result = CharacterDatabase.PQuery("SELECT guildid FROM `guildhouses` WHERE `id` = %u", 2);
 				Field *fields = result->Fetch();
 				uint32 gilde = fields[0].GetUInt32();
 				if (gilde == 0){
@@ -360,7 +360,7 @@ public: gildenvendor() : CreatureScript("gildenvendor"){ }
 			case 40:
 			{
 				QueryResult result;
-				result = CharacterDatabase.PQuery("SELECT guildid FROM `guildhouses` WHERE `guildid` = %u", player->GetGuildId());
+				result = CharacterDatabase.PQuery("SELECT guildid FROM `guildhouses` WHERE `id` = %u", 3);
 				Field *fields = result->Fetch();
 				uint32 gilde = fields[0].GetUInt32();
 				if (gilde == 0){
@@ -377,7 +377,7 @@ public: gildenvendor() : CreatureScript("gildenvendor"){ }
 			case 41:
 			{
 				QueryResult result;
-				result = CharacterDatabase.PQuery("SELECT guildid FROM `guildhouses` WHERE `guildid` = %u", player->GetGuildId());
+				result = CharacterDatabase.PQuery("SELECT guildid FROM `guildhouses` WHERE `id` = %u", 4);
 				Field *fields = result->Fetch();
 				uint32 gilde = fields[0].GetUInt32();
 				if (gilde == 0){
@@ -394,7 +394,7 @@ public: gildenvendor() : CreatureScript("gildenvendor"){ }
 			case 42:
 			{
 				QueryResult result;
-				result = CharacterDatabase.PQuery("SELECT guildid FROM `guildhouses` WHERE `guildid` = %u", player->GetGuildId());
+				result = CharacterDatabase.PQuery("SELECT guildid FROM `guildhouses` WHERE `id` = %u", 5);
 				Field *fields = result->Fetch();
 				uint32 gilde = fields[0].GetUInt32();
 				if (gilde == 0){
@@ -411,7 +411,7 @@ public: gildenvendor() : CreatureScript("gildenvendor"){ }
 			case 43:
 			{
 				QueryResult result;
-				result = CharacterDatabase.PQuery("SELECT guildid FROM `guildhouses` WHERE `guildid` = %u", player->GetGuildId());
+				result = CharacterDatabase.PQuery("SELECT guildid FROM `guildhouses` WHERE `id` = %u", 6);
 				Field *fields = result->Fetch();
 				uint32 gilde = fields[0].GetUInt32();
 				if (gilde == 0){
@@ -429,7 +429,7 @@ public: gildenvendor() : CreatureScript("gildenvendor"){ }
 			case 44:
 			{
 				QueryResult result;
-				result = CharacterDatabase.PQuery("SELECT guildid FROM `guildhouses` WHERE `guildid` = %u", player->GetGuildId());
+				result = CharacterDatabase.PQuery("SELECT guildid FROM `guildhouses` WHERE `id` = %u", 7);
 				Field *fields = result->Fetch();
 				uint32 gilde = fields[0].GetUInt32();
 				if (gilde == 0){
@@ -446,7 +446,7 @@ public: gildenvendor() : CreatureScript("gildenvendor"){ }
 			case 45:
 			{
 				QueryResult result;
-				result = CharacterDatabase.PQuery("SELECT guildid FROM `guildhouses` WHERE `guildid` = %u", player->GetGuildId());
+				result = CharacterDatabase.PQuery("SELECT guildid FROM `guildhouses` WHERE `id` = %u", 8);
 				Field *fields = result->Fetch();
 				uint32 gilde = fields[0].GetUInt32();
 				if (gilde == 0){
@@ -463,7 +463,7 @@ public: gildenvendor() : CreatureScript("gildenvendor"){ }
 			case 46:
 			{
 				QueryResult result;
-				result = CharacterDatabase.PQuery("SELECT guildid FROM `guildhouses` WHERE `guildid` = %u", player->GetGuildId());
+				result = CharacterDatabase.PQuery("SELECT guildid FROM `guildhouses` WHERE `id` = %u", 9);
 				Field *fields = result->Fetch();
 				uint32 gilde = fields[0].GetUInt32();
 				if (gilde == 0){
@@ -480,7 +480,7 @@ public: gildenvendor() : CreatureScript("gildenvendor"){ }
 			case 47:
 			{
 				QueryResult result;
-				result = CharacterDatabase.PQuery("SELECT guildid FROM `guildhouses` WHERE `guildid` = %u", player->GetGuildId());
+				result = CharacterDatabase.PQuery("SELECT guildid FROM `guildhouses` WHERE `id` = %u", 10);
 				Field *fields = result->Fetch();
 				uint32 gilde = fields[0].GetUInt32();
 				if (gilde == 0){
@@ -497,7 +497,7 @@ public: gildenvendor() : CreatureScript("gildenvendor"){ }
 			case 48:
 			{
 				QueryResult result;
-				result = CharacterDatabase.PQuery("SELECT guildid FROM `guildhouses` WHERE `guildid` = %u", player->GetGuildId());
+				result = CharacterDatabase.PQuery("SELECT guildid FROM `guildhouses` WHERE `id` = %u", 11);
 				Field *fields = result->Fetch();
 				uint32 gilde = fields[0].GetUInt32();
 				if (gilde == 0){
@@ -515,7 +515,7 @@ public: gildenvendor() : CreatureScript("gildenvendor"){ }
 			case 49:
 			{
 				QueryResult result;
-				result = CharacterDatabase.PQuery("SELECT guildid FROM `guildhouses` WHERE `guildid` = %u", player->GetGuildId());
+				result = CharacterDatabase.PQuery("SELECT guildid FROM `guildhouses` WHERE `id` = %u", 12);
 				Field *fields = result->Fetch();
 				uint32 gilde = fields[0].GetUInt32();
 				if (gilde == 0){
@@ -533,7 +533,7 @@ public: gildenvendor() : CreatureScript("gildenvendor"){ }
 			case 50:
 			{
 				QueryResult result;
-				result = CharacterDatabase.PQuery("SELECT guildid FROM `guildhouses` WHERE `guildid` = %u", player->GetGuildId());
+				result = CharacterDatabase.PQuery("SELECT guildid FROM `guildhouses` WHERE `id` = %u", 13);
 				Field *fields = result->Fetch();
 				uint32 gilde = fields[0].GetUInt32();
 				if (gilde == 0){
@@ -551,7 +551,7 @@ public: gildenvendor() : CreatureScript("gildenvendor"){ }
 			case 51:
 			{
 				QueryResult result;
-				result = CharacterDatabase.PQuery("SELECT guildid FROM `guildhouses` WHERE `guildid` = %u", player->GetGuildId());
+				result = CharacterDatabase.PQuery("SELECT guildid FROM `guildhouses` WHERE `id` = %u",14);
 				Field *fields = result->Fetch();
 				uint32 gilde = fields[0].GetUInt32();
 				if (gilde == 0){
@@ -569,7 +569,7 @@ public: gildenvendor() : CreatureScript("gildenvendor"){ }
 			case 52:
 			{
 				QueryResult result;
-				result = CharacterDatabase.PQuery("SELECT guildid FROM `guildhouses` WHERE `guildid` = %u", player->GetGuildId());
+				result = CharacterDatabase.PQuery("SELECT guildid FROM `guildhouses` WHERE `id` = %u", 15);
 				Field *fields = result->Fetch();
 				uint32 gilde = fields[0].GetUInt32();
 				if (gilde == 0){
@@ -587,7 +587,7 @@ public: gildenvendor() : CreatureScript("gildenvendor"){ }
 			case 53:
 			{
 				QueryResult result;
-				result = CharacterDatabase.PQuery("SELECT guildid FROM `guildhouses` WHERE `guildid` = %u", player->GetGuildId());
+				result = CharacterDatabase.PQuery("SELECT guildid FROM `guildhouses` WHERE `id` = %u", 16);
 				Field *fields = result->Fetch();
 				uint32 gilde = fields[0].GetUInt32();
 				if (gilde == 0){
@@ -605,7 +605,7 @@ public: gildenvendor() : CreatureScript("gildenvendor"){ }
 			case 54:
 			{
 				QueryResult result;
-				result = CharacterDatabase.PQuery("SELECT guildid FROM `guildhouses` WHERE `guildid` = %u", player->GetGuildId());
+				result = CharacterDatabase.PQuery("SELECT guildid FROM `guildhouses` WHERE `id` = %u", 17);
 				Field *fields = result->Fetch();
 				uint32 gilde = fields[0].GetUInt32();
 				if (gilde == 0){
@@ -623,7 +623,7 @@ public: gildenvendor() : CreatureScript("gildenvendor"){ }
 			case 55:
 			{
 				QueryResult result;
-				result = CharacterDatabase.PQuery("SELECT guildid FROM `guildhouses` WHERE `guildid` = %u", player->GetGuildId());
+				result = CharacterDatabase.PQuery("SELECT guildid FROM `guildhouses` WHERE `id` = %u", 18);
 				Field *fields = result->Fetch();
 				uint32 gilde = fields[0].GetUInt32();
 				if (gilde == 0){
@@ -641,7 +641,7 @@ public: gildenvendor() : CreatureScript("gildenvendor"){ }
 			case 56:
 			{
 				QueryResult result;
-				result = CharacterDatabase.PQuery("SELECT guildid FROM `guildhouses` WHERE `guildid` = %u", player->GetGuildId());
+				result = CharacterDatabase.PQuery("SELECT guildid FROM `guildhouses` WHERE `id` = %u", 19);
 				Field *fields = result->Fetch();
 				uint32 gilde = fields[0].GetUInt32();
 				if (gilde == 0){
@@ -659,7 +659,7 @@ public: gildenvendor() : CreatureScript("gildenvendor"){ }
 			case 57:
 			{
 				QueryResult result;
-				result = CharacterDatabase.PQuery("SELECT guildid FROM `guildhouses` WHERE `guildid` = %u", player->GetGuildId());
+				result = CharacterDatabase.PQuery("SELECT guildid FROM `guildhouses` WHERE `id` = %u", 20);
 				Field *fields = result->Fetch();
 				uint32 gilde = fields[0].GetUInt32();
 				if (gilde == 0){
@@ -677,7 +677,7 @@ public: gildenvendor() : CreatureScript("gildenvendor"){ }
 			case 58:
 			{
 				QueryResult result;
-				result = CharacterDatabase.PQuery("SELECT guildid FROM `guildhouses` WHERE `guildid` = %u", player->GetGuildId());
+				result = CharacterDatabase.PQuery("SELECT guildid FROM `guildhouses` WHERE `id` = %u", 21);
 				Field *fields = result->Fetch();
 				uint32 gilde = fields[0].GetUInt32();
 				if (gilde == 0){
@@ -695,7 +695,7 @@ public: gildenvendor() : CreatureScript("gildenvendor"){ }
 			case 59:
 			{
 				QueryResult result;
-				result = CharacterDatabase.PQuery("SELECT guildid FROM `guildhouses` WHERE `guildid` = %u", player->GetGuildId());
+				result = CharacterDatabase.PQuery("SELECT guildid FROM `guildhouses` WHERE `id` = %u", 22);
 				Field *fields = result->Fetch();
 				uint32 gilde = fields[0].GetUInt32();
 				if (gilde == 0){
@@ -713,7 +713,7 @@ public: gildenvendor() : CreatureScript("gildenvendor"){ }
 			case 60:
 			{
 				QueryResult result;
-				result = CharacterDatabase.PQuery("SELECT guildid FROM `guildhouses` WHERE `guildid` = %u", player->GetGuildId());
+				result = CharacterDatabase.PQuery("SELECT guildid FROM `guildhouses` WHERE `id` = %u", 23);
 				Field *fields = result->Fetch();
 				uint32 gilde = fields[0].GetUInt32();
 				if (gilde == 0){
@@ -731,7 +731,7 @@ public: gildenvendor() : CreatureScript("gildenvendor"){ }
 			case 61:
 			{
 				QueryResult result;
-				result = CharacterDatabase.PQuery("SELECT guildid FROM `guildhouses` WHERE `guildid` = %u", player->GetGuildId());
+				result = CharacterDatabase.PQuery("SELECT guildid FROM `guildhouses` WHERE `id` = %u", 24);
 				Field *fields = result->Fetch();
 				uint32 gilde = fields[0].GetUInt32();
 				if (gilde == 0){
@@ -749,7 +749,7 @@ public: gildenvendor() : CreatureScript("gildenvendor"){ }
 			case 62:
 			{
 				QueryResult result;
-				result = CharacterDatabase.PQuery("SELECT guildid FROM `guildhouses` WHERE `guildid` = %u", player->GetGuildId());
+				result = CharacterDatabase.PQuery("SELECT guildid FROM `guildhouses` WHERE `id` = %u", 25);
 				Field *fields = result->Fetch();
 				uint32 gilde = fields[0].GetUInt32();
 				if (gilde == 0){
@@ -767,7 +767,7 @@ public: gildenvendor() : CreatureScript("gildenvendor"){ }
 			case 63:
 			{
 				QueryResult result;
-				result = CharacterDatabase.PQuery("SELECT guildid FROM `guildhouses` WHERE `guildid` = %u", player->GetGuildId());
+				result = CharacterDatabase.PQuery("SELECT guildid FROM `guildhouses` WHERE `id` = %u", 26);
 				Field *fields = result->Fetch();
 				uint32 gilde = fields[0].GetUInt32();
 				if (gilde == 0){
@@ -785,7 +785,7 @@ public: gildenvendor() : CreatureScript("gildenvendor"){ }
 			case 64:
 			{
 				QueryResult result;
-				result = CharacterDatabase.PQuery("SELECT guildid FROM `guildhouses` WHERE `guildid` = %u", player->GetGuildId());
+				result = CharacterDatabase.PQuery("SELECT guildid FROM `guildhouses` WHERE `id` = %u", 27);
 				Field *fields = result->Fetch();
 				uint32 gilde = fields[0].GetUInt32();
 				if (gilde == 0){
@@ -803,7 +803,7 @@ public: gildenvendor() : CreatureScript("gildenvendor"){ }
 			case 65:
 			{
 				QueryResult result;
-				result = CharacterDatabase.PQuery("SELECT guildid FROM `guildhouses` WHERE `guildid` = %u", player->GetGuildId());
+				result = CharacterDatabase.PQuery("SELECT guildid FROM `guildhouses` WHERE `id` = %u", 28);
 				Field *fields = result->Fetch();
 				uint32 gilde = fields[0].GetUInt32();
 				if (gilde == 0){
@@ -821,7 +821,7 @@ public: gildenvendor() : CreatureScript("gildenvendor"){ }
 			case 66:
 			{
 				QueryResult result;
-				result = CharacterDatabase.PQuery("SELECT guildid FROM `guildhouses` WHERE `guildid` = %u", player->GetGuildId());
+				result = CharacterDatabase.PQuery("SELECT guildid FROM `guildhouses` WHERE `id` = %u", 29);
 				Field *fields = result->Fetch();
 				uint32 gilde = fields[0].GetUInt32();
 				if (gilde == 0){
@@ -839,7 +839,7 @@ public: gildenvendor() : CreatureScript("gildenvendor"){ }
 			case 67:
 			{
 				QueryResult result;
-				result = CharacterDatabase.PQuery("SELECT guildid FROM `guildhouses` WHERE `guildid` = %u", player->GetGuildId());
+				result = CharacterDatabase.PQuery("SELECT guildid FROM `guildhouses` WHERE `id` = %u", 30);
 				Field *fields = result->Fetch();
 				uint32 gilde = fields[0].GetUInt32();
 				if (gilde == 0){
@@ -857,7 +857,7 @@ public: gildenvendor() : CreatureScript("gildenvendor"){ }
 			case 68:
 			{
 				QueryResult result;
-				result = CharacterDatabase.PQuery("SELECT guildid FROM `guildhouses` WHERE `guildid` = %u", player->GetGuildId());
+				result = CharacterDatabase.PQuery("SELECT guildid FROM `guildhouses` WHERE `id` = %u", 31);
 				Field *fields = result->Fetch();
 				uint32 gilde = fields[0].GetUInt32();
 				if (gilde == 0){
@@ -875,7 +875,7 @@ public: gildenvendor() : CreatureScript("gildenvendor"){ }
 			case 69:
 			{
 				QueryResult result;
-				result = CharacterDatabase.PQuery("SELECT guildid FROM `guildhouses` WHERE `guildid` = %u", player->GetGuildId());
+				result = CharacterDatabase.PQuery("SELECT guildid FROM `guildhouses` WHERE `id` = %u", 32);
 				Field *fields = result->Fetch();
 				uint32 gilde = fields[0].GetUInt32();
 				if (gilde == 0){
@@ -893,7 +893,7 @@ public: gildenvendor() : CreatureScript("gildenvendor"){ }
 			case 70:
 			{
 				QueryResult result;
-				result = CharacterDatabase.PQuery("SELECT guildid FROM `guildhouses` WHERE `guildid` = %u", player->GetGuildId());
+				result = CharacterDatabase.PQuery("SELECT guildid FROM `guildhouses` WHERE `id` = %u", 33);
 				Field *fields = result->Fetch();
 				uint32 gilde = fields[0].GetUInt32();
 				if (gilde == 0){
@@ -911,7 +911,7 @@ public: gildenvendor() : CreatureScript("gildenvendor"){ }
 			case 71:
 			{
 				QueryResult result;
-				result = CharacterDatabase.PQuery("SELECT guildid FROM `guildhouses` WHERE `guildid` = %u", player->GetGuildId());
+				result = CharacterDatabase.PQuery("SELECT guildid FROM `guildhouses` WHERE `id` = %u",34);
 				Field *fields = result->Fetch();
 				uint32 gilde = fields[0].GetUInt32();
 				if (gilde == 0){
@@ -929,7 +929,7 @@ public: gildenvendor() : CreatureScript("gildenvendor"){ }
 			case 72:
 			{
 				QueryResult result;
-				result = CharacterDatabase.PQuery("SELECT guildid FROM `guildhouses` WHERE `guildid` = %u", player->GetGuildId());
+				result = CharacterDatabase.PQuery("SELECT guildid FROM `guildhouses` WHERE `id` = %u", 35);
 				Field *fields = result->Fetch();
 				uint32 gilde = fields[0].GetUInt32();
 				if (gilde == 0){
@@ -947,7 +947,7 @@ public: gildenvendor() : CreatureScript("gildenvendor"){ }
 			case 73:
 			{
 				QueryResult result;
-				result = CharacterDatabase.PQuery("SELECT guildid FROM `guildhouses` WHERE `guildid` = %u", player->GetGuildId());
+				result = CharacterDatabase.PQuery("SELECT guildid FROM `guildhouses` WHERE `id` = %u", 36);
 				Field *fields = result->Fetch();
 				uint32 gilde = fields[0].GetUInt32();
 				if (gilde == 0){
@@ -965,7 +965,7 @@ public: gildenvendor() : CreatureScript("gildenvendor"){ }
 			case 74:
 			{
 				QueryResult result;
-				result = CharacterDatabase.PQuery("SELECT guildid FROM `guildhouses` WHERE `guildid` = %u", player->GetGuildId());
+				result = CharacterDatabase.PQuery("SELECT guildid FROM `guildhouses` WHERE `id` = %u", 37);
 				Field *fields = result->Fetch();
 				uint32 gilde = fields[0].GetUInt32();
 				if (gilde == 0){
