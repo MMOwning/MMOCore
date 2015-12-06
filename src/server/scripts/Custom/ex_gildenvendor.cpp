@@ -342,218 +342,434 @@ public: gildenvendor() : CreatureScript("gildenvendor"){ }
 
 			case 39:
 			{
-				Gildenhausport(2, player->GetSession()->GetPlayer());
-				player->GetSession()->SendNotification("Du schaust dir nun das Gildenhaus an.");
+				QueryResult result;
+				result = CharacterDatabase.PQuery("SELECT guildid FROM `guildhouses` WHERE `guildid` = %u", player->GetGuildId());
+				Field *fields = result->Fetch();
+				uint32 gilde = fields[0].GetUInt32();
+				if (gilde == 0){
+					Gildenhausport(2, player->GetSession()->GetPlayer());
+					player->GetSession()->SendNotification("Du schaust dir nun das Gildenhaus an.");
+				}
 			}break;
 
 			case 40:
 			{
-				Gildenhausport(3, player->GetSession()->GetPlayer());
-				player->GetSession()->SendNotification("Du schaust dir nun das Gildenhaus an.");
+				QueryResult result;
+				result = CharacterDatabase.PQuery("SELECT guildid FROM `guildhouses` WHERE `guildid` = %u", player->GetGuildId());
+				Field *fields = result->Fetch();
+				uint32 gilde = fields[0].GetUInt32();
+				if (gilde == 0){
+					Gildenhausport(3, player->GetSession()->GetPlayer());
+					player->GetSession()->SendNotification("Du schaust dir nun das Gildenhaus an.");
+				}
 			}break;
 
 			case 41:
 			{
-				Gildenhausport(4, player->GetSession()->GetPlayer());
-				player->GetSession()->SendNotification("Du schaust dir nun das Gildenhaus an.");
+				QueryResult result;
+				result = CharacterDatabase.PQuery("SELECT guildid FROM `guildhouses` WHERE `guildid` = %u", player->GetGuildId());
+				Field *fields = result->Fetch();
+				uint32 gilde = fields[0].GetUInt32();
+				if (gilde == 0){
+					Gildenhausport(4, player->GetSession()->GetPlayer());
+					player->GetSession()->SendNotification("Du schaust dir nun das Gildenhaus an.");
+				}
 			}break;
 
 			case 42:
 			{
-				Gildenhausport(5, player->GetSession()->GetPlayer());
-				player->GetSession()->SendNotification("Du schaust dir nun das Gildenhaus an.");
+				QueryResult result;
+				result = CharacterDatabase.PQuery("SELECT guildid FROM `guildhouses` WHERE `guildid` = %u", player->GetGuildId());
+				Field *fields = result->Fetch();
+				uint32 gilde = fields[0].GetUInt32();
+				if (gilde == 0){
+					Gildenhausport(5, player->GetSession()->GetPlayer());
+					player->GetSession()->SendNotification("Du schaust dir nun das Gildenhaus an.");
+				}
 			}break;
 
 			case 43:
 			{
-				Gildenhausport(6, player->GetSession()->GetPlayer());
-				player->GetSession()->SendNotification("Du schaust dir nun das Gildenhaus an.");
+				QueryResult result;
+				result = CharacterDatabase.PQuery("SELECT guildid FROM `guildhouses` WHERE `guildid` = %u", player->GetGuildId());
+				Field *fields = result->Fetch();
+				uint32 gilde = fields[0].GetUInt32();
+				if (gilde == 0){
+					Gildenhausport(6, player->GetSession()->GetPlayer());
+					player->GetSession()->SendNotification("Du schaust dir nun das Gildenhaus an.");
+				}
 			}break;
 
 			case 44:
 			{
-				Gildenhausport(7, player->GetSession()->GetPlayer());
-				player->GetSession()->SendNotification("Du schaust dir nun das Gildenhaus an.");
+				QueryResult result;
+				result = CharacterDatabase.PQuery("SELECT guildid FROM `guildhouses` WHERE `guildid` = %u", player->GetGuildId());
+				Field *fields = result->Fetch();
+				uint32 gilde = fields[0].GetUInt32();
+				if (gilde == 0){
+					Gildenhausport(7, player->GetSession()->GetPlayer());
+					player->GetSession()->SendNotification("Du schaust dir nun das Gildenhaus an.");
+				}
 			}break;
 
 			case 45:
 			{
-				Gildenhausport(8, player->GetSession()->GetPlayer());
-				player->GetSession()->SendNotification("Du schaust dir nun das Gildenhaus an.");
+				QueryResult result;
+				result = CharacterDatabase.PQuery("SELECT guildid FROM `guildhouses` WHERE `guildid` = %u", player->GetGuildId());
+				Field *fields = result->Fetch();
+				uint32 gilde = fields[0].GetUInt32();
+				if (gilde == 0){
+					Gildenhausport(8, player->GetSession()->GetPlayer());
+					player->GetSession()->SendNotification("Du schaust dir nun das Gildenhaus an.");
+				}
 			}break;
 
 			case 46:
 			{
-				Gildenhausport(9, player->GetSession()->GetPlayer());
-				player->GetSession()->SendNotification("Du schaust dir nun das Gildenhaus an.");
+				QueryResult result;
+				result = CharacterDatabase.PQuery("SELECT guildid FROM `guildhouses` WHERE `guildid` = %u", player->GetGuildId());
+				Field *fields = result->Fetch();
+				uint32 gilde = fields[0].GetUInt32();
+				if (gilde == 0){
+					Gildenhausport(9, player->GetSession()->GetPlayer());
+					player->GetSession()->SendNotification("Du schaust dir nun das Gildenhaus an.");
+				}
 			}break;
 
 			case 47:
 			{
-				Gildenhausport(10, player->GetSession()->GetPlayer());
-				player->GetSession()->SendNotification("Du schaust dir nun das Gildenhaus an.");
+				QueryResult result;
+				result = CharacterDatabase.PQuery("SELECT guildid FROM `guildhouses` WHERE `guildid` = %u", player->GetGuildId());
+				Field *fields = result->Fetch();
+				uint32 gilde = fields[0].GetUInt32();
+				if (gilde == 0){
+					Gildenhausport(10, player->GetSession()->GetPlayer());
+					player->GetSession()->SendNotification("Du schaust dir nun das Gildenhaus an.");
+				}
 			}break;
 
 			case 48:
 			{
-				Gildenhausport(11, player->GetSession()->GetPlayer());
-				player->GetSession()->SendNotification("Du schaust dir nun das Gildenhaus an.");
+				QueryResult result;
+				result = CharacterDatabase.PQuery("SELECT guildid FROM `guildhouses` WHERE `guildid` = %u", player->GetGuildId());
+				Field *fields = result->Fetch();
+				uint32 gilde = fields[0].GetUInt32();
+				if (gilde == 0){
+					Gildenhausport(11, player->GetSession()->GetPlayer());
+					player->GetSession()->SendNotification("Du schaust dir nun das Gildenhaus an.");
+				}
 			}break;
 
 			case 49:
 			{
-				Gildenhausport(12, player->GetSession()->GetPlayer());
-				player->GetSession()->SendNotification("Du schaust dir nun das Gildenhaus an.");
+				QueryResult result;
+				result = CharacterDatabase.PQuery("SELECT guildid FROM `guildhouses` WHERE `guildid` = %u", player->GetGuildId());
+				Field *fields = result->Fetch();
+				uint32 gilde = fields[0].GetUInt32();
+				if (gilde == 0){
+					Gildenhausport(12, player->GetSession()->GetPlayer());
+					player->GetSession()->SendNotification("Du schaust dir nun das Gildenhaus an.");
+				}
 			}break;
 
 			case 50:
 			{
-				Gildenhausport(13, player->GetSession()->GetPlayer());
-				player->GetSession()->SendNotification("Du schaust dir nun das Gildenhaus an.");
+				QueryResult result;
+				result = CharacterDatabase.PQuery("SELECT guildid FROM `guildhouses` WHERE `guildid` = %u", player->GetGuildId());
+				Field *fields = result->Fetch();
+				uint32 gilde = fields[0].GetUInt32();
+				if (gilde == 0){
+					Gildenhausport(13, player->GetSession()->GetPlayer());
+					player->GetSession()->SendNotification("Du schaust dir nun das Gildenhaus an.");
+				}
 			}break;
 
 			case 51:
 			{
-				Gildenhausport(14, player->GetSession()->GetPlayer());
-				player->GetSession()->SendNotification("Du schaust dir nun das Gildenhaus an.");
+				QueryResult result;
+				result = CharacterDatabase.PQuery("SELECT guildid FROM `guildhouses` WHERE `guildid` = %u", player->GetGuildId());
+				Field *fields = result->Fetch();
+				uint32 gilde = fields[0].GetUInt32();
+				if (gilde == 0){
+					Gildenhausport(14, player->GetSession()->GetPlayer());
+					player->GetSession()->SendNotification("Du schaust dir nun das Gildenhaus an.");
+				}
 			}break;
 
 			case 52:
 			{
-				Gildenhausport(15, player->GetSession()->GetPlayer());
-				player->GetSession()->SendNotification("Du schaust dir nun das Gildenhaus an.");
+				QueryResult result;
+				result = CharacterDatabase.PQuery("SELECT guildid FROM `guildhouses` WHERE `guildid` = %u", player->GetGuildId());
+				Field *fields = result->Fetch();
+				uint32 gilde = fields[0].GetUInt32();
+				if (gilde == 0){
+					Gildenhausport(15, player->GetSession()->GetPlayer());
+					player->GetSession()->SendNotification("Du schaust dir nun das Gildenhaus an.");
+				}
 			}break;
 
 			case 53:
 			{
-				Gildenhausport(16, player->GetSession()->GetPlayer());
-				player->GetSession()->SendNotification("Du schaust dir nun das Gildenhaus an.");
+				QueryResult result;
+				result = CharacterDatabase.PQuery("SELECT guildid FROM `guildhouses` WHERE `guildid` = %u", player->GetGuildId());
+				Field *fields = result->Fetch();
+				uint32 gilde = fields[0].GetUInt32();
+				if (gilde == 0){
+					Gildenhausport(16, player->GetSession()->GetPlayer());
+					player->GetSession()->SendNotification("Du schaust dir nun das Gildenhaus an.");
+				}
 			}break;
 
 			case 54:
 			{
-				Gildenhausport(17, player->GetSession()->GetPlayer());
-				player->GetSession()->SendNotification("Du schaust dir nun das Gildenhaus an.");
+				QueryResult result;
+				result = CharacterDatabase.PQuery("SELECT guildid FROM `guildhouses` WHERE `guildid` = %u", player->GetGuildId());
+				Field *fields = result->Fetch();
+				uint32 gilde = fields[0].GetUInt32();
+				if (gilde == 0){
+					Gildenhausport(17, player->GetSession()->GetPlayer());
+					player->GetSession()->SendNotification("Du schaust dir nun das Gildenhaus an.");
+				}
 			}break;
 
 			case 55:
 			{
-				Gildenhausport(18, player->GetSession()->GetPlayer());
-				player->GetSession()->SendNotification("Du schaust dir nun das Gildenhaus an.");
+				QueryResult result;
+				result = CharacterDatabase.PQuery("SELECT guildid FROM `guildhouses` WHERE `guildid` = %u", player->GetGuildId());
+				Field *fields = result->Fetch();
+				uint32 gilde = fields[0].GetUInt32();
+				if (gilde == 0){
+					Gildenhausport(18, player->GetSession()->GetPlayer());
+					player->GetSession()->SendNotification("Du schaust dir nun das Gildenhaus an.");
+				}
 			}break;
 
 			case 56:
 			{
-				Gildenhausport(19, player->GetSession()->GetPlayer());
-				player->GetSession()->SendNotification("Du schaust dir nun das Gildenhaus an.");
+				QueryResult result;
+				result = CharacterDatabase.PQuery("SELECT guildid FROM `guildhouses` WHERE `guildid` = %u", player->GetGuildId());
+				Field *fields = result->Fetch();
+				uint32 gilde = fields[0].GetUInt32();
+				if (gilde == 0){
+					Gildenhausport(19, player->GetSession()->GetPlayer());
+					player->GetSession()->SendNotification("Du schaust dir nun das Gildenhaus an.");
+				}
 			}break;
 
 			case 57:
 			{
-				Gildenhausport(20, player->GetSession()->GetPlayer());
-				player->GetSession()->SendNotification("Du schaust dir nun das Gildenhaus an.");
+				QueryResult result;
+				result = CharacterDatabase.PQuery("SELECT guildid FROM `guildhouses` WHERE `guildid` = %u", player->GetGuildId());
+				Field *fields = result->Fetch();
+				uint32 gilde = fields[0].GetUInt32();
+				if (gilde == 0){
+					Gildenhausport(20, player->GetSession()->GetPlayer());
+					player->GetSession()->SendNotification("Du schaust dir nun das Gildenhaus an.");
+				}
 			}break;
 
 			case 58:
 			{
-				Gildenhausport(21, player->GetSession()->GetPlayer());
-				player->GetSession()->SendNotification("Du schaust dir nun das Gildenhaus an.");
+				QueryResult result;
+				result = CharacterDatabase.PQuery("SELECT guildid FROM `guildhouses` WHERE `guildid` = %u", player->GetGuildId());
+				Field *fields = result->Fetch();
+				uint32 gilde = fields[0].GetUInt32();
+				if (gilde == 0){
+					Gildenhausport(21, player->GetSession()->GetPlayer());
+					player->GetSession()->SendNotification("Du schaust dir nun das Gildenhaus an.");
+				}
 			}break;
 
 			case 59:
 			{
-				Gildenhausport(22, player->GetSession()->GetPlayer());
-				player->GetSession()->SendNotification("Du schaust dir nun das Gildenhaus an.");
+				QueryResult result;
+				result = CharacterDatabase.PQuery("SELECT guildid FROM `guildhouses` WHERE `guildid` = %u", player->GetGuildId());
+				Field *fields = result->Fetch();
+				uint32 gilde = fields[0].GetUInt32();
+				if (gilde == 0){
+					Gildenhausport(22, player->GetSession()->GetPlayer());
+					player->GetSession()->SendNotification("Du schaust dir nun das Gildenhaus an.");
+				}
 			}break;
 
 			case 60:
 			{
-				Gildenhausport(23, player->GetSession()->GetPlayer());
-				player->GetSession()->SendNotification("Du schaust dir nun das Gildenhaus an.");
+				QueryResult result;
+				result = CharacterDatabase.PQuery("SELECT guildid FROM `guildhouses` WHERE `guildid` = %u", player->GetGuildId());
+				Field *fields = result->Fetch();
+				uint32 gilde = fields[0].GetUInt32();
+				if (gilde == 0){
+					Gildenhausport(23, player->GetSession()->GetPlayer());
+					player->GetSession()->SendNotification("Du schaust dir nun das Gildenhaus an.");
+				}
 			}break;
 
 			case 61:
 			{
-				Gildenhausport(24, player->GetSession()->GetPlayer());
-				player->GetSession()->SendNotification("Du schaust dir nun das Gildenhaus an.");
+				QueryResult result;
+				result = CharacterDatabase.PQuery("SELECT guildid FROM `guildhouses` WHERE `guildid` = %u", player->GetGuildId());
+				Field *fields = result->Fetch();
+				uint32 gilde = fields[0].GetUInt32();
+				if (gilde == 0){
+					Gildenhausport(24, player->GetSession()->GetPlayer());
+					player->GetSession()->SendNotification("Du schaust dir nun das Gildenhaus an.");
+				}
 			}break;
 
 			case 62:
 			{
-				Gildenhausport(25, player->GetSession()->GetPlayer());
-				player->GetSession()->SendNotification("Du schaust dir nun das Gildenhaus an.");
+				QueryResult result;
+				result = CharacterDatabase.PQuery("SELECT guildid FROM `guildhouses` WHERE `guildid` = %u", player->GetGuildId());
+				Field *fields = result->Fetch();
+				uint32 gilde = fields[0].GetUInt32();
+				if (gilde == 0){
+					Gildenhausport(25, player->GetSession()->GetPlayer());
+					player->GetSession()->SendNotification("Du schaust dir nun das Gildenhaus an.");
+				}
 			}break;
 
 			case 63:
 			{
-				Gildenhausport(26, player->GetSession()->GetPlayer());
-				player->GetSession()->SendNotification("Du schaust dir nun das Gildenhaus an.");
+				QueryResult result;
+				result = CharacterDatabase.PQuery("SELECT guildid FROM `guildhouses` WHERE `guildid` = %u", player->GetGuildId());
+				Field *fields = result->Fetch();
+				uint32 gilde = fields[0].GetUInt32();
+				if (gilde == 0){
+					Gildenhausport(26, player->GetSession()->GetPlayer());
+					player->GetSession()->SendNotification("Du schaust dir nun das Gildenhaus an.");
+				}
 			}break;
 
 			case 64:
 			{
-				Gildenhausport(27, player->GetSession()->GetPlayer());
-				player->GetSession()->SendNotification("Du schaust dir nun das Gildenhaus an.");
+				QueryResult result;
+				result = CharacterDatabase.PQuery("SELECT guildid FROM `guildhouses` WHERE `guildid` = %u", player->GetGuildId());
+				Field *fields = result->Fetch();
+				uint32 gilde = fields[0].GetUInt32();
+				if (gilde == 0){
+					Gildenhausport(27, player->GetSession()->GetPlayer());
+					player->GetSession()->SendNotification("Du schaust dir nun das Gildenhaus an.");
+				}
 			}break;
 
 			case 65:
 			{
-				Gildenhausport(28, player->GetSession()->GetPlayer());
-				player->GetSession()->SendNotification("Du schaust dir nun das Gildenhaus an.");
+				QueryResult result;
+				result = CharacterDatabase.PQuery("SELECT guildid FROM `guildhouses` WHERE `guildid` = %u", player->GetGuildId());
+				Field *fields = result->Fetch();
+				uint32 gilde = fields[0].GetUInt32();
+				if (gilde == 0){
+					Gildenhausport(28, player->GetSession()->GetPlayer());
+					player->GetSession()->SendNotification("Du schaust dir nun das Gildenhaus an.");
+				}
 			}break;
 
 			case 66:
 			{
-				Gildenhausport(29, player->GetSession()->GetPlayer());
-				player->GetSession()->SendNotification("Du schaust dir nun das Gildenhaus an.");
+				QueryResult result;
+				result = CharacterDatabase.PQuery("SELECT guildid FROM `guildhouses` WHERE `guildid` = %u", player->GetGuildId());
+				Field *fields = result->Fetch();
+				uint32 gilde = fields[0].GetUInt32();
+				if (gilde == 0){
+					Gildenhausport(29, player->GetSession()->GetPlayer());
+					player->GetSession()->SendNotification("Du schaust dir nun das Gildenhaus an.");
+				}
 			}break;
 
 			case 67:
 			{
-				Gildenhausport(30, player->GetSession()->GetPlayer());
-				player->GetSession()->SendNotification("Du schaust dir nun das Gildenhaus an.");
+				QueryResult result;
+				result = CharacterDatabase.PQuery("SELECT guildid FROM `guildhouses` WHERE `guildid` = %u", player->GetGuildId());
+				Field *fields = result->Fetch();
+				uint32 gilde = fields[0].GetUInt32();
+				if (gilde == 0){
+					Gildenhausport(30, player->GetSession()->GetPlayer());
+					player->GetSession()->SendNotification("Du schaust dir nun das Gildenhaus an.");
+				}
 			}break;
 
 			case 68:
 			{
-				Gildenhausport(31, player->GetSession()->GetPlayer());
-				player->GetSession()->SendNotification("Du schaust dir nun das Gildenhaus an.");
+				QueryResult result;
+				result = CharacterDatabase.PQuery("SELECT guildid FROM `guildhouses` WHERE `guildid` = %u", player->GetGuildId());
+				Field *fields = result->Fetch();
+				uint32 gilde = fields[0].GetUInt32();
+				if (gilde == 0){
+					Gildenhausport(31, player->GetSession()->GetPlayer());
+					player->GetSession()->SendNotification("Du schaust dir nun das Gildenhaus an.");
+				}
 			}break;
 
 			case 69:
 			{
-				Gildenhausport(32, player->GetSession()->GetPlayer());
-				player->GetSession()->SendNotification("Du schaust dir nun das Gildenhaus an.");
+				QueryResult result;
+				result = CharacterDatabase.PQuery("SELECT guildid FROM `guildhouses` WHERE `guildid` = %u", player->GetGuildId());
+				Field *fields = result->Fetch();
+				uint32 gilde = fields[0].GetUInt32();
+				if (gilde == 0){
+					Gildenhausport(32, player->GetSession()->GetPlayer());
+					player->GetSession()->SendNotification("Du schaust dir nun das Gildenhaus an.");
+				}
 			}break;
 
 			case 70:
 			{
-				Gildenhausport(33, player->GetSession()->GetPlayer());
-				player->GetSession()->SendNotification("Du schaust dir nun das Gildenhaus an.");
+				QueryResult result;
+				result = CharacterDatabase.PQuery("SELECT guildid FROM `guildhouses` WHERE `guildid` = %u", player->GetGuildId());
+				Field *fields = result->Fetch();
+				uint32 gilde = fields[0].GetUInt32();
+				if (gilde == 0){
+					Gildenhausport(33, player->GetSession()->GetPlayer());
+					player->GetSession()->SendNotification("Du schaust dir nun das Gildenhaus an.");
+				}
 			}break;
 
 			case 71:
 			{
-				Gildenhausport(34, player->GetSession()->GetPlayer());
-				player->GetSession()->SendNotification("Du schaust dir nun das Gildenhaus an.");
+				QueryResult result;
+				result = CharacterDatabase.PQuery("SELECT guildid FROM `guildhouses` WHERE `guildid` = %u", player->GetGuildId());
+				Field *fields = result->Fetch();
+				uint32 gilde = fields[0].GetUInt32();
+				if (gilde == 0){
+					Gildenhausport(34, player->GetSession()->GetPlayer());
+					player->GetSession()->SendNotification("Du schaust dir nun das Gildenhaus an.");
+				}
 			}break;
 
 			case 72:
 			{
-				Gildenhausport(35, player->GetSession()->GetPlayer());
-				player->GetSession()->SendNotification("Du schaust dir nun das Gildenhaus an.");
+				QueryResult result;
+				result = CharacterDatabase.PQuery("SELECT guildid FROM `guildhouses` WHERE `guildid` = %u", player->GetGuildId());
+				Field *fields = result->Fetch();
+				uint32 gilde = fields[0].GetUInt32();
+				if (gilde == 0){
+					Gildenhausport(35, player->GetSession()->GetPlayer());
+					player->GetSession()->SendNotification("Du schaust dir nun das Gildenhaus an.");
+				}
 			}break;
 			
 			case 73:
 			{
-				Gildenhausport(36, player->GetSession()->GetPlayer());
-				player->GetSession()->SendNotification("Du schaust dir nun das Gildenhaus an.");
+				QueryResult result;
+				result = CharacterDatabase.PQuery("SELECT guildid FROM `guildhouses` WHERE `guildid` = %u", player->GetGuildId());
+				Field *fields = result->Fetch();
+				uint32 gilde = fields[0].GetUInt32();
+				if (gilde == 0){
+					Gildenhausport(36, player->GetSession()->GetPlayer());
+					player->GetSession()->SendNotification("Du schaust dir nun das Gildenhaus an.");
+				}
 			}break;
 
 			case 74:
 			{
-				Gildenhausport(37, player->GetSession()->GetPlayer());
-				player->GetSession()->SendNotification("Du schaust dir nun das Gildenhaus an.");
+				QueryResult result;
+				result = CharacterDatabase.PQuery("SELECT guildid FROM `guildhouses` WHERE `guildid` = %u", player->GetGuildId());
+				Field *fields = result->Fetch();
+				uint32 gilde = fields[0].GetUInt32();
+				if (gilde == 0){
+					Gildenhausport(37, player->GetSession()->GetPlayer());
+					player->GetSession()->SendNotification("Du schaust dir nun das Gildenhaus an.");
+				}
 			}break;
 
 
