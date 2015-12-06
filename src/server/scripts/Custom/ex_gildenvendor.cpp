@@ -125,11 +125,26 @@ public: gildenvendor() : CreatureScript("gildenvendor"){ }
 						return;
 					}
 				}
+				
+			if (memberanzahlsql < groesse){
+				player->GetSession()->SendNotification("Deine Gilde ist zu klein.");
+				return;
+			}
 
-				else {
-					player->GetSession()->SendNotification("Das Gildenhaus ist belegt, deine Gilde zu klein oder deine Gilde besitzt schon ein Gildenhaus");
-					return;
-				}
+			if (gildenidalt != 0){
+				player->GetSession()->SendNotification("Das Gildenhaus ist schon belegt.");
+				return;
+			}
+
+			if (anzahl != 0){
+				player->GetSession()->SendNotification("Deine Gilde besitzt schon ein Gildenhaus.");
+				return;
+			}
+
+			else {
+				player->GetSession()->SendNotification("Error.");
+				return;
+			}
 			
 
 		}
