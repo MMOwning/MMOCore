@@ -33,6 +33,61 @@ class gildenvendor : public CreatureScript
 public: gildenvendor() : CreatureScript("gildenvendor"){ }
 
 
+		void Gildenhausport(uint32 gildenhausid, Player* chr){
+
+			
+
+			if (chr->IsInFlight())
+			{
+				//pokud hrac leti
+				chr->GetSession()->SendNotification("Du fliegst");
+				//SetSentErrorMessage(true);
+				return;
+			}
+
+			if (chr->IsInCombat())
+			{
+				//pokud je hrac v combatu
+				chr->GetSession()->SendNotification("Du bist im Kampf");
+				
+				//SetSentErrorMessage(true);
+				return;
+			}
+
+			if (chr->GetGuildId() == 0)
+			{
+				//pokud hrac nema guildu
+				chr->GetSession()->SendNotification("Du bist in keiner Gilde.");
+				return;
+			}
+
+			QueryResult result;
+			result = CharacterDatabase.PQuery("SELECT `x`, `y`, `z`, `map` FROM `guildhouses` WHERE `guildId` = %u", gildenhausid);
+			if (!result)
+			{
+				//pokud guilda nema guildhouse zapsany v tabulce guildhouses
+				chr->GetSession()->SendNotification("Keine Gildeninformationen hinterlegt.");
+				return;
+			}
+
+
+			float x, y, z;
+			uint32 map;
+
+			Field *fields = result->Fetch();
+			x = fields[0].GetFloat();
+			y = fields[1].GetFloat();
+			z = fields[2].GetFloat();
+			map = fields[3].GetUInt32();
+
+
+			chr->SaveRecallPosition();
+			chr->TeleportTo(map, x, y, z, 0);
+			chr->SaveToDB();
+			return;
+
+		}
+
 		void Gildenhauszuordnung(uint32 gildenidneu, uint32 hausid, uint32 groesse, uint32 kosten, Player* player){
 			
 			QueryResult result;
@@ -57,7 +112,7 @@ public: gildenvendor() : CreatureScript("gildenvendor"){ }
 			uint32 anzahl = feld[0].GetUInt32();
 
 		
-				if (gildenidalt == 0 && anzahl == 0 && gildeplayer != 0 && groesse >= memberanzahlsql){
+			if (gildenidalt == 0 && anzahl == 0 && gildeplayer != 0 && memberanzahlsql >= groesse){
 
 					if (player->HasItemCount(200000, kosten)){
 						player->DestroyItemCount(200000, kosten, true, false);;
@@ -95,6 +150,7 @@ public: gildenvendor() : CreatureScript("gildenvendor"){ }
 				if (guid == leaderid){
 					player->ADD_GOSSIP_ITEM(7, "Gildenhaeuser kaufen", GOSSIP_SENDER_MAIN, 0);
 					player->ADD_GOSSIP_ITEM(7, "Gildenhaeuser verkaufen", GOSSIP_SENDER_MAIN, 1);
+					player->ADD_GOSSIP_ITEM(7, "Gildenhaeuser ansehen", GOSSIP_SENDER_MAIN, 38);
 					player->PlayerTalkClass->SendGossipMenu(907, _creature->GetGUID());
 
 					return true;
@@ -120,18 +176,105 @@ public: gildenvendor() : CreatureScript("gildenvendor"){ }
 			{
 			case 0:
 			{
-
 				player->PlayerTalkClass->ClearMenus();
-				player->ADD_GOSSIP_ITEM(7, "Tauren Village at Veiled Sea", GOSSIP_SENDER_MAIN, 2);
+				
+				player->ADD_GOSSIP_ITEM(7, "Tauren village at Veiled Sea (Silithus)" , GOSSIP_SENDER_MAIN, 2);
 				player->ADD_GOSSIP_ITEM(7, "Fishing outside an Nortshire Abbey", GOSSIP_SENDER_MAIN, 3);
 				player->ADD_GOSSIP_ITEM(7, "Troll Village in mountains", GOSSIP_SENDER_MAIN, 4);
 				player->ADD_GOSSIP_ITEM(7, "Dwarven village outside Ironforge", GOSSIP_SENDER_MAIN, 5);
 				player->ADD_GOSSIP_ITEM(7, "Taruen Camp (Mulgore)", GOSSIP_SENDER_MAIN, 6);
+				player->ADD_GOSSIP_ITEM(7, "Shadowfang Keep an outside instance ", GOSSIP_SENDER_MAIN, 7);
+				player->ADD_GOSSIP_ITEM(7, "Harbor house outside Stormwind (Elwynn Forest)", GOSSIP_SENDER_MAIN, 8);
+				player->ADD_GOSSIP_ITEM(7, "Empty jail between canals (Stormwind)", GOSSIP_SENDER_MAIN, 9);
+				player->ADD_GOSSIP_ITEM(7, "Old Ironforge", GOSSIP_SENDER_MAIN, 10);
+				player->ADD_GOSSIP_ITEM(7, "Ironforge Airport", GOSSIP_SENDER_MAIN, 11);
+				player->ADD_GOSSIP_ITEM(7, "Azshara Crater instance (Alliance entrance)", GOSSIP_SENDER_MAIN, 12);
+				player->ADD_GOSSIP_ITEM(7, "Azshara Crater instance (Horde entrance)", GOSSIP_SENDER_MAIN,13);
+				player->ADD_GOSSIP_ITEM(7, "Quel'Thalas Tower", GOSSIP_SENDER_MAIN, 14);
+				player->ADD_GOSSIP_ITEM(7, "Crashed gnome airplane ", GOSSIP_SENDER_MAIN, 15);
+				player->ADD_GOSSIP_ITEM(7, "Zul'Gurub an outside instance ", GOSSIP_SENDER_MAIN, 16);
+				player->ADD_GOSSIP_ITEM(7, "Goblin village (Tanaris, South Seas)", GOSSIP_SENDER_MAIN, 17);
+				player->ADD_GOSSIP_ITEM(7, "Villains camp outside an Stormwind ", GOSSIP_SENDER_MAIN, 18);
+				player->ADD_GOSSIP_ITEM(7, "Stratholm an outside instance", GOSSIP_SENDER_MAIN, 19);
+				player->ADD_GOSSIP_ITEM(7, "Kalimdor Hyjal", GOSSIP_SENDER_MAIN, 20);
+				player->ADD_GOSSIP_ITEM(7, "The Ring of Valor", GOSSIP_SENDER_MAIN, 21);
+				player->ADD_GOSSIP_ITEM(7, "Stonetalon Logging Camp", GOSSIP_SENDER_MAIN, 22);
+				player->ADD_GOSSIP_ITEM(7, "Stonetalon Ruins", GOSSIP_SENDER_MAIN, 23);
+				player->ADD_GOSSIP_ITEM(7, "Teldrassil Furbold camp", GOSSIP_SENDER_MAIN, 24);
+				player->ADD_GOSSIP_ITEM(7, "Wetlands mountain camp", GOSSIP_SENDER_MAIN, 25);
+				player->ADD_GOSSIP_ITEM(7, "Ortell's Hideout", GOSSIP_SENDER_MAIN, 26);
+				player->ADD_GOSSIP_ITEM(7, "Stranglethorn Secret Cave", GOSSIP_SENDER_MAIN, 27);
+				player->ADD_GOSSIP_ITEM(7, "Karazhan Smiley", GOSSIP_SENDER_MAIN, 28);
+				player->ADD_GOSSIP_ITEM(7, "Well of the Forgotten", GOSSIP_SENDER_MAIN, 29);
+				player->ADD_GOSSIP_ITEM(7, "Undercity Top Tier", GOSSIP_SENDER_MAIN, 30);
+				player->ADD_GOSSIP_ITEM(7, "Stormwind Cut-Throat Alley", GOSSIP_SENDER_MAIN, 31);
+				player->ADD_GOSSIP_ITEM(7, "Forgotten gnome camp", GOSSIP_SENDER_MAIN, 32);
+				player->ADD_GOSSIP_ITEM(7, "Outland Nagrand : Tomb", GOSSIP_SENDER_MAIN, 33);
+				player->ADD_GOSSIP_ITEM(7, "Outland Nagrand: Challe's Home for Little Tykes", GOSSIP_SENDER_MAIN, 34);
+				player->ADD_GOSSIP_ITEM(7, "Outland Netherstorm: Nova's Shrine", GOSSIP_SENDER_MAIN, 35);
+				player->ADD_GOSSIP_ITEM(7, "Wald von Elwynn", GOSSIP_SENDER_MAIN, 36);
+				player->ADD_GOSSIP_ITEM(7, "Troll Village in mountains 2 (Darkshore)", GOSSIP_SENDER_MAIN, 37);
+				
+
 				player->PlayerTalkClass->SendGossipMenu(907, creature->GetGUID());
 				return true;
 
 			}break;
 
+
+			case 38:
+			{
+				player->PlayerTalkClass->ClearMenus();
+
+				player->ADD_GOSSIP_ITEM(7, "Tauren village at Veiled Sea (Silithus)", GOSSIP_SENDER_MAIN, 39);
+				player->ADD_GOSSIP_ITEM(7, "Fishing outside an Nortshire Abbey", GOSSIP_SENDER_MAIN, 40);
+				player->ADD_GOSSIP_ITEM(7, "Troll Village in mountains", GOSSIP_SENDER_MAIN, 41);
+				player->ADD_GOSSIP_ITEM(7, "Dwarven village outside Ironforge", GOSSIP_SENDER_MAIN, 42);
+				player->ADD_GOSSIP_ITEM(7, "Taruen Camp (Mulgore)", GOSSIP_SENDER_MAIN, 43);
+				player->ADD_GOSSIP_ITEM(7, "Shadowfang Keep an outside instance ", GOSSIP_SENDER_MAIN, 44);
+				player->ADD_GOSSIP_ITEM(7, "Harbor house outside Stormwind (Elwynn Forest)", GOSSIP_SENDER_MAIN, 45);
+				player->ADD_GOSSIP_ITEM(7, "Empty jail between canals (Stormwind)", GOSSIP_SENDER_MAIN, 46);
+				player->ADD_GOSSIP_ITEM(7, "Old Ironforge", GOSSIP_SENDER_MAIN, 47);
+				player->ADD_GOSSIP_ITEM(7, "Ironforge Airport", GOSSIP_SENDER_MAIN, 48);
+				player->ADD_GOSSIP_ITEM(7, "Azshara Crater instance (Alliance entrance)", GOSSIP_SENDER_MAIN, 49);
+				player->ADD_GOSSIP_ITEM(7, "Azshara Crater instance (Horde entrance)", GOSSIP_SENDER_MAIN, 50);
+				player->ADD_GOSSIP_ITEM(7, "Quel'Thalas Tower", GOSSIP_SENDER_MAIN, 51);
+				player->ADD_GOSSIP_ITEM(7, "Crashed gnome airplane ", GOSSIP_SENDER_MAIN, 52);
+				player->ADD_GOSSIP_ITEM(7, "Zul'Gurub an outside instance ", GOSSIP_SENDER_MAIN, 53);
+				player->ADD_GOSSIP_ITEM(7, "Goblin village (Tanaris, South Seas)", GOSSIP_SENDER_MAIN, 54);
+				player->ADD_GOSSIP_ITEM(7, "Villains camp outside an Stormwind ", GOSSIP_SENDER_MAIN, 55);
+				player->ADD_GOSSIP_ITEM(7, "Stratholm an outside instance", GOSSIP_SENDER_MAIN, 56);
+				player->ADD_GOSSIP_ITEM(7, "Kalimdor Hyjal", GOSSIP_SENDER_MAIN, 57);
+				player->ADD_GOSSIP_ITEM(7, "The Ring of Valor", GOSSIP_SENDER_MAIN, 58);
+				player->ADD_GOSSIP_ITEM(7, "Stonetalon Logging Camp", GOSSIP_SENDER_MAIN, 59);
+				player->ADD_GOSSIP_ITEM(7, "Stonetalon Ruins", GOSSIP_SENDER_MAIN, 60);
+				player->ADD_GOSSIP_ITEM(7, "Teldrassil Furbold camp", GOSSIP_SENDER_MAIN, 61);
+				player->ADD_GOSSIP_ITEM(7, "Wetlands mountain camp", GOSSIP_SENDER_MAIN, 62);
+				player->ADD_GOSSIP_ITEM(7, "Ortell's Hideout", GOSSIP_SENDER_MAIN, 63);
+				player->ADD_GOSSIP_ITEM(7, "Stranglethorn Secret Cave", GOSSIP_SENDER_MAIN, 64);
+				player->ADD_GOSSIP_ITEM(7, "Karazhan Smiley", GOSSIP_SENDER_MAIN, 65);
+				player->ADD_GOSSIP_ITEM(7, "Well of the Forgotten", GOSSIP_SENDER_MAIN, 66);
+				player->ADD_GOSSIP_ITEM(7, "Undercity Top Tier", GOSSIP_SENDER_MAIN, 67);
+				player->ADD_GOSSIP_ITEM(7, "Stormwind Cut-Throat Alley", GOSSIP_SENDER_MAIN, 68);
+				player->ADD_GOSSIP_ITEM(7, "Forgotten gnome camp", GOSSIP_SENDER_MAIN, 69);
+				player->ADD_GOSSIP_ITEM(7, "Outland Nagrand : Tomb", GOSSIP_SENDER_MAIN, 70);
+				player->ADD_GOSSIP_ITEM(7, "Outland Nagrand: Challe's Home for Little Tykes", GOSSIP_SENDER_MAIN, 71);
+				player->ADD_GOSSIP_ITEM(7, "Outland Netherstorm: Nova's Shrine", GOSSIP_SENDER_MAIN, 72);
+				player->ADD_GOSSIP_ITEM(7, "Wald von Elwynn", GOSSIP_SENDER_MAIN, 73);
+				player->ADD_GOSSIP_ITEM(7, "Troll Village in mountains 2 (Darkshore)", GOSSIP_SENDER_MAIN, 74);
+
+
+				player->PlayerTalkClass->SendGossipMenu(907, creature->GetGUID());
+				return true;
+
+			}break;
+
+
+			case 39:
+			{
+				Gildenhausport(2, player->GetSession()->GetPlayer());
+				player->GetSession()->SendNotification("Du schaust dir nun das Gildenhaus an.");
+			}break;
 
 			case 1:
 			{
