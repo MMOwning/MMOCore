@@ -150,7 +150,7 @@ public: gildenvendor() : CreatureScript("gildenvendor"){ }
 				if (guid == leaderid){
 					player->ADD_GOSSIP_ITEM(7, "Gildenhaus kaufen", GOSSIP_SENDER_MAIN, 0);
 					player->ADD_GOSSIP_ITEM(7, "Gildenhaus verkaufen", GOSSIP_SENDER_MAIN, 1);
-					player->ADD_GOSSIP_ITEM(7, "Gildenhaus ansehen", GOSSIP_SENDER_MAIN, 38);
+					player->ADD_GOSSIP_ITEM(7, "Gildenhaus ansehen", GOSSIP_SENDER_MAIN, 120);
 					player->PlayerTalkClass->SendGossipMenu(907, _creature->GetGUID());
 
 					return true;
@@ -182,16 +182,16 @@ public: gildenvendor() : CreatureScript("gildenvendor"){ }
 				player->ADD_GOSSIP_ITEM(7, "Fishing outside an Nortshire Abbey", GOSSIP_SENDER_MAIN, 3);
 				player->ADD_GOSSIP_ITEM(7, "Troll Village in mountains", GOSSIP_SENDER_MAIN, 4);
 				player->ADD_GOSSIP_ITEM(7, "Dwarven village outside Ironforge", GOSSIP_SENDER_MAIN, 5);
-				player->ADD_GOSSIP_ITEM(7, "Dwarven village (Arathi Highlands, Forbidding Sea)", GOSSIP_SENDER_MAIN, 80);
-				player->ADD_GOSSIP_ITEM(7, "Taruen Camp (Mulgore)", GOSSIP_SENDER_MAIN, 6);
-				player->ADD_GOSSIP_ITEM(7, "Shadowfang Keep an outside instance ", GOSSIP_SENDER_MAIN, 7);
-				player->ADD_GOSSIP_ITEM(7, "Harbor house outside Stormwind (Elwynn Forest)", GOSSIP_SENDER_MAIN, 8);
-				player->ADD_GOSSIP_ITEM(7, "Empty jail between canals (Stormwind)", GOSSIP_SENDER_MAIN, 9);
-				player->ADD_GOSSIP_ITEM(7, "Old Ironforge", GOSSIP_SENDER_MAIN, 10);
-				player->ADD_GOSSIP_ITEM(7, "Ironforge Airport", GOSSIP_SENDER_MAIN, 11);
-				player->ADD_GOSSIP_ITEM(7, "Azshara Crater instance (Alliance entrance)", GOSSIP_SENDER_MAIN, 12);
-				player->ADD_GOSSIP_ITEM(7, "Azshara Crater instance (Horde entrance)", GOSSIP_SENDER_MAIN,13);
-				player->ADD_GOSSIP_ITEM(7, "Quel'Thalas Tower", GOSSIP_SENDER_MAIN, 14);
+				player->ADD_GOSSIP_ITEM(7, "Dwarven village (Arathi Highlands, Forbidding Sea)", GOSSIP_SENDER_MAIN, 6);
+				player->ADD_GOSSIP_ITEM(7, "Taruen Camp (Mulgore)", GOSSIP_SENDER_MAIN, 7);
+				player->ADD_GOSSIP_ITEM(7, "Shadowfang Keep an outside instance ", GOSSIP_SENDER_MAIN, 8);
+				player->ADD_GOSSIP_ITEM(7, "Harbor house outside Stormwind (Elwynn Forest)", GOSSIP_SENDER_MAIN, 9);
+				player->ADD_GOSSIP_ITEM(7, "Empty jail between canals (Stormwind)", GOSSIP_SENDER_MAIN, 10);
+				player->ADD_GOSSIP_ITEM(7, "Old Ironforge", GOSSIP_SENDER_MAIN, 11);
+				player->ADD_GOSSIP_ITEM(7, "Ironforge Airport", GOSSIP_SENDER_MAIN, 12);
+				player->ADD_GOSSIP_ITEM(7, "Azshara Crater instance (Alliance entrance)", GOSSIP_SENDER_MAIN, 13);
+				player->ADD_GOSSIP_ITEM(7, "Azshara Crater instance (Horde entrance)", GOSSIP_SENDER_MAIN,14);
+				player->ADD_GOSSIP_ITEM(7, "Quel'Thalas Tower", GOSSIP_SENDER_MAIN, 15);
 				player->ADD_GOSSIP_ITEM(7, "2. Seite", GOSSIP_SENDER_MAIN, 78);			
 				player->ADD_GOSSIP_ITEM(7, "3. Seite ", GOSSIP_SENDER_MAIN, 79);
 				
@@ -205,18 +205,18 @@ public: gildenvendor() : CreatureScript("gildenvendor"){ }
 			case 78:
 			{
 				player->PlayerTalkClass->ClearMenus();
-				player->ADD_GOSSIP_ITEM(7, "Crashed gnome airplane ", GOSSIP_SENDER_MAIN, 15);
-				player->ADD_GOSSIP_ITEM(7, "Zul'Gurub an outside instance ", GOSSIP_SENDER_MAIN, 16);
-				player->ADD_GOSSIP_ITEM(7, "Goblin village (Tanaris, South Seas)", GOSSIP_SENDER_MAIN, 17);
-				player->ADD_GOSSIP_ITEM(7, "Villains camp outside an Stormwind ", GOSSIP_SENDER_MAIN, 18);
-				player->ADD_GOSSIP_ITEM(7, "Stratholm an outside instance", GOSSIP_SENDER_MAIN, 19);
-				player->ADD_GOSSIP_ITEM(7, "Kalimdor Hyjal", GOSSIP_SENDER_MAIN, 20);
-				player->ADD_GOSSIP_ITEM(7, "The Ring of Valor", GOSSIP_SENDER_MAIN, 21);
-				player->ADD_GOSSIP_ITEM(7, "Stonetalon Logging Camp", GOSSIP_SENDER_MAIN, 22);
-				player->ADD_GOSSIP_ITEM(7, "Stonetalon Ruins", GOSSIP_SENDER_MAIN, 23);
-				player->ADD_GOSSIP_ITEM(7, "Teldrassil Furbold camp", GOSSIP_SENDER_MAIN, 24);
-				player->ADD_GOSSIP_ITEM(7, "Wetlands mountain camp", GOSSIP_SENDER_MAIN, 25);
-				player->ADD_GOSSIP_ITEM(7, "Ortell's Hideout", GOSSIP_SENDER_MAIN, 26);
+				player->ADD_GOSSIP_ITEM(7, "Crashed gnome airplane ", GOSSIP_SENDER_MAIN, 16);
+				player->ADD_GOSSIP_ITEM(7, "Zul'Gurub an outside instance ", GOSSIP_SENDER_MAIN, 17);
+				player->ADD_GOSSIP_ITEM(7, "Goblin village (Tanaris, South Seas)", GOSSIP_SENDER_MAIN, 18);
+				player->ADD_GOSSIP_ITEM(7, "Villains camp outside an Stormwind ", GOSSIP_SENDER_MAIN, 19);
+				player->ADD_GOSSIP_ITEM(7, "Stratholm an outside instance", GOSSIP_SENDER_MAIN, 20);
+				player->ADD_GOSSIP_ITEM(7, "Kalimdor Hyjal", GOSSIP_SENDER_MAIN, 21);
+				player->ADD_GOSSIP_ITEM(7, "The Ring of Valor", GOSSIP_SENDER_MAIN, 22);
+				player->ADD_GOSSIP_ITEM(7, "Stonetalon Logging Camp", GOSSIP_SENDER_MAIN, 23);
+				player->ADD_GOSSIP_ITEM(7, "Stonetalon Ruins", GOSSIP_SENDER_MAIN, 24);
+				player->ADD_GOSSIP_ITEM(7, "Teldrassil Furbold camp", GOSSIP_SENDER_MAIN, 25);
+				player->ADD_GOSSIP_ITEM(7, "Wetlands mountain camp", GOSSIP_SENDER_MAIN, 26);
+				player->ADD_GOSSIP_ITEM(7, "Ortell's Hideout", GOSSIP_SENDER_MAIN, 27);
 				player->ADD_GOSSIP_ITEM(7, "1. Seite", GOSSIP_SENDER_MAIN, 0);
 				player->ADD_GOSSIP_ITEM(7, "3. Seite ", GOSSIP_SENDER_MAIN, 79);
 
@@ -229,17 +229,17 @@ public: gildenvendor() : CreatureScript("gildenvendor"){ }
 			{
 
 				player->PlayerTalkClass->ClearMenus();
-				player->ADD_GOSSIP_ITEM(7, "Stranglethorn Secret Cave", GOSSIP_SENDER_MAIN, 27);
-				player->ADD_GOSSIP_ITEM(7, "Karazhan Smiley", GOSSIP_SENDER_MAIN, 28);
-				player->ADD_GOSSIP_ITEM(7, "Well of the Forgotten", GOSSIP_SENDER_MAIN, 29);
-				player->ADD_GOSSIP_ITEM(7, "Undercity Top Tier", GOSSIP_SENDER_MAIN, 30);
-				player->ADD_GOSSIP_ITEM(7, "Stormwind Cut-Throat Alley", GOSSIP_SENDER_MAIN, 31);
-				player->ADD_GOSSIP_ITEM(7, "Forgotten gnome camp", GOSSIP_SENDER_MAIN, 32);
-				player->ADD_GOSSIP_ITEM(7, "Outland Nagrand : Tomb", GOSSIP_SENDER_MAIN, 33);
-				player->ADD_GOSSIP_ITEM(7, "Outland Nagrand: Challe's Home for Little Tykes", GOSSIP_SENDER_MAIN, 34);
-				player->ADD_GOSSIP_ITEM(7, "Outland Netherstorm: Nova's Shrine", GOSSIP_SENDER_MAIN, 35);
-				player->ADD_GOSSIP_ITEM(7, "Wald von Elwynn", GOSSIP_SENDER_MAIN, 36);
-				player->ADD_GOSSIP_ITEM(7, "Troll Village in mountains 2 (Darkshore)", GOSSIP_SENDER_MAIN, 37);
+				player->ADD_GOSSIP_ITEM(7, "Stranglethorn Secret Cave", GOSSIP_SENDER_MAIN, 28);
+				player->ADD_GOSSIP_ITEM(7, "Karazhan Smiley", GOSSIP_SENDER_MAIN, 29);
+				player->ADD_GOSSIP_ITEM(7, "Well of the Forgotten", GOSSIP_SENDER_MAIN, 30);
+				player->ADD_GOSSIP_ITEM(7, "Undercity Top Tier", GOSSIP_SENDER_MAIN, 31);
+				player->ADD_GOSSIP_ITEM(7, "Stormwind Cut-Throat Alley", GOSSIP_SENDER_MAIN, 32);
+				player->ADD_GOSSIP_ITEM(7, "Forgotten gnome camp", GOSSIP_SENDER_MAIN, 33);
+				player->ADD_GOSSIP_ITEM(7, "Outland Nagrand : Tomb", GOSSIP_SENDER_MAIN, 34);
+				player->ADD_GOSSIP_ITEM(7, "Outland Nagrand: Challe's Home for Little Tykes", GOSSIP_SENDER_MAIN, 35);
+				player->ADD_GOSSIP_ITEM(7, "Outland Netherstorm: Nova's Shrine", GOSSIP_SENDER_MAIN, 36);
+				player->ADD_GOSSIP_ITEM(7, "Wald von Elwynn", GOSSIP_SENDER_MAIN, 37);
+				player->ADD_GOSSIP_ITEM(7, "Troll Village in mountains 2 (Darkshore)", GOSSIP_SENDER_MAIN, 38);
 
 				player->ADD_GOSSIP_ITEM(7, "1. Seite", GOSSIP_SENDER_MAIN, 0);
 				player->ADD_GOSSIP_ITEM(7, "2. Seite ", GOSSIP_SENDER_MAIN, 78);
@@ -248,7 +248,7 @@ public: gildenvendor() : CreatureScript("gildenvendor"){ }
 				return true;
 			}break;
 
-			case 38:
+			case 120:
 			{
 				player->PlayerTalkClass->ClearMenus();
 
@@ -256,6 +256,7 @@ public: gildenvendor() : CreatureScript("gildenvendor"){ }
 				player->ADD_GOSSIP_ITEM(7, "Fishing outside an Nortshire Abbey", GOSSIP_SENDER_MAIN, 40);
 				player->ADD_GOSSIP_ITEM(7, "Troll Village in mountains", GOSSIP_SENDER_MAIN, 41);
 				player->ADD_GOSSIP_ITEM(7, "Dwarven village outside Ironforge", GOSSIP_SENDER_MAIN, 42);
+				player->ADD_GOSSIP_ITEM(7, "Dwarven village (Arathi Highlands, Forbidding Sea)", GOSSIP_SENDER_MAIN, 81);
 				player->ADD_GOSSIP_ITEM(7, "Taruen Camp (Mulgore)", GOSSIP_SENDER_MAIN, 43);
 				player->ADD_GOSSIP_ITEM(7, "Shadowfang Keep an outside instance ", GOSSIP_SENDER_MAIN, 44);
 				player->ADD_GOSSIP_ITEM(7, "Harbor house outside Stormwind (Elwynn Forest)", GOSSIP_SENDER_MAIN, 45);
@@ -594,7 +595,7 @@ public: gildenvendor() : CreatureScript("gildenvendor"){ }
 				Field *fields = result->Fetch();
 				uint32 gilde = fields[0].GetUInt32();
 				if (gilde == 0){
-					Gildenhausport(18, player->GetSession()->GetPlayer());
+					Gildenhausport(17, player->GetSession()->GetPlayer());
 					player->GetSession()->SendNotification("Du schaust dir nun das Gildenhaus an.");
 				}
 
@@ -985,6 +986,15 @@ public: gildenvendor() : CreatureScript("gildenvendor"){ }
 
 			case 80:
 			{
+				uint32 gildenid = player->GetGuildId();
+				// 1: gildenID , 2: GildenhausID ,	3: Kosten ,   4: Playerarray
+				Gildenhauszuordnung(gildenid, 6, 10, 30, player->GetSession()->GetPlayer());
+				player->PlayerTalkClass->SendCloseGossip();
+			}break;
+
+
+			case 81:
+			{
 				QueryResult result;
 				result = CharacterDatabase.PQuery("SELECT guildid FROM `guildhouses` WHERE `id` = %u", 6);
 				Field *fields = result->Fetch();
@@ -1000,6 +1010,7 @@ public: gildenvendor() : CreatureScript("gildenvendor"){ }
 					return true;
 				}
 			}break;
+
 
 
 			case 1:
@@ -1168,14 +1179,16 @@ public: gildenvendor() : CreatureScript("gildenvendor"){ }
 			case 16:
 			{
 				uint32 gildenid = player->GetGuildId();
-
+				// Crashed gnome airplane (between Dun Morogh and Searing Gorge)
+				Gildenhauszuordnung(gildenid, 16, 25, 30, player->GetSession()->GetPlayer());
 				player->PlayerTalkClass->SendCloseGossip();
 			}break;
 
 			case 17:
 			{
 				uint32 gildenid = player->GetGuildId();
-
+				// ZulGurub an outside instance (Stranglethorn Vale)
+				Gildenhauszuordnung(gildenid, 17, 25, 40, player->GetSession()->GetPlayer());
 				player->PlayerTalkClass->SendCloseGossip();
 			}break;
 
@@ -1183,6 +1196,8 @@ public: gildenvendor() : CreatureScript("gildenvendor"){ }
 			{
 				uint32 gildenid = player->GetGuildId();
 
+				// Goblin village (Tanaris, South Seas)
+				Gildenhauszuordnung(gildenid, 18, 50, 50, player->GetSession()->GetPlayer());
 				player->PlayerTalkClass->SendCloseGossip();
 			}break;
 
@@ -1190,14 +1205,16 @@ public: gildenvendor() : CreatureScript("gildenvendor"){ }
 			case 19:
 			{
 				uint32 gildenid = player->GetGuildId();
-
+				// Villains camp outside an Stormwind (Elwynn Forest)
+				Gildenhauszuordnung(gildenid, 19, 10, 20, player->GetSession()->GetPlayer());
 				player->PlayerTalkClass->SendCloseGossip();
 			}break;
 
 			case 20:
 			{
 				uint32 gildenid = player->GetGuildId();
-
+				// Stratholm an outside instance
+				Gildenhauszuordnung(gildenid, 20, 50, 50, player->GetSession()->GetPlayer());
 				player->PlayerTalkClass->SendCloseGossip();
 			}break;
 
@@ -1205,6 +1222,8 @@ public: gildenvendor() : CreatureScript("gildenvendor"){ }
 			{
 				uint32 gildenid = player->GetGuildId();
 
+				// Kalimdor Hyjal (Aka World Tree)
+				Gildenhauszuordnung(gildenid, 21, 50, 50, player->GetSession()->GetPlayer());
 				player->PlayerTalkClass->SendCloseGossip();
 			}break;
 
@@ -1212,7 +1231,8 @@ public: gildenvendor() : CreatureScript("gildenvendor"){ }
 			case 22:
 			{
 				uint32 gildenid = player->GetGuildId();
-
+				// The Ring of Valor (Aka. Orgrimmar Arena)
+				Gildenhauszuordnung(gildenid, 22, 10, 30, player->GetSession()->GetPlayer());
 				player->PlayerTalkClass->SendCloseGossip();
 			}break;
 
@@ -1220,7 +1240,8 @@ public: gildenvendor() : CreatureScript("gildenvendor"){ }
 			case 23:
 			{
 				uint32 gildenid = player->GetGuildId();
-
+				// Stonetalon Logging Camp
+				Gildenhauszuordnung(gildenid, 23, 25, 40, player->GetSession()->GetPlayer());
 				player->PlayerTalkClass->SendCloseGossip();
 			}break;
 
@@ -1229,6 +1250,8 @@ public: gildenvendor() : CreatureScript("gildenvendor"){ }
 			{
 				uint32 gildenid = player->GetGuildId();
 
+				// Stonetalon Ruins
+				Gildenhauszuordnung(gildenid, 24, 15, 25, player->GetSession()->GetPlayer());
 				player->PlayerTalkClass->SendCloseGossip();
 			}break;
 
@@ -1236,7 +1259,8 @@ public: gildenvendor() : CreatureScript("gildenvendor"){ }
 			case 25:
 			{
 				uint32 gildenid = player->GetGuildId();
-
+				// Teldrassil Furbold camp
+				Gildenhauszuordnung(gildenid, 25, 10, 20, player->GetSession()->GetPlayer());
 				player->PlayerTalkClass->SendCloseGossip();
 			}break;
 
@@ -1245,13 +1269,16 @@ public: gildenvendor() : CreatureScript("gildenvendor"){ }
 			{
 				uint32 gildenid = player->GetGuildId();
 
+				// Wetlands mountain camp -> würde ich nicht verwenden!!! (oder für eine 1-Mann Gilde *gg*)
+				Gildenhauszuordnung(gildenid, 26, 10, 20, player->GetSession()->GetPlayer());
 				player->PlayerTalkClass->SendCloseGossip();
 			}break;
 
 			case 27:
 			{
 				uint32 gildenid = player->GetGuildId();
-
+				// Ortells Hideout
+				Gildenhauszuordnung(gildenid, 27, 20, 40, player->GetSession()->GetPlayer());
 				player->PlayerTalkClass->SendCloseGossip();
 			}break;
 
@@ -1259,6 +1286,8 @@ public: gildenvendor() : CreatureScript("gildenvendor"){ }
 			{
 				uint32 gildenid = player->GetGuildId();
 
+				// Stranglethorn Secret Cave
+				Gildenhauszuordnung(gildenid, 28, 20, 30, player->GetSession()->GetPlayer());
 				player->PlayerTalkClass->SendCloseGossip();
 			}break;
 
@@ -1266,6 +1295,8 @@ public: gildenvendor() : CreatureScript("gildenvendor"){ }
 			case 29:
 			{
 				uint32 gildenid = player->GetGuildId();
+				// Karazhan Smiley -> würde ich nicht verwenden -> Man versperrt damit den mit Absicht verbauten Weg von Blizz!!!
+				Gildenhauszuordnung(gildenid, 29, 10, 30, player->GetSession()->GetPlayer());
 
 				player->PlayerTalkClass->SendCloseGossip();
 			}break;
@@ -1274,60 +1305,74 @@ public: gildenvendor() : CreatureScript("gildenvendor"){ }
 			case 30:
 			{
 				uint32 gildenid = player->GetGuildId();
-
+				// Well of the Forgotten (Aka. Karazhan Crypt or Lower Karazhan)
+				Gildenhauszuordnung(gildenid, 30, 25, 40, player->GetSession()->GetPlayer());
 				player->PlayerTalkClass->SendCloseGossip();
 			}break;
 
 			case 31:
 			{
 				uint32 gildenid = player->GetGuildId();
-
+				// Undercity Top Tier -> bitte nicht verwenden, ich wüsste nicht wie man das sichern sollte + von außen sieht man rein!
+				Gildenhauszuordnung(gildenid, 31, 25, 40, player->GetSession()->GetPlayer());
 				player->PlayerTalkClass->SendCloseGossip();
 			}break;
 
 			case 32:
 			{
 				uint32 gildenid = player->GetGuildId();
-
+				// Stormwind Cut-Throat Alley -> direkt in SW...
+				Gildenhauszuordnung(gildenid, 32, 10, 30, player->GetSession()->GetPlayer());
 				player->PlayerTalkClass->SendCloseGossip();
 			}break;
 
 			case 33:
 			{
 				uint32 gildenid = player->GetGuildId();
-
+				// Forgotten gnome camp
+				Gildenhauszuordnung(gildenid, 33, 25, 40, player->GetSession()->GetPlayer());
 				player->PlayerTalkClass->SendCloseGossip();
 			}break;
 
 			case 34:
 			{
 				uint32 gildenid = player->GetGuildId();
-
+				// Outland Nagrand : Tomb
+				Gildenhauszuordnung(gildenid, 34, 10, 20, player->GetSession()->GetPlayer());
 				player->PlayerTalkClass->SendCloseGossip();
 			}break;
 
 			case 35:
 			{
 				uint32 gildenid = player->GetGuildId();
-
+				// Outland Nagrand: Challes Home for Little Tykes -> NICHT verwenden, QUEST Gebiet!!!
+				Gildenhauszuordnung(gildenid, 35, 25, 40, player->GetSession()->GetPlayer());
 				player->PlayerTalkClass->SendCloseGossip();
 			}break;
 
 			case 36:
 			{
 				uint32 gildenid = player->GetGuildId();
-
+				// Outland Netherstorm: Novas Shrine
+				Gildenhauszuordnung(gildenid, 36, 10, 20, player->GetSession()->GetPlayer());
 				player->PlayerTalkClass->SendCloseGossip();
 			}break;
 
 			case 37:
 			{
 				uint32 gildenid = player->GetGuildId();
-
+				// Wald von Elwynn
+				Gildenhauszuordnung(gildenid, 37, 10, 20, player->GetSession()->GetPlayer());
 				player->PlayerTalkClass->SendCloseGossip();
 			}break;
 
-			
+			case 38:
+			{
+				uint32 gildenid = player->GetGuildId();
+				// Troll Village in mountains 2 (Darkshore) -> Ist schon oben verwendet! Troll Dorf!
+				Gildenhauszuordnung(gildenid, 38, 40, 50, player->GetSession()->GetPlayer());
+				player->PlayerTalkClass->SendCloseGossip();
+			}break;
 
 			}
 
