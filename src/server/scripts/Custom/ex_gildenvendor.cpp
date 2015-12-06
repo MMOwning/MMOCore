@@ -346,6 +346,217 @@ public: gildenvendor() : CreatureScript("gildenvendor"){ }
 				player->GetSession()->SendNotification("Du schaust dir nun das Gildenhaus an.");
 			}break;
 
+			case 40:
+			{
+				Gildenhausport(3, player->GetSession()->GetPlayer());
+				player->GetSession()->SendNotification("Du schaust dir nun das Gildenhaus an.");
+			}break;
+
+			case 41:
+			{
+				Gildenhausport(4, player->GetSession()->GetPlayer());
+				player->GetSession()->SendNotification("Du schaust dir nun das Gildenhaus an.");
+			}break;
+
+			case 42:
+			{
+				Gildenhausport(5, player->GetSession()->GetPlayer());
+				player->GetSession()->SendNotification("Du schaust dir nun das Gildenhaus an.");
+			}break;
+
+			case 43:
+			{
+				Gildenhausport(6, player->GetSession()->GetPlayer());
+				player->GetSession()->SendNotification("Du schaust dir nun das Gildenhaus an.");
+			}break;
+
+			case 44:
+			{
+				Gildenhausport(7, player->GetSession()->GetPlayer());
+				player->GetSession()->SendNotification("Du schaust dir nun das Gildenhaus an.");
+			}break;
+
+			case 45:
+			{
+				Gildenhausport(8, player->GetSession()->GetPlayer());
+				player->GetSession()->SendNotification("Du schaust dir nun das Gildenhaus an.");
+			}break;
+
+			case 46:
+			{
+				Gildenhausport(9, player->GetSession()->GetPlayer());
+				player->GetSession()->SendNotification("Du schaust dir nun das Gildenhaus an.");
+			}break;
+
+			case 47:
+			{
+				Gildenhausport(10, player->GetSession()->GetPlayer());
+				player->GetSession()->SendNotification("Du schaust dir nun das Gildenhaus an.");
+			}break;
+
+			case 48:
+			{
+				Gildenhausport(11, player->GetSession()->GetPlayer());
+				player->GetSession()->SendNotification("Du schaust dir nun das Gildenhaus an.");
+			}break;
+
+			case 49:
+			{
+				Gildenhausport(12, player->GetSession()->GetPlayer());
+				player->GetSession()->SendNotification("Du schaust dir nun das Gildenhaus an.");
+			}break;
+
+			case 50:
+			{
+				Gildenhausport(13, player->GetSession()->GetPlayer());
+				player->GetSession()->SendNotification("Du schaust dir nun das Gildenhaus an.");
+			}break;
+
+			case 51:
+			{
+				Gildenhausport(14, player->GetSession()->GetPlayer());
+				player->GetSession()->SendNotification("Du schaust dir nun das Gildenhaus an.");
+			}break;
+
+			case 52:
+			{
+				Gildenhausport(15, player->GetSession()->GetPlayer());
+				player->GetSession()->SendNotification("Du schaust dir nun das Gildenhaus an.");
+			}break;
+
+			case 53:
+			{
+				Gildenhausport(16, player->GetSession()->GetPlayer());
+				player->GetSession()->SendNotification("Du schaust dir nun das Gildenhaus an.");
+			}break;
+
+			case 54:
+			{
+				Gildenhausport(17, player->GetSession()->GetPlayer());
+				player->GetSession()->SendNotification("Du schaust dir nun das Gildenhaus an.");
+			}break;
+
+			case 55:
+			{
+				Gildenhausport(18, player->GetSession()->GetPlayer());
+				player->GetSession()->SendNotification("Du schaust dir nun das Gildenhaus an.");
+			}break;
+
+			case 56:
+			{
+				Gildenhausport(19, player->GetSession()->GetPlayer());
+				player->GetSession()->SendNotification("Du schaust dir nun das Gildenhaus an.");
+			}break;
+
+			case 57:
+			{
+				Gildenhausport(20, player->GetSession()->GetPlayer());
+				player->GetSession()->SendNotification("Du schaust dir nun das Gildenhaus an.");
+			}break;
+
+			case 58:
+			{
+				Gildenhausport(21, player->GetSession()->GetPlayer());
+				player->GetSession()->SendNotification("Du schaust dir nun das Gildenhaus an.");
+			}break;
+
+			case 59:
+			{
+				Gildenhausport(22, player->GetSession()->GetPlayer());
+				player->GetSession()->SendNotification("Du schaust dir nun das Gildenhaus an.");
+			}break;
+
+			case 60:
+			{
+				Gildenhausport(23, player->GetSession()->GetPlayer());
+				player->GetSession()->SendNotification("Du schaust dir nun das Gildenhaus an.");
+			}break;
+
+			case 61:
+			{
+				Gildenhausport(24, player->GetSession()->GetPlayer());
+				player->GetSession()->SendNotification("Du schaust dir nun das Gildenhaus an.");
+			}break;
+
+			case 62:
+			{
+				Gildenhausport(25, player->GetSession()->GetPlayer());
+				player->GetSession()->SendNotification("Du schaust dir nun das Gildenhaus an.");
+			}break;
+
+			case 63:
+			{
+				Gildenhausport(26, player->GetSession()->GetPlayer());
+				player->GetSession()->SendNotification("Du schaust dir nun das Gildenhaus an.");
+			}break;
+
+			case 64:
+			{
+				Gildenhausport(27, player->GetSession()->GetPlayer());
+				player->GetSession()->SendNotification("Du schaust dir nun das Gildenhaus an.");
+			}break;
+
+			case 65:
+			{
+				Gildenhausport(28, player->GetSession()->GetPlayer());
+				player->GetSession()->SendNotification("Du schaust dir nun das Gildenhaus an.");
+			}break;
+
+			case 66:
+			{
+				Gildenhausport(29, player->GetSession()->GetPlayer());
+				player->GetSession()->SendNotification("Du schaust dir nun das Gildenhaus an.");
+			}break;
+
+			case 67:
+			{
+				Gildenhausport(30, player->GetSession()->GetPlayer());
+				player->GetSession()->SendNotification("Du schaust dir nun das Gildenhaus an.");
+			}break;
+
+			case 68:
+			{
+				Gildenhausport(31, player->GetSession()->GetPlayer());
+				player->GetSession()->SendNotification("Du schaust dir nun das Gildenhaus an.");
+			}break;
+
+			case 69:
+			{
+				Gildenhausport(32, player->GetSession()->GetPlayer());
+				player->GetSession()->SendNotification("Du schaust dir nun das Gildenhaus an.");
+			}break;
+
+			case 70:
+			{
+				Gildenhausport(33, player->GetSession()->GetPlayer());
+				player->GetSession()->SendNotification("Du schaust dir nun das Gildenhaus an.");
+			}break;
+
+			case 71:
+			{
+				Gildenhausport(34, player->GetSession()->GetPlayer());
+				player->GetSession()->SendNotification("Du schaust dir nun das Gildenhaus an.");
+			}break;
+
+			case 72:
+			{
+				Gildenhausport(35, player->GetSession()->GetPlayer());
+				player->GetSession()->SendNotification("Du schaust dir nun das Gildenhaus an.");
+			}break;
+			
+			case 73:
+			{
+				Gildenhausport(36, player->GetSession()->GetPlayer());
+				player->GetSession()->SendNotification("Du schaust dir nun das Gildenhaus an.");
+			}break;
+
+			case 74:
+			{
+				Gildenhausport(37, player->GetSession()->GetPlayer());
+				player->GetSession()->SendNotification("Du schaust dir nun das Gildenhaus an.");
+			}break;
+
+
 			case 1:
 			{
 				uint32 platzhalter = 0;
@@ -426,8 +637,252 @@ public: gildenvendor() : CreatureScript("gildenvendor"){ }
 
 			case 6:
 			{
+				uint32 gildenid = player->GetGuildId();
+				// Dwarven village (Arathi Highlands, Forbidding Sea)
+				Gildenhauszuordnung(gildenid, 6, 25, 40, player->GetSession()->GetPlayer());
+				player->PlayerTalkClass->SendCloseGossip();
+			}break;
 
-			}
+			case 7:
+			{
+				uint32 gildenid = player->GetGuildId();
+				// Tauren camp (Mulgore, Red Rock)
+				Gildenhauszuordnung(gildenid, 7, 10, 20, player->GetSession()->GetPlayer());
+				player->PlayerTalkClass->SendCloseGossip();
+			}break;
+
+
+			case 8:
+			{
+				uint32 gildenid = player->GetGuildId();
+				// Shadowfang Keep an outside instance (Silverpine Forest)
+				Gildenhauszuordnung(gildenid, 8, 10, 20, player->GetSession()->GetPlayer());
+				player->PlayerTalkClass->SendCloseGossip();
+			}break;
+
+			case 9:
+			{
+				uint32 gildenid = player->GetGuildId();
+				// Harbor house outside Stormwind (Elwynn Forest) 
+				Gildenhauszuordnung(gildenid, 9, 10, 20, player->GetSession()->GetPlayer());
+				player->PlayerTalkClass->SendCloseGossip();
+			}break;
+
+			case 10:
+			{
+				uint32 gildenid = player->GetGuildId();
+				// Empty jail between canals (Stormwind)
+				Gildenhauszuordnung(gildenid, 10, 25, 50, player->GetSession()->GetPlayer());
+				player->PlayerTalkClass->SendCloseGossip();
+
+			}break;
+
+
+			case 11:
+			{
+				uint32 gildenid = player->GetGuildId();
+				// Old Ironforge
+				Gildenhauszuordnung(gildenid, 11, 25, 40, player->GetSession()->GetPlayer());
+				player->PlayerTalkClass->SendCloseGossip();
+			}break;
+
+			case 12:
+			{
+				uint32 gildenid = player->GetGuildId();
+				// Ironforge Airport
+				Gildenhauszuordnung(gildenid, 12, 50, 50, player->GetSession()->GetPlayer());
+				player->PlayerTalkClass->SendCloseGossip();
+			}break;
+
+
+			case 13:
+			{
+				uint32 gildenid = player->GetGuildId();
+				// Azshara Crater instance (Alliance entrance)
+				Gildenhauszuordnung(gildenid, 13, 50, 50, player->GetSession()->GetPlayer());
+				player->PlayerTalkClass->SendCloseGossip();
+			}break;
+
+			case 14:
+			{
+				uint32 gildenid = player->GetGuildId();
+				// Azshara Crater instance (Horde entrance)
+				Gildenhauszuordnung(gildenid, 14, 50, 50, player->GetSession()->GetPlayer());
+				player->PlayerTalkClass->SendCloseGossip();
+			}break;
+
+			case 15:
+			{
+				uint32 gildenid = player->GetGuildId();
+				// QuelThalas Tower
+				Gildenhauszuordnung(gildenid, 15, 25, 40, player->GetSession()->GetPlayer());
+				player->PlayerTalkClass->SendCloseGossip();
+			}break;
+
+
+			case 16:
+			{
+				uint32 gildenid = player->GetGuildId();
+
+				player->PlayerTalkClass->SendCloseGossip();
+			}break;
+
+			case 17:
+			{
+				uint32 gildenid = player->GetGuildId();
+
+				player->PlayerTalkClass->SendCloseGossip();
+			}break;
+
+			case 18:
+			{
+				uint32 gildenid = player->GetGuildId();
+
+				player->PlayerTalkClass->SendCloseGossip();
+			}break;
+
+
+			case 19:
+			{
+				uint32 gildenid = player->GetGuildId();
+
+				player->PlayerTalkClass->SendCloseGossip();
+			}break;
+
+			case 20:
+			{
+				uint32 gildenid = player->GetGuildId();
+
+				player->PlayerTalkClass->SendCloseGossip();
+			}break;
+
+			case 21:
+			{
+				uint32 gildenid = player->GetGuildId();
+
+				player->PlayerTalkClass->SendCloseGossip();
+			}break;
+
+
+			case 22:
+			{
+				uint32 gildenid = player->GetGuildId();
+
+				player->PlayerTalkClass->SendCloseGossip();
+			}break;
+
+
+			case 23:
+			{
+				uint32 gildenid = player->GetGuildId();
+
+				player->PlayerTalkClass->SendCloseGossip();
+			}break;
+
+			
+			case 24:
+			{
+				uint32 gildenid = player->GetGuildId();
+
+				player->PlayerTalkClass->SendCloseGossip();
+			}break;
+
+
+			case 25:
+			{
+				uint32 gildenid = player->GetGuildId();
+
+				player->PlayerTalkClass->SendCloseGossip();
+			}break;
+
+
+			case 26:
+			{
+				uint32 gildenid = player->GetGuildId();
+
+				player->PlayerTalkClass->SendCloseGossip();
+			}break;
+
+			case 27:
+			{
+				uint32 gildenid = player->GetGuildId();
+
+				player->PlayerTalkClass->SendCloseGossip();
+			}break;
+
+			case 28:
+			{
+				uint32 gildenid = player->GetGuildId();
+
+				player->PlayerTalkClass->SendCloseGossip();
+			}break;
+
+
+			case 29:
+			{
+				uint32 gildenid = player->GetGuildId();
+
+				player->PlayerTalkClass->SendCloseGossip();
+			}break;
+
+
+			case 30:
+			{
+				uint32 gildenid = player->GetGuildId();
+
+				player->PlayerTalkClass->SendCloseGossip();
+			}break;
+
+			case 31:
+			{
+				uint32 gildenid = player->GetGuildId();
+
+				player->PlayerTalkClass->SendCloseGossip();
+			}break;
+
+			case 32:
+			{
+				uint32 gildenid = player->GetGuildId();
+
+				player->PlayerTalkClass->SendCloseGossip();
+			}break;
+
+			case 33:
+			{
+				uint32 gildenid = player->GetGuildId();
+
+				player->PlayerTalkClass->SendCloseGossip();
+			}break;
+
+			case 34:
+			{
+				uint32 gildenid = player->GetGuildId();
+
+				player->PlayerTalkClass->SendCloseGossip();
+			}break;
+
+			case 35:
+			{
+				uint32 gildenid = player->GetGuildId();
+
+				player->PlayerTalkClass->SendCloseGossip();
+			}break;
+
+			case 36:
+			{
+				uint32 gildenid = player->GetGuildId();
+
+				player->PlayerTalkClass->SendCloseGossip();
+			}break;
+
+			case 37:
+			{
+				uint32 gildenid = player->GetGuildId();
+
+				player->PlayerTalkClass->SendCloseGossip();
+			}break;
+
+			
 
 			}
 
