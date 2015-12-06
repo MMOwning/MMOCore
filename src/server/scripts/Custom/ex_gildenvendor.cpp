@@ -353,7 +353,7 @@ public: gildenvendor() : CreatureScript("gildenvendor"){ }
 
 				else {
 					player->GetSession()->SendNotification("Du bist in einer Gilde bzw das Gildenhaus ist schon belegt.");
-					return;
+					return true;
 				}
 			}break;
 
@@ -370,7 +370,7 @@ public: gildenvendor() : CreatureScript("gildenvendor"){ }
 
 				else {
 					player->GetSession()->SendNotification("Du bist in einer Gilde bzw das Gildenhaus ist schon belegt.");
-					return;
+					return true;
 				}
 			}break;
 
@@ -387,7 +387,7 @@ public: gildenvendor() : CreatureScript("gildenvendor"){ }
 
 				else {
 					player->GetSession()->SendNotification("Du bist in einer Gilde bzw das Gildenhaus ist schon belegt.");
-					return;
+					return true;
 				}
 			}break;
 
@@ -404,7 +404,7 @@ public: gildenvendor() : CreatureScript("gildenvendor"){ }
 
 				else {
 					player->GetSession()->SendNotification("Du bist in einer Gilde bzw das Gildenhaus ist schon belegt.");
-					return;
+					return true;
 				}
 			}break;
 
@@ -422,7 +422,7 @@ public: gildenvendor() : CreatureScript("gildenvendor"){ }
 
 				else {
 					player->GetSession()->SendNotification("Du bist in einer Gilde bzw das Gildenhaus ist schon belegt.");
-					return;
+					return true;
 				}
 			}break;
 
@@ -439,7 +439,7 @@ public: gildenvendor() : CreatureScript("gildenvendor"){ }
 
 				else {
 					player->GetSession()->SendNotification("Du bist in einer Gilde bzw das Gildenhaus ist schon belegt.");
-					return;
+					return true;
 				}
 			}break;
 
@@ -456,7 +456,7 @@ public: gildenvendor() : CreatureScript("gildenvendor"){ }
 
 				else {
 					player->GetSession()->SendNotification("Du bist in einer Gilde bzw das Gildenhaus ist schon belegt.");
-					return;
+					return true;
 				}
 			}break;
 
@@ -473,7 +473,7 @@ public: gildenvendor() : CreatureScript("gildenvendor"){ }
 
 				else {
 					player->GetSession()->SendNotification("Du bist in einer Gilde bzw das Gildenhaus ist schon belegt.");
-					return;
+					return true;
 				}
 			}break;
 
@@ -490,7 +490,7 @@ public: gildenvendor() : CreatureScript("gildenvendor"){ }
 
 				else {
 					player->GetSession()->SendNotification("Du bist in einer Gilde bzw das Gildenhaus ist schon belegt.");
-					return;
+					return true;
 				}
 			}break;
 
@@ -508,7 +508,7 @@ public: gildenvendor() : CreatureScript("gildenvendor"){ }
 
 				else {
 					player->GetSession()->SendNotification("Du bist in einer Gilde bzw das Gildenhaus ist schon belegt.");
-					return;
+					return true;
 				}
 			}break;
 
@@ -526,7 +526,7 @@ public: gildenvendor() : CreatureScript("gildenvendor"){ }
 
 				else {
 					player->GetSession()->SendNotification("Du bist in einer Gilde bzw das Gildenhaus ist schon belegt.");
-					return;
+					return true;
 				}
 			}break;
 
@@ -544,7 +544,7 @@ public: gildenvendor() : CreatureScript("gildenvendor"){ }
 
 				else {
 					player->GetSession()->SendNotification("Du bist in einer Gilde bzw das Gildenhaus ist schon belegt.");
-					return;
+					return true;
 				}
 			}break;
 
@@ -562,7 +562,7 @@ public: gildenvendor() : CreatureScript("gildenvendor"){ }
 
 				else {
 					player->GetSession()->SendNotification("Du bist in einer Gilde bzw das Gildenhaus ist schon belegt.");
-					return;
+					return true;
 				}
 			}break;
 
@@ -580,7 +580,7 @@ public: gildenvendor() : CreatureScript("gildenvendor"){ }
 
 				else {
 					player->GetSession()->SendNotification("Du bist in einer Gilde bzw das Gildenhaus ist schon belegt.");
-					return;
+					return true;
 				}
 			}break;
 
@@ -598,7 +598,7 @@ public: gildenvendor() : CreatureScript("gildenvendor"){ }
 
 				else {
 					player->GetSession()->SendNotification("Du bist in einer Gilde bzw das Gildenhaus ist schon belegt.");
-					return;
+					return true;
 				}
 			}break;
 
@@ -616,7 +616,7 @@ public: gildenvendor() : CreatureScript("gildenvendor"){ }
 
 				else {
 					player->GetSession()->SendNotification("Du bist in einer Gilde bzw das Gildenhaus ist schon belegt.");
-					return;
+					return true;
 				}
 			}break;
 
@@ -634,7 +634,7 @@ public: gildenvendor() : CreatureScript("gildenvendor"){ }
 
 				else {
 					player->GetSession()->SendNotification("Du bist in einer Gilde bzw das Gildenhaus ist schon belegt.");
-					return;
+					return true;
 				}
 			}break;
 
@@ -652,7 +652,7 @@ public: gildenvendor() : CreatureScript("gildenvendor"){ }
 
 				else {
 					player->GetSession()->SendNotification("Du bist in einer Gilde bzw das Gildenhaus ist schon belegt.");
-					return;
+					return true;
 				}
 			}break;
 
@@ -670,7 +670,7 @@ public: gildenvendor() : CreatureScript("gildenvendor"){ }
 
 				else {
 					player->GetSession()->SendNotification("Du bist in einer Gilde bzw das Gildenhaus ist schon belegt.");
-					return;
+					return true;
 				}
 			}break;
 
@@ -688,7 +688,7 @@ public: gildenvendor() : CreatureScript("gildenvendor"){ }
 
 				else {
 					player->GetSession()->SendNotification("Du bist in einer Gilde bzw das Gildenhaus ist schon belegt.");
-					return;
+					return true;
 				}
 			}break;
 
@@ -706,7 +706,7 @@ public: gildenvendor() : CreatureScript("gildenvendor"){ }
 
 				else {
 					player->GetSession()->SendNotification("Du bist in einer Gilde bzw das Gildenhaus ist schon belegt.");
-					return;
+					return true;
 				}
 			}break;
 
@@ -724,7 +724,7 @@ public: gildenvendor() : CreatureScript("gildenvendor"){ }
 
 				else {
 					player->GetSession()->SendNotification("Du bist in einer Gilde bzw das Gildenhaus ist schon belegt.");
-					return;
+					return true;
 				}
 			}break;
 
@@ -742,7 +742,7 @@ public: gildenvendor() : CreatureScript("gildenvendor"){ }
 
 				else {
 					player->GetSession()->SendNotification("Du bist in einer Gilde bzw das Gildenhaus ist schon belegt.");
-					return;
+					return true;
 				}
 			}break;
 
@@ -760,7 +760,7 @@ public: gildenvendor() : CreatureScript("gildenvendor"){ }
 
 				else {
 					player->GetSession()->SendNotification("Du bist in einer Gilde bzw das Gildenhaus ist schon belegt.");
-					return;
+					return true;
 				}
 			}break;
 
@@ -778,7 +778,7 @@ public: gildenvendor() : CreatureScript("gildenvendor"){ }
 
 				else {
 					player->GetSession()->SendNotification("Du bist in einer Gilde bzw das Gildenhaus ist schon belegt.");
-					return;
+					return true;
 				}
 			}break;
 
@@ -796,7 +796,7 @@ public: gildenvendor() : CreatureScript("gildenvendor"){ }
 
 				else {
 					player->GetSession()->SendNotification("Du bist in einer Gilde bzw das Gildenhaus ist schon belegt.");
-					return;
+					return true;
 				}
 			}break;
 
@@ -814,7 +814,7 @@ public: gildenvendor() : CreatureScript("gildenvendor"){ }
 
 				else {
 					player->GetSession()->SendNotification("Du bist in einer Gilde bzw das Gildenhaus ist schon belegt.");
-					return;
+					return true;
 				}
 			}break;
 
@@ -832,7 +832,7 @@ public: gildenvendor() : CreatureScript("gildenvendor"){ }
 
 				else {
 					player->GetSession()->SendNotification("Du bist in einer Gilde bzw das Gildenhaus ist schon belegt.");
-					return;
+					return true;
 				}
 			}break;
 
@@ -850,7 +850,7 @@ public: gildenvendor() : CreatureScript("gildenvendor"){ }
 
 				else {
 					player->GetSession()->SendNotification("Du bist in einer Gilde bzw das Gildenhaus ist schon belegt.");
-					return;
+					return true;
 				}
 			}break;
 
@@ -868,7 +868,7 @@ public: gildenvendor() : CreatureScript("gildenvendor"){ }
 
 				else {
 					player->GetSession()->SendNotification("Du bist in einer Gilde bzw das Gildenhaus ist schon belegt.");
-					return;
+					return true;
 				}
 			}break;
 
@@ -886,7 +886,7 @@ public: gildenvendor() : CreatureScript("gildenvendor"){ }
 
 				else {
 					player->GetSession()->SendNotification("Du bist in einer Gilde bzw das Gildenhaus ist schon belegt.");
-					return;
+					return true;
 				}
 			}break;
 
@@ -904,7 +904,7 @@ public: gildenvendor() : CreatureScript("gildenvendor"){ }
 
 				else {
 					player->GetSession()->SendNotification("Du bist in einer Gilde bzw das Gildenhaus ist schon belegt.");
-					return;
+					return true;
 				}
 			}break;
 
@@ -922,7 +922,7 @@ public: gildenvendor() : CreatureScript("gildenvendor"){ }
 
 				else {
 					player->GetSession()->SendNotification("Du bist in einer Gilde bzw das Gildenhaus ist schon belegt.");
-					return;
+					return true;
 				}
 			}break;
 
@@ -940,7 +940,7 @@ public: gildenvendor() : CreatureScript("gildenvendor"){ }
 
 				else {
 					player->GetSession()->SendNotification("Du bist in einer Gilde bzw das Gildenhaus ist schon belegt.");
-					return;
+					return true;
 				}
 			}break;
 			
@@ -958,7 +958,7 @@ public: gildenvendor() : CreatureScript("gildenvendor"){ }
 
 				else {
 					player->GetSession()->SendNotification("Du bist in einer Gilde bzw das Gildenhaus ist schon belegt.");
-					return;
+					return true;
 				}
 			}break;
 
@@ -976,7 +976,7 @@ public: gildenvendor() : CreatureScript("gildenvendor"){ }
 
 				else {
 					player->GetSession()->SendNotification("Du bist in einer Gilde bzw das Gildenhaus ist schon belegt.");
-					return;
+					return true;
 				}
 			}break;
 
