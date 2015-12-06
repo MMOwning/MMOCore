@@ -62,7 +62,7 @@ public: gildenvendor() : CreatureScript("gildenvendor"){ }
 			}
 
 			QueryResult result;
-			result = CharacterDatabase.PQuery("SELECT `x`, `y`, `z`, `map` FROM `guildhouses` WHERE `guildId` = %u", gildenhausid);
+			result = CharacterDatabase.PQuery("SELECT `x`, `y`, `z`, `map` FROM `guildhouses` WHERE `id` = %u", gildenhausid);
 			if (!result)
 			{
 				//pokud guilda nema guildhouse zapsany v tabulce guildhouses
@@ -216,6 +216,8 @@ public: gildenvendor() : CreatureScript("gildenvendor"){ }
 				player->ADD_GOSSIP_ITEM(7, "Teldrassil Furbold camp", GOSSIP_SENDER_MAIN, 24);
 				player->ADD_GOSSIP_ITEM(7, "Wetlands mountain camp", GOSSIP_SENDER_MAIN, 25);
 				player->ADD_GOSSIP_ITEM(7, "Ortell's Hideout", GOSSIP_SENDER_MAIN, 26);
+				player->ADD_GOSSIP_ITEM(7, "1. Seite", GOSSIP_SENDER_MAIN, 0);
+				player->ADD_GOSSIP_ITEM(7, "3. Seite ", GOSSIP_SENDER_MAIN, 79);
 
 				player->PlayerTalkClass->SendGossipMenu(907, creature->GetGUID());
 				return true;
@@ -237,6 +239,9 @@ public: gildenvendor() : CreatureScript("gildenvendor"){ }
 				player->ADD_GOSSIP_ITEM(7, "Outland Netherstorm: Nova's Shrine", GOSSIP_SENDER_MAIN, 35);
 				player->ADD_GOSSIP_ITEM(7, "Wald von Elwynn", GOSSIP_SENDER_MAIN, 36);
 				player->ADD_GOSSIP_ITEM(7, "Troll Village in mountains 2 (Darkshore)", GOSSIP_SENDER_MAIN, 37);
+
+				player->ADD_GOSSIP_ITEM(7, "1. Seite", GOSSIP_SENDER_MAIN, 0);
+				player->ADD_GOSSIP_ITEM(7, "2. Seite ", GOSSIP_SENDER_MAIN, 78);
 
 				player->PlayerTalkClass->SendGossipMenu(907, creature->GetGUID());
 				return true;
@@ -283,6 +288,10 @@ public: gildenvendor() : CreatureScript("gildenvendor"){ }
 				player->ADD_GOSSIP_ITEM(7, "Kalimdor Hyjal", GOSSIP_SENDER_MAIN, 57);
 				player->ADD_GOSSIP_ITEM(7, "The Ring of Valor", GOSSIP_SENDER_MAIN, 58);
 
+				player->ADD_GOSSIP_ITEM(7, "1. Seite", GOSSIP_SENDER_MAIN, 38);
+				player->ADD_GOSSIP_ITEM(7, "3. Seite", GOSSIP_SENDER_MAIN, 76);
+				player->ADD_GOSSIP_ITEM(7, "4. Seite", GOSSIP_SENDER_MAIN, 77);
+
 				player->PlayerTalkClass->SendGossipMenu(907, creature->GetGUID());
 				return true;
 			}break;
@@ -303,6 +312,10 @@ public: gildenvendor() : CreatureScript("gildenvendor"){ }
 				player->ADD_GOSSIP_ITEM(7, "Stormwind Cut-Throat Alley", GOSSIP_SENDER_MAIN, 68);
 				player->ADD_GOSSIP_ITEM(7, "Forgotten gnome camp", GOSSIP_SENDER_MAIN, 69);
 
+				player->ADD_GOSSIP_ITEM(7, "1. Seite", GOSSIP_SENDER_MAIN, 38);
+				player->ADD_GOSSIP_ITEM(7, "2. Seite", GOSSIP_SENDER_MAIN, 75);
+				player->ADD_GOSSIP_ITEM(7, "4. Seite", GOSSIP_SENDER_MAIN, 77);
+
 				player->PlayerTalkClass->SendGossipMenu(907, creature->GetGUID());
 				return true;
 			}
@@ -316,6 +329,10 @@ public: gildenvendor() : CreatureScript("gildenvendor"){ }
 				player->ADD_GOSSIP_ITEM(7, "Outland Netherstorm: Nova's Shrine", GOSSIP_SENDER_MAIN, 72);
 				player->ADD_GOSSIP_ITEM(7, "Wald von Elwynn", GOSSIP_SENDER_MAIN, 73);
 				player->ADD_GOSSIP_ITEM(7, "Troll Village in mountains 2 (Darkshore)", GOSSIP_SENDER_MAIN, 74);
+
+				player->ADD_GOSSIP_ITEM(7, "1. Seite", GOSSIP_SENDER_MAIN, 38);
+				player->ADD_GOSSIP_ITEM(7, "2. Seite", GOSSIP_SENDER_MAIN, 75);
+				player->ADD_GOSSIP_ITEM(7, "3. Seite", GOSSIP_SENDER_MAIN, 76);
 
 				player->PlayerTalkClass->SendGossipMenu(907, creature->GetGUID());
 				return true;
