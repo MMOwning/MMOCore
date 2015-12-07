@@ -94,7 +94,7 @@ public: gildenvendor() : CreatureScript("gildenvendor"){ }
 
 			if (chr->GetGuildId() == 0)
 			{
-				//pokud hrac nema guildu
+				
 				chr->GetSession()->SendNotification("Du bist in keiner Gilde.");
 				return;
 			}

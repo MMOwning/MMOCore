@@ -283,6 +283,14 @@ class npc_first_char : public CreatureScript
 
 							}
 
+							if (onecharint != 1){
+								pPlayer->GetSession()->SendNotification("Du hast mehr als einen Charakter auf deinem Account. Es darf nur der ERSTE Charakter ausgestattet werden.");
+							}
+
+							if (guildmemberint < 10){
+								pPlayer->GetSession()->SendNotification("Deine Gilde hat weniger als 10 Gildenmitglieder.");
+							}
+
 
 							else{
 								ChatHandler(pPlayer->GetSession()).PSendSysMessage("[Aufwertungs System] Deine Gilde ist nicht neu, oder hat nicht genug oder zu viele Mitglieder.",
@@ -375,6 +383,15 @@ class npc_first_char : public CreatureScript
 								return true;
 							}
 
+							if (onecharint != 1){
+								pPlayer->GetSession()->SendNotification("Du hast mehr als einen Charakter auf deinem Account. Es darf nur der ERSTE Charakter ausgestattet werden.");
+							}
+
+							if (guildmemberint < 25){
+								pPlayer->GetSession()->SendNotification("Deine Gilde hat weniger als 25 Gildenmitglieder.");
+							}
+
+							
 
 							else{
 								ChatHandler(pPlayer->GetSession()).PSendSysMessage("[Aufwertungs System] Deine Gilde ist nicht neu, oder hat nicht genug oder zu viele Mitglieder.",
