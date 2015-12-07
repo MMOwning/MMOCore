@@ -33,13 +33,51 @@ class gildenvendor : public CreatureScript
 public: gildenvendor() : CreatureScript("gildenvendor"){ }
 
 
-		void Gildenhausport(uint32 gildenhausid, Player* chr){
+		void Gildenhausverkauf(Player* player){
+			uint32 platzhalter = 0;
+			uint32 gilde = player->GetGuildId();
 
-			
+			QueryResult result;
+			result = CharacterDatabase.PQuery("SELECT id FROM `guildhouses` WHERE `guildid` = '%u'", gilde);
+
+			if (result){
+				Field *fields = result->Fetch();
+				uint32 gildenaktuell = fields[0].GetUInt32();
+
+				if (gilde == 0){
+					player->GetSession()->SendNotification("Du bist in keiner Gilde");
+					return;
+				}
+
+
+
+				QueryResult ergebnis;
+				ergebnis = CharacterDatabase.PQuery("Select leaderguid from `guild` where `guildid` = '%u'", player->GetGuildId());
+
+				Field *feld = ergebnis->Fetch();
+				uint32 leaderid = feld[0].GetUInt32();
+
+				uint32 guid = player->GetGUID();
+
+				if (guid == leaderid){
+					CharacterDatabase.PExecute("UPDATE guildhouses SET guildid = '%u' WHERE id = '%u'", platzhalter, gildenaktuell);
+					player->GetSession()->SendNotification("Das Gildenhaus wurde verkauft.");
+					return;
+				}
+			}
+
+			else {
+				player->GetSession()->SendNotification("Deine Gilde besitzt kein Gildenhaus");
+			}
+
+
+		}
+
+		void Gildenhausport(uint32 gildenhausid, Player* chr){
 
 			if (chr->IsInFlight())
 			{
-				//pokud hrac leti
+				
 				chr->GetSession()->SendNotification("Du fliegst");
 				//SetSentErrorMessage(true);
 				return;
@@ -47,7 +85,7 @@ public: gildenvendor() : CreatureScript("gildenvendor"){ }
 
 			if (chr->IsInCombat())
 			{
-				//pokud je hrac v combatu
+				
 				chr->GetSession()->SendNotification("Du bist im Kampf");
 				
 				//SetSentErrorMessage(true);
@@ -65,7 +103,7 @@ public: gildenvendor() : CreatureScript("gildenvendor"){ }
 			result = CharacterDatabase.PQuery("SELECT `x`, `y`, `z`, `map` FROM `guildhouses` WHERE `id` = %u", gildenhausid);
 			if (!result)
 			{
-				//pokud guilda nema guildhouse zapsany v tabulce guildhouses
+				
 				chr->GetSession()->SendNotification("Keine Gildeninformationen hinterlegt.");
 				return;
 			}
@@ -171,10 +209,18 @@ public: gildenvendor() : CreatureScript("gildenvendor"){ }
 					return true;
 				}
 
+				if (guid != leaderid){
+					player->GetSession()->SendNotification("Du bist nicht der Leiter deiner Gilde.");
+				}
 			}
 
-			else{
-				player->GetSession()->SendNotification("Du bist kein nicht der Leiter deiner Gilde.");
+			if(test == 0){
+				player->GetSession()->SendNotification("Du bist in keiner Gilde");
+				return true;
+			}
+
+			else {
+				player->GetSession()->SendNotification("Error.");
 				return true;
 			}
 			
@@ -207,6 +253,7 @@ public: gildenvendor() : CreatureScript("gildenvendor"){ }
 				player->ADD_GOSSIP_ITEM(7, "Azshara Crater instance (Alliance entrance)", GOSSIP_SENDER_MAIN, 13);
 				player->ADD_GOSSIP_ITEM(7, "Azshara Crater instance (Horde entrance)", GOSSIP_SENDER_MAIN,14);
 				player->ADD_GOSSIP_ITEM(7, "Quel'Thalas Tower", GOSSIP_SENDER_MAIN, 15);
+				
 				player->ADD_GOSSIP_ITEM(7, "2. Seite", GOSSIP_SENDER_MAIN, 78);			
 				player->ADD_GOSSIP_ITEM(7, "3. Seite ", GOSSIP_SENDER_MAIN, 79);
 				
@@ -232,6 +279,7 @@ public: gildenvendor() : CreatureScript("gildenvendor"){ }
 				player->ADD_GOSSIP_ITEM(7, "Teldrassil Furbold camp", GOSSIP_SENDER_MAIN, 25);
 				player->ADD_GOSSIP_ITEM(7, "Wetlands mountain camp", GOSSIP_SENDER_MAIN, 26);
 				player->ADD_GOSSIP_ITEM(7, "Ortell's Hideout", GOSSIP_SENDER_MAIN, 27);
+				
 				player->ADD_GOSSIP_ITEM(7, "1. Seite", GOSSIP_SENDER_MAIN, 0);
 				player->ADD_GOSSIP_ITEM(7, "3. Seite ", GOSSIP_SENDER_MAIN, 79);
 
@@ -304,8 +352,11 @@ public: gildenvendor() : CreatureScript("gildenvendor"){ }
 				player->ADD_GOSSIP_ITEM(7, "Stratholm an outside instance", GOSSIP_SENDER_MAIN, 56);
 				player->ADD_GOSSIP_ITEM(7, "Kalimdor Hyjal", GOSSIP_SENDER_MAIN, 57);
 				player->ADD_GOSSIP_ITEM(7, "The Ring of Valor", GOSSIP_SENDER_MAIN, 58);
+				player->ADD_GOSSIP_ITEM(7, "Stonetalon Logging Camp", GOSSIP_SENDER_MAIN, 59);
+				player->ADD_GOSSIP_ITEM(7, "Stonetalon Ruins", GOSSIP_SENDER_MAIN, 60);
+				player->ADD_GOSSIP_ITEM(7, "Teldrassil Furbold camp", GOSSIP_SENDER_MAIN, 61);
 
-				player->ADD_GOSSIP_ITEM(7, "1. Seite", GOSSIP_SENDER_MAIN, 38);
+				player->ADD_GOSSIP_ITEM(7, "1. Seite", GOSSIP_SENDER_MAIN, 120);
 				player->ADD_GOSSIP_ITEM(7, "3. Seite", GOSSIP_SENDER_MAIN, 76);
 				player->ADD_GOSSIP_ITEM(7, "4. Seite", GOSSIP_SENDER_MAIN, 77);
 
@@ -317,9 +368,7 @@ public: gildenvendor() : CreatureScript("gildenvendor"){ }
 			case 76:
 			{
 				player->PlayerTalkClass->ClearMenus();
-				player->ADD_GOSSIP_ITEM(7, "Stonetalon Logging Camp", GOSSIP_SENDER_MAIN, 59);
-				player->ADD_GOSSIP_ITEM(7, "Stonetalon Ruins", GOSSIP_SENDER_MAIN, 60);
-				player->ADD_GOSSIP_ITEM(7, "Teldrassil Furbold camp", GOSSIP_SENDER_MAIN, 61);
+				
 				player->ADD_GOSSIP_ITEM(7, "Wetlands mountain camp", GOSSIP_SENDER_MAIN, 62);
 				player->ADD_GOSSIP_ITEM(7, "Ortell's Hideout", GOSSIP_SENDER_MAIN, 63);
 				player->ADD_GOSSIP_ITEM(7, "Stranglethorn Secret Cave", GOSSIP_SENDER_MAIN, 64);
@@ -328,8 +377,13 @@ public: gildenvendor() : CreatureScript("gildenvendor"){ }
 				player->ADD_GOSSIP_ITEM(7, "Undercity Top Tier", GOSSIP_SENDER_MAIN, 67);
 				player->ADD_GOSSIP_ITEM(7, "Stormwind Cut-Throat Alley", GOSSIP_SENDER_MAIN, 68);
 				player->ADD_GOSSIP_ITEM(7, "Forgotten gnome camp", GOSSIP_SENDER_MAIN, 69);
+				player->ADD_GOSSIP_ITEM(7, "Outland Nagrand : Tomb", GOSSIP_SENDER_MAIN, 70);
+				player->ADD_GOSSIP_ITEM(7, "Outland Nagrand: Challe's Home for Little Tykes", GOSSIP_SENDER_MAIN, 71);
+				player->ADD_GOSSIP_ITEM(7, "Outland Netherstorm: Nova's Shrine", GOSSIP_SENDER_MAIN, 72);
+				player->ADD_GOSSIP_ITEM(7, "Wald von Elwynn", GOSSIP_SENDER_MAIN, 73);
+				player->ADD_GOSSIP_ITEM(7, "Troll Village in mountains 2 (Darkshore)", GOSSIP_SENDER_MAIN, 74);
 
-				player->ADD_GOSSIP_ITEM(7, "1. Seite", GOSSIP_SENDER_MAIN, 38);
+				player->ADD_GOSSIP_ITEM(7, "1. Seite", GOSSIP_SENDER_MAIN, 120);
 				player->ADD_GOSSIP_ITEM(7, "2. Seite", GOSSIP_SENDER_MAIN, 75);
 				player->ADD_GOSSIP_ITEM(7, "4. Seite", GOSSIP_SENDER_MAIN, 77);
 
@@ -341,13 +395,9 @@ public: gildenvendor() : CreatureScript("gildenvendor"){ }
 			{
 
 				player->PlayerTalkClass->ClearMenus();
-				player->ADD_GOSSIP_ITEM(7, "Outland Nagrand : Tomb", GOSSIP_SENDER_MAIN, 70);
-				player->ADD_GOSSIP_ITEM(7, "Outland Nagrand: Challe's Home for Little Tykes", GOSSIP_SENDER_MAIN, 71);
-				player->ADD_GOSSIP_ITEM(7, "Outland Netherstorm: Nova's Shrine", GOSSIP_SENDER_MAIN, 72);
-				player->ADD_GOSSIP_ITEM(7, "Wald von Elwynn", GOSSIP_SENDER_MAIN, 73);
-				player->ADD_GOSSIP_ITEM(7, "Troll Village in mountains 2 (Darkshore)", GOSSIP_SENDER_MAIN, 74);
+				
 
-				player->ADD_GOSSIP_ITEM(7, "1. Seite", GOSSIP_SENDER_MAIN, 38);
+				player->ADD_GOSSIP_ITEM(7, "1. Seite", GOSSIP_SENDER_MAIN, 120);
 				player->ADD_GOSSIP_ITEM(7, "2. Seite", GOSSIP_SENDER_MAIN, 75);
 				player->ADD_GOSSIP_ITEM(7, "3. Seite", GOSSIP_SENDER_MAIN, 76);
 
@@ -1030,7 +1080,10 @@ public: gildenvendor() : CreatureScript("gildenvendor"){ }
 
 			case 1:
 			{
-				uint32 platzhalter = 0;
+
+				Gildenhausverkauf(player->GetSession()->GetPlayer());
+				
+				/*uint32 platzhalter = 0;
 				uint32 gilde = player->GetGuildId();
 
 				QueryResult result;
@@ -1065,7 +1118,7 @@ public: gildenvendor() : CreatureScript("gildenvendor"){ }
 				else {
 					player->GetSession()->SendNotification("Deine Gilde besitzt kein Gildenhaus");
 				}		
-
+				*/
 			}break;
 
 
