@@ -35,7 +35,7 @@ UPDATE `item_template` SET `stackable`='100' WHERE `entry`='700520';
 
 
 /* Quest 900509 auf Daily gesetzt */
-UPDATE `quest_template` SET `Flags`='4096' WHERE `ID`='900509';
+UPDATE `quest_template` SET `Flags`='32768' WHERE `ID`='900509';
 
 
 /* MMO Bosse MArken */
