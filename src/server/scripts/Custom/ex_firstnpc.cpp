@@ -39,6 +39,38 @@ class npc_first_char : public CreatureScript
 {
 		public: npc_first_char() : CreatureScript("npc_first_char"){ }
 
+				void DBeintrag(Player* player, std::string grund){
+					WorldDatabase.PExecute("INSERT INTO firstnpc_log "
+						"(grund,spieler, guid)"
+						"VALUES ('%s', '%s', '%u')",
+						grund, player->GetSession()->GetPlayerName(),player->GetGUID());
+					return;
+
+				}
+
+
+				void Berufeskillen(Player* player, uint32 beruf){
+					if (player->HasSkill(beruf) && player->HasEnoughMoney(3000 * GOLD)){
+						player->LearnDefaultSkill(beruf, 6);
+						uint32 skill = player->GetSkillValue(beruf);
+						player->GetPureMaxSkillValue(beruf);
+						player->SetSkill(beruf, player->GetSkillStep(beruf), 450, 450);
+						DBeintrag(player->GetSession()->GetPlayer(), "Berufskillen");
+						ChatHandler(player->GetSession()).PSendSysMessage("[Beruf System] Dein Beruf wurde hochgesetzt.",
+							player->GetName());
+						player->ModifyMoney(-3000 * GOLD);
+						player->GetSession()->SendNotification("Dein Beruf wurde hochgesetzt.");
+					}
+
+					else {
+						ChatHandler(player->GetSession()).PSendSysMessage("[Beruf System] Du hast diesen Beruf leider nicht erlernt.",
+							player->GetName());
+					}
+
+
+				}
+
+
 				bool OnGossipHello(Player *pPlayer, Creature* _creature)
 				{
 					pPlayer->ADD_GOSSIP_ITEM(7, "Informationen und Hilfe", GOSSIP_SENDER_MAIN, 0);
@@ -116,6 +148,7 @@ class npc_first_char : public CreatureScript
 							pPlayer->AddItem(20400, 4);
 							pPlayer->SetMoney(50000000);
 							pPlayer->UpdateSkillsToMaxSkillsForLevel();
+							DBeintrag(pPlayer->GetSession()->GetPlayer(), "Firstaustattung einzel");
 
 
 
@@ -273,7 +306,7 @@ class npc_first_char : public CreatureScript
 
 								ss << "|cff54b5ffEine 10er Gildenfirstausstattung wurde von |r " << ChatHandler(pPlayer->GetSession()).GetNameLink() << " |cff54b5ff in Anspruch genommen!|r";
 								sWorld->SendGMText(LANG_GM_BROADCAST, ss.str().c_str());
-
+								DBeintrag(pPlayer->GetSession()->GetPlayer(), "Firstaustattung 10er");
 								CharacterDatabase.PExecute("REPLACE INTO first_char "
 									"(guid,Charname, account, Accname, time, guildid,ip) "
 									"VALUES ('%u', '%s', %u, '%s', %u, %u, '%s')",
@@ -368,7 +401,7 @@ class npc_first_char : public CreatureScript
 							if (guildmemberint > 25 && charresultint == 1 && ipadrcountint == 1 && onecharint != 1 && accountanzgesint <= 1){
 								pPlayer->SetLevel(80);
 								pPlayer->LearnDefaultSkill(762, 4);
-								pPlayer->TeleportTo(0, -792.84, -1607.55, 142.30, 2.33, 0);
+								pPlayer->TeleportTo(0, -866.84, -1551.72, 189.62, 0.79, 0);
 								pPlayer->AddItem(20400, 4);
 								pPlayer->SetMoney(50000000);
 								pPlayer->UpdateSkillsToMaxSkillsForLevel();
@@ -380,6 +413,7 @@ class npc_first_char : public CreatureScript
 									"(guid,Charname, account, Accname, time, guildid,ip) "
 									"VALUES ('%u', '%s', %u, '%s', %u, %u, '%s')",
 									guid, charname, accountresint, accname, zeit, guildidint, ipadrint);
+								DBeintrag(pPlayer->GetSession()->GetPlayer(), "Firstaustattung 25er");
 								return true;
 							}
 
@@ -448,6 +482,7 @@ class npc_first_char : public CreatureScript
 								"(uid,spieler, account) "
 								"VALUES ('%u', '%s', '%u')",
 								guid, name, acc);
+							DBeintrag(pPlayer->GetSession()->GetPlayer(), "2t Ausstattung");
 							return true;
 						}
 
@@ -477,151 +512,70 @@ class npc_first_char : public CreatureScript
 						pPlayer->ADD_GOSSIP_ITEM(7, "Juwelierskunst", GOSSIP_SENDER_MAIN, 19);
 						pPlayer->ADD_GOSSIP_ITEM(7, "Alchemie", GOSSIP_SENDER_MAIN, 20);
 						pPlayer->ADD_GOSSIP_ITEM(7, "Verzauberkunst", GOSSIP_SENDER_MAIN, 21);
-						
+						pPlayer->ADD_GOSSIP_ITEM(7, "Inschriftenkunde", GOSSIP_SENDER_MAIN, 9000);
+						pPlayer->ADD_GOSSIP_ITEM(7, "Ingenieurskunst", GOSSIP_SENDER_MAIN, 9001);
 
 						pPlayer->PlayerTalkClass->SendGossipMenu(907, pCreature->GetGUID());
 						return true;
 
 					}break;
 
+
+					
+
 					//Bergbau
 					case 13:
 					{
 
-						if (pPlayer->HasSkill(186) && pPlayer->HasEnoughMoney(3000* GOLD)){
-							pPlayer->LearnDefaultSkill(186, 6);
-							uint32 skill = pPlayer->GetSkillValue(186);
-							pPlayer->SetSkill(186, pPlayer->GetSkillStep(186), skill,450);
-							
-							
-							
-							ChatHandler(pPlayer->GetSession()).PSendSysMessage("[Aufwertungs System] Dein Beruf wurde hochgesetzt.",
-								pPlayer->GetName());
-						}
-
-						else {
-							ChatHandler(pPlayer->GetSession()).PSendSysMessage("[Aufwertungs System] Du hast diesen Beruf leider nicht erlernt.",
-								pPlayer->GetName());
-						}
-
+						Berufeskillen(pPlayer->GetSession()->GetPlayer(),186);
+					
 					}break;
 
 					//Schneiderei
 					case 14:
 					{
-
-						if (pPlayer->HasSkill(197) && pPlayer->HasEnoughMoney(3000 * GOLD)){
-							pPlayer->LearnDefaultSkill(197, 6);
-							pPlayer->UpdateSkillsToMaxSkillsForLevel();
-
-							ChatHandler(pPlayer->GetSession()).PSendSysMessage("[Aufwertungs System] Dein Beruf wurde hochgesetzt.",
-								pPlayer->GetName());
-						}
-
-						else {
-							ChatHandler(pPlayer->GetSession()).PSendSysMessage("[Aufwertungs System] Du hast diesen Beruf leider nicht erlernt.",
-								pPlayer->GetName());
-						}
-
+						Berufeskillen(pPlayer->GetSession()->GetPlayer(), 197);
+						
 					}break;
 
 
 					//Schmiedekunst
 					case 15:
 					{
-
-						if (pPlayer->HasSkill(164) && pPlayer->HasEnoughMoney(3000 * GOLD)){
-							pPlayer->LearnDefaultSkill(164, 6);
-
-							ChatHandler(pPlayer->GetSession()).PSendSysMessage("[Aufwertungs System] Dein Beruf wurde hochgesetzt.",
-								pPlayer->GetName());
-						}
-
-						else {
-							ChatHandler(pPlayer->GetSession()).PSendSysMessage("[Aufwertungs System] Du hast diesen Beruf leider nicht erlernt.",
-								pPlayer->GetName());
-						}
-
+						Berufeskillen(pPlayer->GetSession()->GetPlayer(), 164);
+						
 					}break;
 
 
 					//Kraeuterkunde
 					case 16:
 					{
-
-						if (pPlayer->HasSkill(182) && pPlayer->HasEnoughMoney(3000 * GOLD)){
-							pPlayer->LearnDefaultSkill(182, 6);
-
-							ChatHandler(pPlayer->GetSession()).PSendSysMessage("[Aufwertungs System] Dein Beruf wurde hochgesetzt.",
-								pPlayer->GetName());
-						}
-
-						else {
-							ChatHandler(pPlayer->GetSession()).PSendSysMessage("[Aufwertungs System] Du hast diesen Beruf leider nicht erlernt.",
-								pPlayer->GetName());
-						}
-
+						Berufeskillen(pPlayer->GetSession()->GetPlayer(), 182);
+						
 					}break;
 
 
 					//Kürschner
 					case 17:
 					{
-
-						if (pPlayer->HasSkill(393) && pPlayer->HasEnoughMoney(3000 * GOLD)){
-							pPlayer->LearnDefaultSkill(393,6);
-
-							ChatHandler(pPlayer->GetSession()).PSendSysMessage("[Aufwertungs System] Dein Beruf wurde hochgesetzt.",
-								pPlayer->GetName());
-						}
-
-						else {
-							ChatHandler(pPlayer->GetSession()).PSendSysMessage("[Aufwertungs System] Du hast diesen Beruf leider nicht erlernt.",
-								pPlayer->GetName());
-						}
-
+						Berufeskillen(pPlayer->GetSession()->GetPlayer(), 393);
+						
 					}break;
 
 
 					//Lederer
 					case 18:
 					{
-
-						if (pPlayer->HasSkill(165) && pPlayer->HasEnoughMoney(3000 * GOLD)){
-							pPlayer->LearnDefaultSkill(165, 6);
-
-							ChatHandler(pPlayer->GetSession()).PSendSysMessage("[Aufwertungs System] Dein Beruf wurde hochgesetzt.",
-								pPlayer->GetName());
-						}
-
-						else {
-							ChatHandler(pPlayer->GetSession()).PSendSysMessage("[Aufwertungs System] Du hast diesen Beruf leider nicht erlernt.",
-								pPlayer->GetName());
-						}
-
+						Berufeskillen(pPlayer->GetSession()->GetPlayer(), 165);
+						
 					}break;
 
 
 					//Juwe
 					case 19:
 					{
-
-						if (pPlayer->HasSkill(755) && pPlayer->HasEnoughMoney(3000 * GOLD)){
-							pPlayer->LearnDefaultSkill(755, 6);
-							uint32 skill = pPlayer->GetSkillValue(755);
-							pPlayer->SetSkill(755, 6, skill, 450);
-							
-
-
-							ChatHandler(pPlayer->GetSession()).PSendSysMessage("[Aufwertungs System] Dein Beruf wurde hochgesetzt.",
-								pPlayer->GetName());
-						}
-
-						else {
-							ChatHandler(pPlayer->GetSession()).PSendSysMessage("[Aufwertungs System] Du hast diesen Beruf leider nicht erlernt.",
-								pPlayer->GetName());
-						}
-
+						Berufeskillen(pPlayer->GetSession()->GetPlayer(), 755);
+						
 					}break;
 
 
@@ -629,41 +583,34 @@ class npc_first_char : public CreatureScript
 					//Alchemie
 					case 20:
 					{
-
-						if (pPlayer->HasSkill(171) && pPlayer->HasEnoughMoney(3000 * GOLD)){
-							pPlayer->LearnDefaultSkill(171, 6);
-
-							ChatHandler(pPlayer->GetSession()).PSendSysMessage("[Aufwertungs System] Dein Beruf wurde hochgesetzt.",
-								pPlayer->GetName());
-						}
-
-						else {
-							ChatHandler(pPlayer->GetSession()).PSendSysMessage("[Aufwertungs System] Du hast diesen Beruf leider nicht erlernt.",
-								pPlayer->GetName());
-						}
-
+						Berufeskillen(pPlayer->GetSession()->GetPlayer(), 171);
+						
 					}break;
 
 
 					//VZ
 					case 21:
 					{
+						Berufeskillen(pPlayer->GetSession()->GetPlayer(), 333);
+						
+					}break;
 
-						if (pPlayer->HasSkill(333) && pPlayer->HasEnoughMoney(3000 * GOLD)){
-							pPlayer->LearnDefaultSkill(333, 6);
+					//Inschriftler
+					case 9000:
+					{
+						Berufeskillen(pPlayer->GetSession()->GetPlayer(), 773);
 
-							ChatHandler(pPlayer->GetSession()).PSendSysMessage("[Aufwertungs System] Dein Beruf wurde hochgesetzt.",
-								pPlayer->GetName());
-						}
+					}break;
 
-						else {
-							ChatHandler(pPlayer->GetSession()).PSendSysMessage("[Aufwertungs System] Du hast diesen Beruf leider nicht erlernt.",
-								pPlayer->GetName());
-						}
+					//Ingi
+					case 9001:
+					{
+						Berufeskillen(pPlayer->GetSession()->GetPlayer(), 202);
 
 					}break;
 
 
+					//XP Boost
 					case 22:
 					{
 						uint32 guid = pPlayer->GetGUID();
@@ -759,7 +706,7 @@ class npc_first_char : public CreatureScript
 					
 
 						if (pPlayer->GetSession()->GetSecurity() == 3){	
-							pPlayer->ADD_GOSSIP_ITEM(7, "Berufe skillen [Nicht aktiv, geht nicht!]", GOSSIP_SENDER_MAIN, 12);
+							pPlayer->ADD_GOSSIP_ITEM(7, "Berufe skillen [Kosten: 3000 Gold]", GOSSIP_SENDER_MAIN, 12);
 							pPlayer->ADD_GOSSIP_ITEM(7, "Aufwertungen einsehen", GOSSIP_SENDER_MAIN, 4);
 						}
 

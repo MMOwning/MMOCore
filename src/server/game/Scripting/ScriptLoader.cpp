@@ -144,6 +144,9 @@ void AddSC_therakin();
 //gildenhausvendor
 void AddSC_gildenvendor();
 
+//Worldevent
+void AddSC_sb_worldevent();
+
 #ifdef SCRIPTS
 //world
 void AddSC_areatrigger_scripts();
@@ -902,6 +905,9 @@ void AddCommandScripts()
 
 	//gildenhausvendor
 	AddSC_gildenvendor();
+
+	//worldevent
+	AddSC_sb_worldevent();
 }
 
 

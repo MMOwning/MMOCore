@@ -45,11 +45,6 @@ public:
 	{
 		std::ostringstream ss;
 		
-		
-
-		
-
-		
 		uint32 guid = player->GetGUID();
 		uint32 accountid = player->GetSession()->GetAccountId();
 
@@ -482,7 +477,7 @@ public:
 
 	void OnGiveXP(Player* player, uint32& amount, Unit* /*victim*/)
 	{
-
+		
 		bool premium = player->GetSession()->IsPremium();
 		boost::gregorian::date date(boost::gregorian::day_clock::local_day());
 		if (date.day_of_week() == boost::date_time::Friday ||
@@ -603,7 +598,7 @@ public:
 		sWorld->setRate(RATE_REPAIRCOST, 3);
 		sWorld->setRate(RATE_DROP_ITEM_EPIC, 1);
 		sWorld->setRate(RATE_DROP_ITEM_UNCOMMON, 3);
-	 
+		sWorld->setBoolConfig(CONFIG_ALLOW_TWO_SIDE_TRADE, true);
 	}
 
 

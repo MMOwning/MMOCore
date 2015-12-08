@@ -86,7 +86,7 @@ INSERT INTO `custom_npc_tele_category` VALUES ('3', '2. Instanzen 10-40', '0', '
 INSERT INTO `custom_npc_tele_category` VALUES ('4', '3. Instanzen 41-69', '0', '0', '0');
 INSERT INTO `custom_npc_tele_category` VALUES ('5', '4. Instanzen 70-80', '0', '0', '0');
 INSERT INTO `custom_npc_tele_category` VALUES ('6', '5. Raids', '0', '0', '0');
-INSERT INTO `custom_npc_tele_category` VALUES ('7', '6. Areana', '0', '0', '0');
+INSERT INTO `custom_npc_tele_category` VALUES ('7', '6. Arena', '0', '0', '0');
 INSERT INTO `custom_npc_tele_category` VALUES ('8', '7. Shopping', '0', '0', '0');
 /* INSERT INTO `custom_npc_tele_category` VALUES ('9', '8. Shopping', '2', '3', '0'); */
 

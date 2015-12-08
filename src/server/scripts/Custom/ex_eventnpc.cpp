@@ -51,6 +51,7 @@ public: eventnpc() : CreatureScript("eventnpc"){ }
 			pPlayer->ADD_GOSSIP_ITEM(7, "Das Portal", GOSSIP_SENDER_MAIN, 5);
 			pPlayer->ADD_GOSSIP_ITEM(7, "Neujahrsevent", GOSSIP_SENDER_MAIN, 6);
 			pPlayer->ADD_GOSSIP_ITEM(7, "Chopper", GOSSIP_SENDER_MAIN, 7);
+			pPlayer->ADD_GOSSIP_ITEM(7, "MMOwning Worldevent", GOSSIP_SENDER_MAIN, 8);
 
 			pPlayer->PlayerTalkClass->SendGossipMenu(907, _creature->GetGUID());
 			return true;
@@ -245,6 +246,31 @@ public: eventnpc() : CreatureScript("eventnpc"){ }
 					return true;
 				}break;
 
+				//Worldevent
+				case 8:
+				{
+					GameEventMgr::ActiveEvents const& ae = sGameEventMgr->GetActiveEventList();
+					bool active = ae.find(77) != ae.end();
+					if (active == true){
+						pPlayer->GetGUID();
+						pPlayer->TeleportTo(0, -4796.05, -1001.17, 895.85 , 5.82);
+						ChatHandler(pPlayer->GetSession()).PSendSysMessage("Das Event ist aktuell aktiv. Viel Spaß beim Erreichen des Ziels.",
+							pPlayer->GetName());
+						pPlayer->PlayerTalkClass->SendCloseGossip();
+						return true;
+					}
+
+					
+					else{
+						pPlayer->GetGUID();
+						ChatHandler(pPlayer->GetSession()).PSendSysMessage("Das Worldevent ist zur Zeit nicht aktiv.",
+							pPlayer->GetName());
+						pPlayer->PlayerTalkClass->SendCloseGossip();
+						return true;
+					}
+					return true;
+
+				}break;
 
 					return true;
 			}
