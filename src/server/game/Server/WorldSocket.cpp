@@ -379,9 +379,6 @@ void WorldSocket::SendPacket(WorldPacket const& packet)
 void WorldSocket::HandleAuthSession(WorldPacket& recvPacket)
 {
     std::shared_ptr<AuthSession> authSession = std::make_shared<AuthSession>();
-	//MMO Custom start
-	bool isPremium = false;	
-	//MMO Custom end		
 	
     // Read the content of the packet
     recvPacket >> authSession->Build;
@@ -528,13 +525,15 @@ void WorldSocket::HandleAuthSessionCallback(std::shared_ptr<AuthSession> authSes
         return;
     }
 	
+
 	//MMO Custom start
+	bool isPremium = false;
     QueryResult premresult =
        LoginDatabase.PQuery ("SELECT 1 "
                                "FROM account_premium "
                                "WHERE id = '%u' "
                                "AND active = 1",
-                               id);
+                               account.Id);
    if (premresult) // if account premium
    {
        isPremium = true;

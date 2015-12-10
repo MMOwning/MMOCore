@@ -44,31 +44,31 @@ class mmowning_commandscript : public CommandScript
 public:
     mmowning_commandscript() : CommandScript("mmowning_commandscript") { }
 
-	ChatCommand* GetCommands() const override
+	std::vector<ChatCommand> GetCommands() const
     {
 
-        static ChatCommand commandTable[] =
+		static std::vector<ChatCommand> commandTable =
         {
-			//{ "goname",         SEC_MODERATOR,      false, OldHandler<&ChatHandler::HandleAppearCommand>,              "", NULL },				
-			//{ "namego",         SEC_MODERATOR,      false, OldHandler<&ChatHandler::HandleSummonCommand>,              "", NULL },				
+			//{ "goname",         SEC_MODERATOR,      false, OldHandler<&ChatHandler::HandleAppearCommand>,              ""},				
+			//{ "namego",         SEC_MODERATOR,      false, OldHandler<&ChatHandler::HandleSummonCommand>,              ""},				
 			//Allows your players to gamble for fun and prizes
-			{ "gamble",         SEC_PLAYER,         false, &HandleGambleCommand,              "", NULL },	
-			{ "roulette",       SEC_PLAYER,         false, &HandleRouletteCommand,            "", NULL },
+			{ "gamble",         SEC_PLAYER,         false, &HandleGambleCommand,              ""},	
+			{ "roulette",       SEC_PLAYER,         false, &HandleRouletteCommand,            ""},
 			//Mall Teleporter
-			{ "mall",			SEC_PLAYER,			false, &HandleMallCommand,				"", NULL }, 		
+			{ "mall",			SEC_PLAYER,			false, &HandleMallCommand,				""}, 		
 			//Dalaran Teleporter
-			{ "dala",			SEC_PLAYER,			false, &HandleDalaCommand,				"", NULL }, 				
+			{ "dala",			SEC_PLAYER,			false, &HandleDalaCommand,				""}, 				
 			//Buffer
-			{ "buffs",			SEC_PLAYER,			false, &HandleBuffsCommand,				"", NULL }, 
+			{ "buffs",			SEC_PLAYER,			false, &HandleBuffsCommand,				""}, 
 			//GuildHouse Tele
-			{ "gh",             SEC_PLAYER,      	false, &HandleGHCommand,				"", NULL },	
+			{ "gh",             SEC_PLAYER,      	false, &HandleGHCommand,				""},	
 			//insel
-			{ "tester",		SEC_ADMINISTRATOR,	false, &HandleInselCommand,				"", NULL },
+			{ "tester",		SEC_ADMINISTRATOR,	false, &HandleInselCommand,				""},
 
-			{ "gutschein",			SEC_PLAYER,			false, &HandleGutscheinCommand, "", NULL },
+			{ "gutschein",			SEC_PLAYER,			false, &HandleGutscheinCommand, ""},
 
-			//{ "tcrecon",        SEC_MODERATOR,      false, &HandleIRCRelogCommand,            "", NULL },	
-			{ NULL,             0,                  false,  NULL,                            "", NULL }
+			//{ "tcrecon",        SEC_MODERATOR,      false, &HandleIRCRelogCommand,            ""},	
+			{ NULL,             0,                  false,  NULL,                            ""}
         };
 
         return commandTable;

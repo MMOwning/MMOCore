@@ -19,14 +19,14 @@ class ex_commands : public CommandScript
 public:
 	ex_commands() : CommandScript("ex_commands") { }
 
-	ChatCommand* GetCommands() const override
+	std::vector<ChatCommand> GetCommands() const
 	{
 
-		static ChatCommand commandTable[] =
+		static std::vector<ChatCommand> commandTable =
 		{
 
 			//Set your Characterstats to test single Bosses
-			{ "tester", SEC_ADMINISTRATOR, false, &HandleTestingCommand, "", NULL },
+			{ "tester", SEC_ADMINISTRATOR, false, &HandleTestingCommand, ""},
 		};
 
 		return commandTable;

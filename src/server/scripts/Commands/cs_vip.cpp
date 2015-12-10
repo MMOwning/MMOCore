@@ -38,33 +38,33 @@ class vip_commandscript : public CommandScript
 public:
     vip_commandscript() : CommandScript("vip_commandscript") { }
 
-	ChatCommand* GetCommands() const override
+	std::vector<ChatCommand> GetCommands() const
     {
-        static ChatCommand vipCommandTable[] =
+		static std::vector<ChatCommand> vipCommandTable =
         {
-            { "add",            SEC_ADMINISTRATOR,  false, &HandleVipAddCommand,              "", NULL },		
-            { "debuff",         SEC_ADMINISTRATOR,  false, &HandleVipDebuffCommand,             "", NULL },
-            { "map",            SEC_ADMINISTRATOR,  false, &HandleVipMapCommand,                "", NULL },
-            { "bank",           SEC_ADMINISTRATOR,  false, &HandleVipBankCommand,               "", NULL },
-            { "repair",         SEC_ADMINISTRATOR,  false, &HandleVipRepairCommand,             "", NULL },
-          //{ "auction",        SEC_ADMINISTRATOR,  false, &HandleVipAuctionCommand,            "", NULL },
-            { "resettalents",   SEC_ADMINISTRATOR,  false, &HandleVipResetTalentsCommand,       "", NULL },
-            { "whispers",       SEC_ADMINISTRATOR,  false, &HandleVipWhispersCommand,           "", NULL },
-            { "taxi",           SEC_ADMINISTRATOR,  false, &HandleVipTaxiCommand,               "", NULL },
-            { "home",           SEC_ADMINISTRATOR,  false, &HandleVipHomeCommand,               "", NULL },
-            { "capital",        SEC_ADMINISTRATOR,  false, &HandleVipCapitalCommand,            "", NULL },
-            { "status",         SEC_ADMINISTRATOR,  false, &HandleVipStatusCommand,             "", NULL },
-			{"insel",			SEC_PLAYER,			false, &HandleInselCommand,					"", NULL },				
-            //{ "",         		SEC_ADMINISTRATOR,  true,  &HandleVipCommand,		            "", NULL },			
+            { "add",            SEC_ADMINISTRATOR,  false, &HandleVipAddCommand,              ""},		
+            { "debuff",         SEC_ADMINISTRATOR,  false, &HandleVipDebuffCommand,             ""},
+            { "map",            SEC_ADMINISTRATOR,  false, &HandleVipMapCommand,                ""},
+            { "bank",           SEC_ADMINISTRATOR,  false, &HandleVipBankCommand,               ""},
+            { "repair",         SEC_ADMINISTRATOR,  false, &HandleVipRepairCommand,             ""},
+          //{ "auction",        SEC_ADMINISTRATOR,  false, &HandleVipAuctionCommand,            ""},
+            { "resettalents",   SEC_ADMINISTRATOR,  false, &HandleVipResetTalentsCommand,       ""},
+            { "whispers",       SEC_ADMINISTRATOR,  false, &HandleVipWhispersCommand,           ""},
+            { "taxi",           SEC_ADMINISTRATOR,  false, &HandleVipTaxiCommand,               ""},
+            { "home",           SEC_ADMINISTRATOR,  false, &HandleVipHomeCommand,               ""},
+            { "capital",        SEC_ADMINISTRATOR,  false, &HandleVipCapitalCommand,            ""},
+            { "status",         SEC_ADMINISTRATOR,  false, &HandleVipStatusCommand,             ""},
+			{"insel",			SEC_PLAYER,			false, &HandleInselCommand,					""},				
+            //{ "",         		SEC_ADMINISTRATOR,  true,  &HandleVipCommand,		            ""},			
 			
-            { NULL,             0,                  false, NULL,                                "", NULL }
+            { NULL,             0,                  false, NULL,                                ""}
         };
         
         
-        static ChatCommand commandTable[] =
+		static std::vector<ChatCommand> commandTable =
         {
             { "elite",            SEC_ADMINISTRATOR,  false, NULL,                                "", vipCommandTable },
-            { NULL,             0,                  false, NULL,                                "", NULL }
+            { NULL,             0,                  false, NULL,                                ""}
         };
         return commandTable;
     }
