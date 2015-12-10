@@ -161,7 +161,23 @@ public:
 				Field *feld = ergebnis->Fetch();
 				uint32 bankmoney = feld[0].GetUInt32();
 
-				uint32 zusatzbetrag = gGold * 0.25;
+				uint32 zusatzbetrag = gGold * 0.10;
+
+				uint32 neubetrag = bankmoney + zusatzbetrag;
+
+				CharacterDatabase.PExecute("UPDATE guild SET `bankmoney` = '%u' WHERE `guildid` = '%u'", neubetrag, gildenid);
+
+			}
+
+			else
+			{
+
+				QueryResult ergebnis;
+				ergebnis = CharacterDatabase.PQuery("Select bankmoney from `guild` where `guildid` = '%u'", gildenid);
+				Field *feld = ergebnis->Fetch();
+				uint32 bankmoney = feld[0].GetUInt32();
+
+				uint32 zusatzbetrag = gGold * 0.20;
 
 				uint32 neubetrag = bankmoney + zusatzbetrag;
 

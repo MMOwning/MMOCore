@@ -680,18 +680,48 @@ public:
 };
 
 
-class Gold : public PlayerScript
+class fbevent : public PlayerScript
 {
 public:
-	Gold() : PlayerScript("Gold") {}
+	fbevent() : PlayerScript("fbevent") {}
 
-	void OnMoneyChanged(Player* player, int32& amount) { 
-		Guild* guild;
-		Battleground* bg;
-	
+	void OnCreate(Player* player) { 
+
+		GameEventMgr::ActiveEvents const& ae = sGameEventMgr->GetActiveEventList();
+		bool active = ae.find(78) != ae.end();
 		
+		QueryResult anzahl;
+		anzahl = CharacterDatabase.PQuery("SELECT count(accountid) FROM fb_event WHERE accountid = '%u'", player->GetSession()->GetAccountId());
+		Field *felder = anzahl->Fetch();
+		uint32 accountanzahl = felder[0].GetUInt32();
+		time_t sek;
+		time(&sek);
+		uint32 zeit = time(&sek);
+
+
+		if (active == true && accountanzahl == 0){
+			CharacterDatabase.PExecute("UPDATE `characters` set `level` = 80 where guid = '%u'", player->GetGUID());
+			CharacterDatabase.PExecute("UPDATE `characters` set `position_x` = -792.84 where guid = '%u'", player->GetGUID());
+			CharacterDatabase.PExecute("UPDATE `characters` set `position_y` = -1607.55 where guid = '%u'", player->GetGUID());
+			CharacterDatabase.PExecute("UPDATE `characters` set `position_z` = 142.30 where guid = '%u'", player->GetGUID());
+			CharacterDatabase.PExecute("UPDATE `characters` set `map` = 0 where guid = '%u'", player->GetGUID());
 			
+			player->SetFullHealth();
+			QueryResult accountname = LoginDatabase.PQuery("SELECT username FROM account where id = %u", player->GetSession()->GetAccountId());
+			std::string accname = (*accountname)[0].GetString();
+
+			CharacterDatabase.PExecute("INSERT INTO fb_event (name,guid,accountname,accountid,date) Values ('%s','%u','%s','%u','%u')", player->GetSession()->GetPlayerName(),player->GetGUID() , accname, player->GetSession()->GetAccountId(),zeit);
+		}
+		
+		else{
+			return;
+		}
+		
+
 	}
+
+
+
 };
 
 
@@ -769,7 +799,7 @@ public:
 		std::string lower = nachricht;
 		std::transform(lower.begin(), lower.end(), lower.begin(), ::tolower);
 
-		const uint32 cheksSize = 26;
+		const uint32 cheksSize = 31;
 		std::string checks[cheksSize];
 		checks[0] = "at";
 		checks[1] = "frostmourne";
@@ -777,32 +807,41 @@ public:
 		checks[3] = "bigfamily";
 		checks[4] = "castle-wow";
 		checks[5] = "mwow";
-		checks[6] = "Maxwow";
-		checks[7] = "Hellscream WoW";
-		checks[8] = "Soulwow";
-		checks[9] = "AdeX";
-		checks[10] = "Eternyum";
-		checks[11] = "Eternal";
-		checks[12] = "Back2Basics";
-		checks[13] = "Laenalith";
-		checks[14] = "Monster wow";
-		checks[15] = "Rising-Gods";
-		checks[16] = "Privat-WoW-Server";
-		checks[17] = "Ice-WoW";
-		checks[18] = "Land of Elves";
-		checks[19] = "SolaceWOW";
-		checks[20] = "World of Paranoid";
-		checks[21] = "Buzzteria";
+		checks[6] = "maxwow";
+		checks[7] = "hellscream wow";
+		checks[8] = "soulwow";
+		checks[9] = "adex";
+		checks[10] = "eternyum";
+		checks[11] = "eternal";
+		checks[12] = "back2basics";
+		checks[13] = "laenalith";
+		checks[14] = "monster wow";
+		checks[15] = "rising-gods";
+		checks[16] = "privat-woW-server";
+		checks[17] = "ice-wow";
+		checks[18] = "land of elves";
+		checks[19] = "solacewow";
+		checks[20] = "world of paranoid";
+		checks[21] = "buzzteria";
 		checks[22] = "genesis";
-		checks[23] = "Fantasy";
+		checks[23] = "fantasy";
 		checks[24] = "heroes";
-		checks[25] = "stormbalde";
+		checks[25] = "stormblade";
+		checks[26] = "fm";
+		checks[27] = "b2b";
+		checks[28] = "molten";
+		checks[29] = "warmane";
+		checks[30] = "wow";
 		
 
-		for (int i = 0; i < cheksSize; ++i)
+		for (uint32 i = 0; i < cheksSize; ++i)
 			if (lower.find(checks[i]) != std::string::npos)
 			{			
 				
+				if (checks[i] == "Nicht an der Tastatur"){
+					return;
+				}
+
 				time_t sek;
 				time(&sek);
 				uint32 zeit = time(&sek);
@@ -862,6 +901,7 @@ public:
 
 void AddSC_Announce_NewPlayer()
 {
+	new fbevent();
 	new Announce_NewPlayer();
 	new DoupleXP();
 	new Shutdown();

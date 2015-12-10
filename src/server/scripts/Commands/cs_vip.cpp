@@ -397,6 +397,7 @@ static bool HandleVipHomeCommand(ChatHandler* handler, const char* /*args*/)
 	//TODO: Needs fix
     //chr->RemoveSpellCooldown(8690,true);
     //chr->CastSpell(chr,8690,false);
+	
 
     return true;
 }
