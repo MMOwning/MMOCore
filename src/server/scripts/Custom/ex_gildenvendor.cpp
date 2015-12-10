@@ -1365,8 +1365,8 @@ public: gildenvendor() : CreatureScript("gildenvendor"){ }
 				uint32 gildenid = player->GetGuildId();
 				// Karazhan Smiley -> würde ich nicht verwenden -> Man versperrt damit den mit Absicht verbauten Weg von Blizz!!!
 				Gildenhauszuordnung(gildenid, 29, 10, 30, player->GetSession()->GetPlayer());
-
 				player->PlayerTalkClass->SendCloseGossip();
+				
 			}break;
 
 

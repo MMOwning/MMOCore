@@ -85,6 +85,7 @@ class npc_first_char : public CreatureScript
 
 				}
 
+				
 
 				void Berufeskillen(Player* player, uint32 beruf){
 					if (player->HasSkill(beruf) && player->HasEnoughMoney(3000 * GOLD)){
@@ -131,7 +132,7 @@ class npc_first_char : public CreatureScript
 					{
 					case 1:
 					{
-
+						
 						uint32 guid = pPlayer->GetGUID();
 
 						QueryResult accountres = CharacterDatabase.PQuery("SELECT account FROM characters WHERE guid = %u", guid);

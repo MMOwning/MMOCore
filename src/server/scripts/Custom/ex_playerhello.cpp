@@ -174,16 +174,13 @@
 #define MSG_COLOR_YELLOW               "|cFFFFFF00"
 
 
+
+
 class Announce_NewPlayer : public PlayerScript
 {
 
 public:
-	Announce_NewPlayer() : PlayerScript("Announce_NewPlayer") {}
-
-	
-	
-
-
+	Announce_NewPlayer() : PlayerScript("Announce_NewPlayer") {}	
 
 	void OnLogin(Player * player, bool online)
 	{
