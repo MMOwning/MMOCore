@@ -174,14 +174,6 @@ REPLACE INTO `creature_template` (`entry`, `difficulty_entry_1`, `difficulty_ent
 (500145, 0, 0, 0, 0, 0, 30721, 0, 0, 0, 'GM Items', 'Blizzard Entertainment', NULL, 0, 80, 80, 0, 35, 4225, 1, 1.14286, 0.75, 3, 0, 0, 0, 1, 1, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, '', 0, 3, 1, 1, 1, 1, 1, 1, 0, 0, 1, 0, 128, '0', 0);
 
 
-
-DELETE FROM `creature` WHERE `id` = 500121;
-REPLACE INTO `creature` (`guid`,`id`,`map`,`spawnMask`,`phaseMask`,`modelid`,`equipment_id`,`position_x`,`position_y`,`position_z`,`orientation`,`spawntimesecs`,`spawndist`,`currentwaypoint`,`curhealth`,`curmana`,`MovementType`) VALUES 
-('500121','500121','0','1','1','17072','0','-797.48','-1591.41','142.22','5.72','25','0','0','1000000','250000','0');
-
-
-
-
 REPLACE INTO `npc_trainer` (`ID`,`SpellID`,`MoneyCost`,`reqskillLine`,`reqskillRank`,`reqlevel`) VALUES 
 ('95001','28672','20000','171','325','68'),
 ('95001','28675','20000','171','325','68'),

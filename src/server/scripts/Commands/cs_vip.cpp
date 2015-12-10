@@ -42,29 +42,29 @@ public:
     {
 		static std::vector<ChatCommand> vipCommandTable =
         {
-            { "add",            SEC_ADMINISTRATOR,  false, &HandleVipAddCommand,              ""},		
-            { "debuff",         SEC_ADMINISTRATOR,  false, &HandleVipDebuffCommand,             ""},
-            { "map",            SEC_ADMINISTRATOR,  false, &HandleVipMapCommand,                ""},
-            { "bank",           SEC_ADMINISTRATOR,  false, &HandleVipBankCommand,               ""},
-            { "repair",         SEC_ADMINISTRATOR,  false, &HandleVipRepairCommand,             ""},
+            { "add",            SEC_ADMINISTRATOR,  false, &HandleVipAddCommand,              "" },		
+            { "debuff",         SEC_ADMINISTRATOR,  false, &HandleVipDebuffCommand,             "" },
+            { "map",            SEC_ADMINISTRATOR,  false, &HandleVipMapCommand,                "" },
+            { "bank",           SEC_ADMINISTRATOR,  false, &HandleVipBankCommand,               "" },
+            { "repair",         SEC_ADMINISTRATOR,  false, &HandleVipRepairCommand,             "" },
           //{ "auction",        SEC_ADMINISTRATOR,  false, &HandleVipAuctionCommand,            ""},
-            { "resettalents",   SEC_ADMINISTRATOR,  false, &HandleVipResetTalentsCommand,       ""},
-            { "whispers",       SEC_ADMINISTRATOR,  false, &HandleVipWhispersCommand,           ""},
+            { "resettalents",   SEC_ADMINISTRATOR,  false, &HandleVipResetTalentsCommand,       "" },
+            { "whispers",       SEC_ADMINISTRATOR,  false, &HandleVipWhispersCommand,           "" },
             { "taxi",           SEC_ADMINISTRATOR,  false, &HandleVipTaxiCommand,               ""},
-            { "home",           SEC_ADMINISTRATOR,  false, &HandleVipHomeCommand,               ""},
-            { "capital",        SEC_ADMINISTRATOR,  false, &HandleVipCapitalCommand,            ""},
+            { "home",           SEC_ADMINISTRATOR,  false, &HandleVipHomeCommand,               "" },
+            { "capital",        SEC_ADMINISTRATOR,  false, &HandleVipCapitalCommand,            "" },
             { "status",         SEC_ADMINISTRATOR,  false, &HandleVipStatusCommand,             ""},
-			{"insel",			SEC_PLAYER,			false, &HandleInselCommand,					""},				
-            //{ "",         		SEC_ADMINISTRATOR,  true,  &HandleVipCommand,		            ""},			
+			{"insel",			SEC_PLAYER,			false, &HandleInselCommand,					"" },				
+            //{ "",         		SEC_ADMINISTRATOR,  true,  &HandleVipCommand,		            "" },			
 			
-            { NULL,             0,                  false, NULL,                                ""}
+            { NULL,             0,                  false, NULL,                                "" }
         };
         
         
 		static std::vector<ChatCommand> commandTable =
         {
             { "elite",            SEC_ADMINISTRATOR,  false, NULL,                                "", vipCommandTable },
-            { NULL,             0,                  false, NULL,                                ""}
+            { NULL,             0,                  false, NULL,                                "" }
         };
         return commandTable;
     }
@@ -389,6 +389,9 @@ static bool HandleVipHomeCommand(ChatHandler* handler, const char* /*args*/)
         handler->SetSentErrorMessage(true);
 		return true;
 	}			
+
+	chr->CastSpell(chr, 8690, true);
+	
 
     // remove CD and cast spell
 	//TODO: Needs fix

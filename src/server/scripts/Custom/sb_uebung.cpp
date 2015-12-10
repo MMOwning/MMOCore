@@ -32,85 +32,109 @@ class sb_uebung : public CreatureScript
 public:
 	sb_uebung() : CreatureScript("sb_uebung") { }
 
+
+
 	bool OnGossipHello(Player* pPlayer, Creature* pCreature)
 	{
-		pPlayer->ADD_GOSSIP_ITEM(7, "Levelprüfen", GOSSIP_SENDER_MAIN, 0);
-		pPlayer->ADD_GOSSIP_ITEM(7, "Funktion 2", GOSSIP_SENDER_MAIN, 1);
-		pPlayer->ADD_GOSSIP_ITEM(7, "Questreward", GOSSIP_SENDER_MAIN, 2);
+		pPlayer->ADD_GOSSIP_ITEM(7, "1 level aufsteigen. Kosten: 10 Astrale Kredite", GOSSIP_SENDER_MAIN, 0);
+		pPlayer->ADD_GOSSIP_ITEM(7, "10 level aufsteigen.  Kosten: 90 Astrale Kredite.", GOSSIP_SENDER_MAIN, 1);
+	
+		if (pPlayer->getLevel() < 80)
+		{
+			pPlayer->ADD_GOSSIP_ITEM(7, "Auf Level 80 setzen.  Kosten: 800 Astrale Kredite.", GOSSIP_SENDER_MAIN, 2);
 
-		if (pPlayer->GetSession()->GetSecurity() > 1){
-			pPlayer->ADD_GOSSIP_ITEM(7, "Funktion 4", GOSSIP_SENDER_MAIN, 3);
 		}
-
 		pPlayer->PlayerTalkClass->SendGossipMenu(907, pCreature->GetGUID());
 		return true;
 
 	}
+
 	bool OnGossipSelect(Player* pPlayer, Creature* pCreature, uint32 /*uiSender*/, uint32 uiAction)
 	{
 		switch (uiAction)
 		{
 		case 0:
 		{
-			if (pPlayer->getLevel() >= 50)
-			{
-				ChatHandler(pPlayer->GetSession()).PSendSysMessage("Glückwunsch du bist Level 50 oder höher!");
-				return true;
-			}
-			else
-			{
-				ChatHandler(pPlayer->GetSession()).PSendSysMessage("Du bist leider noch nicht Level 50.");
-				return true;
-			}
-			return true;
-		}
-		
+			
+			levelup(pPlayer, 10, 79, 1);
 
+		}break;
+
+		
 		case 1:
 		{
-			pPlayer->SEND_GOSSIP_MENU(DEFAULT_GOSSIP_MESSAGE, pCreature->GetGUID());
-			pPlayer->PlayerTalkClass->ClearMenus();
-			pPlayer->ADD_GOSSIP_ITEM(7, "Funktion 5", GOSSIP_SENDER_MAIN, 4);
-			pPlayer->ADD_GOSSIP_ITEM(7, "Funktion 6", GOSSIP_SENDER_MAIN, 5);
-			pPlayer->ADD_GOSSIP_ITEM(7, "Funktion 7", GOSSIP_SENDER_MAIN, 6);
-			pPlayer->PlayerTalkClass->SendGossipMenu(907, pCreature->GetGUID());
-			return true;
-
-		}break;
-		
-		
-
-		case 3:
-		{
-
-		}break;
-		
-		case 4:
-		{
-
-		}break;
-		
-		case 5:
-		{
-
-		}break;
-		
-		case 6:
-		{
+			
+			levelup(pPlayer, 90, 70, 10);
 
 		}break;
 
 	
-		return true;
+		case 2:
+		{
+			uint16 abstand = 80 - pPlayer->getLevel();
+			// abstand ist der abstand des Spielerlevels zu Level 80
+
+			levelup(pPlayer, 800, 80, abstand); 
+			
+		}break;
+
+
 		}
 		return true;
 	}
+
+
+
+	
+
+	void levelup(Player* pPlayer, uint16 kosten, uint16 levelanforderung, uint16 levelerhoehung)
+	
+		// kosten sind die Kredite die benötigt werden
+		// levelanforderung ist der Schwellenwert ab wann eine Aufwertung nicht durchgeführt wird
+		// levelerhoehung ist der Wert um den das level erhoeht wird
+
+	{
+
+		if (pPlayer->getLevel() <= levelanforderung)
+		{
+			
+			if (pPlayer->HasItemCount(38186, kosten, true))
+			{
+				pPlayer->SetLevel(pPlayer->getLevel() + levelerhoehung);
+				pPlayer->DestroyItemCount(38186, kosten, true);
+				pPlayer->GetSession()->SendNotification("Dir wurden Astralekredite abgezogen und dein Level wurde erhoeht");
+				return;
+			}
+
+			else
+			{
+				pPlayer->GetSession()->SendNotification("Du hast leider nicht genug Astralekredite");
+				return;
+			}
+		}
+
+		else
+		{
+			pPlayer->GetSession()->SendNotification("Dein Level ist schon zuhoch!");
+			return;
+		}
+
+
+	}
+
+
+
+
+
+
 };
 
 void AddSC_sb_uebung()
 {
 	new sb_uebung();
 }
+
+
 
 
 

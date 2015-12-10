@@ -446,3 +446,11 @@ DELETE FROM `gameobject` WHERE `guid` = 802292;
 INSERT INTO `gameobject` (guid, id, map, zoneId, areaId, spawnMask, phaseMask, position_x, position_y, position_z, orientation, rotation0, rotation1, rotation2, rotation3, spawntimesecs, animprogress, state, VerifiedBuild) VALUES 
 ('802291', '196485', '631', '0', '0', '15', '1', '4353.29', '2465', '203.489', '6.22878', '0', '0', '0.0272001', '-0.99963', '300', '0', '1', '0' ),
 ('802292', '196485', '631', '0', '0', '15', '1', '4355.64', '2500', '203.386', '6.22878', '0', '0', '0.0272001', '-0.99963', '300', '0', '1', '0' );
+
+/* Astraler Kredit Accountweit */
+UPDATE `item_template` SET `Quality`='7' WHERE `entry`='38186';
+UPDATE `item_template` SET `Flags`='134221824' WHERE `entry`='38186';
+UPDATE `item_template` SET `bonding`='1' WHERE `entry`='38186';
+UPDATE `item_template` SET `BagFamily`='2048' WHERE `entry`='38186';
+
+

@@ -19,7 +19,7 @@ class ex_commands : public CommandScript
 public:
 	ex_commands() : CommandScript("ex_commands") { }
 
-	std::vector<ChatCommand> GetCommands() const
+	std::vector<ChatCommand> GetCommands() const override
 	{
 
 		static std::vector<ChatCommand> commandTable =

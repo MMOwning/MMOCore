@@ -34,7 +34,7 @@ REPLACE INTO `command` (`name`,`permission`,`help`) VALUES ('elite resettalents'
 REPLACE INTO `command` (`name`,`permission`,`help`) VALUES ('elite whispers', 194, 'Syntax: .elite whispers - Enable/disable accepting whispers by elite accounts from players.');
 REPLACE INTO `command` (`name`,`permission`,`help`) VALUES ('elite taxi', 195, 'Syntax: .elite taxi - reveals all taxipaths to owner');
 REPLACE INTO `command` (`name`,`permission`,`help`) VALUES ('elite home', 195, 'Syntax: .elite home - teleport owner to home(ignoring CD on Hearthstone)');
-REPLACE INTO `command` (`name`,`permission`,`help`) VALUES ('elite capital', 193, 'Syntax: .elite capital - teleport owner to capital(Orgrimmar/Stormwind) depending on faction of player');
+REPLACE INTO `command` (`name`,`permission`,`help`) VALUES ('elite capital', 195, 'Syntax: .elite capital - teleport owner to capital(Orgrimmar/Stormwind) depending on faction of player');
 REPLACE INTO `command` (`name`,`permission`,`help`) VALUES ('elite status', 193, 'Syntax: .elite  status $account - Elite Status eines Accounts anzeigen');
 REPLACE INTO `command` (`name`,`permission`,`help`) VALUES ('elite add', 193, 'Syntax: .elite add $account $days - Set or update a VIP account.');
 REPLACE INTO `command` (`name`,`permission`,`help`) VALUES ('elite insel', 195, 'Syntax: .elite insel  Teleportiert dich zur "Insel".');
@@ -58,8 +58,13 @@ UPDATE `command` SET `permission`='195' WHERE `name`='gm ingame';
 DELETE FROM command WHERE `name`='tester';
 INSERT INTO `command` (`name`, `permission`, `help`) VALUES ('tester', 193, 'Syntax: .testing. Bereitet deinen Char auf einen Test vor.');   
 
+/* ITEM CODE BEFEHL */
 DELETE FROM command WHERE `name`='gutschein';
 INSERT INTO `command` (`name`, `permission`, `help`) VALUES ('gutschein', 195, '');   
 
 DELETE FROM command WHERE `name`='generate';
 INSERT INTO `command` (`name`, `permission`, `help`) VALUES ('generate', 195, '');   
+
+/* Fremdwerbung */
+DELETE FROM command WHERE `name`='werbung';
+INSERT INTO `command` (`name`, `permission`, `help`) VALUES ('werbung', 195, '');   

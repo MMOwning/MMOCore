@@ -30,6 +30,16 @@ class Race_Change_NPC : public CreatureScript
 public:
 	Race_Change_NPC() : CreatureScript("racechange") {  }
 
+	void DBeintrag(Player* player, std::string grund){
+		CharacterDatabase.PExecute("INSERT INTO firstnpc_log "
+			"(grund,spieler, guid)"
+			"VALUES ('%s', '%s', '%u')",
+			grund, player->GetSession()->GetPlayerName(), player->GetGUID());
+		return;
+
+	}
+
+
 	bool OnGossipHello(Player* player, Creature* creature)
 	{
 		player->ADD_GOSSIP_ITEM(GOSSIP_ICON_CHAT, "Wie funktioniert das?", GOSSIP_SENDER_MAIN, 0);
@@ -62,6 +72,7 @@ public:
 				std::ostringstream ss;
 				ss << "|cff54b5ffEin Rassenwechsel wurde durchgefuehrt von: |r " << ChatHandler(pPlayer->GetSession()).GetNameLink();
 				sWorld->SendGMText(LANG_GM_BROADCAST, ss.str().c_str());
+				DBeintrag(pPlayer->GetSession()->GetPlayer(), "Rassenwechsel");
 				ChatHandler(pPlayer->GetSession()).PSendSysMessage("Bitte ausloggen um Aenderungen durchzufuehren.",
 					pPlayer->GetName());
 				pPlayer->ModifyMoney(-500*GOLD);
@@ -84,6 +95,7 @@ public:
 				std::ostringstream ss;
 				ss << "|cff54b5ffEin Fraktionswechsel wurde durchgefuehrt von: |r " << ChatHandler(pPlayer->GetSession()).GetNameLink();
 				sWorld->SendGMText(LANG_GM_BROADCAST, ss.str().c_str());
+				DBeintrag(pPlayer->GetSession()->GetPlayer(), "Fraktionswechsel");
 				ChatHandler(pPlayer->GetSession()).PSendSysMessage("Bitte ausloggen um Aenderungen durchzufuehren.",
 					pPlayer->GetName());
 				pPlayer->ModifyMoney(-500 * GOLD);
@@ -108,6 +120,7 @@ public:
 				
 				pPlayer->GetGUID();
 				std::ostringstream ss;
+				DBeintrag(pPlayer->GetSession()->GetPlayer(), "Rassen und Fraktionswechsel");
 				ss << "|cff54b5ffEin Rassen und Fraktionswechsel wurde durchgefuehrt von: |r " << ChatHandler(pPlayer->GetSession()).GetNameLink();
 				sWorld->SendGMText(LANG_GM_BROADCAST, ss.str().c_str());
 				ChatHandler(pPlayer->GetSession()).PSendSysMessage("Bitte ausloggen um Aenderungen durchzufuehren.",
@@ -129,6 +142,7 @@ public:
 				pPlayer->SetAtLoginFlag(AT_LOGIN_RENAME);
 				pPlayer->ModifyMoney(-500 * GOLD);
 				std::ostringstream ss;
+				DBeintrag(pPlayer->GetSession()->GetPlayer(), "Namensänderung");
 				ss << "|cff54b5ffEine Namensaenderung wurde durchgefuehrt von : |r " << ChatHandler(pPlayer->GetSession()).GetNameLink();
 				sWorld->SendGMText(LANG_GM_BROADCAST, ss.str().c_str());
 				ChatHandler(pPlayer->GetSession()).PSendSysMessage("Bitte ausloggen um Aenderungen durchzufuehren.",

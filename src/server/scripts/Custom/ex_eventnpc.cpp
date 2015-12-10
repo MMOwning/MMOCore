@@ -41,8 +41,7 @@ public: eventnpc() : CreatureScript("eventnpc"){ }
 		bool OnGossipHello(Player *pPlayer, Creature* _creature)
 		{
 			
-			pPlayer->GetGUID();
-		
+			
 			pPlayer->ADD_GOSSIP_ITEM(7, "Was tut dieser NPC?", GOSSIP_SENDER_MAIN, 0);
 			pPlayer->ADD_GOSSIP_ITEM(7, "MMOwning Weihnachtsevent. Informationen folgen bald.", GOSSIP_SENDER_MAIN, 1);
 			pPlayer->ADD_GOSSIP_ITEM(7, "MMOwning Halloweenevent", GOSSIP_SENDER_MAIN, 2);
