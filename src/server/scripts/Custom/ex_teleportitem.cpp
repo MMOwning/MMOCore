@@ -41,7 +41,7 @@ class port_item : public ItemScript
 	public:
 		port_item() : ItemScript("teleportitem"){}
 
-		bool Onuse(Player * player, Item *, SpellCastTargets const& targets)
+		bool Onuse(Player * player, Item *, SpellCastTargets const& /*targets*/)
 		{
 			player->TeleportTo(0, -9773.22, 2125.16, 15.49, 3.47, 0.0f);
 			return true;

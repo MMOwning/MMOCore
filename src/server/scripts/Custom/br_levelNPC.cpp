@@ -53,7 +53,7 @@ public: br_levelNPC() : CreatureScript("br_levelNPC"){ }
 			return true;
 		}
 
-		bool OnGossipSelect(Player * pPlayer, Creature * pCreature, uint32 /*uiSender*/, uint32 uiAction)
+		bool OnGossipSelect(Player * pPlayer, Creature * /*pCreature*/, uint32 /*uiSender*/, uint32 uiAction)
 		{
 			switch (uiAction){
 
@@ -143,7 +143,7 @@ public: br_levelNPC() : CreatureScript("br_levelNPC"){ }
 
 			}
 
-
+            return true;
 		}
 
 };

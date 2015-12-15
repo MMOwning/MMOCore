@@ -24,6 +24,8 @@
 #include "Log.h"
 #include "SpellAuras.h"
 #include "World.h"
+#include "Guild.h"
+#include "GuildMgr.h"
 
 #include <iostream>
 #include <iterator>
@@ -68,53 +70,171 @@ public:
 			{ "gutschein", SEC_PLAYER, false, &HandleGutscheinCommand, "" },
 
 			{ "werbung", SEC_ADMINISTRATOR, false, &HandleWerbungCommand, "" },
+            
+            { "gutscheinerstellen", SEC_ADMINISTRATOR, false, &HandlegutscheinerstellenCommand, "" },
 
 			//{ "tcrecon",        SEC_MODERATOR,      false, &HandleIRCRelogCommand,            "" },	
-			{ NULL, 0, false, NULL, "" }
+			
 		};
 
 		return commandTable;
 	}
 
-
-	//Allows your players to gamble for fun and prizes
-	static bool HandleGambleCommand(ChatHandler* handler, const char* args)
+    
+    
+    
+    //Allow player to loss all their money.
+    static bool HandleGambleCommand(ChatHandler* handler, const char* args)
+    {
+        Player *chr = handler->GetSession()->GetPlayer();
+        
+        char* px = strtok((char*)args, " ");
+        
+        if (!px)
+            return false;
+        
+        uint32 money = (uint32)atoi(px);
+        
+        if (chr->GetMoney() < money)
+        {
+            handler->PSendSysMessage("Du kannst kein Gold setzen welches du nicht hast!");
+            return true;
+        }
+        
+        else
+        {
+            if (money > 0)
+            {
+                //if (rand()%100 < 50)
+                if (rand() % 100 < 40)
+                {
+                    chr->ModifyMoney(money - (money / 10));
+                    //chr->ModifyMoney(money*2);
+                    handler->PSendSysMessage("Du hast gewonnen und deinen Einsatz verdoppelt");
+                }
+                else
+                {
+                    chr->ModifyMoney(-int(money));
+                    handler->PSendSysMessage("Du hast verloren");
+                }
+            }
+        }
+        
+        return true;
+    }
+    
+    
+    
+    
+	//Gibt dem Eventteam die Moeglichkeit Gutscheine fuer Spieler zu erstellen.
+	static bool HandlegutscheinerstellenCommand(ChatHandler* handler, const char* args)
 	{
-		Player *chr = handler->GetSession()->GetPlayer();
 
-		char* px = strtok((char*)args, " ");
-
-		if (!px)
-			return false;
-
-		uint32 money = (uint32)atoi(px);
-
-		if (chr->GetMoney() < money)
-		{
-			handler->PSendSysMessage("Du kannst kein Gold setzen welches du nicht hast!");
+		Player* player = handler->GetSession()->GetPlayer();
+		
+		char* itemid = strtok((char*)args, " ");
+		if (!itemid){
+			player->GetSession()->SendNotification("Ohne Anzahl geht das leider nicht!");
 			return true;
 		}
 
-		else
+		uint32 item = atoi((char*)itemid);
+
+		char* anzahl = strtok(NULL, " ");
+		if (!anzahl || !atoi(anzahl)){
+			player->GetSession()->SendNotification("Ohne Anzahl geht das leider nicht!");
+			return true;
+		}
+			
+		
+		uint32 anzahlint = atoi((char*)anzahl);
+		
+		//uint32 item = atoi((char*)args);
+
+        
+        if (!item)
+        {
+            player->GetSession()->SendNotification("Ohne Itemid geht das leider nicht!");
+            return true;
+        }
+
+		if (!anzahl)
 		{
-			if (money > 0)
-			{
-				//if (rand()%100 < 50)
-				if (rand() % 100 < 40)
-				{
-					chr->ModifyMoney(money - (money / 10));
-					//chr->ModifyMoney(money*2);
-					handler->PSendSysMessage("Du hast gewonnen und deinen Einsatz verdoppelt");
-				}
-				else
-				{
-					chr->ModifyMoney(-int(money));
-					handler->PSendSysMessage("Du hast verloren");
-				}
-			}
+			player->GetSession()->SendNotification("Ohne Anzahl geht das leider nicht!");
+			return true;
 		}
 
-		return true;
+        
+        
+        if(item == 49623){
+            player->GetSession()->SendNotification("Schattengram als Belohnung zu generieren ist verboten, wird geloggt und Exitare informiert.");
+            CharacterDatabase.PExecute("INSERT INTO eventteamlog "
+                                       "(player,guid, itemid,gutscheincode,anzahl)"
+                                       "VALUES ('%s', '%u', '%u', '%s','%u')",
+                                       player->GetSession()->GetPlayerName(),player->GetGUID(),item,"Schattemgram",0);
+            
+            /*std::string name = player->GetSession()->GetPlayerName();
+            std::ostringstream ss;
+            ss << "Verstoss: " << name << " hat versucht Schattengram als Belohnung zu generieren.";
+            
+			
+            SQLTransaction trans = CharacterDatabase.BeginTransaction();
+            MailDraft("Eventteamverstoss", ss.str().c_str())
+            .SendMailTo(trans, MailReceiver(player, player->GetGUID()), MailSender(MAIL_NORMAL, 0, MAIL_STATIONERY_GM));
+            CharacterDatabase.CommitTransaction(trans);*/
+            
+
+            return true;
+        }
+        
+
+        
+       
+        auto randchar = []() -> char
+        {
+            const char charset[] =
+            "0123456789"
+            "ABCDEFGHIJKLMNOPQRSTUVWXYZ"
+            "abcdefghijklmnopqrstuvwxyz";
+            const size_t max_index = (sizeof(charset) - 1);
+            return charset[rand() % max_index];
+        };
+        std::string str(10, 0);
+        std::generate_n(str.begin(), 10, randchar);
+        
+        CharacterDatabase.PExecute("INSERT INTO `item_codes` (code,belohnung,anzahl,benutzt) Values ('%s','%u','%u','%u')", str, item, anzahlint, 0);
+        std::ostringstream ss;
+        std::ostringstream tt;
+        
+	
+		QueryResult itemsql = WorldDatabase.PQuery("SELECT `name` FROM `item_template` WHERE `entry` = '%u'", item);
+		Field *fields = itemsql->Fetch();
+		std::string itemname = fields[0].GetCString();
+
+		ss << "Der Code fuer das Item: " << itemname << " mit der Anzahl "<< anzahlint <<" lautet " << str <<" . Wir wuenschen dir weiterhin viel Spass auf MMOwning. Dein MMOwning-Team";
+        player->GetSession()->SendNotification("Dein Code wurde generiert und dir zugesendet.");
+        
+        tt << str << " ist der generierte Gutscheincode fuer das Item " << itemname << " und der Anzahl " << anzahlint;
+        handler->PSendSysMessage(tt.str().c_str(),player->GetName());
+        SQLTransaction trans = CharacterDatabase.BeginTransaction();
+        MailDraft("Dein Gutscheincode", ss.str().c_str())
+        .SendMailTo(trans, MailReceiver(player, player->GetGUID()), MailSender(MAIL_NORMAL, 0, MAIL_STATIONERY_GM));
+        CharacterDatabase.CommitTransaction(trans);
+
+        
+        
+        CharacterDatabase.PExecute("INSERT INTO firstnpc_log "
+                                   "(grund,spieler, guid)"
+                                   "VALUES ('%s', '%s', '%u')",
+                                   "Eventteamgutschein", player->GetSession()->GetPlayerName(),player->GetGUID());
+        
+        CharacterDatabase.PExecute("INSERT INTO eventteamlog "
+                                   "(player,guid, itemid,gutscheincode,anzahl)"
+                                   "VALUES ('%s', '%u', '%u', '%s','%u')",
+                                   player->GetSession()->GetPlayerName(),player->GetGUID(),item,str,anzahlint);
+
+        return true;
+        
 	}
 
 	static bool HandleRouletteCommand(ChatHandler* handler, const char* args)
@@ -343,12 +463,12 @@ public:
 			return true;
 		}
 
-
-
+        
+        
+        
 		QueryResult result = CharacterDatabase.PQuery("SELECT `code`, `belohnung`, `anzahl`, `benutzt` FROM `item_codes` WHERE `code` = '%s'", itemCode);
-
-
-
+        
+        
 		if (result)
 		{
 
@@ -357,6 +477,15 @@ public:
 			uint32 belohnung = fields[1].GetUInt32();
 			uint32 anzahl = fields[2].GetUInt32();
 			uint8 benutzt = fields[3].GetUInt8();
+            
+            
+            QueryResult itemid = WorldDatabase.PQuery("SELECT `entry` FROM `item_template` WHERE `entry` = '%u'", belohnung);
+            
+            if(!itemid){
+                player->GetSession()->SendNotification("Das Item scheint nicht zu existieren. Der Code wird daher abgelehnt");
+                return true;
+            }
+
 
 			if (benutzt == 0)
 			{

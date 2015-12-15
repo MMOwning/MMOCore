@@ -75,8 +75,7 @@ public: seruc() : CreatureScript("seruc"){ }
 
 			case 15:
 			{
-				uint32 guid = pPlayer->GetGUID();
-
+				
 
 				pPlayer->PlayerTalkClass->ClearMenus();
 				pPlayer->ADD_GOSSIP_ITEM(7, "Was sind die MMO Bosse?", GOSSIP_SENDER_MAIN, 17);

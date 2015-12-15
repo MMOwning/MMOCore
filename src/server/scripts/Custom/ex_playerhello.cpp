@@ -182,17 +182,37 @@ class Announce_NewPlayer : public PlayerScript
 public:
 	Announce_NewPlayer() : PlayerScript("Announce_NewPlayer") {}	
 
-	void OnLogin(Player * player, bool online)
+    
+    void Belohnung(Player* player, uint32 zeit, uint32 guid,uint32 money){
+    
+        QueryResult result = CharacterDatabase.PQuery("SELECT `id`, `zeit`, `spieler`,`uid` `benutzt` FROM `lob` WHERE `zeit` = '%u' AND `uid`= '%u'", zeit, player->GetGUID());
+        if (!result){
+            
+            
+            SQLTransaction trans = CharacterDatabase.BeginTransaction();
+            MailDraft("Ein Geschenk", "Das MMOwning-Team bedankt sich fuer deine Unterstuetzung mit einer kleinen Geste. Viel Spass weiterhin auf MMOwning World.").AddMoney(money * GOLD)
+            .SendMailTo(trans, MailReceiver(player, player->GetGUID()), MailSender(MAIL_NORMAL, 0, MAIL_STATIONERY_GM));
+            CharacterDatabase.CommitTransaction(trans);
+            
+            CharacterDatabase.PExecute("INSERT INTO lob (zeit,spieler,uid,benutzt) Values ('%u','%s','%u','%u')", zeit, player->GetName().c_str(), guid, 1);
+            player->SaveToDB();
+            return;
+            
+        }
+        
+    }
+    
+    
+	void OnLogin(Player * player, bool /*online*/)
 	{
 		std::ostringstream ss;
 		
-		uint32 guid = player->GetGUID();
+		
 		uint32 accountid = player->GetSession()->GetAccountId();
 
 
-		QueryResult accountres = CharacterDatabase.PQuery("SELECT account FROM characters WHERE guid = %u", guid);
-		uint32 accountresint = (*accountres)[0].GetUInt32();
-		QueryResult charresult = CharacterDatabase.PQuery("Select count(guid) From characters where account = '%u'", accountresint);
+		
+		QueryResult charresult = CharacterDatabase.PQuery("Select count(guid) From characters where account = '%u'", accountid);
 		uint32 charresultint = (*charresult)[0].GetUInt32();
 		
 		if (player->GetTotalPlayedTime() < 1 && charresultint == 1)
@@ -207,155 +227,78 @@ public:
 
 		uint32 time = player->GetTotalPlayedTime();
 		
-#pragma region
+
 
 		//10h
-		if (time >= 36000 && time <= 71999){
-			QueryResult result = CharacterDatabase.PQuery("SELECT `id`, `zeit`, `spieler`,`uid` `benutzt` FROM `lob` WHERE `zeit` = '%u' AND `uid`= '%u'", 10, player->GetGUID());
-		if (!result){
-				
-			uint32 uid = player->GetGUID();
-				SQLTransaction trans = CharacterDatabase.BeginTransaction();
-				MailDraft("Ein Geschenk", "Das MMOwning-Team bedankt sich fuer deine Unterstuetzung mit einer kleinen Geste. Viel Spass weiterhin auf MMOwning World.").AddMoney(250 * GOLD)
-					.SendMailTo(trans, MailReceiver(player, player->GetGUID()), MailSender(MAIL_NORMAL, 0, MAIL_STATIONERY_GM));
-				CharacterDatabase.CommitTransaction(trans);
-
-				CharacterDatabase.PExecute("INSERT INTO lob (zeit,spieler,uid,benutzt) Values ('%u','%s','%u','%u')", 10, player->GetName().c_str(), uid, 1);
-
-			}
+		if (time >= 1 /*36000*/ && time <= 71999){
+            
+            Belohnung(player->GetSession()->GetPlayer(), 10, player->GetGUID(), 250);
+          
 		}
 
 		//20h
 		if (time >= 72000 && time <= 107999){
-			QueryResult result = CharacterDatabase.PQuery("SELECT `id`, `zeit`, `spieler`,`uid` `benutzt` FROM `lob` WHERE `zeit` = '%u' AND `uid`= '%u'", 20, player->GetGUID());
-			if (!result){
-
-				uint32 uid = player->GetGUID();
-				SQLTransaction trans = CharacterDatabase.BeginTransaction();
-				MailDraft("Ein Geschenk", "Das MMOwning-Team bedankt sich fuer deine Unterstuetzung mit einer kleinen Geste. Viel Spass weiterhin auf MMOwning World.").AddMoney(250 * GOLD)
-					.SendMailTo(trans, MailReceiver(player, player->GetGUID()), MailSender(MAIL_NORMAL, 0, MAIL_STATIONERY_GM));
-				CharacterDatabase.CommitTransaction(trans);
-
-				CharacterDatabase.PExecute("INSERT INTO lob (zeit,spieler,uid,benutzt) Values ('%u','%s','%u','%u')", 20, player->GetName().c_str(), uid, 1);
-
-			}
+            
+            Belohnung(player->GetSession()->GetPlayer(), 20, player->GetGUID(), 250);
+           
 		}
 
 		//30h
 		if (time >= 108000 && time <= 143999){
-			QueryResult result = CharacterDatabase.PQuery("SELECT `id`, `zeit`, `spieler`,`uid` `benutzt` FROM `lob` WHERE `zeit` = '%u' AND `uid`= '%u'", 30, player->GetGUID());
-			if (!result){
-
-				uint32 uid = player->GetGUID();
-				SQLTransaction trans = CharacterDatabase.BeginTransaction();
-				MailDraft("Ein Geschenk", "Das MMOwning-Team bedankt sich fuer deine Unterstuetzung mit einer kleinen Geste. Viel Spass weiterhin auf MMOwning World.").AddMoney(250 * GOLD)
-					.SendMailTo(trans, MailReceiver(player, player->GetGUID()), MailSender(MAIL_NORMAL, 0, MAIL_STATIONERY_GM));
-				CharacterDatabase.CommitTransaction(trans);
-
-				CharacterDatabase.PExecute("INSERT INTO lob (zeit,spieler,uid,benutzt) Values ('%u','%s','%u','%u')", 30, player->GetName().c_str(), uid, 1);
-
-			}
+            
+            Belohnung(player->GetSession()->GetPlayer(), 30, player->GetGUID(), 250);
+           
 		}
 
 
 
 		//40h
 		if (time >= 144000 && time <= 179999){
-			QueryResult result = CharacterDatabase.PQuery("SELECT `id`, `zeit`, `spieler`,`uid` `benutzt` FROM `lob` WHERE `zeit` = '%u' AND `uid`= '%u'", 40, player->GetGUID());
-			if (!result){
-
-				uint32 uid = player->GetGUID();
-				SQLTransaction trans = CharacterDatabase.BeginTransaction();
-				MailDraft("Ein Geschenk", "Das MMOwning-Team bedankt sich fuer deine Unterstuetzung mit einer kleinen Geste. Viel Spass weiterhin auf MMOwning World.").AddMoney(250 * GOLD)
-					.SendMailTo(trans, MailReceiver(player, player->GetGUID()), MailSender(MAIL_NORMAL, 0, MAIL_STATIONERY_GM));
-				CharacterDatabase.CommitTransaction(trans);
-
-				CharacterDatabase.PExecute("INSERT INTO lob (zeit,spieler,uid,benutzt) Values ('%u','%s','%u','%u')", 40, player->GetName().c_str(), uid, 1);
-
-			}
-		}
+            
+            Belohnung(player->GetSession()->GetPlayer(), 40, player->GetGUID(), 250);
+            
+        }
 
 
 		//50h
 		if (time >= 180000 && time <= 215999){
-			QueryResult result = CharacterDatabase.PQuery("SELECT `id`, `zeit`, `spieler`,`uid` `benutzt` FROM `lob` WHERE `zeit` = '%u' AND `uid`= '%u'", 50, player->GetGUID());
-			if (!result){
-
-				uint32 uid = player->GetGUID();
-				SQLTransaction trans = CharacterDatabase.BeginTransaction();
-				MailDraft("Ein Geschenk", "Das MMOwning-Team bedankt sich fuer deine Unterstuetzung mit einer kleinen Geste. Viel Spass weiterhin auf MMOwning World.").AddMoney(500 * GOLD)
-					.SendMailTo(trans, MailReceiver(player, player->GetGUID()), MailSender(MAIL_NORMAL, 0, MAIL_STATIONERY_GM));
-				CharacterDatabase.CommitTransaction(trans);
-
-				CharacterDatabase.PExecute("INSERT INTO lob (zeit,spieler,uid,benutzt) Values ('%u','%s','%u','%u')", 50, player->GetName().c_str(), uid, 1);
-
-			}
+            
+            Belohnung(player->GetSession()->GetPlayer(), 50, player->GetGUID(), 500);
+            
+			
 		}
 
 		//60h
 		if (time >= 216000 && time <= 251999){
-			QueryResult result = CharacterDatabase.PQuery("SELECT `id`, `zeit`, `spieler`,`uid` `benutzt` FROM `lob` WHERE `zeit` = '%u' AND `uid`= '%u'", 60, player->GetGUID());
-			if (!result){
-
-				uint32 uid = player->GetGUID();
-				SQLTransaction trans = CharacterDatabase.BeginTransaction();
-				MailDraft("Ein Geschenk", "Das MMOwning-Team bedankt sich fuer deine Unterstuetzung mit einer kleinen Geste. Viel Spass weiterhin auf MMOwning World.").AddMoney(500 * GOLD)
-					.SendMailTo(trans, MailReceiver(player, player->GetGUID()), MailSender(MAIL_NORMAL, 0, MAIL_STATIONERY_GM));
-				CharacterDatabase.CommitTransaction(trans);
-
-				CharacterDatabase.PExecute("INSERT INTO lob (zeit,spieler,uid,benutzt) Values ('%u','%s','%u','%u')", 60, player->GetName().c_str(), uid, 1);
-
-			}
+            
+            Belohnung(player->GetSession()->GetPlayer(), 60, player->GetGUID(), 500);
+            
+			
 		}
 
 
 		//70h
 		if (time >= 252000 && time <= 279999){
-			QueryResult result = CharacterDatabase.PQuery("SELECT `id`, `zeit`, `spieler`,`uid` `benutzt` FROM `lob` WHERE `zeit` = '%u' AND `uid`= '%u'", 70, player->GetGUID());
-			if (!result){
-
-				uint32 uid = player->GetGUID();
-				SQLTransaction trans = CharacterDatabase.BeginTransaction();
-				MailDraft("Ein Geschenk", "Das MMOwning-Team bedankt sich fuer deine Unterstuetzung mit einer kleinen Geste. Viel Spass weiterhin auf MMOwning World.").AddMoney(500 * GOLD)
-					.SendMailTo(trans, MailReceiver(player, player->GetGUID()), MailSender(MAIL_NORMAL, 0, MAIL_STATIONERY_GM));
-				CharacterDatabase.CommitTransaction(trans);
-
-				CharacterDatabase.PExecute("INSERT INTO lob (zeit,spieler,uid,benutzt) Values ('%u','%s','%u','%u')", 70, player->GetName().c_str(), uid, 1);
-
-			}
+            
+            Belohnung(player->GetSession()->GetPlayer(), 70, player->GetGUID(), 500);
+            
+		
 		}
 
 
 		//80h
 		if (time >= 288000 && time <= 323999){
-			QueryResult result = CharacterDatabase.PQuery("SELECT `id`, `zeit`, `spieler`,`uid` `benutzt` FROM `lob` WHERE `zeit` = '%u' AND `uid`= '%u'", 80, player->GetGUID());
-			if (!result){
-
-				uint32 uid = player->GetGUID();
-				SQLTransaction trans = CharacterDatabase.BeginTransaction();
-				MailDraft("Ein Geschenk", "Das MMOwning-Team bedankt sich fuer deine Unterstuetzung mit einer kleinen Geste. Viel Spass weiterhin auf MMOwning World.").AddMoney(500 * GOLD)
-					.SendMailTo(trans, MailReceiver(player, player->GetGUID()), MailSender(MAIL_NORMAL, 0, MAIL_STATIONERY_GM));
-				CharacterDatabase.CommitTransaction(trans);
-
-				CharacterDatabase.PExecute("INSERT INTO lob (zeit,spieler,uid,benutzt) Values ('%u','%s','%u','%u')", 80, player->GetName().c_str(), uid, 1);
-
-			}
+            
+            Belohnung(player->GetSession()->GetPlayer(), 80, player->GetGUID(), 500);
+           
 		}
 
 		//90h
 		if (time >= 324000 && time <= 359999){
-			QueryResult result = CharacterDatabase.PQuery("SELECT `id`, `zeit`, `spieler`,`uid` `benutzt` FROM `lob` WHERE `zeit` = '%u' AND `uid`= '%u'", 90, player->GetGUID());
-			if (!result){
-
-				uint32 uid = player->GetGUID();
-				SQLTransaction trans = CharacterDatabase.BeginTransaction();
-				MailDraft("Ein Geschenk", "Das MMOwning-Team bedankt sich fuer deine Unterstuetzung mit einer kleinen Geste. Viel Spass weiterhin auf MMOwning World.").AddMoney(500 * GOLD)
-					.SendMailTo(trans, MailReceiver(player, player->GetGUID()), MailSender(MAIL_NORMAL, 0, MAIL_STATIONERY_GM));
-				CharacterDatabase.CommitTransaction(trans);
-
-				CharacterDatabase.PExecute("INSERT INTO lob (zeit,spieler,uid,benutzt) Values ('%u','%s','%u','%u')", 90, player->GetName().c_str(), uid, 1);
-
-			}
+            
+            Belohnung(player->GetSession()->GetPlayer(), 90, player->GetGUID(), 500);
+            
+			
 		}
 
 
@@ -381,153 +324,74 @@ public:
 
 		//110h
 		if (time >= 396000 && time <= 431999){
-			QueryResult result = CharacterDatabase.PQuery("SELECT `id`, `zeit`, `spieler`,`uid` `benutzt` FROM `lob` WHERE `zeit` = '%u' AND `uid`= '%u'", 110, player->GetGUID());
-			if (!result){
-
-				uint32 uid = player->GetGUID();
-				SQLTransaction trans = CharacterDatabase.BeginTransaction();
-				MailDraft("Ein Geschenk", "Das MMOwning-Team bedankt sich fuer deine Unterstuetzung mit einer kleinen Geste. Viel Spass weiterhin auf MMOwning World.").AddMoney(500 * GOLD)
-					.SendMailTo(trans, MailReceiver(player, player->GetGUID()), MailSender(MAIL_NORMAL, 0, MAIL_STATIONERY_GM));
-				CharacterDatabase.CommitTransaction(trans);
-
-				CharacterDatabase.PExecute("INSERT INTO lob (zeit,spieler,uid,benutzt) Values ('%u','%s','%u','%u')", 110, player->GetName().c_str(), uid, 1);
-
-			}
+            
+            Belohnung(player->GetSession()->GetPlayer(), 110, player->GetGUID(), 500);
+            
+			
 		}
 
 		//120h
 		if (time >= 432000 && time <= 467999){
-			QueryResult result = CharacterDatabase.PQuery("SELECT `id`, `zeit`, `spieler`,`uid` `benutzt` FROM `lob` WHERE `zeit` = '%u' AND `uid`= '%u'", 120, player->GetGUID());
-			if (!result){
-
-				uint32 uid = player->GetGUID();
-				SQLTransaction trans = CharacterDatabase.BeginTransaction();
-				MailDraft("Ein Geschenk", "Das MMOwning-Team bedankt sich fuer deine Unterstuetzung mit einer kleinen Geste. Viel Spass weiterhin auf MMOwning World.").AddMoney(500 * GOLD)
-					.SendMailTo(trans, MailReceiver(player, player->GetGUID()), MailSender(MAIL_NORMAL, 0, MAIL_STATIONERY_GM));
-				CharacterDatabase.CommitTransaction(trans);
-
-				CharacterDatabase.PExecute("INSERT INTO lob (zeit,spieler,uid,benutzt) Values ('%u','%s','%u','%u')", 120, player->GetName().c_str(), uid, 1);
-
-			}
+            
+            Belohnung(player->GetSession()->GetPlayer(), 120, player->GetGUID(), 500);
+            
+			
 		}
 
 
 		//130h
 		if (time >= 468000 && time <= 503999){
-			QueryResult result = CharacterDatabase.PQuery("SELECT `id`, `zeit`, `spieler`,`uid` `benutzt` FROM `lob` WHERE `zeit` = '%u' AND `uid`= '%u'", 130, player->GetGUID());
-			if (!result){
-
-				uint32 uid = player->GetGUID();
-				SQLTransaction trans = CharacterDatabase.BeginTransaction();
-				MailDraft("Ein Geschenk", "Das MMOwning-Team bedankt sich fuer deine Unterstuetzung mit einer kleinen Geste. Viel Spass weiterhin auf MMOwning World.").AddMoney(500 * GOLD)
-					.SendMailTo(trans, MailReceiver(player, player->GetGUID()), MailSender(MAIL_NORMAL, 0, MAIL_STATIONERY_GM));
-				CharacterDatabase.CommitTransaction(trans);
-
-				CharacterDatabase.PExecute("INSERT INTO lob (zeit,spieler,uid,benutzt) Values ('%u','%s','%u','%u')", 130, player->GetName().c_str(), uid, 1);
-
-			}
+            
+            Belohnung(player->GetSession()->GetPlayer(), 130, player->GetGUID(), 500);
+            
+			
 		}
 
 
 		//140h
 		if (time >= 504000 && time <= 539999){
-			QueryResult result = CharacterDatabase.PQuery("SELECT `id`, `zeit`, `spieler`,`uid` `benutzt` FROM `lob` WHERE `zeit` = '%u' AND `uid`= '%u'", 140, player->GetGUID());
-			if (!result){
-
-				uint32 uid = player->GetGUID();
-				SQLTransaction trans = CharacterDatabase.BeginTransaction();
-				MailDraft("Ein Geschenk", "Das MMOwning-Team bedankt sich fuer deine Unterstuetzung mit einer kleinen Geste. Viel Spass weiterhin auf MMOwning World.").AddMoney(500 * GOLD)
-					.SendMailTo(trans, MailReceiver(player, player->GetGUID()), MailSender(MAIL_NORMAL, 0, MAIL_STATIONERY_GM));
-				CharacterDatabase.CommitTransaction(trans);
-
-				CharacterDatabase.PExecute("INSERT INTO lob (zeit,spieler,uid,benutzt) Values ('%u','%s','%u','%u')", 140, player->GetName().c_str(), uid, 1);
-
-			}
+            
+            Belohnung(player->GetSession()->GetPlayer(), 140, player->GetGUID(), 500);
+           
 		}
 
 
 		//150h
 		if (time >= 540000 && time <= 575999){
-			QueryResult result = CharacterDatabase.PQuery("SELECT `id`, `zeit`, `spieler`,`uid` `benutzt` FROM `lob` WHERE `zeit` = '%u' AND `uid`= '%u'", 150, player->GetGUID());
-			if (!result){
-
-				uint32 uid = player->GetGUID();
-				SQLTransaction trans = CharacterDatabase.BeginTransaction();
-				MailDraft("Ein Geschenk", "Das MMOwning-Team bedankt sich fuer deine Unterstuetzung mit einer kleinen Geste. Viel Spass weiterhin auf MMOwning World.").AddMoney(1000 * GOLD)
-					.SendMailTo(trans, MailReceiver(player, player->GetGUID()), MailSender(MAIL_NORMAL, 0, MAIL_STATIONERY_GM));
-				CharacterDatabase.CommitTransaction(trans);
-
-				CharacterDatabase.PExecute("INSERT INTO lob (zeit,spieler,uid,benutzt) Values ('%u','%s','%u','%u')", 150, player->GetName().c_str(), uid, 1);
-
-			}
-		}
+            
+            Belohnung(player->GetSession()->GetPlayer(), 150, player->GetGUID(), 1000);
+        }
 
 
 		//160h
 		if (time >= 576000 && time <= 611999){
-			QueryResult result = CharacterDatabase.PQuery("SELECT `id`, `zeit`, `spieler`,`uid` `benutzt` FROM `lob` WHERE `zeit` = '%u' AND `uid`= '%u'", 160, player->GetGUID());
-			if (!result){
-
-				uint32 uid = player->GetGUID();
-				SQLTransaction trans = CharacterDatabase.BeginTransaction();
-				MailDraft("Ein Geschenk", "Das MMOwning-Team bedankt sich fuer deine Unterstuetzung mit einer kleinen Geste. Viel Spass weiterhin auf MMOwning World.").AddMoney(1000 * GOLD)
-					.SendMailTo(trans, MailReceiver(player, player->GetGUID()), MailSender(MAIL_NORMAL, 0, MAIL_STATIONERY_GM));
-				CharacterDatabase.CommitTransaction(trans);
-
-				CharacterDatabase.PExecute("INSERT INTO lob (zeit,spieler,uid,benutzt) Values ('%u','%s','%u','%u')", 160, player->GetName().c_str(), uid, 1);
-
-			}
+            
+            Belohnung(player->GetSession()->GetPlayer(), 160, player->GetGUID(), 1000);
+            
 		}
 
 
 		//170h
 		if (time >= 612000 && time <= 647999){
-			QueryResult result = CharacterDatabase.PQuery("SELECT `id`, `zeit`, `spieler`,`uid` `benutzt` FROM `lob` WHERE `zeit` = '%u' AND `uid`= '%u'", 170, player->GetGUID());
-			if (!result){
-
-				uint32 uid = player->GetGUID();
-				SQLTransaction trans = CharacterDatabase.BeginTransaction();
-				MailDraft("Ein Geschenk", "Das MMOwning-Team bedankt sich fuer deine Unterstuetzung mit einer kleinen Geste. Viel Spass weiterhin auf MMOwning World.").AddMoney(1000 * GOLD)
-					.SendMailTo(trans, MailReceiver(player, player->GetGUID()), MailSender(MAIL_NORMAL, 0, MAIL_STATIONERY_GM));
-				CharacterDatabase.CommitTransaction(trans);
-
-				CharacterDatabase.PExecute("INSERT INTO lob (zeit,spieler,uid,benutzt) Values ('%u','%s','%u','%u')", 170, player->GetName().c_str(), uid, 1);
-
-			}
+            
+            Belohnung(player->GetSession()->GetPlayer(), 170, player->GetGUID(), 1000);
+        
 		}
 
 		//180h
 		if (time >= 648000 && time <= 683999){
-			QueryResult result = CharacterDatabase.PQuery("SELECT `id`, `zeit`, `spieler`,`uid` `benutzt` FROM `lob` WHERE `zeit` = '%u' AND `uid`= '%u'", 180, player->GetGUID());
-			if (!result){
-
-				uint32 uid = player->GetGUID();
-				SQLTransaction trans = CharacterDatabase.BeginTransaction();
-				MailDraft("Ein Geschenk", "Das MMOwning-Team bedankt sich fuer deine Unterstuetzung mit einer kleinen Geste. Viel Spass weiterhin auf MMOwning World.").AddMoney(1000 * GOLD)
-					.SendMailTo(trans, MailReceiver(player, player->GetGUID()), MailSender(MAIL_NORMAL, 0, MAIL_STATIONERY_GM));
-				CharacterDatabase.CommitTransaction(trans);
-
-				CharacterDatabase.PExecute("INSERT INTO lob (zeit,spieler,uid,benutzt) Values ('%u','%s','%u','%u')", 180, player->GetName().c_str(), uid, 1);
-
-			}
+            
+            Belohnung(player->GetSession()->GetPlayer(), 180, player->GetGUID(), 1000);
+            
 		}
 
 
 		//190h
 		if (time >= 684000 && time <= 719999){
-			QueryResult result = CharacterDatabase.PQuery("SELECT `id`, `zeit`, `spieler`,`uid` `benutzt` FROM `lob` WHERE `zeit` = '%u' AND `uid`= '%u'", 190, player->GetGUID());
-			if (!result){
-
-				uint32 uid = player->GetGUID();
-				SQLTransaction trans = CharacterDatabase.BeginTransaction();
-				MailDraft("Ein Geschenk", "Das MMOwning-Team bedankt sich fuer deine Unterstuetzung mit einer kleinen Geste. Viel Spass weiterhin auf MMOwning World.").AddMoney(1000 * GOLD)
-					.SendMailTo(trans, MailReceiver(player, player->GetGUID()), MailSender(MAIL_NORMAL, 0, MAIL_STATIONERY_GM));
-				CharacterDatabase.CommitTransaction(trans);
-
-				CharacterDatabase.PExecute("INSERT INTO lob (zeit,spieler,uid,benutzt) Values ('%u','%s','%u','%u')", 190, player->GetName().c_str(), uid, 1);
-
-			}
-		}
+            
+            Belohnung(player->GetSession()->GetPlayer(), 190, player->GetGUID(), 1000);
+            
+        }
 
 
 		//200h
@@ -567,7 +431,7 @@ public:
 
 
 
-#pragma endregion
+
 
 		/*else if (player->IsGameMaster() && player->GetSession()->GetSecurity() == 2){
 			ss << "|cff54b5ffGM|r " << ChatHandler(player->GetSession()).GetNameLink() << " |cff54b5ff ist jetzt online!|r";
@@ -666,6 +530,7 @@ public:
 		bool active = ae.find(70) != ae.end();
 		
 		if (active == true){
+			player->SetPvP(false);
 			return;
 		}
 
@@ -758,9 +623,7 @@ public:
 		ss << "|cff54b5ffDer Server wird bald fuer Updates heruntergefahren. Weitere Informationen koennen auf der Homepage eingesehen werden.|r";
 		sWorld->SendServerMessage(SERVER_MSG_STRING, ss.str().c_str());
 
-		Player* player;
-		
-		player->GetSession()->GetPlayer();
+		Player* player = player->GetSession()->GetPlayer();
 
 		tt << "|cff54b5ffDer Shutdown wurde eingeleitet von: |r " << ChatHandler(player->GetSession()).GetNameLink();
 		sWorld->SendGMText(LANG_GM_BROADCAST, tt.str().c_str());
@@ -770,7 +633,6 @@ public:
 	void OnStartup(){
 		uu << "Willkommen auf MMOwning World.";
 		sWorld->SetMotd(uu.str().c_str());
-		Rates* rate;
 		sWorld->setRate(RATE_DROP_ITEM_LEGENDARY,1);
 		sWorld->setRate(RATE_REPAIRCOST, 3);
 		sWorld->setRate(RATE_DROP_ITEM_EPIC, 1);
@@ -835,17 +697,22 @@ public:
 		
 
 		for (uint32 i = 0; i < cheksSize; ++i)
+            
 			if (lower.find(checks[i]) != std::string::npos)
 			{			
 				
-				if (checks[i] == "Nicht an der Tastatur"){
+                if(nachricht == "nicht an der tastatur"){
+                    return;
+                }
+
+				if (nachricht == "gatherer"){
 					return;
 				}
-
-				time_t sek;
-				time(&sek);
-				uint32 zeit = time(&sek);
-				
+                
+                time_t sek;
+                time(&sek);
+                uint32 zeit = time(&sek);
+                
 				CharacterDatabase.PExecute("INSERT INTO fremdwerbung "
 					"(nachricht,player, guid,accid, datum)"
 					"VALUES ('%s', '%s','%u','%u','%u')",

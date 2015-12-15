@@ -68,3 +68,7 @@ INSERT INTO `command` (`name`, `permission`, `help`) VALUES ('generate', 195, ''
 /* Fremdwerbung */
 DELETE FROM command WHERE `name`='werbung';
 INSERT INTO `command` (`name`, `permission`, `help`) VALUES ('werbung', 195, '');   
+
+/* Gutscheineventteam */
+DELETE FROM command WHERE `name`='gutscheinerstellen';
+INSERT INTO `command` (`name`, `permission`, `help`) VALUES ('gutscheinerstellen', 194, ''); 

@@ -32,7 +32,7 @@ class halloween : public CreatureScript
 public:
 	halloween() : CreatureScript("halloween") { }
 
-	bool OnQuestReward(Player* player, Creature* creature, Quest const* quest, uint32 opt){
+	bool OnQuestReward(Player* player, Creature* creature, Quest const* quest, uint32 /*opt*/){
 		if (quest->GetQuestId() == 900510){
 			player->AddAura(44185, player);
 			creature->HandleEmoteCommand(EMOTE_ONESHOT_APPLAUD);
@@ -48,10 +48,6 @@ public:
 		}
 		return true;
 
-	}
-
-	bool OnQuestAccept(Player* player, Creature* creature, Quest const* quest){
-			return true;
 	}
 
 };

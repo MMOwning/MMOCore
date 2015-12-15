@@ -6,3 +6,10 @@ CREATE TABLE IF NOT EXISTS `item_codes` (
   `benutzt` INT NULL COMMENT '',
   `name` VARCHAR(45) NULL COMMENT '',
   PRIMARY KEY (`ID`)  COMMENT '');
+
+
+
+
+  
+
+

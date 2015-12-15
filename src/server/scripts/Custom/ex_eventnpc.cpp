@@ -58,7 +58,7 @@ public: eventnpc() : CreatureScript("eventnpc"){ }
 			
 
 
-		bool OnGossipSelect(Player * pPlayer, Creature * pCreature, uint32 /*uiSender*/, uint32 uiAction)
+		bool OnGossipSelect(Player * pPlayer, Creature * /*pCreature*/, uint32 /*uiSender*/, uint32 uiAction)
 		{
 			switch (uiAction)
 			{

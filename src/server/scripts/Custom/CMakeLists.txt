@@ -36,7 +36,7 @@ set(scripts_STAT_SRCS
   Custom/ex_wandervolk.cpp
   Custom/ex_teleportitem.cpp
   Custom/ex_raetsel.cpp
-  Custom/weihnachtsevent.cpp
+  Custom/ex_weihnachtsevent.cpp
   Custom/ex_commands.cpp
   Custom/ex_neujahrsevent.cpp
   Custom/ex_boss_therakin.cpp

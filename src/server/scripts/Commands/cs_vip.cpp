@@ -57,14 +57,14 @@ public:
 			{"insel",			SEC_PLAYER,			false, &HandleInselCommand,					"" },				
             //{ "",         		SEC_ADMINISTRATOR,  true,  &HandleVipCommand,		            "" },			
 			
-            { NULL,             0,                  false, NULL,                                "" }
+          
         };
         
         
 		static std::vector<ChatCommand> commandTable =
         {
             { "elite",            SEC_ADMINISTRATOR,  false, NULL,                                "", vipCommandTable },
-            { NULL,             0,                  false, NULL,                                "" }
+           
         };
         return commandTable;
     }
@@ -429,7 +429,7 @@ static bool HandleVipCapitalCommand(ChatHandler* handler, const char* /*args*/)
     return true;
 }
 
-static bool HandleVipCommand(ChatHandler* handler, char const* args)
+static bool HandleVipCommand(ChatHandler* handler, char const* /*args*/)
 {
 	uint32 accountId;
 /*

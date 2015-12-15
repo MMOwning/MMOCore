@@ -14,8 +14,12 @@ public: dark() : CreatureScript("dark"){ }
 
 		bool OnGossipHello(Player *pPlayer, Creature* _creature)
 		{
-			pPlayer->ADD_GOSSIP_ITEM(7, "Unterstuetzt mich, Prinz! [4 Abzeichen]", GOSSIP_SENDER_MAIN, 0); 
-			pPlayer->ADD_GOSSIP_ITEM(7, "Zeigt mir wo der Prinz haust.", GOSSIP_SENDER_MAIN, 1);
+            Group* group = pPlayer->GetGroup();
+            if(group){
+                pPlayer->ADD_GOSSIP_ITEM(7, "Unterstuetzt mich, Prinz! [4 Abzeichen]", GOSSIP_SENDER_MAIN, 0);
+                pPlayer->ADD_GOSSIP_ITEM(7, "Zeigt mir wo der Prinz haust.", GOSSIP_SENDER_MAIN, 1);
+            }
+			
 			pPlayer->ADD_GOSSIP_ITEM(7, "Ich brauche eure Hilfe doch nicht!",GOSSIP_SENDER_MAIN, 3);
 			pPlayer->PlayerTalkClass->SendGossipMenu(907, _creature->GetGUID());
 			return true;
@@ -51,9 +55,9 @@ public: dark() : CreatureScript("dark"){ }
 			}break;
 
 			case 1:{
-					
-					pPlayer->TeleportTo(0, -7138.54, -4310.35, 264.33, 3.13);
-					pCreature->SummonCreature(800064, -7139.58, -4317.59, 264.33, 3.13, TEMPSUMMON_TIMED_DESPAWN, 120000);
+                
+                    pPlayer->TeleportTo(0, -7138.54, -4310.35, 264.33, 3.13);
+                    pCreature->SummonCreature(800064, -7139.58, -4317.59, 264.33, 3.13, TEMPSUMMON_TIMED_DESPAWN, 120000);
 					return true;
 			}break;
 

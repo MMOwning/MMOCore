@@ -44,6 +44,119 @@ enum Belohnungen
 class npc_first_char : public CreatureScript
 {
 		public: npc_first_char() : CreatureScript("npc_first_char"){ }
+    
+    
+        void gutscheineverteilen(Player* pPlayer){
+    
+            srand(time(NULL));
+            int r = rand();
+            
+            
+            auto randchar = []() -> char
+            {
+                const char charset[] =
+                "0123456789"
+                "ABCDEFGHIJKLMNOPQRSTUVWXYZ"
+                "abcdefghijklmnopqrstuvwxyz";
+                const size_t max_index = (sizeof(charset) - 1);
+                return charset[rand() % max_index];
+            };
+            std::string str(10, 0);
+            std::generate_n(str.begin(), 10, randchar);
+            
+            
+            uint32 anzahl = 1 + (std::rand() % (5 - 1 + 1));
+            
+            
+            if (r % 10 == 0){
+                gutscheinzusammenstellen(pPlayer->GetSession()->GetPlayer(), ASTRALER_KREDIT, anzahl, str);
+                
+            }
+            
+            if (r % 10 == 1){
+                gutscheinzusammenstellen(pPlayer->GetSession()->GetPlayer(), TITANSTAHLBARREN, anzahl, str);
+                
+            }
+            
+            if (r % 10 == 2){
+                
+                gutscheinzusammenstellen(pPlayer->GetSession()->GetPlayer(), FROSTMARKEN, anzahl, str);
+                
+            }
+            
+            if (r % 10 == 3){
+                
+                gutscheinzusammenstellen(pPlayer->GetSession()->GetPlayer(), TRIUMPHMARKEN, anzahl, str);
+                
+            }
+            
+            if (r % 10 == 4){
+                
+                gutscheinzusammenstellen(pPlayer->GetSession()->GetPlayer(), SARONITBARREN, anzahl, str);
+            }
+            
+            if (r % 10 == 5){
+                uint32 saroanzahl = 1 + (std::rand() % (2 - 1 + 1));
+                gutscheinzusammenstellen(pPlayer->GetSession()->GetPlayer(), URSARONIT, saroanzahl, str);
+            }
+            
+            if (r % 10 == 6){
+                
+                gutscheinzusammenstellen(pPlayer->GetSession()->GetPlayer(), GOLDBARREN, anzahl, str);
+            }
+            
+            if (r % 10 == 7){
+                gutscheinzusammenstellen(pPlayer->GetSession()->GetPlayer(), EISENBARREN, anzahl, str);
+                
+            }
+            
+            if (r % 10 == 8){
+                gutscheinzusammenstellen(pPlayer->GetSession()->GetPlayer(), TRAUMSPLITTER, anzahl, str);
+            }
+            
+            if (r % 10 == 9){
+                gutscheinzusammenstellen(pPlayer->GetSession()->GetPlayer(), AKRTISCHERPELZ, anzahl, str);
+            }
+
+            
+        }
+    
+        void levelup(Player* pPlayer, uint16 kosten, uint16 levelanforderung, uint16 levelerhoehung)
+    
+        // kosten sind die Kredite die benoetigt werden
+        // levelanforderung ist der Schwellenwert ab wann eine Aufwertung nicht durchgefuehrt wird
+        // levelerhoehung ist der Wert um den das level erhoeht wird
+    
+        {
+        
+            if (pPlayer->getLevel() <= levelanforderung)
+            {
+            
+                if (pPlayer->HasItemCount(38186, kosten, true))
+                {
+                    pPlayer->SetLevel(pPlayer->getLevel() + levelerhoehung);
+                    pPlayer->DestroyItemCount(38186, kosten, true);
+                    pPlayer->GetSession()->SendNotification("Die Level wurden dir gutgeschrieben.");
+					pPlayer->PlayerTalkClass->SendCloseGossip();
+                    return;
+                }
+            
+                else
+                {
+                    pPlayer->GetSession()->SendNotification("Du hast leider nicht genug Astrale Kredite um dir eine Levelaufwertung zu kaufen.");
+					pPlayer->PlayerTalkClass->SendCloseGossip();
+                    return;
+                }
+            }
+        
+            else
+            {
+                pPlayer->GetSession()->SendNotification("Dein Level ist zu hoch.");
+                return;
+            }
+        
+        
+        }
 
 
 				void fixgutschein(Player* player, uint32 belohnung, uint32 anzahl, std::string grund ){
@@ -65,8 +178,16 @@ class npc_first_char : public CreatureScript
 
 					CharacterDatabase.PExecute("INSERT INTO `item_codes` (code,belohnung,anzahl,benutzt) Values ('%s','%u','%u','%u')", str, belohnung, anzahl, 0);
 					std::ostringstream ss;
+                    std::ostringstream tt;
+                    
 					ss << "Dein Code lautet: " << str << " . Wir wuenschen dir weiterhin viel Spass auf MMOwning. Dein MMOwning-Team";
-					player->GetSession()->SendNotification("Dein Code wurde generiert und dir zugesendet.");
+                    player->GetSession()->SendNotification("Dein Code wurde generiert und dir zugesendet.");
+                    
+                    
+                    
+                    tt << "Gutscheincode: " << str;
+                    ChatHandler(player->GetSession()).PSendSysMessage(tt.str().c_str(),
+                                                                       player->GetName());
 					SQLTransaction trans = CharacterDatabase.BeginTransaction();
 					MailDraft("Dein Gutscheincode", ss.str().c_str())
 						.SendMailTo(trans, MailReceiver(player, player->GetGUID()), MailSender(MAIL_NORMAL, 0, MAIL_STATIONERY_GM));
@@ -90,7 +211,7 @@ class npc_first_char : public CreatureScript
 				void Berufeskillen(Player* player, uint32 beruf){
 					if (player->HasSkill(beruf) && player->HasEnoughMoney(3000 * GOLD)){
 						player->LearnDefaultSkill(beruf, 6);
-						uint32 skill = player->GetSkillValue(beruf);
+						//uint32 skill = player->GetSkillValue(beruf);
 						player->GetPureMaxSkillValue(beruf);
 						player->SetSkill(beruf, player->GetSkillStep(beruf), 450, 450);
 						DBeintrag(player->GetSession()->GetPlayer(), "Berufskillen");
@@ -211,7 +332,7 @@ class npc_first_char : public CreatureScript
 
 					case 0:
 					{
-						uint32 guid = pPlayer->GetGUID();
+						
 
 						pPlayer->SEND_GOSSIP_MENU(DEFAULT_GOSSIP_MESSAGE, pCreature->GetGUID());
 						pPlayer->PlayerTalkClass->ClearMenus();
@@ -266,7 +387,7 @@ class npc_first_char : public CreatureScript
 					case 9:
 					{
 						pPlayer->GetGUID();
-						ChatHandler(pPlayer->GetSession()).PSendSysMessage("[Aufwertungs System]\nUm eine Austattung ueber die gleiche IP vornehmen zu lassen muesst ihr euch BEIDE ins TS begeben. Fragt dort nach einem GM, dieser wird ueberpruefen ob alles für eine Ausstattung erfuellt ist und diese dann durchfuehren.",
+						ChatHandler(pPlayer->GetSession()).PSendSysMessage("[Aufwertungs System]\nUm eine Austattung ueber die gleiche IP vornehmen zu lassen muesst ihr euch BEIDE ins TS begeben. Fragt dort nach einem GM, dieser wird ueberpruefen ob alles fuer eine Ausstattung erfuellt ist und diese dann durchfuehren.",
 							pPlayer->GetName());
 						pPlayer->PlayerTalkClass->SendCloseGossip();
 						return true;
@@ -561,7 +682,8 @@ class npc_first_char : public CreatureScript
 						pPlayer->ADD_GOSSIP_ITEM(7, "Verzauberkunst", GOSSIP_SENDER_MAIN, 21);
 						pPlayer->ADD_GOSSIP_ITEM(7, "Inschriftenkunde", GOSSIP_SENDER_MAIN, 9000);
 						pPlayer->ADD_GOSSIP_ITEM(7, "Ingenieurskunst", GOSSIP_SENDER_MAIN, 9001);
-
+                        pPlayer->ADD_GOSSIP_ITEM(7, "Zu den Features", GOSSIP_SENDER_MAIN, 25);
+                        
 						pPlayer->PlayerTalkClass->SendGossipMenu(907, pCreature->GetGUID());
 						return true;
 
@@ -660,7 +782,7 @@ class npc_first_char : public CreatureScript
 					//XP Boost
 					case 22:
 					{
-						uint32 guid = pPlayer->GetGUID();
+						
 
 						pPlayer->SEND_GOSSIP_MENU(DEFAULT_GOSSIP_MESSAGE, pCreature->GetGUID());
 						pPlayer->PlayerTalkClass->ClearMenus();
@@ -710,6 +832,10 @@ class npc_first_char : public CreatureScript
 							}
 						}
 
+						else {
+							pPlayer->GetSession()->SendNotification("Du hast zu wenig Gold um dir einen Gutschein zu generieren.");
+						}
+
 
 					}break;
 
@@ -720,7 +846,7 @@ class npc_first_char : public CreatureScript
 						pPlayer->ADD_GOSSIP_ITEM(7, "Berufe skillen [Kosten: 3000 Gold]", GOSSIP_SENDER_MAIN, 12);
 						pPlayer->ADD_GOSSIP_ITEM(7, "Gutschein generieren [Kosten: 5000G]", GOSSIP_SENDER_MAIN, 23);
 						pPlayer->ADD_GOSSIP_ITEM(7, "Gutschein zum Verschenken generieren [Kosten: Premium 5000 / Normal 10.000]", GOSSIP_SENDER_MAIN, 24);
-						
+						pPlayer->ADD_GOSSIP_ITEM(7, "Level kaufen", GOSSIP_SENDER_MAIN, 9500);
 						
 						if (pPlayer->GetSession()->GetSecurity() == 3){	
 							
@@ -733,87 +859,17 @@ class npc_first_char : public CreatureScript
 
 					case 24:
 					{
-						
-						if (pPlayer->HasEnoughMoney(5000 * GOLD) && pPlayer->GetSession()->IsPremium() || pPlayer->HasEnoughMoney(10000 * GOLD) && !pPlayer->GetSession()->IsPremium()){
-							if (pPlayer->GetSession()->IsPremium()){
-								pPlayer->ModifyMoney(-5000 * GOLD);
-							}
-							
-							else {
-								pPlayer->ModifyMoney(-10000 * GOLD);
-							}
-							
-							srand(time(NULL));
-							int r = rand();
-
-							
-							auto randchar = []() -> char
-							{
-								const char charset[] =
-									"0123456789"
-									"ABCDEFGHIJKLMNOPQRSTUVWXYZ"
-									"abcdefghijklmnopqrstuvwxyz";
-								const size_t max_index = (sizeof(charset) - 1);
-								return charset[rand() % max_index];
-							};
-							std::string str(10, 0);
-							std::generate_n(str.begin(), 10, randchar);
-							
-
-							uint32 anzahl = 1 + (std::rand() % (5 - 1 + 1));
-
-
-							if (r % 10 == 0){
-								gutscheinzusammenstellen(pPlayer->GetSession()->GetPlayer(), ASTRALER_KREDIT, anzahl, str);
-								
-							}
-
-							if (r % 10 == 1){
-								gutscheinzusammenstellen(pPlayer->GetSession()->GetPlayer(), TITANSTAHLBARREN, anzahl, str);
-											
-							}
-
-							if (r % 10 == 2){
-
-								gutscheinzusammenstellen(pPlayer->GetSession()->GetPlayer(), FROSTMARKEN, anzahl, str);
-
-							}
-
-							if (r % 10 == 3){
-
-								gutscheinzusammenstellen(pPlayer->GetSession()->GetPlayer(), TRIUMPHMARKEN, anzahl, str);
-								
-							}
-
-							if (r % 10 == 4){
-								
-								gutscheinzusammenstellen(pPlayer->GetSession()->GetPlayer(), SARONITBARREN, anzahl, str);		
-							}
-
-							if (r % 10 == 5){
-								uint32 saroanzahl = 1 + (std::rand() % (2 - 1 + 1));
-								gutscheinzusammenstellen(pPlayer->GetSession()->GetPlayer(), URSARONIT, saroanzahl, str);
-							}
-
-							if (r % 10 == 6){
-
-								gutscheinzusammenstellen(pPlayer->GetSession()->GetPlayer(), GOLDBARREN, anzahl, str);
-							}
-
-							if (r % 10 == 7){
-								gutscheinzusammenstellen(pPlayer->GetSession()->GetPlayer(), EISENBARREN, anzahl, str);
-								
-							}
-
-							if (r % 10 == 8){
-								gutscheinzusammenstellen(pPlayer->GetSession()->GetPlayer(), TRAUMSPLITTER, anzahl, str);
-							}
-
-							if (r % 10 == 9){
-								gutscheinzusammenstellen(pPlayer->GetSession()->GetPlayer(), AKRTISCHERPELZ, anzahl, str);
-							}
-
-
+                        if(pPlayer->GetSession()->IsPremium() && pPlayer->HasEnoughMoney(5000 * GOLD)){
+                            
+                            pPlayer->ModifyMoney(5000*GOLD);
+                            gutscheineverteilen(pPlayer->GetSession()->GetPlayer());
+                            
+                        }
+                        
+						if (pPlayer->HasEnoughMoney(10000 * GOLD) && !pPlayer->GetSession()->IsPremium()){
+                           
+                            pPlayer->ModifyMoney(-10000 * GOLD);
+                            gutscheineverteilen(pPlayer->GetSession()->GetPlayer());
 
 						}
 							
@@ -823,7 +879,60 @@ class npc_first_char : public CreatureScript
 								pPlayer->GetName());
 						}
 					
-					}break;
+                    }break;
+                            
+                    
+                    case 9500:
+                    {
+                        pPlayer->PlayerTalkClass->ClearMenus();
+						
+						if (pPlayer->getLevel() < 80)
+						{
+							pPlayer->ADD_GOSSIP_ITEM(7, "1 Level aufsteigen. Kosten: 10 Astrale Kredite", GOSSIP_SENDER_MAIN, 9501);
+							pPlayer->ADD_GOSSIP_ITEM(7, "10 Level aufsteigen.  Kosten: 90 Astrale Kredite.", GOSSIP_SENDER_MAIN, 9502);
+							pPlayer->ADD_GOSSIP_ITEM(7, "Auf Level 80 setzen.  Kosten: 800 Astrale Kredite.", GOSSIP_SENDER_MAIN, 9503);
+                            
+                        }
+						else {
+							pPlayer->GetSession()->SendNotification("Du bist schon Level 80.");
+						}
+
+                        pPlayer->ADD_GOSSIP_ITEM(7, "Zu den Features", GOSSIP_SENDER_MAIN, 25);
+                        pPlayer->PlayerTalkClass->SendGossipMenu(907, pCreature->GetGUID());
+                        return true;
+                        
+
+                    }break;
+                            
+                    case 9501:
+                    {
+                            
+                        levelup(pPlayer, 10, 79, 1);
+						
+                        return true;
+                            
+                    }break;
+                            
+                        
+                    case 9502:
+                    {
+                        
+                        levelup(pPlayer, 90, 70, 10);
+						
+                        return true;
+                            
+                    }break;
+                            
+                            
+                    case 9503:
+                    {
+                        uint16 abstand = 80 - pPlayer->getLevel();
+                        // abstand ist der abstand des Spielerlevels zu Level 80
+                            
+                        levelup(pPlayer, 800, 80, abstand);
+                        return true;
+                            
+                    }break;
 
 				
 

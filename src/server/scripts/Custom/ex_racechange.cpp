@@ -50,7 +50,8 @@ public:
 		player->PlayerTalkClass->SendGossipMenu(1, creature->GetGUID());
 		return true;
 	}
-	bool OnGossipSelect(Player* pPlayer, Creature* creature, uint32 sender, uint32 action){
+    
+	bool OnGossipSelect(Player* pPlayer, Creature* /*creature*/, uint32 sender, uint32 action){
 		pPlayer->PlayerTalkClass->ClearMenus();
 		if (sender != GOSSIP_SENDER_MAIN)
 			return false;
@@ -142,7 +143,7 @@ public:
 				pPlayer->SetAtLoginFlag(AT_LOGIN_RENAME);
 				pPlayer->ModifyMoney(-500 * GOLD);
 				std::ostringstream ss;
-				DBeintrag(pPlayer->GetSession()->GetPlayer(), "Namensänderung");
+				DBeintrag(pPlayer->GetSession()->GetPlayer(), "Namensaenderung");
 				ss << "|cff54b5ffEine Namensaenderung wurde durchgefuehrt von : |r " << ChatHandler(pPlayer->GetSession()).GetNameLink();
 				sWorld->SendGMText(LANG_GM_BROADCAST, ss.str().c_str());
 				ChatHandler(pPlayer->GetSession()).PSendSysMessage("Bitte ausloggen um Aenderungen durchzufuehren.",

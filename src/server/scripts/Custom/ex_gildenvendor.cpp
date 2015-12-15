@@ -134,8 +134,7 @@ public: gildenvendor() : CreatureScript("gildenvendor"){ }
 			uint32 gildenidalt = fields[0].GetUInt32();
 
 
-			QueryResult gildenanzahl;
-			gildenanzahl = CharacterDatabase.PQuery("SELECT count(guid) FROM guild_member WHERE guildid = %u", gildenidneu);
+			QueryResult gildenanzahl = CharacterDatabase.PQuery("SELECT count(guid) FROM guild_member WHERE guildid = %u", gildenidneu);
 			Field *felder = gildenanzahl->Fetch();
 			uint32 memberanzahlsql = felder[0].GetUInt32();
 

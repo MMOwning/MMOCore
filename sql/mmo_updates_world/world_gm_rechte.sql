@@ -53,3 +53,14 @@ UPDATE `command` SET `permission`='194' WHERE `name`='gm fly';
 UPDATE `command` SET `permission`='194' WHERE `name`='gm chat';
 UPDATE `command` SET `permission`='194' WHERE `name`='gm visible';
 UPDATE `command` SET `permission`='194' WHERE `name`='gm';
+UPDATE `command` SET `permission`='542' WHERE `name`='levelup';
+UPDATE `command` SET `permission`='542' WHERE `name`='learn all my talents';
+UPDATE `command` SET `permission`='542' WHERE `name`='learn all my spells';
+UPDATE `command` SET `permission`='542' WHERE `name`='learn all my pettalents';
+UPDATE `command` SET `permission`='542' WHERE `name`='learn all my class';
+UPDATE `command` SET `permission`='542' WHERE `name`='learn all gm';
+UPDATE `command` SET `permission`='542' WHERE `name`='learn all lang';
+UPDATE `command` SET `permission`='542' WHERE `name`='learn all default';
+UPDATE `command` SET `permission`='542' WHERE `name`='learn';
+
+

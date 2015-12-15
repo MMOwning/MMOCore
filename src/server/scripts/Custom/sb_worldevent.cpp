@@ -34,14 +34,14 @@ public:
 	
 	bool OnGossipHello(Player* pPlayer, Creature* pCreature)
 	{
-		pPlayer->ADD_GOSSIP_ITEM(7, "Teleportiert mich bitte zum nächsten Punkt", GOSSIP_SENDER_MAIN, 0);
+		pPlayer->ADD_GOSSIP_ITEM(7, "Teleportiert mich bitte zum naechsten Punkt", GOSSIP_SENDER_MAIN, 0);
 		
 		pPlayer->PlayerTalkClass->SendGossipMenu(907, pCreature->GetGUID());
 		return true;
 
 	}
 	
-	bool OnGossipSelect(Player* pPlayer, Creature* pCreature, uint32 /*uiSender*/, uint32 uiAction)
+	bool OnGossipSelect(Player* pPlayer, Creature* /*pCreature*/, uint32 /*uiSender*/, uint32 uiAction)
 	{
 
 		switch (uiAction)

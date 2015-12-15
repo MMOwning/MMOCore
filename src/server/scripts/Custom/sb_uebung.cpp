@@ -192,9 +192,112 @@ public:
 };
 
 
+class sb_bossbelohnung : public PlayerScript
+{
+
+public:
+	sb_bossbelohnung() : PlayerScript("sb_bossbelohnung") { }
+
+	void bossastral(Player* pPlayer, uint32 anzahl)
+	{
+
+		pPlayer->AddItem(38186, anzahl);
+		pPlayer->GetSession()->SendNotification("Dir wurden für deinen Sieg über den Boss Astralekredite gutgeschrieben.");
+
+	}
+
+	
+	void bosskill(Player* pPlayer, uint32 creatureid)
+	{
+		// ICC
+		if (creatureid == 36597)
+		{
+
+			bossastral(pPlayer, 20);
+
+		}
+
+		// PDK
+		if (creatureid == 34564)
+		{
+
+			bossastral(pPlayer, 10);
+
+		}
+
+		// Naxx
+		if (creatureid == 15990)
+		{
+
+			bossastral(pPlayer, 10);
+		
+		}
+		
+		// Obsi
+		if (creatureid == 28860)
+		{
+		
+			bossastral(pPlayer, 5);
+		
+		}
+
+		// Ulduar
+		if (creatureid == 33288)
+		{
+		
+			bossastral(pPlayer, 10);
+		
+		}
+		
+		// Ruby
+		if (creatureid == 39863)
+		{
+
+			bossastral(pPlayer, 10);
+
+		}
+
+		// Ony
+		if (creatureid == 10184)
+		{
+
+			bossastral(pPlayer, 5);
+
+		}
+
+		// kammer
+		if (creatureid == 38433)
+		{
+
+			bossastral(pPlayer, 5);
+
+		}
+
+		// Auge der Ewigkeit
+		if (creatureid == 28859)
+		{
+
+			bossastral(pPlayer, 5);
+
+		}
+
+	}
+	
+
+	void OnCreatureKill(Player* pPlayer, Creature* creature) 
+	{
+		pPlayer->GetSession()->GetPlayer();
+		uint32 creatureid = creature->GetEntry();
+		bosskill(pPlayer, creatureid);
+
+	}
+};
+
+
+
 void AddSC_sb_uebung()
 {
-	new sb_uebung();
+	new sb_bossbelohnung();
 }
 
 

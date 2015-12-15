@@ -34,7 +34,7 @@ public:
 
 	
 	//Allows members of your team, with sec > 2 to set their chars to Testing mode.
-	static bool HandleTestingCommand(ChatHandler* handler, const char* args)
+	static bool HandleTestingCommand(ChatHandler* handler, const char* /*args*/)
 	{
 		Player *player = handler->GetSession()->GetPlayer();
 		if (player->GetSession()->GetSecurity() < 2){
@@ -45,7 +45,7 @@ public:
 		player->SetGameMaster(true);
 		player->DurabilityRepairAll(false,0,false);
 		
-
+        return true;
 	}
 
 

@@ -31,13 +31,12 @@ public:
        {
            { "account",  SEC_GAMEMASTER,   true, &HandleFakeAccount,  "" },
            { "player",   SEC_GAMEMASTER,   true,  &HandleFakePlayer,  "" },
-           { NULL,                    0,  false,               NULL,  "" }
        };
 
 	   static std::vector<ChatCommand> commandTable =
        {
            { "fake",    SEC_GAMEMASTER,  true,                NULL,  "", fakeCommandTable },
-           { NULL,                   0,  false,               NULL,  ""}
+           
        };
 
        return commandTable;

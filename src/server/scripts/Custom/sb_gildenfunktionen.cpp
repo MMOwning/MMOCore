@@ -29,6 +29,8 @@
 #include "Arena.h"
 #include "ArenaTeam.h"
 #include "ArenaScore.h"
+#include "Guild.h"
+#include "GuildMgr.h"
 
 
 
@@ -38,113 +40,52 @@ class goldaufbank : public PlayerScript
 public:
 	goldaufbank() : PlayerScript("goldaufbank") { }
 
+	// gildenid -> GildenID des Spielers
+	// gGold -> Gold das der Spieler GRADE lootet
+	// gGoldBank -> Das Gold des Spielers auf der Gildenbank
+	// gGoldAdd -> 10% des gelootet Goldes als Betrag
+	// gGoldNew -> Der neue Bankbetrag der Guilde (inkl. der 10%)
 
-	void OnMoneyChanged(Player* pPlayer, int32& gGold)
-	{
-		bool elite = pPlayer->GetSession()->IsPremium();
-		uint32 gildenid = pPlayer->GetGuildId();
+	
 
-		if (gildenid == 0)
-		{
-			return;
-		}
-
-		else
-		{
-			if (!elite)
-			{
-
-				QueryResult ergebnis;
-				ergebnis = CharacterDatabase.PQuery("Select bankmoney from `guild` where `guildid` = '%u'", gildenid);
-				Field *feld = ergebnis->Fetch();
-				uint32 bankmoney = feld[0].GetUInt32();
-
-				uint32 zusatzbetrag = gGold * 0.10;
-
-				uint32 neubetrag = bankmoney + zusatzbetrag;
-
-				CharacterDatabase.PExecute("UPDATE guild SET `bankmoney` = '%u' WHERE `guildid` = '%u'", neubetrag, gildenid);
-
-			}
-
-			else
-			{
-
-				QueryResult ergebnis;
-				ergebnis = CharacterDatabase.PQuery("Select bankmoney from `guild` where `guildid` = '%u'", gildenid);
-				Field *feld = ergebnis->Fetch();
-				uint32 bankmoney = feld[0].GetUInt32();
-
-				uint32 zusatzbetrag = gGold * 0.20;
-
-				uint32 neubetrag = bankmoney + zusatzbetrag;
-
-				CharacterDatabase.PExecute("UPDATE guild SET `bankmoney` = '%u' WHERE `guildid` = '%u'", neubetrag, gildenid);
-
-			}
-
-			return;
-		}
-
-	}
+	
 }; 
 
 
-// Speed wieder normal setzen?
-class totlaufen : public UnitScript
+
+
+/*
+class ruhestein : public PlayerScript
 {
 
 public:
-	totlaufen() : UnitScript("totlaufen") { }
-	
-	void OnDamage(Unit* /*attacker*/, Unit*  /*victem*/, uint32& /*damage*/)
+	ruhestein() : PlayerScript("ruhestein") { }
+
+	// zZauber ist Variable für Ruhestein-zauber
+	// cCooldown ist Variable für Cooldown vom Ruhestein
+
+	void OnSpellCast(Player* pPlayer, Spell* spell, bool skipCheck)
 	{
-		Player* pPlayer = pPlayer->GetSession()->GetPlayer();
-		
-		uint32 gildenid = pPlayer->GetGuildId();
-		if (gildenid == 0)
+	SpellInfo const* zZauber;
+
+		if (zZauber->Id == 8690)
 		{
-			return;
+			uint32 cCooldown = pPlayer->GetRuneCooldown(6948) * 0.5;
+			pPlayer->SetRuneCooldown(6948, cCooldown, true);
+
 		}
-		else
-		{
-			if (pPlayer->isDead() == true)
-			{
-				if (pPlayer->GetSession()->IsPremium())
-				{
-					pPlayer->SetSpeed(MOVE_RUN, 4, true);
-				}
-
-				else
-				{
-					pPlayer->SetSpeed(MOVE_RUN, 4, true);
-				}
-
-			}
-
-			return;
-		}
-
 	}
-};
-
-
-
-
-
-class X : public PlayerScript
-{
-
-public:
-	X() : PlayerScript("X") { }
 
 };
 
+*/
 
 
-void AddSC_sb_uebung()
+
+
+void AddSC_sb_gildenfunktionen()
 {
 	new goldaufbank();
-	new totlaufen();
+
 }
 
