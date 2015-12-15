@@ -69,9 +69,15 @@ class cs_world_chat : public CommandScript
         public:
                 cs_world_chat() : CommandScript("cs_world_chat"){}
  
+<<<<<<< HEAD
 		std::vector<ChatCommand> GetCommands() const
         {
 			static std::vector<ChatCommand> commandTable =
+=======
+        std::vector<ChatCommand> GetCommands() const
+        {
+                static std::vector<ChatCommand> commandTable =
+>>>>>>> c226a479cdf4792468714022dbf8685244fe2c18
                 {
                         {"chat",        rbac::RBAC_PERM_COMMAND_WORLD_CHAT,             true,           &HandleWorldChatCommand,        "", NULL},
                         {"c",   rbac::RBAC_PERM_COMMAND_WORLD_CHAT,             true,           &HandleWorldChatCommand,        "", NULL},
@@ -79,7 +85,11 @@ class cs_world_chat : public CommandScript
                         {"w",   rbac::RBAC_PERM_COMMAND_WORLD_CHAT,             true,           &HandleWorldChatCommand,        "", NULL},
                 };
  
+<<<<<<< HEAD
 			return commandTable;
+=======
+                return commandTable;
+>>>>>>> c226a479cdf4792468714022dbf8685244fe2c18
         }
  
         static bool HandleWorldChatCommand(ChatHandler * handler, const char * args)

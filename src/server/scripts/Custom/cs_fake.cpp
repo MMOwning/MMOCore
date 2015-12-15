@@ -36,7 +36,10 @@ public:
 	   static std::vector<ChatCommand> commandTable =
        {
            { "fake",    SEC_GAMEMASTER,  true,                NULL,  "", fakeCommandTable },
+<<<<<<< HEAD
            
+=======
+>>>>>>> c226a479cdf4792468714022dbf8685244fe2c18
        };
 
        return commandTable;

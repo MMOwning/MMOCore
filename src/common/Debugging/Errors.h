@@ -55,7 +55,11 @@ namespace Trinity
 
 template <typename T> inline T* ASSERT_NOTNULL(T* pointer)
 {
+<<<<<<< HEAD
    ASSERT(pointer);
+=======
+    ASSERT(pointer);
+>>>>>>> c226a479cdf4792468714022dbf8685244fe2c18
     return pointer;
 }
 
