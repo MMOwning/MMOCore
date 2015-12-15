@@ -62,8 +62,10 @@ public:
                 
             case 1: {
                 ChatHandler(pPlayer->GetSession()).PSendSysMessage("Wir wuenschen dir viel Spass und hoffen dass du ein paar Erinnerungen an uns mitnimmst.",
-                                                                   pPlayer->GetName());
-                pPlayer->PlayerTalkClass->SendCloseGossip();
+                     pPlayer->GetName());
+				
+
+			    pPlayer->PlayerTalkClass->SendCloseGossip();
                 pPlayer->GetGUID();
                 return true;
             }break;
