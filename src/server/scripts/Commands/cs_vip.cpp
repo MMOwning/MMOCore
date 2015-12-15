@@ -56,21 +56,13 @@ public:
             { "status",         SEC_ADMINISTRATOR,  false, &HandleVipStatusCommand,             ""},
 			{"insel",			SEC_PLAYER,			false, &HandleInselCommand,					"" },				
             //{ "",         		SEC_ADMINISTRATOR,  true,  &HandleVipCommand,		            "" },			
-<<<<<<< HEAD
-			
-          
-=======
->>>>>>> c226a479cdf4792468714022dbf8685244fe2c18
+
         };
         
         
 		static std::vector<ChatCommand> commandTable =
         {
             { "elite",            SEC_ADMINISTRATOR,  false, NULL,                                "", vipCommandTable },
-<<<<<<< HEAD
-           
-=======
->>>>>>> c226a479cdf4792468714022dbf8685244fe2c18
         };
         return commandTable;
     }

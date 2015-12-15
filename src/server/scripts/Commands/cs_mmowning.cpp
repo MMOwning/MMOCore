@@ -74,10 +74,7 @@ public:
             { "gutscheinerstellen", SEC_ADMINISTRATOR, false, &HandlegutscheinerstellenCommand, "" },
 
 			//{ "tcrecon",        SEC_MODERATOR,      false, &HandleIRCRelogCommand,            "" },	
-<<<<<<< HEAD
-			
-=======
->>>>>>> c226a479cdf4792468714022dbf8685244fe2c18
+
 		};
 
 		return commandTable;
