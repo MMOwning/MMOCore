@@ -613,19 +613,6 @@ class Shutdown : public WorldScript
 public:
 	Shutdown() : WorldScript("Shutdown"){}
 
-	std::ostringstream ss;
-	std::ostringstream tt;
-	std::ostringstream uu;
-
-
-	void OnShutdownInitiate(ShutdownExitCode /*code*/, ShutdownMask /*mask*/){
-		
-		ss << "|cff54b5ffDer Server wird bald fuer Updates heruntergefahren. Weitere Informationen koennen auf der Homepage eingesehen werden.|r";
-		sWorld->SendServerMessage(SERVER_MSG_STRING, ss.str().c_str());
-
-		
-	}
-
 	void OnStartup(){
 		uu << "Willkommen auf MMOwning World.";
 		sWorld->SetMotd(uu.str().c_str());

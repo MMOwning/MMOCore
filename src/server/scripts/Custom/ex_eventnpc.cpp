@@ -43,7 +43,7 @@ public: eventnpc() : CreatureScript("eventnpc"){ }
 			
 			
 			pPlayer->ADD_GOSSIP_ITEM(7, "Was tut dieser NPC?", GOSSIP_SENDER_MAIN, 0);
-			pPlayer->ADD_GOSSIP_ITEM(7, "MMOwning Weihnachtsevent. Informationen folgen bald.", GOSSIP_SENDER_MAIN, 1);
+			pPlayer->ADD_GOSSIP_ITEM(7, "MMOwning Weihnachtsevent", GOSSIP_SENDER_MAIN, 1);
 			pPlayer->ADD_GOSSIP_ITEM(7, "MMOwning Halloweenevent", GOSSIP_SENDER_MAIN, 2);
 			pPlayer->ADD_GOSSIP_ITEM(7, "Das Wandervolk", GOSSIP_SENDER_MAIN, 3);
 			pPlayer->ADD_GOSSIP_ITEM(7, "Jumpevent", GOSSIP_SENDER_MAIN, 4);
@@ -69,14 +69,14 @@ public: eventnpc() : CreatureScript("eventnpc"){ }
 					bool active = ae.find(70) != ae.end();
 					if (active == true){
 						pPlayer->GetGUID();
-						ChatHandler(pPlayer->GetSession()).PSendSysMessage("Viel Spaß beim Weihnachtsevent wuenscht dir Exitare und das gesammte MMOwning Team.",
+						ChatHandler(pPlayer->GetSession()).PSendSysMessage("Viel Spaß beim Weihnachtsevent wuenscht dir Exitare und das gesammte MMOwning Team. Der Eventbegin ist in Dalaran bei Bitty Frostschleuder.",
 							pPlayer->GetName());
 						pPlayer->PlayerTalkClass->SendCloseGossip();
 						pPlayer->TeleportTo(1, 16226.21, 16256.77, 13.19, 1.65);
 						return true;
 					}
 					else{
-						ChatHandler(pPlayer->GetSession()).PSendSysMessage("Es ist noch nicht Weihnachten! Bitte gedulde dich daher bis zum 18. Dezember.",
+						ChatHandler(pPlayer->GetSession()).PSendSysMessage("Es ist noch nicht Weihnachten! Bitte gedulde dich daher bis zum 16. Dezember.",
 							pPlayer->GetName());
 						pPlayer->PlayerTalkClass->SendCloseGossip();
 					}
