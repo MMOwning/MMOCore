@@ -613,7 +613,9 @@ class Shutdown : public WorldScript
 public:
 	Shutdown() : WorldScript("Shutdown"){}
 
+
 	void OnStartup(){
+		std::ostringstream uu;
 		uu << "Willkommen auf MMOwning World.";
 		sWorld->SetMotd(uu.str().c_str());
 		sWorld->setRate(RATE_DROP_ITEM_LEGENDARY,1);
