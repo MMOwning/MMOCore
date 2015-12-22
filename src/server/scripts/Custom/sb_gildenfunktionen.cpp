@@ -40,11 +40,7 @@ class goldaufbank : public PlayerScript
 public:
 	goldaufbank() : PlayerScript("goldaufbank") { }
 
-	// gildenid -> GildenID des Spielers
-	// gGold -> Gold das der Spieler GRADE lootet
-	// gGoldBank -> Das Gold des Spielers auf der Gildenbank
-	// gGoldAdd -> 10% des gelootet Goldes als Betrag
-	// gGoldNew -> Der neue Bankbetrag der Guilde (inkl. der 10%)
+	
 
 	
 

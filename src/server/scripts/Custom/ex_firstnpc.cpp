@@ -121,15 +121,15 @@ class npc_first_char : public CreatureScript
             
         }
     
-        void levelup(Player* pPlayer, uint16 kosten, uint16 levelanforderung, uint16 levelerhoehung)
+        void levelup(Player* pPlayer, uint16 kosten, uint16 maxlevel, uint16 levelerhoehung)
     
         // kosten sind die Kredite die benoetigt werden
-        // levelanforderung ist der Schwellenwert ab wann eine Aufwertung nicht durchgefuehrt wird
+        // maxlevel ist höchste Leven ab wann eine Aufwertung nicht durchgefuehrt wird
         // levelerhoehung ist der Wert um den das level erhoeht wird
     
         {
         
-            if (pPlayer->getLevel() <= levelanforderung)
+			if (pPlayer->getLevel() <= maxlevel)
             {
             
                 if (pPlayer->HasItemCount(38186, kosten, true))
@@ -161,7 +161,7 @@ class npc_first_char : public CreatureScript
 
 				void fixgutschein(Player* player, uint32 belohnung, uint32 anzahl, std::string grund ){
 
-					CharacterDatabase.PExecute("INSERT INTO item_codes (code,belohnung,anzahl,benutzt,name) Values ('%s','%u','%u','%u','%s')", grund, belohnung, anzahl, 1, player->GetName());
+					CharacterDatabase.PExecute("INSERT INTO item_codes (code,belohnung,anzahl,benutzt,name,benutztbar) Values ('%s','%u','%u','%u','%s','%u')", grund, belohnung, anzahl, 1, player->GetName(),1);
 					Item* item = Item::CreateItem(belohnung, anzahl);
 					player->GetSession()->SendNotification("Dein Code wurde generiert und die Belohnung zugesendet!");
 					SQLTransaction trans = CharacterDatabase.BeginTransaction();
@@ -176,7 +176,7 @@ class npc_first_char : public CreatureScript
 
 				void gutscheinzusammenstellen(Player* player, uint32 belohnung, uint32 anzahl, std::string str){
 
-					CharacterDatabase.PExecute("INSERT INTO `item_codes` (code,belohnung,anzahl,benutzt) Values ('%s','%u','%u','%u')", str, belohnung, anzahl, 0);
+					CharacterDatabase.PExecute("INSERT INTO `item_codes` (code,belohnung,anzahl,benutzt,benutztbar) Values ('%s','%u','%u','%u','%u')", str, belohnung, anzahl, 0,1);
 					std::ostringstream ss;
                     std::ostringstream tt;
                     
@@ -303,6 +303,7 @@ class npc_first_char : public CreatureScript
 							pPlayer->AddItem(20400, 4);
 							pPlayer->SetMoney(50000000);
 							pPlayer->UpdateSkillsToMaxSkillsForLevel();
+							pPlayer->UpdateSkillsForLevel();
 							DBeintrag(pPlayer->GetSession()->GetPlayer(), "Firstaustattung einzel");
 
 
@@ -471,6 +472,7 @@ class npc_first_char : public CreatureScript
 								pPlayer->AddItem(20400, 4);
 								pPlayer->SetMoney(50000000);
 								pPlayer->UpdateSkillsToMaxSkillsForLevel();
+								pPlayer->UpdateSkillsForLevel();
 
 								ss << "|cff54b5ffEine 10er Gildenfirstausstattung wurde von |r " << ChatHandler(pPlayer->GetSession()).GetNameLink() << " |cff54b5ff in Anspruch genommen!|r";
 								sWorld->SendGMText(LANG_GM_BROADCAST, ss.str().c_str());
@@ -573,7 +575,7 @@ class npc_first_char : public CreatureScript
 								pPlayer->AddItem(20400, 4);
 								pPlayer->SetMoney(50000000);
 								pPlayer->UpdateSkillsToMaxSkillsForLevel();
-
+								pPlayer->UpdateSkillsForLevel();
 
 								ss << "|cff54b5ffEine 25er Gildenfirstausstattung wurde von |r " << ChatHandler(pPlayer->GetSession()).GetNameLink() << " |cff54b5ff in Anspruch genommen!|r";
 								sWorld->SendGMText(LANG_GM_BROADCAST, ss.str().c_str());
@@ -695,7 +697,7 @@ class npc_first_char : public CreatureScript
 					//Bergbau
 					case 13:
 					{
-
+						
 						Berufeskillen(pPlayer->GetSession()->GetPlayer(),186);
 					
 					}break;
@@ -810,7 +812,7 @@ class npc_first_char : public CreatureScript
 							}
 
 							if (r % 5 == 1){
-								CharacterDatabase.PExecute("INSERT INTO item_codes (code,belohnung,anzahl,benutzt,name) Values ('%s','%u','%u','%u','%s')", grund, 9999, anzahl, 1, pPlayer->GetName());
+								CharacterDatabase.PExecute("INSERT INTO item_codes (code,belohnung,anzahl,benutzt,name,benutztbar) Values ('%s','%u','%u','%u','%s')", grund, 9999, anzahl, 1, pPlayer->GetName(),1);
 								
 								pPlayer->GetSession()->SendNotification("Dein Code wurde generiert und die Belohnung zugesendet!");
 								SQLTransaction trans = CharacterDatabase.BeginTransaction();
@@ -888,9 +890,9 @@ class npc_first_char : public CreatureScript
 						
 						if (pPlayer->getLevel() < 80)
 						{
-							pPlayer->ADD_GOSSIP_ITEM(7, "1 Level aufsteigen. Kosten: 10 Astrale Kredite", GOSSIP_SENDER_MAIN, 9501);
-							pPlayer->ADD_GOSSIP_ITEM(7, "10 Level aufsteigen.  Kosten: 90 Astrale Kredite.", GOSSIP_SENDER_MAIN, 9502);
-							pPlayer->ADD_GOSSIP_ITEM(7, "Auf Level 80 setzen.  Kosten: 800 Astrale Kredite.", GOSSIP_SENDER_MAIN, 9503);
+							pPlayer->ADD_GOSSIP_ITEM(7, "1 Level aufsteigen. Kosten: 2 Astrale Kredite", GOSSIP_SENDER_MAIN, 9501);
+							pPlayer->ADD_GOSSIP_ITEM(7, "10 Level aufsteigen.  Kosten: 15 Astrale Kredite.", GOSSIP_SENDER_MAIN, 9502);
+							pPlayer->ADD_GOSSIP_ITEM(7, "Auf Level 80 setzen.  Kosten: 100 Astrale Kredite.", GOSSIP_SENDER_MAIN, 9503);
                             
                         }
 						else {
@@ -907,7 +909,7 @@ class npc_first_char : public CreatureScript
                     case 9501:
                     {
                             
-                        levelup(pPlayer, 10, 79, 1);
+                        levelup(pPlayer, 2, 79, 1);
 						
                         return true;
                             
@@ -917,7 +919,7 @@ class npc_first_char : public CreatureScript
                     case 9502:
                     {
                         
-                        levelup(pPlayer, 90, 70, 10);
+                        levelup(pPlayer, 15, 70, 10);
 						
                         return true;
                             
@@ -929,7 +931,7 @@ class npc_first_char : public CreatureScript
                         uint16 abstand = 80 - pPlayer->getLevel();
                         // abstand ist der abstand des Spielerlevels zu Level 80
                             
-                        levelup(pPlayer, 800, 80, abstand);
+                        levelup(pPlayer, 100, 80, abstand);
                         return true;
                             
                     }break;

@@ -362,7 +362,7 @@ UPDATE `creature_template` SET `ScriptName`='janarius' WHERE `entry`='800085';
 
 
 /* AStraler Kredit Goldkosten */
-UPDATE `item_template` SET `BuyPrice`='150000000' WHERE `entry`='38186';
+UPDATE `item_template` SET `BuyPrice`='75000000' WHERE `entry`='38186';
 
 
 
@@ -454,11 +454,14 @@ UPDATE `item_template` SET `bonding`='1' WHERE `entry`='38186';
 UPDATE `item_template` SET `BagFamily`='2048' WHERE `entry`='38186';
 
 
-/* Weihnachtsevent */
-DELETE FROM `creature_queststarter` where `id` = 800065 and `quest` = 900000;
-DELETE FROM `creature_questender` where `id` = 800066 and `quest` = 900000;
-INSERT INTO `creature_queststarter` (`id`, `quest`) VALUES ('800065', '900000');
-INSERT INTO `creature_questender` (`id`, `quest`) VALUES ('800066', '900000');
 
 /* SUPPORTNPC DISPLAY ID AND NAME */
 UPDATE `creature_template` SET `modelid1`='17870', `subname`='MMOwning Team' WHERE `entry`='800057';
+
+/* QUest 800509 auf weekly gesetzt */
+UPDATE `quest_template` SET `Flags`='32768' WHERE `ID`='800509';
+
+
+/* InselScript anpassungen */
+UPDATE `creature_template` SET `ScriptName`='exitarenpc' WHERE `entry`='800015';
+UPDATE `creature_template` SET `ScriptName`='indomatanpc' WHERE `entry`='800087';

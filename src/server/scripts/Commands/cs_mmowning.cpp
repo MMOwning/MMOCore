@@ -202,7 +202,7 @@ public:
         std::string str(10, 0);
         std::generate_n(str.begin(), 10, randchar);
         
-        CharacterDatabase.PExecute("INSERT INTO `item_codes` (code,belohnung,anzahl,benutzt) Values ('%s','%u','%u','%u')", str, item, anzahlint, 0);
+        CharacterDatabase.PExecute("INSERT INTO `item_codes` (code,belohnung,anzahl,benutzt,benutztbar) Values ('%s','%u','%u','%u','%u')", str, item, anzahlint, 0,1);
         std::ostringstream ss;
         std::ostringstream tt;
         
@@ -466,7 +466,7 @@ public:
         
         
         
-		QueryResult result = CharacterDatabase.PQuery("SELECT `code`, `belohnung`, `anzahl`, `benutzt` FROM `item_codes` WHERE `code` = '%s'", itemCode);
+		QueryResult result = CharacterDatabase.PQuery("SELECT `code`, `belohnung`, `anzahl`, `benutzt`, `benutztbar` FROM `item_codes` WHERE `code` = '%s'", itemCode);
         
         
 		if (result)
@@ -477,44 +477,59 @@ public:
 			uint32 belohnung = fields[1].GetUInt32();
 			uint32 anzahl = fields[2].GetUInt32();
 			uint8 benutzt = fields[3].GetUInt8();
-            
-            
-            QueryResult itemid = WorldDatabase.PQuery("SELECT `entry` FROM `item_template` WHERE `entry` = '%u'", belohnung);
-            
-            if(!itemid){
-                player->GetSession()->SendNotification("Das Item scheint nicht zu existieren. Der Code wird daher abgelehnt");
-                return true;
-            }
+			uint32 benutztbar = fields[4].GetUInt32();
+			
+			QueryResult accvorhanden = CharacterDatabase.PQuery("SELECT `accid`,`code` FROM `item_codes_account` WHERE `accid` = '%u' AND code = '%s' ", player->GetSession()->GetAccountId(),code);
+			
+			if (!accvorhanden){
+				QueryResult itemid = WorldDatabase.PQuery("SELECT `entry` FROM `item_template` WHERE `entry` = '%u'", belohnung);
+
+				if (!itemid){
+					player->GetSession()->SendNotification("Das Item scheint nicht zu existieren. Der Code wird daher abgelehnt");
+					return true;
+				}
 
 
-			if (benutzt == 0)
-			{
-				Item* item = Item::CreateItem(belohnung, anzahl);
-				player->GetSession()->SendNotification("Dein Code wurde akzeptiert!");
-				SQLTransaction trans = CharacterDatabase.BeginTransaction();
-				item->SaveToDB(trans);
-				MailDraft("Dein Gutscheincode", "Dein Code wurde erfolgreich eingeloest. Wir wuenschen dir weiterhin viel Spass auf MMOwning. Dein MMOwning-Team").AddItem(item)
-					.SendMailTo(trans, MailReceiver(player, player->GetGUID()), MailSender(MAIL_NORMAL, 0, MAIL_STATIONERY_GM));
-				CharacterDatabase.CommitTransaction(trans);
 
-				CharacterDatabase.PExecute("UPDATE item_codes SET name = '%s' WHERE code = '%s'", player->GetName().c_str(), itemCode);
-				CharacterDatabase.PExecute("UPDATE item_codes SET benutzt = 1 WHERE code = '%s'", itemCode);
+				if (benutzt < benutztbar)
+				{
+					benutzt++;
+					Item* item = Item::CreateItem(belohnung, anzahl);
+					player->GetSession()->SendNotification("Dein Code wurde akzeptiert!");
+					SQLTransaction trans = CharacterDatabase.BeginTransaction();
+					item->SaveToDB(trans);
+					MailDraft("Dein Gutscheincode", "Dein Code wurde erfolgreich eingeloest. Wir wuenschen dir weiterhin viel Spass auf MMOwning. Dein MMOwning-Team").AddItem(item)
+						.SendMailTo(trans, MailReceiver(player, player->GetGUID()), MailSender(MAIL_NORMAL, 0, MAIL_STATIONERY_GM));
+					CharacterDatabase.CommitTransaction(trans);
 
-				char msg[250];
-				snprintf(msg, 250, "Dein Code wurde akzeptiert.");
-				ChatHandler(player->GetSession()).PSendSysMessage(msg,
-					player->GetName());
-				return true;
+					CharacterDatabase.PExecute("UPDATE item_codes SET name = '%s' WHERE code = '%s'", player->GetName().c_str(), itemCode);
+					CharacterDatabase.PExecute("UPDATE item_codes SET benutzt = '%u' WHERE code = '%s'", benutzt, itemCode);
+					CharacterDatabase.PExecute("INSERT INTO item_codes_account (name,accid,code) Values('%s','%u','%s')", player->GetSession()->GetPlayerName(), player->GetSession()->GetAccountId(), itemCode);
 
+					char msg[250];
+					snprintf(msg, 250, "Dein Code wurde akzeptiert.");
+					ChatHandler(player->GetSession()).PSendSysMessage(msg,
+						player->GetName());
+					return true;
+
+				}
+				else{
+					char msg[250];
+					snprintf(msg, 250, "Der Code hat keine weitere Aufladung und wird daher abgelehnt.");
+					ChatHandler(player->GetSession()).PSendSysMessage(msg,
+						player->GetName());
+					return true;
+				}
 			}
+
 			else{
 				char msg[250];
-				snprintf(msg, 250, "Dein Code wurde bereits verwendet.");
+				snprintf(msg, 250, "Du hast den Code bereits verwendet.");
 				ChatHandler(player->GetSession()).PSendSysMessage(msg,
 					player->GetName());
 				return true;
-			}
 
+			}
 		}
 		else{
 			char msg[250];

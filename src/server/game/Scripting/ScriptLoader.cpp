@@ -141,8 +141,6 @@ void AddSC_neujahrsevent();
 //weihnachtsevent
 void AddSC_weihnachtsevent();
 
-//Gildenscript
-void AddSC_sb_uebung();
 
 //gildenhausvendor
 void AddSC_gildenvendor();
@@ -150,8 +148,8 @@ void AddSC_gildenvendor();
 //Worldevent
 void AddSC_sb_worldevent();
 
-// GIldenfunktionen
-void AddSC_sb_gildenfunktionen();
+//Inselnpc
+void AddSC_inselnpc();
 
 #ifdef SCRIPTS
 //world
@@ -907,17 +905,14 @@ void AddCommandScripts()
 	//weihnachtsevent
 	AddSC_weihnachtsevent();
 
-	AddSC_sb_uebung();
-
 	//gildenhausvendor
 	AddSC_gildenvendor();
 
 	//worldevent
 	AddSC_sb_worldevent();
 
-	//gildenfunktionen
-	AddSC_sb_gildenfunktionen();
-
+	//inselnpc
+	AddSC_inselnpc();
 }
 
 

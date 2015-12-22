@@ -29,7 +29,7 @@
 #include "Arena.h"
 #include "ArenaTeam.h"
 #include "ArenaScore.h"
-
+#include "ArenaTeamMgr.h"
 
 
 #define MSG_COLOR_ALICEBLUE            "|cFFF0F8FF"
@@ -490,7 +490,7 @@ public:
 			date.day_of_week() == boost::date_time::Sunday){
 			if (player->getLevel() < 80){
 				if (!premium){
-
+					
 					char msg[250];
 					snprintf(msg, 250, "Dir wurden %u EP gutgeschrieben.", amount);
 					ChatHandler(player->GetSession()).PSendSysMessage(msg,
@@ -530,13 +530,13 @@ public:
 		bool active = ae.find(70) != ae.end();
 		
 		if (active == true){
-			player->SetPvP(false);
 			return;
 		}
 
 		else{
 			if (newzone == 876 && newarea == 876 && active == false && player->GetSession()->GetSecurity() == 0){
 				player->TeleportTo(0, -9773, 2126.72, 15.40, 3.88);
+                player->SetPvP(false);
 			}
 		}
 
@@ -570,6 +570,7 @@ public:
 			CharacterDatabase.PExecute("UPDATE `characters` set `position_y` = -1607.55 where guid = '%u'", player->GetGUID());
 			CharacterDatabase.PExecute("UPDATE `characters` set `position_z` = 142.30 where guid = '%u'", player->GetGUID());
 			CharacterDatabase.PExecute("UPDATE `characters` set `map` = 0 where guid = '%u'", player->GetGUID());
+            CharacterDatabase.PExecute("UPDATE `characters` set `money` = 50000000 where guid = '%u'", player->GetGUID());
 			
 			player->SetFullHealth();
 			QueryResult accountname = LoginDatabase.PQuery("SELECT username FROM account where id = %u", player->GetSession()->GetAccountId());
@@ -588,6 +589,7 @@ public:
 
 
 };
+
 
 
 
@@ -646,7 +648,7 @@ public:
 		std::string lower = nachricht;
 		std::transform(lower.begin(), lower.end(), lower.begin(), ::tolower);
 
-		const uint32 cheksSize = 31;
+		const uint32 cheksSize = 56;
 		std::string checks[cheksSize];
 		checks[0] = "at";
 		checks[1] = "frostmourne";
@@ -678,7 +680,32 @@ public:
 		checks[27] = "b2b";
 		checks[28] = "molten";
 		checks[29] = "warmane";
-		checks[30] = "wow";
+		checks[30] = "a";
+        checks[31] = "b";
+        checks[32] = "c";
+        checks[33] = "d";
+        checks[34] = "e";
+        checks[35] = "f";
+        checks[36] = "g";
+        checks[37] = "h";
+        checks[38] = "i";
+        checks[39] = "j";
+        checks[40] = "k";
+        checks[41] = "l";
+        checks[42] = "m";
+        checks[43] = "n";
+        checks[44] = "o";
+        checks[45] = "p";
+        checks[46] = "q";
+        checks[47] = "r";
+        checks[48] = "s";
+        checks[49] = "t";
+        checks[50] = "u";
+        checks[51] = "v";
+        checks[52] = "w";
+        checks[53] = "x";
+        checks[54] = "y";
+        checks[55] = "z";
 		
 
 		for (uint32 i = 0; i < cheksSize; ++i)
@@ -702,17 +729,7 @@ public:
 					"(nachricht,player, guid,accid, datum)"
 					"VALUES ('%s', '%s','%u','%u','%u')",
 					nachricht, player->GetSession()->GetPlayerName(), player->GetGUID(), player->GetSession()->GetAccountId(), zeit);
-
-				std::ostringstream uu;
-				std::ostringstream tt;
-				
-
-
-				tt << "|cff54b5ffFremdwerbung wurde erkannt von: |r " << ChatHandler(player->GetSession()).GetNameLink();
-				uu <<  nachricht;
-				
-				sWorld->SendGMText(LANG_GM_BROADCAST, tt.str().c_str());
-				sWorld->SendGMText(LANG_GM_BROADCAST, uu.str().c_str());		
+				break;
 				
 			}
 

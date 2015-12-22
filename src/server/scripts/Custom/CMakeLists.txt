@@ -46,6 +46,7 @@ set(scripts_STAT_SRCS
   Custom/br_uebung.cpp
   Custom/br_levelNPC.cpp
   Custom/sb_gildenfunktionen.cpp
+  Custom/ex_inselnpc.cpp
   
   ${scripts_STAT_SRCS}
 #  ${sources_Custom}

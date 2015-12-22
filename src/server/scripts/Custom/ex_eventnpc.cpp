@@ -49,7 +49,7 @@ public: eventnpc() : CreatureScript("eventnpc"){ }
 			pPlayer->ADD_GOSSIP_ITEM(7, "Jumpevent", GOSSIP_SENDER_MAIN, 4);
 			pPlayer->ADD_GOSSIP_ITEM(7, "Das Portal", GOSSIP_SENDER_MAIN, 5);
 			pPlayer->ADD_GOSSIP_ITEM(7, "Neujahrsevent", GOSSIP_SENDER_MAIN, 6);
-			pPlayer->ADD_GOSSIP_ITEM(7, "Chopper", GOSSIP_SENDER_MAIN, 7);
+			pPlayer->ADD_GOSSIP_ITEM(7, "Chopperrennen", GOSSIP_SENDER_MAIN, 7);
 			pPlayer->ADD_GOSSIP_ITEM(7, "MMOwning Worldevent", GOSSIP_SENDER_MAIN, 8);
 
 			pPlayer->PlayerTalkClass->SendGossipMenu(907, _creature->GetGUID());
@@ -58,21 +58,30 @@ public: eventnpc() : CreatureScript("eventnpc"){ }
 			
 
 
-		bool OnGossipSelect(Player * pPlayer, Creature * /*pCreature*/, uint32 /*uiSender*/, uint32 uiAction)
+		bool OnGossipSelect(Player * pPlayer, Creature * pCreature, uint32 /*uiSender*/, uint32 uiAction)
 		{
 			switch (uiAction)
 			{
-				
+				// Weihnachtsevent
 				case 1: {
-					
+					Quest const* quest;
+					quest = sObjectMgr->GetQuestTemplate(900001);
+
 					GameEventMgr::ActiveEvents const& ae = sGameEventMgr->GetActiveEventList();
 					bool active = ae.find(70) != ae.end();
 					if (active == true){
 						pPlayer->GetGUID();
-						ChatHandler(pPlayer->GetSession()).PSendSysMessage("Viel Spaß beim Weihnachtsevent wuenscht dir Exitare und das gesammte MMOwning Team. Der Eventbegin ist in Dalaran bei Bitty Frostschleuder.",
+						ChatHandler(pPlayer->GetSession()).PSendSysMessage("Viel Spass beim Weihnachtsevent wuenscht dir Exitare und das gesammte MMOwning Team. Der Eventbeginn ist in Dalaran bei Bitty Frostschleuder.",
 							pPlayer->GetName());
 						pPlayer->PlayerTalkClass->SendCloseGossip();
 						pPlayer->TeleportTo(1, 16226.21, 16256.77, 13.19, 1.65);
+						if (pPlayer->GetQuestStatus(900001) == QUEST_STATUS_NONE){
+							pPlayer->AddQuest(quest,pCreature);
+						}
+
+						else{
+							return true;
+						}
 						return true;
 					}
 					else{
