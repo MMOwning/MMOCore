@@ -465,3 +465,5 @@ UPDATE `quest_template` SET `Flags`='32768' WHERE `ID`='800509';
 /* InselScript anpassungen */
 UPDATE `creature_template` SET `ScriptName`='exitarenpc' WHERE `entry`='800015';
 UPDATE `creature_template` SET `ScriptName`='indomatanpc' WHERE `entry`='800087';
+
+UPDATE `quest_template` SET `RewardFactionID1`='0', `RewardFactionValue1`='0' WHERE `ID`='800510';
