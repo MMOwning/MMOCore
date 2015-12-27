@@ -14,7 +14,7 @@ INSERT INTO `locales_creature` (`entry`, `name_loc1`, `name_loc2`, `name_loc3`, 
   (NULL, 99321, 571, 1, 1, 25811, 0, 5640.98, 687.252, 651.993, 5.86687, 600, 0, 0, 10684, 0, 0, 0),
  (NULL, 99321, 571, 1, 1, 25811, 0, 5966.87, 613.948, 650.627, 2.76062, 600, 0, 0, 10388, 0, 0, 0);*/
 
-DELETE FROM `npc_vendor` WHERE (`entry`=99321);
+DELETE FROM `npc_vendor` WHERE `entry`=99321;
 INSERT INTO `npc_vendor` (`entry`, `slot`, `item`, `maxcount`, `incrtime`, `ExtendedCost`) VALUES 
 /* 100 Arenapunkte = 1 Splitter eines Steinbewahrers */
 (99321, 0, 43228, 0, 0, 2596),

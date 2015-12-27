@@ -52,35 +52,6 @@ class exitarenpc : public CreatureScript
 public: exitarenpc() : CreatureScript("exitarenpc"){ }
 
 
-		
-
-
-
-		bool OnGossipHello(Player *player, Creature* _creature)
-		{
-			player->ADD_GOSSIP_ITEM(7, "Wer bist du?", GOSSIP_SENDER_MAIN, 0);
-			player->PlayerTalkClass->SendGossipMenu(907, _creature->GetGUID());
-			return true;
-		}
-
-
-
-		bool OnGossipSelect(Player * player, Creature * creature, uint32 /*uiSender*/, uint32 uiAction)
-		{
-			switch (uiAction)
-			{
-				
-				case 0:
-				{
-					return true;
-				}break;
-
-				return true;
-			}
-			return true;
-		}
-
-
 		bool OnQuestReward(Player* player, Creature* creature, Quest const* quest, uint32 /*opt*/) {
 			if (quest->GetQuestId() == 800552){
 				creature->HandleEmoteCommand(EMOTE_ONESHOT_DANCE);

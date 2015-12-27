@@ -230,7 +230,7 @@ public:
 
 
 		//10h
-		if (time >= 1 /*36000*/ && time <= 71999){
+		if (time >= 36000 && time <= 71999){
             
             Belohnung(player->GetSession()->GetPlayer(), 10, player->GetGUID(), 250);
           
@@ -571,6 +571,7 @@ public:
 			CharacterDatabase.PExecute("UPDATE `characters` set `position_z` = 142.30 where guid = '%u'", player->GetGUID());
 			CharacterDatabase.PExecute("UPDATE `characters` set `map` = 0 where guid = '%u'", player->GetGUID());
             CharacterDatabase.PExecute("UPDATE `characters` set `money` = 50000000 where guid = '%u'", player->GetGUID());
+			
 			
 			player->SetFullHealth();
 			QueryResult accountname = LoginDatabase.PQuery("SELECT username FROM account where id = %u", player->GetSession()->GetAccountId());
