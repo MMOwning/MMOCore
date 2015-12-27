@@ -62,5 +62,6 @@ UPDATE `command` SET `permission`='542' WHERE `name`='learn all gm';
 UPDATE `command` SET `permission`='542' WHERE `name`='learn all lang';
 UPDATE `command` SET `permission`='542' WHERE `name`='learn all default';
 UPDATE `command` SET `permission`='542' WHERE `name`='learn';
+UPDATE `command` SET `permission`='195' WHERE `name`='announce';
 
 

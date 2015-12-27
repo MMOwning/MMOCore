@@ -466,4 +466,30 @@ UPDATE `quest_template` SET `Flags`='32768' WHERE `ID`='800509';
 UPDATE `creature_template` SET `ScriptName`='exitarenpc' WHERE `entry`='800015';
 UPDATE `creature_template` SET `ScriptName`='indomatanpc' WHERE `entry`='800087';
 
+
+/* Quest Orrig Factionfix */
 UPDATE `quest_template` SET `RewardFactionID1`='0', `RewardFactionValue1`='0' WHERE `ID`='800510';
+
+
+
+DELETE FROM `npc_vendor` WHERE `entry`=99321;
+INSERT INTO `npc_vendor` (`entry`, `slot`, `item`, `maxcount`, `incrtime`, `ExtendedCost`) VALUES 
+/* 100 Arenapunkte = 1 Splitter eines Steinbewahrers */
+(99321, 0, 43228, 0, 0, 2596),
+/*100 Arenapunkte = 1 Siegel des Champions */
+(99321, 1, 44990, 0, 0, 2596),
+/* 25 Abzeichen der Gerechtigkeit = 1 Emblem des Triumphs */
+(99321, 2, 47241, 0, 0, 1015),
+/*1 Emblem der Ehre = 1 Emblem des Triumphs */
+(99321, 3, 47241, 0, 0, 2589),
+/* 1 Emblem der Eroberung = 1 Emblem des Triumphs */
+(99321, 4, 47241, 0, 0, 2637),
+/* 15 Emblem des Triumphs = 1 Emblem des Frosts */
+(99321, 5, 49426, 0, 0, 2723),
+/* 1 Frostmarke = 1 Emblem des Heldentums */
+(99321, 6, 40752, 0, 0, 2743),
+/* 1 Emblem des Triumphs = 1 Emblem des Heldentums */
+(99321, 7, 40752, 0, 0, 2707);
+/*(99321, 0, ??, 0, 0 ,2707); //1 эмблема триумфа */ 
+/*(99321, 0, ??, 0, 0 ,2723); //15 эмблем триумфа */
+
