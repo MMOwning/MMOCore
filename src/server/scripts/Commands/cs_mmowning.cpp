@@ -67,11 +67,11 @@ public:
 			//insel
 			{ "tester", SEC_ADMINISTRATOR, false, &HandleInselCommand, "" },
 
-			{ "gutschein", SEC_PLAYER, false, &HandleGutscheinCommand, "" },
+			//{ "gutschein", SEC_PLAYER, false, &HandleGutscheinCommand, "" },
 
 			{ "werbung", SEC_ADMINISTRATOR, false, &HandleWerbungCommand, "" },
             
-            { "gutscheinerstellen", SEC_ADMINISTRATOR, false, &HandlegutscheinerstellenCommand, "" },
+            //{ "gutscheinerstellen", SEC_ADMINISTRATOR, false, &HandlegutscheinerstellenCommand, "" },
 
 			//{ "tcrecon",        SEC_MODERATOR,      false, &HandleIRCRelogCommand,            "" },	
 
