@@ -442,7 +442,7 @@ public:
 		chr->TeleportTo(1, 16226.20, 16257.00, 13.20, 1.65);
 		return true;
 
-	}
+	};
 
 
 
@@ -539,7 +539,7 @@ public:
 			return true;
 		}
 		return true;
-	}
+};
 
 
 
