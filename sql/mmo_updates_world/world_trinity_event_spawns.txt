@@ -1,6 +1,3 @@
-
-
-
 DELETE FROM `gameobject` WHERE `guid` BETWEEN @OGUID+0 AND @OGUID+566;
 INSERT INTO `gameobject` (`guid`, `id`, `map`, `spawnMask`, `phaseMask`,  `position_x`, `position_y`, `position_z`, `orientation`, `rotation0`, `rotation1`, `rotation2`, `rotation3`, `spawntimesecs`, `animprogress`, `state`) VALUES
 (@OGUID+0, 195087, 571, 1, 1, 5851.9, 765.9167, 641.0652, 2.548179, 0, 0, 0, 1, 120, 255, 1), -- 195087 (Area: 4613)

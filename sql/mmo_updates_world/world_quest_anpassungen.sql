@@ -1,3 +1,22 @@
+/* Dropchance Contentpatchstartitem */
+UPDATE `creature_loot_template` SET `Chance`='10' WHERE `Entry`='36502' and`Item`='700498';
+UPDATE `creature_loot_template` SET `Chance`='10' WHERE `Entry`='36658' and`Item`='700498';
+UPDATE `creature_loot_template` SET `Chance`='10' WHERE `Entry`='29110' and`Item`='700498';
+UPDATE `creature_loot_template` SET `Chance`='10' WHERE `Entry`='26632' and`Item`='700498';
+UPDATE `creature_loot_template` SET `Chance`='10' WHERE `Entry`='29306' and`Item`='700498';
+UPDATE `creature_loot_template` SET `Chance`='10' WHERE `Entry`='28923' and`Item`='700498';
+UPDATE `creature_loot_template` SET `Chance`='10' WHERE `Entry`='27978' and`Item`='700498';
+UPDATE `creature_loot_template` SET `Chance`='10' WHERE `Entry`='26723' and`Item`='700498';
+UPDATE `creature_loot_template` SET `Chance`='10' WHERE `Entry`='28860' and`Item`='700498';
+UPDATE `creature_loot_template` SET `Chance`='10' WHERE `Entry`='27656' and`Item`='700498';
+UPDATE `creature_loot_template` SET `Chance`='10' WHERE `Entry`='29312' and`Item`='700498';
+UPDATE `creature_loot_template` SET `Chance`='10' WHERE `Entry`='29313' and`Item`='700498';
+UPDATE `creature_loot_template` SET `Chance`='10' WHERE `Entry`='31134' and`Item`='700498';
+UPDATE `creature_loot_template` SET `Chance`='10' WHERE `Entry`='15990' and`Item`='700498';
+UPDATE `creature_loot_template` SET `Chance`='15' WHERE `Entry`='36502' and`Item`='700499';
+
+
+
 -- Wandervolk Questender
 UPDATE `quest_template` SET `RequiredNpcOrGo2`='0', `RequiredNpcOrGoCount2`='0' WHERE `ID`='800005';
 REPLACE INTO `creature_questender` (`id`, `quest`) VALUES ('800027', '900800');
@@ -493,3 +512,43 @@ INSERT INTO `npc_vendor` (`entry`, `slot`, `item`, `maxcount`, `incrtime`, `Exte
 /*(99321, 0, ??, 0, 0 ,2707); //1 эмблема триумфа */ 
 /*(99321, 0, ??, 0, 0 ,2723); //15 эмблем триумфа */
 
+
+/* Der Kommandant */
+UPDATE `quest_template` SET `QuestType`='62' WHERE `ID`='802029';
+UPDATE `quest_template` SET `Flags`='64' WHERE `ID`='802029';
+UPDATE `quest_template` SET `QuestType`='2', `QuestInfoID`='62' WHERE `ID`='802029';
+
+
+/* Lucion */ 
+UPDATE `creature_template` SET `ScriptName`='lucion' WHERE `entry`='800055';
+UPDATE `creature` SET `spawntimesecs`='60' WHERE `guid`='800055';
+UPDATE `creature` SET `unit_flags`='8' WHERE `guid`='800055';
+UPDATE `creature_template` SET `lootid`='800055' WHERE entry = 800055;
+REPLACE INTO `creature_loot_template` (`Entry`, `Item`, `Reference`, `Chance`, `QuestRequired`, `LootMode`, `GroupId`, `MinCount`, `MaxCount`) 
+VALUES ('800055', '700524', '0', '100', '0', '1', '1', '1', '1');
+UPDATE `creature_template` SET `HealthModifier` = 10, `ArmorModifier`=5, `DamageModifier`= 50 WHERE `entry` = 800055;
+DELETE FROM `creature_equip_template` where `CreatureID` = 800055;
+REPLACE INTO `creature_equip_template` (`CreatureID`, `id`, `ItemID1`, `ItemID2`, `ItemID3`) VALUES ('800055', '1', '49623', '49623', '0');
+
+
+/* QUest 900828 */
+UPDATE `quest_template` SET `Flags`='64' WHERE `ID`= '900828';
+UPDATE `quest_template` SET `QuestInfoID`='62' WHERE `ID` ='900828';
+
+
+/* QUest 802021 Sammlung Teil4 */
+UPDATE `quest_template` SET `LogDescription`='Bringt Moon 50 Spinnenseide, 100 Seidenstoffe und toetet 20 Domestizierter Krabbler und 20 verseuchte Baeren.', `QuestDescription`='$N,$Bbringt mir 50 Spinnenseide, 100 Seidenstoffe und toetet 20 Domestizierter Krabbler und 20 verseuchte Baeren. Ihr findet alles im Vorgebirge des Huegellandes.', `RequiredNpcOrGo2`='0', `RequiredNpcOrGo3`='0', `RequiredNpcOrGo4`='2351', `RequiredNpcOrGoCount2`='0', `RequiredNpcOrGoCount3`='0', `RequiredNpcOrGoCount4`='20' WHERE `ID`='802021';
+
+
+/*NPC Weihnachtswichtel */
+UPDATE `creature` SET `position_x`='16227.75', `position_y`='16344.58', `position_z`='215.31', `orientation`='2.18' WHERE `guid`='800066';
+
+
+/* WAndervolkmarke anpassung */
+UPDATE `item_template` SET `Quality`='5' WHERE `entry`='700521';
+UPDATE `item_template` SET `Flags`='73' WHERE `entry`='700521';
+
+
+/* QUEST 802003 GOldanpassung */
+UPDATE `quest_template` SET `QuestDescription`='$N, Ich habe mir vor langer Zeit ein Buch von einem alten Bekannten ausgeliehen.Koenntet ihr es zurueck bringen? Sie befindet sich an der Kueste in Desolace am Sartherisstrand.' WHERE `ID` = 802003 ;
+UPDATE `quest_template` SET `RewardMoney`='1500000' WHERE `ID`='802003';

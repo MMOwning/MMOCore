@@ -67,11 +67,13 @@ public:
 			//insel
 			{ "tester", SEC_ADMINISTRATOR, false, &HandleInselCommand, "" },
 
-			//{ "gutschein", SEC_PLAYER, false, &HandleGutscheinCommand, "" },
+			{ "gutschein", SEC_PLAYER, false, &HandleGutscheinCommand, "" },
 
 			{ "werbung", SEC_ADMINISTRATOR, false, &HandleWerbungCommand, "" },
             
-            //{ "gutscheinerstellen", SEC_ADMINISTRATOR, false, &HandlegutscheinerstellenCommand, "" },
+            { "gutscheinerstellen", SEC_ADMINISTRATOR, false, &HandlegutscheinerstellenCommand, "" },
+            
+            { "frage", SEC_ADMINISTRATOR, false, &HandleFragenCommand, "" },
 
 			//{ "tcrecon",        SEC_MODERATOR,      false, &HandleIRCRelogCommand,            "" },	
 
@@ -124,7 +126,68 @@ public:
     }
     
     
-    
+    //Erstellt neue Fragen in der DB
+    static bool HandleFragenCommand(ChatHandler* handler, const char* args)
+    {
+        Player* player = handler->GetSession()->GetPlayer();
+        
+        char* frage = strtok((char*)args, " ");
+        if (!frage){
+            player->GetSession()->SendNotification("Ohne Frage geht das leider nicht!");
+            return true;
+        }
+        
+        char* antwort = strtok(NULL, " ");
+        if (!antwort){
+            player->GetSession()->SendNotification("Ohne Antwort geht das leider nicht!");
+            return true;
+        }
+        
+        
+        char* belohnung = strtok(NULL, " ");
+        if (!belohnung){
+            player->GetSession()->SendNotification("Ohne Belohnung geht das leider nicht!");
+            return true;
+        }
+        
+        char* anzahl = strtok(NULL, " ");
+        if (!anzahl){
+            player->GetSession()->SendNotification("Ohne Anzahl geht das leider nicht!");
+            return true;
+        }
+        
+        uint32 intanzahl = atoi((char*)anzahl);
+        uint32 itemid = atoi((char*)belohnung);
+        
+        PreparedStatement * itemquery = WorldDatabase.GetPreparedStatement(WORLD_SEL_ITEM_NR);
+        itemquery->setUInt32(0,itemid);
+        PreparedQueryResult ergebnis = WorldDatabase.Query(itemquery);
+        
+        
+        if(!ergebnis){
+            player->GetSession()->SendNotification("Item existiert nicht.");
+            return true;
+        }
+        
+        if(itemid == 49623){
+            player->GetSession()->SendNotification("Schattengram als Belohnung zu generieren ist verboten, wird geloggt und Exitare informiert.");
+            CharacterDatabase.PExecute("INSERT INTO eventteamlog "
+                                       "(player,guid, itemid,gutscheincode,anzahl)"
+                                       "VALUES ('%s', '%u', '%u', '%s','%u')",
+                                       player->GetSession()->GetPlayerName(),player->GetGUID(),belohnung,"Schattemgram",0);
+        
+        }
+        
+        PreparedStatement* insert = CharacterDatabase.GetPreparedStatement(CHAR_INS_FRAGEN);
+        insert->setString(0, frage);
+        insert->setString(1, antwort);
+        insert->setInt32(2, itemid);
+        insert->setInt32(3, intanzahl);
+        CharacterDatabase.Execute(insert);
+		player->GetSession()->SendNotification("Frage wurde erfolgreich eingetragen");
+        return true;
+        
+    }
     
 	//Gibt dem Eventteam die Moeglichkeit Gutscheine fuer Spieler zu erstellen.
 	static bool HandlegutscheinerstellenCommand(ChatHandler* handler, const char* args)
@@ -134,7 +197,7 @@ public:
 		
 		char* itemid = strtok((char*)args, " ");
 		if (!itemid){
-			player->GetSession()->SendNotification("Ohne Anzahl geht das leider nicht!");
+			player->GetSession()->SendNotification("Ohne ItemID geht das leider nicht!");
 			return true;
 		}
 
@@ -146,7 +209,17 @@ public:
 			return true;
 		}
 			
+        PreparedStatement * itemquery = WorldDatabase.GetPreparedStatement(WORLD_SEL_ITEM_NR);
+        itemquery->setUInt32(0,item);
+        PreparedQueryResult ergebnis = WorldDatabase.Query(itemquery);
 		
+        
+        if(!ergebnis){
+            player->GetSession()->SendNotification("Item existiert nicht");
+            return true;
+        }
+        
+        
 		uint32 anzahlint = atoi((char*)anzahl);
 		
 		//uint32 item = atoi((char*)args);
@@ -202,7 +275,17 @@ public:
         std::string str(10, 0);
         std::generate_n(str.begin(), 10, randchar);
         
-        CharacterDatabase.PExecute("INSERT INTO `item_codes` (code,belohnung,anzahl,benutzt,benutztbar) Values ('%s','%u','%u','%u','%u')", str, item, anzahlint, 0,1);
+        /*CharacterDatabase.PExecute("INSERT INTO `item_codes` (code,belohnung,anzahl,benutzt,benutztbar) Values ('%s','%u','%u','%u','%u')", str, item, anzahlint, 0,1);*/
+        
+        PreparedStatement * inscode = CharacterDatabase.GetPreparedStatement(CHAR_INS_NOPLAYERITEMCODE);
+        inscode->setString(0, str);
+        inscode->setUInt32(1, item);
+        inscode->setUInt32(2, anzahlint);
+        inscode->setUInt32(3, 0);
+        inscode->setUInt32(4, 1);
+        CharacterDatabase.Execute(inscode);
+        
+        
         std::ostringstream ss;
         std::ostringstream tt;
         
@@ -223,19 +306,33 @@ public:
 
         
         
-        CharacterDatabase.PExecute("INSERT INTO firstnpc_log "
+        /*CharacterDatabase.PExecute("INSERT INTO firstnpc_log "
                                    "(grund,spieler, guid)"
                                    "VALUES ('%s', '%s', '%u')",
-                                   "Eventteamgutschein", player->GetSession()->GetPlayerName(),player->GetGUID());
+                                   "Eventteamgutschein", player->GetSession()->GetPlayerName(),player->GetGUID()); */
         
-        CharacterDatabase.PExecute("INSERT INTO eventteamlog "
+        PreparedStatement* stmt = CharacterDatabase.GetPreparedStatement(CHAR_INS_FIRSTLOG);
+        stmt->setString(0, "Eventteamgutschein");
+        stmt->setString(1, player->GetSession()->GetPlayerName());
+        stmt->setUInt32(2, player->GetGUID());
+		CharacterDatabase.Execute(stmt);
+        
+        PreparedStatement* eventlog  = CharacterDatabase.GetPreparedStatement(CHAR_INS_EVENTLOG);
+        eventlog->setString(0, player->GetSession()->GetPlayerName());
+        eventlog->setUInt32(1, player->GetGUID());
+        eventlog->setUInt32(2, item);
+        eventlog->setString(3, str);
+        eventlog->setUInt32(4, anzahlint);
+        CharacterDatabase.Execute(eventlog);
+        
+        /*CharacterDatabase.PExecute("INSERT INTO eventteamlog "
                                    "(player,guid, itemid,gutscheincode,anzahl)"
                                    "VALUES ('%s', '%u', '%u', '%s','%u')",
-                                   player->GetSession()->GetPlayerName(),player->GetGUID(),item,str,anzahlint);
+                                   player->GetSession()->GetPlayerName(),player->GetGUID(),item,str,anzahlint); */
 
         return true;
         
-	}
+    };
 
 	static bool HandleRouletteCommand(ChatHandler* handler, const char* args)
 	{
@@ -309,7 +406,7 @@ public:
 			break;
 		}
 		return true;
-	}
+	};
 
 	//Dalaran Teleporter
 	static bool HandleDalaCommand(ChatHandler* handler, const char* /*args*/)
@@ -336,7 +433,7 @@ public:
 		chr->TeleportTo(571, 5809.55f, 503.975f, 657.526f, 1.70185f);    // Insert Dala Coords
 
 		return true;
-	}
+	};
 
 	//Buffer
 	static bool HandleBuffsCommand(ChatHandler* handler, const char* /*args*/)
@@ -382,7 +479,7 @@ public:
 	}
 
 	//GuildHouse Tele
-	static bool HandleGHCommand(ChatHandler* handler, const char* args)
+	static bool HandleGHCommand(ChatHandler* handler, const char* /*args*/)
 	{
 		Player *chr = handler->GetSession()->GetPlayer();
 
@@ -435,7 +532,7 @@ public:
 	}
 
 	//GuildHouse Tele
-	static bool HandleInselCommand(ChatHandler* handler, const char* args)
+	static bool HandleInselCommand(ChatHandler* handler, const char* /*args*/)
 	{
 		Player *chr = handler->GetSession()->GetPlayer();
 
@@ -465,8 +562,11 @@ public:
 
         
         
+        PreparedStatement* stmt = CharacterDatabase.GetPreparedStatement(CHAR_SEL_ITEMCODEGES);
+        stmt->setString(0, itemCode);
+        PreparedQueryResult result = CharacterDatabase.Query(stmt);
         
-		QueryResult result = CharacterDatabase.PQuery("SELECT `code`, `belohnung`, `anzahl`, `benutzt`, `benutztbar` FROM `item_codes` WHERE `code` = '%s'", itemCode);
+		//QueryResult result = CharacterDatabase.PQuery("SELECT `code`, `belohnung`, `anzahl`, `benutzt`, `benutztbar` FROM `item_codes` WHERE `code` = '%s'", itemCode);
         
         
 		if (result)
@@ -504,7 +604,14 @@ public:
 
 					CharacterDatabase.PExecute("UPDATE item_codes SET name = '%s' WHERE code = '%s'", player->GetName().c_str(), itemCode);
 					CharacterDatabase.PExecute("UPDATE item_codes SET benutzt = '%u' WHERE code = '%s'", benutzt, itemCode);
-					CharacterDatabase.PExecute("INSERT INTO item_codes_account (name,accid,code) Values('%s','%u','%s')", player->GetSession()->GetPlayerName(), player->GetSession()->GetAccountId(), itemCode);
+                    
+                    PreparedStatement* itemcodeaccount = CharacterDatabase.GetPreparedStatement(CHAR_INS_ITEMCODEACCOUNT);
+                    itemcodeaccount->setString(0,player->GetSession()->GetPlayerName());
+                    itemcodeaccount->setUInt32(1, player->GetSession()->GetAccountId());
+                    itemcodeaccount->setString(2,itemCode);
+                    CharacterDatabase.Execute(itemcodeaccount);
+                    
+					//CharacterDatabase.PExecute("INSERT INTO item_codes_account (name,accid,code) Values('%s','%u','%s')", player->GetSession()->GetPlayerName(), player->GetSession()->GetAccountId(), itemCode);
 
 					char msg[250];
 					snprintf(msg, 250, "Dein Code wurde akzeptiert.");
@@ -559,18 +666,18 @@ public:
 			return true;
 		}
 
-
+    
 		QueryResult result = CharacterDatabase.PQuery("SELECT `id`, `nachricht`, `player`, `guid`,`accid` FROM `fremdwerbung` WHERE `player` = '%s'", eingabe);
 
 		if (result)
 		{
 
 			Field* fields = result->Fetch();
-			uint32 id = fields[0].GetUInt32();
+			//uint32 id = fields[0].GetUInt32();
 			std::string nachricht = fields[1].GetCString();
 			std::string player = fields[2].GetCString();
-			uint32 guid = fields[3].GetUInt32();
-			uint32 accid = fields[4].GetUInt32();
+			//uint32 guid = fields[3].GetUInt32();
+			//uint32 accid = fields[4].GetUInt32();
 
 
 			QueryResult ergebnis = CharacterDatabase.PQuery("SELECT count(guid) FROM `fremdwerbung` WHERE `player` = '%s'", eingabe);

@@ -104,10 +104,10 @@ public:
 			}
 		}
 
-		void JustDied(Unit* ) 
+		void JustDied(Unit* ) override
 		{
 			char msg[250];
-			snprintf(msg, 250, "|cffff0000[Boss System]|r Boss|cffff6060 Galadriel|r wurde getötet! Der Respawn ist in 7 Tagen ab jetzt! "); 
+			snprintf(msg, 250, "|cffff0000[Boss System]|r Boss|cffff6060 Galadriel|r wurde getoetet! Der Respawn ist in 7 Tagen ab jetzt! "); 
 			sWorld->SendGlobalText(msg, NULL);
 			Summons.DespawnAll();
 		}

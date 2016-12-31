@@ -115,7 +115,7 @@ namespace
     }
 
     // Verification before teleportation
-    void ActionTeleport(Player * const player, Creature * const creature, const uint32 &id)
+    void ActionTeleport(Player * const player, Creature * const /*creature*/, const uint32 &id)
     {
         Dest dest (TabCatDest[Cat[player]].GetDest(id));
 

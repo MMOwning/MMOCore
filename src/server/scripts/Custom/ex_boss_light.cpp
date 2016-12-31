@@ -209,7 +209,7 @@ public:
 			}
 		}
 
-		void JustDied(Unit* pPlayer)
+		void JustDied(Unit* pPlayer) override
 		{
 			Talk(SAY_DEAD);
 			/*char msg[250];

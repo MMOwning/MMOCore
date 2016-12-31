@@ -1,6 +1,6 @@
 DELETE FROM `game_event` WHERE `eventEntry` = 72;
 INSERT INTO `game_event` (`eventEntry`, `start_time`, `end_time`, `occurence`, `length`, `holiday`, `description`, `world_event`)
-VALUES (72, '2015-09-19 10:00:00', '2030-11-10 20:00:00', '4320', '1080', '0','Das Wandervolk', '0');
+VALUES (72, '2015-09-19 10:00:00', '2030-11-10 20:00:00', '14400', '10080', '0','Das Wandervolk', '0');
 
 
 

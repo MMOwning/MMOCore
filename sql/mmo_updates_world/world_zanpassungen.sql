@@ -180,4 +180,8 @@ REPLACE INTO `creature` (`guid`,`id`,`map`,`spawnMask`,`phaseMask`,`modelid`,`eq
 INSERT INTO `game_event_creature` (`eventEntry`, `guid`) VALUES ('24', '999999');
 
 
+/*Double Spawn of Transmog remove*/
+DELETE FROM `creature` WHERE `guid` = 1600003;
 
+/*Kalastoria spawn*/
+DELETE FROM `creature` WHERE `guid` = 800096;

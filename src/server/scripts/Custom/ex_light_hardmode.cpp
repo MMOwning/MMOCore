@@ -192,12 +192,12 @@ public:
 		}
 
 		void Questcomplete(){
-			Player* pPlayer;
+            Player* pPlayer = nullptr;
 			pPlayer->GetGUID();
 			pPlayer->SendQuestComplete(899000);
 		}
 
-		void JustDied(Unit* pPlayer)
+		void JustDied(Unit* pPlayer) override
 		{
 
 			

@@ -5451,6 +5451,7 @@ INSERT INTO `gameobject` (`guid`, `id`, `map`, `spawnMask`, `phaseMask`, `positi
     ((@startGameobjectGuid + 5416), @newGameobjectEntry, 1, 1, 1, 16205.3, 16394.2, 170.816, 4.84673, 0, 0, 0.658052, -0.752973, 1, 0, 1),
     ((@startGameobjectGuid + 5417), 181170, 1, 1, 1, 16226.5, 16286.5, 20.8448, 0.0339918, 0, 0, 0.0169951, 0.999856, 300, 0, 1);
 
+DELETE FROM `game_event_gameobject` WHERE `eventEntry` = 70;
 INSERT INTO `game_event_gameobject` (`eventEntry`, `guid`) VALUES
     (@eventId, (@startGameobjectGuid + 1)),
     (@eventId, (@startGameobjectGuid + 2)),

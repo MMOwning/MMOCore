@@ -38,10 +38,7 @@ enum Phases
 	PHASE_THREE = 3
 };
 
-enum Summons
-{
-	NPC_PUSTELIGER_SCHRECKEN = 31139
-};
+
 
 enum Texts
 {
@@ -103,21 +100,10 @@ public:
 			}
 		}
 
-		void JustSummoned(Creature* summon) override
-		{
-			Summons.Summon(summon);
-
-			switch (summon->GetEntry())
-			{
-			case NPC_PUSTELIGER_SCHRECKEN:
-				if (Unit* target = SelectTarget(SELECT_TARGET_RANDOM, 0, 300.0f))
-					summon->AI()->AttackStart(target); // I think it means the Tank !
-				break;
-			}
-		}
+		
 
 
-		void JustDied(Unit* pPlayer)
+		void JustDied(Unit* /*pPlayer*/) override
 		{
 			char msg[250];
 			snprintf(msg, 250, "|cffff0000[Boss System]|r Boss|cffff6060 Orrig|r wurde getoetet! Respawn in 6h 33min.");
@@ -162,7 +148,7 @@ public:
 					break;
 				case EVENT_BLIZZARD:
 					if (Unit* target = SelectTarget(SELECT_TARGET_RANDOM, 0)){
-						DoCastVictim(SPELL_BLIZZARD);
+						DoCast(target, SPELL_BLIZZARD);
 					}
 					_events.ScheduleEvent(EVENT_BLIZZARD, 15000);
 					break;

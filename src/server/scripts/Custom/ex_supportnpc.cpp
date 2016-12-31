@@ -27,8 +27,20 @@ class supportnpc : public CreatureScript
 public:
 		supportnpc() : CreatureScript("supportnpc") { }
 		
+    void erklaerung(Player* player, std::string hilfe){
+        
+        ChatHandler(player->GetSession()).PSendSysMessage(hilfe.c_str(), player->GetName());
+        player->PlayerTalkClass->SendCloseGossip();
+        std::ostringstream ss;
+        ss << hilfe;
+        player->GetSession()->SendAreaTriggerMessage(ss.str().c_str());
+        return;
+        
+    }
+    
+    
 		bool OnGossipHello(Player* player, Creature* creature)
-	{
+        {
 		player->ADD_GOSSIP_ITEM(GOSSIP_ICON_CHAT, "Gibt es eine Erstaustattung?", GOSSIP_SENDER_MAIN, 0);
         player->ADD_GOSSIP_ITEM(GOSSIP_ICON_CHAT, "Gibt es einen Gildentransfer?", GOSSIP_SENDER_MAIN, 7);
 		player->ADD_GOSSIP_ITEM(GOSSIP_ICON_CHAT, "Wie kann ich einen GM erreichen?", GOSSIP_SENDER_MAIN, 1);
@@ -37,11 +49,13 @@ public:
 		player->ADD_GOSSIP_ITEM(GOSSIP_ICON_CHAT, "Gibt es hier Crossfaction?", GOSSIP_SENDER_MAIN, 4);
 		player->ADD_GOSSIP_ITEM(GOSSIP_ICON_CHAT, "Wie schreibe ich im Worldchat?", GOSSIP_SENDER_MAIN, 5);
 		player->ADD_GOSSIP_ITEM(GOSSIP_ICON_CHAT, "Die Rampoquestreihe funktioniert bei mir nicht.", GOSSIP_SENDER_MAIN, 6);
+        player->ADD_GOSSIP_ITEM(GOSSIP_ICON_CHAT, "Wie startet der Contentpatch?", GOSSIP_SENDER_MAIN, 8);
+        player->ADD_GOSSIP_ITEM(7, "Wo kann ich Eventquests abgeben?", GOSSIP_SENDER_MAIN, 9);
 		player->PlayerTalkClass->SendGossipMenu(1, creature->GetGUID());
 		return true;
-	}
+        }
 	
-		bool OnGossipSelect(Player * pPlayer, Creature * /*pCreature*/, uint32 /*uiSender*/, uint32 uiAction)
+		bool OnGossipSelect(Player * pPlayer, Creature * /*creature*/, uint32 /*uiSender*/, uint32 uiAction)
 		{
 			switch (uiAction)
 			{
@@ -119,7 +133,16 @@ public:
                     return true;
                 }break;
 
- 
+                
+                case 8:
+                {
+                    erklaerung(pPlayer->GetSession()->GetPlayer(),"Der Contentpatch startet ab Level 80 ueber einen Drop bei den Endbosse in allen Instanzen von Nordend oder ueber 2 Quests beim Wandervolk.");
+                }break;
+                    
+                case 9:
+                {
+                    erklaerung(pPlayer->GetSession()->GetPlayer(), "Die speziellen Eventquests koennen nur bei den Eventquestgebern /nehmern abgegeben werden. Bitte gedulde dich daher, bis das Event wieder aktiv wird.");
+                }
 				
 
 				return true;

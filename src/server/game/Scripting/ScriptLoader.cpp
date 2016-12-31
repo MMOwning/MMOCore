@@ -141,15 +141,15 @@ void AddSC_neujahrsevent();
 //weihnachtsevent
 void AddSC_weihnachtsevent();
 
-
 //gildenhausvendor
 void AddSC_gildenvendor();
 
-//Worldevent
-void AddSC_sb_worldevent();
-
 //Inselnpc
 void AddSC_inselnpc();
+
+//codenpc
+void AddSC_codenpc();
+
 
 #ifdef SCRIPTS
 //world
@@ -908,11 +908,12 @@ void AddCommandScripts()
 	//gildenhausvendor
 	AddSC_gildenvendor();
 
-	//worldevent
-	AddSC_sb_worldevent();
-
 	//inselnpc
 	AddSC_inselnpc();
+    
+    //codenpc
+    AddSC_codenpc();
+
 }
 
 

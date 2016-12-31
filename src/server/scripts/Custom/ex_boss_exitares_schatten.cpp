@@ -122,7 +122,7 @@ public:
 			}
 		}
 
-		void JustDied(Unit* pPlayer)
+		void JustDied(Unit* /*pPlayer*/) override
 		{
 			char msg[250];
 			snprintf(msg, 250, "|cffff0000[Boss System]|r Boss|cffff6060 Exitares Schatten|r wurde getoetet! Respawn in 6h 33min.");

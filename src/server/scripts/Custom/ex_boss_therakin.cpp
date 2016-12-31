@@ -124,7 +124,7 @@ public:
 		}
 
 
-		void JustDied(Unit* player)
+		void JustDied(Unit* /*player */) override
 		{
 
 			char msg[250];

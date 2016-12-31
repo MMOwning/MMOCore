@@ -143,7 +143,7 @@ public: gildenvendor() : CreatureScript("gildenvendor"){ }
 			ergebnis = CharacterDatabase.PQuery("Select count(guildid) from `guildhouses` where `guildid` = '%u'", gildenidneu);
 			uint32 gildeplayer = player->GetGuildId();
 
-			uint32 memberanzahllimit = groesse;
+			//uint32 memberanzahllimit = groesse;
 
 			Field *feld = ergebnis->Fetch();
 			uint32 anzahl = feld[0].GetUInt32();
@@ -1079,45 +1079,7 @@ public: gildenvendor() : CreatureScript("gildenvendor"){ }
 
 			case 1:
 			{
-
 				Gildenhausverkauf(player->GetSession()->GetPlayer());
-				
-				/*uint32 platzhalter = 0;
-				uint32 gilde = player->GetGuildId();
-
-				QueryResult result;
-				result = CharacterDatabase.PQuery("SELECT id FROM `guildhouses` WHERE `guildid` = '%u'", gilde);
-
-				if (result){
-					Field *fields = result->Fetch();
-					uint32 gildenaktuell = fields[0].GetUInt32();
-
-					if (gilde == 0){
-						player->GetSession()->SendNotification("Du bist in keiner Gilde");
-						return false;
-					}
-
-
-
-					QueryResult ergebnis;
-					ergebnis = CharacterDatabase.PQuery("Select leaderguid from `guild` where `guildid` = '%u'", player->GetGuildId());
-
-					Field *feld = ergebnis->Fetch();
-					uint32 leaderid = feld[0].GetUInt32();
-
-					uint32 guid = player->GetGUID();
-
-					if (guid == leaderid){
-						CharacterDatabase.PExecute("UPDATE guildhouses SET guildid = '%u' WHERE id = '%u'", platzhalter, gildenaktuell);
-						player->GetSession()->SendNotification("Das Gildenhaus wurde verkauft.");
-						return true;
-					}
-				}
-
-				else {
-					player->GetSession()->SendNotification("Deine Gilde besitzt kein Gildenhaus");
-				}		
-				*/
 			}break;
 
 
@@ -1336,7 +1298,7 @@ public: gildenvendor() : CreatureScript("gildenvendor"){ }
 			{
 				uint32 gildenid = player->GetGuildId();
 
-				// Wetlands mountain camp -> würde ich nicht verwenden!!! (oder für eine 1-Mann Gilde *gg*)
+				// Wetlands mountain camp -> wÃ¼rde ich nicht verwenden!!! (oder fÃ¼r eine 1-Mann Gilde *gg*)
 				Gildenhauszuordnung(gildenid, 26, 10, 20, player->GetSession()->GetPlayer());
 				player->PlayerTalkClass->SendCloseGossip();
 			}break;
@@ -1362,7 +1324,7 @@ public: gildenvendor() : CreatureScript("gildenvendor"){ }
 			case 29:
 			{
 				uint32 gildenid = player->GetGuildId();
-				// Karazhan Smiley -> würde ich nicht verwenden -> Man versperrt damit den mit Absicht verbauten Weg von Blizz!!!
+				// Karazhan Smiley -> wÃ¼rde ich nicht verwenden -> Man versperrt damit den mit Absicht verbauten Weg von Blizz!!!
 				Gildenhauszuordnung(gildenid, 29, 10, 30, player->GetSession()->GetPlayer());
 				player->PlayerTalkClass->SendCloseGossip();
 				
@@ -1380,7 +1342,7 @@ public: gildenvendor() : CreatureScript("gildenvendor"){ }
 			case 31:
 			{
 				uint32 gildenid = player->GetGuildId();
-				// Undercity Top Tier -> bitte nicht verwenden, ich wüsste nicht wie man das sichern sollte + von außen sieht man rein!
+				// Undercity Top Tier -> bitte nicht verwenden, ich wÃ¼sste nicht wie man das sichern sollte + von auÃŸen sieht man rein!
 				Gildenhauszuordnung(gildenid, 31, 25, 40, player->GetSession()->GetPlayer());
 				player->PlayerTalkClass->SendCloseGossip();
 			}break;
@@ -1442,7 +1404,7 @@ public: gildenvendor() : CreatureScript("gildenvendor"){ }
 			}break;
 
 			}
-
+            return true;
 		}
 
 };

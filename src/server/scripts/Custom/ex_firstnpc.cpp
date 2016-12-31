@@ -45,6 +45,47 @@ class npc_first_char : public CreatureScript
 {
 		public: npc_first_char() : CreatureScript("npc_first_char"){ }
     
+        void Bonusep(Player* player, uint32 kosten, uint32 dauer){
+            
+            //Insert into Bonusep (player, playerid,start, ende) Values (?,?,?,?)
+            
+            time_t sek;
+            time(&sek);
+            uint32 zeit = time(&sek);
+            
+            uint32 endzeit = zeit+dauer;
+            uint32 stundenzahl = dauer / 60 / 60;
+            
+            if(player->HasEnoughMoney(kosten * GOLD)){
+                
+                PreparedStatement* update = CharacterDatabase.GetPreparedStatement(CHAR_UPD_BONUS_EP);
+                update->setInt32(0, player->GetGUID());
+                CharacterDatabase.Execute(update);
+                
+                PreparedStatement* stmt = CharacterDatabase.GetPreparedStatement(CHAR_INS_BONUS_EP);
+                stmt->setString(0, player->GetSession()->GetPlayerName());
+                stmt->setInt32(1, player->GetGUID());
+                stmt->setInt32(2, zeit);
+                stmt->setInt32(3, endzeit);
+                stmt->setInt32(4, 1);
+                CharacterDatabase.Execute(stmt);
+                player->GetSession()->SendNotification("Dein EP-Bonus ist nun aktiv!");
+                player->ModifyMoney(-kosten * GOLD);
+                std::ostringstream ss;
+                ss << "Dein EP-Bonus ist nun fuer " << stundenzahl << " Stunden aktiv.";
+                ChatHandler(player->GetSession()).PSendSysMessage(ss.str().c_str(),
+                                                                   player->GetName());
+
+                player->PlayerTalkClass->SendCloseGossip();
+                return;
+            }
+            
+            else{
+                player->GetSession()->SendNotification("Du hast leider nicht genug Gold um dir diesen EP-Bonus zu kaufen.");
+                return;
+            }
+            return;
+        }
     
         void gutscheineverteilen(Player* pPlayer){
     
@@ -65,7 +106,7 @@ class npc_first_char : public CreatureScript
             std::generate_n(str.begin(), 10, randchar);
             
             
-            uint32 anzahl = 1 + (std::rand() % (5 - 1 + 1));
+            uint32 anzahl = 1 + (std::rand() % (15 - 1 + 1));
             
             
             if (r % 10 == 0){
@@ -96,7 +137,7 @@ class npc_first_char : public CreatureScript
             }
             
             if (r % 10 == 5){
-                uint32 saroanzahl = 1 + (std::rand() % (2 - 1 + 1));
+                uint32 saroanzahl = 1 + (std::rand() % (3 - 1 + 1));
                 gutscheinzusammenstellen(pPlayer->GetSession()->GetPlayer(), URSARONIT, saroanzahl, str);
             }
             
@@ -156,7 +197,7 @@ class npc_first_char : public CreatureScript
             }
         
         
-        }
+		}
 
 
 				void fixgutschein(Player* player, uint32 belohnung, uint32 anzahl, std::string grund ){
@@ -237,8 +278,7 @@ class npc_first_char : public CreatureScript
 					pPlayer->ADD_GOSSIP_ITEM(7, "Firstausstattung beantragen", GOSSIP_SENDER_MAIN, 1);
 					pPlayer->ADD_GOSSIP_ITEM(7, "Gildenaufwertung 10er", GOSSIP_SENDER_MAIN, 2);
 					pPlayer->ADD_GOSSIP_ITEM(7, "Gildenaufwertung 25er", GOSSIP_SENDER_MAIN, 3);
-					pPlayer->ADD_GOSSIP_ITEM(7, "Features", GOSSIP_SENDER_MAIN, 25);
-										
+					pPlayer->ADD_GOSSIP_ITEM(7, "Features", GOSSIP_SENDER_MAIN, 25);					
 					pPlayer->PlayerTalkClass->SendGossipMenu(907, _creature->GetGUID());
 					return true;
 
@@ -305,6 +345,7 @@ class npc_first_char : public CreatureScript
 							pPlayer->UpdateSkillsToMaxSkillsForLevel();
 							pPlayer->UpdateSkillsForLevel();
 							DBeintrag(pPlayer->GetSession()->GetPlayer(), "Firstaustattung einzel");
+                            pPlayer->SaveRecallPosition();
 
 
 
@@ -481,6 +522,7 @@ class npc_first_char : public CreatureScript
 									"(guid,Charname, account, Accname, time, guildid,ip) "
 									"VALUES ('%u', '%s', %u, '%s', %u, %u, '%s')",
 									guid, charname, accountresint, accname, zeit, guildidint, ipadrint);
+                                pPlayer->SaveRecallPosition();
 								return true;
 
 
@@ -496,7 +538,7 @@ class npc_first_char : public CreatureScript
 
 
 							else{
-								ChatHandler(pPlayer->GetSession()).PSendSysMessage("[Aufwertungs System] Deine Gilde ist nicht neu, oder hat nicht genug oder zu viele Mitglieder.",
+								ChatHandler(pPlayer->GetSession()).PSendSysMessage("[Aufwertungs System] Deine Gilde ist nicht neu, hat nicht genug oder zu viele Mitglieder.",
 									pPlayer->GetName());
 								pPlayer->PlayerTalkClass->SendCloseGossip();
 								return true;
@@ -584,6 +626,7 @@ class npc_first_char : public CreatureScript
 									"VALUES ('%u', '%s', %u, '%s', %u, %u, '%s')",
 									guid, charname, accountresint, accname, zeit, guildidint, ipadrint);
 								DBeintrag(pPlayer->GetSession()->GetPlayer(), "Firstaustattung 25er");
+                                pPlayer->SaveRecallPosition();
 								return true;
 							}
 
@@ -646,6 +689,7 @@ class npc_first_char : public CreatureScript
 							pPlayer->TeleportTo(0, -792.84, -1607.55, 142.30, 2.33, 0);
 							pPlayer->PlayerTalkClass->SendCloseGossip();
 							pPlayer->ModifyMoney(-5000 * GOLD);
+                            pPlayer->SaveRecallPosition();
 							std::string name = pPlayer->GetName();
 
 							CharacterDatabase.PExecute("INSERT INTO zweitausstattung "
@@ -788,14 +832,62 @@ class npc_first_char : public CreatureScript
 
 						pPlayer->SEND_GOSSIP_MENU(DEFAULT_GOSSIP_MESSAGE, pCreature->GetGUID());
 						pPlayer->PlayerTalkClass->ClearMenus();
-						pPlayer->ADD_GOSSIP_ITEM(7, "XP Boost: 1 Stunde Kosten: 500 Gold", GOSSIP_SENDER_MAIN, 24);
-						
+						pPlayer->ADD_GOSSIP_ITEM(7, "XP Boost: 1 Stunde Kosten: 500 Gold", GOSSIP_SENDER_MAIN, 6000);
+                        pPlayer->ADD_GOSSIP_ITEM(7, "XP Boost: 2 Stunden Kosten: 800 Gold", GOSSIP_SENDER_MAIN, 6001);
+						pPlayer->ADD_GOSSIP_ITEM(7, "XP Boost: 5 Stunden Kosten: 1500 Gold", GOSSIP_SENDER_MAIN, 6002);
+                        pPlayer->ADD_GOSSIP_ITEM(7, "XP Boost: 10 Stunden Kosten: 2000 Gold", GOSSIP_SENDER_MAIN, 6003);
+                        pPlayer->ADD_GOSSIP_ITEM(7, "XP Boost: 1 Tag Kosten: 4000 Gold", GOSSIP_SENDER_MAIN, 6004);
+                        pPlayer->ADD_GOSSIP_ITEM(7, "XP Boost: 2 Tage Kosten: 5000 Gold", GOSSIP_SENDER_MAIN, 6005);
+                        pPlayer->ADD_GOSSIP_ITEM(7, "XP Boost: 5 Tage Kosten: 7500 Gold", GOSSIP_SENDER_MAIN, 6006);
+                        pPlayer->ADD_GOSSIP_ITEM(7, "XP Boost: 10 Tage Kosten: 10000 Gold", GOSSIP_SENDER_MAIN, 6007);
+                        
 						pPlayer->PlayerTalkClass->SendGossipMenu(907, pCreature->GetGUID());
 						return true;
 
 					}break;
-
-
+                    
+                        
+                    case 6000:
+                    {
+                        Bonusep(pPlayer->GetSession()->GetPlayer(), 500, 3600);
+                    }break;
+                    
+                    case 6001:
+                    {
+                        Bonusep(pPlayer->GetSession()->GetPlayer(), 800, 7200);
+                    }break;
+                            
+                    case 6002:
+                    {
+                        Bonusep(pPlayer->GetSession()->GetPlayer(), 1500, 18000);
+                    }break;
+                        
+                    case 6003:
+                    {
+                        Bonusep(pPlayer->GetSession()->GetPlayer(), 2000, 36000);
+                    }break;
+                            
+                    case 6004:
+                    {
+                        Bonusep(pPlayer->GetSession()->GetPlayer(), 4000, 86400);
+                    }break;
+                    
+                    case 6005:
+                    {
+                        Bonusep(pPlayer->GetSession()->GetPlayer(), 5000, 172800);
+                    }break;
+                            
+                    case 6006:
+                    {
+                        Bonusep(pPlayer->GetSession()->GetPlayer(), 7500, 432000);
+                    }break;
+                            
+                    case 6007:
+                    {
+                        Bonusep(pPlayer->GetSession()->GetPlayer(), 10000, 864000);
+                    }break;
+                            
+                            
 					case 23:
 					{
 						if (pPlayer->HasEnoughMoney(5000 * GOLD)){
@@ -849,10 +941,12 @@ class npc_first_char : public CreatureScript
 						pPlayer->ADD_GOSSIP_ITEM(7, "Gutschein generieren [Kosten: 5000G]", GOSSIP_SENDER_MAIN, 23);
 						pPlayer->ADD_GOSSIP_ITEM(7, "Gutschein zum Verschenken generieren [Kosten: Premium 5000 / Normal 10.000]", GOSSIP_SENDER_MAIN, 24);
 						pPlayer->ADD_GOSSIP_ITEM(7, "Level kaufen", GOSSIP_SENDER_MAIN, 9500);
+                        pPlayer->ADD_GOSSIP_ITEM(7, "XP-BOOST", GOSSIP_SENDER_MAIN, 22);
 						
 						if (pPlayer->GetSession()->GetSecurity() == 3){	
 							
 							pPlayer->ADD_GOSSIP_ITEM(7, "Aufwertungen einsehen", GOSSIP_SENDER_MAIN, 4);
+							pPlayer->ADD_GOSSIP_ITEM(7, "MMO Bonus", GOSSIP_SENDER_MAIN, 9504);
 						}
 
 						pPlayer->PlayerTalkClass->SendGossipMenu(907, pCreature->GetGUID());
@@ -865,7 +959,7 @@ class npc_first_char : public CreatureScript
                             
                             pPlayer->ModifyMoney(5000*GOLD);
                             gutscheineverteilen(pPlayer->GetSession()->GetPlayer());
-                            
+                             
                         }
                         
 						if (pPlayer->HasEnoughMoney(10000 * GOLD) && !pPlayer->GetSession()->IsPremium()){
@@ -877,7 +971,7 @@ class npc_first_char : public CreatureScript
 							
 						else{
 							pPlayer->GetSession()->SendNotification("Du hast nicht genug Gold.");
-							ChatHandler(pPlayer->GetSession()).PSendSysMessage("[Gutschein System] Du hast nicht genug Gold. Als Elitespieler brauchst du 5000 Gold als normaler Spieler 10.000 Gold.",
+							ChatHandler(pPlayer->GetSession()).PSendSysMessage("[Gutschein System] Du hast nicht genug Gold. Als Besitzer eines Eliteaccounts brauchst du 5000 Gold als normaler Spieler 10.000 Gold.",
 								pPlayer->GetName());
 						}
 					
@@ -890,9 +984,9 @@ class npc_first_char : public CreatureScript
 						
 						if (pPlayer->getLevel() < 80)
 						{
-							pPlayer->ADD_GOSSIP_ITEM(7, "1 Level aufsteigen. Kosten: 2 Astrale Kredite", GOSSIP_SENDER_MAIN, 9501);
-							pPlayer->ADD_GOSSIP_ITEM(7, "10 Level aufsteigen.  Kosten: 15 Astrale Kredite.", GOSSIP_SENDER_MAIN, 9502);
-							pPlayer->ADD_GOSSIP_ITEM(7, "Auf Level 80 setzen.  Kosten: 100 Astrale Kredite.", GOSSIP_SENDER_MAIN, 9503);
+							pPlayer->ADD_GOSSIP_ITEM(7, "1 Level aufsteigen. Kosten: 1 Astrale Kredite", GOSSIP_SENDER_MAIN, 9501);
+							pPlayer->ADD_GOSSIP_ITEM(7, "10 Level aufsteigen.  Kosten: 5 Astrale Kredite.", GOSSIP_SENDER_MAIN, 9502);
+							pPlayer->ADD_GOSSIP_ITEM(7, "Auf Level 80 setzen.  Kosten: 40 Astrale Kredite.", GOSSIP_SENDER_MAIN, 9503);
                             
                         }
 						else {
@@ -909,7 +1003,7 @@ class npc_first_char : public CreatureScript
                     case 9501:
                     {
                             
-                        levelup(pPlayer, 2, 79, 1);
+                        levelup(pPlayer, 1, 79, 1);
 						
                         return true;
                             
@@ -919,7 +1013,7 @@ class npc_first_char : public CreatureScript
                     case 9502:
                     {
                         
-                        levelup(pPlayer, 15, 70, 10);
+                        levelup(pPlayer, 5, 70, 10);
 						
                         return true;
                             
@@ -931,12 +1025,21 @@ class npc_first_char : public CreatureScript
                         uint16 abstand = 80 - pPlayer->getLevel();
                         // abstand ist der abstand des Spielerlevels zu Level 80
                             
-                        levelup(pPlayer, 100, 80, abstand);
+                        levelup(pPlayer, 40, 80, abstand);
                         return true;
                             
                     }break;
 
-				
+					
+					case 9504:
+					{
+						if (pPlayer->HasItemOrGemWithIdEquipped(700523, 1, 4)){
+							pPlayer->GetSession()->SendNotification("Du bist Besitzer des Wappenrockes des Wandervolkes! Ich verneige mich vor dir.");
+							return true;
+						}
+						return true;
+
+					}break;
 
 					}
 					return true;

@@ -28,6 +28,27 @@ enum CharacterDatabaseStatements
         When updating more than one field, consider looking at the calling function
         name for a suiting suffix.
     */
+    
+    /* Exi Custom */
+	CHAR_SEL_ANTWORTEN_NACH_ANTWORT,
+    CHAR_SEL_FRAGEN_COUNT,
+    CHAR_SEL_BEANTWORTET,
+    CHAR_INS_BEANTWORTET,
+    CHAR_SEL_LOB,
+    CHAR_INS_LOB,
+    CHAR_INS_FIRSTLOG,
+    CHAR_INS_EVENTLOG,
+    CHAR_INS_ITEMCODE,
+    CHAR_INS_NOPLAYERITEMCODE,
+    CHAR_SEL_ITEMCODEGES,
+    CHAR_INS_ITEMCODEACCOUNT,
+    CHAR_INS_SPIELERANTWORTEN,
+    CHAR_SEL_SPIELERANTWORTEN,
+    CHAR_INS_BONUS_EP,
+    CHAR_SEL_BONUS_EP,
+    CHAR_UPD_BONUS_EP,
+    CHAR_INS_FRAGEN,
+    /*CUSTOM ENDE */
 
     CHAR_DEL_QUEST_POOL_SAVE,
     CHAR_INS_QUEST_POOL_SAVE,
@@ -536,6 +557,10 @@ enum CharacterDatabaseStatements
     CHAR_INS_DESERTER_TRACK,
 
     MAX_CHARACTERDATABASE_STATEMENTS
+    
+    
+    
+    
 };
 
 class CharacterDatabaseConnection : public MySQLConnection

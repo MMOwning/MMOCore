@@ -1332,7 +1332,7 @@ class npc_dark_nucleus : public CreatureScript
 				me->AddThreat(attacker, 500000000.0f);
 			}
 
-			void SpellHit(Unit* caster, SpellInfo const* )
+			void SpellHit(Unit* caster, SpellInfo const* ) override
 			{
 
 				if (caster == me)

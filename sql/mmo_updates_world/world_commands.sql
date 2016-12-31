@@ -54,6 +54,8 @@ UPDATE `command` SET `permission`='195' WHERE `name`='gm ingame';
 
 
 /* ex-commands */
+DELETE FROM command WHERE `name` = 'fragen';
+INSERT INTO `command` (`name`, `permission`, `help`) VALUES ('frage', 193, '');
 
 DELETE FROM command WHERE `name`='tester';
 INSERT INTO `command` (`name`, `permission`, `help`) VALUES ('tester', 193, 'Syntax: .testing. Bereitet deinen Char auf einen Test vor.');   

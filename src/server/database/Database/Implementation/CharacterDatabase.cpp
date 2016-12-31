@@ -22,6 +22,29 @@ void CharacterDatabaseConnection::DoPrepareStatements()
     if (!m_reconnecting)
         m_stmts.resize(MAX_CHARACTERDATABASE_STATEMENTS);
 
+    
+    /* EXI CUSTOM */
+	PrepareStatement(CHAR_SEL_ANTWORTEN_NACH_ANTWORT, "SELECT `id`,`belohnung`,`anzahl` from `antworten` where `antwort` = ?", CONNECTION_SYNCH);
+    PrepareStatement(CHAR_INS_FRAGEN, "INSERT INTO antworten (frage, antwort, belohnung, anzahl) VALUES (?,?,?,?)", CONNECTION_ASYNC);
+    PrepareStatement(CHAR_SEL_FRAGEN_COUNT, "Select count(id) from `antworten`", CONNECTION_SYNCH);
+    PrepareStatement(CHAR_SEL_BEANTWORTET, "Select `accountid`,`nr` from `beantwortete_fragen` where `accountid` = ? and `nr` = ?", CONNECTION_SYNCH);
+    PrepareStatement(CHAR_INS_BEANTWORTET, "Insert INTO beantwortete_fragen (accountid, nr) VALUES (?,?)", CONNECTION_ASYNC);
+    PrepareStatement(CHAR_SEL_LOB, "SELECT `id`, `zeit`, `spieler`,`uid` `benutzt` FROM `lob` WHERE `zeit` = ? AND `uid`= ?", CONNECTION_SYNCH);
+    PrepareStatement(CHAR_INS_LOB, "INSERT INTO lob (zeit,spieler,uid,benutzt)VALUES (?,?,?,?)", CONNECTION_SYNCH);
+    PrepareStatement(CHAR_INS_FIRSTLOG, "INSERT INTO firstnpc_log (grund,spieler, guid) VALUES (?,?,?)", CONNECTION_ASYNC);
+    PrepareStatement(CHAR_INS_EVENTLOG, "INSERT INTO eventteamlog (player,guid, itemid,gutscheincode,anzahl) VALUES (?,?,?,?,?)" ,CONNECTION_ASYNC);
+    PrepareStatement(CHAR_INS_ITEMCODE, "INSERT INTO `item_codes` (code,belohnung,anzahl,benutzt,name,benutztbar) VALUES (?,?,?,?,?,?)" , CONNECTION_ASYNC);
+    PrepareStatement(CHAR_INS_NOPLAYERITEMCODE, "INSERT INTO `item_codes` (code,belohnung,anzahl,benutzt,benutztbar) VALUES (?,?,?,?,?)" , CONNECTION_ASYNC);
+    PrepareStatement(CHAR_SEL_ITEMCODEGES, "SELECT `code`, `belohnung`, `anzahl`, `benutzt`, `benutztbar` FROM `item_codes` WHERE `code` = ?", CONNECTION_SYNCH);
+    PrepareStatement(CHAR_INS_ITEMCODEACCOUNT, "INSERT INTO item_codes_account (name,accid,code) Values(?,?,?)", CONNECTION_ASYNC);
+    PrepareStatement(CHAR_INS_BONUS_EP, "Insert into bonus_ep (player, playerid,start, ende, aktiv) Values (?,?,?,?,?)", CONNECTION_ASYNC);
+    PrepareStatement(CHAR_SEL_BONUS_EP, "Select `player` ,`playerid`, `start`, `ende`, `aktiv` from `bonus_ep` where `playerid` = ? and `aktiv` = 1", CONNECTION_SYNCH);
+    PrepareStatement(CHAR_UPD_BONUS_EP, "UPDATE bonus_ep SET aktiv = 0 WHERE playerid = ? AND aktiv != 0", CONNECTION_ASYNC);
+
+  
+    /* CUSTOM ENDE */
+    
+    
     PrepareStatement(CHAR_DEL_QUEST_POOL_SAVE, "DELETE FROM pool_quest_save WHERE pool_id = ?", CONNECTION_ASYNC);
     PrepareStatement(CHAR_INS_QUEST_POOL_SAVE, "INSERT INTO pool_quest_save (pool_id, quest_id) VALUES (?, ?)", CONNECTION_ASYNC);
     PrepareStatement(CHAR_DEL_NONEXISTENT_GUILD_BANK_ITEM, "DELETE FROM guild_bank_item WHERE guildid = ? AND TabId = ? AND SlotId = ?", CONNECTION_ASYNC);

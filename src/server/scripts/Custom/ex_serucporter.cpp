@@ -64,7 +64,7 @@ public: seruc() : CreatureScript("seruc"){ }
 					std::ostringstream ss;
 					pPlayer->GetGUID();
 					pPlayer->Whisper("Wende dich bitte an die Entwickler wenn du mehr Informationen haben moechtest.", LANG_UNIVERSAL, pPlayer, true);
-					ss << "|cff54b5ff|r " << ChatHandler(pPlayer->GetSession()).GetNameLink() << "|cff54b5ff hat sich in den gesperrten Raid geportet. Der Raid ist noch geschlossen. Wenn ihr mehr Informationen erhalten wollt, wendet Euch bitte an den zustaendigen Entwickler|r |cff54b5ff!|r";
+					ss << "|cff54b5ff|r " << ChatHandler(pPlayer->GetSession()).GetNameLink() << "|cff54b5ff hat sich in den gesperrten Raid geportet. Der Raid ist noch geschlossen. Wenn Ihr mehr Informationen erhalten wollt, wendet Euch bitte an den zustaendigen Entwickler|r |cff54b5ff!|r";
 					sWorld->SendServerMessage(SERVER_MSG_STRING, ss.str().c_str());
 					return true;
 				}

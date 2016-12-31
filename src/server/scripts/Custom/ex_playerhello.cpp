@@ -185,7 +185,14 @@ public:
     
     void Belohnung(Player* player, uint32 zeit, uint32 guid,uint32 money){
     
-        QueryResult result = CharacterDatabase.PQuery("SELECT `id`, `zeit`, `spieler`,`uid` `benutzt` FROM `lob` WHERE `zeit` = '%u' AND `uid`= '%u'", zeit, player->GetGUID());
+        
+        //QueryResult result = CharacterDatabase.PQuery("SELECT `id`, `zeit`, `spieler`,`uid` `benutzt` FROM `lob` WHERE `zeit` = '%u' AND `uid`= '%u'", zeit, player->GetGUID());
+        
+        PreparedStatement* stmt = CharacterDatabase.GetPreparedStatement(CHAR_SEL_LOB);
+        stmt->setInt32(0,zeit);
+        stmt->setInt32(1, player->GetGUID());
+        PreparedQueryResult result = CharacterDatabase.Query(stmt);
+        
         if (!result){
             
             
@@ -208,13 +215,18 @@ public:
 		std::ostringstream ss;
 		
 		
-		uint32 accountid = player->GetSession()->GetAccountId();
+		//uint32 accountid = player->GetSession()->GetAccountId();
+        //QueryResult charresult = CharacterDatabase.PQuery("Select count(guid) From characters where account = '%u'", accountid);
+        //uint32 charresultint = (*charresult)[0].GetUInt32();
+        
+        
+        PreparedStatement* stmt = CharacterDatabase.GetPreparedStatement(CHAR_SEL_SUM_CHARS);
+        stmt->setInt32(0,player->GetSession()->GetAccountId());
+        PreparedQueryResult result = CharacterDatabase.Query(stmt);
 
-
-		
-		QueryResult charresult = CharacterDatabase.PQuery("Select count(guid) From characters where account = '%u'", accountid);
-		uint32 charresultint = (*charresult)[0].GetUInt32();
-		
+        Field* felder = result->Fetch();
+        uint32 charresultint = felder[0].GetUInt32();
+        
 		if (player->GetTotalPlayedTime() < 1 && charresultint == 1)
 		{
 			ss << "|cff54b5ffHerzlich willkommen auf MMOwning: |r " << ChatHandler(player->GetSession()).GetNameLink();
@@ -304,7 +316,14 @@ public:
 
 		//100h
 		if (time >= 360000 && time <= 395999){
-			QueryResult result = CharacterDatabase.PQuery("SELECT `id`, `zeit`, `spieler`,`uid` `benutzt` FROM `lob` WHERE `zeit` = '%u' AND `uid`= '%u'", 100, player->GetGUID());
+            
+            //QueryResult result = CharacterDatabase.PQuery("SELECT `id`, `zeit`, `spieler`,`uid` `benutzt` FROM `lob` WHERE `zeit` = '%u' AND `uid`= '%u'", 100, player->GetGUID());
+            
+            PreparedStatement* stmt = CharacterDatabase.GetPreparedStatement(CHAR_SEL_LOB);
+            stmt->setInt32(0,100);
+            stmt->setInt32(1, player->GetGUID());
+            PreparedQueryResult result = CharacterDatabase.Query(stmt);
+            
 			if (!result){
 				uint32 uid = player->GetGUID();
 				
@@ -396,7 +415,13 @@ public:
 
 		//200h
 		if (time >= 720000){
-			QueryResult result = CharacterDatabase.PQuery("SELECT `id`, `zeit`, `spieler`,`uid` `benutzt` FROM `lob` WHERE `zeit` = '%u' AND `uid`= '%u'", 200, player->GetGUID());
+			//QueryResult result = CharacterDatabase.PQuery("SELECT `id`, `zeit`, `spieler`,`uid` `benutzt` FROM `lob` WHERE `zeit` = '%u' AND `uid`= '%u'", 200, player->GetGUID());
+            
+            PreparedStatement* stmt = CharacterDatabase.GetPreparedStatement(CHAR_SEL_LOB);
+            stmt->setInt32(0,200);
+            stmt->setInt32(1, player->GetGUID());
+            PreparedQueryResult result = CharacterDatabase.Query(stmt);
+            
 			if (!result){
 
 				Item* item = Item::CreateItem(37719, 1);
@@ -413,8 +438,14 @@ public:
 		}
 
 
-		QueryResult result = CharacterDatabase.PQuery("SELECT `id`, `zeit`, `spieler`,`uid` `benutzt` FROM `lob` WHERE `zeit` = '%u' AND `uid`= '%u'", 100, player->GetGUID());
-		 if (time >= 720000 && !result){
+		//QueryResult result = CharacterDatabase.PQuery("SELECT `id`, `zeit`, `spieler`,`uid` `benutzt` FROM `lob` WHERE `zeit` = '%u' AND `uid`= '%u'", 100, player->GetGUID());
+        
+        PreparedStatement* statement = CharacterDatabase.GetPreparedStatement(CHAR_SEL_LOB);
+        statement->setInt32(0,100);
+        statement->setInt32(1, player->GetGUID());
+        PreparedQueryResult ergebnis = CharacterDatabase.Query(statement);
+        
+		 if (time >= 720000 && !ergebnis){
 			uint32 uid = player->GetGUID();
 
 			Item* item = Item::CreateItem(46802, 1);
@@ -425,7 +456,16 @@ public:
 				.SendMailTo(trans, MailReceiver(player, player->GetGUID()), MailSender(MAIL_NORMAL, 0, MAIL_STATIONERY_GM));
 			CharacterDatabase.CommitTransaction(trans);
 
-			CharacterDatabase.PExecute("INSERT INTO lob (zeit,spieler,uid,benutzt) Values ('%u','%s','%u','%u')", 100, player->GetName().c_str(), uid, 1);
+             
+             PreparedStatement* inslob = CharacterDatabase.GetPreparedStatement(CHAR_INS_LOB);
+             inslob->setInt32(0,100);
+             inslob->setString(1, player->GetName().c_str());
+             inslob->setInt32(2, uid);
+             inslob->setInt32(3, 1);
+             CharacterDatabase.Execute(inslob);
+             
+             
+			/*CharacterDatabase.PExecute("INSERT INTO lob (zeit,spieler,uid,benutzt) Values ('%u','%s','%u','%u')", 100, player->GetName().c_str(), uid, 1);*/
 		}
 
 
@@ -479,42 +519,166 @@ class DoupleXP : public PlayerScript
 {
 public:
 	DoupleXP() : PlayerScript("DoupleXP"){}
-
+    
 	void OnGiveXP(Player* player, uint32& amount, Unit* /*victim*/)
 	{
-		
-		bool premium = player->GetSession()->IsPremium();
-		boost::gregorian::date date(boost::gregorian::day_clock::local_day());
-		if (date.day_of_week() == boost::date_time::Friday ||
+        boost::gregorian::date date(boost::gregorian::day_clock::local_day());
+        bool premium = player->GetSession()->IsPremium();
+        if (date.day_of_week() == boost::date_time::Friday ||
 			date.day_of_week() == boost::date_time::Saturday ||
-			date.day_of_week() == boost::date_time::Sunday){
-			if (player->getLevel() < 80){
-				if (!premium){
-					
-					char msg[250];
-					snprintf(msg, 250, "Dir wurden %u EP gutgeschrieben.", amount);
-					ChatHandler(player->GetSession()).PSendSysMessage(msg,
-						player->GetName());
-					amount = amount * 2;
-				}
+			date.day_of_week() == boost::date_time::Sunday)
+        {
+            if(player->getLevel() < 80){
+                PreparedStatement* ep = CharacterDatabase.GetPreparedStatement(CHAR_SEL_BONUS_EP);
+                ep->setInt32(0, player->GetGUID());
+                PreparedQueryResult ergebnis = CharacterDatabase.Query(ep);
+                
+                if(!ergebnis){
+                    if(premium){
+                        amount = amount*4;
+                        char msg[250];
+                        snprintf(msg, 250, "Dir wurden %u EP gutgeschrieben.", amount);
+                        ChatHandler(player->GetSession()).PSendSysMessage(msg, player->GetName());
+                        return;
+                    }
+                    
+                    amount = amount*2;
+                    char msg[250];
+                    snprintf(msg, 250, "Dir wurden %u EP gutgeschrieben.", amount);
+                    ChatHandler(player->GetSession()).PSendSysMessage(msg, player->GetName());
+                    return;
+                }
+                
+                Field* felder = ergebnis->Fetch();
+                uint32 ende = felder[3].GetInt32();
+                //uint32 aktiv = felder[4].GetInt32();
+                
+                time_t sek;
+                time(&sek);
+                uint32 zeit = time(&sek);
+                
+                if(ergebnis && zeit <= ende){
+                    if(premium){
+                        amount = amount*6;
+                        char msg[250];
+                        snprintf(msg, 250, "Dir wurden %u EP gutgeschrieben.", amount);
+                        ChatHandler(player->GetSession()).PSendSysMessage(msg, player->GetName());
+                        return;
+                    }
+                    
+                    amount = amount*4;
+                    char msg[250];
+                    snprintf(msg, 250, "Dir wurden %u EP gutgeschrieben.", amount);
+                    ChatHandler(player->GetSession()).PSendSysMessage(msg, player->GetName());
 
-				else {
-					char msg[250];
-					snprintf(msg, 250, "Dir wurden %u EP gutgeschrieben.", amount);
-					ChatHandler(player->GetSession()).PSendSysMessage(msg,
-						player->GetName());
-					amount = amount * 1.25;
-				}
-			}
-		} 
+                    return;
+                }
+                
+                
+                if(ergebnis && zeit != ende){
+                    if(premium){
+                        amount = amount*4;
+                        char msg[250];
+                        snprintf(msg, 250, "Dir wurden %u EP gutgeschrieben.", amount);
+                        ChatHandler(player->GetSession()).PSendSysMessage(msg, player->GetName());
+                        return;
+                    }
+                    
+                    amount = amount*2;
+                    char msg[250];
+                    snprintf(msg, 250, "Dir wurden %u EP gutgeschrieben.", amount);
+                    ChatHandler(player->GetSession()).PSendSysMessage(msg, player->GetName());
+                    
+                    return;
+                }
 
-			else if (date.day_of_week() == boost::date_time::Monday ||
-				date.day_of_week() == boost::date_time::Tuesday ||
-				date.day_of_week() == boost::date_time::Wednesday ||
-				date.day_of_week() == boost::date_time::Thursday){
-				amount = amount * 0.75;
-			}
-		
+                
+                
+            }
+           
+        }
+
+        
+        if (date.day_of_week() == boost::date_time::Monday ||
+            date.day_of_week() == boost::date_time::Tuesday ||
+            date.day_of_week() == boost::date_time::Wednesday || date.day_of_week() == boost::date_time::Thursday)
+        {
+            if(player->getLevel() < 80){
+            
+                PreparedStatement* ep = CharacterDatabase.GetPreparedStatement(CHAR_SEL_BONUS_EP);
+                ep->setInt32(0, player->GetGUID());
+                PreparedQueryResult ergebnis = CharacterDatabase.Query(ep);
+                
+                if(!ergebnis){
+                    if(premium){
+                        amount = amount*1.2;
+                        char msg[250];
+                        snprintf(msg, 250, "Dir wurden %u EP gutgeschrieben.", amount);
+                        ChatHandler(player->GetSession()).PSendSysMessage(msg, player->GetName());
+                        return;
+                    }
+                    
+                    amount = amount*0.75;
+                    char msg[250];
+                    snprintf(msg, 250, "Dir wurden %u EP gutgeschrieben.", amount);
+                    ChatHandler(player->GetSession()).PSendSysMessage(msg, player->GetName());
+
+                    return;
+                }
+                
+                Field* felder = ergebnis->Fetch();
+                uint32 ende = felder[3].GetInt32();
+                
+                time_t sek;
+                time(&sek);
+                uint32 zeit = time(&sek);
+                
+                if(ergebnis && zeit <= ende){
+                    if(premium){
+                        amount = amount*4;
+                        char msg[250];
+                        snprintf(msg, 250, "Dir wurden %u EP gutgeschrieben.", amount);
+                        ChatHandler(player->GetSession()).PSendSysMessage(msg, player->GetName());
+                        return;
+                    }
+                    
+                    amount = amount*2;
+                    char msg[250];
+                    snprintf(msg, 250, "Dir wurden %u EP gutgeschrieben.", amount);
+                    ChatHandler(player->GetSession()).PSendSysMessage(msg, player->GetName());
+
+                    return;
+                }
+                
+                
+                if(ergebnis && zeit != ende){
+                    if(premium){
+                        amount = amount*1.2;
+                        char msg[250];
+                        snprintf(msg, 250, "Dir wurden %u EP gutgeschrieben.", amount);
+                        ChatHandler(player->GetSession()).PSendSysMessage(msg, player->GetName());
+                        return;
+                    }
+                    
+                    amount = amount*0.75;
+                    char msg[250];
+                    snprintf(msg, 250, "Dir wurden %u EP gutgeschrieben.", amount);
+                    ChatHandler(player->GetSession()).PSendSysMessage(msg, player->GetName());
+                    
+                    return;
+                }
+
+                
+                
+            }
+        }
+        
+        
+        else {
+            amount = amount* 0.75;
+            return;
+        }
+        
 	}
 };
 
@@ -607,6 +771,7 @@ public:
 		sWorld->SendGMText(LANG_GM_BROADCAST, ss.str().c_str());
 
 	}
+
 };
 
 
@@ -626,18 +791,11 @@ public:
 		sWorld->setRate(RATE_DROP_ITEM_EPIC, 1);
 		sWorld->setRate(RATE_DROP_ITEM_UNCOMMON, 3);
 		sWorld->setBoolConfig(CONFIG_ALLOW_TWO_SIDE_TRADE, true);
-		sWorld->setBoolConfig(CONFIG_ALLOW_TWO_SIDE_INTERACTION_AUCTION,true);
+		sWorld->setBoolConfig(CONFIG_ALLOW_TWO_SIDE_INTERACTION_AUCTION, true);
 		
 	}
 
 };
-
-
-
-
-
-
-
 
 
 

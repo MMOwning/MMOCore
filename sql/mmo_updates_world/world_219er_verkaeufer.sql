@@ -11,7 +11,7 @@ VALUES ( /*  ID */ 800042,
   /* Modelid2  */0,
   /* Modelid3   */0,
   /* Model4  */ 0,
- /* Name  */'MMOwning Ausstatter',
+ /* Name  */'Ausstatter',
   /*  Subname */'219er',
   /*  Iconname */'',
   /* gossip_menu_id`  */0,
@@ -74,7 +74,7 @@ DELETE FROM `creature` WHERE `id` = 800042;
 REPLACE INTO `creature` (`guid`,`id`,`map`,`spawnMask`,`phaseMask`,`modelid`,`equipment_id`,`position_x`,`position_y`,`position_z`,`orientation`,`spawntimesecs`,`spawndist`,`currentwaypoint`,`curhealth`,`curmana`,`MovementType`) VALUES 
 ('800042','800042','0','1','1','17072','0','-4810.90','1782.58','130.95','0.39','25','0','0','1000000','250000','0');
 
-DELETE FROM `npc_vendor` WHERE `entry` =800042;  
+DELETE FROM `npc_vendor` WHERE `entry` = 800042;  
 
 REPLACE INTO `npc_vendor` (`entry`, `slot`, `item`, `maxcount`, `incrtime`, `ExtendedCost`) VALUES 
 (800042,0,47494,0,0,0);

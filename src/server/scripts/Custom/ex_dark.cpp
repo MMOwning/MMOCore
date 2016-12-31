@@ -19,10 +19,17 @@ public: dark() : CreatureScript("dark"){ }
                 pPlayer->ADD_GOSSIP_ITEM(7, "Unterstuetzt mich, Prinz! [4 Abzeichen]", GOSSIP_SENDER_MAIN, 0);
                 pPlayer->ADD_GOSSIP_ITEM(7, "Zeigt mir wo der Prinz haust.", GOSSIP_SENDER_MAIN, 1);
             }
-			
-			pPlayer->ADD_GOSSIP_ITEM(7, "Ich brauche eure Hilfe doch nicht!",GOSSIP_SENDER_MAIN, 3);
-			pPlayer->PlayerTalkClass->SendGossipMenu(907, _creature->GetGUID());
-			return true;
+
+			if(!group){
+				pPlayer->GetSession()->SendAreaTriggerMessage("Ohne Gruppe seid Ihr zu schwach um meinen Bruder zu besiegen!");
+				pPlayer->PlayerTalkClass->SendGossipMenu(907, _creature->GetGUID());
+				return true;
+			}
+
+			else {
+				pPlayer->PlayerTalkClass->SendGossipMenu(907, _creature->GetGUID());
+				return true;
+			}
 		}
 
 		bool OnGossipSelect(Player * pPlayer, Creature * pCreature, uint32 /*uiSender*/, uint32 uiAction)
@@ -54,24 +61,14 @@ public: dark() : CreatureScript("dark"){ }
 				}
 			}break;
 
-			case 1:{
+			case 1:
+			{
                 
                     pPlayer->TeleportTo(0, -7138.54, -4310.35, 264.33, 3.13);
                     pCreature->SummonCreature(800064, -7139.58, -4317.59, 264.33, 3.13, TEMPSUMMON_TIMED_DESPAWN, 120000);
 					return true;
 			}break;
 
-				
-		
-
-			case 3:
-			{
-				pPlayer->GetGUID();
-				ChatHandler(pPlayer->GetSession()).PSendSysMessage("[Boss System]\nOk, das ist Eure Sache ob ihr mich im Stich lasst!",
-					pPlayer->GetName());
-				pPlayer->PlayerTalkClass->SendCloseGossip();
-				return true;
-			}break;
 
 			}
 			return true;
